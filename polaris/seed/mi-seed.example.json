@@ -1,0 +1,24 @@
+{
+  "_nota": "Plantilla PÚBLICA y vacía. Copiala a mi-seed.json y completala con tu contenido. mi-seed.json no se versiona ni se sube.",
+  "identityCentral": "",
+  "customPhrases": [],
+  "nonNegotiables": [],
+  "polaris": {
+    "vision": "",
+    "season": "",
+    "quarter": "",
+    "boss": "",
+    "weekly": "",
+    "next": ""
+  },
+  "finances": {
+    "obj": "",
+    "saveObj": ""
+  },
+  "ideal": {
+    "creencias": [],
+    "logros": [],
+    "diaPerfecto": ""
+  },
+  "inseguridades": []
+}

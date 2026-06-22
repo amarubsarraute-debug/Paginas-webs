@@ -1,0 +1,72 @@
+{
+  "hero-fuego": {
+    "src": "assets/img/hero-fuego.jpg",
+    "title": "Log burner",
+    "creator": "Dave_S.",
+    "creator_url": "https://www.flickr.com/photos/93398075@N00",
+    "license": "BY",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "flickr"
+  },
+  "estufa-detalle": {
+    "src": "assets/img/estufa-detalle.jpg",
+    "title": "Stove handle",
+    "creator": "athrasher",
+    "creator_url": "https://www.flickr.com/photos/56544547@N00",
+    "license": "CC0",
+    "license_version": "1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "flickr"
+  },
+  "fogon": {
+    "src": "assets/img/fogon.jpg",
+    "title": "Amber Fireworks",
+    "creator": "jonnyabcde",
+    "creator_url": "https://www.flickr.com/photos/8303388@N04",
+    "license": "BY",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "flickr"
+  },
+  "taller-herreria": {
+    "src": "assets/img/taller-herreria.jpg",
+    "title": "Sparks",
+    "creator": "vauvau",
+    "creator_url": "https://www.flickr.com/photos/98193606@N00",
+    "license": "BY",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "flickr"
+  },
+  "herreria-dragon": {
+    "src": "assets/img/herreria-dragon.jpg",
+    "title": "Black Country Living Museum - canal arm - Anchor Forge and Ironwork's Office",
+    "creator": "ell brown",
+    "creator_url": "https://www.flickr.com/photos/39415781@N06",
+    "license": "BY",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "flickr"
+  },
+  "lena": {
+    "src": "assets/img/lena.jpg",
+    "title": "Firewood stacked up to dry showing annual rings",
+    "creator": "Horia Varlan",
+    "creator_url": "https://www.flickr.com/photos/10361931@N06",
+    "license": "BY",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "flickr"
+  },
+  "hierro-textura": {
+    "src": "assets/img/hierro-textura.jpg",
+    "title": "steam radiator",
+    "creator": "Muffet",
+    "creator_url": "https://www.flickr.com/photos/53133240@N00",
+    "license": "BY",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "flickr"
+  }
+}

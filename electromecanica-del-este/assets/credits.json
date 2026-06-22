@@ -1,0 +1,46 @@
+{
+  "logo": {
+    "src": "assets/img/logo.png",
+    "title": "Logo Electromecánica del Este",
+    "creator": "Gemini Image Generator",
+    "creator_url": "https://google.com",
+    "license": "Generada",
+    "license_version": "1.0",
+    "license_url": "#",
+    "foreign_landing_url": "#",
+    "source": "AI Generated"
+  },
+  "hero": {
+    "src": "assets/img/hero.png",
+    "title": "Interior del taller mecánico",
+    "creator": "Gemini Image Generator",
+    "creator_url": "https://google.com",
+    "license": "Generada",
+    "license_version": "1.0",
+    "license_url": "#",
+    "foreign_landing_url": "#",
+    "source": "AI Generated"
+  },
+  "diagnostic": {
+    "src": "assets/img/diagnostic.png",
+    "title": "Diagnóstico automotriz OBD2",
+    "creator": "Gemini Image Generator",
+    "creator_url": "https://google.com",
+    "license": "Generada",
+    "license_version": "1.0",
+    "license_url": "#",
+    "foreign_landing_url": "#",
+    "source": "AI Generated"
+  },
+  "battery": {
+    "src": "assets/img/battery.png",
+    "title": "Batería de automóvil en motor",
+    "creator": "Gemini Image Generator",
+    "creator_url": "https://google.com",
+    "license": "Generada",
+    "license_version": "1.0",
+    "license_url": "#",
+    "foreign_landing_url": "#",
+    "source": "AI Generated"
+  }
+}

@@ -1,0 +1,349 @@
+/* =============================================================================
+   MAIN.JS — interacciones globales (nav, cursor, reveals, parallax, carrusel,
+   contadores, WhatsApp). Patrón IIFE, sin dependencias externas.
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  var CFG = window.CONFIG || {};
+  var reduced   = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var fineHover = matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  var $  = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  function safe(fn, name) { try { fn(); } catch (e) { console.warn("[" + name + "]", e); } }
+
+  /* Link de WhatsApp reutilizable */
+  window.waLink = function (msg) {
+    var num = (CFG.WHATSAPP || "").replace(/[^0-9]/g, "");
+    return "https://wa.me/" + num + "?text=" + encodeURIComponent(msg || CFG.WHATSAPP_MSG_GENERAL || "Hola");
+  };
+
+  /* -------------------------------------------------------------------------
+     NAV — solidifica al hacer scroll + menú móvil
+     ------------------------------------------------------------------------- */
+  function initNav() {
+    var nav = $(".nav");
+    if (!nav) return;
+    var onScroll = function () { nav.classList.toggle("is-scrolled", window.scrollY > 30); };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    var toggle = $(".nav-toggle", nav);
+    if (toggle) {
+      toggle.addEventListener("click", function () { nav.classList.toggle("is-open"); });
+      $$(".nav-links a", nav).forEach(function (a) {
+        a.addEventListener("click", function () { nav.classList.remove("is-open"); });
+      });
+    }
+  }
+
+  /* -------------------------------------------------------------------------
+     WHATSAPP — botón flotante + cualquier [data-wa]
+     ------------------------------------------------------------------------- */
+  function initWhatsApp() {
+    var floatBtn = $(".wa-float");
+    if (floatBtn) {
+      floatBtn.href = window.waLink(CFG.WHATSAPP_MSG_GENERAL);
+      floatBtn.setAttribute("target", "_blank");
+      floatBtn.setAttribute("rel", "noopener");
+    }
+    $$("[data-wa]").forEach(function (el) {
+      el.href = window.waLink(el.getAttribute("data-wa") || CFG.WHATSAPP_MSG_GENERAL);
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener");
+    });
+  }
+
+  /* -------------------------------------------------------------------------
+     LOGO — usa img/logo.png si existe; si no, queda el texto "FEDE DESAL"
+     ------------------------------------------------------------------------- */
+  function initLogo() {
+    var logos = $$(".logo");
+    if (!logos.length) return;
+    var test = new Image();
+    test.onload = function () {
+      logos.forEach(function (el) {
+        el.innerHTML = '<img src="img/logo.png" alt="Automotora Fede Desal" style="height:44px;width:auto;display:block">';
+      });
+    };
+    test.src = "img/logo.png?v=20260602";
+  }
+
+  /* -------------------------------------------------------------------------
+     REVEAL on scroll (IntersectionObserver + red de seguridad 6s)
+     ------------------------------------------------------------------------- */
+  function initReveals() {
+    var els = $$(".reveal");
+    if (!els.length) return;
+    if (!("IntersectionObserver" in window)) {
+      els.forEach(function (el) { el.classList.add("is-visible"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.05, rootMargin: "0px 0px -4% 0px" });
+    els.forEach(function (el) { io.observe(el); });
+
+    /* Safety: a los 6s revelar lo que siga oculto y esté en viewport */
+    setTimeout(function () {
+      $$(".reveal:not(.is-visible)").forEach(function (el) {
+        if (el.getBoundingClientRect().top < window.innerHeight + 200) el.classList.add("is-visible");
+      });
+    }, 6000);
+  }
+
+  /* -------------------------------------------------------------------------
+     PARALLAX hero (solo desktop; gate por reduced-motion)
+     ------------------------------------------------------------------------- */
+  function initParallax() {
+    if (reduced || !fineHover) return;
+    var layers = $$("[data-parallax]");
+    if (!layers.length) return;
+    var ticking = false;
+    function update() {
+      var sy = window.scrollY;
+      layers.forEach(function (el) {
+        var speed = parseFloat(el.getAttribute("data-parallax")) || 0.15;
+        el.style.transform = "translate3d(0," + (sy * speed) + "px,0)";
+      });
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+  }
+
+  /* -------------------------------------------------------------------------
+     CONTADORES (count-up) — elementos [data-count-to]
+     ------------------------------------------------------------------------- */
+  function initCounters() {
+    var nums = $$("[data-count-to]");
+    if (!nums.length) return;
+    var animate = function (el) {
+      var target = parseFloat(el.getAttribute("data-count-to"));
+      var dec = (el.getAttribute("data-count-to").split(".")[1] || "").length;
+      var dur = 1400, start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        var val = (target * eased).toFixed(dec).replace(".", ",");
+        el.textContent = val;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    };
+    if (!("IntersectionObserver" in window)) { nums.forEach(animate); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.4 });
+    nums.forEach(function (el) { io.observe(el); });
+  }
+
+  /* -------------------------------------------------------------------------
+     CARRUSEL genérico [data-carousel] (testimonios index + otros)
+     ------------------------------------------------------------------------- */
+  function initCarousels() {
+    $$("[data-carousel]").forEach(function (root) {
+      var track = $(".testi-track", root);
+      var slides = $$(".testi-card", root);
+      var dotsWrap = $(".testi-controls", root);
+      if (!track || slides.length < 2) return;
+      var i = 0, timer;
+      var dots = slides.map(function (_, idx) {
+        var d = document.createElement("button");
+        d.className = "testi-dot" + (idx === 0 ? " is-active" : "");
+        d.setAttribute("aria-label", "Testimonio " + (idx + 1));
+        d.addEventListener("click", function () { go(idx); rearm(); });
+        if (dotsWrap) dotsWrap.appendChild(d);
+        return d;
+      });
+      function go(n) {
+        i = (n + slides.length) % slides.length;
+        track.style.transform = "translateX(" + (-100 * i) + "%)";
+        dots.forEach(function (d, k) { d.classList.toggle("is-active", k === i); });
+      }
+      function rearm() { if (timer) clearInterval(timer); if (!reduced) timer = setInterval(function () { go(i + 1); }, 6000); }
+      rearm();
+      root.addEventListener("mouseenter", function () { if (timer) clearInterval(timer); });
+      root.addEventListener("mouseleave", rearm);
+    });
+  }
+
+  /* -------------------------------------------------------------------------
+     FILTROS móvil: mostrar/ocultar panel
+     ------------------------------------------------------------------------- */
+  function initFiltrosToggle() {
+    var btn = $(".filtros-toggle");
+    var wrap = $(".filtros-wrap");
+    if (!btn || !wrap) return;
+    btn.addEventListener("click", function () { wrap.classList.toggle("is-open"); });
+  }
+
+  /* -------------------------------------------------------------------------
+     Smooth scroll con offset de nav para anclas internas
+     ------------------------------------------------------------------------- */
+  function initAnchors() {
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a) return;
+      var id = a.getAttribute("href");
+      if (!id || id === "#") return;
+      var el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      var top = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: top, behavior: reduced ? "auto" : "smooth" });
+    });
+  }
+
+  /* -------------------------------------------------------------------------
+     HERO SCROLL-SCRUB — el video avanza cuadro a cuadro con el scroll.
+     Sección alta + sticky pin: el progreso de scroll mapea a video.currentTime.
+     Requiere un MP4 all-intra (-g 1) para buscar sin saltos.
+     Fallback: móvil / reduced-motion → loop suave (o póster), sin scrub.
+     ------------------------------------------------------------------------- */
+  function initHeroScrub() {
+    var hero  = $(".hero");
+    var video = $(".hero-video");
+    if (!hero || !video) return;
+
+    /* Sin scrub en touch (iOS no busca fluido) ni con reduced-motion */
+    if (reduced || !fineHover) {
+      video.muted = true;
+      video.loop = true;
+      video.setAttribute("autoplay", "");
+      var play = video.play();
+      if (play && play.catch) play.catch(function () {}); /* si lo bloquean, queda el póster */
+      return;
+    }
+
+    var duration = 0, raf = 0, targetT = 0;
+
+    function compute() {
+      if (!duration) return;
+      var range = hero.offsetHeight - window.innerHeight;
+      var progress = range > 0 ? (-hero.getBoundingClientRect().top) / range : 0;
+      progress = Math.max(0, Math.min(1, progress));
+      targetT = progress * (duration - 0.05);
+      if (!raf) raf = requestAnimationFrame(seek);
+    }
+    function seek() {
+      raf = 0;
+      try {
+        if (typeof video.fastSeek === "function") video.fastSeek(targetT);
+        else video.currentTime = targetT;
+      } catch (e) {}
+    }
+
+    video.pause();
+    video.removeAttribute("autoplay");
+    video.loop = false;
+
+    function ready() { duration = video.duration || 0; compute(); }
+    video.addEventListener("loadedmetadata", ready);
+    /* Forzar el primer frame para que no quede el póster en negro */
+    video.addEventListener("loadeddata", function () {
+      if (video.currentTime < 0.001) { try { video.currentTime = 0.001; } catch (e) {} }
+    });
+    if (video.readyState >= 1) ready();
+
+    window.addEventListener("scroll", compute, { passive: true });
+    window.addEventListener("resize", compute, { passive: true });
+  }
+
+  /* -------------------------------------------------------------------------
+     FINANCIACIÓN — el auto entra desde la izquierda atado al scroll (scrub).
+     Asoma la trompa y se acomoda. Mismo patrón passive + rAF que initHeroScrub.
+     ------------------------------------------------------------------------- */
+  function initFinCar() {
+    var img = $(".fin-car img");
+    if (!img || reduced) return;
+    var section = img.closest("section");
+    if (!section) return;
+    var START = -45;               // % corrido a la izquierda (asoma la trompa)
+    var ticking = false;
+    function update() {
+      var rect = section.getBoundingClientRect();
+      var vh = window.innerHeight;
+      // 0 cuando la sección entra por abajo; 1 cuando su tope llega a ~35% del viewport
+      var p = (vh - rect.top) / (vh - vh * 0.35);
+      p = Math.max(0, Math.min(1, p));
+      var e = 1 - Math.pow(1 - p, 3);            // easeOutCubic
+      img.style.transform = "translateX(" + (START * (1 - e)).toFixed(2) + "%)";
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+    update();
+  }
+
+  /* -------------------------------------------------------------------------
+     Timeline scroll-driven: rellena la línea y enciende los nodos al scrollear
+     ------------------------------------------------------------------------- */
+  function initTimeline() {
+    var timeline = document.querySelector(".timeline");
+    if (!timeline) return;
+    var nodes = Array.from(timeline.querySelectorAll(".tl-node"));
+    var ticking = false;
+    var TRIGGER = 0.6; // playhead: 60% del viewport desde arriba
+
+    function update() {
+      var rect = timeline.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var lineTop = rect.top + 20;          // coincide con ::before top:20px
+      var lineBot = rect.top + rect.height - 20; // coincide con ::before bottom:20px
+      var triggerY = vh * TRIGGER;
+
+      var pct = (triggerY - lineTop) / (lineBot - lineTop);
+      pct = Math.max(0, Math.min(1, pct));
+      timeline.style.setProperty("--tl-fill", (pct * 100).toFixed(2) + "%");
+
+      nodes.forEach(function (node) {
+        var mid = node.getBoundingClientRect().top + node.offsetHeight / 2;
+        if (mid < triggerY) node.classList.add("is-active");
+      });
+
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", function () {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+    update();
+  }
+
+  /* -------------------------------------------------------------------------
+     Año dinámico en footer
+     ------------------------------------------------------------------------- */
+  function initYear() {
+    $$("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+  }
+
+  /* -------------------------------------------------------------------------
+     BOOT
+     ------------------------------------------------------------------------- */
+  function boot() {
+    safe(initNav, "initNav");
+    safe(initWhatsApp, "initWhatsApp");
+    safe(initLogo, "initLogo");
+    safe(initReveals, "initReveals");
+    safe(initParallax, "initParallax");
+    safe(initCounters, "initCounters");
+    safe(initCarousels, "initCarousels");
+    safe(initFiltrosToggle, "initFiltrosToggle");
+    safe(initAnchors, "initAnchors");
+    safe(initHeroScrub, "initHeroScrub");
+    safe(initFinCar, "initFinCar");
+    safe(initTimeline, "initTimeline");
+    safe(initYear, "initYear");
+    document.documentElement.classList.add("is-ready");
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+})();

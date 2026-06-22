@@ -1,0 +1,52 @@
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+.next/
+out/
+build/
+.nitro/
+.output/
+
+# Temporary / OS files
+.DS_Store
+Thumbs.db
+*.log
+*.zip
+*.rar
+*.tar.gz
+
+# Local settings / credentials
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# IDE / Agent directories
+.agent/
+.claude/
+.gemini/
+.vscode/
+.idea/
+dist-presentations/
+
+# Garbage/Temporary files
+(,+
+(null)
+0)
+0`)
+1)
+24)
+Se
+console.log(k
+no.close())
+state.habits*
+svg
+(2) Instagram.mhtml

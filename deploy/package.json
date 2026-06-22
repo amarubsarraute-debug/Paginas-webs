@@ -1,0 +1,14 @@
+{
+  "name": "deploy-amaru",
+  "version": "1.0.0",
+  "description": "Deploy automatico de sitios web a Hostinger",
+  "main": "deploy.js",
+  "scripts": {
+    "deploy": "node deploy.js",
+    "deploy:site": "node deploy.js --site"
+  },
+  "dependencies": {
+    "basic-ftp": "^5.0.5",
+    "chalk": "^4.1.2"
+  }
+}

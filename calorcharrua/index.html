@@ -1,0 +1,1809 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- SEO -->
+<title>CalorCharrua | Calefactores y Fogones Artesanales en Uruguay</title>
+<meta name="description" content="Calefactores a leña, con horno, fogones personalizados y herrería a medida. Fabricación propia en Uruguay, hierro de 5 mm y envíos a todo el país.">
+<meta name="keywords" content="calefactores Uruguay, calefactores a leña, calefactor con horno, fogones personalizados, fogoneros Uruguay, herrería Uruguay, calefactores artesanales, calefactor alto rendimiento">
+<meta name="author" content="CalorCharrua">
+<meta name="theme-color" content="#0B0D10">
+<link rel="canonical" href="https://calorcharrua.com.uy/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_UY">
+<meta property="og:site_name" content="CalorCharrua">
+<meta property="og:title" content="CalorCharrua | Calefactores y Fogones hechos en hierro, a medida">
+<meta property="og:description" content="Fabricación uruguaya con 20 años de herrería. Calefactores, fogones y trabajos a medida en hierro de 5 mm. Envíos a todo el país.">
+<meta property="og:image" content="assets/img/hero-fuego.jpg">
+<meta property="og:url" content="https://calorcharrua.com.uy/">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap">
+
+<!-- Hero image priority -->
+<link rel="preload" as="image" href="assets/img/hero-fuego.jpg" fetchpriority="high">
+
+<!-- Styles -->
+<style>
+/* =============================================================
+   CalorCharrua — styles.css
+   Carbón + cobre/óxido + blanco cálido · fuego, hierro, taller
+   ============================================================= */
+
+/* =============================================================
+   1. Tokens
+   ============================================================= */
+:root {
+  --carbon: #0B0D10;
+  --carbon-2: #0E1116;
+  --grafito: #12151B;
+  --grafito-2: #161A21;
+  --acero: #252A33;
+  --acero-soft: #1d222b;
+  --blanco: #F5F2EA;
+  --humo: #A7ADB7;
+  --humo-2: #828893;
+  --cobre: #B87333;
+  --cobre-claro: #d68f4e;
+  --oxido: #C04B2A;
+  --ambar: #FFB13C;
+  --verde: #16a34a;      /* WhatsApp action — darkened for AA contrast w/ white text */
+  --verde-claro: #2fd06c;
+  --rojo: #FF5A5A;
+
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --stamp: "Oswald", "Arial Narrow", system-ui, sans-serif;
+
+  --container: 1200px;
+  --gutter: clamp(1.1rem, 4vw, 2.5rem);
+  --radius: 16px;
+  --radius-sm: 11px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  --shadow: 0 18px 50px -24px rgba(0,0,0,.75);
+  --shadow-lg: 0 40px 90px -40px rgba(0,0,0,.85);
+}
+
+/* =============================================================
+   2. Reset & base
+   ============================================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; tab-size: 2; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  font-family: var(--sans);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.075rem);
+  line-height: 1.65;
+  color: var(--blanco);
+  background-color: var(--carbon);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+  overscroll-behavior-y: none;
+  /* subtle taller/iron grain */
+  background-image:
+    radial-gradient(1200px 700px at 82% -8%, rgba(192,75,42,.14), transparent 60%),
+    radial-gradient(900px 600px at 6% 4%, rgba(184,115,51,.10), transparent 55%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  background-attachment: fixed, fixed, fixed;
+}
+
+img, svg, video { display: block; max-width: 100%; }
+img { height: auto; }
+button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+a { color: inherit; text-decoration: none; }
+p { text-wrap: pretty; }
+ul { list-style: none; padding: 0; }
+::selection { background: var(--oxido); color: var(--blanco); }
+
+:focus-visible { outline: 2px solid var(--ambar); outline-offset: 3px; border-radius: 5px; }
+
+/* =============================================================
+   3. Utilities
+   ============================================================= */
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+:target, section[id], .hero[id] { scroll-margin-top: 86px; }
+
+.skip-link {
+  position: fixed; top: -120px; left: 1rem; z-index: 9999;
+  padding: .65rem 1.1rem; background: var(--ambar); color: var(--carbon);
+  border-radius: 9px; font-weight: 600; transition: top .2s var(--ease-out);
+}
+.skip-link:focus { top: 1rem; }
+
+.overline {
+  font-family: var(--stamp); font-weight: 600; font-size: .8rem;
+  letter-spacing: .24em; text-transform: uppercase; color: var(--cobre-claro);
+  display: inline-flex; align-items: center; gap: .6rem; margin-bottom: 1.1rem;
+}
+.overline--light { color: var(--ambar); }
+.overline__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--oxido); box-shadow: 0 0 12px 2px rgba(255,177,60,.6); }
+
+/* =============================================================
+   4. Typography
+   ============================================================= */
+h1, h2, h3, h4 { line-height: 1.06; letter-spacing: -0.015em; font-weight: 600; text-wrap: balance; }
+
+.hero__title {
+  font-family: var(--serif);
+  font-size: clamp(2.15rem, 1.2rem + 5.4vw, 4.1rem);
+  font-weight: 500; line-height: 1.02; letter-spacing: -0.02em;
+}
+.hero__title em { font-style: italic; font-weight: 400; color: var(--ambar); }
+
+.section__title {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(1.85rem, 1.2rem + 2.6vw, 2.6rem);
+  letter-spacing: -0.018em; line-height: 1.08;
+}
+
+.section__lead {
+  color: var(--humo); font-size: clamp(1.02rem, 0.98rem + 0.35vw, 1.18rem);
+  max-width: 56ch; margin-top: 1rem;
+}
+
+/* =============================================================
+   5. Buttons & links
+   ============================================================= */
+.btn {
+  --bg: var(--grafito); --fg: var(--blanco);
+  display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+  padding: .85rem 1.4rem; border-radius: 11px;
+  font-family: var(--stamp); font-weight: 600; font-size: .95rem;
+  letter-spacing: .04em; text-transform: uppercase;
+  background: var(--bg); color: var(--fg);
+  border: 1px solid transparent; cursor: pointer;
+  transition: transform .25s var(--ease-out), filter .25s var(--ease-out), box-shadow .25s var(--ease-out), background-color .25s var(--ease-out);
+  will-change: transform;
+}
+.btn svg { width: 1.15em; height: 1.15em; }
+.btn:hover { transform: translateY(-2px); filter: brightness(1.06); }
+.btn:active { transform: translateY(0); }
+
+.btn--wa { --bg: var(--verde); --fg: #fff; box-shadow: 0 12px 30px -12px rgba(34,179,91,.6); }
+.btn--wa:hover { box-shadow: 0 16px 38px -12px rgba(34,179,91,.8); }
+
+.btn--copper {
+  --fg: #1a0f08;
+  background: linear-gradient(135deg, var(--ambar), var(--cobre) 55%, var(--oxido));
+  box-shadow: 0 12px 30px -14px rgba(192,75,42,.7);
+}
+.btn--copper:hover { box-shadow: 0 16px 40px -14px rgba(255,177,60,.6); }
+
+.btn--ghost { background: transparent; border-color: var(--acero); color: var(--blanco); }
+.btn--ghost:hover { border-color: var(--cobre); background: rgba(184,115,51,.08); }
+
+.btn--text {
+  background: transparent; color: var(--humo); text-transform: none;
+  font-family: var(--sans); font-weight: 500; letter-spacing: 0; padding: .5rem .2rem;
+}
+.btn--text:hover { color: var(--ambar); transform: none; }
+
+.btn--lg { padding: 1.05rem 1.8rem; font-size: 1.02rem; }
+.btn--sm { padding: .62rem 1rem; font-size: .82rem; }
+.btn--block { display: flex; width: 100%; }
+
+.link-cta {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-family: var(--stamp); font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
+  font-size: .92rem; color: var(--ambar); border-bottom: 1px solid rgba(255,177,60,.3);
+  padding-bottom: 3px; transition: gap .25s var(--ease-out), border-color .25s var(--ease-out);
+}
+.link-cta svg { width: 1.1em; height: 1.1em; transition: transform .25s var(--ease-out); }
+.link-cta:hover { gap: .8rem; border-color: var(--ambar); }
+.link-cta:hover svg { transform: translateX(3px); }
+
+/* =============================================================
+   6. Cards (shared)
+   ============================================================= */
+.card {
+  background: linear-gradient(180deg, var(--grafito-2), var(--grafito));
+  border: 1px solid var(--acero); border-radius: var(--radius);
+  padding: 1.6rem; transition: transform .35s var(--ease-out), border-color .35s var(--ease-out), box-shadow .35s var(--ease-out);
+}
+.card:hover { transform: translateY(-4px); border-color: rgba(184,115,51,.55); box-shadow: var(--shadow); }
+.card__ico {
+  display: inline-grid; place-items: center; width: 48px; height: 48px;
+  border-radius: 12px; background: rgba(184,115,51,.12); border: 1px solid rgba(184,115,51,.28);
+  color: var(--ambar); margin-bottom: 1.1rem;
+}
+.card__ico svg { width: 24px; height: 24px; }
+.card__title { font-family: var(--stamp); font-weight: 600; font-size: 1.18rem; letter-spacing: .01em; margin-bottom: .5rem; }
+.card--bene p { color: var(--humo); font-size: .98rem; }
+.count { color: var(--ambar); }
+
+/* =============================================================
+   7. Sections shell
+   ============================================================= */
+.section { padding-block: clamp(3.6rem, 2.4rem + 5vw, 7rem); position: relative; }
+.section__head { max-width: 60ch; margin-bottom: clamp(2rem, 1.4rem + 2vw, 3.2rem); }
+.section__head--center { margin-inline: auto; text-align: center; }
+.section__head--center .section__lead { margin-inline: auto; }
+.section__cta { margin-top: clamp(2rem, 1.4rem + 1.5vw, 3rem); text-align: center; }
+.section__cta--left { text-align: left; }
+
+/* =============================================================
+   8. Navbar
+   ============================================================= */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: linear-gradient(180deg, rgba(11,13,16,.5), rgba(11,13,16,0));
+  border-bottom: 1px solid transparent; transition: background .35s var(--ease-out), border-color .35s var(--ease-out), backdrop-filter .35s var(--ease-out);
+}
+.nav.is-stuck { background: rgba(11,13,16,.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: var(--acero); }
+.nav__inner { display: flex; align-items: center; gap: 1rem; height: 70px; }
+
+.brand { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--stamp); font-weight: 700; font-size: 1.28rem; letter-spacing: .02em; }
+.brand__mark { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, var(--oxido), var(--cobre)); color: var(--carbon); }
+.brand__mark svg { width: 20px; height: 20px; }
+.brand__text { color: var(--blanco); text-transform: uppercase; }
+.brand__accent { color: var(--ambar); }
+
+.nav__links { display: none; margin-left: auto; gap: clamp(.6rem, 1.4vw, 1.4rem); }
+.nav__links a { font-size: .92rem; color: var(--humo); padding: .4rem .2rem; position: relative; transition: color .2s var(--ease-out); }
+.nav__links a::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px; background: var(--ambar); transition: width .25s var(--ease-out); }
+.nav__links a:hover { color: var(--blanco); }
+.nav__links a:hover::after, .nav__links a.is-active::after { width: 100%; }
+.nav__links a.is-active { color: var(--blanco); }
+
+.nav__cta { display: none; }
+.nav__links + .nav__cta { margin-left: .5rem; }
+
+.nav__burger { margin-left: auto; display: inline-flex; flex-direction: column; gap: 5px; padding: 10px; }
+.nav__burger span { width: 24px; height: 2px; background: var(--blanco); border-radius: 2px; transition: transform .3s var(--ease-out), opacity .2s; }
+.nav__burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav__burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Drawer */
+.drawer {
+  position: fixed; top: 0; right: 0; z-index: 200; height: 100dvh; width: min(86vw, 340px);
+  background: var(--carbon-2); border-left: 1px solid var(--acero);
+  padding: 5.2rem 1.6rem 1.6rem; display: flex; flex-direction: column; gap: 1.4rem;
+  transform: translateX(100%); transition: transform .38s var(--ease-out); box-shadow: var(--shadow-lg);
+}
+.drawer.is-open { transform: translateX(0); }
+.drawer[hidden] { display: flex; }
+.drawer__nav { display: flex; flex-direction: column; gap: .25rem; }
+.drawer__nav a { font-family: var(--stamp); font-weight: 500; text-transform: uppercase; letter-spacing: .04em; font-size: 1.05rem; color: var(--humo); padding: .7rem .2rem; border-bottom: 1px solid var(--acero-soft); transition: color .2s, padding-left .2s; }
+.drawer__nav a:hover { color: var(--ambar); padding-left: .5rem; }
+.drawer__scrim { position: fixed; inset: 0; z-index: 150; background: rgba(0,0,0,.55); opacity: 0; transition: opacity .3s; pointer-events: none; }
+.drawer__scrim.is-open { opacity: 1; pointer-events: auto; }
+.drawer__scrim[hidden], .drawer[hidden]:not(.is-open) { }
+
+/* =============================================================
+   9. Hero
+   ============================================================= */
+.hero { position: relative; padding-top: clamp(2.4rem, 1.5rem + 4vw, 4.5rem); padding-bottom: clamp(3rem, 2rem + 5vw, 6rem); overflow: hidden; }
+.hero__ember {
+  position: absolute; inset: -20% -10% auto -10%; height: 80%; z-index: 0; pointer-events: none;
+  background: radial-gradient(60% 60% at 75% 20%, rgba(255,177,60,.18), transparent 70%),
+              radial-gradient(50% 50% at 20% 0%, rgba(192,75,42,.16), transparent 70%);
+  filter: blur(8px); animation: emberDrift 14s var(--ease-soft) infinite alternate;
+}
+@keyframes emberDrift { from { transform: translate3d(0,0,0) scale(1); opacity:.85; } to { transform: translate3d(0,-14px,0) scale(1.06); opacity:1; } }
+
+.hero__grid { position: relative; z-index: 1; display: grid; gap: clamp(2rem, 1rem + 5vw, 4rem); align-items: center; }
+.hero__copy { max-width: 38rem; }
+.hero__sub { color: var(--humo); font-size: clamp(1.05rem, 1rem + 0.4vw, 1.22rem); margin: 1.4rem 0 1.9rem; max-width: 40ch; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: .8rem; }
+.hero__micro { margin-top: 1rem; font-size: .9rem; color: var(--humo-2); }
+
+.chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2.2rem; padding-top: 1.8rem; border-top: 1px solid var(--acero); }
+.chip { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--stamp); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; font-size: .8rem; color: var(--blanco); background: var(--grafito); border: 1px solid var(--acero); padding: .5rem .85rem; border-radius: 999px; }
+.chip svg { width: 16px; height: 16px; color: var(--cobre-claro); }
+
+.hero__media { position: relative; }
+.hero__figure { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--acero); box-shadow: var(--shadow-lg); }
+.hero__figure::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 90px rgba(0,0,0,.55); pointer-events: none; }
+.hero__figure img { width: 100%; aspect-ratio: 4/3.1; object-fit: cover; }
+.hero__caption { position: absolute; left: 0; bottom: 0; z-index: 2; font-family: var(--stamp); text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; color: var(--blanco); background: rgba(11,13,16,.7); border-top-right-radius: 10px; padding: .5rem .8rem; backdrop-filter: blur(4px); }
+
+.stamp { position: absolute; left: -22px; bottom: -22px; width: 118px; height: 118px; color: var(--ambar); display: grid; place-items: center; filter: drop-shadow(0 8px 18px rgba(0,0,0,.6)); }
+.stamp > svg { position: absolute; inset: 0; animation: spin 26s linear infinite; }
+.stamp__txt { font-family: var(--stamp); font-size: 8.2px; letter-spacing: 1.5px; fill: var(--ambar); text-transform: uppercase; }
+.stamp__years { position: relative; font-family: var(--serif); font-style: italic; font-size: .82rem; color: var(--blanco); display: grid; justify-items: center; line-height: .85; }
+.stamp__years strong { font-size: 1.9rem; font-style: normal; color: var(--ambar); font-weight: 600; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* =============================================================
+   10. Beneficios
+   ============================================================= */
+.benefits__grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+
+/* =============================================================
+   11. Selector por m²
+   ============================================================= */
+.selector { background: linear-gradient(180deg, transparent, rgba(18,21,27,.5) 30%, transparent); }
+.selector__panel {
+  background: linear-gradient(180deg, var(--grafito-2), var(--grafito));
+  border: 1px solid var(--acero); border-radius: calc(var(--radius) + 6px);
+  padding: clamp(1.3rem, 1rem + 2vw, 2.4rem); box-shadow: var(--shadow); position: relative; overflow: hidden;
+}
+.selector__panel::before { content: ""; position: absolute; inset: auto -10% -40% auto; width: 50%; height: 80%; background: radial-gradient(circle, rgba(255,177,60,.1), transparent 70%); pointer-events: none; }
+.selector__ranges { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; margin-bottom: 1.6rem; position: relative; }
+.range {
+  font-family: var(--stamp); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; font-size: 1rem;
+  padding: .95rem .6rem; border-radius: 11px; background: var(--carbon-2); border: 1px solid var(--acero); color: var(--humo);
+  transition: all .25s var(--ease-out);
+}
+.range:hover { color: var(--blanco); border-color: var(--cobre); }
+.range.is-active { background: linear-gradient(135deg, var(--cobre), var(--oxido)); color: #fff; border-color: transparent; box-shadow: 0 10px 26px -12px rgba(192,75,42,.7); }
+
+.selector__results { display: grid; grid-template-columns: 1fr; gap: 1rem; position: relative; }
+.result { background: var(--carbon-2); border: 1px solid var(--acero); border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; transition: border-color .3s, transform .3s var(--ease-out); }
+.result:hover { border-color: rgba(184,115,51,.5); transform: translateY(-3px); }
+.result--oven { border-color: rgba(184,115,51,.35); background: linear-gradient(180deg, rgba(192,75,42,.08), var(--carbon-2)); }
+.result__tag { font-family: var(--stamp); text-transform: uppercase; letter-spacing: .12em; font-size: .74rem; color: var(--cobre-claro); margin-bottom: .7rem; }
+.result__name { font-family: var(--stamp); font-weight: 600; font-size: 1.4rem; }
+.result__desc { color: var(--humo); font-size: .95rem; margin: .5rem 0 1rem; }
+.result__price { font-family: var(--stamp); font-weight: 700; font-size: 1.9rem; color: var(--blanco); margin-bottom: 1.1rem; }
+.result__price span::before { content: ""; }
+.result a { margin-top: auto; }
+
+.selector__note { display: flex; gap: .6rem; align-items: flex-start; margin-top: 1.4rem; font-size: .9rem; color: var(--humo); background: rgba(255,177,60,.06); border: 1px dashed rgba(255,177,60,.25); border-radius: 11px; padding: .85rem 1rem; }
+.selector__note svg { width: 18px; height: 18px; color: var(--ambar); flex: none; margin-top: 1px; }
+
+.microform { display: grid; grid-template-columns: 1fr; gap: .7rem; margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid var(--acero); }
+.microform__field { display: grid; gap: .35rem; }
+.microform__field span { font-family: var(--stamp); text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; color: var(--humo); }
+.microform input { background: var(--carbon); border: 1px solid var(--acero); border-radius: 10px; padding: .8rem .9rem; color: var(--blanco); font: inherit; transition: border-color .2s; }
+.microform input:focus { outline: none; border-color: var(--cobre); }
+.microform .btn { align-self: end; }
+
+/* =============================================================
+   12. Catálogo
+   ============================================================= */
+.features-row { display: flex; flex-wrap: wrap; gap: .7rem 1.4rem; margin-bottom: 2.2rem; }
+.features-row li { display: inline-flex; align-items: center; gap: .55rem; font-family: var(--stamp); text-transform: uppercase; letter-spacing: .05em; font-size: .82rem; color: var(--humo); }
+.features-row svg { width: 18px; height: 18px; color: var(--cobre-claro); }
+
+.catalog__grid { display: grid; grid-template-columns: 1fr; gap: 1.1rem; }
+
+.prod { background: linear-gradient(180deg, var(--grafito-2), var(--grafito)); border: 1px solid var(--acero); border-radius: var(--radius); overflow: hidden; transition: transform .35s var(--ease-out), border-color .35s var(--ease-out), box-shadow .35s var(--ease-out); display: flex; flex-direction: column; }
+.prod:hover { transform: translateY(-5px); border-color: rgba(184,115,51,.55); box-shadow: var(--shadow); }
+.prod__media { position: relative; aspect-ratio: 4/3; background:
+  linear-gradient(135deg, rgba(192,75,42,.12), transparent 60%), var(--carbon-2);
+  display: grid; place-items: center; border-bottom: 1px solid var(--acero); overflow: hidden; }
+.prod__media::before { content:""; position:absolute; inset:0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 20h40M20 0v40' stroke='%23252A33' stroke-width='0.5'/%3E%3C/svg%3E"); opacity:.5; }
+.prod__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.prod__ph { position: relative; display: grid; justify-items: center; gap: .5rem; color: var(--humo-2); font-family: var(--stamp); text-transform: uppercase; letter-spacing: .1em; font-size: .82rem; text-align: center; padding: 1rem; }
+.prod__ph svg { width: 34px; height: 34px; color: var(--cobre); opacity: .7; }
+.prod__ph small { font-size: .66rem; letter-spacing: .08em; color: var(--humo-2); opacity: .75; text-transform: none; font-family: var(--sans); }
+.prod__badge { position: absolute; top: .8rem; right: .8rem; z-index: 2; font-family: var(--stamp); font-weight: 600; font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; background: rgba(11,13,16,.78); color: var(--ambar); border: 1px solid rgba(255,177,60,.3); padding: .35rem .65rem; border-radius: 999px; backdrop-filter: blur(4px); }
+.prod__body { padding: 1.4rem; display: flex; flex-direction: column; flex: 1; }
+.prod__name { font-family: var(--stamp); font-weight: 600; font-size: 1.3rem; letter-spacing: .01em; margin-bottom: 1rem; }
+
+.spec { display: grid; gap: .55rem; margin-bottom: 1.2rem; }
+.spec > div { display: flex; justify-content: space-between; gap: 1rem; font-size: .9rem; border-bottom: 1px dashed var(--acero-soft); padding-bottom: .55rem; }
+.spec dt { font-family: var(--stamp); text-transform: uppercase; letter-spacing: .06em; font-size: .74rem; color: var(--humo-2); }
+.spec dd { color: var(--blanco); text-align: right; }
+.spec--row { gap: .4rem; }
+
+.prod__price { font-family: var(--stamp); font-weight: 700; font-size: 1.7rem; color: var(--ambar); margin-bottom: 1.1rem; margin-top: auto; }
+.prod__actions { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.prod__foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: auto; }
+.prod__foot .prod__price { margin: 0; }
+
+.is-detail .spec { display: grid; }
+
+/* Con horno layout */
+.catalog--oven { background: linear-gradient(180deg, transparent, rgba(18,21,27,.45), transparent); }
+.catalog__split { display: grid; grid-template-columns: 1fr; gap: clamp(1.6rem, 1rem + 3vw, 3rem); }
+.features-list { display: grid; gap: .6rem; margin: 1.4rem 0 1.6rem; }
+.features-list li { display: flex; align-items: center; gap: .65rem; color: var(--blanco); font-size: .98rem; }
+.features-list svg { width: 20px; height: 20px; color: var(--verde-claro); flex: none; }
+.catalog__photo { margin-top: 1.6rem; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--acero); }
+.catalog__photo img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.catalog__cards { display: grid; gap: 1rem; }
+.prod--row { flex-direction: row; align-items: stretch; }
+.prod--row .prod__media--sm { aspect-ratio: auto; width: 38%; min-width: 110px; max-width: 160px; border-bottom: 0; border-right: 1px solid var(--acero); }
+.prod--row .prod__body { padding: 1.1rem 1.3rem; }
+.prod--row .prod__name { margin-bottom: .7rem; font-size: 1.15rem; }
+
+/* =============================================================
+   13. Accesorios + table
+   ============================================================= */
+.accessories__wrap { display: grid; grid-template-columns: 1fr; gap: 1.4rem; align-items: start; }
+.table { width: 100%; border-collapse: collapse; background: var(--grafito); border: 1px solid var(--acero); border-radius: var(--radius); overflow: hidden; }
+.table thead { background: var(--carbon-2); }
+.table th { text-align: left; font-family: var(--stamp); text-transform: uppercase; letter-spacing: .08em; font-size: .76rem; color: var(--humo); padding: .95rem 1.1rem; }
+.table td { padding: .95rem 1.1rem; border-top: 1px solid var(--acero-soft); font-size: .94rem; }
+.table tbody tr:nth-child(even) { background: rgba(255,255,255,.012); }
+.table td:last-child { font-family: var(--stamp); font-weight: 600; color: var(--ambar); white-space: nowrap; }
+.table tbody tr { transition: background-color .2s; }
+.table tbody tr:hover { background: rgba(184,115,51,.07); }
+
+.accessories__help { background: linear-gradient(180deg, var(--grafito-2), var(--grafito)); border: 1px solid var(--acero); border-radius: var(--radius); padding: 1.5rem; }
+.accessories__photo { border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1.2rem; border: 1px solid var(--acero); }
+.accessories__photo img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.accessories__help h3 { font-family: var(--stamp); font-weight: 600; font-size: 1.22rem; margin-bottom: .5rem; }
+.accessories__help p { color: var(--humo); font-size: .95rem; margin-bottom: 1.2rem; }
+
+/* =============================================================
+   14. Fogones (photo band)
+   ============================================================= */
+.fogones { background-size: cover; background-position: center; background-attachment: fixed; isolation: isolate; }
+.fogones__overlay { position: absolute; inset: 0; z-index: -1; background:
+  linear-gradient(180deg, rgba(11,13,16,.82), rgba(11,13,16,.7) 40%, rgba(11,13,16,.92)); }
+.fogones__inner { position: relative; }
+.fogones__models { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.8rem; }
+.fmodel { background: rgba(14,17,22,.72); border: 1px solid rgba(255,177,60,.22); border-radius: var(--radius); padding: 1.4rem; backdrop-filter: blur(3px); transition: transform .3s var(--ease-out), border-color .3s; }
+.fmodel:hover { transform: translateY(-4px); border-color: var(--ambar); }
+.fmodel__size { font-family: var(--stamp); font-weight: 700; font-size: 1.6rem; color: var(--ambar); display: block; line-height: 1; margin-bottom: .5rem; }
+.fmodel h3 { font-family: var(--stamp); font-weight: 600; font-size: 1.18rem; }
+.fmodel p { color: var(--humo); font-size: .9rem; }
+.fogones__feats { display: flex; flex-wrap: wrap; gap: .7rem 1.5rem; margin-bottom: 2rem; }
+.fogones__feats li { display: inline-flex; align-items: center; gap: .55rem; font-family: var(--stamp); text-transform: uppercase; letter-spacing: .05em; font-size: .85rem; color: var(--blanco); }
+.fogones__feats svg { width: 19px; height: 19px; color: var(--ambar); }
+
+/* =============================================================
+   15. Herrería
+   ============================================================= */
+.ironwork__grid { display: grid; grid-template-columns: 1fr; gap: clamp(1.8rem, 1rem + 4vw, 3.5rem); align-items: center; }
+.ironwork__photo { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--acero); box-shadow: var(--shadow); background: var(--carbon-2); display: flex; align-items: center; justify-content: center; }
+.ironwork__photo img { max-width: 100%; max-height: 620px; width: auto; height: auto; object-fit: contain; }
+.ironwork__photo figcaption { position: absolute; left: 0; bottom: 0; font-family: var(--stamp); text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; color: var(--blanco); background: rgba(11,13,16,.72); padding: .5rem .8rem; border-top-right-radius: 10px; }
+.ironwork__services { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-top: 1.8rem; }
+.svc { background: var(--grafito); border: 1px solid var(--acero); border-radius: var(--radius-sm); padding: 1.2rem; transition: border-color .3s, transform .3s var(--ease-out); }
+.svc:hover { border-color: rgba(184,115,51,.5); transform: translateY(-3px); }
+.svc svg { width: 24px; height: 24px; color: var(--ambar); margin-bottom: .7rem; }
+.svc h3 { font-family: var(--stamp); font-weight: 600; font-size: 1.05rem; margin-bottom: .3rem; }
+.svc p { color: var(--humo); font-size: .86rem; }
+
+/* =============================================================
+   16. Galería
+   ============================================================= */
+.gallery__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; }
+.ph { position: relative; aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--acero); background:
+  linear-gradient(135deg, rgba(184,115,51,.1), transparent 60%), var(--carbon-2); display: grid; place-items: center; }
+.ph::before { content:""; position:absolute; inset:0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 20h40M20 0v40' stroke='%23252A33' stroke-width='0.5'/%3E%3C/svg%3E"); opacity:.4; }
+.ph__lbl { position: relative; display: grid; justify-items: center; gap: .2rem; text-align: center; font-family: var(--stamp); text-transform: uppercase; letter-spacing: .08em; font-size: .82rem; color: var(--humo); padding: 1rem; }
+.ph__lbl small { font-size: .64rem; letter-spacing: .05em; color: var(--humo-2); text-transform: none; font-family: var(--sans); }
+.ph--photo { background: var(--carbon-2); }
+.ph--photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease-out); }
+.ph--photo:hover img { transform: scale(1.06); }
+.ph--photo figcaption { position: absolute; left: 0; bottom: 0; z-index: 2; font-family: var(--stamp); text-transform: uppercase; letter-spacing: .07em; font-size: .68rem; color: var(--blanco); background: rgba(11,13,16,.7); padding: .4rem .7rem; border-top-right-radius: 9px; }
+.ph--tall { grid-row: span 2; aspect-ratio: 1/2; }
+
+/* =============================================================
+   17. Mantenimiento
+   ============================================================= */
+.maintenance { background: linear-gradient(180deg, transparent, rgba(18,21,27,.5), transparent); }
+.maintenance__grid { display: grid; grid-template-columns: 1fr; gap: 1.8rem; align-items: center; }
+.checklist { display: grid; gap: .8rem; }
+.checklist li { display: flex; align-items: center; gap: .8rem; background: var(--grafito); border: 1px solid var(--acero); border-radius: var(--radius-sm); padding: 1rem 1.2rem; font-family: var(--stamp); text-transform: uppercase; letter-spacing: .04em; font-size: .92rem; transition: border-color .3s, transform .3s var(--ease-out); }
+.checklist li:hover { border-color: rgba(34,179,91,.4); transform: translateX(4px); }
+.checklist svg { width: 22px; height: 22px; color: var(--verde-claro); flex: none; }
+
+/* =============================================================
+   18. FAQ
+   ============================================================= */
+.faq__wrap { max-width: 820px; margin-inline: auto; }
+.faq__list { display: grid; gap: .7rem; }
+.qa { background: var(--grafito); border: 1px solid var(--acero); border-radius: var(--radius-sm); overflow: hidden; transition: border-color .3s; }
+.qa[open] { border-color: rgba(184,115,51,.5); }
+.qa summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.15rem 1.3rem; font-family: var(--stamp); font-weight: 500; font-size: 1.05rem; letter-spacing: .01em; }
+.qa summary::-webkit-details-marker { display: none; }
+.qa__ico { position: relative; flex: none; width: 20px; height: 20px; }
+.qa__ico::before, .qa__ico::after { content: ""; position: absolute; background: var(--ambar); border-radius: 2px; transition: transform .3s var(--ease-out); }
+.qa__ico::before { top: 9px; left: 0; width: 20px; height: 2px; }
+.qa__ico::after { top: 0; left: 9px; width: 2px; height: 20px; }
+.qa[open] .qa__ico::after { transform: rotate(90deg); opacity: 0; }
+.qa__a { padding: 0 1.3rem 1.2rem; color: var(--humo); }
+.qa__a p { max-width: 62ch; }
+
+/* =============================================================
+   19. Contacto
+   ============================================================= */
+.contact { overflow: hidden; }
+.contact__ember { position: absolute; inset: auto -10% -30% -10%; height: 70%; z-index: 0; pointer-events: none; background: radial-gradient(50% 60% at 30% 100%, rgba(192,75,42,.16), transparent 70%); filter: blur(10px); }
+.contact__grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: clamp(1.8rem, 1rem + 4vw, 3rem); }
+.contact__data { display: grid; gap: .9rem; margin: 1.8rem 0; }
+.contact__data li { display: flex; align-items: center; gap: .9rem; }
+.contact__data svg { width: 22px; height: 22px; color: var(--cobre-claro); flex: none; }
+.contact__data span { display: block; font-family: var(--stamp); text-transform: uppercase; letter-spacing: .08em; font-size: .68rem; color: var(--humo-2); }
+.contact__data a { color: var(--blanco); font-weight: 500; transition: color .2s; }
+.contact__data a:hover { color: var(--ambar); }
+.contact__map { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--acero); height: 220px; }
+.contact__map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(.3) contrast(1.05) brightness(.85); }
+
+.contact__formwrap { }
+.lead { background: linear-gradient(180deg, var(--grafito-2), var(--grafito)); border: 1px solid var(--acero); border-radius: calc(var(--radius) + 4px); padding: clamp(1.4rem, 1rem + 2vw, 2.2rem); box-shadow: var(--shadow); }
+.lead__title { font-family: var(--stamp); font-weight: 600; font-size: 1.3rem; margin-bottom: 1.4rem; }
+.field { display: grid; gap: .4rem; margin-bottom: 1.05rem; }
+.field label { font-family: var(--stamp); text-transform: uppercase; letter-spacing: .07em; font-size: .74rem; color: var(--humo); }
+.field label small { text-transform: none; letter-spacing: 0; color: var(--humo-2); }
+.field input, .field select, .field textarea { background: var(--carbon); border: 1px solid var(--acero); border-radius: 10px; padding: .8rem .9rem; color: var(--blanco); font: inherit; width: 100%; transition: border-color .2s; }
+.field textarea { resize: vertical; min-height: 96px; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--cobre); }
+.field--invalid input, .field--invalid textarea { border-color: var(--rojo); }
+.field__err { display: none; color: var(--rojo); font-size: .8rem; }
+.field--invalid .field__err { display: block; }
+.check { display: flex; align-items: flex-start; gap: .6rem; font-size: .88rem; color: var(--humo); margin-bottom: 1.3rem; cursor: pointer; }
+.check input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--cobre); flex: none; }
+.lead__status { margin-top: 1rem; padding: .85rem 1rem; border-radius: 10px; font-size: .92rem; }
+.lead__status.is-ok { display: block; background: rgba(34,179,91,.12); border: 1px solid rgba(34,179,91,.4); color: var(--verde-claro); }
+.lead__status.is-err { display: block; background: rgba(255,90,90,.1); border: 1px solid rgba(255,90,90,.4); color: var(--rojo); }
+.lead__status.is-loading { display: block; background: var(--carbon-2); border: 1px solid var(--acero); color: var(--humo); }
+.lead__alt { margin-top: 1rem; font-size: .86rem; color: var(--humo-2); text-align: center; }
+.lead__alt a { color: var(--ambar); border-bottom: 1px solid rgba(255,177,60,.3); }
+
+/* =============================================================
+   20. Footer
+   ============================================================= */
+.footer { border-top: 1px solid var(--acero); background: var(--carbon-2); padding-top: clamp(2.6rem, 2rem + 2vw, 4rem); }
+.footer__grid { display: grid; grid-template-columns: 1fr; gap: 2rem; padding-bottom: 2.4rem; }
+.footer__brand p { color: var(--humo); font-size: .92rem; margin: 1rem 0; max-width: 38ch; }
+.footer__ig { display: inline-flex; align-items: center; gap: .5rem; color: var(--cobre-claro); font-weight: 500; }
+.footer__ig:hover { color: var(--ambar); }
+.footer h4 { font-family: var(--stamp); text-transform: uppercase; letter-spacing: .1em; font-size: .78rem; color: var(--humo-2); margin-bottom: 1rem; }
+.footer__nav { display: grid; gap: .5rem; align-content: start; }
+.footer__nav a { color: var(--humo); font-size: .92rem; width: max-content; transition: color .2s; }
+.footer__nav a:hover { color: var(--ambar); }
+.footer__contact p { color: var(--humo); font-size: .92rem; margin-bottom: .5rem; }
+.footer__contact a { color: var(--blanco); }
+.footer__contact .btn { margin-top: .8rem; }
+.footer__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem; padding-block: 1.4rem; border-top: 1px solid var(--acero-soft); font-size: .82rem; color: var(--humo-2); }
+.footer__credits a { color: var(--humo); border-bottom: 1px solid var(--acero); }
+.footer__credits a:hover { color: var(--ambar); }
+
+/* =============================================================
+   21. Floating WhatsApp
+   ============================================================= */
+.wa-float {
+  position: fixed; right: clamp(.9rem, 3vw, 1.6rem); bottom: clamp(.9rem, 3vw, 1.6rem); z-index: 120;
+  display: inline-flex; align-items: center; gap: .55rem; padding: .85rem 1.1rem; border-radius: 999px;
+  background: var(--verde); color: #fff; font-family: var(--stamp); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; font-size: .9rem;
+  box-shadow: 0 14px 34px -10px rgba(34,179,91,.7); transform: translateY(120%); opacity: 0;
+  transition: transform .4s var(--ease-out), opacity .4s var(--ease-out), filter .25s;
+}
+.wa-float.is-visible { transform: translateY(0); opacity: 1; }
+.wa-float:hover { filter: brightness(1.08); }
+.wa-float svg { width: 26px; height: 26px; }
+
+/* =============================================================
+   22. Reveal animations (content-first, JS-enhanced)
+   ============================================================= */
+.js [data-reveal] { opacity: 0; transform: translateY(22px); }
+[data-reveal].in { animation: revealUp .7s var(--ease-out) forwards; }
+[data-reveal].shown { opacity: 1; transform: none; }
+@keyframes revealUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+/* Fallback duro: nunca dejar contenido oculto. Solo anula la animación (NO las transiciones de hover). */
+.reveal-all [data-reveal] { opacity: 1 !important; transform: none !important; animation: none !important; }
+
+/* =============================================================
+   23. Responsive
+   ============================================================= */
+@media (min-width: 540px) {
+  .benefits__grid { grid-template-columns: 1fr 1fr; }
+  .selector__results { grid-template-columns: 1fr 1fr; }
+  .catalog__grid { grid-template-columns: 1fr 1fr; }
+  .fogones__models { grid-template-columns: repeat(3, 1fr); }
+  .microform { grid-template-columns: 1fr 1fr auto; align-items: end; }
+}
+
+@media (min-width: 720px) {
+  .accessories__wrap { grid-template-columns: 1.6fr 1fr; }
+  .maintenance__grid { grid-template-columns: 1.3fr 1fr; }
+  .footer__grid { grid-template-columns: 2fr 1fr 1.2fr; }
+  .gallery__grid { grid-template-columns: repeat(3, 1fr); }
+  .contact__grid { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+
+@media (min-width: 960px) {
+  .nav__links { display: inline-flex; }
+  .nav__cta { display: inline-flex; }
+  .nav__burger { display: none; }
+  .hero__grid { grid-template-columns: 1.05fr .95fr; }
+  .benefits__grid { grid-template-columns: repeat(4, 1fr); }
+  .catalog__grid { grid-template-columns: repeat(4, 1fr); }
+  .catalog__split { grid-template-columns: 1fr 1.1fr; align-items: start; }
+  .ironwork__grid { grid-template-columns: .85fr 1.15fr; }
+}
+
+@media (min-width: 1280px) {
+  .catalog__split { grid-template-columns: 1fr 1.2fr; }
+}
+
+/* Mobile table -> stacked cards */
+@media (max-width: 639px) {
+  .table, .table tbody, .table tr, .table td { display: block; width: 100%; }
+  .table thead { position: absolute; left: -9999px; }
+  .table { border: 0; background: transparent; }
+  .table tr { background: var(--grafito); border: 1px solid var(--acero); border-radius: var(--radius-sm); margin-bottom: .7rem; padding: .4rem .2rem; }
+  .table td { border: 0; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .6rem 1rem; }
+  .table td::before { content: attr(data-th); font-family: var(--stamp); text-transform: uppercase; letter-spacing: .06em; font-size: .7rem; color: var(--humo-2); }
+  .table td:last-child { justify-content: flex-end; }
+  .table td:last-child::before { content: attr(data-th); margin-right: auto; }
+  .prod--row { flex-direction: column; }
+  .prod--row .prod__media--sm { width: 100%; max-width: none; aspect-ratio: 16/9; border-right: 0; border-bottom: 1px solid var(--acero); }
+}
+
+/* =============================================================
+   24. Reduced motion — only intrusive effects
+   ============================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .hero__ember { animation: none; }
+  .stamp > svg { animation: none; }
+  .fogones { background-attachment: scroll; }
+  body { background-attachment: scroll, scroll, scroll; }
+  .showcase__live .dot { animation: none; }
+  .showcase__card { transform: none !important; }
+  .showcase__head { transform: none !important; }
+}
+
+/* =============================================================
+   25. Real product photos (catalog / fogones / accesorios)
+   ============================================================= */
+.prod__media--photo { background: linear-gradient(180deg, #efece6, #e3ded5); aspect-ratio: 4/5; }
+.prod__media--photo::before { display: none; }
+.prod__media--photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.prod--row .prod__media--photo { aspect-ratio: auto; }
+.prod--row .prod__media--photo img { object-fit: contain; padding: .5rem; }
+.accessories__photo--prod { background: linear-gradient(180deg, #efece6, #e3ded5); }
+.accessories__photo--prod img { aspect-ratio: 4/3; object-fit: contain; padding: .4rem; }
+
+/* Fogón product cards */
+.fogones__grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.9rem; position: relative; }
+.fcard { display: flex; flex-direction: column; background: rgba(14,17,22,.8); border: 1px solid rgba(255,177,60,.22); border-radius: var(--radius); overflow: hidden; backdrop-filter: blur(3px); transition: transform .3s var(--ease-out), border-color .3s; }
+.fcard:hover { transform: translateY(-5px); border-color: var(--ambar); }
+.fcard__media { position: relative; aspect-ratio: 4/5; background: linear-gradient(180deg, #efece6, #e3ded5); overflow: hidden; }
+.fcard__media img { width: 100%; height: 100%; object-fit: cover; }
+.fcard__tag { position: absolute; top: .7rem; left: .7rem; font-family: var(--stamp); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; font-size: .68rem; background: rgba(11,13,16,.82); color: var(--ambar); border: 1px solid rgba(255,177,60,.32); padding: .3rem .6rem; border-radius: 999px; }
+.fcard__body { display: flex; flex-direction: column; flex: 1; padding: 1.1rem 1.2rem 1.3rem; }
+.fcard__body h3 { font-family: var(--stamp); font-weight: 600; font-size: 1.16rem; margin-bottom: .4rem; }
+.fcard__body p { color: var(--humo); font-size: .87rem; margin-bottom: 1.1rem; }
+.fcard__body .btn { margin-top: auto; align-self: flex-start; }
+/* Productos (reusa el componente .fcard) — carrusel horizontal */
+.products__scroller { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: var(--gutter); padding-bottom: 1rem; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--ambar) rgba(255,255,255,.08); }
+.products__scroller .fcard { flex: 0 0 clamp(250px, 80vw, 320px); scroll-snap-align: start; }
+.products__scroller::-webkit-scrollbar { height: 8px; }
+.products__scroller::-webkit-scrollbar-track { background: rgba(255,255,255,.06); border-radius: 999px; }
+.products__scroller::-webkit-scrollbar-thumb { background: var(--ambar); border-radius: 999px; }
+.fcard__media--contain { background: linear-gradient(180deg, #f3f1ec, #e6e1d8); }
+.fcard__media--contain img { object-fit: contain; padding: .6rem; }
+
+/* =============================================================
+   26. Showcase — 3D card unfold on scroll (video)
+   ============================================================= */
+.showcase { padding-block: clamp(2.6rem, 1rem + 7vw, 7.5rem); overflow: hidden; position: relative; }
+.showcase__head { text-align: center; max-width: 46rem; margin: 0 auto clamp(1.4rem, 3vw, 2.8rem); padding-inline: var(--gutter); will-change: transform; }
+.showcase__title { font-family: var(--serif); font-weight: 500; font-size: clamp(1.9rem, 1.1rem + 3.2vw, 3.3rem); letter-spacing: -.02em; line-height: 1.05; }
+.showcase__sub { color: var(--humo); margin-top: .7rem; }
+.showcase__stage { perspective: 1400px; display: flex; justify-content: center; padding-inline: var(--gutter); }
+.showcase__card { position: relative; width: min(1000px, 100%); transform-style: preserve-3d; will-change: transform; border: 4px solid #2b2f37; background: #15181e; border-radius: 28px; padding: clamp(.4rem, 1vw, .7rem); box-shadow: 0 9px 20px #0000004a, 0 37px 60px #00000055, 0 90px 90px #00000033; }
+.showcase__card::before { content: ""; position: absolute; inset: -1px; border-radius: 28px; pointer-events: none; box-shadow: inset 0 1px 0 rgba(214,143,78,.35); }
+.showcase__screen { position: relative; aspect-ratio: 16/9; border-radius: 18px; overflow: hidden; background: #000; }
+.showcase__screen video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.showcase__live { position: absolute; left: .85rem; bottom: .85rem; display: inline-flex; align-items: center; gap: .45rem; font-family: var(--stamp); text-transform: uppercase; letter-spacing: .08em; font-size: .66rem; color: #fff; background: rgba(11,13,16,.6); padding: .35rem .7rem; border-radius: 999px; backdrop-filter: blur(4px); }
+.showcase__live .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--oxido); box-shadow: 0 0 10px 2px rgba(255,90,42,.7); animation: livePulse 1.6s ease-in-out infinite; }
+@keyframes livePulse { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
+
+@media (min-width: 540px) {
+  .fogones__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 960px) {
+  .fogones__grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* =============================================================
+   27. Video hero a pantalla completa (se prende el fuego al scrollear)
+   ============================================================= */
+.vhero { position: relative; height: 220vh; background: var(--carbon); }
+.vhero__sticky { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: flex; align-items: flex-start; }
+.vhero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 72%; z-index: 0; background: #000; }
+.vhero__overlay { position: absolute; inset: 0; z-index: 1; will-change: opacity; background:
+  linear-gradient(180deg, rgba(11,13,16,.88) 0%, rgba(11,13,16,.58) 26%, rgba(11,13,16,.24) 50%, rgba(11,13,16,.5) 76%, rgba(11,13,16,.95) 100%),
+  radial-gradient(135% 80% at 30% 8%, transparent 42%, rgba(11,13,16,.7) 100%); }
+.vhero .container { position: relative; z-index: 2; width: 100%; padding-top: clamp(100px, 14vh, 156px); }
+.vhero__content { max-width: 680px; will-change: opacity, transform; }
+.vhero__title { font-family: var(--serif); font-weight: 500; font-size: clamp(2.3rem, 1.1rem + 5.8vw, 4.4rem); line-height: 1.02; letter-spacing: -.02em; margin: .5rem 0 1.1rem; text-shadow: 0 2px 30px rgba(0,0,0,.55); }
+.vhero__title em { font-style: italic; font-weight: 400; color: var(--ambar); }
+.vhero__sub { color: #fff; font-weight: 500; font-size: clamp(1.05rem, 1rem + .4vw, 1.25rem); max-width: 46ch; margin-bottom: 1.8rem; text-shadow: 0 1px 3px rgba(0,0,0,.78), 0 2px 22px rgba(0,0,0,.6); }
+.vhero__cue { position: absolute; left: 50%; bottom: 1.4rem; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: .55rem; font-family: var(--stamp); text-transform: uppercase; letter-spacing: .18em; font-size: .7rem; color: var(--blanco); will-change: opacity; text-shadow: 0 1px 12px rgba(0,0,0,.7); }
+.vhero__cueline { width: 1px; height: 32px; background: linear-gradient(var(--ambar), transparent); animation: cuePulse 2s var(--ease-soft) infinite; }
+@keyframes cuePulse { 0%,100% { opacity: .4; transform: scaleY(.7); } 50% { opacity: 1; transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .vhero { height: 100vh; }
+  .vhero__sticky { position: relative; }
+  .vhero__cueline { animation: none; }
+}
+
+</style>
+
+<!-- Favicon: forge mark -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0D10'/%3E%3Cpath d='M16 6c2 4-2 5-1 8 .6 1.8 2.4 2 2.4 4.2A3.4 3.4 0 0 1 16 22a3 3 0 0 1-2.6-4.6C14.8 9.5 14 8 16 6z' fill='%23FFB13C'/%3E%3Cpath d='M16 12c1.4 2 .2 3.2.6 4.6.3 1 1.2 1.1 1.2 2.3A1.8 1.8 0 0 1 16 21a1.7 1.7 0 0 1-1.5-2.6C15.6 14.6 15 13.3 16 12z' fill='%23C04B2A'/%3E%3C/svg%3E">
+
+<!-- Anti-flash: mark JS available + force-reveal safety net even if main.js never loads -->
+<script>
+  document.documentElement.classList.add('js');
+  setTimeout(function(){ document.documentElement.classList.add('reveal-all'); }, 8000);
+</script>
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "CalorCharrua",
+  "description": "Fabricación uruguaya de calefactores a leña, calefactores con horno, fogones personalizados y herrería a medida. 20 años de oficio, hierro de 5 mm.",
+  "image": "https://calorcharrua.com.uy/assets/img/hero-fuego.jpg",
+  "telephone": "+59895416324",
+  "email": "calorcharrua@gmail.com",
+  "address": { "@type": "PostalAddress", "streetAddress": "Ruta 34 km 40", "addressCountry": "UY" },
+  "areaServed": { "@type": "Country", "name": "Uruguay" },
+  "sameAs": ["https://www.instagram.com/calorcharrua"],
+  "slogan": "Calor real, hecho en hierro y a medida",
+  "knowsAbout": ["calefactores a leña", "calefactores con horno", "fogones", "herrería"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Calefactores CalorCharrua",
+  "itemListElement": [
+    { "@type": "Product", "name": "Calefactor Alto Rendimiento 35", "material": "Hierro 5 mm", "description": "Para ambientes de 40 a 50 m². Plancha lisa 5 mm.", "offers": { "@type": "Offer", "price": "16800", "priceCurrency": "UYU", "availability": "https://schema.org/InStock" } },
+    { "@type": "Product", "name": "Calefactor Alto Rendimiento 40", "material": "Hierro 5 mm", "description": "Para ambientes de 60 a 70 m². Plancha lisa 5 mm.", "offers": { "@type": "Offer", "price": "19000", "priceCurrency": "UYU", "availability": "https://schema.org/InStock" } },
+    { "@type": "Product", "name": "Calefactor Alto Rendimiento 45", "material": "Hierro 5 mm", "description": "Para ambientes de 80 a 90 m². Plancha lisa 5 mm.", "offers": { "@type": "Offer", "price": "21000", "priceCurrency": "UYU", "availability": "https://schema.org/InStock" } },
+    { "@type": "Product", "name": "Calefactor Alto Rendimiento 50", "material": "Hierro 5 mm", "description": "Para ambientes de 100 a 120 m². Plancha lisa 5 mm.", "offers": { "@type": "Offer", "price": "24500", "priceCurrency": "UYU", "availability": "https://schema.org/InStock" } },
+    { "@type": "Product", "name": "Calefactor con Horno 35", "material": "Hierro 5 mm", "description": "Para 40 a 50 m². Horno 14,5 L con pirómetro.", "offers": { "@type": "Offer", "price": "26000", "priceCurrency": "UYU", "availability": "https://schema.org/InStock" } },
+    { "@type": "Product", "name": "Calefactor con Horno 40", "material": "Hierro 5 mm", "description": "Para 60 a 70 m². Horno 16 L con pirómetro.", "offers": { "@type": "Offer", "price": "30000", "priceCurrency": "UYU", "availability": "https://schema.org/InStock" } },
+    { "@type": "Product", "name": "Calefactor con Horno 45", "material": "Hierro 5 mm", "description": "Para 80 a 90 m². Horno 21,5 L con pirómetro.", "offers": { "@type": "Offer", "price": "32500", "priceCurrency": "UYU", "availability": "https://schema.org/InStock" } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Hacen envíos a todo Uruguay?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, llevamos a todo el país. Coordinamos la entrega a tu ciudad cuando cerramos el pedido." } },
+    { "@type": "Question", "name": "¿Cómo sé qué calefactor necesito?", "acceptedAnswer": { "@type": "Answer", "text": "Se elige según los metros cuadrados del ambiente. Si tenés techos altos o poca aislación, lo ajustamos a tu caso." } },
+    { "@type": "Question", "name": "¿Los calefactores vienen con caños?", "acceptedAnswer": { "@type": "Answer", "text": "Los caños y accesorios se cotizan aparte, según cómo sea tu instalación." } },
+    { "@type": "Question", "name": "¿Tienen calefactores con horno?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Hay modelos con horno de 14,5 L, 16 L y 21,5 L, todos con pirómetro." } },
+    { "@type": "Question", "name": "¿Fabrican a medida?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Hacemos fogones, herrería, pantografía y trabajos personalizados." } },
+    { "@type": "Question", "name": "¿Dónde están?", "acceptedAnswer": { "@type": "Answer", "text": "En Ruta 34 km 40, Uruguay." } },
+    { "@type": "Question", "name": "¿Cómo consulto disponibilidad?", "acceptedAnswer": { "@type": "Answer", "text": "Por WhatsApp al 095 416 324." } }
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- ===================== SVG icon sprite (hidden) ===================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c2.5 4.5-2.2 5.8-1 9 .7 1.9 2.8 2.2 2.8 4.8A3.8 3.8 0 0 1 12 20.5a3.4 3.4 0 0 1-3-5.2C10.8 8.7 9.5 6 12 3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-hammer" viewBox="0 0 24 24"><path d="M14 4l6 6-2.5 2.5L11.5 6.5 14 4zM12.5 8.5L5 16l3 3 7.5-7.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h12v9H2zM14 9h4l3 3v3h-7zM6.5 18.5A1.5 1.5 0 1 0 6.5 15.5a1.5 1.5 0 0 0 0 3zM17.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-stamp" viewBox="0 0 24 24"><path d="M9 3h6v4l-1.5 4h-3L9 7zM5 21h14M7 21v-2.5A2.5 2.5 0 0 1 9.5 16h5A2.5 2.5 0 0 1 17 18.5V21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M4 14L14 4l6 6L10 20zM8 8l2 2M11 5l2 2M5 11l2 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-oven" viewBox="0 0 24 24"><path d="M4 3h16v18H4zM4 9h16M8 6h.01M11 6h.01M8 13a4 4 0 0 0 8 0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 4v3.8M12 16.2V20M4 12h3.8M16.2 12H20" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-grill" viewBox="0 0 24 24"><path d="M5 7h14l-1.5 6a6 6 0 0 1-11 0L5 7zM8 17l-1 4M16 17l1 4M9 4c0 1-1 1-1 2M12 3c0 1-1 1-1 2M15 4c0 1-1 1-1 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.5 7.8c-.3 0-.6.1-.8.4-.3.3-1 1-1 2.3s1 2.7 1.2 2.9c.1.2 2 3.1 4.9 4.2 2.4.9 2.9.8 3.4.7.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4l-1.7-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.1-.3 0-.4.1-.6l.5-.6c.1-.2.1-.3.2-.5 0-.2 0-.3-.1-.5l-.7-1.7c-.2-.5-.4-.4-.6-.4z" fill="currentColor"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="7" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21c4-4.5 7-7.5 7-11a7 7 0 1 0-14 0c0 3.5 3 6.5 7 11z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v5M12 16v5M3 12h5M16 12h5M6 6l3 3M15 15l3 3M18 6l-3 3M9 15l-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="nav" id="nav" data-nav>
+  <div class="nav__inner container">
+    <a class="brand" href="#inicio" aria-label="CalorCharrua, inicio">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22"><use href="#i-flame"></use></svg>
+      </span>
+      <span class="brand__text">Calor<span class="brand__accent">Charrua</span></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#elegi-por-m2">Elegí por m²</a>
+      <a href="#calefactores">Calefactores</a>
+      <a href="#fogones">Fogones</a>
+      <a href="#herreria">Herrería</a>
+      <a href="#mantenimiento">Mantenimiento</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <a class="btn btn--wa nav__cta" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, vi la web y quiero hacer una consulta.">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#i-wa"></use></svg>
+      <span>WhatsApp</span>
+    </a>
+
+    <button class="nav__burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer" data-burger>
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="drawer" id="drawer" data-drawer hidden>
+  <nav class="drawer__nav" aria-label="Menú móvil">
+    <a href="#inicio">Inicio</a>
+    <a href="#elegi-por-m2">Elegí por m²</a>
+    <a href="#calefactores">Calefactores</a>
+    <a href="#con-horno">Con horno</a>
+    <a href="#accesorios">Accesorios</a>
+    <a href="#fogones">Fogones</a>
+    <a href="#herreria">Herrería</a>
+    <a href="#productos">Productos</a>
+    <a href="#mantenimiento">Mantenimiento</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <a class="btn btn--wa btn--block" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, vi la web y quiero hacer una consulta.">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#i-wa"></use></svg>
+    <span>Consultar por WhatsApp</span>
+  </a>
+</div>
+<div class="drawer__scrim" data-scrim hidden></div>
+
+<main id="contenido">
+
+<!-- ===================== HERO ===================== -->
+<section class="vhero" id="inicio">
+  <div class="vhero__sticky">
+    <video class="vhero__video" muted playsinline preload="auto" poster="assets/img/hero-fuego.jpg" aria-hidden="true">
+      <source src="assets/video/calorcharrua-hero.mp4" type="video/mp4">
+    </video>
+    <div class="vhero__overlay" data-vhero-overlay aria-hidden="true"></div>
+    <div class="container">
+      <div class="vhero__content" data-vhero-content>
+        <p class="overline overline--light"><span class="overline__dot" aria-hidden="true"></span> Herrería desde 2005 · Ruta 34, Uruguay</p>
+        <h1 class="vhero__title">Calor para tu casa,<br>hecho en <em>hierro</em> y a medida</h1>
+        <p class="vhero__sub">Calefactores, fogones y herrería que fabricamos nosotros, acá en Uruguay. Hierro de 5 mm, a medida, con envío a todo el país.</p>
+        <div class="hero__cta">
+          <a class="btn btn--wa btn--lg" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, vi la web y quiero hacer una consulta sobre un calefactor.">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><use href="#i-wa"></use></svg>
+            <span>Consultar por WhatsApp</span>
+          </a>
+          <a class="btn btn--ghost btn--lg" href="#calefactores">Ver modelos</a>
+        </div>
+        <ul class="chips">
+          <li class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"></use></svg>Hierro 5 mm</li>
+          <li class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-hammer"></use></svg>Fabricación propia</li>
+          <li class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ruler"></use></svg>A medida</li>
+          <li class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-truck"></use></svg>Envíos a todo el país</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BENEFICIOS ===================== -->
+<section class="section benefits" aria-labelledby="benefits-h">
+  <div class="container">
+    <header class="section__head">
+      <p class="overline" data-reveal>Por qué CalorCharrua</p>
+      <h2 class="section__title" id="benefits-h" data-reveal>Hechos para durar, pensados para dar calor de verdad</h2>
+    </header>
+    <div class="benefits__grid">
+      <article class="card card--bene" data-reveal>
+        <span class="card__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-stamp"></use></svg></span>
+        <h3 class="card__title"><span class="count" data-count="20">20</span> años de oficio</h3>
+        <p>Herrería de verdad, conocimiento de taller y terminaciones que se notan en el uso diario.</p>
+      </article>
+      <article class="card card--bene" data-reveal>
+        <span class="card__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"></use></svg></span>
+        <h3 class="card__title">Hierro robusto de 5 mm</h3>
+        <p>Estructura firme, buen rendimiento y una vida útil que justifica cada peso.</p>
+      </article>
+      <article class="card card--bene" data-reveal>
+        <span class="card__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-hammer"></use></svg></span>
+        <h3 class="card__title">Fabricación propia</h3>
+        <p>Controlamos todo el proceso. Por eso podemos hacerte un cambio o algo a medida.</p>
+      </article>
+      <article class="card card--bene" data-reveal>
+        <span class="card__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-truck"></use></svg></span>
+        <h3 class="card__title">Envíos a todo Uruguay</h3>
+        <p>Estés donde estés, coordinamos la entrega hasta tu ciudad.</p>
+      </article>
+    </div>
+    <p class="section__cta" data-reveal>
+      <a class="link-cta" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, quiero asesoramiento para elegir un calefactor.">Quiero que me asesoren por WhatsApp <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+    </p>
+  </div>
+</section>
+
+<!-- ===================== SELECTOR POR M² ===================== -->
+<section class="section selector" id="elegi-por-m2" aria-labelledby="sel-h">
+  <div class="container">
+    <header class="section__head section__head--center">
+      <p class="overline" data-reveal>El atajo para decidir</p>
+      <h2 class="section__title" id="sel-h" data-reveal>Elegí tu calefactor según los m² de tu ambiente</h2>
+      <p class="section__lead" data-reveal>Decinos cuántos metros cuadrados querés calefaccionar y te mostramos el modelo que te conviene. Sin vueltas.</p>
+    </header>
+
+    <div class="selector__panel" data-reveal>
+      <div class="selector__ranges" role="tablist" aria-label="Rango de metros cuadrados" data-ranges>
+        <button class="range is-active" role="tab" aria-selected="true" data-range="0">40–50 m²</button>
+        <button class="range" role="tab" aria-selected="false" data-range="1">60–70 m²</button>
+        <button class="range" role="tab" aria-selected="false" data-range="2">80–90 m²</button>
+        <button class="range" role="tab" aria-selected="false" data-range="3">100–120 m²</button>
+      </div>
+
+      <div class="selector__results" data-results aria-live="polite">
+        <!-- Two result cards injected/updated by JS; rendered server-side default below -->
+        <article class="result">
+          <p class="result__tag">Opción 1 · Alto Rendimiento</p>
+          <h3 class="result__name" data-r-ar-name>Alto Rendimiento 35</h3>
+          <p class="result__desc">Calor potente y parejo, sin horno. El clásico robusto.</p>
+          <p class="result__price"><span data-r-ar-price>$16.800</span></p>
+          <a class="btn btn--wa btn--block" data-r-ar-cta href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el Alto Rendimiento 35 para un ambiente de 40 a 50 m². ¿Disponibilidad, precio final y envío?">Consultar este modelo</a>
+        </article>
+        <article class="result result--oven">
+          <p class="result__tag">Opción 2 · Con Horno</p>
+          <h3 class="result__name" data-r-ov-name>Con Horno 35</h3>
+          <p class="result__desc">Calefacciona y además cocinás, con horno y pirómetro.</p>
+          <p class="result__price"><span data-r-ov-price>$26.000</span></p>
+          <a class="btn btn--copper btn--block" data-r-ov-cta href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el Con Horno 35 para un ambiente de 40 a 50 m². ¿Disponibilidad, precio final y envío?">Consultar este modelo</a>
+        </article>
+      </div>
+
+      <p class="selector__note"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flame"></use></svg> Si tu casa tiene techos altos o poca aislación, lo ajustamos a tu caso. Avisanos y lo vemos juntos.</p>
+
+      <form class="microform" data-microform>
+        <label class="microform__field">
+          <span>Metros cuadrados</span>
+          <input type="number" name="m2" inputmode="numeric" min="10" max="400" placeholder="Ej: 75" required>
+        </label>
+        <label class="microform__field">
+          <span>Tu ciudad</span>
+          <input type="text" name="ciudad" placeholder="Ej: Paysandú" required>
+        </label>
+        <button class="btn btn--copper" type="submit">Recibir recomendación</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CATÁLOGO ALTO RENDIMIENTO ===================== -->
+<section class="section catalog" id="calefactores" aria-labelledby="ar-h">
+  <div class="container">
+    <header class="section__head">
+      <p class="overline" data-reveal>Catálogo · Sin horno</p>
+      <h2 class="section__title" id="ar-h" data-reveal>Calefactores de alto rendimiento</h2>
+      <p class="section__lead" data-reveal>Para calefaccionar hogares o locales con estructura fuerte y una estética que se ve hecha a mano. Cuatro tamaños según los metros.</p>
+    </header>
+
+    <ul class="features-row" data-reveal>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flame"></use></svg> Diseño único</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-oven"></use></svg> Puerta de vidrio vitrocerámico</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"></use></svg> Fabricación robusta</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ruler"></use></svg> Modelos por m²</li>
+    </ul>
+
+    <div class="catalog__grid">
+      <article class="prod" data-reveal>
+        <div class="prod__media prod__media--photo"><img src="assets/img/ar-40-50.jpg" alt="Calefactor de alto rendimiento CalorCharrua en hierro negro con puerta de vidrio, para 40 a 50 m²" loading="lazy" decoding="async" width="820" height="1025"><span class="prod__badge">40–50 m²</span></div>
+        <div class="prod__body">
+          <h3 class="prod__name">Alto Rendimiento 35</h3>
+          <dl class="spec">
+            <div><dt>Medidas</dt><dd>70 alto · 35 prof. · 35 frente</dd></div>
+            <div><dt>Material</dt><dd>Plancha lisa 5 mm</dd></div>
+            <div><dt>Leña</dt><dd>hasta 40 cm</dd></div>
+          </dl>
+          <p class="prod__price">$16.800</p>
+          <div class="prod__actions">
+            <a class="btn btn--wa btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el Alto Rendimiento 35 (40–50 m²). ¿Disponibilidad, precio final y envío?">Consultar</a>
+            <button class="btn btn--text btn--sm" type="button" data-detail>Ver detalles</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="prod" data-reveal>
+        <div class="prod__media prod__media--photo"><img src="assets/img/ar-60-70.jpg" alt="Calefactor de alto rendimiento CalorCharrua en hierro negro, para 60 a 70 m²" loading="lazy" decoding="async" width="820" height="1025"><span class="prod__badge">60–70 m²</span></div>
+        <div class="prod__body">
+          <h3 class="prod__name">Alto Rendimiento 40</h3>
+          <dl class="spec">
+            <div><dt>Medidas</dt><dd>70 alto · 40 prof. · 40 frente</dd></div>
+            <div><dt>Material</dt><dd>Plancha lisa 5 mm</dd></div>
+            <div><dt>Leña</dt><dd>hasta 50 cm</dd></div>
+          </dl>
+          <p class="prod__price">$19.000</p>
+          <div class="prod__actions">
+            <a class="btn btn--wa btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el Alto Rendimiento 40 (60–70 m²). ¿Disponibilidad, precio final y envío?">Consultar</a>
+            <button class="btn btn--text btn--sm" type="button" data-detail>Ver detalles</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="prod" data-reveal>
+        <div class="prod__media prod__media--photo"><img src="assets/img/ar-80-90.jpg" alt="Calefactor de alto rendimiento CalorCharrua en hierro negro, formato vertical, para 80 a 90 m²" loading="lazy" decoding="async" width="820" height="1025"><span class="prod__badge">80–90 m²</span></div>
+        <div class="prod__body">
+          <h3 class="prod__name">Alto Rendimiento 45</h3>
+          <dl class="spec">
+            <div><dt>Medidas</dt><dd>70 alto · 45 prof. · 45 frente</dd></div>
+            <div><dt>Material</dt><dd>Plancha lisa 5 mm</dd></div>
+            <div><dt>Leña</dt><dd>hasta 55 cm</dd></div>
+          </dl>
+          <p class="prod__price">$21.000</p>
+          <div class="prod__actions">
+            <a class="btn btn--wa btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el Alto Rendimiento 45 (80–90 m²). ¿Disponibilidad, precio final y envío?">Consultar</a>
+            <button class="btn btn--text btn--sm" type="button" data-detail>Ver detalles</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="prod" data-reveal>
+        <div class="prod__media prod__media--photo"><img src="assets/img/ar-100-120.jpg" alt="Calefactor de alto rendimiento CalorCharrua de gran tamaño, para 100 a 120 m²" loading="lazy" decoding="async" width="820" height="1025"><span class="prod__badge">100–120 m²</span></div>
+        <div class="prod__body">
+          <h3 class="prod__name">Alto Rendimiento 50</h3>
+          <dl class="spec">
+            <div><dt>Medidas</dt><dd>70 alto · 50 prof. · 50 frente</dd></div>
+            <div><dt>Material</dt><dd>Plancha lisa 5 mm</dd></div>
+            <div><dt>Leña</dt><dd>hasta 60 cm</dd></div>
+          </dl>
+          <p class="prod__price">$24.500</p>
+          <div class="prod__actions">
+            <a class="btn btn--wa btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el Alto Rendimiento 50 (100–120 m²). ¿Disponibilidad, precio final y envío?">Consultar</a>
+            <button class="btn btn--text btn--sm" type="button" data-detail>Ver detalles</button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="section__cta" data-reveal>
+      <a class="link-cta" href="#elegi-por-m2">Recomendarme por m² <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+    </p>
+  </div>
+</section>
+
+<!-- ===================== CATÁLOGO CON HORNO ===================== -->
+<section class="section catalog catalog--oven" id="con-horno" aria-labelledby="ov-h">
+  <div class="container">
+    <div class="catalog__split">
+      <div class="catalog__intro">
+        <p class="overline" data-reveal>Catálogo · Con horno</p>
+        <h2 class="section__title" id="ov-h" data-reveal>Calefactores con horno</h2>
+        <p class="section__lead" data-reveal>Para cuando el fuego también es parte de la cocina: calor y horno real, con pirómetro para controlar la temperatura.</p>
+        <ul class="features-list" data-reveal>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Puerta de vidrio vitrocerámico</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Pirómetro para el horno</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Calefacciona y cocina a la vez</li>
+        </ul>
+        <figure class="catalog__photo" data-reveal>
+          <img src="assets/img/estufa-detalle.jpg" alt="Detalle de un calefactor de hierro con su manija en espiral y el fuego encendido tras el vidrio" loading="lazy" decoding="async" width="1024" height="768">
+        </figure>
+      </div>
+
+      <div class="catalog__cards">
+        <article class="prod prod--row" data-reveal>
+          <div class="prod__media prod__media--sm prod__media--photo"><img src="assets/img/horno-40-50.jpg" alt="Calefactor con horno CalorCharrua, doble puerta con vidrio y pirómetro, para 40 a 50 m²" loading="lazy" decoding="async" width="820" height="1025"><span class="prod__badge">40–50 m²</span></div>
+          <div class="prod__body">
+            <h3 class="prod__name">Con Horno 35</h3>
+            <dl class="spec spec--row">
+              <div><dt>Medidas</dt><dd>85 · 35 · 35</dd></div>
+              <div><dt>Horno</dt><dd>14,5 L</dd></div>
+              <div><dt>Material</dt><dd>Hierro 5 mm</dd></div>
+            </dl>
+            <div class="prod__foot"><p class="prod__price">$26.000</p>
+            <a class="btn btn--wa btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el Con Horno 35 (40–50 m², horno 14,5 L). ¿Disponibilidad, precio final y envío?">Consultar</a></div>
+          </div>
+        </article>
+
+        <article class="prod prod--row" data-reveal>
+          <div class="prod__media prod__media--sm prod__media--photo"><img src="assets/img/horno-60-70.jpg" alt="Calefactor con horno CalorCharrua, doble compartimento y pirómetro, para 60 a 70 m²" loading="lazy" decoding="async" width="820" height="1025"><span class="prod__badge">60–70 m²</span></div>
+          <div class="prod__body">
+            <h3 class="prod__name">Con Horno 40</h3>
+            <dl class="spec spec--row">
+              <div><dt>Medidas</dt><dd>85 · 40 · 40</dd></div>
+              <div><dt>Horno</dt><dd>16 L</dd></div>
+              <div><dt>Material</dt><dd>Hierro 5 mm</dd></div>
+            </dl>
+            <div class="prod__foot"><p class="prod__price">$30.000</p>
+            <a class="btn btn--wa btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el Con Horno 40 (60–70 m², horno 16 L). ¿Disponibilidad, precio final y envío?">Consultar</a></div>
+          </div>
+        </article>
+
+        <article class="prod prod--row" data-reveal>
+          <div class="prod__media prod__media--sm prod__media--photo"><img src="assets/img/horno-80-90.jpg" alt="Calefactor con horno CalorCharrua de mayor capacidad, doble puerta vidriada, para 80 a 90 m²" loading="lazy" decoding="async" width="820" height="1025"><span class="prod__badge">80–90 m²</span></div>
+          <div class="prod__body">
+            <h3 class="prod__name">Con Horno 45</h3>
+            <dl class="spec spec--row">
+              <div><dt>Medidas</dt><dd>85 · 45 · 45</dd></div>
+              <div><dt>Horno</dt><dd>21,5 L</dd></div>
+              <div><dt>Material</dt><dd>Hierro 5 mm</dd></div>
+            </dl>
+            <div class="prod__foot"><p class="prod__price">$32.500</p>
+            <a class="btn btn--wa btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el Con Horno 45 (80–90 m², horno 21,5 L). ¿Disponibilidad, precio final y envío?">Consultar</a></div>
+          </div>
+        </article>
+
+        <p class="section__cta section__cta--left" data-reveal>
+          <a class="link-cta" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, quiero un calefactor con horno. ¿Me asesorás?">Quiero un calefactor con horno <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACCESORIOS ===================== -->
+<section class="section accessories" id="accesorios" aria-labelledby="acc-h">
+  <div class="container">
+    <header class="section__head">
+      <p class="overline" data-reveal>Para completar la instalación</p>
+      <h2 class="section__title" id="acc-h" data-reveal>Accesorios e instalación</h2>
+      <p class="section__lead" data-reveal>Los caños y accesorios se cotizan aparte, según cómo sea tu instalación. Si querés, mandanos una foto del lugar y te asesoramos.</p>
+    </header>
+
+    <div class="accessories__wrap">
+      <table class="table" data-reveal>
+        <thead><tr><th>Accesorio</th><th>Detalle</th><th>Precio</th></tr></thead>
+        <tbody>
+          <tr><td data-th="Accesorio">Metro de caño</td><td data-th="Detalle">Hierro 2 mm</td><td data-th="Precio">$1.400</td></tr>
+          <tr><td data-th="Accesorio">Desvío para pared</td><td data-th="Detalle">Hierro 2 mm</td><td data-th="Precio">$1.600</td></tr>
+          <tr><td data-th="Accesorio">Sombrero cortaviento</td><td data-th="Detalle">Hierro 2 mm</td><td data-th="Precio">$1.600</td></tr>
+          <tr><td data-th="Accesorio">Platinas</td><td data-th="Detalle">Accesorio de instalación</td><td data-th="Precio">$600</td></tr>
+          <tr><td data-th="Accesorio">Leñero minimalista mediano</td><td data-th="Detalle">42 × 45 × 38 cm · hierro 2 mm</td><td data-th="Precio">$2.500</td></tr>
+          <tr><td data-th="Accesorio">Leñero minimalista grande</td><td data-th="Detalle">53 × 45 × 45 cm · hierro 2 mm</td><td data-th="Precio">$3.500</td></tr>
+        </tbody>
+      </table>
+
+      <aside class="accessories__help" data-reveal>
+        <figure class="accessories__photo accessories__photo--prod">
+          <img src="assets/img/accesorios-canos.jpg" alt="Juego de caños, desvíos, sombreretes cortaviento y platinas en hierro con terminación negra" loading="lazy" decoding="async" width="820" height="1025">
+        </figure>
+        <h3>¿No sabés qué necesitás?</h3>
+        <p>Pasame una foto del lugar donde va el calefactor y te armo el presupuesto de caños y accesorios para tu caso.</p>
+        <a class="btn btn--copper btn--block" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, les paso una foto del lugar para que me asesoren con los caños y accesorios.">Pasar una foto y que me asesoren</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOGONES ===================== -->
+<section class="section fogones" id="fogones" aria-labelledby="fog-h" style="background-image:url('assets/img/fogon.jpg')">
+  <div class="fogones__overlay" aria-hidden="true"></div>
+  <div class="container fogones__inner">
+    <header class="section__head">
+      <p class="overline overline--light" data-reveal>Para el patio y los encuentros</p>
+      <h2 class="section__title" id="fog-h" data-reveal>Fogones personalizados para patios, eventos y juntadas</h2>
+      <p class="section__lead" data-reveal>Hacemos fogones robustos, funcionales y con identidad propia. Terminación negra u oxidada, con parrilla, plancha, ruedas y los detalles que quieras grabados por pantografía.</p>
+    </header>
+
+    <div class="fogones__grid">
+      <article class="fcard" data-reveal>
+        <div class="fcard__media"><img src="assets/img/fogonero-95-oxidado.jpg" alt="Fogonero de 95 cm con terminación oxidada, ruedas tipo carro, parrilla y mesa lateral" loading="lazy" decoding="async" width="820" height="1025"><span class="fcard__tag">Oxidado</span></div>
+        <div class="fcard__body"><h3>Fogonero 95</h3><p>Cuerpo circular sobre ruedas, parrilla, mesa lateral y brazo regulable. La pieza protagonista del patio.</p>
+          <a class="btn btn--copper btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el Fogonero 95 cm oxidado. ¿Precio y envío?">Consultar</a></div>
+      </article>
+      <article class="fcard" data-reveal>
+        <div class="fcard__media"><img src="assets/img/fogonero-95-negro.jpg" alt="Fogonero de 95 cm con terminación negra, ruedas, superficie de cocción y brasero central" loading="lazy" decoding="async" width="820" height="1025"><span class="fcard__tag">Negro</span></div>
+        <div class="fcard__body"><h3>Fogonero 95</h3><p>La versión negra, más limpia y moderna: ruedas, brasero central, mesa auxiliar y soporte regulable.</p>
+          <a class="btn btn--copper btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el Fogonero 95 cm negro. ¿Precio y envío?">Consultar</a></div>
+      </article>
+      <article class="fcard" data-reveal>
+        <div class="fcard__media"><img src="assets/img/fogonero-redondo-multi.jpg" alt="Fogonero redondo oxidado con parrilla, chapa de cocción, brasero central y parrilla regulable elevada" loading="lazy" decoding="async" width="820" height="1025"><span class="fcard__tag">Multifunción</span></div>
+        <div class="fcard__body"><h3>Fogón redondo</h3><p>Parrilla, chapa de cocción, brasero central y parrilla regulable elevada. Para cocinar al fuego de mil maneras.</p>
+          <a class="btn btn--copper btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el fogón redondo multifunción oxidado. ¿Precio y envío?">Consultar</a></div>
+      </article>
+      <article class="fcard" data-reveal>
+        <div class="fcard__media"><img src="assets/img/fogonero-redondo-tapa.jpg" alt="Fogón redondo bajo con tapa superior, terminación oxidada y manijas tipo aro" loading="lazy" decoding="async" width="820" height="1025"><span class="fcard__tag">Con tapa</span></div>
+        <div class="fcard__body"><h3>Fogón con tapa</h3><p>Cuerpo circular bajo con tapa: cerrás el fuego cuando no lo usás y queda prolijo. Ideal para terrazas.</p>
+          <a class="btn btn--copper btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el fogón redondo con tapa oxidada. ¿Precio y envío?">Consultar</a></div>
+      </article>
+    </div>
+
+    <ul class="fogones__feats" data-reveal>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wheel"></use></svg> Ruedas metálicas</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-grill"></use></svg> Parrilla</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-stamp"></use></svg> Plancha</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flame"></use></svg> Brasero central</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"></use></svg> Nombres o diseños grabados</li>
+    </ul>
+
+    <p class="section__cta" data-reveal>
+      <a class="btn btn--copper btn--lg" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, quiero un fogón personalizado. Les cuento la idea.">Quiero mi fogón personalizado</a>
+    </p>
+  </div>
+</section>
+
+<!-- ===================== HERRERÍA ===================== -->
+<section class="section ironwork" id="herreria" aria-labelledby="herr-h">
+  <div class="container ironwork__grid">
+    <figure class="ironwork__photo" data-reveal>
+      <img src="assets/img/herreria-medida.jpg" alt="Estructura de hierro a medida con malla metálica y calado de hojas, hecha en el taller" loading="lazy" decoding="async" width="582" height="812">
+      <figcaption>Trabajo de herrería a medida</figcaption>
+    </figure>
+    <div class="ironwork__copy">
+      <p class="overline" data-reveal>Más allá del fuego</p>
+      <h2 class="section__title" id="herr-h" data-reveal>Herrería y trabajos a medida</h2>
+      <p class="section__lead" data-reveal>Además de calefactores y fogones, hacemos trabajos de herrería a medida: estructuras, pérgolas, cartelería, pantografía y piezas personalizadas. Si lo podés dibujar, lo podemos forjar.</p>
+      <div class="ironwork__services">
+        <article class="svc" data-reveal><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-hammer"></use></svg><h3>Pérgolas</h3><p>En hierro y madera, a la medida de tu espacio.</p></article>
+        <article class="svc" data-reveal><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-stamp"></use></svg><h3>Cartelería</h3><p>Carteles y letras en metal para tu negocio o casa.</p></article>
+        <article class="svc" data-reveal><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"></use></svg><h3>Pantografía</h3><p>Cortes y grabados con precisión sobre el metal.</p></article>
+        <article class="svc" data-reveal><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ruler"></use></svg><h3>Personalizado</h3><p>Lo que tengas en mente, lo llevamos al taller.</p></article>
+      </div>
+      <p class="section__cta section__cta--left" data-reveal>
+        <a class="link-cta" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, quiero un trabajo de herrería a medida. Les cuento la idea.">Contame tu idea por WhatsApp <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUCTOS ===================== -->
+<section class="section products" id="productos" aria-labelledby="prod-h">
+  <div class="container">
+    <header class="section__head">
+      <p class="overline" data-reveal>Más para tu fuego</p>
+      <h2 class="section__title" id="prod-h" data-reveal>Más productos del taller</h2>
+      <p class="section__lead" data-reveal>Hornos a leña, fogones y más, fabricados en el taller y a medida. Deslizá para verlos todos — consultá por WhatsApp y te paso precio y envío.</p>
+    </header>
+    <div class="products__scroller" role="list">
+      <article class="fcard" data-reveal role="listitem">
+        <div class="fcard__media fcard__media--contain"><img src="assets/img/modulo-oxidado.jpg" alt="Horno a leña en acero corten, para pizzas y cocción a la leña" loading="lazy" decoding="async"><span class="fcard__tag">Acero corten 3 mm</span></div>
+        <div class="fcard__body"><h3>Horno a leña</h3><p>Horno a leña fabricado en acero corten de 3 mm para máxima resistencia y durabilidad. Su diseño robusto asegura una cocción uniforme, logrando pizzas crujientes y llenas de sabor en minutos. Llevá el auténtico sabor de la leña a tus reuniones y convertí cada comida en una experiencia única. 🍕✨</p>
+          <a class="btn btn--copper btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el horno a leña de acero corten. ¿Precio y envío?">Consultar</a></div>
+      </article>
+      <article class="fcard" data-reveal role="listitem">
+        <div class="fcard__media"><img src="assets/img/chimenea-mesa.jpg" alt="Fogón a bioetanol de mesa en hierro negro, encendido, con calado decorativo" loading="lazy" decoding="async"><span class="fcard__tag">Bioetanol</span></div>
+        <div class="fcard__body"><h3>Fogón a bioetanol</h3><p>Fabricado en chapa de 2 mm, con diseño calado personalizable que se adapta a tu estilo. Autonomía de 2 horas y consumo eficiente de 0,5 l/h; calienta hasta 30 m². Combina funcionalidad y estética para transformar cualquier espacio en un refugio cálido y elegante.</p>
+          <a class="btn btn--copper btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el fogón a bioetanol. ¿Precio y envío?">Consultar</a></div>
+      </article>
+      <article class="fcard" data-reveal role="listitem">
+        <div class="fcard__media fcard__media--contain"><img src="assets/img/lenero.jpg" alt="Leñero minimalista de hierro negro con cortes geométricos y leña" loading="lazy" decoding="async"><span class="fcard__tag">Minimalista</span></div>
+        <div class="fcard__body"><h3>Leñero minimalista</h3><p>Leñero de líneas limpias y cortes geométricos. Ordena la leña y suma diseño al ambiente.</p>
+          <a class="btn btn--copper btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el leñero minimalista. ¿Precio y medidas?">Consultar</a></div>
+      </article>
+      <article class="fcard" data-reveal role="listitem">
+        <div class="fcard__media fcard__media--contain"><img src="assets/img/producto-fogon-1.jpg" alt="Fogón Fénix redondo en chapa, con parrilla y logo CalorCharrua grabado" loading="lazy" decoding="async" width="1000" height="1250"><span class="fcard__tag">Parrilla 3 mm</span></div>
+        <div class="fcard__body"><h3>Fogón Fénix</h3><p>Fogón de alta calidad, fabricado en chapa de 2 mm y parrilla en plancha de 3 mm. Con su diseño único, es la elección perfecta para los amantes de la parrilla que buscan durabilidad y estilo en cada asado. ¡Transformá tu experiencia al aire libre con el Fogón Fénix! 🍖🔥</p>
+          <a class="btn btn--copper btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, me interesa el Fogón Fénix. ¿Precio y envío?">Consultar</a></div>
+      </article>
+    </div>
+    <p class="section__cta" data-reveal>
+      <a class="link-cta" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, busco un producto que no vi en la web. ¿Lo fabrican?">¿Buscás algo que no ves acá? Escribinos <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+    </p>
+  </div>
+</section>
+
+<!-- ===================== MANTENIMIENTO ===================== -->
+<section class="section maintenance" id="mantenimiento" aria-labelledby="mant-h">
+  <div class="container maintenance__grid">
+    <div class="maintenance__copy">
+      <p class="overline" data-reveal>Antes del frío</p>
+      <h2 class="section__title" id="mant-h" data-reveal>Prepará tu calefactor para el invierno</h2>
+      <p class="section__lead" data-reveal>Conviene hacer un mantenimiento una vez al año: limpiar la chimenea y la cámara de combustión. Tira mejor, rinde más y el calefactor te dura muchos inviernos.</p>
+      <p class="section__cta section__cta--left" data-reveal>
+        <a class="btn btn--copper" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, quiero consultar por el mantenimiento de mi calefactor.">Consultar mantenimiento</a>
+      </p>
+    </div>
+    <ul class="checklist" data-reveal>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Limpieza de chimenea</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Revisión de la cámara de combustión</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Chequeo de tiraje y sellos</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section faq" id="faq" aria-labelledby="faq-h">
+  <div class="container faq__wrap">
+    <header class="section__head">
+      <p class="overline" data-reveal>Lo que más nos preguntan</p>
+      <h2 class="section__title" id="faq-h" data-reveal>Preguntas frecuentes</h2>
+    </header>
+    <div class="faq__list" data-reveal data-accordion>
+      <details class="qa"><summary>¿Hacen envíos a todo Uruguay?<span class="qa__ico" aria-hidden="true"></span></summary><div class="qa__a"><p>Sí, llevamos a todo el país. Coordinamos la entrega a tu ciudad cuando cerramos el pedido.</p></div></details>
+      <details class="qa"><summary>¿Cómo sé qué calefactor necesito?<span class="qa__ico" aria-hidden="true"></span></summary><div class="qa__a"><p>Se elige según los metros cuadrados del ambiente. Si tenés techos altos o poca aislación, lo ajustamos a tu caso.</p></div></details>
+      <details class="qa"><summary>¿Los calefactores vienen con caños?<span class="qa__ico" aria-hidden="true"></span></summary><div class="qa__a"><p>Los caños y accesorios se cotizan aparte, según cómo sea tu instalación.</p></div></details>
+      <details class="qa"><summary>¿Tienen calefactores con horno?<span class="qa__ico" aria-hidden="true"></span></summary><div class="qa__a"><p>Sí. Hay modelos con horno de 14,5 L, 16 L y 21,5 L, todos con pirómetro.</p></div></details>
+      <details class="qa"><summary>¿Fabrican a medida?<span class="qa__ico" aria-hidden="true"></span></summary><div class="qa__a"><p>Sí. Hacemos fogones, herrería, pantografía y trabajos personalizados.</p></div></details>
+      <details class="qa"><summary>¿Dónde están ubicados?<span class="qa__ico" aria-hidden="true"></span></summary><div class="qa__a"><p>En Ruta 34 km 40, Uruguay.</p></div></details>
+      <details class="qa"><summary>¿Cómo consulto disponibilidad?<span class="qa__ico" aria-hidden="true"></span></summary><div class="qa__a"><p>Por WhatsApp al 095 416 324. Te respondemos a la brevedad.</p></div></details>
+    </div>
+    <p class="section__cta" data-reveal>
+      <a class="link-cta" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, tengo una consulta.">¿Otra pregunta? Escribinos <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+    </p>
+  </div>
+</section>
+
+<!-- ===================== CONTACTO ===================== -->
+<section class="section contact" id="contacto" aria-labelledby="con-h">
+  <div class="contact__ember" aria-hidden="true"></div>
+  <div class="container contact__grid">
+    <div class="contact__info">
+      <p class="overline" data-reveal>Hablemos</p>
+      <h2 class="section__title" id="con-h" data-reveal>Contanos tu ciudad y los m² del ambiente</h2>
+      <p class="section__lead" data-reveal>Te respondemos con disponibilidad, precio final y envío. Lo más rápido es por WhatsApp.</p>
+
+      <a class="btn btn--wa btn--lg btn--block" data-reveal href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, vi la web y quiero consultar por un calefactor/fogón. Estoy en [ciudad] y quiero calefaccionar un ambiente de [m²]. ¿Me pasás disponibilidad, precio final y envío?">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-wa"></use></svg>
+        <span>Consultar por WhatsApp</span>
+      </a>
+
+      <ul class="contact__data" data-reveal>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"></use></svg><div><span>WhatsApp</span><a href="https://wa.me/59895416324">095 416 324</a></div></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ig"></use></svg><div><span>Instagram</span><a href="https://www.instagram.com/calorcharrua" target="_blank" rel="noopener">@calorcharrua</a></div></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"></use></svg><div><span>Dónde estamos</span><a href="https://www.google.com/maps?q=-34.7066065,-55.8779961" target="_blank" rel="noopener">Ruta 34 km 40, Uruguay</a></div></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-truck"></use></svg><div><span>Envíos</span><a href="#inicio">A todo Uruguay</a></div></li>
+      </ul>
+
+      <div class="contact__map" data-reveal>
+        <iframe title="Ubicación de CalorCharrua: Ruta 34 km 40, Uruguay" src="https://maps.google.com/maps?q=-34.7066065,-55.8779961&z=15&hl=es&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <div class="contact__formwrap" data-reveal>
+      <form class="lead" data-form novalidate>
+        <h3 class="lead__title">Dejanos tu consulta</h3>
+        <div class="field">
+          <label for="f-nombre">Nombre <span aria-hidden="true">*</span></label>
+          <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+          <small class="field__err" data-err>Poné tu nombre.</small>
+        </div>
+        <div class="field">
+          <label for="f-email">Email <span aria-hidden="true">*</span></label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+          <small class="field__err" data-err>Revisá el email.</small>
+        </div>
+        <div class="field">
+          <label for="f-tel">Teléfono <small>(opcional)</small></label>
+          <input id="f-tel" name="telefono" type="tel" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="f-tipo">¿Qué necesitás?</label>
+          <select id="f-tipo" name="tipo">
+            <option>Calefactor alto rendimiento</option>
+            <option>Calefactor con horno</option>
+            <option>Fogón personalizado</option>
+            <option>Accesorios / instalación</option>
+            <option>Herrería a medida</option>
+            <option>Mantenimiento</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">Mensaje <span aria-hidden="true">*</span></label>
+          <textarea id="f-msg" name="mensaje" rows="4" placeholder="Contanos tu ciudad y los m² del ambiente." required></textarea>
+          <small class="field__err" data-err>Escribinos un mensajito.</small>
+        </div>
+        <label class="check">
+          <input type="checkbox" name="privacidad" required>
+          <span>Acepto que usen mis datos para responderme esta consulta.</span>
+        </label>
+        <button class="btn btn--copper btn--block btn--lg" type="submit" data-submit>Enviar consulta</button>
+        <p class="lead__status" data-status hidden></p>
+        <p class="lead__alt">¿Preferís hablar directo? <a href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, quiero hacer una consulta.">Escribinos por WhatsApp</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a class="brand" href="#inicio" aria-label="CalorCharrua">
+        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><use href="#i-flame"></use></svg></span>
+        <span class="brand__text">Calor<span class="brand__accent">Charrua</span></span>
+      </a>
+      <p>Calefactores, fogones y herrería hechos en hierro, a medida. Fabricación uruguaya con 20 años de oficio.</p>
+      <a class="footer__ig" href="https://www.instagram.com/calorcharrua" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#i-ig"></use></svg> @calorcharrua
+      </a>
+    </div>
+    <nav class="footer__nav" aria-label="Pie de página">
+      <h4>Navegá</h4>
+      <a href="#calefactores">Calefactores</a>
+      <a href="#con-horno">Con horno</a>
+      <a href="#fogones">Fogones</a>
+      <a href="#herreria">Herrería</a>
+      <a href="#mantenimiento">Mantenimiento</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="footer__contact">
+      <h4>Contacto</h4>
+      <p><a href="https://wa.me/59895416324">WhatsApp 095 416 324</a></p>
+      <p>Ruta 34 km 40, Uruguay</p>
+      <p>Envíos a todo el país</p>
+      <a class="btn btn--wa btn--sm" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, vi la web y quiero hacer una consulta.">Consultar ahora</a>
+    </div>
+  </div>
+  <div class="footer__bottom container">
+    <p>© <span data-year>2026</span> CalorCharrua · Hecho en hierro, en Uruguay.</p>
+    <p class="footer__credits">Fotos de ambiente bajo licencias Creative Commons. <a href="creditos.html">Créditos →</a></p>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="wa-float" href="https://wa.me/59895416324" data-wa="Hola CalorCharrua, vi la web y quiero hacer una consulta." data-wafloat aria-label="Consultar por WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><use href="#i-wa"></use></svg>
+  <span class="wa-float__txt">Consultar</span>
+</a>
+
+<script>
+/* manifest */
+(function () {
+  "use strict";
+  window.__BRAND__ = {
+    wa: "59895416324",
+    // m² selector recommendation map (index = range button)
+    ranges: [
+      { m2: "40 a 50 m²",   ar: { name: "Alto Rendimiento 35", price: "$16.800" }, ho: { name: "Con Horno 35", price: "$26.000", detail: "horno 14,5 L" } },
+      { m2: "60 a 70 m²",   ar: { name: "Alto Rendimiento 40", price: "$19.000" }, ho: { name: "Con Horno 40", price: "$30.000", detail: "horno 16 L" } },
+      { m2: "80 a 90 m²",   ar: { name: "Alto Rendimiento 45", price: "$21.000" }, ho: { name: "Con Horno 45", price: "$32.500", detail: "horno 21,5 L" } },
+      { m2: "100 a 120 m²", ar: { name: "Alto Rendimiento 50", price: "$24.500" }, ho: { name: "Con Horno a medida", price: "Consultanos", detail: "para 100–120 m²", custom: true } }
+    ]
+  };
+})();
+
+/* main */
+(function () {
+  "use strict";
+
+  var data = window.__BRAND__ || {};
+  var WA = data.wa || "59895416324";
+
+  var $ = function (s, sc) { return (sc || document).querySelector(s); };
+  var $$ = function (s, sc) { return Array.prototype.slice.call((sc || document).querySelectorAll(s)); };
+  var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function safe(fn, name) { try { fn(); } catch (e) { console.warn("[" + name + "]", e); } }
+  function waHref(msg) { return "https://wa.me/" + WA + (msg ? "?text=" + encodeURIComponent(msg) : ""); }
+
+  /* ---- WhatsApp links: enrich [data-wa] with prefilled text ---- */
+  function initWa() {
+    $$("[data-wa]").forEach(function (a) {
+      var msg = a.getAttribute("data-wa");
+      if (msg) a.setAttribute("href", waHref(msg));
+      if (a.classList.contains("wa-float") || a.classList.contains("nav__cta")) {
+        a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener");
+      }
+    });
+  }
+
+  /* ---- Navbar: sticky state + active link ---- */
+  function initNav() {
+    var nav = $("[data-nav]");
+    var hero = $(".vhero");
+    function onScroll() {
+      if (!nav) return;
+      // Transparente sobre el home (deja ver el video y el prendido de luces);
+      // sólida recién cuando el hero terminó de pasar bajo la barra.
+      var solid = hero ? hero.getBoundingClientRect().bottom <= 72 : window.scrollY > 12;
+      nav.classList.toggle("is-stuck", solid);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    // Active link highlight
+    var links = $$(".nav__links a");
+    var map = {};
+    links.forEach(function (l) {
+      var id = l.getAttribute("href"); if (id && id.charAt(0) === "#") map[id.slice(1)] = l;
+    });
+    var sections = Object.keys(map).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+    if ("IntersectionObserver" in window && sections.length) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            links.forEach(function (l) { l.classList.remove("is-active"); });
+            if (map[en.target.id]) map[en.target.id].classList.add("is-active");
+          }
+        });
+      }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+      sections.forEach(function (s) { io.observe(s); });
+    }
+  }
+
+  /* ---- Mobile drawer ---- */
+  function initDrawer() {
+    var burger = $("[data-burger]"), drawer = $("[data-drawer]"), scrim = $("[data-scrim]");
+    if (!burger || !drawer) return;
+    drawer.removeAttribute("hidden");
+    if (scrim) scrim.removeAttribute("hidden");
+    function setOpen(open) {
+      drawer.classList.toggle("is-open", open);
+      if (scrim) scrim.classList.toggle("is-open", open);
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      document.body.style.overflow = open ? "hidden" : "";
+    }
+    burger.addEventListener("click", function () { setOpen(!drawer.classList.contains("is-open")); });
+    if (scrim) scrim.addEventListener("click", function () { setOpen(false); });
+    $$("a", drawer).forEach(function (a) { a.addEventListener("click", function () { setOpen(false); }); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
+  }
+
+  /* ---- Scroll reveal (content-first, JS only enhances) ---- */
+  function initReveals() {
+    var els = $$("[data-reveal]");
+    if (!els.length) return;
+    // Nota: NO se gatea por reduced-motion (Windows suele traerlo activo por defecto y aplanaría todo).
+    if (!("IntersectionObserver" in window)) {
+      document.documentElement.classList.add("reveal-all");
+      return;
+    }
+    function reveal(el) {
+      if (el.classList.contains("in") || el.classList.contains("shown")) return;
+      el.classList.add("in");
+      var done = function () { el.classList.add("shown"); el.classList.remove("in"); el.removeEventListener("animationend", done); };
+      el.addEventListener("animationend", done);
+      setTimeout(done, 900); // por si animationend no dispara (tab en segundo plano, etc.)
+    }
+    var io = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { reveal(en.target); obs.unobserve(en.target); }
+      });
+    }, { threshold: 0.05, rootMargin: "0px 0px -8% 0px" });
+    els.forEach(function (el) { io.observe(el); });
+    // Safety net: revelar lo que quede después de 6s
+    setTimeout(function () { els.forEach(reveal); }, 6000);
+  }
+
+  /* ---- Count up (the "20 años") ---- */
+  function initCount() {
+    var els = $$("[data-count]");
+    if (!els.length) return;
+    els.forEach(function (el) {
+      var target = parseInt(el.getAttribute("data-count"), 10) || 0;
+      if (!("IntersectionObserver" in window)) { el.textContent = target; return; }
+      var done = false;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting && !done) {
+            done = true;
+            var start = null, dur = 1100;
+            function step(t) {
+              if (!start) start = t;
+              var p = Math.min((t - start) / dur, 1);
+              el.textContent = Math.round((0.5 - Math.cos(p * Math.PI) / 2) * target);
+              if (p < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          }
+        });
+      }, { threshold: 0.6 });
+      io.observe(el);
+    });
+  }
+
+  /* ---- m² selector ---- */
+  function initSelector() {
+    var ranges = $("[data-ranges]"), results = $("[data-results]");
+    if (!ranges || !results || !data.ranges) return;
+    var btns = $$(".range", ranges);
+    var arName = $("[data-r-ar-name]"), arPrice = $("[data-r-ar-price]"), arCta = $("[data-r-ar-cta]");
+    var ovName = $("[data-r-ov-name]"), ovPrice = $("[data-r-ov-price]"), ovCta = $("[data-r-ov-cta]");
+
+    function apply(i) {
+      var r = data.ranges[i]; if (!r) return;
+      arName.textContent = r.ar.name;
+      arPrice.textContent = r.ar.price;
+      arCta.setAttribute("href", waHref("Hola CalorCharrua, me interesa el " + r.ar.name + " para un ambiente de " + r.m2 + ". ¿Disponibilidad, precio final y envío?"));
+      ovName.textContent = r.ho.name;
+      ovPrice.textContent = r.ho.price;
+      var ovMsg = r.ho.custom
+        ? "Hola CalorCharrua, quiero un calefactor con horno a medida para un ambiente de " + r.m2 + ". ¿Es posible? ¿Precio y envío?"
+        : "Hola CalorCharrua, me interesa el " + r.ho.name + " (" + r.ho.detail + ") para un ambiente de " + r.m2 + ". ¿Disponibilidad, precio final y envío?";
+      ovCta.setAttribute("href", waHref(ovMsg));
+      btns.forEach(function (b, bi) {
+        var on = bi === i;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-selected", on ? "true" : "false");
+      });
+    }
+    btns.forEach(function (b, i) { b.addEventListener("click", function () { apply(i); }); });
+    apply(0);
+
+    // micro form -> WhatsApp prefill
+    var mf = $("[data-microform]");
+    if (mf) {
+      mf.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var m2 = (mf.m2.value || "").trim(), ciudad = (mf.ciudad.value || "").trim();
+        if (!m2 || !ciudad) return;
+        var msg = "Hola CalorCharrua, quiero calefaccionar un ambiente de " + m2 + " m² en " + ciudad + ". ¿Qué modelo me recomiendan? ¿Precio final y envío?";
+        window.open(waHref(msg), "_blank", "noopener");
+      });
+    }
+  }
+
+  /* ---- "Ver detalles" disclosure ---- */
+  function initDetails() {
+    $$("[data-detail]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var body = btn.closest(".prod__body"); if (!body) return;
+        var note = body.querySelector(".prod__note");
+        if (!note) {
+          note = document.createElement("p");
+          note.className = "prod__note";
+          note.style.cssText = "font-size:.86rem;color:var(--humo);margin:-.4rem 0 1rem;line-height:1.5;";
+          note.textContent = "Puerta de vidrio vitrocerámico. Los caños y accesorios se cotizan aparte según tu instalación. ¿Lo querés a medida? Avisanos.";
+          var actions = body.querySelector(".prod__actions");
+          body.insertBefore(note, actions);
+        }
+        var open = note.style.display !== "none" && note.dataset.shown === "1";
+        if (note.dataset.shown === "1") { note.style.display = "none"; note.dataset.shown = "0"; btn.textContent = "Ver detalles"; }
+        else { note.style.display = "block"; note.dataset.shown = "1"; btn.textContent = "Ocultar"; }
+      });
+    });
+  }
+
+  /* ---- FAQ: single-open accordion (native <details> still works w/o JS) ---- */
+  function initFAQ() {
+    var group = $("[data-accordion]"); if (!group) return;
+    var items = $$("details", group);
+    items.forEach(function (d) {
+      d.addEventListener("toggle", function () {
+        if (d.open) items.forEach(function (o) { if (o !== d) o.open = false; });
+      });
+    });
+  }
+
+  /* ---- Lead form: validate + states + WhatsApp handoff ---- */
+  function initForm() {
+    var form = $("[data-form]"); if (!form) return;
+    var status = $("[data-status]", form), btn = $("[data-submit]", form);
+    function setField(input, ok) { input.closest(".field").classList.toggle("field--invalid", !ok); }
+    function emailOk(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+    function show(cls, txt) { status.hidden = false; status.className = "lead__status " + cls; status.textContent = txt; }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var nombre = form.nombre, email = form.email, mensaje = form.mensaje, priv = form.privacidad;
+      var okN = nombre.value.trim().length > 1, okE = emailOk(email.value.trim()), okM = mensaje.value.trim().length > 2;
+      setField(nombre, okN); setField(email, okE); setField(mensaje, okM);
+      if (!okN || !okE || !okM || !priv.checked) {
+        show("is-err", priv.checked ? "Revisá los campos marcados." : "Revisá los campos y aceptá la política para enviar.");
+        return;
+      }
+      btn.disabled = true; show("is-loading", "Enviando…");
+      setTimeout(function () {
+        var msg = "Hola CalorCharrua, soy " + nombre.value.trim() + "."
+          + " Consulta sobre: " + (form.tipo.value || "calefactor") + "."
+          + " " + mensaje.value.trim()
+          + (form.telefono.value.trim() ? " Tel: " + form.telefono.value.trim() + "." : "")
+          + " Mi email: " + email.value.trim() + ".";
+        window.open(waHref(msg), "_blank", "noopener");
+        btn.disabled = false;
+        show("is-ok", "¡Listo! Te abrimos WhatsApp con tu consulta. Si no se abrió, escribinos al 095 416 324.");
+        form.reset();
+      }, 850);
+    });
+  }
+
+  /* ---- Floating WhatsApp visibility ---- */
+  function initFloat() {
+    var f = $("[data-wafloat]"); if (!f) return;
+    function onScroll() { f.classList.toggle("is-visible", window.scrollY > 520); }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* ---- Showcase: 3D card unfold on scroll + autoplay video ---- */
+  function initShowcase() {
+    var card = $("[data-sc-card]"), head = $("[data-sc-head]"), video = $("[data-sc-video]");
+    if (!card) return;
+
+    // Autoplay/pause video only while in view (saves battery, respects Edge autoplay rules)
+    if (video) {
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            if (e.isIntersecting) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+            else { try { video.pause(); } catch (_) {} }
+          });
+        }, { threshold: 0.25 }).observe(video);
+      } else { try { video.play(); } catch (_) {} }
+    }
+
+    if (reduced) return; // leave card flat (CSS handles it)
+
+    var ticking = false;
+    function isMobile() { return innerWidth <= 768; }
+    function update() {
+      ticking = false;
+      var rect = card.getBoundingClientRect(), vh = innerHeight || 800;
+      var p = (vh - rect.top) / (vh * 0.9);
+      p = p < 0 ? 0 : (p > 1 ? 1 : p);
+      var rot = 20 * (1 - p);
+      var scale = isMobile() ? (0.86 + 0.14 * p) : (1.04 - 0.04 * p);
+      card.style.transform = "perspective(1400px) rotateX(" + rot.toFixed(2) + "deg) scale(" + scale.toFixed(3) + ")";
+      if (head) head.style.transform = "translateY(" + (-46 * p).toFixed(1) + "px)";
+    }
+    function onScroll() { if (!ticking) { requestAnimationFrame(update); ticking = true; } }
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+  }
+
+  /* ---- Video hero: se prenden las luces al scrollear (scrub real + fallback a reproducir) ---- */
+  function initHeroVideo() {
+    var sec = $(".vhero"); if (!sec) return;
+    var video = $(".vhero__video", sec),
+        overlay = $("[data-vhero-overlay]", sec),
+        content = $("[data-vhero-content]", sec),
+        cue = $("[data-vhero-cue]", sec);
+    if (!video) return;
+    video.muted = true; video.setAttribute("muted", ""); video.playsInline = true;
+
+    var dur = 0;
+
+    function setDur() { dur = video.duration || 0; }
+    function showFirstFrame() { try { video.currentTime = 0.05; } catch (e) {} }
+    if (video.readyState >= 1) { setDur(); showFirstFrame(); }
+    else video.addEventListener("loadedmetadata", function () { setDur(); showFirstFrame(); });
+
+    function progress() {
+      var rect = sec.getBoundingClientRect();
+      var range = sec.offsetHeight - window.innerHeight;
+      return range > 0 ? Math.min(1, Math.max(0, -rect.top / range)) : 0;
+    }
+    function applyOverlay(p) {
+      if (overlay) overlay.style.opacity = (1 - p * 0.5).toFixed(3);
+      if (content) { content.style.opacity = Math.max(0, 1 - p * 1.4).toFixed(3); content.style.transform = "translateY(" + (-30 * p).toFixed(1) + "px)"; }
+      if (cue) cue.style.opacity = Math.max(0, 1 - p * 4).toFixed(3);
+    }
+    function seekTo(t) {
+      // con el MP4 all-intra los seeks son instantáneos: mapear scroll -> frame directo queda fluido.
+      try { video.currentTime = t; } catch (e) {}
+    }
+    function onScroll() {
+      if (!dur) setDur();
+      var p = progress();
+      applyOverlay(p);
+      if (dur > 0) seekTo(p * (dur - 0.04));
+    }
+
+    if (reduced) {
+      if (video.readyState >= 1) { try { video.currentTime = (video.duration || 4) * 0.85; } catch (e) {} }
+      else video.addEventListener("loadedmetadata", function () { try { video.currentTime = (video.duration || 4) * 0.85; } catch (e) {} });
+      if (overlay) overlay.style.opacity = "0.45";
+      return;
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+  }
+
+  function initYear() { var y = $("[data-year]"); if (y) y.textContent = new Date().getFullYear(); }
+
+  function boot() {
+    safe(initWa, "initWa");
+    safe(initNav, "initNav");
+    safe(initDrawer, "initDrawer");
+    safe(initReveals, "initReveals");
+    safe(initCount, "initCount");
+    safe(initSelector, "initSelector");
+    safe(initDetails, "initDetails");
+    safe(initFAQ, "initFAQ");
+    safe(initForm, "initForm");
+    safe(initFloat, "initFloat");
+    safe(initHeroVideo, "initHeroVideo");
+    safe(initYear, "initYear");
+    document.documentElement.classList.add("is-ready");
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+})();
+
+</script>
+</body>
+</html>

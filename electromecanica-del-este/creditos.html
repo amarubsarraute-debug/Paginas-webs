@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créditos Fotográficos | Electromecánica del Este</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260609">
+  <style>
+    body {
+      background-color: var(--bg-darker);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .credits-main {
+      flex: 1;
+      padding: 6rem 1.5rem 4rem;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .credits-title {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 1rem;
+    }
+    .credits-desc {
+      font-size: 1.1rem;
+      color: var(--text-gray-400);
+      margin-bottom: 2.5rem;
+    }
+    .credits-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .credits-item {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      transition: border-color var(--transition-normal);
+    }
+    .credits-item:hover {
+      border-color: var(--border-hover);
+    }
+    .credits-thumb {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+      flex-shrink: 0;
+    }
+    .credits-info {
+      flex: 1;
+    }
+    .credits-img-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-white);
+      margin-bottom: 0.25rem;
+    }
+    .credits-author {
+      font-size: 0.95rem;
+      color: var(--text-gray-400);
+      margin-bottom: 0.5rem;
+    }
+    .credits-author a {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+    .credits-author a:hover {
+      color: var(--text-white);
+    }
+    .credits-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      background-color: var(--bg-dark);
+      border: 1px solid var(--border-color);
+      color: var(--text-gray-400);
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .back-btn {
+      margin-bottom: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-gray-400);
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .back-btn:hover {
+      color: var(--text-white);
+    }
+    @media (max-width: 540px) {
+      .credits-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .credits-thumb {
+        width: 100%;
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="credits-main">
+    <a href="index.html" class="back-btn">
+      <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Volver al sitio
+    </a>
+    <h1 class="credits-title">Créditos de Imágenes</h1>
+    <p class="credits-desc">
+      A continuación se listan las atribuciones y licencias de los recursos visuales utilizados en este sitio web.
+    </p>
+    
+    <ul class="credits-list" data-credits>
+      <!-- Renders dynamically from credits.json -->
+    </ul>
+  </main>
+
+  <footer class="main-footer" style="padding-top: 3rem; padding-bottom: 2rem;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <p class="copyright text-gray-500" style="margin: 0;">
+        &copy; 2026 Electromecánica del Este. Todos los derechos reservados.
+      </p>
+      <a href="index.html" class="credits-link" style="font-size: 0.8rem;">Volver al Inicio</a>
+    </div>
+  </footer>
+
+  <!-- Lucide Icons -->
+  <script defer src="https://unpkg.com/lucide@0.435.0/dist/umd/lucide.min.js"></script>
+  
+  <!-- Render script -->
+  <script defer src="lib/credits-render.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (window.lucide && typeof window.lucide.createIcons === "function") {
+        window.lucide.createIcons();
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<meta name="description" content="POLARIS — tu app personal de evolución y anti-procrastinación.">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="POLARIS">
+<meta name="theme-color" content="#f4f1ea">
+<title>POLARIS</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icons/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- XP POPUP -->
+  <div id="xp-popup">+0 XP</div>
+
+  <!-- TIMER OVERLAY -->
+  <div id="timer-overlay">
+    <div class="timer-label" id="timer-mode-label">MODO ENFOQUE</div>
+    <div class="timer-display accent" id="timer-display">25:00</div>
+    <div class="timer-task" id="timer-task-label"></div>
+    <div style="display:flex;gap:12px;width:100%;padding:0 32px;">
+      <button class="btn btn-secondary" onclick="cancelTimer()">Cancelar</button>
+      <button class="btn btn-green" id="timer-complete-btn" onclick="completeTimer()" style="display:none">¡Completé!</button>
+    </div>
+    <p style="font-size:12px;color:var(--text3);text-align:center;padding:0 32px;">Cerrá las distracciones. Una sola cosa.</p>
+  </div>
+
+  <!-- LEVEL UP -->
+  <div id="levelup-overlay">
+    <div class="levelup-star">⭐</div>
+    <div class="screen-title">NIVEL ALCANZADO</div>
+    <h1 id="levelup-name" style="color:var(--accent)"></h1>
+    <p style="color:var(--text2);font-size:14px;">Tu yo del futuro te lo va a agradecer.</p>
+    <button class="btn btn-primary" style="margin:0 32px;width:auto;padding:14px 40px" onclick="closeLevelUp()">Seguir construyendo</button>
+  </div>
+
+  <!-- NEW DAY MODAL -->
+  <div id="newday-modal">
+    <div class="modal-box">
+      <div class="screen-title mb-8">NUEVO DÍA</div>
+      <h2 class="mb-12">¿Arrancamos?</h2>
+      <p class="text-dim text-sm mb-16">El día anterior se guarda. Los hábitos se reinician. Tu XP y nivel se mantienen.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <button class="btn btn-primary" onclick="confirmNewDay()">Sí, nuevo día</button>
+        <button class="btn btn-secondary" onclick="document.getElementById('newday-modal').classList.remove('active')">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN 1: HOY ===== -->
+  <div class="screen active" id="screen-hoy">
+
+    <div class="day-meta">
+      <div>
+        <div class="screen-title">POLARIS</div>
+        <div class="day-counter font-mono" id="day-counter">Día 1 de evolución</div>
+        <div class="text-xs text-dimmer mt-8" id="season-label">Temporada 1: Fundaciones</div>
+      </div>
+      <div style="text-align:right">
+        <button onclick="showScreen('config')" aria-label="Configuración" style="background:none;border:none;cursor:pointer;color:var(--text3);padding:2px;margin-bottom:8px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </button>
+        <div class="level-badge" id="level-badge">Nv.1</div>
+        <div class="font-mono text-xs text-dimmer mt-8" id="xp-display">0 XP</div>
+      </div>
+    </div>
+
+    <!-- XP BAR -->
+    <div class="card mb-12" style="padding:12px 16px">
+      <div class="flex justify-between items-center mb-8">
+        <span class="text-xs text-dimmer">PROGRESO HOY</span>
+        <span class="font-mono text-xs text-accent" id="daily-xp-display">0 XP</span>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-fill" id="daily-xp-bar" style="width:0%"></div>
+      </div>
+    </div>
+
+    <!-- IDENTITY PHRASE -->
+    <div class="identity-phrase" id="identity-phrase-hoy">
+      Cargando...
+    </div>
+
+    <!-- MISIÓN DEL DÍA -->
+    <div class="card card-accent mb-12">
+      <div class="card-label">⚡ MISIÓN DE HOY</div>
+      <div class="mission-area" id="mission-display" onclick="editMission()">
+        Tocá para definir tu misión de hoy...
+      </div>
+      <div id="mission-edit-area" style="display:none">
+        <textarea id="mission-input" rows="2" placeholder="¿Cuál es la tarea más importante que tenés que hacer hoy?"></textarea>
+        <div class="flex gap-8 mt-8">
+          <button class="btn btn-secondary btn-sm" onclick="cancelMissionEdit()">Cancelar</button>
+          <button class="btn btn-primary btn-sm" onclick="saveMission()">Guardar</button>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px" id="mission-btns">
+        <button class="btn btn-primary" onclick="startTimer(25,'mision')" style="font-size:13px">▶ Iniciar 25 min</button>
+        <button class="btn btn-secondary btn-sm" onclick="editMission()">✏️</button>
+      </div>
+    </div>
+
+    <!-- HÁBITOS -->
+    <div class="card mb-12">
+      <div class="card-label">HÁBITOS DE HOY</div>
+      <div id="habits-list">
+        <!-- generado por JS -->
+      </div>
+    </div>
+
+    <!-- PRUEBA DE IDENTIDAD -->
+    <div class="card mb-12">
+      <div class="card-label">PRUEBA DE IDENTIDAD</div>
+      <p class="text-sm text-dimmer mb-8">Una acción que demuestre quién estás siendo hoy.</p>
+      <textarea id="identity-proof-input" rows="2" placeholder="Hoy hice _____ aunque _____."></textarea>
+      <button class="btn btn-secondary mt-8" onclick="saveIdentityProof()" style="font-size:13px">Guardar prueba +10 XP</button>
+    </div>
+
+    <!-- NUEVO DÍA -->
+    <button class="btn btn-secondary mb-12" style="font-size:12px;color:var(--text3)" onclick="document.getElementById('newday-modal').classList.add('active')">
+      🌅 Nuevo día
+    </button>
+
+  </div>
+
+  <!-- ===== SCREEN 2: POLARIS ===== -->
+  <div class="screen" id="screen-polaris">
+    <div class="screen-title">POLARIS</div>
+    <h1 class="mb-16">Tu norte.</h1>
+
+    <div class="card mb-12">
+      <div class="polaris-field">
+        <label>Visión anual</label>
+        <textarea id="pol-vision" rows="3" placeholder="En un año, yo soy..."></textarea>
+      </div>
+      <div class="polaris-field">
+        <label>Temporada actual</label>
+        <input type="text" id="pol-season" placeholder="Temporada 1: Fundaciones">
+      </div>
+    </div>
+
+    <div class="card mb-12">
+      <div class="polaris-field">
+        <label>Objetivo del trimestre</label>
+        <textarea id="pol-quarter" rows="2" placeholder="Este trimestre quiero..."></textarea>
+      </div>
+      <div class="polaris-field">
+        <label>Boss final del trimestre</label>
+        <input type="text" id="pol-boss" placeholder="Lograr...">
+      </div>
+    </div>
+
+    <div class="card mb-12">
+      <div class="polaris-field">
+        <label>Misión semanal</label>
+        <textarea id="pol-weekly" rows="2" placeholder="Esta semana: ..."></textarea>
+      </div>
+      <div class="polaris-field">
+        <label>Próxima acción concreta</label>
+        <input type="text" id="pol-next" placeholder="Ej: Mandar 3 propuestas hoy">
+      </div>
+      <button class="btn btn-primary mt-8" onclick="convertNextToMission()" style="font-size:13px">
+        ⚡ Convertir en misión de hoy
+      </button>
+    </div>
+
+    <div class="card mb-12">
+      <div class="card-label">PROGRESO</div>
+
+      <div class="attr-row">
+        <div class="attr-header">
+          <span class="attr-name">Trimestre</span>
+          <span class="attr-val" id="prog-quarter-val">0%</span>
+        </div>
+        <div class="progress-wrap"><div class="progress-fill" id="prog-quarter-bar" style="width:0%"></div></div>
+        <input type="range" min="0" max="100" value="0" id="prog-quarter-range" oninput="updateProg('quarter',this.value)">
+      </div>
+
+      <div class="attr-row">
+        <div class="attr-header">
+          <span class="attr-name">Finanzas</span>
+          <span class="attr-val" id="prog-finance-val">0%</span>
+        </div>
+        <div class="progress-wrap"><div class="progress-fill" id="prog-finance-bar" style="width:0%"></div></div>
+        <input type="range" min="0" max="100" value="0" id="prog-finance-range" oninput="updateProg('finance',this.value)">
+      </div>
+
+      <div class="attr-row">
+        <div class="attr-header">
+          <span class="attr-name">Cuerpo</span>
+          <span class="attr-val" id="prog-body-val">0%</span>
+        </div>
+        <div class="progress-wrap"><div class="progress-fill" id="prog-body-bar" style="width:0%"></div></div>
+        <input type="range" min="0" max="100" value="0" id="prog-body-range" oninput="updateProg('body',this.value)">
+      </div>
+
+      <div class="attr-row">
+        <div class="attr-header">
+          <span class="attr-name">Negocio</span>
+          <span class="attr-val" id="prog-biz-val">0%</span>
+        </div>
+        <div class="progress-wrap"><div class="progress-fill" id="prog-biz-bar" style="width:0%"></div></div>
+        <input type="range" min="0" max="100" value="0" id="prog-biz-range" oninput="updateProg('biz',this.value)">
+      </div>
+    </div>
+
+    <!-- VISUALIZACIÓN / YO IDEAL (módulo Fase E) -->
+    <div class="card card-accent mb-12">
+      <div class="card-label">⭐ VISUALIZÁ TU YO IDEAL</div>
+      <div id="visual-content">
+        <p class="text-sm text-dimmer">Cargá tu contenido en Progreso → Datos → Importar mi contenido.</p>
+      </div>
+      <button class="btn btn-primary mt-8" onclick="startVisualization()" style="font-size:13px">▶ Visualizar 2 min</button>
+    </div>
+
+    <button class="btn btn-secondary mb-12" onclick="savePolaris()">Guardar todo</button>
+  </div>
+
+  <!-- ===== SCREEN 3: PERSONAJE ===== -->
+  <div class="screen" id="screen-personaje">
+    <div class="screen-title">PERSONAJE</div>
+    <h1 class="mb-4">Amaru</h1>
+    <p class="text-dim text-sm mb-16">Versión Ideal en construcción</p>
+
+    <!-- STATS -->
+    <div class="stat-grid mb-12">
+      <div class="stat-card">
+        <div class="stat-val" id="char-level">1</div>
+        <div class="stat-label">NIVEL</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="char-xp">0</div>
+        <div class="stat-label">XP TOTAL</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val text-green" id="char-streak">0</div>
+        <div class="stat-label">RACHA</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="char-best-streak">0</div>
+        <div class="stat-label">MEJOR RACHA</div>
+      </div>
+    </div>
+
+    <!-- LEVEL INFO -->
+    <div class="card card-accent mb-12">
+      <div class="card-label">NIVEL ACTUAL</div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="font-size:40px" id="char-level-icon">😤</div>
+        <div>
+          <h2 id="char-level-name" class="text-accent">Despierto</h2>
+          <div class="text-xs text-dimmer mt-8" id="char-xp-to-next">500 XP para subir</div>
+        </div>
+      </div>
+      <div class="progress-wrap mt-8">
+        <div class="progress-fill" id="char-level-bar" style="width:0%"></div>
+      </div>
+    </div>
+
+    <!-- ATRIBUTOS -->
+    <div class="card mb-12">
+      <div class="card-label">ATRIBUTOS</div>
+      <div id="attributes-list">
+        <!-- generado por JS -->
+      </div>
+    </div>
+
+    <!-- IDENTIDAD CENTRAL -->
+    <div class="card mb-12">
+      <div class="card-label">IDENTIDAD CENTRAL</div>
+      <textarea id="identity-central" rows="3" style="font-size:14px;line-height:1.6">Soy alguien que construye su negocio, entrena su cuerpo, cuida su energía y actúa aunque tenga dudas.</textarea>
+      <button class="btn btn-secondary mt-8" onclick="saveIdentityCentral()" style="font-size:12px">Guardar</button>
+    </div>
+
+    <!-- NO NEGOCIABLES -->
+    <div class="card mb-12">
+      <div class="card-label">NO NEGOCIABLES</div>
+      <div id="non-neg-list"></div>
+    </div>
+
+    <!-- INSEGURIDADES (módulo Fase E) -->
+    <div class="card mb-12">
+      <div class="card-label">INSEGURIDADES</div>
+      <p class="text-sm text-dimmer mb-8">Marcala, mirá de dónde viene, y clasificá: lo cambiable se trabaja, lo no-cambiable se acepta.</p>
+      <div id="inseg-list"></div>
+      <input type="text" id="inseg-input" class="mt-8" placeholder="Una inseguridad...">
+      <button class="btn btn-secondary mt-8" onclick="addInseguridad()" style="font-size:12px">+ Agregar</button>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN 4: SHADOW MODE ===== -->
+  <div class="screen" id="screen-shadow">
+    <div class="screen-title" style="color:var(--red)">SHADOW MODE</div>
+    <h1 class="mb-8">Anti-procrastinación.</h1>
+    <p class="text-dim text-sm mb-16">No estás evitando la tarea. Estás evitando la emoción.</p>
+
+    <!-- STEP INDICATOR -->
+    <div class="step-indicator" id="shadow-steps">
+      <div class="step-dot done" id="sdot-0"></div>
+      <div class="step-dot" id="sdot-1"></div>
+      <div class="step-dot" id="sdot-2"></div>
+      <div class="step-dot" id="sdot-3"></div>
+      <div class="step-dot" id="sdot-4"></div>
+      <div class="step-dot" id="sdot-5"></div>
+    </div>
+
+    <!-- PASO 0: BOTÓN ENTRADA -->
+    <div class="shadow-step active" id="shadow-0">
+      <div class="card card-accent">
+        <p class="text-sm text-dim mb-16" style="line-height:1.7">Estás procrastinando. Bien que lo reconocés. Eso ya es un acto de valentía.<br><br>Vamos a desarmar el bloqueo juntos. Son 5 pasos y termina con acción concreta.</p>
+        <button class="btn btn-primary" onclick="shadowGoTo(1)">Arrancar</button>
+      </div>
+    </div>
+
+    <!-- PASO 1: QUÉ EVITÁS -->
+    <div class="shadow-step" id="shadow-1">
+      <div class="card">
+        <div class="card-label">PASO 1 — LA TAREA</div>
+        <h3 class="mb-12">¿Qué tarea estás evitando?</h3>
+        <textarea id="shadow-task" rows="2" placeholder="Ser específico. No 'trabajar', sino exactamente qué."></textarea>
+        <button class="btn btn-primary mt-8" onclick="shadowGoTo(2)">Siguiente</button>
+      </div>
+    </div>
+
+    <!-- PASO 2: EMOCIÓN -->
+    <div class="shadow-step" id="shadow-2">
+      <div class="card">
+        <div class="card-label">PASO 2 — LA EMOCIÓN</div>
+        <h3 class="mb-12">¿Qué emoción aparece cuando pensás en esa tarea?</h3>
+        <div class="option-grid" id="emotion-grid">
+          <button class="option-btn" onclick="selectOption(this,'emotion')">Duda</button>
+          <button class="option-btn" onclick="selectOption(this,'emotion')">Miedo</button>
+          <button class="option-btn" onclick="selectOption(this,'emotion')">Vergüenza</button>
+          <button class="option-btn" onclick="selectOption(this,'emotion')">Ansiedad</button>
+          <button class="option-btn" onclick="selectOption(this,'emotion')">Confusión</button>
+          <button class="option-btn" onclick="selectOption(this,'emotion')">Pereza</button>
+          <button class="option-btn" onclick="selectOption(this,'emotion')">Frustración</button>
+          <button class="option-btn" onclick="selectOption(this,'emotion')">Presión</button>
+        </div>
+        <button class="btn btn-primary mt-8" onclick="shadowGoTo(3)">Siguiente</button>
+      </div>
+    </div>
+
+    <!-- PASO 3: CERTEZA -->
+    <div class="shadow-step" id="shadow-3">
+      <div class="card">
+        <div class="card-label">PASO 3 — LA CERTEZA</div>
+        <h3 class="mb-12">¿Qué certeza te falta?</h3>
+        <div class="option-grid" id="certainty-grid">
+          <button class="option-btn" onclick="selectOption(this,'certainty')">No sé si va a funcionar</button>
+          <button class="option-btn" onclick="selectOption(this,'certainty')">No sé cómo empezar</button>
+          <button class="option-btn" onclick="selectOption(this,'certainty')">No sé si soy capaz</button>
+          <button class="option-btn" onclick="selectOption(this,'certainty')">No sé si va a salir bien</button>
+          <button class="option-btn" onclick="selectOption(this,'certainty')">No sé si vale la pena</button>
+          <button class="option-btn" onclick="selectOption(this,'certainty')">No sé si me van a responder</button>
+          <button class="option-btn" onclick="selectOption(this,'certainty')">No sé si tengo energía</button>
+          <button class="option-btn" onclick="selectOption(this,'certainty')">No sé si lo voy a hacer perfecto</button>
+        </div>
+        <button class="btn btn-primary mt-8" onclick="shadowGoTo(4)">Siguiente</button>
+      </div>
+    </div>
+
+    <!-- PASO 4: MIEDO -->
+    <div class="shadow-step" id="shadow-4">
+      <div class="card">
+        <div class="card-label">PASO 4 — EL MIEDO REAL</div>
+        <h3 class="mb-12">¿Qué miedo hay detrás?</h3>
+        <div class="option-grid" id="fear-grid">
+          <button class="option-btn" onclick="selectOption(this,'fear')">Rechazo</button>
+          <button class="option-btn" onclick="selectOption(this,'fear')">Fracaso</button>
+          <button class="option-btn" onclick="selectOption(this,'fear')">Exposición</button>
+          <button class="option-btn" onclick="selectOption(this,'fear')">No ser suficiente</button>
+          <button class="option-btn" onclick="selectOption(this,'fear')">Perder tiempo</button>
+          <button class="option-btn" onclick="selectOption(this,'fear')">Confirmar que estoy atrasado</button>
+          <button class="option-btn" onclick="selectOption(this,'fear')">Comprometerme de verdad</button>
+          <button class="option-btn" onclick="selectOption(this,'fear')">Compararme con otros</button>
+        </div>
+        <button class="btn btn-primary mt-8" onclick="generateShadowResponse()">Ver mi diagnóstico</button>
+      </div>
+    </div>
+
+    <!-- PASO 5: RESPUESTA + ACCIÓN -->
+    <div class="shadow-step" id="shadow-5">
+      <div class="response-card" id="shadow-response-card">
+        <p id="shadow-response-text"></p>
+      </div>
+      <div class="card">
+        <div class="card-label">PASO 5 — ACCIÓN MÍNIMA</div>
+        <h3 class="mb-8">Una sola cosa. La más pequeña posible.</h3>
+        <textarea id="shadow-action" rows="2" placeholder="Ej: Abrir el archivo y escribir el título. Mandar 1 mensaje. Trabajar 10 minutos."></textarea>
+        <button class="btn btn-green mt-8" onclick="startTimer(10,'shadow')">▶ Iniciar 10 min</button>
+      </div>
+      <button class="btn btn-secondary mt-8" onclick="resetShadow()">Nueva sesión</button>
+    </div>
+
+    <!-- CONSTRAINT FINDER (Shadow v2 — reescribir creencias) -->
+    <div class="divider"></div>
+    <div class="card">
+      <div class="card-label" style="color:var(--accent)">🧠 CONSTRAINT FINDER — REESCRIBIR UNA CREENCIA</div>
+      <p class="text-sm text-dimmer mb-12">El trabajo profundo: agarrá una creencia que te frena y reescribila. Experiencia → Creencia → Identidad → Comportamiento → Realidad.</p>
+      <div class="polaris-field"><label>Experiencia / pensamiento</label><textarea id="cf-exp" rows="2" placeholder="Ej: Grabo videos y no cierro clientes."></textarea></div>
+      <div class="polaris-field"><label>Creencia que creaste</label><textarea id="cf-belief" rows="2" placeholder="Ej: Grabar reels me da vergüenza y no sirve."></textarea></div>
+      <div class="polaris-field"><label>Identidad que genera</label><input type="text" id="cf-identity" placeholder="Ej: No soy de grabar contenido."></div>
+      <div class="polaris-field"><label>Comportamiento que provoca</label><input type="text" id="cf-behavior" placeholder="Ej: No grabo, no publico."></div>
+      <div class="polaris-field"><label>↻ Nueva creencia (la que elegís)</label><textarea id="cf-new" rows="2" placeholder="Ej: Cada video es una repetición de valentía que construye mi marca."></textarea></div>
+      <button class="btn btn-primary mt-8" onclick="saveConstraint()" style="font-size:13px">Guardar reescritura +15 XP</button>
+      <div id="cf-history" class="mt-12"></div>
+    </div>
+
+    <!-- HISTORIAL -->
+    <div class="divider"></div>
+    <div class="card-label">HISTORIAL SHADOW</div>
+    <div id="shadow-history">
+      <p class="text-sm text-dimmer" style="padding:12px 0">No hay sesiones todavía.</p>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN 5: PROGRESO ===== -->
+  <div class="screen" id="screen-progreso">
+    <div class="screen-title">PROGRESO</div>
+    <h1 class="mb-16">El mapa.</h1>
+
+    <div class="stat-grid mb-12">
+      <div class="stat-card">
+        <div class="stat-val" id="prog-xp-total">0</div>
+        <div class="stat-label">XP TOTAL</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="prog-level">1</div>
+        <div class="stat-label">NIVEL</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val text-green" id="prog-streak">0</div>
+        <div class="stat-label">RACHA</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="prog-shadow-count">0</div>
+        <div class="stat-label">SHADOW MODE</div>
+      </div>
+    </div>
+
+    <!-- FINANZAS -->
+    <div class="card mb-12">
+      <div class="card-label">FINANZAS</div>
+      <div class="finance-row">
+        <span class="finance-label">Objetivo trimestre</span>
+        <input class="finance-input" type="text" id="fin-obj" placeholder="$0">
+      </div>
+      <div class="finance-row">
+        <span class="finance-label">Facturación actual</span>
+        <input class="finance-input" type="text" id="fin-actual" placeholder="$0">
+      </div>
+      <div class="attr-row">
+        <div class="attr-header">
+          <span class="attr-name text-xs">Progreso</span>
+          <span class="attr-val text-xs" id="fin-pct">0%</span>
+        </div>
+        <div class="progress-wrap"><div class="progress-fill" id="fin-bar" style="width:0%"></div></div>
+      </div>
+      <div class="finance-row">
+        <span class="finance-label">Ahorro objetivo</span>
+        <input class="finance-input" type="text" id="fin-save-obj" placeholder="$0">
+      </div>
+      <div class="finance-row">
+        <span class="finance-label">Ahorro actual</span>
+        <input class="finance-input" type="text" id="fin-save-actual" placeholder="$0">
+      </div>
+      <div class="polaris-field mt-8">
+        <label>Próxima acción de dinero</label>
+        <input type="text" id="fin-next" placeholder="Ej: Cerrar propuesta con X">
+      </div>
+      <button class="btn btn-secondary" onclick="saveFinances()" style="font-size:12px">Guardar</button>
+    </div>
+
+    <!-- ÚLTIMAS PRUEBAS DE IDENTIDAD -->
+    <div class="card mb-12">
+      <div class="card-label">ÚLTIMAS PRUEBAS DE IDENTIDAD</div>
+      <div id="identity-proof-history">
+        <p class="text-sm text-dimmer" style="padding:12px 0">No hay pruebas todavía.</p>
+      </div>
+    </div>
+
+    <!-- HÁBITOS SEMANA -->
+    <div class="card mb-12">
+      <div class="card-label">ESTA SEMANA</div>
+      <div id="week-stats">
+        <p class="text-sm text-dimmer">Datos acumulándose...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN 6: CONFIGURACIÓN ===== -->
+  <div class="screen" id="screen-config">
+    <div class="flex justify-between items-center mb-16">
+      <div>
+        <div class="screen-title">CONFIGURACIÓN</div>
+        <h1>Ajustes</h1>
+      </div>
+      <button class="btn btn-secondary btn-sm" onclick="showScreen('hoy')" style="white-space:nowrap">← Volver</button>
+    </div>
+
+    <!-- OBJETIVOS -->
+    <div class="card mb-12">
+      <div class="card-label">TU NORTE · OBJETIVOS</div>
+      <div class="polaris-field"><label>Visión</label><textarea id="cfg-vision" rows="3" oninput="cfgSetField('polaris.vision',this.value)" placeholder="En un año, yo soy..."></textarea></div>
+      <div class="polaris-field"><label>Temporada</label><input type="text" id="cfg-season" oninput="cfgSetField('polaris.season',this.value)"></div>
+      <div class="polaris-field"><label>Objetivo del trimestre</label><textarea id="cfg-quarter" rows="2" oninput="cfgSetField('polaris.quarter',this.value)"></textarea></div>
+      <div class="polaris-field"><label>Boss del trimestre</label><input type="text" id="cfg-boss" oninput="cfgSetField('polaris.boss',this.value)"></div>
+      <div class="polaris-field"><label>Misión semanal</label><textarea id="cfg-weekly" rows="2" oninput="cfgSetField('polaris.weekly',this.value)"></textarea></div>
+      <div class="polaris-field" style="margin-bottom:0"><label>Próxima acción concreta</label><input type="text" id="cfg-next" oninput="cfgSetField('polaris.next',this.value)"></div>
+    </div>
+
+    <!-- METAS DE DINERO -->
+    <div class="card mb-12">
+      <div class="card-label">METAS DE DINERO</div>
+      <div class="polaris-field"><label>Objetivo de facturación</label><input type="text" id="cfg-fin-obj" oninput="cfgSetField('finances.obj',this.value)" placeholder="25000"></div>
+      <div class="polaris-field" style="margin-bottom:0"><label>Objetivo de ahorro</label><input type="text" id="cfg-fin-saveobj" oninput="cfgSetField('finances.saveObj',this.value)" placeholder="5000"></div>
+    </div>
+
+    <!-- IDENTIDAD CENTRAL -->
+    <div class="card mb-12">
+      <div class="card-label">IDENTIDAD CENTRAL</div>
+      <textarea id="cfg-identity" rows="3" oninput="cfgSetField('identityCentral',this.value)"></textarea>
+    </div>
+
+    <!-- FRASES DE IDENTIDAD -->
+    <div class="card mb-12">
+      <div class="card-label">FRASES DE IDENTIDAD</div>
+      <p class="text-sm text-dimmer mb-12">Las que te aparecen en Hoy y en las notificaciones.</p>
+      <div id="cfg-list-phrases"></div>
+      <button class="btn btn-secondary btn-sm" onclick="cfgListAdd('phrases')" style="font-size:12px">+ Agregar frase</button>
+    </div>
+
+    <!-- NO NEGOCIABLES -->
+    <div class="card mb-12">
+      <div class="card-label">NO NEGOCIABLES</div>
+      <div id="cfg-list-nonneg"></div>
+      <button class="btn btn-secondary btn-sm" onclick="cfgListAdd('nonneg')" style="font-size:12px">+ Agregar</button>
+    </div>
+
+    <!-- YO IDEAL -->
+    <div class="card mb-12">
+      <div class="card-label">TU YO IDEAL · CREENCIAS</div>
+      <div id="cfg-list-creencias"></div>
+      <button class="btn btn-secondary btn-sm mb-16" onclick="cfgListAdd('creencias')" style="font-size:12px">+ Agregar creencia</button>
+      <div class="card-label">LOGROS QUE YA SON TUYOS</div>
+      <div id="cfg-list-logros"></div>
+      <button class="btn btn-secondary btn-sm mb-16" onclick="cfgListAdd('logros')" style="font-size:12px">+ Agregar logro</button>
+      <div class="polaris-field" style="margin-bottom:0"><label>Tu día perfecto</label><textarea id="cfg-dia" rows="7" oninput="cfgSetField('ideal.diaPerfecto',this.value)"></textarea></div>
+    </div>
+
+    <!-- NOTIFICACIONES -->
+    <div class="card mb-12" id="notif-settings">
+      <div class="card-label">🔔 NOTIFICACIONES</div>
+      <p class="text-sm text-dimmer mb-8">Estado: <span id="notif-status">—</span></p>
+      <button class="btn btn-primary" id="notif-enable-btn" onclick="requestNotifPermission()" style="font-size:13px">🔔 Activar notificaciones</button>
+      <div id="notif-controls" style="display:none">
+        <div class="non-neg-item">
+          <input type="checkbox" id="notif-daily" onchange="updateNotifSetting('daily', this.checked)" style="width:auto;height:auto">
+          <span style="flex:1">Recordatorio diario</span>
+          <input type="time" id="notif-daily-time" onchange="updateNotifSetting('dailyTime', this.value)" class="finance-input" style="width:96px">
+        </div>
+        <div class="non-neg-item">
+          <input type="checkbox" id="notif-streak" onchange="updateNotifSetting('streak', this.checked)" style="width:auto;height:auto">
+          <span style="flex:1">Protección de racha</span>
+          <input type="time" id="notif-streak-time" onchange="updateNotifSetting('streakTime', this.value)" class="finance-input" style="width:96px">
+        </div>
+        <div class="non-neg-item">
+          <input type="checkbox" id="notif-timer" onchange="updateNotifSetting('timer', this.checked)" style="width:auto;height:auto">
+          <span style="flex:1">Fin de bloque (timer)</span>
+        </div>
+        <button class="btn btn-secondary mt-8" onclick="testNotif()" style="font-size:12px">Probar notificación</button>
+      </div>
+    </div>
+
+    <!-- DATOS -->
+    <div class="card mb-12">
+      <div class="card-label">💾 DATOS</div>
+      <p class="text-sm text-dimmer mb-8">Backup local y carga de tu contenido. Tus datos nunca salen de tu navegador.</p>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <button class="btn btn-secondary" onclick="exportData()" style="font-size:12px">⬇ Exportar datos (backup)</button>
+        <button class="btn btn-secondary" onclick="document.getElementById('import-file').click()" style="font-size:12px">⬆ Importar datos / backup</button>
+        <button class="btn btn-secondary" onclick="importSeed()" style="font-size:12px">⭐ Importar mi contenido</button>
+        <input type="file" id="import-file" accept="application/json" style="display:none" onchange="importDataFile(this)">
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <button class="nav-btn active" id="nav-hoy" onclick="showScreen('hoy')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Hoy
+    </button>
+    <button class="nav-btn" id="nav-polaris" onclick="showScreen('polaris')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      Polaris
+    </button>
+    <button class="nav-btn" id="nav-personaje" onclick="showScreen('personaje')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Yo
+    </button>
+    <button class="nav-btn" id="nav-shadow" onclick="showScreen('shadow')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      Shadow
+    </button>
+    <button class="nav-btn" id="nav-progreso" onclick="showScreen('progreso')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Progreso
+    </button>
+  </nav>
+</div>
+
+<!-- ═══ SCRIPTS (orden de dependencias; scope global) ═══ -->
+<script src="js/data.js"></script>
+<script src="js/state.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/timer.js"></script>
+<script src="js/screens/hoy.js"></script>
+<script src="js/screens/polaris.js"></script>
+<script src="js/screens/personaje.js"></script>
+<script src="js/screens/shadow.js"></script>
+<script src="js/screens/progreso.js"></script>
+<script src="js/modules/visualizacion.js"></script>
+<script src="js/modules/inseguridades.js"></script>
+<script src="js/modules/constraint.js"></script>
+<script src="js/dataio.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

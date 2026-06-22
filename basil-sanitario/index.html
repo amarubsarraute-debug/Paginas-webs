@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ============ SEO ============ -->
+<title>Sanitaria y Electricidad 24/7 en Maldonado y Punta del Este | Basil Sanitario</title>
+<meta name="description" content="Emergencias 24/7. Respuesta rápida, trabajo prolijo y seguro. Llamá o WhatsApp: 095 555 161." />
+<meta name="theme-color" content="#EDEFF2" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.basilsanitario.com.uy/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_UY" />
+<meta property="og:title" content="Sanitaria y Electricidad 24/7 en Maldonado y Punta del Este | Basil Sanitario" />
+<meta property="og:description" content="Emergencias 24/7. Respuesta rápida, trabajo prolijo y seguro. Llamá o WhatsApp: 095 555 161." />
+<meta property="og:image" content="img/logo.png" />
+<meta property="og:site_name" content="Basil Sanitario" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E1626'/%3E%3Cpath d='M17 6l-6 11h4l-2 9 8-13h-5z' fill='%23DCB91D'/%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+
+<!-- ============ SCHEMA ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "Plumber", "Electrician"],
+  "name": "Basil Sanitario",
+  "description": "Servicio de sanitaria y electricidad con emergencias 24/7 y brigada móvil en Maldonado y Punta del Este, Uruguay.",
+  "image": "img/logo.png",
+  "telephone": "+598 95 555 161",
+  "url": "https://www.basilsanitario.com.uy/",
+  "priceRange": "$$",
+  "areaServed": [
+    { "@type": "City", "name": "Maldonado" },
+    { "@type": "City", "name": "Punta del Este" },
+    { "@type": "AdministrativeArea", "name": "Departamento de Maldonado, Uruguay" }
+  ],
+  "address": { "@type": "PostalAddress", "addressLocality": "Maldonado", "addressRegion": "Maldonado", "addressCountry": "UY" },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00", "closes": "23:59"
+  }],
+  "sameAs": ["https://www.instagram.com/basil_sanitario"],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "119" }
+}
+</script>
+
+<style>
+/* ============================================================
+   BASIL SANITARIO — claro (estudio) + dorado de marca + navy
+   Tokens semánticos estilo shadcn. Tipografía editorial.
+   ============================================================ */
+:root{
+  --paper:#FFFFFF;
+  --bg:#EDEFF2;            /* base gris estudio */
+  --bg-tint:#E6E9EE;       /* secciones alternas */
+  --card:#FFFFFF;
+  --ink:#0E1626;           /* titulares navy */
+  --ink-2:#28313F;
+  --muted:#5C6675;         /* texto secundario */
+  --gold:#D8A81E;          /* acento de marca */
+  --gold-bright:#EFC23F;
+  --gold-soft:#F6E8BE;     /* resaltado dorado */
+  --navy:#0E1626;          /* elementos oscuros */
+  --border:rgba(14,22,38,.11);
+  --border-strong:rgba(14,22,38,.20);
+  --ring:rgba(216,168,30,.5);
+  --star:#E0A92A;
+  --radius:14px;
+  --radius-sm:9px;
+  --max:1200px;
+  --gut:24px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --shadow:0 12px 34px rgba(14,22,38,.10);
+  --shadow-lg:0 30px 70px rgba(14,22,38,.16);
+  --font-display:"Bricolage Grotesque",sans-serif;
+  --font-sans:"Hanken Grotesk",system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-sans);color:var(--ink-2);line-height:1.6;font-size:17px;overflow-x:hidden;position:relative;
+  -webkit-font-smoothing:antialiased;
+  background:radial-gradient(118% 80% at 50% -12%,#F9FAFB 0%,#EDEFF2 52%,#E3E6EC 100%);
+  background-attachment:fixed;
+}
+/* grano sutil */
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.03;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+::selection{background:var(--gold);color:var(--navy)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;line-height:1.03;letter-spacing:-.025em;color:var(--ink)}
+p{color:var(--muted)}
+main{position:relative;z-index:1}
+.container{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.section{padding:clamp(64px,9vw,124px) 0;position:relative;z-index:1}
+.bg-tint{background:var(--bg-tint)}
+.center{text-align:center}
+
+/* editorial helpers */
+.kicker{display:inline-flex;align-items:center;gap:11px;font-family:var(--font-mono);font-weight:600;font-size:.76rem;
+  letter-spacing:.16em;text-transform:uppercase;color:#A07B12}
+.kicker::before{content:"";width:26px;height:2px;background:var(--gold)}
+.sec-head{margin-bottom:50px}
+.sec-head h2{font-size:clamp(2.1rem,5vw,3.5rem)}
+.sec-head p{max-width:58ch;font-size:1.05rem;margin-top:16px}
+.eyebrow{font-family:var(--font-mono);font-weight:700;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:#A07B12;display:inline-block;margin-bottom:16px}
+
+/* ---- BUTTONS (shadcn-style) ---- */
+.btn{display:inline-flex;align-items:center;gap:11px;font-family:var(--font-sans);font-weight:700;font-size:1rem;line-height:1;
+  padding:0 22px;height:52px;border-radius:var(--radius);transition:transform .2s var(--ease),background .2s,color .2s,box-shadow .2s,border-color .2s;
+  white-space:nowrap;border:1px solid transparent}
+.btn svg{width:19px;height:19px;flex:none}
+.btn .arr{transition:transform .3s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn-primary{background:var(--gold);color:var(--navy);box-shadow:0 10px 26px -8px rgba(216,168,30,.7)}
+.btn-primary:hover{background:var(--gold-bright);transform:translateY(-2px);box-shadow:0 16px 34px -8px rgba(216,168,30,.8)}
+.btn-secondary{background:var(--navy);color:#fff}
+.btn-secondary:hover{background:#1b2740;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--border-strong)}
+.btn-outline:hover{border-color:var(--gold);color:#8a6a10;background:rgba(216,168,30,.07)}
+.btn-lg{height:60px;padding:0 28px;font-size:1.06rem}
+.btn-sm{height:44px;padding:0 17px;font-size:.92rem;border-radius:var(--radius-sm)}
+.btn-block{width:100%;justify-content:center}
+
+.badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-weight:600;font-size:.72rem;
+  letter-spacing:.1em;text-transform:uppercase;padding:8px 13px;border-radius:999px;border:1px solid var(--border-strong);color:var(--ink);background:var(--paper)}
+.dot{width:8px;height:8px;border-radius:50%;background:#22C55E;box-shadow:0 0 0 0 rgba(34,197,94,.55);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius)}
+.input{width:100%;height:50px;padding:0 15px;font-family:var(--font-sans);font-size:1rem;color:var(--ink);
+  background:#fff;border:1px solid var(--border-strong);border-radius:var(--radius-sm);transition:border-color .2s,box-shadow .2s}
+textarea.input{height:auto;padding:13px 15px;min-height:98px;resize:vertical}
+.input::placeholder{color:#9aa3b0}
+.input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--ring)}
+
+/* ============ HEADER ============ */
+.header{position:fixed;top:0;left:0;right:0;z-index:40;transition:background .35s var(--ease),border-color .35s,box-shadow .35s,backdrop-filter .35s;border-bottom:1px solid transparent}
+.header.scrolled{background:rgba(247,248,250,.82);backdrop-filter:saturate(150%) blur(16px);-webkit-backdrop-filter:saturate(150%) blur(16px);border-bottom:1px solid var(--border);box-shadow:0 6px 24px rgba(14,22,38,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mk{width:42px;height:42px;flex:none;border-radius:11px;background:var(--navy);display:grid;place-items:center;color:var(--gold);box-shadow:var(--shadow)}
+.brand .mk svg{width:23px;height:23px}
+.brand .wm{font-family:var(--font-display);font-weight:800;font-size:1.2rem;letter-spacing:-.02em;line-height:1;color:var(--ink)}
+.brand .wm b{color:var(--gold)}
+.brand .wm small{display:block;font-family:var(--font-mono);font-weight:600;font-size:.6rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:4px}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{font-family:var(--font-mono);font-weight:600;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding:9px 13px;border-radius:var(--radius-sm);transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--ink);background:rgba(14,22,38,.05)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.nav-tel{font-family:var(--font-mono);font-weight:700;font-size:.95rem;color:var(--ink);display:inline-flex;align-items:center;gap:9px}
+.nav-tel svg{width:17px;height:17px;color:var(--gold)}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding-top:124px;padding-bottom:72px;overflow:hidden}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.06fr .94fr;gap:48px;align-items:center}
+.hero-kicker{margin-bottom:24px}
+.hero h1{font-size:clamp(2.4rem,4.8vw,4.1rem);letter-spacing:-.035em;line-height:1.02;color:var(--ink)}
+.hero h1 .em{position:relative;white-space:nowrap;color:var(--ink);z-index:1}
+.hero h1 .em::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:.04em;height:.34em;background:var(--gold-soft);z-index:-1;border-radius:3px}
+.hero h1 .lite{display:block;font-size:.42em;font-weight:600;color:var(--muted);letter-spacing:-.01em;margin-top:.55em}
+.hero .sub{font-size:clamp(1.05rem,2.1vw,1.22rem);color:var(--muted);margin:24px 0 30px;max-width:470px}
+.hero .sub b{color:var(--ink-2);font-weight:700}
+.hero-cta{display:flex;flex-wrap:wrap;gap:13px;margin-bottom:24px}
+.hero-trust{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:var(--font-mono);font-size:.84rem;color:var(--muted)}
+.hero-trust .st{color:var(--star);letter-spacing:1px;font-size:.95rem}
+.hero-trust .sep{width:4px;height:4px;border-radius:50%;background:var(--border-strong)}
+
+/* foto del técnico */
+.hero-photo{position:relative;justify-self:center;width:100%;max-width:540px}
+.hero-photo::before{content:"";position:absolute;inset:6% 2% 2% 2%;border-radius:50%;
+  background:radial-gradient(circle at 58% 42%,rgba(216,168,30,.32),rgba(216,168,30,0) 60%);filter:blur(10px);z-index:0}
+.photo-frame{position:relative;z-index:2;aspect-ratio:1/1.02;border-radius:22px;overflow:hidden;background:#E7EAEF;border:1px solid var(--border);box-shadow:var(--shadow-lg)}
+.photo-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% center;z-index:2}
+.photo-frame .ph{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:12px;text-align:center;color:#9aa3b0;padding:28px}
+.photo-frame .ph svg{width:48px;height:48px;color:#c2b27a}
+.photo-frame .ph span{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase}
+.photo-frame .ph small{font-size:.82rem;max-width:200px}
+.hp-chip{position:absolute;z-index:5;background:var(--paper);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:11px 14px}
+.hp-chip.rating{right:-14px;top:30px;display:flex;align-items:center;gap:11px}
+.hp-chip.rating .n{font-family:var(--font-display);font-weight:800;font-size:1.5rem;line-height:1;color:var(--ink)}
+.hp-chip.rating .st{color:var(--star);font-size:.78rem;letter-spacing:1px}
+.hp-chip.rating .lb{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.hp-chip.live{left:-14px;bottom:40px;display:inline-flex;align-items:center;gap:9px;font-family:var(--font-mono);font-weight:700;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+
+/* ============ TICKER ============ */
+.ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--paper);overflow:hidden;position:relative;z-index:1}
+.ticker .track{display:flex;width:max-content;animation:scroll-x 42s linear infinite}
+.ticker .it{display:inline-flex;align-items:center}
+.ticker .it span{font-family:var(--font-display);font-weight:700;font-size:clamp(1.2rem,2.4vw,1.7rem);color:var(--ink);letter-spacing:-.02em;white-space:nowrap;padding:18px 28px;display:inline-flex;align-items:center;gap:22px}
+.ticker .it span::after{content:"●";color:var(--gold);font-size:.5rem}
+.ticker:hover .track{animation-play-state:paused}
+@keyframes scroll-x{to{transform:translateX(-50%)}}
+
+/* ============ SERVICIOS (lista editorial) ============ */
+.serv{border-top:1px solid var(--border)}
+.srow{display:grid;grid-template-columns:60px 1fr auto;gap:26px;align-items:center;padding:32px 12px;border-bottom:1px solid var(--border);
+  transition:background .3s var(--ease),padding .3s var(--ease)}
+.srow:hover{background:linear-gradient(90deg,rgba(216,168,30,.08),transparent);padding-left:24px}
+.srow .ix{font-family:var(--font-mono);font-weight:700;color:var(--gold);font-size:.92rem}
+.srow .main h3{font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:8px;color:var(--ink)}
+.srow .main p{font-size:1rem;max-width:560px}
+.srow .main .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.srow .main .tags b{font-family:var(--font-mono);font-weight:600;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--border);padding:5px 10px;border-radius:999px;opacity:0;
+  transition:border-color .25s,background .25s,color .25s,transform .25s var(--ease),box-shadow .25s}
+.srow.in .main .tags b{animation:chipIn .5s var(--ease) forwards}
+.srow.in .main .tags b:nth-child(2){animation-delay:.07s}
+.srow.in .main .tags b:nth-child(3){animation-delay:.14s}
+.srow.in .main .tags b:nth-child(4){animation-delay:.21s}
+.srow .main .tags b:hover{border-color:var(--gold);background:var(--gold-soft);color:var(--ink);transform:translateY(-3px);box-shadow:0 6px 16px rgba(216,168,30,.28)}
+@keyframes chipIn{from{opacity:0}to{opacity:1}}
+.srow .go{width:56px;height:56px;border-radius:50%;border:1px solid var(--border-strong);display:grid;place-items:center;color:var(--ink);flex:none;transition:.3s var(--ease)}
+.srow .go svg{width:22px;height:22px;transition:transform .3s var(--ease)}
+.srow:hover .go{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.srow:hover .go svg{transform:translate(2px,-2px)}
+
+/* ============ BANDA URGENCIA (rojo) ============ */
+.urgency{background:linear-gradient(135deg,#B5392E,#982A21);color:#fff;position:relative;z-index:1}
+.urgency-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;padding:clamp(34px,5vw,52px) 0}
+.u-copy{max-width:600px}
+.u-kick{font-family:var(--font-mono);font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:#FFD9A6;display:inline-block;margin-bottom:12px}
+.urgency h2{color:#fff;font-size:clamp(1.55rem,3.2vw,2.3rem);line-height:1.1;letter-spacing:-.02em}
+.urgency p{color:rgba(255,255,255,.86);margin-top:10px;font-size:1.05rem}
+.u-cta{display:flex;flex-direction:column;gap:11px;flex:none}
+.u-call{display:inline-flex;align-items:center;justify-content:center;gap:11px;font-family:var(--font-sans);font-weight:700;font-size:1.12rem;
+  background:#fff;color:#982A21;height:62px;padding:0 28px;border-radius:14px;box-shadow:0 16px 34px rgba(0,0,0,.25);transition:transform .2s var(--ease),background .2s,box-shadow .2s}
+.u-call svg{width:22px;height:22px}
+.u-call:hover{background:#FFF6EC;transform:translateY(-2px);box-shadow:0 20px 42px rgba(0,0,0,.3)}
+.u-wa{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--font-sans);font-weight:700;font-size:.96rem;
+  background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55);height:48px;padding:0 22px;border-radius:12px;transition:.2s var(--ease)}
+.u-wa svg{width:18px;height:18px}
+.u-wa:hover{background:rgba(255,255,255,.14);border-color:#fff;transform:translateY(-2px)}
+
+/* ============ PROCESO ============ */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);border-radius:var(--radius);background:var(--paper);box-shadow:var(--shadow)}
+.stp{padding:34px 30px;border-right:1px solid var(--border)}
+.stp:last-child{border-right:0}
+.stp .ix{font-family:var(--font-mono);font-weight:700;font-size:.82rem;letter-spacing:.1em;color:var(--gold);margin-bottom:38px;display:flex;align-items:center;gap:10px}
+.stp .ix::after{content:"";flex:1;height:1px;background:var(--border)}
+.stp h3{font-size:1.32rem;margin-bottom:10px;color:var(--ink)}
+.stp p{font-size:.98rem}
+.proc-foot{margin-top:24px;display:inline-flex;align-items:center;gap:11px;font-family:var(--font-mono);font-size:.82rem;color:#8a6a10;letter-spacing:.03em}
+.proc-foot svg{width:18px;height:18px;color:var(--gold)}
+
+/* ============ PROOF ============ */
+.proof-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
+.proof-score .big{font-family:var(--font-display);font-weight:800;font-size:clamp(5rem,12vw,8rem);line-height:.85;color:var(--ink);letter-spacing:-.04em}
+.proof-score .st{color:var(--star);font-size:1.5rem;letter-spacing:3px;margin:14px 0 6px}
+.proof-score .lb{font-family:var(--font-mono);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.proof-score .g{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-family:var(--font-mono);font-size:.8rem;color:var(--muted)}
+.proof-score .g svg{width:18px;height:18px}
+.quotes{display:grid;gap:18px}
+.q{padding:26px 28px;border-left:3px solid var(--gold);background:var(--paper);border-radius:0 var(--radius) var(--radius) 0;box-shadow:var(--shadow)}
+.q p{font-family:var(--font-display);font-weight:500;font-size:clamp(1.1rem,2vw,1.4rem);color:var(--ink);line-height:1.3;letter-spacing:-.01em}
+.q .by{margin-top:14px;font-family:var(--font-mono);font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.q .by b{color:#8a6a10}
+.morrev{display:flex;gap:14px;margin-top:22px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.morrev::-webkit-scrollbar{display:none}
+.mr{flex:0 0 270px;max-width:80vw;padding:18px 20px;border:1px solid var(--border);border-radius:var(--radius);background:var(--paper)}
+.mr .st{color:var(--star);letter-spacing:1px;font-size:.85rem}
+.mr p{font-size:.94rem;color:var(--ink);margin:9px 0 12px}
+.mr .by{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+
+/* ============ GALERÍA DE TRABAJOS ============ */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gal{position:relative;aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:#dfe3e8;cursor:zoom-in;box-shadow:var(--shadow)}
+.gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.gal:hover img{transform:scale(1.05)}
+.gal .ph{position:absolute;inset:0;display:grid;place-content:center;color:#9aa3b0}
+.gal .ph svg{width:34px;height:34px}
+.gal .cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:30px 16px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  background:linear-gradient(transparent,rgba(14,22,38,.82));transform:translateY(8px);opacity:0;transition:.3s var(--ease)}
+.gal:hover .cap{transform:none;opacity:1}
+.gal .cap b{color:#fff;font-family:var(--font-sans);font-weight:700;font-size:.95rem}
+.gal .cap i{font-family:var(--font-mono);font-style:normal;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(216,168,30,.5);padding:3px 7px;border-radius:6px}
+.gal-note{margin-top:24px;display:inline-flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:.8rem;color:var(--muted)}
+.gal-note svg{width:18px;height:18px;color:var(--gold)}
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:80;display:none;place-items:center;background:rgba(8,12,20,.86);backdrop-filter:blur(6px);padding:30px}
+.lightbox.open{display:grid}
+.lightbox img{max-width:min(92vw,560px);max-height:88vh;border-radius:12px;box-shadow:var(--shadow-lg)}
+.lightbox .x{position:absolute;top:20px;right:24px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;font-size:1.4rem}
+.lightbox .x:hover{background:rgba(255,255,255,.22)}
+
+/* ============ COVERAGE ============ */
+.cov-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.zones{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 30px}
+.zones b{font-family:var(--font-mono);font-weight:600;font-size:.78rem;letter-spacing:.03em;color:var(--ink);
+  border:1px solid var(--border);padding:9px 14px;border-radius:var(--radius-sm);transition:.25s;background:var(--paper)}
+.zones b:hover{border-color:var(--gold);color:#8a6a10}
+.map{aspect-ratio:4/3.4;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border-strong);box-shadow:var(--shadow)}
+.map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.25) contrast(1.02)}
+
+/* ============ FAQ ============ */
+.faq-wrap{max-width:840px;margin:0 auto;border-top:1px solid var(--border)}
+.faq{border-bottom:1px solid var(--border)}
+.faq summary{list-style:none;cursor:pointer;padding:24px 6px;display:flex;align-items:center;gap:16px;font-family:var(--font-display);font-weight:700;font-size:1.12rem;color:var(--ink);transition:color .2s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:#8a6a10}
+.faq summary .ix{font-family:var(--font-mono);font-weight:700;font-size:.78rem;color:var(--gold);flex:none}
+.faq summary .pl{margin-left:auto;width:24px;height:24px;flex:none;position:relative;transition:transform .3s var(--ease)}
+.faq summary .pl::before,.faq summary .pl::after{content:"";position:absolute;background:var(--gold);border-radius:2px}
+.faq summary .pl::before{top:50%;left:3px;right:3px;height:2px;transform:translateY(-50%)}
+.faq summary .pl::after{left:50%;top:3px;bottom:3px;width:2px;transform:translateX(-50%);transition:opacity .3s}
+.faq[open] summary .pl{transform:rotate(90deg)}
+.faq[open] summary .pl::after{opacity:0}
+.faq .ans{padding:0 6px 26px 42px;color:var(--muted);max-width:680px}
+
+/* ============ CONTACT ============ */
+.contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.contact-info h2{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:22px}
+.contact-tel{display:inline-flex;align-items:center;gap:16px;margin-bottom:22px}
+.contact-tel .ic{width:60px;height:60px;border-radius:14px;background:var(--navy);display:grid;place-items:center;color:var(--gold);flex:none;box-shadow:var(--shadow)}
+.contact-tel .ic svg{width:28px;height:28px}
+.contact-tel .num{font-family:var(--font-mono);font-weight:700;font-size:clamp(1.7rem,4.5vw,2.4rem);color:var(--ink);line-height:1}
+.contact-tel .lb{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.assure{display:grid;gap:13px;margin-top:8px}
+.assure li{display:flex;gap:12px;align-items:center;color:var(--ink-2);font-weight:500}
+.assure svg{width:20px;height:20px;color:var(--gold);flex:none}
+.form-card{padding:32px 30px;box-shadow:var(--shadow)}
+.form-card .lbl{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.86rem;font-weight:600;color:var(--ink);margin-bottom:7px}
+.form-note{margin-top:14px;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.02em;color:var(--muted);text-align:center;display:flex;align-items:center;justify-content:center;gap:8px}
+.form-note svg{width:15px;height:15px;color:#16a34a}
+.form-ok{display:none;text-align:center;padding:26px 6px}
+.form-ok.show{display:block;animation:fadein .5s var(--ease)}
+.form-ok .ic{width:64px;height:64px;border-radius:50%;background:rgba(216,168,30,.18);display:grid;place-items:center;margin:0 auto 16px;color:#8a6a10}
+.form-ok .ic svg{width:32px;height:32px}
+.form-ok h3{font-size:1.4rem;margin-bottom:8px}
+@keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ============ FOOTER ============ */
+.footer{border-top:1px solid var(--border);padding:56px 0 30px;position:relative;z-index:1;background:var(--bg-tint)}
+.foot-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr .9fr;gap:36px;padding-bottom:34px;border-bottom:1px solid var(--border);align-items:start}
+.footer p{font-size:.94rem;max-width:300px;margin-top:14px}
+.foot-logo{background:var(--navy);border-radius:var(--radius);padding:14px;display:grid;place-items:center;max-width:150px;box-shadow:var(--shadow)}
+.foot-logo img{width:100%;height:auto;border-radius:6px}
+.foot-col h4{font-family:var(--font-mono);font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.foot-col a{display:block;padding:6px 0;color:var(--ink-2);font-size:.95rem;transition:color .2s}
+.foot-col a:hover{color:#8a6a10}
+.socials{display:flex;gap:10px;margin-top:18px}
+.socials a{width:42px;height:42px;border-radius:11px;border:1px solid var(--border);background:var(--paper);display:grid;place-items:center;color:var(--ink);transition:.25s}
+.socials a:hover{background:var(--gold);border-color:var(--gold);color:var(--navy);transform:translateY(-3px)}
+.socials svg{width:19px;height:19px}
+.foot-bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:22px;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.03em;color:var(--muted)}
+
+/* ============ FLOATBAR ============ */
+.floatbar{display:none;position:fixed;inset:auto 0 0;z-index:45;gap:10px;padding:11px 14px calc(11px + env(safe-area-inset-bottom));background:rgba(247,248,250,.95);backdrop-filter:blur(10px);border-top:1px solid var(--border)}
+.floatbar .btn{flex:1;box-shadow:none}
+.floatbar .btn-secondary{flex:0 0 auto}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--rd,0ms)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .ticker .track,.dot,.gal img{animation:none!important;transition:none!important}
+  .srow .main .tags b{opacity:1!important;animation:none!important}
+  *{scroll-behavior:auto!important}
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .proof-grid,.cov-grid,.contact-grid{grid-template-columns:1fr;gap:34px}
+  .steps{grid-template-columns:1fr}
+  .stp{border-right:0;border-bottom:1px solid var(--border)}
+  .stp:last-child{border-bottom:0}
+  .stp .ix{margin-bottom:18px}
+  .gal-grid{grid-template-columns:repeat(3,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .nav-links,.nav-tel{display:none}
+  .floatbar{display:flex}
+  body{padding-bottom:78px}
+  .srow{grid-template-columns:auto 1fr;gap:14px}
+  .srow .go{display:none}
+  .gal-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column;text-align:center}
+  .hp-chip.rating{right:0}.hp-chip.live{left:0}
+  .urgency-inner{flex-direction:column;align-items:flex-start}
+  .u-cta{width:100%}.u-call,.u-wa{width:100%}
+}
+</style>
+</head>
+
+<body>
+<span id="topSentinel" aria-hidden="true"></span>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="container nav">
+    <a href="#top" class="brand" aria-label="Basil Sanitario - inicio">
+      <span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-2 8 9-12h-6l2-8z" fill="currentColor"/></svg></span>
+      <span class="wm">Basil<b>.</b><small>Sanitaria · Electricidad</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#cobertura">Cobertura</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-tel" href="tel:+59895555161" data-ev="call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>095 555 161</a>
+      <a class="btn btn-primary btn-sm" href="#" data-wa data-ev="whatsapp">WhatsApp<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</header>
+<span id="top"></span>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="hero-kicker kicker reveal">Maldonado · Punta del Este · 24/7</div>
+      <h1 class="reveal" style="--rd:80ms">Sanitaria y electricidad <span class="em">de urgencia</span> <span class="lite">24/7 en Maldonado y Punta del Este.</span></h1>
+      <p class="sub reveal" style="--rd:160ms">Brigada móvil que <b>contesta cuando otros no</b>. Respuesta rápida, trabajo prolijo y presupuesto claro antes de empezar.</p>
+      <div class="hero-cta reveal" style="--rd:240ms">
+        <a class="btn btn-primary btn-lg" href="#" data-wa data-ev="whatsapp">Escribir por WhatsApp<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-secondary btn-lg" href="tel:+59895555161" data-ev="call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>095 555 161</a>
+      </div>
+      <div class="hero-trust reveal" style="--rd:320ms">
+        <span class="st">★★★★★</span><span>5.0 / 119 reseñas en Google</span><span class="sep"></span><span>Abierto ahora</span>
+      </div>
+    </div>
+
+    <div class="hero-photo reveal" style="--rd:200ms">
+      <span class="hp-chip rating" aria-hidden="true"><span><span class="n">5.0</span></span><span><span class="st">★★★★★</span><br><span class="lb">119 reseñas</span></span></span>
+      <span class="hp-chip live"><span class="dot"></span>En línea · 24/7</span>
+      <div class="photo-frame">
+        <!-- 📷 Guardá la foto del técnico (pulgares arriba) como /img/tecnico.png. Sin foto se ve este panel. -->
+        <img src="img/tecnico.png" alt="Técnico de Basil Sanitario, listo para atender tu urgencia en Maldonado y Punta del Este" onerror="this.remove()" />
+        <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" stroke-linecap="round"/><circle cx="12" cy="7" r="4"/></svg><span>Foto del técnico</span><small>Guardá tu foto como <b>img/tecnico.png</b></small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    <div class="it"><span>Pérdidas</span><span>Destapaciones</span><span>Cortocircuitos</span><span>Salta la térmica</span><span>Calefón</span><span>Tableros</span><span>Caños rotos</span></div>
+    <div class="it"><span>Pérdidas</span><span>Destapaciones</span><span>Cortocircuitos</span><span>Salta la térmica</span><span>Calefón</span><span>Tableros</span><span>Caños rotos</span></div>
+  </div>
+</div>
+
+<!-- ============ SERVICIOS ============ -->
+<section class="section" id="servicios">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Servicios</span>
+      <h2>Lo que se rompe, lo resolvemos.</h2>
+      <p>Sanitaria y electricidad para hogares, comercios y alquileres. Diagnóstico y presupuesto claro antes de tocar nada.</p>
+    </div>
+    <div class="serv">
+      <a class="srow reveal" href="#" data-wa="Hola Basil, necesito un servicio de *sanitaria*." data-ev="whatsapp">
+        <span class="ix">01</span>
+        <div class="main">
+          <h3>Sanitaria</h3>
+          <p>Pérdidas, caños, llaves y cisternas. Destapaciones y desagües. Baños y cocinas, reparación o renovación completa.</p>
+          <div class="tags"><b>Pérdidas</b><b>Destapaciones</b><b>Cisternas</b><b>Reformas</b></div>
+        </div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="srow reveal" href="#" data-wa="Hola Basil, necesito un servicio de *electricidad*." data-ev="whatsapp">
+        <span class="ix">02</span>
+        <div class="main">
+          <h3>Electricidad</h3>
+          <p>Cortes, térmicas, disyuntor y tableros. Tomas, luces, cableado y fallas. Revisiones de seguridad eléctrica.</p>
+          <div class="tags"><b>Térmica</b><b>Tableros</b><b>Cableado</b><b>Seguridad</b></div>
+        </div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="srow reveal" href="#" data-wa="Hola Basil, necesito un *trabajo integral* (varios arreglos)." data-ev="whatsapp">
+        <span class="ix">03</span>
+        <div class="main">
+          <h3>Trabajo integral</h3>
+          <p>Sanitaria y electricidad coordinadas, más arreglos generales y pintura cuando aplica. Una sola coordinación, todo resuelto.</p>
+          <div class="tags"><b>Multioficio</b><b>Mantenimiento</b><b>Reformas</b></div>
+        </div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BANDA URGENCIA (rojo) ============ -->
+<section class="urgency">
+  <div class="container urgency-inner">
+    <div class="u-copy reveal">
+      <span class="u-kick">Urgencias 24/7</span>
+      <h2>¿Necesitás un plomero o electricista de urgencia?</h2>
+      <p>Llamá ahora y lo solucionamos. Brigada móvil 24/7 en Maldonado y Punta del Este.</p>
+    </div>
+    <div class="u-cta reveal" style="--rd:120ms">
+      <a class="u-call" href="tel:+59895555161" data-ev="call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Llamar 095 555 161</a>
+      <a class="u-wa" href="#" data-wa data-ev="whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.66.15-.2.3-.76.95-.93 1.15-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.57-.48-.5-.66-.5-.17 0-.37-.03-.56-.03-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.39-.07-.12-.27-.2-.56-.34zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="section bg-tint" id="proceso">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2>Simple, claro, sin sorpresas.</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="stp"><div class="ix">01</div><h3>Nos escribís o llamás</h3><p>A cualquier hora, todos los días. Contanos qué pasó por WhatsApp o teléfono y activamos la brigada.</p></div>
+      <div class="stp"><div class="ix">02</div><h3>Diagnóstico y presupuesto</h3><p>Revisamos, te explicamos qué hay que hacer y cuánto cuesta. Sin letra chica. Vos decidís.</p></div>
+      <div class="stp"><div class="ix">03</div><h3>Solución prolija y segura</h3><p>Resolvemos, probamos y dejamos todo funcionando y ordenado. Trabajo con responsabilidad.</p></div>
+    </div>
+    <span class="proc-foot reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01" stroke-linecap="round"/></svg>Te asesoramos para que tomes la mejor decisión.</span>
+  </div>
+</section>
+
+<!-- ============ PROOF ============ -->
+<section class="section" id="resenas">
+  <div class="container">
+    <h2 class="reveal" style="font-size:clamp(2.1rem,5vw,3.5rem);margin-bottom:44px">Reseñas reales,<br>gente real.</h2>
+    <div class="proof-grid">
+      <div class="proof-score reveal">
+        <div class="big">5.0</div>
+        <div class="st">★★★★★</div>
+        <div class="lb">119 reseñas verificadas</div>
+        <div class="g"><svg viewBox="0 0 24 24"><path fill="#5C6675" d="M22.5 12.2c0-.8-.07-1.5-.2-2.2H12v4.2h5.9a5 5 0 0 1-2.2 3.3v2.8h3.6c2-1.9 3.2-4.7 3.2-8z"/><path fill="#5C6675" d="M12 23c2.97 0 5.46-.98 7.3-2.7l-3.6-2.8c-1 .7-2.2 1-3.7 1-2.9 0-5.3-1.9-6.2-4.5H2.2v2.8A11 11 0 0 0 12 23z"/><path fill="#5C6675" d="M5.8 14c-.2-.7-.4-1.4-.4-2s.1-1.4.4-2V7.2H2.2a11 11 0 0 0 0 9.6L5.8 14z"/><path fill="#5C6675" d="M12 5.4c1.6 0 3.1.6 4.2 1.6l3.1-3.1C17.4 2 15 1 12 1 7.7 1 4 3.5 2.2 7.2l3.6 2.8C6.7 7.3 9.1 5.4 12 5.4z"/></svg>Reseñas de Google</div>
+      </div>
+      <div class="quotes">
+        <!-- ✍️ Parafraseadas de reseñas reales. Reemplazá por las textuales de tu Google. -->
+        <div class="q reveal"><p>"Los llamé por una pérdida y respondieron al toque. Vinieron rápido, lo solucionaron sin vueltas y dejaron todo impecable."</p><div class="by"><b>Punta del Este</b> · Urgencia sanitaria</div></div>
+        <div class="q reveal" style="--rd:100ms"><p>"Saltaba la térmica y nadie me daba bola. Encontraron la falla y quedó perfecto. Precio justo."</p><div class="by"><b>San Rafael</b> · Falla eléctrica</div></div>
+      </div>
+    </div>
+    <div class="morrev">
+      <div class="mr reveal"><div class="st">★★★★★</div><p>"Muy profesionales y prolijos. Explicaron todo antes de hacerlo."</p><div class="by">Cliente · Maldonado</div></div>
+      <div class="mr reveal" style="--rd:60ms"><div class="st">★★★★★</div><p>"Me asesoraron de forma honesta, sin venderme de más. Muy tranquila."</p><div class="by">Cliente · Maldonado</div></div>
+      <div class="mr reveal" style="--rd:120ms"><div class="st">★★★★★</div><p>"Destaparon el desagüe y dejaron todo limpio. Prolijo de verdad."</p><div class="by">Cliente · Aidy Grill</div></div>
+      <div class="mr reveal" style="--rd:180ms"><div class="st">★★★★★</div><p>"Atención inmediata un domingo de noche. Serios y responsables."</p><div class="by">Cliente · Punta del Este</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERÍA DE TRABAJOS ============ -->
+<section class="section bg-tint" id="trabajos">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Trabajos</span>
+      <h2>Galería de trabajos reales.</h2>
+      <p>Algunos trabajos de sanitaria y electricidad hechos por Basil. Tocá una foto para verla en grande.</p>
+    </div>
+    <div class="gal-grid">
+      <button class="gal reveal" data-full="img/galeria-1.png" aria-label="Ver baño terminado"><img src="img/galeria-1.png" alt="Baño completo terminado por Basil Sanitario" loading="lazy"><span class="cap"><b>Baño terminado</b><i>Sanitaria</i></span></button>
+      <button class="gal reveal" style="--rd:60ms" data-full="img/galeria-2.png" aria-label="Ver instalación sanitaria"><img src="img/galeria-2.png" alt="Instalación sanitaria realizada por Basil Sanitario" loading="lazy"><span class="cap"><b>Instalación sanitaria</b><i>Sanitaria</i></span></button>
+      <button class="gal reveal" style="--rd:120ms" data-full="img/galeria-3.png" aria-label="Ver instalación bajo mueble"><img src="img/galeria-3.png" alt="Instalación bajo mueble de baño" loading="lazy"><span class="cap"><b>Bajo mueble</b><i>Sanitaria</i></span></button>
+      <button class="gal reveal" data-full="img/galeria-4.png" aria-label="Ver instalación de cañerías"><img src="img/galeria-4.png" alt="Instalación de cañerías de agua fría y caliente" loading="lazy"><span class="cap"><b>Cañerías</b><i>Instalación</i></span></button>
+      <button class="gal reveal" style="--rd:60ms" data-full="img/galeria-5.png" aria-label="Ver sala técnica"><img src="img/galeria-5.png" alt="Sala técnica sanitaria instalada por Basil Sanitario" loading="lazy"><span class="cap"><b>Sala técnica</b><i>Instalación</i></span></button>
+      <button class="gal reveal" style="--rd:120ms" data-full="img/galeria-6.png" aria-label="Ver inodoro suspendido"><img src="img/galeria-6.png" alt="Instalación de inodoro suspendido" loading="lazy"><span class="cap"><b>Inodoro suspendido</b><i>Sanitaria</i></span></button>
+    </div>
+    <span class="gal-note reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Fotos reales de trabajos de Basil Sanitario.</span>
+  </div>
+</section>
+
+<!-- ============ COBERTURA ============ -->
+<section class="section" id="cobertura">
+  <div class="container cov-grid">
+    <div class="reveal">
+      <span class="eyebrow">Cobertura</span>
+      <h2 style="font-size:clamp(2.1rem,5vw,3.4rem);margin:0 0 18px">Atendemos Maldonado<br>y Punta del Este.</h2>
+      <p style="max-width:460px">Brigada móvil lista para moverse a tu zona. ¿No ves tu barrio? Consultanos, seguramente llegamos.</p>
+      <div class="zones">
+        <b>Punta del Este</b><b>Maldonado</b><b>San Rafael</b><b>Aidy Grill</b><b>La Barra</b><b>Pinares</b>
+      </div>
+      <a class="btn btn-primary btn-lg" href="#" data-wa="Hola Basil, ¿cubren mi zona? Te paso la dirección." data-ev="whatsapp">Consultá tu zona<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="map reveal" style="--rd:120ms">
+      <iframe title="Cobertura Maldonado y Punta del Este" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Maldonado,Punta%20del%20Este,Uruguay&z=11&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section bg-tint" id="faq">
+  <div class="container">
+    <div class="sec-head reveal" style="margin-bottom:40px">
+      <span class="eyebrow">Preguntas</span>
+      <h2>Dudas frecuentes.</h2>
+    </div>
+    <div class="faq-wrap reveal">
+      <details class="faq"><summary><span class="ix">01</span>¿Atienden urgencias de noche?<span class="pl"></span></summary><div class="ans">Sí. Trabajamos 24/7: de noche, fines de semana y feriados. Si es una emergencia, escribinos o llamanos y te respondemos rápido.</div></details>
+      <details class="faq"><summary><span class="ix">02</span>¿Cuánto tardan en llegar?<span class="pl"></span></summary><div class="ans">Depende de tu zona y la demanda del momento, pero la brigada móvil prioriza las urgencias y se mueve lo antes posible. Al contactarnos te damos una referencia clara.</div></details>
+      <details class="faq"><summary><span class="ix">03</span>¿Dan presupuesto antes?<span class="pl"></span></summary><div class="ans">Siempre. Revisamos el problema, te explicamos qué hay que hacer y te pasamos el presupuesto antes de empezar. Vos decidís.</div></details>
+      <details class="faq"><summary><span class="ix">04</span>¿Trabajan fines de semana?<span class="pl"></span></summary><div class="ans">Sí: sábados, domingos y feriados. Las urgencias no esperan, y nosotros tampoco.</div></details>
+      <details class="faq"><summary><span class="ix">05</span>¿Hacen mantenimiento además de urgencias?<span class="pl"></span></summary><div class="ans">Por supuesto. Además de emergencias hacemos instalaciones, reparaciones, mantenimiento y mejoras, tanto en sanitaria como en electricidad.</div></details>
+      <details class="faq"><summary><span class="ix">06</span>¿Qué medios de pago aceptan?<span class="pl"></span></summary><div class="ans">Consultanos por WhatsApp y te indicamos las opciones de pago disponibles para tu trabajo.</div></details>
+      <details class="faq"><summary><span class="ix">07</span>¿Cubren Punta del Este y Maldonado?<span class="pl"></span></summary><div class="ans">Sí, son nuestra zona principal: Punta del Este, Maldonado y alrededores (San Rafael, Aidy Grill, La Barra, Pinares y más). Si dudás, consultanos tu dirección.</div></details>
+      <details class="faq"><summary><span class="ix">08</span>¿Pueden revisar seguridad eléctrica?<span class="pl"></span></summary><div class="ans">Sí. Hacemos revisiones de instalaciones, tableros, disyuntor y puesta a tierra para que tu casa o comercio estén seguros.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contacto">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Contacto</span>
+      <h2 style="margin-top:14px">Tu urgencia<br>no puede esperar.</h2>
+      <a class="contact-tel" href="tel:+59895555161" data-ev="call">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <span><span class="lb">Línea directa · 24/7</span><br><span class="num">095 555 161</span></span>
+      </a>
+      <ul class="assure">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Brigada móvil que se mueve a tu zona</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Trabajo prolijo, seguro y responsable</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Presupuesto claro · 5.0 ★ con 119 reseñas</li>
+      </ul>
+    </div>
+
+    <div class="card form-card reveal" style="--rd:120ms">
+      <div id="formView">
+        <div class="lbl">Solicitar atención</div>
+        <form id="leadForm" novalidate>
+          <div class="field"><label for="nombre">Nombre</label><input class="input" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name" /></div>
+          <div class="field"><label for="tel">Teléfono</label><input class="input" type="tel" id="tel" name="tel" placeholder="09X XXX XXX" required autocomplete="tel" inputmode="tel" /></div>
+          <div class="field"><label for="msg">¿Qué pasó?</label><textarea class="input" id="msg" name="msg" placeholder="Ej: pérdida de agua en la cocina / salta la térmica..." required></textarea></div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar por WhatsApp<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <p class="form-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Te respondemos rápido. Sin compromiso.</p>
+        </form>
+      </div>
+      <div class="form-ok" id="formOk">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>¡Listo! Te respondemos rápido</h3>
+        <p>Abrimos WhatsApp con tu mensaje. Si no se abrió, escribinos al <b style="color:#8a6a10">095 555 161</b>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="brand">
+          <span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-2 8 9-12h-6l2-8z" fill="currentColor"/></svg></span>
+          <span class="wm">Basil<b>.</b><small>Sanitaria · Electricidad</small></span>
+        </a>
+        <p>Sanitaria y electricidad con emergencias 24/7 y brigada móvil en Maldonado y Punta del Este, Uruguay.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/basil_sanitario" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://wa.me/59895555161" target="_blank" rel="noopener" aria-label="WhatsApp" data-ev="whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.66.15-.2.3-.76.95-.93 1.15-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.57-.48-.5-.66-.5-.17 0-.37-.03-.56-.03-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.39-.07-.12-.27-.2-.56-.34zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg></a>
+          <a href="tel:+59895555161" aria-label="Llamar" data-ev="call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Mapa</h4><a href="#servicios">Servicios</a><a href="#proceso">Proceso</a><a href="#trabajos">Trabajos</a><a href="#cobertura">Cobertura</a><a href="#faq">FAQ</a></div>
+      <div class="foot-col"><h4>Contacto</h4><a href="tel:+59895555161" data-ev="call">095 555 161</a><a href="https://wa.me/59895555161" target="_blank" rel="noopener" data-ev="whatsapp">WhatsApp 24/7</a><a href="https://www.instagram.com/basil_sanitario" target="_blank" rel="noopener">@basil_sanitario</a><a>Maldonado · Punta del Este</a></div>
+      <div class="foot-logo"><img src="img/logo.png" alt="Logo de Basil Sanitario - Sanitaria y Electricidad 24/7" loading="lazy" /></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> BASIL SANITARIO · SANITARIA + ELECTRICIDAD</span>
+      <span>DISPONIBILIDAD SEGÚN ZONA Y DEMANDA</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATBAR ============ -->
+<div class="floatbar" role="region" aria-label="Contacto rápido">
+  <a class="btn btn-primary" href="#" data-wa data-ev="whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.66.15-.2.3-.76.95-.93 1.15-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.57-.48-.5-.66-.5-.17 0-.37-.03-.56-.03-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.39-.07-.12-.27-.2-.56-.34zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>WhatsApp</a>
+  <a class="btn btn-secondary" href="tel:+59895555161" data-ev="call" aria-label="Llamar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+</div>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto de trabajo">
+  <button class="x" id="lbClose" aria-label="Cerrar">&times;</button>
+  <img id="lbImg" src="" alt="" />
+</div>
+
+<!-- ============ SCRIPTS ============ -->
+<script>
+(function(){
+  "use strict";
+  var WA_NUMBER = "59895555161";
+  var WA_DEFAULT = "Hola Basil Sanitario, necesito ayuda con una urgencia. ¿Me pueden contactar?";
+
+  /* TRACKING (placeholder): pegá GA4 / Meta Pixel en el <head>.
+     Eventos: click_whatsapp · click_call · submit_form */
+  function trackEvent(name, params){
+    params = params || {};
+    try { window.dataLayer = window.dataLayer || []; window.dataLayer.push(Object.assign({event:name}, params)); } catch(e){}
+    // if (typeof gtag === "function") gtag("event", name, params);
+    // if (typeof fbq === "function") fbq("trackCustom", name, params);
+  }
+  var EV = { whatsapp:"click_whatsapp", call:"click_call", submit:"submit_form" };
+
+  function waLink(text){ return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text || WA_DEFAULT); }
+  document.querySelectorAll("[data-wa]").forEach(function(el){
+    el.setAttribute("href", waLink(el.getAttribute("data-wa")));
+    el.setAttribute("target","_blank"); el.setAttribute("rel","noopener");
+  });
+  document.querySelectorAll("[data-ev]").forEach(function(el){
+    el.addEventListener("click", function(){ var t = el.getAttribute("data-ev"); if (EV[t]) trackEvent(EV[t]); });
+  });
+
+  var header = document.getElementById("header");
+  var sentinel = document.getElementById("topSentinel");
+  if (sentinel && "IntersectionObserver" in window){
+    new IntersectionObserver(function(es){ header.classList.toggle("scrolled", !es[0].isIntersecting); }, { rootMargin:"-24px 0px 0px 0px" }).observe(sentinel);
+  }
+
+  var reveals = document.querySelectorAll(".reveal");
+  function inView(el){ var r = el.getBoundingClientRect(); return r.top < (window.innerHeight || document.documentElement.clientHeight) - 40; }
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold:0.06, rootMargin:"0px 0px -40px 0px" });
+    reveals.forEach(function(el){ if (inView(el)) el.classList.add("in"); else io.observe(el); });
+  } else { reveals.forEach(function(el){ el.classList.add("in"); }); }
+
+  var faqs = document.querySelectorAll(".faq");
+  faqs.forEach(function(d){ d.addEventListener("toggle", function(){ if (d.open) faqs.forEach(function(o){ if (o!==d) o.open=false; }); }); });
+
+  /* Galería: lightbox */
+  var lb = document.getElementById("lightbox"), lbImg = document.getElementById("lbImg");
+  function openLb(src, alt){ lbImg.src = src; lbImg.alt = alt || ""; lb.classList.add("open"); document.body.style.overflow="hidden"; }
+  function closeLb(){ lb.classList.remove("open"); lbImg.src=""; document.body.style.overflow=""; }
+  document.querySelectorAll(".gal").forEach(function(g){
+    g.addEventListener("click", function(){ var img=g.querySelector("img"); if(img) openLb(g.getAttribute("data-full")||img.src, img.alt); });
+  });
+  document.getElementById("lbClose").addEventListener("click", closeLb);
+  lb.addEventListener("click", function(e){ if(e.target===lb) closeLb(); });
+  document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeLb(); });
+
+  var form = document.getElementById("leadForm");
+  if (form){
+    form.addEventListener("submit", function(ev){
+      ev.preventDefault();
+      var nombre=(document.getElementById("nombre").value||"").trim();
+      var tel=(document.getElementById("tel").value||"").trim();
+      var msg=(document.getElementById("msg").value||"").trim();
+      if(!nombre||!tel||!msg){ (!nombre?document.getElementById("nombre"):!tel?document.getElementById("tel"):document.getElementById("msg")).focus(); return; }
+      var texto="Hola Basil Sanitario 👋\n\n*Nombre:* "+nombre+"\n*Teléfono:* "+tel+"\n*¿Qué pasó?:* "+msg;
+      trackEvent(EV.submit,{name:nombre});
+      window.open(waLink(texto),"_blank","noopener");
+      document.getElementById("formView").style.display="none";
+      document.getElementById("formOk").classList.add("show");
+    });
+  }
+  try { document.getElementById("year").textContent = new Date().getFullYear(); } catch(e){}
+})();
+</script>
+</body>
+</html>

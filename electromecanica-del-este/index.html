@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Electromecánica del Este | Taller Mecánico y Eléctrico en Maldonado</title>
+  <meta name="description" content="Taller electromecánico automotriz en Maldonado, Uruguay. Diagnóstico computarizado, inyección electrónica, ABS, iluminación LED, service de motor y baterías. ¡Llamanos ya!">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  
+  <!-- Preloads -->
+  <link rel="preload" as="image" href="assets/img/hero.png" fetchpriority="high">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css?v=20260609">
+  
+  <!-- Safety Net for reveals (JS-Conflict mitigation) -->
+  <style>
+    .reveal[data-split] { opacity: 1; transform: none; }
+    .is-ready .reveal[data-split] { opacity: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Loading Splash Screen -->
+  <div id="splash" class="splash-screen" role="status" aria-label="Cargando taller">
+    <div class="splash-content">
+      <div class="splash-logo-container">
+        <img class="splash-logo" src="assets/img/logo.png" alt="Electromecánica del Este Logo">
+      </div>
+      <div class="splash-loader">
+        <div class="splash-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="main-header">
+    <div class="container header-container">
+      <a href="#inicio" class="logo-link" aria-label="Inicio - Electromecánica del Este">
+        <img src="assets/img/logo.png" alt="" class="logo-img" aria-hidden="true">
+        <span class="logo-text">Electromecánica<span>del Este</span></span>
+      </a>
+      
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú de navegación">
+        <span class="hamburger"></span>
+      </button>
+      
+      <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+          <li><a href="#resenas" class="nav-link">Reseñas</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+          <li class="nav-cta-item">
+            <a href="https://wa.me/59899905315?text=Hola,%20necesito%20hacer%20una%20consulta%20por%20mi%20auto" 
+               class="btn btn-primary btn-nav" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               id="nav-btn-whatsapp">
+              <i data-lucide="phone" class="btn-icon"></i> Escribinos
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section id="inicio" class="section hero-section" aria-label="Presentación">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge reveal" data-reveal="fade-in">
+            <span class="badge-dot"></span> Maldonado, Uruguay
+          </div>
+          <h1 class="hero-title reveal" data-reveal="slide-up">
+            POTENCIA Y PRECISIÓN PARA TU AUTO.
+          </h1>
+          <p class="hero-lead reveal" data-reveal="slide-up" data-delay="100">
+            Taller especializado en electricidad automotriz e inyección electrónica. Diagnóstico computarizado al toque, repuestos originales y soluciones de verdad para que andes tranquilo.
+          </p>
+          <div class="hero-actions reveal" data-reveal="slide-up" data-delay="200">
+            <a href="https://wa.me/59899905315?text=Hola,%20quiero%20coordinar%20un%20turno%20para%20un%20diagnóstico" 
+               class="btn btn-primary" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               id="hero-btn-whatsapp">
+              <i data-lucide="message-square" class="btn-icon"></i> Agendar Turno por WhatsApp
+            </a>
+            <a href="#servicios" class="btn btn-secondary" id="hero-btn-services">
+              Ver Servicios
+            </a>
+          </div>
+          
+          <div class="hero-meta reveal" data-reveal="fade-in" data-delay="350">
+            <div class="meta-item">
+              <span class="meta-number">Diego</span>
+              <span class="meta-label">Mecánico a cargo</span>
+            </div>
+            <div class="meta-separator"></div>
+            <div class="meta-item">
+              <span class="meta-number">4223 2149</span>
+              <span class="meta-label">Teléfono fijo</span>
+            </div>
+            <div class="meta-separator"></div>
+            <div class="meta-item flex-row">
+              <a href="https://www.instagram.com/electromecanica_del_este" 
+                 class="meta-instagram-link" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 aria-label="Seguinos en Instagram">
+                <i data-lucide="instagram" class="meta-icon"></i>
+                <div>
+                  <span class="meta-number">@electromecanica_del_este</span>
+                  <span class="meta-label">Seguinos en Instagram</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-visual reveal" data-reveal="scale-up" data-delay="150">
+          <div class="hero-image-wrapper" data-parallax="0.15">
+            <img src="assets/img/hero.png" alt="Interior del taller mecánico con luces rojas y equipamiento de diagnóstico" class="hero-image" fetchpriority="high">
+            <div class="hero-image-overlay"></div>
+          </div>
+          <!-- Decorative tech graphic -->
+          <div class="tech-grid-overlay"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="section services-section" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Diagnóstico & Mantenimiento</div>
+          <h2 id="services-title" class="section-title">Nuestros Servicios</h2>
+          <p class="section-desc">
+            Equipamiento de última generación y repuestos de primera calidad para darte una solución rápida y eficiente.
+          </p>
+        </div>
+        
+        <!-- Bento Grid for Services -->
+        <div class="bento-grid" data-products>
+          <!-- Fills dynamically from manifest.js, fallbacks below for static check/SEO -->
+          <noscript>
+            <article class="bento-card col-span-2 row-span-2 service-featured">
+              <div class="card-bg-image" style="background-image: url('assets/img/diagnostic.png')"></div>
+              <div class="card-content">
+                <div class="card-icon"><i data-lucide="cpu"></i></div>
+                <h3>Diagnóstico Computarizado</h3>
+                <p>Escaneo completo de módulos electrónicos, lectura y borrado de códigos de falla (DTC) con escáneres de última generación.</p>
+              </div>
+            </article>
+            <article class="bento-card">
+              <div class="card-content">
+                <div class="card-icon"><i data-lucide="gauge"></i></div>
+                <h3>Inyección Electrónica</h3>
+                <p>Diagnóstico y reparación de sistemas de inyección, optimización de consumo y solución de fallas.</p>
+              </div>
+            </article>
+            <article class="bento-card">
+              <div class="card-content">
+                <div class="card-icon"><i data-lucide="shield"></i></div>
+                <h3>ABS y Frenos</h3>
+                <p>Mantenimiento y reparación de sistemas de frenado tradicionales y electrónicos ABS.</p>
+              </div>
+            </article>
+            <article class="bento-card">
+              <div class="card-content">
+                <div class="card-icon"><i data-lucide="zap"></i></div>
+                <h3>Iluminación LED / Xenón</h3>
+                <p>Instalación y calibración de luces auxiliares y sistemas eléctricos de iluminación vehicular.</p>
+              </div>
+            </article>
+            <article class="bento-card col-span-2 service-battery">
+              <div class="card-bg-image" style="background-image: url('assets/img/battery.png')"></div>
+              <div class="card-content">
+                <div class="card-icon"><i data-lucide="battery-charging"></i></div>
+                <h3>Venta y Service de Baterías</h3>
+                <p>Diagnóstico de carga y alternadores. Cambio en el acto con baterías de marca y garantía.</p>
+              </div>
+            </article>
+            <article class="bento-card">
+              <div class="card-content">
+                <div class="card-icon"><i data-lucide="wind"></i></div>
+                <h3>Limpieza de Inyectores</h3>
+                <p>Limpieza por ultrasonido y banco de pruebas para recuperar la potencia del motor.</p>
+              </div>
+            </article>
+            <article class="bento-card">
+              <div class="card-content">
+                <div class="card-icon"><i data-lucide="wrench"></i></div>
+                <h3>Service de Motor</h3>
+                <p>Cambio de aceite, filtros, correas y afinación completa para mantener tu auto al 100%.</p>
+              </div>
+            </article>
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="section about-section" aria-labelledby="about-title">
+      <div class="container about-container">
+        <div class="about-content">
+          <div class="section-eyebrow">Sobre el Taller</div>
+          <h2 id="about-title" class="section-title">Mecánica transparente en Maldonado</h2>
+          <p class="about-text leading-relaxed">
+            Acá no damos vueltas ni te inventamos repuestos. Entendemos que tu auto es tu herramienta de trabajo o tu movilidad diaria, por eso trabajamos con seriedad, rapidez y transparencia.
+          </p>
+          <p class="about-text leading-relaxed">
+            Liderados por <strong>Diego</strong>, nos enfocamos en explicarte con paciencia qué tiene tu auto, cuáles son las alternativas y qué conviene hacer. Nuestra reputación se basa en la honestidad, la cordialidad y en cobrar lo que corresponde.
+          </p>
+          
+          <div class="features-list">
+            <div class="feature-row">
+              <div class="feature-icon-wrapper"><i data-lucide="check" class="feature-icon"></i></div>
+              <div>
+                <h4 class="feature-title">Equipamiento técnico al día</h4>
+                <p class="feature-text text-gray-400">Escáneres multimarca para diagnosticar fallas eléctricas complejas al instante.</p>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-icon-wrapper"><i data-lucide="clock" class="feature-icon"></i></div>
+              <div>
+                <h4 class="feature-title">Soluciones rápidas</h4>
+                <p class="feature-text text-gray-400">Sabemos que el tiempo vale. Te devolvemos el auto en las condiciones pactadas y lo antes posible.</p>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-icon-wrapper"><i data-lucide="map-pin" class="feature-icon"></i></div>
+              <div>
+                <h4 class="feature-title">Ubicación estratégica</h4>
+                <p class="feature-text text-gray-400">En la esquina de 19 de Abril y 3 de Febrero, pleno Maldonado. De fácil acceso.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-card">
+          <h3 class="about-card-title">¿Por qué confiar en nosotros?</h3>
+          <div class="about-stat-grid">
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-lbl">Garantía en reparaciones</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">Diego</span>
+              <span class="stat-lbl">Confianza y trato directo</span>
+            </div>
+          </div>
+          <div class="about-card-info">
+            <p><strong>¿Tuviste un problema el fin de semana?</strong></p>
+            <p class="text-gray-400">Escribinos y coordinamos la entrada del auto el lunes a primera hora. Hacemos diagnósticos en el acto.</p>
+            <a href="https://wa.me/59899905315?text=Hola,%20necesito%20hacerles%20una%20consulta" 
+               class="btn btn-primary btn-full-width" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               id="about-btn-whatsapp">
+              <i data-lucide="message-square" class="btn-icon"></i> Consultar Ahora
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="resenas" class="section reviews-section" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Opiniones reales</div>
+          <h2 id="reviews-title" class="section-title">Lo que dicen nuestros clientes</h2>
+          <p class="section-desc">
+            Testimonios reales extraídos directamente de nuestras reseñas de Google Maps. Honestidad y palabra en Maldonado.
+          </p>
+        </div>
+        
+        <div class="reviews-wrapper">
+          <div class="reviews-slider-track" data-testimonials>
+            <!-- Fills dynamically from manifest.js, fallbacks below for static check/SEO -->
+            <noscript>
+              <div class="review-card">
+                <div class="review-header">
+                  <span class="review-author">Joaquín R.</span>
+                  <div class="review-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                </div>
+                <p class="review-text">"La atención es excepcional. Diego inspira confianza y demuestra que sabe lo que hace. Explica con paciencia."</p>
+              </div>
+              <div class="review-card">
+                <div class="review-header">
+                  <span class="review-author">Rino Y.</span>
+                  <div class="review-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                </div>
+                <p class="review-text">"Excelente atención, atentos y cordiales. El trabajo fue la reprogramación de la ECU de una CFMoto 300 NK, quedó excelente. Muy conforme y sumamente recomendable."</p>
+              </div>
+            </noscript>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="section contact-section" aria-labelledby="contact-title">
+      <div class="container contact-container">
+        <div class="contact-info-panel">
+          <div class="section-eyebrow">Contacto & Ubicación</div>
+          <h2 id="contact-title" class="section-title">¿Tu auto falla? Traelo hoy</h2>
+          <p class="contact-lead text-gray-400">
+            Estamos ubicados en Maldonado centro. Podés llamarnos por teléfono fijo, celular o directamente mandarnos un WhatsApp.
+          </p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <i data-lucide="map-pin" class="contact-icon text-red"></i>
+              <div>
+                <h5>Dirección</h5>
+                <p class="text-white">19 de Abril esq. 3 de Febrero</p>
+                <p class="text-gray-400">Maldonado, Uruguay</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i data-lucide="phone" class="contact-icon text-red"></i>
+              <div>
+                <h5>Teléfonos</h5>
+                <p><a href="tel:42232149" class="phone-link text-white">4223 2149</a> <span class="text-gray-500">(Fijo)</span></p>
+                <p><a href="tel:099905315" class="phone-link text-white">099 905 315</a> <span class="text-gray-500">(Celular)</span></p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i data-lucide="clock" class="contact-icon text-red"></i>
+              <div>
+                <h5>Horarios de atención</h5>
+                <p class="text-white">Lunes a Viernes: 08:30 a 12:00 y 14:00 a 18:30</p>
+                <p class="text-white">Sábados: 08:30 a 12:30</p>
+                <p class="text-gray-500">Domingos cerrado</p>
+              </div>
+            </div>
+          </div>
+          
+          <a href="https://wa.me/59899905315?text=Hola,%20estoy%20cerca%20del%20taller%20y%20quiero%20pasar%20por%20una%20consulta" 
+             class="btn btn-primary btn-full-width" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             id="contact-btn-whatsapp">
+            <i data-lucide="message-square" class="btn-icon"></i> Escribir por WhatsApp
+          </a>
+        </div>
+        
+        <div class="contact-visual">
+          <!-- Interactive Map placeholder / embed -->
+          <div class="map-wrapper">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3265.4194770281203!2d-54.9587483!3d-34.9084928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95701a539eb8c057%3A0xe54d2459df21d283!2s19%20de%20Abril%20%26%203%20de%20Febrero%2C%20Maldonado%2C%20Departamento%20de%20Maldonado%2C%20Uruguay!5e0!3m2!1ses-419!2s!4v1700000000000!5m2!1ses-419!2s" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicación de Electromecánica del Este en Maldonado">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo-link">
+          <img src="assets/img/logo.png" alt="" class="logo-img" aria-hidden="true">
+          <span class="logo-text">Electromecánica<span>del Este</span></span>
+        </a>
+        <p class="footer-desc text-gray-400">
+          Electricidad y mecánica automotriz con seriedad y confianza en el centro de Maldonado.
+        </p>
+      </div>
+      
+      <div class="footer-links-grid">
+        <div>
+          <h6 class="footer-heading">Taller</h6>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#resenas">Receñas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="footer-heading">Contacto</h6>
+          <ul class="footer-links">
+            <li><span class="text-gray-400">19 de Abril y 3 de Febrero</span></li>
+            <li><a href="tel:42232149">Tel: 4223 2149</a></li>
+            <li><a href="tel:099905315">Cel: 099 905 315</a></li>
+            <li><a href="https://www.instagram.com/electromecanica_del_este" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p class="copyright text-gray-500">
+        &copy; 2026 Electromecánica del Este. Todos los derechos reservados.
+      </p>
+      <p class="footer-credits text-gray-500">
+        Imágenes reales del taller e ilustraciones. <a href="creditos.html" class="credits-link">Créditos de imágenes →</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- GSAP Core & ScrollTrigger (defer loaded, execute in order) -->
+  <script defer src="lib/gsap.min.js"></script>
+  <script defer src="lib/ScrollTrigger.min.js"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script defer src="https://unpkg.com/lucide@0.435.0/dist/umd/lucide.min.js"></script>
+  
+  <!-- Brand Manifest Data -->
+  <script defer src="lib/manifest.js"></script>
+  
+  <!-- Main Script -->
+  <script defer src="main.js?v=20260609"></script>
+
+</body>
+</html>

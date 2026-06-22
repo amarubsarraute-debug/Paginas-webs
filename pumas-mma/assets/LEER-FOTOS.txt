@@ -1,0 +1,29 @@
+CÓMO AGREGAR TUS FOTOS (sin tocar código)
+=========================================
+
+Poné tus imágenes dentro de esta carpeta "assets" con EXACTAMENTE estos nombres
+(en .jpg). Cuando estén, refrescá la web y aparecen solas. Si falta alguna, se
+muestra un recuadro elegante de "foto" en su lugar (no se rompe nada).
+
+ARCHIVOS QUE USA LA WEB
+-----------------------
+  hero.jpg          → imagen grande de fondo del inicio (apaisada, ej. 1920x1080)
+  about.jpg         → foto del gimnasio / ambiente de entrenamiento
+  boxeo.jpg         → disciplina Boxeo
+  mma.jpg           → disciplina MMA
+  grappling.jpg     → disciplina Grappling
+  jiujitsu.jpg      → disciplina Jiu-Jitsu
+  kickboxing.jpg    → disciplina Kick Boxing Femenino
+  kids.jpg          → disciplina Artes Marciales Kids
+  coach-fede.jpg    → retrato Head Coach (Coach Fede)
+  joaquim.jpg       → retrato Joaquim Da Silva
+  luis.jpg          → retrato Luis Castillo
+  alicia.jpg        → retrato Alicia
+  cta.jpg           → imagen de fondo del bloque final (apaisada)
+
+CONSEJOS
+--------
+- Formato .jpg, peso ideal < 400 KB cada una (para que cargue rápido).
+- Las fotos se muestran en blanco y negro a propósito (estilo formal). Si las
+  querés a color, abrí index.html, buscá la palabra "grayscale" y borrá esa línea.
+- Los retratos quedan mejor verticales (ej. 800x1000).

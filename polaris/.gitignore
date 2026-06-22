@@ -1,0 +1,11 @@
+# Contenido personal — NUNCA subir a internet
+seed/mi-seed.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+
+# Node (por si en el futuro se agrega tooling)
+node_modules/
