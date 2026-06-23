@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="es"><head><style>:root{--litepicker-container-months-color-bg: #fff;--litepicker-container-months-box-shadow-color: #ddd;--litepicker-footer-color-bg: #fafafa;--litepicker-footer-box-shadow-color: #ddd;--litepicker-tooltip-color-bg: #fff;--litepicker-month-header-color: #333;--litepicker-button-prev-month-color: #9e9e9e;--litepicker-button-next-month-color: #9e9e9e;--litepicker-button-prev-month-color-hover: #2196f3;--litepicker-button-next-month-color-hover: #2196f3;--litepicker-month-width: calc(var(--litepicker-day-width) * 7);--litepicker-month-weekday-color: #9e9e9e;--litepicker-month-week-number-color: #9e9e9e;--litepicker-day-width: 38px;--litepicker-day-color: #333;--litepicker-day-color-hover: #2196f3;--litepicker-is-today-color: #f44336;--litepicker-is-in-range-color: #bbdefb;--litepicker-is-locked-color: #9e9e9e;--litepicker-is-start-color: #fff;--litepicker-is-start-color-bg: #2196f3;--litepicker-is-end-color: #fff;--litepicker-is-end-color-bg: #2196f3;--litepicker-button-cancel-color: #fff;--litepicker-button-cancel-color-bg: #9e9e9e;--litepicker-button-apply-color: #fff;--litepicker-button-apply-color-bg: #2196f3;--litepicker-button-reset-color: #909090;--litepicker-button-reset-color-hover: #2196f3;--litepicker-highlighted-day-color: #333;--litepicker-highlighted-day-color-bg: #ffeb3b}.show-week-numbers{--litepicker-month-width: calc(var(--litepicker-day-width) * 8)}.litepicker{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;font-size:0.8em;display:none}.litepicker button{border:none;background:none}.litepicker .container__main{display:-webkit-box;display:-ms-flexbox;display:flex}.litepicker .container__months{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;background-color:var(--litepicker-container-months-color-bg);border-radius:5px;-webkit-box-shadow:0 0 5px var(--litepicker-container-months-box-shadow-color);box-shadow:0 0 5px var(--litepicker-container-months-box-shadow-color);width:calc(var(--litepicker-month-width) + 10px);-webkit-box-sizing:content-box;box-sizing:content-box}.litepicker .container__months.columns-2{width:calc((var(--litepicker-month-width) * 2) + 20px)}.litepicker .container__months.columns-3{width:calc((var(--litepicker-month-width) * 3) + 30px)}.litepicker .container__months.columns-4{width:calc((var(--litepicker-month-width) * 4) + 40px)}.litepicker .container__months.split-view .month-item-header .button-previous-month,.litepicker .container__months.split-view .month-item-header .button-next-month{visibility:visible}.litepicker .container__months .month-item{padding:5px;width:var(--litepicker-month-width);-webkit-box-sizing:content-box;box-sizing:content-box}.litepicker .container__months .month-item-header{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;font-weight:500;padding:10px 5px;text-align:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:var(--litepicker-month-header-color)}.litepicker .container__months .month-item-header div{-webkit-box-flex:1;-ms-flex:1;flex:1}.litepicker .container__months .month-item-header div>.month-item-name{margin-right:5px}.litepicker .container__months .month-item-header div>.month-item-year{padding:0}.litepicker .container__months .month-item-header .reset-button{color:var(--litepicker-button-reset-color)}.litepicker .container__months .month-item-header .reset-button>svg{fill:var(--litepicker-button-reset-color)}.litepicker .container__months .month-item-header .reset-button *{pointer-events:none}.litepicker .container__months .month-item-header .reset-button:hover{color:var(--litepicker-button-reset-color-hover)}.litepicker .container__months .month-item-header .reset-button:hover>svg{fill:var(--litepicker-button-reset-color-hover)}.litepicker .container__months .month-item-header .button-previous-month,.litepicker .container__months .month-item-header .button-next-month{visibility:hidden;text-decoration:none;padding:3px 5px;border-radius:3px;-webkit-transition:color 0.3s, border 0.3s;transition:color 0.3s, border 0.3s;cursor:default}.litepicker .container__months .month-item-header .button-previous-month *,.litepicker .container__months .month-item-header .button-next-month *{pointer-events:none}.litepicker .container__months .month-item-header .button-previous-month{color:var(--litepicker-button-prev-month-color)}.litepicker .container__months .month-item-header .button-previous-month>svg,.litepicker .container__months .month-item-header .button-previous-month>img{fill:var(--litepicker-button-prev-month-color)}.litepicker .container__months .month-item-header .button-previous-month:hover{color:var(--litepicker-button-prev-month-color-hover)}.litepicker .container__months .month-item-header .button-previous-month:hover>svg{fill:var(--litepicker-button-prev-month-color-hover)}.litepicker .container__months .month-item-header .button-next-month{color:var(--litepicker-button-next-month-color)}.litepicker .container__months .month-item-header .button-next-month>svg,.litepicker .container__months .month-item-header .button-next-month>img{fill:var(--litepicker-button-next-month-color)}.litepicker .container__months .month-item-header .button-next-month:hover{color:var(--litepicker-button-next-month-color-hover)}.litepicker .container__months .month-item-header .button-next-month:hover>svg{fill:var(--litepicker-button-next-month-color-hover)}.litepicker .container__months .month-item-weekdays-row{display:-webkit-box;display:-ms-flexbox;display:flex;justify-self:center;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;color:var(--litepicker-month-weekday-color)}.litepicker .container__months .month-item-weekdays-row>div{padding:5px 0;font-size:85%;-webkit-box-flex:1;-ms-flex:1;flex:1;width:var(--litepicker-day-width);text-align:center}.litepicker .container__months .month-item:first-child .button-previous-month{visibility:visible}.litepicker .container__months .month-item:last-child .button-next-month{visibility:visible}.litepicker .container__months .month-item.no-previous-month .button-previous-month{visibility:hidden}.litepicker .container__months .month-item.no-next-month .button-next-month{visibility:hidden}.litepicker .container__days{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;justify-self:center;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:center;-webkit-box-sizing:content-box;box-sizing:content-box}.litepicker .container__days>div,.litepicker .container__days>a{padding:5px 0;width:var(--litepicker-day-width)}.litepicker .container__days .day-item{color:var(--litepicker-day-color);text-align:center;text-decoration:none;border-radius:3px;-webkit-transition:color 0.3s, border 0.3s;transition:color 0.3s, border 0.3s;cursor:default}.litepicker .container__days .day-item:hover{color:var(--litepicker-day-color-hover);-webkit-box-shadow:inset 0 0 0 1px var(--litepicker-day-color-hover);box-shadow:inset 0 0 0 1px var(--litepicker-day-color-hover)}.litepicker .container__days .day-item.is-today{color:var(--litepicker-is-today-color)}.litepicker .container__days .day-item.is-locked{color:var(--litepicker-is-locked-color)}.litepicker .container__days .day-item.is-locked:hover{color:var(--litepicker-is-locked-color);-webkit-box-shadow:none;box-shadow:none;cursor:default}.litepicker .container__days .day-item.is-in-range{background-color:var(--litepicker-is-in-range-color);border-radius:0}.litepicker .container__days .day-item.is-start-date{color:var(--litepicker-is-start-color);background-color:var(--litepicker-is-start-color-bg);border-top-left-radius:5px;border-bottom-left-radius:5px;border-top-right-radius:0;border-bottom-right-radius:0}.litepicker .container__days .day-item.is-start-date.is-flipped{border-top-left-radius:0;border-bottom-left-radius:0;border-top-right-radius:5px;border-bottom-right-radius:5px}.litepicker .container__days .day-item.is-end-date{color:var(--litepicker-is-end-color);background-color:var(--litepicker-is-end-color-bg);border-top-left-radius:0;border-bottom-left-radius:0;border-top-right-radius:5px;border-bottom-right-radius:5px}.litepicker .container__days .day-item.is-end-date.is-flipped{border-top-left-radius:5px;border-bottom-left-radius:5px;border-top-right-radius:0;border-bottom-right-radius:0}.litepicker .container__days .day-item.is-start-date.is-end-date{border-top-left-radius:5px;border-bottom-left-radius:5px;border-top-right-radius:5px;border-bottom-right-radius:5px}.litepicker .container__days .day-item.is-highlighted{color:var(--litepicker-highlighted-day-color);background-color:var(--litepicker-highlighted-day-color-bg)}.litepicker .container__days .week-number{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;color:var(--litepicker-month-week-number-color);font-size:85%}.litepicker .container__footer{text-align:right;padding:10px 5px;margin:0 5px;background-color:var(--litepicker-footer-color-bg);-webkit-box-shadow:inset 0px 3px 3px 0px var(--litepicker-footer-box-shadow-color);box-shadow:inset 0px 3px 3px 0px var(--litepicker-footer-box-shadow-color);border-bottom-left-radius:5px;border-bottom-right-radius:5px}.litepicker .container__footer .preview-date-range{margin-right:10px;font-size:90%}.litepicker .container__footer .button-cancel{background-color:var(--litepicker-button-cancel-color-bg);color:var(--litepicker-button-cancel-color);border:0;padding:3px 7px 4px;border-radius:3px}.litepicker .container__footer .button-cancel *{pointer-events:none}.litepicker .container__footer .button-apply{background-color:var(--litepicker-button-apply-color-bg);color:var(--litepicker-button-apply-color);border:0;padding:3px 7px 4px;border-radius:3px;margin-left:10px;margin-right:10px}.litepicker .container__footer .button-apply:disabled{opacity:0.7}.litepicker .container__footer .button-apply *{pointer-events:none}.litepicker .container__tooltip{position:absolute;margin-top:-4px;padding:4px 8px;border-radius:4px;background-color:var(--litepicker-tooltip-color-bg);-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.25);box-shadow:0 1px 3px rgba(0,0,0,0.25);white-space:nowrap;font-size:11px;pointer-events:none;visibility:hidden}.litepicker .container__tooltip:before{position:absolute;bottom:-5px;left:calc(50% - 5px);border-top:5px solid rgba(0,0,0,0.12);border-right:5px solid transparent;border-left:5px solid transparent;content:""}.litepicker .container__tooltip:after{position:absolute;bottom:-4px;left:calc(50% - 4px);border-top:4px solid var(--litepicker-tooltip-color-bg);border-right:4px solid transparent;border-left:4px solid transparent;content:""}
-</style>
+<html lang="es">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Dr. Sebastian Cabrera - Propuesta simple</title>
+<title>Luana Escudero - Propuesta simple</title>
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:#101010;font-family:'Outfit',sans-serif;overflow:hidden;-webkit-tap-highlight-color:transparent}
 :root{
-  --bg:#f7f5f0;--panel:#fff;--ink:#171717;--muted:#6d6a63;--line:#d4cec2;
-  --green:#2d7a4f;--green-bg:#edf7f1;--green-border:#a8d9be;
-  --blue:#245c90;--blue-bg:#eff6fc;--blue-border:#abcce8;
-  --gold:#ad7c10;--gold-bg:#fdf7e7;--gold-border:#ecd28e;
-  --rose:#a43a31;--rose-bg:#fdf0ee;--rose-border:#efbbb4;
+  --bg:#f7f3ed;--panel:#fffdf9;--ink:#171514;--muted:#706a63;--line:#d7cfc2;
+  --green:#27745c;--green-bg:#edf7f2;--green-border:#aad8c8;
+  --blue:#285e84;--blue-bg:#edf6fb;--blue-border:#aacadd;
+  --gold:#a97816;--gold-bg:#fff7e5;--gold-border:#e7cd8c;
+  --rose:#a64a51;--rose-bg:#fff0f1;--rose-border:#e8b7bd;
+  --clay:#a75733;--clay-bg:#fff1e9;--clay-border:#e8bca4;
 }
 .hand{font-family:'Caveat',cursive}
 #stage{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
@@ -27,33 +29,34 @@ html,body{height:100%;background:#101010;font-family:'Outfit',sans-serif;overflo
 .bar.done i,.bar.active i{width:100%}
 .tap{position:absolute;top:0;bottom:0;width:26%;z-index:40;cursor:pointer}
 .tap.left{left:0}.tap.right{right:0}
-.navbtn{position:absolute;bottom:18px;z-index:60;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ink);cursor:pointer;backdrop-filter:blur(6px)}
+.navbtn{position:absolute;bottom:18px;z-index:80;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ink);cursor:pointer;backdrop-filter:blur(6px)}
 #btn-prev{left:14px}#btn-next{right:14px}
+#frame.interactive-active .navbtn{bottom:auto;top:50%;transform:translateY(-50%)}
 #track{height:100%;display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1)}
 .scr{flex:0 0 100%;height:100%;padding-top:54px}
 .simple{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%;padding:32px 30px 70px;gap:14px}
-.s-icon{font-size:42px;line-height:1}
+.s-icon{width:52px;height:52px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:#fff;border:1.5px solid var(--line);font-size:19px;font-weight:800;color:var(--ink);letter-spacing:.03em}
 .s-eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
 .s-head{font-size:31px;line-height:1.1;color:var(--ink)}
-.s-body{font-size:14.5px;line-height:1.55;color:var(--muted);max-width:310px}
-.s-punch{margin-top:6px;background:var(--ink);color:#fff;border-radius:14px;padding:16px 18px;font-size:19px;line-height:1.3;max-width:310px}
+.s-body{font-size:14.5px;line-height:1.55;color:var(--muted);max-width:315px}
+.s-punch{margin-top:6px;background:var(--ink);color:#fff;border-radius:14px;padding:16px 18px;font-size:19px;line-height:1.3;max-width:315px}
 .s-punch span{color:#f6c04d}
-.soft-card{width:100%;max-width:320px;background:var(--panel);border:1.5px solid var(--line);border-radius:14px;padding:15px;text-align:left}
+.soft-card{width:100%;max-width:322px;background:var(--panel);border:1.5px solid var(--line);border-radius:14px;padding:15px;text-align:left}
 .soft-card p{font-size:13px;line-height:1.45;color:var(--muted)}
 .soft-card b{color:var(--ink)}
-.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:310px}
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:315px}
 .price-box{border-radius:16px;padding:16px 12px;text-align:center;border:1.5px solid var(--line);background:#fff}
 .price-box.big{background:var(--gold-bg);border-color:var(--gold-border)}
 .price-box.small{background:var(--green-bg);border-color:var(--green-border)}
 .price-num{font-family:'Caveat',cursive;font-size:38px;font-weight:700;line-height:1;color:var(--ink)}
 .price-lbl{font-size:10.8px;line-height:1.25;color:var(--muted);margin-top:5px}
-.note{font-size:10.8px;line-height:1.35;color:var(--muted);max-width:295px;font-style:italic}
-.offer{width:100%;max-width:315px;display:flex;flex-direction:column;gap:8px}
+.note{font-size:10.8px;line-height:1.35;color:var(--muted);max-width:305px;font-style:italic}
+.offer{width:100%;max-width:318px;display:flex;flex-direction:column;gap:8px}
 .offer-row{display:flex;align-items:flex-start;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:10px 12px;text-align:left}
 .offer-row .check{width:18px;height:18px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;line-height:1;flex-shrink:0;margin-top:1px}
 .offer-row .txt{font-size:12.7px;line-height:1.35;color:var(--ink)}
-.tag{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;border:1px solid var(--green-border);background:var(--green-bg);color:var(--green);font-size:12px;font-weight:700;padding:6px 12px}
-.stack{width:100%;max-width:315px;display:flex;flex-direction:column;gap:9px}
+.tag{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;border:1px solid var(--green-border);background:var(--green-bg);color:var(--green);font-size:12px;font-weight:700;padding:6px 12px;text-align:center;max-width:305px}
+.stack{width:100%;max-width:318px;display:flex;flex-direction:column;gap:9px}
 .stack-row{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:12px;text-align:left}
 .stack-row .top{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px}
 .stack-row .sub{font-size:12px;line-height:1.4;color:var(--muted)}
@@ -61,16 +64,16 @@ html,body{height:100%;background:#101010;font-family:'Outfit',sans-serif;overflo
 .boceto-head{text-align:center;margin-bottom:12px}
 .boceto-head .s-head{font-size:27px;margin-bottom:4px}
 .boceto-badge{display:inline-block;background:var(--blue-bg);border:1px solid var(--blue-border);color:var(--blue);font-size:11px;font-weight:700;padding:4px 10px;border-radius:8px}
-.iframe-wrap{border:2px solid var(--blue-border);border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.1);margin-bottom:14px;background:#fff;position:relative}
+.iframe-wrap{border:2px solid var(--blue-border);border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.1);margin-bottom:12px;background:#fff;position:relative}
 .iframe-bar{background:#f0f0f0;border-bottom:1px solid #ddd;padding:7px 10px;display:flex;gap:5px;align-items:center}
 .iframe-bar .d{width:8px;height:8px;border-radius:50%}
 .iframe-bar .d:nth-child(1){background:#ff5f57}.iframe-bar .d:nth-child(2){background:#ffbd2e}.iframe-bar .d:nth-child(3){background:#28c840}
 .iframe-bar .u{flex:1;margin-left:6px;background:#fff;border:1px solid #ddd;border-radius:5px;padding:2px 8px;font-size:10px;color:#666;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.iframe-viewport{width:100%;height:400px;overflow:hidden;position:relative;background:#fff}
+.iframe-viewport{width:100%;height:330px;overflow:hidden;position:relative;background:#fff}
 .iframe-viewport iframe{position:absolute;top:0;left:0;border:none;pointer-events:auto}
 .iframe-viewport::after{content:'Desliza para ver mas';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(transparent,rgba(255,255,255,.96));display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;font-size:10px;color:var(--muted);pointer-events:none}
-.video-wrap{position:relative;z-index:70;background:#111;border:2px solid var(--blue-border);border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.16);margin:12px auto 10px;max-width:285px}
-.testimonial-video{display:block;width:100%;aspect-ratio:480/848;max-height:470px;background:#111;object-fit:cover}
+.video-wrap{position:relative;z-index:70;background:#111;border:2px solid var(--rose-border);border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.16);margin:12px auto 10px;max-width:285px}
+.testimonial-video{display:block;width:100%;aspect-ratio:480/848;max-height:405px;background:#111;object-fit:cover}
 .video-note{max-width:320px;margin:0 auto 12px;background:var(--gold-bg);border:1px solid var(--gold-border);border-radius:12px;padding:10px 12px;font-size:12px;line-height:1.4;color:var(--ink);text-align:left}
 .video-note b{font-weight:700}
 .maps-link{position:relative;z-index:70;display:flex;align-items:center;justify-content:center;width:100%;max-width:320px;margin:0 auto 12px;background:var(--ink);color:#fff;text-decoration:none;border-radius:12px;padding:11px 14px;font-size:12px;font-weight:700}
@@ -81,7 +84,8 @@ html,body{height:100%;background:#101010;font-family:'Outfit',sans-serif;overflo
 .ann.blue{border:1px solid var(--blue-border);background:var(--blue-bg)}.ann.blue::before{background:var(--blue)}
 .ann.gold{border:1px solid var(--gold-border);background:var(--gold-bg)}.ann.gold::before{background:var(--gold)}
 .ann.rose{border:1px solid var(--rose-border);background:var(--rose-bg)}.ann.rose::before{background:var(--rose)}
-.ann .ico{font-size:16px;flex-shrink:0}
+.ann.clay{border:1px solid var(--clay-border);background:var(--clay-bg)}.ann.clay::before{background:var(--clay)}
+.ann .ico{font-size:16px;font-weight:800;line-height:1;flex-shrink:0;color:var(--ink)}
 .ann .txt{font-size:12px;line-height:1.45;color:var(--ink)}
 .ann .txt b{font-weight:700}
 .ann .result{display:block;margin-top:3px;font-size:11px;color:var(--green);font-weight:700}
@@ -90,159 +94,185 @@ html,body{height:100%;background:#101010;font-family:'Outfit',sans-serif;overflo
 .no-pressure{font-size:11.5px;color:var(--muted);font-style:italic;max-width:280px}
 #edit-bar{position:fixed;top:0;left:0;right:0;height:3px;background:var(--gold);z-index:300;display:none}
 body.editing #edit-bar{display:block}
-body.editing [contenteditable]{outline:2px dashed rgba(173,124,16,.45);border-radius:4px;cursor:text}
+body.editing [contenteditable]{outline:2px dashed rgba(169,120,22,.45);border-radius:4px;cursor:text}
 #edit-toast{position:fixed;right:16px;bottom:16px;z-index:200;background:#171717;color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:10px 12px;font-size:12px;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.25);opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .2s ease,transform .2s ease}
 #edit-toast.show{opacity:1;transform:translateY(0)}
 </style>
 </head>
-<body class="">
+<body>
 <div id="edit-bar"></div>
-<div id="edit-toast" class=""></div>
+<div id="edit-toast"></div>
 <div id="stage">
 <div id="frame">
   <div id="progress"></div>
-  <div class="tap left" onclick="go(-1)" style="pointer-events: auto;"></div>
-  <div class="tap right" onclick="go(1)" style="pointer-events: auto;"></div>
-  <div class="navbtn" id="btn-prev" onclick="go(-1)" style="opacity: 1;">‹</div>
-  <div class="navbtn" id="btn-next" onclick="go(1)" style="opacity: 0.25;">›</div>
+  <div class="tap left" onclick="go(-1)"></div>
+  <div class="tap right" onclick="go(1)"></div>
+  <div class="navbtn" id="btn-prev" onclick="go(-1)">&lsaquo;</div>
+  <div class="navbtn" id="btn-next" onclick="go(1)">&rsaquo;</div>
   <div id="track">
 
     <div class="scr"><div class="simple">
-      <div class="s-eyebrow" contenteditable="false">Sebastian, te dejo este análisis</div>
-      <div class="s-head hand" contenteditable="false">No vengo a insistirte por una web.</div>
-      <div class="s-body" contenteditable="false">Te lo mando porque creo que viste la idea de "tener una pagina", pero todavia no llegaste a ver la oferta concreta ni el punto economico.</div>
+      <div class="s-eyebrow" contenteditable="false">Luana, antes de decidir</div>
+      <div class="s-head hand" contenteditable="false">No te mando esto para insistirte por una web.</div>
+      <div class="s-body" contenteditable="false">Te lo mando porque quizas el boceto se vio como "otra pagina", cuando en realidad la idea es mucho mas simple: que quien ya esta mirando estetica medica termine eligiendote a vos.</div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-icon" contenteditable="false">🦷</div>
+      <div class="s-icon" contenteditable="false">01</div>
       <div class="s-eyebrow" contenteditable="false">La idea de fondo</div>
-      <div class="s-head hand" contenteditable="false">No es tener una pagina por tenerla.</div>
-      <div class="s-body" contenteditable="false">Es tener un punto de confianza para la persona que ya esta buscando dentista, comparando opciones y decidiendo a quien escribirle.</div>
-      <div class="s-punch hand" contenteditable="false">La web no crea la necesidad. Captura al paciente que <span contenteditable="false">ya esta mirando.</span></div>
+      <div class="s-head hand" contenteditable="false">Tu trabajo ya entra por los ojos.</div>
+      <div class="s-body" contenteditable="false">En estetica, la persona no decide solo por precio. Mira resultados, confianza, prolijidad, trato y claridad antes de animarse a escribir.</div>
+      <div class="s-punch hand" contenteditable="false">La web ordena esa primera impresion para que juegue <span contenteditable="false">a tu favor.</span></div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-icon" contenteditable="false">🔎</div>
-      <div class="s-eyebrow" contenteditable="false">Lo que pasa en salud</div>
-      <div class="s-head hand" contenteditable="false">El paciente compara antes de pedir turno.</div>
-      <div class="s-body" contenteditable="false">Implantes, estetica dental, coronas, regeneracion osea: son decisiones donde la confianza pesa. Si otro muestra mejor su trabajo, arranca con ventaja.</div>
+      <div class="s-icon" contenteditable="false">IG</div>
+      <div class="s-eyebrow" contenteditable="false">Objecion normal</div>
+      <div class="s-head hand" contenteditable="false">"Ya tengo Instagram".</div>
+      <div class="s-body" contenteditable="false">Perfecto. Instagram sirve para que te descubran y vean movimiento. Pero cuando alguien quiere entender tratamientos, ubicacion, WhatsApp, confianza y si sos la opcion correcta, necesita algo mas ordenado.</div>
+      <div class="s-punch hand" contenteditable="false">La web no reemplaza Instagram. Lo convierte en <span contenteditable="false">mas consultas decididas.</span></div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-eyebrow" contenteditable="false">la matematica simple</div>
+      <div class="s-icon" contenteditable="false">02</div>
+      <div class="s-eyebrow" contenteditable="false">Otra objecion posible</div>
+      <div class="s-head hand" contenteditable="false">"No necesito una web".</div>
+      <div class="s-body" contenteditable="false">Puede ser. Pero no se trata de necesitar una web. Se trata de tener un lugar propio que responda dudas antes del mensaje y haga que la persona llegue con mas confianza.</div>
+      <div class="soft-card"><p contenteditable="false"><b>En estetica medica, la duda frena.</b> Si la persona entiende mejor lo que haces, te escribe con menos vueltas.</p></div>
+    </div></div>
+
+    <div class="scr"><div class="simple">
+      <div class="s-icon" contenteditable="false">03</div>
+      <div class="s-eyebrow" contenteditable="false">Cero complicacion</div>
+      <div class="s-head hand" contenteditable="false">No tenes que meterte en nada tecnico.</div>
+      <div class="stack">
+        <div class="stack-row"><div class="top" contenteditable="false">1. Yo tomo el boceto como base</div><div class="sub" contenteditable="false">Estructura, textos, WhatsApp, mapa y SEO quedan de mi lado.</div></div>
+        <div class="stack-row"><div class="top" contenteditable="false">2. Vos solo marcas cambios</div><div class="sub" contenteditable="false">Fotos, tratamientos, frases o detalles que quieras ajustar por WhatsApp.</div></div>
+        <div class="stack-row"><div class="top" contenteditable="false">3. En 48h puede quedar online</div><div class="sub" contenteditable="false">Sin reuniones largas, sin vueltas y sin que tengas que aprender nada tecnico.</div></div>
+      </div>
+    </div></div>
+
+    <div class="scr"><div class="simple">
+      <div class="s-icon" contenteditable="false">$</div>
+      <div class="s-eyebrow" contenteditable="false">La parte economica</div>
+      <div class="s-head hand" contenteditable="false">Tampoco tiene que ser un gasto grande.</div>
       <div class="price-grid">
         <div class="price-box big">
-          <div class="price-num" contenteditable="false">USD 500-1300</div>
-          <div class="price-lbl" contenteditable="false">Rango de mercado por implante dental en Uruguay</div>
+          <div class="price-num" contenteditable="false">USD 210-450</div>
+          <div class="price-lbl" contenteditable="false">lo normal para una landing de este tipo</div>
         </div>
         <div class="price-box small">
           <div class="price-num" contenteditable="false">USD 150</div>
-          <div class="price-lbl" contenteditable="false">costo de dejar esta landing online</div>
+          <div class="price-lbl" contenteditable="false">para dejar este boceto online</div>
         </div>
       </div>
-      <div class="note" contenteditable="false">Es un precio que tiene todo el sentido, con una consulta seria de implantes o rehabilitación, ya pagarías la web varias veces.&nbsp;<br>(Eso sin contar todos los otros servicios)</div>
-    </div></div>
-
-    <div class="scr"><div class="simple">
-      <div class="s-icon" contenteditable="false">📌</div>
-      <div class="s-eyebrow" contenteditable="false">El punto no es gastar</div>
-      <div class="s-head hand" contenteditable="false">El punto es si puede traer aunque sea un buen paciente.</div>
-      <div class="s-body" contenteditable="false">Una web de USD 150 no necesita "transformar el negocio" para tener sentido. Necesita ayudar a que una persona que ya estaba comparando termine escribiendote a vos.</div>
-      <div class="s-punch hand" contenteditable="false">Si trae un solo caso bueno, <span contenteditable="false">ya pago la herramienta varias veces.</span></div>
+      <div class="note" contenteditable="false">No necesita traer decenas de personas para tener sentido. Con que ayude a cerrar pocas consultas bien decididas, ya empieza a pagar su lugar.</div>
     </div></div>
 
     <div class="scr"><div class="simple">
       <div class="s-eyebrow" contenteditable="false">La oferta concreta</div>
       <div class="s-head hand" contenteditable="false">Te la dejo lista por USD 150.</div>
       <div class="offer">
-        <div class="offer-row"><div class="check" contenteditable="false">✓</div><div class="txt" contenteditable="false">Landing online, adaptada al consultorio y a San Carlos.</div></div>
-        <div class="offer-row"><div class="check" contenteditable="false">✓</div><div class="txt" contenteditable="false">SEO basico para que Google entienda tus tratamientos y ubicacion.</div></div>
-        <div class="offer-row"><div class="check" contenteditable="false">✓</div><div class="txt" contenteditable="false">Dominio incluido por 1 año, el que definamos juntos y este disponible.</div></div>
-        <div class="offer-row"><div class="check" contenteditable="false">✓</div><div class="txt" contenteditable="false">WhatsApp, mapa, servicios, fotos/casos y cambios necesarios antes de publicarla.</div></div>
+        <div class="offer-row"><div class="check" contenteditable="false">✓</div><div class="txt" contenteditable="false">Landing online adaptada a Luana Escudero y estetica medica en Punta del Este.</div></div>
+        <div class="offer-row"><div class="check" contenteditable="false">✓</div><div class="txt" contenteditable="false">SEO basico para que Google entienda tus tratamientos, zona y especialidad.</div></div>
+        <div class="offer-row"><div class="check" contenteditable="false">✓</div><div class="txt" contenteditable="false">Dominio incluido por 1 año, el que definamos juntas y este disponible.</div></div>
+        <div class="offer-row"><div class="check" contenteditable="false">✓</div><div class="txt" contenteditable="false">WhatsApp, Google Maps, secciones de tratamientos y cambios necesarios antes de publicarla.</div></div>
       </div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-icon" contenteditable="false">💬</div>
+      <div class="s-icon" contenteditable="false">04</div>
       <div class="s-eyebrow" contenteditable="false">Por que queda barata</div>
       <div class="s-head hand" contenteditable="false">No estoy empezando de cero.</div>
-      <div class="s-body" contenteditable="false">Una landing asi normalmente queda entre USD 300 y 450. En este caso la dejo en USD 150 porque el trabajo principal ya esta armado y solo faltan ajustes reales con ustedes.</div>
+      <div class="s-body" contenteditable="false">El boceto ya esta armado. Por eso no te estoy pasando un precio de proyecto desde cero, sino un valor simple para terminarlo, ajustarlo y dejarlo funcionando.</div>
       <div class="tag" contenteditable="false">Este precio es por trabajo ya avanzado</div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-icon" contenteditable="false">🧘</div>
-      <div class="s-eyebrow" contenteditable="false">Cero complicacion</div>
-      <div class="s-head hand" contenteditable="false">No tenes que meterte en nada tecnico.</div>
-      <div class="stack">
-        <div class="stack-row"><div class="top" contenteditable="false">1. Me decis que si</div><div class="sub" contenteditable="false">Yo tomo el boceto como base y ordeno lo que haya que ajustar.</div></div>
-        <div class="stack-row"><div class="top" contenteditable="false">2. Revisas textos, fotos y servicios</div><div class="sub" contenteditable="false">Sin reuniones largas. Me marcas cambios por WhatsApp .</div></div>
-        <div class="stack-row"><div class="top" contenteditable="false">3. En 48h queda online</div><div class="sub" contenteditable="false">Con dominio, WhatsApp, mapa y SEO basico configurado.</div></div>
-      </div>
-    </div></div>
-
-    <div class="scr"><div class="simple">
-      <div class="s-icon" contenteditable="false">📈</div>
-      <div class="s-eyebrow" contenteditable="false">Escalar sin complicarte</div>
-      <div class="s-head hand" contenteditable="false">Escalar no es trabajar mas por trabajar mas.</div>
-      <div class="s-body" contenteditable="false">Tambien puede ser atraer mejores consultas: pacientes que ya entendieron que haces implantes, estetica y rehabilitaciones, y llegan con mas confianza antes de escribir.</div>
+      <div class="s-icon" contenteditable="false">05</div>
+      <div class="s-eyebrow" contenteditable="false">Lo importante</div>
+      <div class="s-head hand" contenteditable="false">No es "tener presencia".</div>
+      <div class="s-body" contenteditable="false">Es que una persona que vio tu Instagram, te encontro en Maps o recibio una recomendacion tenga un lugar claro para confirmar que sos una opcion seria.</div>
+      <div class="s-punch hand" contenteditable="false">Menos dudas antes del WhatsApp. Mas confianza <span contenteditable="false">antes del turno.</span></div>
     </div></div>
 
     <div class="scr"><div class="boceto-scr">
       <div class="boceto-head">
-        <div class="s-head hand" contenteditable="false">Uno de mis clientes.</div>
+        <div class="s-head hand" contenteditable="false">Este es el boceto actual.</div>
+        <div class="boceto-badge" contenteditable="false">Luana Escudero · Punta del Este</div>
+      </div>
+      <div class="iframe-wrap">
+        <div class="iframe-bar"><div class="d"></div><div class="d"></div><div class="d"></div><div class="u" contenteditable="false">firebrick-bison-401360.hostingersite.com</div></div>
+        <div class="iframe-viewport">
+          <iframe src="https://firebrick-bison-401360.hostingersite.com/" title="Boceto Luana Escudero"></iframe>
+        </div>
+      </div>
+      <a class="maps-link" href="https://firebrick-bison-401360.hostingersite.com/" target="_blank" rel="noopener" contenteditable="false">Abrir boceto completo</a>
+      <div class="ann-list">
+        <div class="ann green"><div class="ico" contenteditable="false">1</div><div class="txt" contenteditable="false"><b contenteditable="false">Tratamientos ordenados</b><span class="result" contenteditable="false">la persona entiende rapido que haces y por donde empezar.</span></div></div>
+        <div class="ann blue"><div class="ico" contenteditable="false">2</div><div class="txt" contenteditable="false"><b contenteditable="false">WhatsApp en momentos clave</b><span class="result" contenteditable="false">menos pasos entre interes y consulta.</span></div></div>
+        <div class="ann rose"><div class="ico" contenteditable="false">3</div><div class="txt" contenteditable="false"><b contenteditable="false">Estetica visual mas profesional</b><span class="result" contenteditable="false">la primera impresion se siente mas premium y confiable.</span></div></div>
+        <div class="ann gold"><div class="ico" contenteditable="false">4</div><div class="txt" contenteditable="false"><b contenteditable="false">Google entiende mejor la actividad</b><span class="result" contenteditable="false">Punta del Este, estetica medica y tratamientos quedan mas claros.</span></div></div>
+      </div>
+    </div></div>
+
+    <div class="scr"><div class="boceto-scr">
+      <div class="boceto-head">
+        <div class="s-head hand" contenteditable="false">Un caso real.</div>
         <div class="boceto-badge" contenteditable="false">Testimonio · Bruno</div>
       </div>
       <div class="video-wrap">
-        <video class="testimonial-video" controls="" playsinline="" preload="metadata" poster="testimonios/testimonio-bruno-poster.jpg" tabindex="-1">
+        <video class="testimonial-video" controls playsinline preload="metadata" poster="testimonios/testimonio-bruno-poster.jpg" tabindex="-1">
           <source src="testimonios/testimonio-bruno.mp4" type="video/mp4">
           Tu navegador no puede reproducir este video.
         </video>
       </div>
-      <div class="video-note" contenteditable="false"><b>Bruno no es del rubro dental.</b> Es apicultor en Maldonado. Antes de trabajar la web, su presencia online era chica y su ficha tenia muy pocas reseñas. Hoy se posiciona como una referencia local, recibe consultas con mas confianza y su negocio se ve mucho mas serio antes del primer mensaje.</div>
+      <div class="video-note" contenteditable="false"><b>Bruno no es del rubro estetica.</b> Es apicultor en Maldonado. Lo importante es el impacto: una web bien armada hizo que su negocio se vea mas serio, mas claro y mas confiable antes del primer mensaje.</div>
       <a class="maps-link" href="https://maps.app.goo.gl/Zf4WQz94y5s12ikq6" target="_blank" rel="noopener" contenteditable="false">Ver ficha de Bruno en Google Maps</a>
       <div class="ann-list">
-        <div class="ann green"><div class="ico" contenteditable="false">🎥</div><div class="txt" contenteditable="false"><b contenteditable="false">Lo importante es el resultado</b><span class="result" contenteditable="false">una web bien armada ayuda a que el negocio se vea mas confiable.</span></div></div>
-        <div class="ann blue"><div class="ico" contenteditable="false">📈</div><div class="txt" contenteditable="false"><b contenteditable="false">Mas autoridad antes del contacto</b><span class="result" contenteditable="false">la persona llega con otra percepcion antes de escribir.</span></div></div>
-        <div class="ann gold"><div class="ico" contenteditable="false">🤝</div><div class="txt" contenteditable="false"><b contenteditable="false">De pocas señales a una presencia fuerte</b><span class="result" contenteditable="false">ese mismo salto es el que busco para tu consultorio.</span></div></div>
+        <div class="ann green"><div class="ico" contenteditable="false">+</div><div class="txt" contenteditable="false"><b contenteditable="false">Mas confianza antes del contacto</b><span class="result" contenteditable="false">la gente llega entendiendo mejor el negocio.</span></div></div>
+        <div class="ann blue"><div class="ico" contenteditable="false">#</div><div class="txt" contenteditable="false"><b contenteditable="false">Mas autoridad local</b><span class="result" contenteditable="false">se percibe como una referencia, no como una opcion improvisada.</span></div></div>
+        <div class="ann clay"><div class="ico" contenteditable="false">→</div><div class="txt" contenteditable="false"><b contenteditable="false">Ese mismo salto busco aca</b><span class="result" contenteditable="false">que tu trabajo se vea al nivel de lo que realmente haces.</span></div></div>
       </div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-icon" contenteditable="false">⚖️</div>
-      <div class="s-eyebrow" contenteditable="false">La decision real</div>
-      <div class="s-head hand" contenteditable="false">No es "necesito una web".</div>
-      <div class="s-body" contenteditable="false">La pregunta es mas simple: si por USD 150 podes tener un activo propio que trabaje todos los dias para que te encuentren, confien y te escriban, ¿vale la pena tenerlo?</div>
+      <div class="s-icon" contenteditable="false">06</div>
+      <div class="s-eyebrow" contenteditable="false">La vision</div>
+      <div class="s-head hand" contenteditable="false">Que te vean como una referencia, no solo como una cuenta.</div>
+      <div class="s-body" contenteditable="false">Instagram muestra movimiento. Una web propia muestra criterio, orden y posicionamiento. En un rubro visual, eso cambia la percepcion antes de que la persona pregunte precio.</div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-icon" contenteditable="false">⏱️</div>
+      <div class="s-icon" contenteditable="false">48</div>
       <div class="s-eyebrow" contenteditable="false">Te lo dejo simple</div>
       <div class="s-head hand" contenteditable="false">La puedo dejar reservada 48h.</div>
-      <div class="s-body" contenteditable="false">Si te hace sentido, la dejamos online por USD 150 y ajustamos lo que veas necesario. Si no te sirve, cero problema, de verdad.</div>
-      <div class="soft-card"><p contenteditable="false"><b>Mi sugerencia:</b> no la mires como una pagina. Mirala como una puerta hacia pacientes que hoy pueden estar comparando o no encontrandote.</p></div>
+      <div class="s-body" contenteditable="false">Si te hace sentido, la dejamos online por USD 150 y ajustamos lo que veas necesario. Si ahora no es prioridad, cero problema de verdad.</div>
+      <div class="soft-card"><p contenteditable="false"><b>Mi sugerencia:</b> mirala como una herramienta chica para que el interes que ya generas termine en mas consultas concretas.</p></div>
     </div></div>
 
     <div class="scr"><div class="cta-scr">
-      <div class="s-head hand" contenteditable="false">Si te gusto,<br>la dejamos online.</div>
+      <div class="s-head hand" contenteditable="false">Si te sirve,<br>la dejamos online.</div>
       <div class="offer">
-        <div class="offer-row"><div class="check" contenteditable="false">✓</div><div class="txt" contenteditable="false">Me decís que te gustaría ajustar de la web&nbsp;<br>(Todo es modificable a tu gusto)</div></div>
+        <div class="offer-row"><div class="check" contenteditable="false">✓</div><div class="txt" contenteditable="false">Me decis que textos, fotos o tratamientos queres ajustar.</div></div>
         <div class="offer-row"><div class="check" contenteditable="false">✓</div><div class="txt" contenteditable="false">Incluye SEO local, dominio 1 año y cambios necesarios.</div></div>
         <div class="offer-row"><div class="check" contenteditable="false">✓</div><div class="txt" contenteditable="false">Entrega: 48h aprox desde que me confirmes.</div></div>
       </div>
-      <a class="wa-btn" href="https://wa.me/59892850267?text=Hola%20Amaru%2C%20vi%20la%20propuesta%20del%20Dr.%20Sebastian%20Cabrera%20y%20quiero%20dejarla%20online%20por%20USD%20150" target="_blank" rel="noopener" contenteditable="false">Me interesa dejarla online</a>
+      <a class="wa-btn" href="https://wa.me/59892850267?text=Hola%20Amaru%2C%20vi%20la%20propuesta%20de%20Luana%20Escudero%20y%20quiero%20dejarla%20online%20por%20USD%20150" target="_blank" rel="noopener" contenteditable="false">Me interesa dejarla online</a>
       <div class="no-pressure" contenteditable="false">Y si no, gracias igual por tomarte el tiempo de verla.</div>
     </div></div>
 
   </div>
 </div>
 </div>
+
 <script>
 let TOTAL=document.querySelectorAll('.scr').length;
 let current=0;
 let editMode=false;
 const prog=document.getElementById('progress');
 let bars=[];
+
 function rebuildProgress(){
   TOTAL=document.querySelectorAll('.scr').length;
   prog.innerHTML='';
@@ -254,7 +284,7 @@ function rebuildProgress(){
   }
   bars=document.querySelectorAll('.bar');
 }
-rebuildProgress();
+
 function render(){
   document.getElementById('track').style.transform=`translateX(-${current*100}%)`;
   bars.forEach((b,i)=>{
@@ -263,41 +293,34 @@ function render(){
     if(i===current)b.classList.add('active');
   });
   const activeSlide=document.querySelectorAll('.scr')[current];
-  const hasInteractiveMedia=!!activeSlide?.querySelector('video,.maps-link');
-  document.querySelectorAll('.tap').forEach(t=>{t.style.pointerEvents=hasInteractiveMedia?'none':'auto'});
+  const hasInteractiveMedia=!!activeSlide?.querySelector('video,.maps-link,iframe');
+  document.getElementById('frame').classList.toggle('interactive-active',hasInteractiveMedia);
+  document.querySelector('.tap.left').style.pointerEvents=hasInteractiveMedia?'none':'auto';
+  document.querySelector('.tap.right').style.pointerEvents=hasInteractiveMedia?'none':'auto';
   document.getElementById('btn-prev').style.opacity=current===0?'0.25':'1';
   document.getElementById('btn-next').style.opacity=current===TOTAL-1?'0.25':'1';
 }
+
 function go(dir){
   const next=current+dir;
   if(next<0||next>=TOTAL)return;
   current=next;
   render();
+  scaleIframe();
 }
+
 function scaleIframe(){
-  const viewport=document.querySelector('.iframe-viewport');
+  const viewport=document.querySelector('.scr:nth-child('+(current+1)+') .iframe-viewport');
   if(!viewport)return;
   const iframe=viewport.querySelector('iframe');
   if(!iframe)return;
   const scale=viewport.clientWidth/375;
   iframe.style.width='375px';
-  iframe.style.height=(400/scale)+'px';
+  iframe.style.height=(viewport.clientHeight/scale)+'px';
   iframe.style.transform='scale('+scale+')';
   iframe.style.transformOrigin='top left';
-  iframe.style.pointerEvents='auto';
 }
-window.addEventListener('resize',scaleIframe);
-window.addEventListener('load',scaleIframe);
-setTimeout(scaleIframe,300);
-setTimeout(scaleIframe,1000);
-document.querySelectorAll('video').forEach(video=>{
-  video.setAttribute('tabindex','-1');
-  const releaseFocus=()=>setTimeout(()=>video.blur(),0);
-  video.addEventListener('focus',releaseFocus);
-  video.addEventListener('click',releaseFocus);
-  video.addEventListener('pointerup',releaseFocus);
-  video.addEventListener('play',releaseFocus);
-});
+
 let sx=0,sy=0;
 const frame=document.getElementById('frame');
 frame.addEventListener('touchstart',e=>{
@@ -305,163 +328,134 @@ frame.addEventListener('touchstart',e=>{
   sy=e.touches[0].clientY;
 },{passive:true});
 frame.addEventListener('touchend',e=>{
+  if(editMode)return;
+  const activeSlide=document.querySelectorAll('.scr')[current];
+  if(activeSlide?.querySelector('video,.maps-link,iframe'))return;
   const dx=e.changedTouches[0].clientX-sx;
   const dy=e.changedTouches[0].clientY-sy;
   if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>40)go(dx<0?1:-1);
 },{passive:true});
-function stopShortcut(e){
-  e.preventDefault();
-  e.stopPropagation();
-  if(e.stopImmediatePropagation)e.stopImmediatePropagation();
+
+function showToast(message){
+  const toast=document.getElementById('edit-toast');
+  toast.textContent=message;
+  toast.classList.add('show');
+  clearTimeout(showToast._timer);
+  showToast._timer=setTimeout(()=>toast.classList.remove('show'),2400);
 }
-function handleShortcut(e){
-  const key=e.key.toLowerCase();
-  if(editMode&&e.key==='Escape'){
-    stopShortcut(e);
-    exitEdit();
-    return;
-  }
-  if(editMode&&(e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'){
-    stopShortcut(e);
-    saveEdits();
-    return;
-  }
-  if(editMode&&key==='g'&&!isTextEditingTarget(e.target)){
-    stopShortcut(e);
-    deleteCurrentSlide();
-    return;
-  }
-  if(editMode)return;
-  if(key==='e'){
-    stopShortcut(e);
-    enterEdit();
-    return;
-  }
-  if(e.key==='ArrowRight'){
-    stopShortcut(e);
-    go(1);
-    return;
-  }
-  if(e.key==='ArrowLeft'){
-    stopShortcut(e);
-    go(-1);
-  }
-}
-window.addEventListener('keydown',handleShortcut,true);
-document.addEventListener('keydown',handleShortcut,true);
-document.addEventListener('click',e=>{
-  if(!editMode)return;
-  const link=e.target.closest('a');
-  if(link)e.preventDefault();
-},true);
+
 const EDITABLE_SELECTOR=[
-  '#track .s-eyebrow',
-  '#track .s-icon',
-  '#track .s-head',
-  '#track .s-body',
-  '#track .s-punch',
-  '#track .s-punch span',
-  '#track .price-num',
-  '#track .price-lbl',
-  '#track .note',
-  '#track .offer-row .check',
-  '#track .offer-row .txt',
-  '#track .tag',
-  '#track .stack-row .top',
-  '#track .stack-row .sub',
-  '#track .boceto-badge',
-  '#track .iframe-bar .u',
-  '#track .video-note',
-  '#track .maps-link',
-  '#track .ann .ico',
-  '#track .ann .txt',
-  '#track .ann b',
-  '#track .ann .result',
-  '#track .soft-card p',
-  '#track .wa-btn',
-  '#track .no-pressure'
+  '.s-eyebrow','.s-head','.s-body','.s-punch','.s-punch span','.soft-card p',
+  '.price-num','.price-lbl','.note','.offer-row .check','.offer-row .txt',
+  '.tag','.stack-row .top','.stack-row .sub','.boceto-badge','.iframe-bar .u',
+  '.maps-link','.video-note','.ann .ico','.ann .txt','.ann .txt b','.ann .result',
+  '.wa-btn','.no-pressure','.s-icon'
 ].join(',');
-function editableElements(){
-  return Array.from(document.querySelectorAll(EDITABLE_SELECTOR));
-}
-function setEditableState(enabled){
-  editableElements().forEach(el=>{
+
+function setEditable(enabled){
+  document.querySelectorAll(EDITABLE_SELECTOR).forEach(el=>{
     el.setAttribute('contenteditable',enabled?'true':'false');
-    el.contentEditable=enabled?'true':'false';
   });
 }
-function isTextEditingTarget(target){
+
+function isTypingTarget(target){
   return !!target.closest?.('[contenteditable="true"],input,textarea,select');
 }
+
+function enterEdit(){
+  editMode=true;
+  document.body.classList.add('editing');
+  setEditable(true);
+  showToast('Edicion activada');
+}
+
+function exitEdit(){
+  editMode=false;
+  document.body.classList.remove('editing');
+  document.querySelectorAll('[contenteditable]').forEach(el=>{
+    el.blur();
+    el.setAttribute('contenteditable','false');
+  });
+  showToast('Edicion cerrada');
+}
+
 function deleteCurrentSlide(){
-  const slides=Array.from(document.querySelectorAll('.scr'));
-  if(slides.length<=1){
-    toast('No se puede eliminar la unica pagina.');
+  if(TOTAL<=1){
+    showToast('No se puede eliminar la ultima pantalla');
     return;
   }
-  const removed=current+1;
-  slides[current].remove();
+  const slides=document.querySelectorAll('.scr');
+  slides[current]?.remove();
   TOTAL=document.querySelectorAll('.scr').length;
   if(current>=TOTAL)current=TOTAL-1;
   rebuildProgress();
   render();
-  toast('Pagina '+removed+' eliminada. Ctrl+S para guardar.');
+  showToast('Pantalla eliminada. Ctrl+S para guardar.');
 }
-function toast(message){
-  const el=document.getElementById('edit-toast');
-  el.textContent=message;
-  el.classList.add('show');
-  clearTimeout(window.__editToastTimer);
-  window.__editToastTimer=setTimeout(()=>el.classList.remove('show'),2200);
+
+document.addEventListener('keydown',e=>{
+  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'){
+    e.preventDefault();
+    saveFile();
+    return;
+  }
+  if(editMode&&e.key==='Escape'){
+    exitEdit();
+    return;
+  }
+  if(editMode&&e.key.toLowerCase()==='g'&&!isTypingTarget(e.target)){
+    e.preventDefault();
+    deleteCurrentSlide();
+    return;
+  }
+  if(isTypingTarget(e.target))return;
+  if(e.key.toLowerCase()==='e'){
+    e.preventDefault();
+    editMode?exitEdit():enterEdit();
+  }
+  if(!editMode&&e.key==='ArrowRight')go(1);
+  if(!editMode&&e.key==='ArrowLeft')go(-1);
+});
+
+document.querySelectorAll('video').forEach(video=>{
+  video.addEventListener('click',e=>e.stopPropagation());
+  video.addEventListener('play',()=>video.blur());
+  video.addEventListener('pause',()=>video.blur());
+});
+
+function getCleanHtml(){
+  const clone=document.documentElement.cloneNode(true);
+  clone.querySelector('body')?.classList.remove('editing');
+  clone.querySelector('#frame')?.classList.remove('interactive-active');
+  clone.querySelector('#edit-toast')?.classList.remove('show');
+  clone.querySelectorAll('[contenteditable]').forEach(el=>el.setAttribute('contenteditable','false'));
+  clone.querySelectorAll('.tap,.navbtn,#track,.iframe-viewport iframe').forEach(el=>el.removeAttribute('style'));
+  const progress=clone.querySelector('#progress');
+  if(progress)progress.innerHTML='';
+  return '<!DOCTYPE html>\n'+clone.outerHTML;
 }
-function enterEdit(){
-  editMode=true;
-  document.body.classList.add('editing');
-  setEditableState(true);
-  toast('Modo edicion activo. Ctrl+S para guardar.');
-}
-function exitEdit(){
-  editMode=false;
-  document.body.classList.remove('editing');
-  editableElements().forEach(el=>{
-    el.blur();
-    el.contentEditable='false';
-    el.setAttribute('contenteditable','false');
-  });
-  toast('Modo edicion cerrado.');
-}
-async function saveEdits(){
+
+async function saveFile(){
   try{
-    const html=buildCleanHtml();
-    const filename=location.pathname.split('/').pop()||'propuesta-dr-sebastian-cabrera.html';
+    const filename=location.pathname.split('/').pop()||'propuesta-luana-escudero.html';
     const response=await fetch('/api/save',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({filename,html})
+      body:JSON.stringify({filename,html:getCleanHtml()})
     });
-    if(!response.ok)throw new Error('HTTP '+response.status);
-    toast('Guardado en el archivo.');
-  }catch(err){
-    toast('No se pudo guardar. Abrilo con serve-presentations.js.');
+    if(!response.ok)throw new Error(await response.text());
+    showToast('Guardado');
+  }catch(error){
+    console.error(error);
+    showToast('Error al guardar. Abrir desde 127.0.0.1:4174');
   }
 }
-function buildCleanHtml(){
-  const clone=document.documentElement.cloneNode(true);
-  const body=clone.querySelector('body');
-  if(body)body.classList.remove('editing');
-  const progress=clone.querySelector('#progress');
-  if(progress)progress.innerHTML='';
-  const track=clone.querySelector('#track');
-  if(track)track.removeAttribute('style');
-  clone.querySelectorAll('[contenteditable]').forEach(el=>el.setAttribute('contenteditable','false'));
-  clone.querySelectorAll('.show').forEach(el=>el.classList.remove('show'));
-  const toastEl=clone.querySelector('#edit-toast');
-  if(toastEl)toastEl.textContent='';
-  return '<!DOCTYPE html>\n'+clone.outerHTML;
-}
-setEditableState(false);
+
+rebuildProgress();
+setEditable(false);
 render();
+scaleIframe();
+window.addEventListener('resize',scaleIframe);
 </script>
-
-
-<div><div style="display: none; position: fixed; top: 30px; width: auto; max-width: 100%; text-align: center; left: 50%; transform: translateX(-50%); z-index: 99999999;"><div style="display: inline-block; font-size: 14px; font-weight: bold; border: 1px solid rgb(240, 195, 109); background-color: rgb(249, 237, 190); padding: 0px 10px; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;"></div></div></div></body></html>
+</body>
+</html>
