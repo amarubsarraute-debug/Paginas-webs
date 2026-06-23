@@ -38,7 +38,7 @@ const server = http.createServer((req, res) => {
     req.on('end', () => {
       try {
         const { filename, html, guideTexts } = JSON.parse(body);
-        if (!filename || !filename.startsWith('loom-') || !filename.endsWith('.html')) {
+        if (!filename || !filename.startsWith('propuesta-') || !filename.endsWith('.html')) {
           res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
           return res.end(JSON.stringify({ error: 'Nombre de archivo inválido' }));
         }
@@ -110,10 +110,10 @@ const server = http.createServer((req, res) => {
 
 function generateIndexPage() {
   const files = fs.readdirSync(ROOT);
-  const presentations = files.filter(f => f.startsWith('loom-') && f.endsWith('.html'));
+  const presentations = files.filter(f => f.startsWith('propuesta-') && f.endsWith('.html'));
 
   const itemsHtml = presentations.map(p => {
-    const name = p.replace('loom-', '').replace('.html', '').replace(/-/g, ' ');
+    const name = p.replace('propuesta-', '').replace('.html', '').replace(/-/g, ' ');
     return `
       <div class="card">
         <div class="card-body">
@@ -133,7 +133,7 @@ function generateIndexPage() {
     <html lang="es">
     <head>
       <meta charset="UTF-8">
-      <title>Panel de Control — Presentaciones Loom</title>
+      <title>Panel de Control — Propuestas Web</title>
       <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
       <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -252,7 +252,7 @@ function generateIndexPage() {
     <body>
       <div class="container">
         <header>
-          <h1>Presentaciones Loom Activas</h1>
+          <h1>Propuestas Web Activas</h1>
           <p class="subtitle">Editá visualmente cada presentación y guardá con Ctrl+S directamente desde el navegador.</p>
         </header>
         <div class="grid">

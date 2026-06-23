@@ -31,14 +31,14 @@ function copyRecursiveSync(src, dest) {
   }
 }
 
-// Obtener todas las presentaciones loom-*.html
+// Obtener todas las presentaciones propuesta-*.html
 const files = fs.readdirSync(ROOT);
-const presentations = files.filter(f => f.startsWith('loom-') && f.endsWith('.html'));
+const presentations = files.filter(f => f.startsWith('propuesta-') && f.endsWith('.html'));
 
 if (process.argv.includes('--list')) {
   console.log('\nPresentaciones disponibles para empaquetar:');
   presentations.forEach((p, idx) => {
-    console.log(`  [${idx + 1}] ${p.replace('loom-', '').replace('.html', '')} (${p})`);
+    console.log(`  [${idx + 1}] ${p.replace('propuesta-', '').replace('.html', '')} (${p})`);
   });
   console.log('\nUso: node bundle-presentation.js <nombre-o-numero-de-presentacion>');
   process.exit(0);
@@ -62,7 +62,7 @@ if (!isNaN(targetArg)) {
 } else {
   selectedFile = presentations.find(p => 
     p.toLowerCase().includes(targetArg.toLowerCase()) || 
-    p.replace('loom-', '').replace('.html', '').toLowerCase() === targetArg.toLowerCase()
+    p.replace('propuesta-', '').replace('.html', '').toLowerCase() === targetArg.toLowerCase()
   );
 }
 
@@ -72,7 +72,7 @@ if (!selectedFile) {
   process.exit(1);
 }
 
-const presentationName = selectedFile.replace('loom-', '').replace('.html', '');
+const presentationName = selectedFile.replace('propuesta-', '').replace('.html', '');
 console.log(`\n==================================================`);
 console.log(`   EMPAQUETANDO: ${presentationName}`);
 console.log(`==================================================`);
@@ -86,7 +86,7 @@ if (fs.existsSync(outputFolder)) {
 }
 fs.mkdirSync(outputFolder, { recursive: true });
 
-// 1. Copiar loom-*.html como index.html
+// 1. Copiar propuesta-*.html como index.html
 fs.copyFileSync(presentationPath, path.join(outputFolder, 'index.html'));
 console.log(`✓ Copiado ${selectedFile} -> index.html`);
 
