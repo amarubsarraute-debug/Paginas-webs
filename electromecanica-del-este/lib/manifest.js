@@ -1,58 +1,59 @@
 (function () {
   "use strict";
+
   window.__BRAND__ = {
     name: "Electromecánica del Este",
-    tagline: "Electricidad y Mecánica Automotriz de Precisión",
-    description: "Taller especializado en diagnóstico computarizado, inyección electrónica y service integral de automóviles en Maldonado, Uruguay. Confianza, idoneidad y soluciones rápidas.",
+    tagline: "Electricidad y mecánica automotriz en Maldonado",
+    description: "Taller especializado en diagnóstico computarizado, electricidad automotriz, inyección electrónica y service integral en Maldonado, Uruguay.",
     contact: {
       address: "19 de Abril esq. 3 de Febrero, Maldonado, Uruguay",
       phone1: "4223 2149",
       phone2: "099 905 315",
-      phone2Clean: "59899905315", // for WhatsApp link
+      phone2Clean: "59899905315",
       instagram: "electromecanica_del_este",
-      schedule: "Lunes a Viernes de 08:30 a 12:00 y de 14:00 a 18:30. Sábados de 08:30 a 12:30."
+      schedule: "Lunes a viernes de 08:30 a 12:00 y de 14:00 a 18:30. Sábados de 08:30 a 12:30."
     },
     services: [
       {
         id: "diag",
         title: "Diagnóstico Computarizado",
-        desc: "Escaneo completo de módulos electrónicos, lectura y borrado de códigos de falla (DTC) con escáneres de última generación.",
-        icon: "cpu"
+        desc: "Lectura de módulos, códigos de falla y datos en vivo para encontrar la causa antes de presupuestar.",
+        icon: "scan-line"
+      },
+      {
+        id: "electric",
+        title: "Electricidad Automotriz",
+        desc: "Revisión de carga, arranque, sensores, luces, fusibles, alternador y consumos eléctricos.",
+        icon: "cable"
       },
       {
         id: "inj",
         title: "Inyección Electrónica",
-        desc: "Diagnóstico y reparación de sistemas de inyección de nafta y diésel, optimización de consumo y solución de fallas de motor.",
+        desc: "Control de alimentación, encendido, sensores y actuadores para recuperar respuesta y consumo.",
         icon: "gauge"
       },
       {
         id: "abs",
         title: "ABS y Frenos",
-        desc: "Reparación y mantenimiento de sistemas de frenado tradicionales y electrónicos ABS. Seguridad garantizada en cada frenada.",
-        icon: "shield"
+        desc: "Diagnóstico del sistema de frenado, sensores de rueda, módulos ABS y fallas de tablero.",
+        icon: "shield-check"
       },
       {
         id: "led",
-        title: "Iluminación LED / Xenón",
-        desc: "Instalación, calibración y reparación de faros LED, Xenón, luces auxiliares y sistemas eléctricos de iluminación vehicular.",
+        title: "Iluminación LED y Xenón",
+        desc: "Instalación, calibración y reparación de faros, luces auxiliares y sistemas de iluminación.",
         icon: "zap"
-      },
-      {
-        id: "clean",
-        title: "Limpieza de Inyectores",
-        desc: "Mantenimiento preventivo y correctivo de inyectores mediante tina de ultrasonido y banco de pruebas de flujo.",
-        icon: "wind"
       },
       {
         id: "service",
         title: "Service de Motor",
-        desc: "Cambio de aceite, filtros, bujías, correas de distribución y auxiliares. Todo el mantenimiento que tu auto necesita para durar más.",
+        desc: "Cambio de aceite, filtros, bujías, correas y mantenimiento preventivo para uso diario.",
         icon: "wrench"
       },
       {
         id: "bat",
-        title: "Venta y Service de Baterías",
-        desc: "Diagnóstico del acumulador y sistema de carga alternador. Venta e instalación en el acto de baterías de primera línea con garantía.",
+        title: "Baterías y Sistema de Carga",
+        desc: "Medición de batería, alternador y arranque. Cambio e instalación con garantía.",
         icon: "battery-charging"
       }
     ],
@@ -95,7 +96,7 @@
       },
       {
         author: "Natalia M.",
-        text: "Muy buena experiencia. Se nos rompió la correa de distribución el domingo de carnaval y el lunes eran uno de los pocos talleres abiertos. Buen precio, trato cordial, y nos devolvieron el auto limpio.",
+        text: "Muy buena experiencia. Se nos rompió la correa de distribución el domingo de carnaval y el lunes eran uno de los pocos talleres abiertos. Buen precio, trato cordial y nos devolvieron el auto limpio.",
         rating: 5,
         type: "Cliente"
       },

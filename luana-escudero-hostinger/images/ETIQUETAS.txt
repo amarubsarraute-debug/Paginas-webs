@@ -1,0 +1,18 @@
+IMAGENES PARA WEB - LUANA ESCUDERO
+
+/logo/logo_luana_escudero.jpg -> Logo principal para header, footer y favicon.
+/sobre_luana/luana_escudero_retrato.jpg -> Foto para seccion Sobre Luana.
+
+/antes_y_despues/
+- antes_despues_rejuvenecimiento_facial_30_dias.jpg -> Antes/despues tratamiento facial 30 dias.
+- proceso_rejuvenecimiento_facial_antes_durante_despues.jpg -> Proceso facial antes, durante y despues.
+- antes_despues_cejas.jpg -> Antes/despues cejas.
+
+/promociones/
+- summer_glow_1800.png -> Promo Summer Glow.
+- espalda_perfecta_2800.png -> Promo Espalda Perfecta.
+- bye_brotes_summer_1700.png -> Promo Bye Brotes Summer.
+- pack_diamante_4500.png -> Promo Pack Diamante.
+- pack_corporal_5990.png -> Promo corporal radiofrecuencia + mesoterapia.
+- renovacion_intensa_3800.png -> Promo Renovacion Intensa.
+- glow_express_2000.png -> Promo Glow Express.

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultorio Odontológico Dr. Sebastián Cabrera</title>
+    <meta name="description" content="Odontólogo en San Carlos. Implantes dentales, diseño de sonrisa, estética dental.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 50: '#f0f4f8', 100: '#d9e2ec', 600: '#334e68', 700: '#243b53', 800: '#102a43', 900: '#0A192F' },
+                        gold: { 400: '#E5C158', 500: '#D4AF37' },
+                        teal: { 400: '#2DD4BF', 500: '#14B8A6', 600: '#0D9488', 700: '#0F766E' },
+                        'clinical-white': '#FFFFFF',
+                        'pearl-gray': '#F8FAFC',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans text-slate-800 bg-clinical-white antialiased overflow-x-hidden">
+    <!-- Navbar -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="#inicio" class="flex items-center gap-3">
+                    <img id="logo-img" src="logo.png" alt="Logo Consultorio" class="h-16 md:h-24 lg:h-28 w-auto object-contain rounded-xl shadow-lg border border-white/20 transition-transform duration-300 hover:scale-105" onerror="this.style.display='none'; document.getElementById('logo-text-container').style.display='flex';">
+                    <div id="logo-text-container" class="flex flex-col" style="display: none;">
+                        <span id="logo-text" class="font-serif font-bold text-xl tracking-tight text-navy-900 lg:text-white transition-colors">Dr. Sebastián Cabrera</span>
+                        <span id="logo-sub" class="text-xs tracking-widest uppercase text-slate-600 lg:text-white/80 transition-colors">Consultorio Odontológico</span>
+                    </div>
+                </a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="nav-link text-sm font-medium transition-colors hover:text-teal-600 text-slate-800 lg:text-white/90">Inicio</a>
+                    <a href="#sobre-nosotros" class="nav-link text-sm font-medium transition-colors hover:text-teal-600 text-slate-800 lg:text-white/90">Sobre Nosotros</a>
+                    <a href="#servicios" class="nav-link text-sm font-medium transition-colors hover:text-teal-600 text-slate-800 lg:text-white/90">Servicios</a>
+                    <a href="#clientes" class="nav-link text-sm font-medium transition-colors hover:text-teal-600 text-slate-800 lg:text-white/90">Clientes</a>
+                    <a href="#instalaciones" class="nav-link text-sm font-medium transition-colors hover:text-teal-600 text-slate-800 lg:text-white/90">Instalaciones</a>
+                </nav>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://instagram.com/odontologodrsebastiancabrera" target="_blank" class="nav-link text-slate-800 lg:text-white hover:text-teal-600 transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="https://wa.me/59899014058" target="_blank" class="btn-shimmer bg-teal-600 hover:bg-teal-700 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-sm hover:shadow-lg hover:scale-105 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span> Agendar Consulta
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-navy-900 lg:text-white"><i id="mobile-menu-icon" data-lucide="menu" class="w-6 h-6"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute top-full left-0 right-0 shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#inicio" class="block px-3 py-3 text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-teal-600 rounded-md">Inicio</a>
+                <a href="#sobre-nosotros" class="block px-3 py-3 text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-teal-600 rounded-md">Sobre Nosotros</a>
+                <a href="#servicios" class="block px-3 py-3 text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-teal-600 rounded-md">Servicios</a>
+                <a href="#clientes" class="block px-3 py-3 text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-teal-600 rounded-md">Clientes</a>
+                <a href="#instalaciones" class="block px-3 py-3 text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-teal-600 rounded-md">Instalaciones</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="inicio" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2070&auto=format&fit=crop" alt="Consultorio" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/70 to-transparent"></div>
+            <div class="absolute inset-0 bg-navy-900/40 lg:hidden"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6" data-animate="fade-slide-up">
+                    Odontología de Excelencia para tu <span class="text-teal-400">Mejor Sonrisa.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed max-w-xl" data-animate="fade-in" style="animation-delay: 0.2s;">
+                    Recuperá la salud, funcionalidad y estética de tu boca con tratamientos modernos, atención médica personalizada y resultados de alto nivel.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4" data-animate="fade-slide-up" style="animation-delay: 0.4s;">
+                    <a href="https://wa.me/59899014058" target="_blank" class="btn-shimmer inline-flex justify-center items-center px-8 py-4 rounded-full bg-teal-600 hover:bg-teal-500 text-white font-medium text-lg transition-all shadow-lg hover:shadow-teal-600/50 hover:scale-105">Agendar por WhatsApp</a>
+                    <a href="tel:+59899014058" class="inline-flex justify-center items-center gap-2 px-8 py-4 rounded-full bg-transparent border-2 border-white/30 hover:border-white hover:bg-white/10 text-white font-medium text-lg transition-all hover:scale-105">
+                        <i data-lucide="phone" class="w-5 h-5"></i> Llamar ahora: 099 014 058
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <div class="bg-navy-900 py-4 border-b border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left" data-animate="fade-in">
+                <div class="flex items-center gap-1 text-gold-400" data-animate="pop-in" style="animation-delay: 0.2s;">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <div class="text-sm md:text-base text-slate-300"><span class="font-semibold text-white">Valoración 5 estrellas</span> basado en pacientes de San Carlos.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <section id="sobre-nosotros" class="py-24 bg-clinical-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative" data-animate="slide-left">
+                    <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="doctor-sebastian.png" alt="Dr. Sebastián Cabrera" class="w-full h-full object-cover" data-animate="zoom-out" style="animation-delay: 0.3s;">
+                    </div>
+                </div>
+                <div>
+                    <span class="text-sm font-bold tracking-widest text-teal-600 uppercase mb-3 block" data-animate="fade-in">Profesionalismo y Experiencia</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-navy-900 leading-tight mb-8" data-animate="fade-slide-up" style="animation-delay: 0.1s;">Ciencia, Arte y Precisión en cada Tratamiento.</h2>
+                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                        <p data-animate="fade-slide-up" style="animation-delay: 0.2s;">En el Consultorio Odontológico del Dr. Sebastián Cabrera, entendemos que una sonrisa saludable es el reflejo de tu bienestar general. Por eso, combinamos la odontología funcional con los más altos estándares de estética dental.</p>
+                        <p data-animate="fade-slide-up" style="animation-delay: 0.3s;">Nuestro compromiso es brindarte un diagnóstico preciso y un tratamiento a medida, en un ambiente relajado, utilizando técnicas modernas que garantizan resultados duraderos, seguros y naturales.</p>
+                    </div>
+                    <div class="mt-10 pt-8 border-t border-slate-100" data-animate="fade-in" style="animation-delay: 0.5s;">
+                        <div class="font-serif text-3xl text-navy-800 italic opacity-80">Dr. Sebastián Cabrera</div>
+                        <div class="text-sm text-slate-500 mt-1 uppercase tracking-wider">Director Clínico</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="servicios" class="py-24 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy-900 mb-4" data-animate="fade-slide-up">Tratamientos Odontológicos Especializados</h2>
+                <p class="text-lg text-slate-600" data-animate="fade-in" style="animation-delay: 0.2s;">Soluciones integrales para devolverte la confianza y la salud bucal.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <a href="https://wa.me/59899014058?text=Hola,%20quisiera%20consultar%20por%20el%20servicio%20de%20*Implantes%20Dentales*." target="_blank" rel="noopener noreferrer" class="bg-white text-left block rounded-2xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-200 group" data-animate="fade-slide-up" style="animation-delay: 0.1s;">
+                    <div class="mb-6 bg-navy-50 text-navy-700 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:bg-navy-900 group-hover:text-gold-400 transition-all duration-300">
+                        <i data-lucide="shield-check" class="w-8 h-8" data-animate="pop-in" style="animation-delay: 0.3s;"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-navy-900 mb-3 group-hover:text-teal-600 transition-colors">Implantes Dentales</h3>
+                    <p class="text-slate-600">Recuperá la funcionalidad de tu boca con raíces artificiales de titanio, seguras y definitivas.</p>
+                </a>
+                <!-- Service 2 -->
+                <a href="https://wa.me/59899014058?text=Hola,%20quisiera%20consultar%20por%20el%20servicio%20de%20*Estética%20Dental%20y%20Carillas*." target="_blank" rel="noopener noreferrer" class="bg-white text-left block rounded-2xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-200 group" data-animate="fade-slide-up" style="animation-delay: 0.2s;">
+                    <div class="mb-6 bg-navy-50 text-navy-700 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:bg-navy-900 group-hover:text-gold-400 transition-all duration-300">
+                        <i data-lucide="sparkles" class="w-8 h-8" data-animate="pop-in" style="animation-delay: 0.4s;"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-navy-900 mb-3 group-hover:text-teal-600 transition-colors">Estética Dental & Carillas</h3>
+                    <p class="text-slate-600">Diseñamos tu sonrisa ideal corrigiendo forma, color y tamaño con materiales de alta gama.</p>
+                </a>
+                <!-- Service 3 -->
+                <a href="https://wa.me/59899014058?text=Hola,%20quisiera%20consultar%20por%20el%20servicio%20de%20*Coronas%20de%20Cerámica*." target="_blank" rel="noopener noreferrer" class="bg-white text-left block rounded-2xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-200 group" data-animate="fade-slide-up" style="animation-delay: 0.3s;">
+                    <div class="mb-6 bg-navy-50 text-navy-700 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:bg-navy-900 group-hover:text-gold-400 transition-all duration-300">
+                        <i data-lucide="crown" class="w-8 h-8" data-animate="pop-in" style="animation-delay: 0.5s;"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-navy-900 mb-3 group-hover:text-teal-600 transition-colors">Coronas de Cerámica</h3>
+                    <p class="text-slate-600">Restauraciones estéticas y altamente resistentes que devuelven la anatomía original de tu diente.</p>
+                </a>
+                <!-- Service 4 -->
+                <a href="https://wa.me/59899014058?text=Hola,%20quisiera%20consultar%20por%20el%20servicio%20de%20*Regeneración%20Ósea*." target="_blank" rel="noopener noreferrer" class="bg-white text-left block rounded-2xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-200 group" data-animate="fade-slide-up" style="animation-delay: 0.4s;">
+                    <div class="mb-6 bg-navy-50 text-navy-700 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:bg-navy-900 group-hover:text-gold-400 transition-all duration-300">
+                        <i data-lucide="layers" class="w-8 h-8" data-animate="pop-in" style="animation-delay: 0.6s;"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-navy-900 mb-3 group-hover:text-teal-600 transition-colors">Regeneración Ósea</h3>
+                    <p class="text-slate-600">Procedimientos avanzados para recuperar el tejido óseo perdido y preparar tu boca para implantes.</p>
+                </a>
+                <!-- Service 5 -->
+                <a href="https://wa.me/59899014058?text=Hola,%20quisiera%20consultar%20por%20el%20servicio%20de%20*Blanqueamiento%20Dental*." target="_blank" rel="noopener noreferrer" class="bg-white text-left block rounded-2xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-200 group" data-animate="fade-slide-up" style="animation-delay: 0.5s;">
+                    <div class="mb-6 bg-navy-50 text-navy-700 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:bg-navy-900 group-hover:text-gold-400 transition-all duration-300">
+                        <i data-lucide="sun" class="w-8 h-8" data-animate="pop-in" style="animation-delay: 0.7s;"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-navy-900 mb-3 group-hover:text-teal-600 transition-colors">Blanqueamiento Dental</h3>
+                    <p class="text-slate-600">Aclará el tono de tus dientes de forma segura y profesional, logrando una sonrisa luminosa.</p>
+                </a>
+                <!-- Service 6 -->
+                <a href="https://wa.me/59899014058?text=Hola,%20quisiera%20consultar%20por%20el%20servicio%20de%20*Extracciones%20Dentales*." target="_blank" rel="noopener noreferrer" class="bg-white text-left block rounded-2xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-200 group" data-animate="fade-slide-up" style="animation-delay: 0.6s;">
+                    <div class="mb-6 bg-navy-50 text-navy-700 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:bg-navy-900 group-hover:text-gold-400 transition-all duration-300">
+                        <i data-lucide="activity" class="w-8 h-8" data-animate="pop-in" style="animation-delay: 0.8s;"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-navy-900 mb-3 group-hover:text-teal-600 transition-colors">Extracciones Dentales</h3>
+                    <p class="text-slate-600">Procedimientos quirúrgicos seguros, sin dolor y con un cuidadoso protocolo postoperatorio.</p>
+                </a>
+            </div>
+
+            <!-- Urgencias Banner -->
+            <div class="mt-16 bg-rose-900 rounded-2xl p-8 md:p-10 shadow-lg border border-rose-800 relative overflow-hidden" data-animate="fade-slide-up" style="animation-delay: 0.2s;">
+                <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-64 h-64 bg-rose-800 rounded-full blur-3xl opacity-50"></div>
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+                    <div class="flex flex-col md:flex-row items-center gap-6">
+                        <div class="w-16 h-16 rounded-full bg-rose-800 flex items-center justify-center flex-shrink-0 text-rose-200 shadow-inner" data-animate="pop-in" style="animation-delay: 0.4s;">
+                            <i data-lucide="alert-triangle" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-white mb-2">Atención de Urgencias Odontológicas</h3>
+                            <p class="text-rose-100 text-lg">¿Dolor agudo o accidente? Contactanos de inmediato para asistencia prioritaria.</p>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/59899014058" class="btn-shimmer flex-shrink-0 inline-flex items-center text-lg font-bold text-rose-900 bg-white hover:bg-rose-50 px-8 py-4 rounded-full transition-all shadow-md hover:-translate-y-1 hover:scale-105 hover:shadow-xl">
+                        Solicitar Urgencia
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-24 bg-navy-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4" data-animate="fade-slide-up">Tu salud dental, en las mejores manos.</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <div class="flex gap-6 items-start bg-navy-800/50 p-8 rounded-2xl border border-navy-700/50 hover:bg-navy-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-animate="fade-slide-up" style="animation-delay: 0.1s;">
+                    <div class="flex-shrink-0 w-14 h-14 rounded-full bg-navy-900 border border-gold-500/30 flex items-center justify-center" data-animate="pop-in" style="animation-delay: 0.3s;"><i data-lucide="stethoscope" class="w-6 h-6 text-gold-400"></i></div>
+                    <div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-2">Atención Personalizada</h3>
+                        <p class="text-slate-300">Evaluamos tu caso al detalle. No hay dos pacientes iguales, ni dos tratamientos idénticos.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start bg-navy-800/50 p-8 rounded-2xl border border-navy-700/50 hover:bg-navy-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-animate="fade-slide-up" style="animation-delay: 0.2s;">
+                    <div class="flex-shrink-0 w-14 h-14 rounded-full bg-navy-900 border border-gold-500/30 flex items-center justify-center" data-animate="pop-in" style="animation-delay: 0.4s;"><i data-lucide="diamond" class="w-6 h-6 text-gold-400"></i></div>
+                    <div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-2">Estética y Funcionalidad</h3>
+                        <p class="text-slate-300">No solo buscamos que tu boca esté sana, sino que tu sonrisa se vea espectacular y natural.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start bg-navy-800/50 p-8 rounded-2xl border border-navy-700/50 hover:bg-navy-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-animate="fade-slide-up" style="animation-delay: 0.3s;">
+                    <div class="flex-shrink-0 w-14 h-14 rounded-full bg-navy-900 border border-gold-500/30 flex items-center justify-center" data-animate="pop-in" style="animation-delay: 0.5s;"><i data-lucide="map-pin" class="w-6 h-6 text-gold-400"></i></div>
+                    <div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-2">Ubicación Accesible</h3>
+                        <p class="text-slate-300">Instalaciones modernas ubicadas en el corazón de San Carlos, Maldonado.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start bg-navy-800/50 p-8 rounded-2xl border border-navy-700/50 hover:bg-navy-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-animate="fade-slide-up" style="animation-delay: 0.4s;">
+                    <div class="flex-shrink-0 w-14 h-14 rounded-full bg-navy-900 border border-gold-500/30 flex items-center justify-center" data-animate="pop-in" style="animation-delay: 0.6s;"><i data-lucide="clock" class="w-6 h-6 text-gold-400"></i></div>
+                    <div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-2">Gestión Ágil</h3>
+                        <p class="text-slate-300">Agenda tu consulta de forma directa, rápida y sin intermediarios a través de WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases -->
+    <section id="clientes" class="py-24 bg-clinical-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy-900 mb-4" data-animate="fade-slide-up">Nuestros Clientes</h2>
+                    <p class="text-lg text-slate-600" data-animate="fade-in" style="animation-delay: 0.2s;">Transformaciones reales. Deslizá para ver el cambio en la sonrisa de nuestros clientes.</p>
+                </div>
+                <div class="flex gap-2" data-animate="fade-in" style="animation-delay: 0.4s;">
+                    <button id="btn-prev" class="p-3 rounded-full border border-slate-200 hover:bg-slate-50 text-navy-900 transition-colors"><i data-lucide="chevron-left" class="w-6 h-6"></i></button>
+                    <button id="btn-next" class="p-3 rounded-full border border-slate-200 hover:bg-slate-50 text-navy-900 transition-colors"><i data-lucide="chevron-right" class="w-6 h-6"></i></button>
+                </div>
+            </div>
+            <div id="cases-slider" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 items-stretch" data-animate="slide-right" style="animation-delay: 0.2s;">
+                <div class="min-w-[85vw] md:min-w-[45vw] lg:min-w-[30vw] snap-center flex-shrink-0 flex">
+                    <div class="w-full bg-slate-50 rounded-2xl p-4 border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col">
+                        <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-slate-200">
+                            <div class="absolute inset-0 flex">
+                                <div class="w-1/2 h-full relative border-r-2 border-white">
+                                    <img src="antes_caso_implante_1.png" alt="Antes" class="absolute inset-0 w-full h-full object-cover object-center">
+                                    <div class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded">Antes</div>
+                                </div>
+                                <div class="w-1/2 h-full relative">
+                                    <img src="despues_caso_implante_1.png" alt="Después" class="absolute inset-0 w-full h-full object-cover object-center">
+                                    <div class="absolute bottom-2 right-2 bg-teal-600/90 text-white text-xs px-2 py-1 rounded">Después</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-navy-900 text-center mt-auto">Transformación con Implantes</h3>
+                    </div>
+                </div>
+                <div class="min-w-[85vw] md:min-w-[45vw] lg:min-w-[30vw] snap-center flex-shrink-0 flex">
+                    <div class="w-full bg-slate-50 rounded-2xl p-4 border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col">
+                        <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-slate-200">
+                            <img src="comparativa_antes_despues_1.png" alt="Comparativa" class="absolute inset-0 w-full h-full object-cover object-center">
+                            <div class="absolute bottom-2 right-2 bg-teal-600/90 text-white text-xs px-2 py-1 rounded">Evolución</div>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-navy-900 text-center mt-auto">Rehabilitación Estética</h3>
+                    </div>
+                </div>
+                <div class="min-w-[85vw] md:min-w-[45vw] lg:min-w-[30vw] snap-center flex-shrink-0 flex">
+                    <div class="w-full bg-slate-50 rounded-2xl p-4 border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col">
+                        <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-slate-200">
+                            <div class="absolute inset-0 flex">
+                                <div class="w-1/2 h-full relative border-r-2 border-white">
+                                    <img src="proceso_caso_implante_1.png" alt="Proceso" class="absolute inset-0 w-full h-full object-cover object-center">
+                                    <div class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded">Proceso</div>
+                                </div>
+                                <div class="w-1/2 h-full relative">
+                                    <img src="cliente_sonrisa_1.png" alt="Sonrisa Final" class="absolute inset-0 w-full h-full object-cover object-center">
+                                    <div class="absolute bottom-2 right-2 bg-teal-600/90 text-white text-xs px-2 py-1 rounded">Resultado</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-navy-900 text-center mt-auto">Diseño de Sonrisa Final</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="instalaciones" class="py-24 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy-900 mb-4" data-animate="fade-slide-up">Un Espacio Pensado para tu Confort</h2>
+                <p class="text-lg text-slate-600" data-animate="fade-in" style="animation-delay: 0.2s;">Higiene absoluta, tecnología de vanguardia y un ambiente de tranquilidad.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+                <div class="relative rounded-2xl overflow-hidden group col-span-2 row-span-2" data-animate="zoom-out" style="animation-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="relative rounded-2xl overflow-hidden group col-span-1 row-span-1" data-animate="zoom-out" style="animation-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="relative rounded-2xl overflow-hidden group col-span-1 row-span-1" data-animate="zoom-out" style="animation-delay: 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="relative rounded-2xl overflow-hidden group col-span-2 row-span-1" data-animate="zoom-out" style="animation-delay: 0.4s;">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="py-24 bg-clinical-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy-900 mb-4" data-animate="fade-slide-up">Lo que dicen nuestros pacientes</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50 border border-slate-100 relative hover:-translate-y-2 hover:shadow-2xl transition-all duration-500" data-animate="fade-slide-up" style="animation-delay: 0.1s;">
+                    <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-slate-100"></i>
+                    <div class="flex gap-1 mb-6 text-gold-400"><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i></div>
+                    <p class="text-slate-700 leading-relaxed mb-6 italic">"Excelente atención del Dr. Sebastián. Fui por un implante y el proceso fue impecable, sin dolor y con un resultado estético bárbaro."</p>
+                    <div class="font-bold text-navy-900">María Fernández</div>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50 border border-slate-100 relative hover:-translate-y-2 hover:shadow-2xl transition-all duration-500" data-animate="fade-slide-up" style="animation-delay: 0.2s;">
+                    <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-slate-100"></i>
+                    <div class="flex gap-1 mb-6 text-gold-400"><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i></div>
+                    <p class="text-slate-700 leading-relaxed mb-6 italic">"Un profesional con todas las letras. Me explicó el tratamiento paso a paso y me dio mucha tranquilidad. El consultorio es de primer nivel."</p>
+                    <div class="font-bold text-navy-900">Carlos Rodríguez</div>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50 border border-slate-100 relative hover:-translate-y-2 hover:shadow-2xl transition-all duration-500" data-animate="fade-slide-up" style="animation-delay: 0.3s;">
+                    <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-slate-100"></i>
+                    <div class="flex gap-1 mb-6 text-gold-400"><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i></div>
+                    <p class="text-slate-700 leading-relaxed mb-6 italic">"Quedé feliz con mi diseño de sonrisa. Destaco la higiene del lugar y la calidad humana. Se nota que usan materiales de altísima calidad."</p>
+                    <div class="font-bold text-navy-900">Lucía Gómez</div>
+                </div>
+                <!-- Review 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50 border border-slate-100 relative hover:-translate-y-2 hover:shadow-2xl transition-all duration-500" data-animate="fade-slide-up" style="animation-delay: 0.4s;">
+                    <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-slate-100"></i>
+                    <div class="flex gap-1 mb-6 text-gold-400"><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i></div>
+                    <p class="text-slate-700 leading-relaxed mb-6 italic">"Fui por una urgencia un sábado de tarde y me atendieron de maravilla. Me solucionaron el problema rápido y sin dolor. Muy agradecido."</p>
+                    <div class="font-bold text-navy-900">Jorge Silva</div>
+                </div>
+                <!-- Review 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50 border border-slate-100 relative hover:-translate-y-2 hover:shadow-2xl transition-all duration-500" data-animate="fade-slide-up" style="animation-delay: 0.5s;">
+                    <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-slate-100"></i>
+                    <div class="flex gap-1 mb-6 text-gold-400"><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i></div>
+                    <p class="text-slate-700 leading-relaxed mb-6 italic">"Llevé a mi madre para unas prótesis y el trato fue excepcional. Mucha paciencia y dedicación. Recomiendo al 100%."</p>
+                    <div class="font-bold text-navy-900">Ana Martínez</div>
+                </div>
+                <!-- Review 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50 border border-slate-100 relative hover:-translate-y-2 hover:shadow-2xl transition-all duration-500" data-animate="fade-slide-up" style="animation-delay: 0.6s;">
+                    <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-slate-100"></i>
+                    <div class="flex gap-1 mb-6 text-gold-400"><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i></div>
+                    <p class="text-slate-700 leading-relaxed mb-6 italic">"El blanqueamiento dental superó mis expectativas. Mis dientes quedaron perfectos y no tuve nada de sensibilidad. Excelente trabajo."</p>
+                    <div class="font-bold text-navy-900">Valentina Castro</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-teal-600 relative overflow-hidden">
+        <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-96 h-96 bg-teal-500 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-96 h-96 bg-teal-700 rounded-full blur-3xl opacity-50"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6" data-animate="fade-slide-up">Da el primer paso hacia tu nueva sonrisa.</h2>
+            <p class="text-xl text-teal-50 mb-10 max-w-2xl mx-auto" data-animate="fade-in" style="animation-delay: 0.2s;">No pospongas más tu salud dental. Escribinos hoy para coordinar tu evaluación inicial.</p>
+            <div data-animate="fade-slide-up" style="animation-delay: 0.4s;">
+                <a href="https://wa.me/59899014058" target="_blank" class="btn-shimmer inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white text-teal-700 hover:bg-slate-50 font-bold text-xl transition-all shadow-xl hover:-translate-y-1 hover:scale-105 hover:shadow-2xl">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i> Agendar mi Consulta por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto" class="py-24 bg-clinical-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy-900 mb-8" data-animate="fade-slide-up">Estamos para ayudarte</h2>
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4" data-animate="fade-slide-up" style="animation-delay: 0.1s;">
+                            <div class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center flex-shrink-0 text-teal-600 border border-slate-100" data-animate="pop-in" style="animation-delay: 0.3s;"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+                            <div><h3 class="font-bold text-navy-900 mb-1">Dirección</h3><p class="text-slate-600">Av. Dr. Jacinto Alvariza 1153<br>20400 San Carlos, Maldonado, Uruguay.</p></div>
+                        </div>
+                        <div class="flex items-start gap-4" data-animate="fade-slide-up" style="animation-delay: 0.2s;">
+                            <div class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center flex-shrink-0 text-teal-600 border border-slate-100" data-animate="pop-in" style="animation-delay: 0.4s;"><i data-lucide="phone" class="w-6 h-6"></i></div>
+                            <div><h3 class="font-bold text-navy-900 mb-1">Teléfono</h3><a href="tel:+59899014058" class="text-slate-600 hover:text-teal-600">099 014 058</a></div>
+                        </div>
+                        <div class="flex items-start gap-4" data-animate="fade-slide-up" style="animation-delay: 0.3s;">
+                            <div class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center flex-shrink-0 text-teal-600 border border-slate-100" data-animate="pop-in" style="animation-delay: 0.5s;"><i data-lucide="message-circle" class="w-6 h-6"></i></div>
+                            <div><h3 class="font-bold text-navy-900 mb-1">WhatsApp</h3><a href="https://wa.me/59899014058" target="_blank" class="text-slate-600 hover:text-teal-600">099 014 058</a></div>
+                        </div>
+                        <div class="flex items-start gap-4" data-animate="fade-slide-up" style="animation-delay: 0.4s;">
+                            <div class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center flex-shrink-0 text-teal-600 border border-slate-100" data-animate="pop-in" style="animation-delay: 0.6s;"><i data-lucide="instagram" class="w-6 h-6"></i></div>
+                            <div><h3 class="font-bold text-navy-900 mb-1">Instagram</h3><a href="https://instagram.com/odontologodrsebastiancabrera" target="_blank" class="text-slate-600 hover:text-teal-600">@odontologodrsebastiancabrera</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-[400px] lg:h-auto rounded-2xl overflow-hidden shadow-lg border border-slate-100" data-animate="slide-right" style="animation-delay: 0.2s;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.568112117181!2d-54.9189028!3d-34.7966944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9575080000000001%3A0x0!2sAv.%20Dr.%20Jacinto%20Alvariza%201153%2C%2020400%20San%20Carlos%2C%20Departamento%20de%20Maldonado%2C%20Uruguay!5e0!3m2!1sen!2sus!4v1715000000000!5m2!1sen!2sus" width="100%" height="100%" style="border: 0; filter: grayscale(100%) contrast(1.2) opacity(0.8);" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-slate-300 py-16 border-t border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div data-animate="fade-slide-up" style="animation-delay: 0.1s;">
+                    <div class="flex flex-col mb-4">
+                        <span class="font-serif font-bold text-xl tracking-tight text-white">Dr. Sebastián Cabrera</span>
+                        <span class="text-xs tracking-widest uppercase text-slate-400">Odontología Especializada</span>
+                    </div>
+                    <p class="text-slate-400 max-w-xs">Odontología de alta calidad en San Carlos.</p>
+                </div>
+                <div data-animate="fade-slide-up" style="animation-delay: 0.2s;">
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="hover:text-teal-400 transition-colors">Inicio</a></li>
+                        <li><a href="#servicios" class="hover:text-teal-400 transition-colors">Servicios</a></li>
+                        <li><a href="#clientes" class="hover:text-teal-400 transition-colors">Clientes</a></li>
+                        <li><a href="#contacto" class="hover:text-teal-400 transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <div data-animate="fade-slide-up" style="animation-delay: 0.3s;">
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Horarios</h4>
+                    <p class="text-slate-400 mb-1">Lunes a Sábados</p>
+                    <p class="text-white font-medium mb-3">14:00 a 20:00 hs</p>
+                    <p class="text-slate-500 text-xs uppercase tracking-wide">Atención con agenda previa.</p>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-navy-800 text-sm text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left" data-animate="fade-in" style="animation-delay: 0.5s;">
+                <p>© 2024 Consultorio Odontológico Dr. Sebastián Cabrera. Todos los derechos reservados.</p>
+                <p>Diseño enfocado en la salud dental.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/59899014058" target="_blank" id="floating-wpp" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#1EBE5D] text-white p-4 rounded-full shadow-lg transition-transform hover:scale-110 flex items-center justify-center group">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+    </a>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

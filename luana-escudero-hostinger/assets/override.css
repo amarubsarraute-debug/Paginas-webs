@@ -1,0 +1,310 @@
+/* ============================================================
+   Luana Escudero - capa de ajustes (cargada después del bundle)
+   1) Slider antes/después fluido
+   2) Legibilidad del texto en las cards de #casos
+   3) Oculta la 2da sección de antes/después (#resultados)
+   4) Sección de reseñas editorial
+   ============================================================ */
+
+/* 1) SLIDER FLUIDO -------------------------------------------------
+   El divisor y el handle traen `transition-all`, que anima el
+   clip-path en cada movimiento del cursor y produce el "trancado".
+   Lo desactivamos para que el arrastre sea instantáneo (60fps). */
+.cursor-ew-resize,
+.cursor-ew-resize * {
+  transition: none !important;
+}
+.cursor-ew-resize img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* 2) LEGIBILIDAD EN LAS CARDS DE #casos ---------------------------- */
+#casos .text-stone-600 {
+  color: #4a463d !important;       /* más oscuro y con mejor contraste */
+}
+#casos .font-light {
+  font-weight: 400 !important;     /* el peso 300 se veía demasiado fino */
+}
+/* 3) OCULTAR LA SEGUNDA SECCIÓN DE ANTES/DESPUÉS ------------------- */
+#resultados {
+  display: none !important;
+}
+
+/* 4) SECCIÓN DE RESEÑAS ------------------------------------------- */
+:root {
+  --lr-ink: #191612;       /* primary-900 */
+  --lr-cream: #f7f6f1;     /* nude-50 */
+  --lr-taupe: #b8b29f;     /* taupe suave para metadatos */
+  --lr-gold: #cbb185;      /* estrellas */
+  --lr-line: rgba(247, 246, 241, 0.14);
+}
+
+#resenas-luana {
+  background: var(--lr-ink);
+  color: var(--lr-cream);
+  padding: clamp(5rem, 10vw, 8.5rem) 1.5rem;
+  position: relative;
+  overflow: hidden;
+  font-family: Inter, system-ui, sans-serif;
+}
+#resenas-luana .lr-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* halo sutil de fondo, sin gradientes "IA" agresivos */
+#resenas-luana::before {
+  content: "";
+  position: absolute;
+  inset: -30% 30% auto auto;
+  width: 60vw;
+  height: 60vw;
+  max-width: 760px;
+  max-height: 760px;
+  background: radial-gradient(circle, rgba(203, 177, 133, 0.10), transparent 62%);
+  pointer-events: none;
+}
+
+/* encabezado */
+#resenas-luana .lr-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(3rem, 6vw, 5rem);
+  position: relative;
+}
+#resenas-luana .lr-rating {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--lr-taupe);
+  margin-bottom: 1.6rem;
+}
+#resenas-luana .lr-rating .lr-stars {
+  color: var(--lr-gold);
+  letter-spacing: 0.12em;
+  font-size: 0.92rem;
+}
+#resenas-luana .lr-rating strong {
+  color: var(--lr-cream);
+  font-weight: 600;
+}
+#resenas-luana .lr-head h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 4.4vw, 3.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.1rem;
+}
+#resenas-luana .lr-head h2 em {
+  font-style: italic;
+  color: #e6cfa3;
+}
+#resenas-luana .lr-head p {
+  color: var(--lr-taupe);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* cita destacada */
+#resenas-luana .lr-featured {
+  max-width: 880px;
+  margin: 0 auto clamp(3rem, 6vw, 4.5rem);
+  text-align: center;
+}
+#resenas-luana .lr-featured blockquote {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3.1vw, 2.35rem);
+  line-height: 1.32;
+  margin: 0 0 1.6rem;
+  color: var(--lr-cream);
+}
+#resenas-luana .lr-featured .lr-meta {
+  justify-content: center;
+}
+
+/* MÓVIL: carrusel horizontal con scroll-snap (se desliza de a una) */
+#resenas-luana .lr-wall {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin: 0 -1.5rem;
+  padding: 0.25rem 1.5rem 0.75rem;
+  scroll-padding: 0 1.5rem;
+}
+#resenas-luana .lr-wall::-webkit-scrollbar { display: none; }
+#resenas-luana .lr-review {
+  flex: 0 0 80%;
+  scroll-snap-align: center;
+  padding: 1.6rem;
+  border: 1px solid var(--lr-line);
+  border-radius: 16px;
+}
+
+/* TABLET / DESKTOP: grilla editorial con líneas alineadas (sin carrusel) */
+@media (min-width: 680px) {
+  #resenas-luana .lr-wall {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    column-gap: clamp(2rem, 4vw, 3.5rem);
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+  #resenas-luana .lr-review {
+    flex: none;
+    padding: 1.9rem 0;
+    border: none;
+    border-top: 1px solid var(--lr-line);
+    border-radius: 0;
+  }
+  #resenas-luana .lr-review:nth-child(1),
+  #resenas-luana .lr-review:nth-child(2) { border-top: none; }
+}
+@media (min-width: 1040px) {
+  #resenas-luana .lr-wall { grid-template-columns: repeat(3, 1fr); }
+  #resenas-luana .lr-review:nth-child(3) { border-top: none; }
+}
+#resenas-luana .lr-stars-row {
+  color: var(--lr-gold);
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  margin-bottom: 0.85rem;
+}
+#resenas-luana .lr-review p {
+  font-size: 1.02rem;
+  line-height: 1.62;
+  color: #ddd9cf;
+  margin: 0 0 1.1rem;
+}
+#resenas-luana .lr-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+}
+#resenas-luana .lr-meta .lr-name {
+  color: var(--lr-cream);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+#resenas-luana .lr-meta .lr-src {
+  color: var(--lr-taupe);
+}
+#resenas-luana .lr-meta .lr-dot {
+  width: 3px; height: 3px; border-radius: 50%;
+  background: var(--lr-taupe); opacity: 0.6;
+}
+
+/* cierre */
+#resenas-luana .lr-foot {
+  text-align: center;
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+}
+#resenas-luana .lr-foot a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--lr-ink);
+  background: var(--lr-cream);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.95rem 1.9rem;
+  border-radius: 999px;
+  transition: transform 0.25s cubic-bezier(.16,1,.3,1), background 0.25s;
+}
+#resenas-luana .lr-foot a:hover {
+  transform: translateY(-2px);
+  background: #fff;
+}
+#resenas-luana .lr-foot a:active { transform: translateY(0); }
+
+/* entrada suave al hacer scroll */
+#resenas-luana .lr-review,
+#resenas-luana .lr-featured {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1);
+}
+#resenas-luana .is-in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  #resenas-luana .lr-review,
+  #resenas-luana .lr-featured {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* 5) MINI-MAPA EN LA SECCIÓN DE CONTACTO -------------------------- */
+#lr-mapa {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: clamp(2rem, 4vw, 2.75rem);
+  border-top: 1px solid rgba(247, 246, 241, 0.12);
+}
+#lr-mapa .lr-mapa-label {
+  display: block;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--lr-taupe);
+  margin-bottom: 0.55rem;
+}
+#lr-mapa .lr-mapa-addr {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  line-height: 1.35;
+  color: var(--lr-cream);
+  margin: 0 0 1.3rem;
+  max-width: 30ch;
+}
+#lr-mapa .lr-mapa-frame {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(247, 246, 241, 0.14);
+  line-height: 0;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+}
+#lr-mapa iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  display: block;
+  filter: grayscale(0.25) contrast(1.03);
+}
+@media (min-width: 768px) {
+  #lr-mapa iframe { height: 380px; }
+}
+#lr-mapa .lr-mapa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--lr-cream);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(247, 246, 241, 0.3);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+#lr-mapa .lr-mapa-link:hover { opacity: 0.7; }

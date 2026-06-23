@@ -32,21 +32,20 @@
       let extraClass = "";
       let bgStyle = "";
       
-      // Customize specific cards to create an interesting Bento Grid
+      // Highlight two image-backed cards while keeping the rest as a service index.
       if (idx === 0) {
-        // Diagnóstico Computarizado
-        extraClass = "col-span-2 row-span-2 service-featured";
+        extraClass = "service-featured";
         bgStyle = `<div class="card-bg-image" style="background-image: url('assets/img/diagnostic.png')"></div>`;
       } else if (idx === 6) {
-        // Venta y Service de Baterías
-        extraClass = "col-span-2 service-battery";
+        extraClass = "service-battery";
         bgStyle = `<div class="card-bg-image" style="background-image: url('assets/img/battery.png')"></div>`;
       }
       
       return `
-        <article class="bento-card ${extraClass}">
+        <article class="bento-card service-card ${extraClass}">
           ${bgStyle}
           <div class="card-content">
+            <span class="service-number">${String(idx + 1).padStart(2, "0")}</span>
             <div class="card-icon" aria-hidden="true">
               <i data-lucide="${escHTML(s.icon)}"></i>
             </div>
@@ -81,9 +80,7 @@
             </div>
           </div>
           <p class="review-text">"${escHTML(r.text)}"</p>
-          <div class="review-badge">
-            <span>${escHTML(r.type)} verificado</span>
-          </div>
+          <div class="review-badge">${escHTML(r.type)} en Google Maps</div>
         </article>
       `;
     }).join("");
@@ -216,7 +213,7 @@
   function initBentoHover() {
     if (reduced || !window.gsap) return;
     
-    const cards = $$(".bento-card");
+    const cards = $$(".service-card, .review-card, .trust-card");
     cards.forEach(card => {
       const icon = $(".card-icon", card);
       
