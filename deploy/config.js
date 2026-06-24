@@ -95,8 +95,8 @@ module.exports = [
     local: "../luana-escudero-hostinger",
     exclude: [".git", ".claude", "node_modules", "luana_web_imagenes_v2.zip"],
     ftp: {
-      host: "PONER_HOST_FTP",
-      user: "PONER_USUARIO_FTP",
+      host: "147.93.39.62",
+      user: "u726588504.firebrick-bison-401360.hostingersite.com",
       password: "PONER_PASSWORD_FTP",
       remote: "/public_html",
       port: 21,
