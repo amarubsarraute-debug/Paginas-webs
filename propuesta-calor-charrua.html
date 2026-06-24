@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="es"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Calor Charrúa — Tu oportunidad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html,body{height:100%;background:#111;font-family:'Outfit',sans-serif;overflow:hidden;-webkit-tap-highlight-color:transparent;}:root{--bg:#f7f5f0;--bg-panel:#ffffff;--ink:#1a1a1a;--ink-light:#6b6b6b;--ink-faint:#c8c4bc;--green:#2d7a4f;--green-bg:#edf7f1;--green-border:#a8d9be;--red:#c0392b;--red-bg:#fdf0ee;--red-border:#f0b8b2;--orange:#d4611a;--orange-bg:#fdf3ec;--orange-border:#f0c9a0;--blue:#2563a8;--blue-bg:#eff5fc;--blue-border:#a8c8f0;--yellow:#b88c00;--yellow-bg:#fdf9ec;--yellow-border:#f0dfa0;}.hand{font-family:'Caveat',cursive;}#stage{width:100%;height:100%;display:flex;justify-content:center;align-items:center;}#frame{position:relative;width:100%;max-width:440px;height:100%;max-height:900px;background:var(--bg);overflow:hidden;}@media(min-width:600px){#frame{border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.5);}}#progress{position:absolute;top:14px;left:14px;right:14px;z-index:50;display:flex;gap:4px;}.bar{flex:1;height:3px;border-radius:3px;background:rgba(0,0,0,0.12);overflow:hidden;}.bar i{display:block;height:100%;width:0%;background:var(--ink);border-radius:3px;transition:width .25s ease;}.bar.done i{width:100%;}.bar.active i{width:100%;}.tap{position:absolute;top:0;bottom:0;width:26%;z-index:40;cursor:pointer;}.tap.left{left:0;}.tap.right{right:0;}.navbtn{position:absolute;bottom:18px;z-index:60;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.85);border:1px solid var(--ink-faint);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ink);cursor:pointer;backdrop-filter:blur(6px);}#btn-prev{left:14px;}#btn-next{right:14px;}#track{height:100%;display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1);}.scr{flex:0 0 100%;height:100%;padding-top:54px;}.simple{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%;padding:32px 30px 70px;gap:14px;}.s-icon{font-size:42px;line-height:1;}.s-eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);font-weight:600;}.s-head{font-size:30px;line-height:1.12;color:var(--ink);}.s-body{font-size:14.5px;line-height:1.55;color:var(--ink-light);max-width:300px;}.s-punch{margin-top:6px;background:var(--ink);color:#fff;border-radius:14px;padding:16px 18px;font-size:19px;line-height:1.3;max-width:300px;}.s-punch span{color:#fbbf24;}.stat-num{font-size:62px;font-weight:700;color:var(--ink);line-height:1;}.stat-stars{color:var(--yellow);font-size:20px;letter-spacing:2px;margin-top:4px;}.stat-sub{font-size:13px;color:var(--ink-light);margin-top:6px;}.scoreboard{display:flex;gap:10px;width:100%;max-width:280px;margin:4px 0;}.score-box{flex:1;border-radius:14px;padding:16px 10px;text-align:center;}.score-box.search{background:var(--bg-panel);border:1.5px solid var(--ink-faint);}.score-box.found{background:var(--red-bg);border:1.5px solid var(--red-border);}.score-num{font-family:'Caveat',cursive;font-size:38px;font-weight:700;line-height:1;}.score-box.search .score-num{color:var(--ink);}.score-box.found .score-num{color:var(--red);}.score-lbl{font-size:10.5px;color:var(--ink-light);margin-top:4px;line-height:1.3;}.ann .result{display:block;margin-top:3px;font-size:11px;color:var(--green);font-weight:600;}.boceto-scr{height:100%;overflow-y:auto;padding:54px 18px 30px;}.boceto-head{text-align:center;margin-bottom:12px;}.boceto-head .s-head{font-size:26px;margin-bottom:4px;}.boceto-badge{display:inline-block;background:var(--blue-bg);border:1px solid var(--blue-border);color:var(--blue);font-size:11px;font-weight:600;padding:4px 10px;border-radius:8px;}.iframe-wrap{border:2px solid var(--blue-border);border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.1);margin-bottom:14px;background:#fff;position:relative;}.iframe-bar{background:#f0f0f0;border-bottom:1px solid #ddd;padding:7px 10px;display:flex;gap:5px;align-items:center;}.iframe-bar .d{width:8px;height:8px;border-radius:50%;}.iframe-bar .d:nth-child(1){background:#ff5f57}.iframe-bar .d:nth-child(2){background:#ffbd2e}.iframe-bar .d:nth-child(3){background:#28c840}.iframe-bar .u{flex:1;margin-left:6px;background:#fff;border:1px solid #ddd;border-radius:5px;padding:2px 8px;font-size:10px;color:#666;}.iframe-viewport{width:100%;height:400px;overflow:hidden;position:relative;}.iframe-viewport iframe{position:absolute;top:0;left:0;border:none;pointer-events:auto;}.iframe-viewport::after{content:'Deslizá para ver más ↕';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(transparent,rgba(255,255,255,.95));display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;font-size:10px;color:var(--ink-light);pointer-events:none;}/* escala simplificada */.ann-list{display:flex;flex-direction:column;gap:8px;}.ann{display:flex;gap:9px;align-items:flex-start;background:var(--bg-panel);border-radius:10px;padding:10px 12px;position:relative;}.ann::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px;}.ann.green{border:1px solid var(--green-border);background:var(--green-bg);}.ann.green::before{background:var(--green);}.ann.blue{border:1px solid var(--blue-border);background:var(--blue-bg);}.ann.blue::before{background:var(--blue);}.ann.orange{border:1px solid var(--orange-border);background:var(--orange-bg);}.ann.orange::before{background:var(--orange);}.ann.yellow{border:1px solid var(--yellow-border);background:var(--yellow-bg);}.ann.yellow::before{background:var(--yellow);}.ann .ico{font-size:16px;flex-shrink:0;}.ann .txt{font-size:12px;line-height:1.45;color:var(--ink);}.ann .txt b{font-weight:600;}.cta-scr{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:54px 26px 30px;gap:16px;text-align:center;}.steps{display:flex;flex-direction:column;gap:8px;width:100%;max-width:300px;}.step-row{display:flex;gap:10px;align-items:center;background:var(--bg-panel);border:1.5px solid var(--ink-faint);border-radius:10px;padding:10px 12px;text-align:left;}.step-row .num{font-family:'Caveat',cursive;font-size:22px;font-weight:700;color:var(--ink-faint);flex-shrink:0;}.step-row .txt{font-size:12.5px;color:var(--ink);line-height:1.4;}.wa-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:#fff;font-weight:600;font-size:15px;border-radius:14px;padding:15px 20px;width:100%;max-width:300px;text-decoration:none;}.no-pressure{font-size:11.5px;color:var(--ink-light);font-style:italic;max-width:280px;}#edit-bar{position:fixed;top:0;left:0;right:0;height:3px;background:var(--orange);z-index:300;display:none;}body.editing #edit-bar{display:block;}body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-radius:4px;cursor:text;}</style>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html,body{height:100%;background:#111;font-family:'Outfit',sans-serif;overflow:hidden;-webkit-tap-highlight-color:transparent;}:root{--bg:#f7f5f0;--bg-panel:#ffffff;--ink:#1a1a1a;--ink-light:#6b6b6b;--ink-faint:#c8c4bc;--green:#2d7a4f;--green-bg:#edf7f1;--green-border:#a8d9be;--red:#c0392b;--red-bg:#fdf0ee;--red-border:#f0b8b2;--orange:#d4611a;--orange-bg:#fdf3ec;--orange-border:#f0c9a0;--blue:#2563a8;--blue-bg:#eff5fc;--blue-border:#a8c8f0;--yellow:#b88c00;--yellow-bg:#fdf9ec;--yellow-border:#f0dfa0;}.hand{font-family:'Caveat',cursive;}#stage{width:100%;height:100%;display:flex;justify-content:center;align-items:center;}#frame{position:relative;width:100%;max-width:440px;height:100%;max-height:900px;background:var(--bg);overflow:hidden;}@media(min-width:600px){#frame{border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.5);}}#progress{position:absolute;top:14px;left:14px;right:14px;z-index:50;display:flex;gap:4px;}.bar{flex:1;height:3px;border-radius:3px;background:rgba(0,0,0,0.12);overflow:hidden;}.bar i{display:block;height:100%;width:0%;background:var(--ink);border-radius:3px;transition:width .25s ease;}.bar.done i{width:100%;}.bar.active i{width:100%;}.tap{position:absolute;top:0;bottom:0;width:26%;z-index:40;cursor:pointer;}.tap.left{left:0;}.tap.right{right:0;}.navbtn{position:absolute;bottom:18px;z-index:60;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.85);border:1px solid var(--ink-faint);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ink);cursor:pointer;backdrop-filter:blur(6px);}#btn-prev{left:14px;}#btn-next{right:14px;}#track{height:100%;display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1);}.scr{flex:0 0 100%;height:100%;padding-top:54px;}.simple{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%;padding:32px 30px 70px;gap:14px;}.s-icon{font-size:42px;line-height:1;}.s-eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);font-weight:600;}.s-head{font-size:30px;line-height:1.12;color:var(--ink);}.s-body{font-size:14.5px;line-height:1.55;color:var(--ink-light);max-width:300px;}.s-punch{margin-top:6px;background:var(--ink);color:#fff;border-radius:14px;padding:16px 18px;font-size:19px;line-height:1.3;max-width:300px;}.s-punch span{color:#fbbf24;}.stat-num{font-size:62px;font-weight:700;color:var(--ink);line-height:1;}.stat-stars{color:var(--yellow);font-size:20px;letter-spacing:2px;margin-top:4px;}.stat-sub{font-size:13px;color:var(--ink-light);margin-top:6px;}.scoreboard{display:flex;gap:10px;width:100%;max-width:280px;margin:4px 0;}.score-box{flex:1;border-radius:14px;padding:16px 10px;text-align:center;}.score-box.search{background:var(--bg-panel);border:1.5px solid var(--ink-faint);}.score-box.found{background:var(--red-bg);border:1.5px solid var(--red-border);}.score-num{font-family:'Caveat',cursive;font-size:38px;font-weight:700;line-height:1;}.score-box.search .score-num{color:var(--ink);}.score-box.found .score-num{color:var(--red);}.score-lbl{font-size:10.5px;color:var(--ink-light);margin-top:4px;line-height:1.3;}.ann .result{display:block;margin-top:3px;font-size:11px;color:var(--green);font-weight:600;}.boceto-scr{height:100%;overflow-y:auto;padding:54px 18px 30px;}.boceto-head{text-align:center;margin-bottom:12px;}.boceto-head .s-head{font-size:26px;margin-bottom:4px;}.boceto-badge{display:inline-block;background:var(--blue-bg);border:1px solid var(--blue-border);color:var(--blue);font-size:11px;font-weight:600;padding:4px 10px;border-radius:8px;}.iframe-wrap{border:2px solid var(--blue-border);border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.1);margin-bottom:14px;background:#fff;position:relative;}.iframe-bar{background:#f0f0f0;border-bottom:1px solid #ddd;padding:7px 10px;display:flex;gap:5px;align-items:center;}.iframe-bar .d{width:8px;height:8px;border-radius:50%;}.iframe-bar .d:nth-child(1){background:#ff5f57}.iframe-bar .d:nth-child(2){background:#ffbd2e}.iframe-bar .d:nth-child(3){background:#28c840}.iframe-bar .u{flex:1;margin-left:6px;background:#fff;border:1px solid #ddd;border-radius:5px;padding:2px 8px;font-size:10px;color:#666;}.iframe-viewport{width:100%;height:400px;overflow:hidden;position:relative;}.iframe-viewport iframe{position:absolute;top:0;left:0;border:none;pointer-events:auto;}.iframe-viewport::after{content:'Deslizá para ver más ↕';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(transparent,rgba(255,255,255,.95));display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;font-size:10px;color:var(--ink-light);pointer-events:none;}/* escala simplificada */.ann-list{display:flex;flex-direction:column;gap:8px;}.ann{display:flex;gap:9px;align-items:flex-start;background:var(--bg-panel);border-radius:10px;padding:10px 12px;position:relative;}.ann::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px;}.ann.green{border:1px solid var(--green-border);background:var(--green-bg);}.ann.green::before{background:var(--green);}.ann.blue{border:1px solid var(--blue-border);background:var(--blue-bg);}.ann.blue::before{background:var(--blue);}.ann.orange{border:1px solid var(--orange-border);background:var(--orange-bg);}.ann.orange::before{background:var(--orange);}.ann.yellow{border:1px solid var(--yellow-border);background:var(--yellow-bg);}.ann.yellow::before{background:var(--yellow);}.ann .ico{font-size:16px;flex-shrink:0;}.ann .txt{font-size:12px;line-height:1.45;color:var(--ink);}.ann .txt b{font-weight:600;}.cta-scr{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:54px 26px 30px;gap:16px;text-align:center;}.steps{display:flex;flex-direction:column;gap:8px;width:100%;max-width:300px;}.step-row{display:flex;gap:10px;align-items:center;background:var(--bg-panel);border:1.5px solid var(--ink-faint);border-radius:10px;padding:10px 12px;text-align:left;}.step-row .num{font-family:'Caveat',cursive;font-size:22px;font-weight:700;color:var(--ink-faint);flex-shrink:0;}.step-row .txt{font-size:12.5px;color:var(--ink);line-height:1.4;}.wa-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:#fff;font-weight:600;font-size:15px;border-radius:14px;padding:15px 20px;width:100%;max-width:300px;text-decoration:none;}.site-link{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:300px;padding:13px 18px;border-radius:14px;border:1.5px solid var(--ink-faint);background:var(--bg-panel);color:var(--ink);font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.04);}.site-link:hover{border-color:var(--ink);transform:translateY(-1px);}.no-pressure{font-size:11.5px;color:var(--ink-light);font-style:italic;max-width:280px;}#edit-bar{position:fixed;top:0;left:0;right:0;height:3px;background:var(--orange);z-index:300;display:none;}body.editing #edit-bar{display:block;}body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-radius:4px;cursor:text;}</style>
 </head>
-<body>
+<body >
 <div id="edit-bar"></div>
 <div id="stage">
 <div id="frame">
@@ -20,112 +19,113 @@
   <div id="track">
 
     <div class="scr"><div class="simple">
-      <div class="s-eyebrow">Hola 👋</div>
-      <div class="s-head hand" contenteditable>Tu taller de forja en Piedra del Toro tiene una oportunidad enorme.</div>
-      <div class="s-body" contenteditable>Soy Amaru, diseñador web. Analicé el posicionamiento de tu negocio y encontré algo clave que deberías ver.</div>
+      <div class="s-eyebrow" contenteditable="false">Hola agus👋</div>
+      <div class="s-head hand" contenteditable="false">Tu negocio calor charrua tiene una oportunidad enorme.</div>
+      <div class="s-body" contenteditable="false">Soy Amaru, diseñador web. Analicé el posicionamiento de tu negocio y encontré algo clave que deberías ver.</div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-eyebrow">Primero, lo bueno</div>
-      <div class="stat-num" contenteditable>4.7</div>
-      <div class="stat-stars">★★★★★</div>
-      <div class="stat-sub" contenteditable>Calificación impecable en Google Maps</div>
-      <div class="s-body" contenteditable>Tus clientes destacan la calidad de tus fogoneros y la calidez del trato. Pero esa reputación hoy vive oculta en Maps.</div>
+      <div class="s-eyebrow" contenteditable="false">Primero, lo bueno</div>
+      <div class="stat-num" contenteditable="false">4.7</div>
+      <div class="stat-stars" contenteditable="false">★★★★★</div>
+      <div class="stat-sub" contenteditable="false">Calificación impecable en Google Maps</div>
+      <div class="s-body" contenteditable="false">Tus clientes destacan la calidad de tus fogoneros y la calidez del trato. Pero esa reputación hoy vive oculta en Maps.</div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-icon">❄️</div>
-      <div class="s-head hand" contenteditable>Llega el invierno y la gente busca desde el sillón.</div>
-      <div class="s-body" contenteditable>Cuando el frío aprieta, la gente busca "estufas a leña" o "fogoneros artesanales" para equipar su casa. Hoy no aparecés en esas búsquedas.</div>
+      <div class="s-icon" contenteditable="false">❄️</div>
+      <div class="s-head hand" contenteditable="false">Llega el invierno y la gente busca desde el sillón.</div>
+      <div class="s-body" contenteditable="false">Cuando el frío aprieta, la gente busca "estufas a leña" o "fogoneros artesanales" para equipar su casa. Hoy no aparecés en esas búsquedas.</div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-head hand" contenteditable>Mirá las búsquedas.</div>
+      <div class="s-head hand" contenteditable="false">Mirá las búsquedas.</div>
       <div class="scoreboard">
-        <div class="score-box search"><div class="score-num" contenteditable>180</div><div class="score-lbl" contenteditable>personas buscan estufas y fogoneros este mes</div></div>
-        <div class="score-box found"><div class="score-num" contenteditable>0</div><div class="score-lbl" contenteditable>los encontraron a ustedes</div></div>
+        <div class="score-box search"><div class="score-num" contenteditable="false">180</div><div class="score-lbl" contenteditable="false">personas buscan estufas y fogoneros este mes</div></div>
+        <div class="score-box found"><div class="score-num" contenteditable="false">0</div><div class="score-lbl" contenteditable="false">los encontraron a ustedes</div></div>
       </div>
-      <div class="s-body" contenteditable>Esas ventas se las llevan MercadoLibre o grandes barracas de Montevideo. No es por calidad — es por presencia digital.</div>
+      <div class="s-body" contenteditable="false">Esas ventas se las llevan MercadoLibre o grandes barracas de Montevideo. No es por calidad — es por presencia digital.</div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-icon">🔥</div>
-      <div class="s-eyebrow">El problema de fondo</div>
-      <div class="s-head hand" contenteditable>Se decide en 10 minutos.</div>
-      <div class="s-body" contenteditable>Alguien ve un fogonero en redes, le da frío en la noche y decide comprar uno para el fin de semana. Busca en Google y compra al primero que le da confianza y un catálogo claro.</div>
+      <div class="s-icon" contenteditable="false">🔥</div>
+      <div class="s-eyebrow" contenteditable="false">El problema de fondo</div>
+      <div class="s-head hand" contenteditable="false">Se decide en 10 minutos.</div>
+      <div class="s-body" contenteditable="false">Alguien ve un fogonero en redes, le da frío en la noche y decide comprar uno para el fin de semana. Busca en Google y compra al primero que le da confianza y un catálogo claro.</div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-icon">📅</div>
-      <div class="s-eyebrow">La temporada es corta</div>
-      <div class="s-head hand" contenteditable>El frío no espera.</div>
-      <div class="s-body" contenteditable>El invierno dura pocos meses. Cada semana sin una vitrina clara es una tanda de clientes que se van con importadoras genéricas.</div>
+      <div class="s-icon" contenteditable="false">📅</div>
+      <div class="s-eyebrow" contenteditable="false">La temporada es corta</div>
+      <div class="s-head hand" contenteditable="false">El frío no espera.</div>
+      <div class="s-body" contenteditable="false">El invierno dura pocos meses. Cada semana sin una vitrina clara es una tanda de clientes que se van con importadoras genéricas.</div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-icon">🤷</div>
-      <div class="s-eyebrow">Lo peor de todo</div>
-      <div class="s-head hand" contenteditable>Ventas silenciosas que se pierden.</div>
-      <div class="s-body" contenteditable>Nadie te va a mandar un mensaje de WhatsApp para decirte que eligió otra estufa. Simplemente nunca te enterás.</div>
-      <div class="s-punch hand" contenteditable>No falta calidad de forja. Falta que <span>te encuentren a tiempo.</span></div>
+      <div class="s-icon" contenteditable="false">🤷</div>
+      <div class="s-eyebrow" contenteditable="false">Lo peor de todo</div>
+      <div class="s-head hand" contenteditable="false">Ventas silenciosas que se pierden.</div>
+      <div class="s-body" contenteditable="false">Nadie te va a mandar un mensaje de WhatsApp para decirte que eligió otra estufa. Simplemente nunca te enterás.</div>
+      <div class="s-punch hand" contenteditable="false">No falta calidad de forja. Falta que <span contenteditable="false">te encuentren a tiempo.</span></div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-icon">✨</div>
-      <div class="s-eyebrow">Imaginate este cambio</div>
-      <div class="s-head hand" contenteditable>Un catálogo digital interactivo.</div>
-      <div class="s-body" contenteditable>El cliente entra a tu web, ve las medidas exactas de cada fogonero, el espesor del hierro y fotos de alta calidad de tu taller.</div>
+      <div class="s-icon" contenteditable="false">✨</div>
+      <div class="s-eyebrow" contenteditable="false">por eso te quiero mostrar este cambio</div>
+      <div class="s-head hand" contenteditable="false">Un catálogo digital interactivo.</div>
+      <div class="s-body" contenteditable="false">El cliente entra a tu web, ve las medidas exactas de cada fogonero, el espesor del hierro y fotos de alta calidad de tu taller.</div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-icon">📲</div>
-      <div class="s-eyebrow">El resultado</div>
-      <div class="s-head hand" contenteditable>Te escriben decididos y precalificados.</div>
-      <div class="s-body" contenteditable>Ya no hay 20 preguntas de "cuánto mide" o "de qué material es". Tocan un botón y te dicen: "Quiero el fogonero de 80cm".</div>
+      <div class="s-icon" contenteditable="false">📲</div>
+      <div class="s-eyebrow" contenteditable="false">El resultado</div>
+      <div class="s-head hand" contenteditable="false">Te escriben decididos y precalificados.</div>
+      <div class="s-body" contenteditable="false">Ya no hay 20 preguntas de "cuánto mide" o "de qué material es". Tocan un botón y te dicen: "Quiero el fogonero de 80cm".</div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-icon">🚗</div>
-      <div class="s-eyebrow">El resultado</div>
-      <div class="s-head hand" contenteditable>Piedra del Toro ya no es una barrera.</div>
-      <div class="s-body" contenteditable>Al ver la ubicación y mapa interactivo integrado en la web, el cliente viaja con la seguridad de que el taller existe y la calidad es real.</div>
+      <div class="s-icon" contenteditable="false">🚗</div>
+      <div class="s-eyebrow" contenteditable="false">El resultado</div>
+      <div class="s-head hand" contenteditable="false">Piedra del Toro ya no es una barrera.</div>
+      <div class="s-body" contenteditable="false">Al ver la ubicación y mapa interactivo integrado en la web, el cliente viaja con la seguridad de que el taller |.</div>
     </div></div>
 
     <div class="scr"><div class="simple">
-      <div class="s-icon">🎉</div>
-      <div class="s-eyebrow">El resultado</div>
-      <div class="s-head hand" contenteditable>Posicionamiento frente a grandes marcas.</div>
-      <div class="s-body" contenteditable>El cliente prefiere comprarle al artesano local si le da la misma confianza profesional que una multinacional.</div>
-      <div class="s-punch hand" contenteditable>No es decoración. Es la herramienta para que te encuentren, confíen y <span>te elijan a vos primero.</span></div>
+      <div class="s-icon" contenteditable="false">🎉</div>
+      <div class="s-eyebrow" contenteditable="false">El resultado</div>
+      <div class="s-head hand" contenteditable="false">Posicionamiento frente a grandes marcas.</div>
+      <div class="s-body" contenteditable="false">El cliente prefiere comprarle al artesano local si le da la misma confianza profesional que una multinacional.</div>
+      <div class="s-punch hand" contenteditable="false">No es decoración. Es la herramienta para que te encuentren, confíen y <span contenteditable="false">te elijan a vos primero.</span></div>
     </div></div>
 
     <div class="scr"><div class="boceto-scr">
       <div class="boceto-head">
-        <div class="s-head hand" contenteditable>Así se ve tu nueva web.</div>
-        <div class="boceto-badge" contenteditable>Piedra del Toro · Forja y Calefacción</div>
+        <div class="s-head hand" contenteditable="false">Así se ve tu nueva web.</div>
+        <div class="boceto-badge" contenteditable="false">Piedra del Toro · Forja y Calefacción</div>
       </div>
       <div class="iframe-wrap">
-        <div class="iframe-bar"><div class="d"></div><div class="d"></div><div class="d"></div><div class="u" contenteditable>calorcharrua.com.uy</div></div>
+        <div class="iframe-bar"><div class="d"></div><div class="d"></div><div class="d"></div><div class="u" contenteditable="false">calorcharrua.com.uy</div></div>
         <div class="iframe-viewport"><iframe src="calorcharrua/index.html" loading="lazy"></iframe></div>
       </div>
       <div class="ann-list">
-        <div class="ann green"><div class="ico">🔥</div><div class="txt" contenteditable><b>Catálogo de modelos detallado</b><span class="result">→ Resuelve las dudas de medidas y materiales antes de escribir.</span></div></div>
-        <div class="ann blue"><div class="ico">📍</div><div class="txt" contenteditable><b>Ubicación en Ruta 34 clara</b><span class="result">→ Facilita que viajen a ver los productos al taller.</span></div></div>
-        <div class="ann orange"><div class="ico">📸</div><div class="txt" contenteditable><b>Galería de trabajos y forja</b><span class="result">→ Demuestra la robustez del hierro y la calidad artesanal.</span></div></div>
-        <div class="ann yellow"><div class="ico">⭐</div><div class="txt" contenteditable><b>Reseñas destacadas al frente</b><span class="result">→ Genera confianza inmediata para un producto de alto valor.</span></div></div>
-        <div class="ann green"><div class="ico">📲</div><div class="txt" contenteditable><b>Botón de compra directo</b><span class="result">→ Cierra la venta directo en tu WhatsApp.</span></div></div>
+        <div class="ann green"><div class="ico">🔥</div><div class="txt" contenteditable="false"><b contenteditable="false">Catálogo de modelos detallado</b><span class="result" contenteditable="false">→ Resuelve las dudas de medidas y materiales antes de escribir.</span></div></div>
+        <div class="ann blue"><div class="ico">📍</div><div class="txt" contenteditable="false"><b contenteditable="false">Ubicación en Ruta 34 clara</b><span class="result" contenteditable="false">→ Facilita que viajen a ver los productos al taller.</span></div></div>
+        <div class="ann orange"><div class="ico">📸</div><div class="txt" contenteditable="false"><b contenteditable="false">Galería de trabajos y forja</b><span class="result" contenteditable="false">→ Demuestra la robustez del hierro y la calidad artesanal.</span></div></div>
+        <div class="ann yellow"><div class="ico">⭐</div><div class="txt" contenteditable="false"><b contenteditable="false">Reseñas destacadas al frente</b><span class="result" contenteditable="false">→ Genera confianza inmediata para un producto de alto valor.</span></div></div>
+        <div class="ann green"><div class="ico">📲</div><div class="txt" contenteditable="false"><b contenteditable="false">Botón de compra directo</b><span class="result" contenteditable="false">→ Cierra la venta directo en tu WhatsApp.</span></div></div>
       </div>
     </div></div>
 
     <div class="scr"><div class="cta-scr">
-      <div class="s-head hand" contenteditable>¿Te gustó?<br>Quedátela.</div>
+      <div class="s-head hand" contenteditable="false">¿Queres dar el paso <br>con en tu negoció?<br>Quedátela.</div>
       <div class="steps">
-        <div class="step-row"><div class="num hand">1</div><div class="txt" contenteditable>Me respondés por aquí mismo.</div></div>
-        <div class="step-row"><div class="num hand">2</div><div class="txt" contenteditable>Ponemos tus fotos y productos reales.</div></div>
-        <div class="step-row"><div class="num hand">3</div><div class="txt" contenteditable>En 24-48hs está online para vender este invierno.</div></div>
+        <div class="step-row"><div class="num hand" contenteditable="false">1</div><div class="txt" contenteditable="false">Me respondés por aquí mismo, y te muestro la propuesta</div></div>
+        <div class="step-row"><div class="num hand" contenteditable="false">2</div><div class="txt" contenteditable="false">Ponemos tus fotos y tus productos actualizados, y la ajustamos hasta que quede perfecta.</div></div>
+        <div class="step-row"><div class="num hand" contenteditable="false">3</div><div class="txt" contenteditable="false">En 24-48hs está online para vender.</div></div>
       </div>
-      <a class="wa-btn" href="https://wa.me/59892850267?text=Hola%20Amaru%2C%20vi%20la%20presentaci%C3%B3n%20de%20Calor%20Charr%C3%BAa%20y%20quiero%20saber%20m%C3%A1s" target="_blank">Te cuento cómo seguimos</a>
-      <div class="no-pressure" contenteditable>Y si no, te quedás con el análisis igual.</div>
+      <a class="site-link" href="/calorcharrua/index.html" target="_blank" rel="noopener" contenteditable="false">Ver la web completa</a>
+      <a class="wa-btn" href="https://wa.me/59892850267?text=Hola%20Amaru%2C%20vi%20la%20presentaci%C3%B3n%20de%20Calor%20Charr%C3%BAa%20y%20quiero%20saber%20m%C3%A1s" target="_blank" contenteditable="false">Te cuento cómo seguimos</a>
+      <div class="no-pressure" contenteditable="false"><br></div>
     </div></div>
 
   </div>
@@ -218,5 +218,6 @@ document.querySelectorAll('[contenteditable]').forEach(el=>el.contentEditable='f
 render();
 </script>
 <script src="edit-tools.js"></script>
-</body>
-</html>
+
+
+<div><div style="display: none; position: fixed; top: 30px; width: auto; max-width: 100%; text-align: center; left: 50%; transform: translateX(-50%); z-index: 99999999;"><div style="display: inline-block; font-size: 14px; font-weight: bold; border: 1px solid rgb(240, 195, 109); background-color: rgb(249, 237, 190); padding: 0px 10px; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;"></div></div></div><div><div style="display: none; position: fixed; top: 30px; width: auto; max-width: 100%; text-align: center; left: 50%; transform: translateX(-50%); z-index: 99999999;"><div style="display: inline-block; font-size: 14px; font-weight: bold; border: 1px solid rgb(240, 195, 109); background-color: rgb(249, 237, 190); padding: 0px 10px; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;"></div></div></div></body></html>

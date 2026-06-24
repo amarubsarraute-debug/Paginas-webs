@@ -29,6 +29,20 @@ export function VideoHero() {
     const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return; // static first frame, no scrub
 
+    // iOS/Safari móvil no repinta seeks de un video pausado → autoplay en loop.
+    const isTouch = (navigator.maxTouchPoints || 0) > 0 && window.innerWidth < 1000;
+    if (isTouch) {
+      video.loop = true;
+      video.setAttribute("loop", "");
+      video.setAttribute("autoplay", "");
+      const tryPlay = () => { const p = video.play(); if (p) p.catch(() => {}); };
+      tryPlay();
+      ["touchstart", "pointerdown"].forEach((ev) =>
+        window.addEventListener(ev, tryPlay, { passive: true, once: true })
+      );
+      return;
+    }
+
     let raf = 0;
     let ticking = false;
 

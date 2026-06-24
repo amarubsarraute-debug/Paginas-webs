@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="es"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Basil Sanitario — Tu oportunidad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html,body{height:100%;background:#111;font-family:'Outfit',sans-serif;overflow:hidden;-webkit-tap-highlight-color:transparent;}
@@ -52,7 +51,7 @@ html,body{height:100%;background:#111;font-family:'Outfit',sans-serif;overflow:h
 .iframe-bar .d:nth-child(1){background:#ff5f57}.iframe-bar .d:nth-child(2){background:#ffbd2e}.iframe-bar .d:nth-child(3){background:#28c840}
 .iframe-bar .u{flex:1;margin-left:6px;background:#fff;border:1px solid #ddd;border-radius:5px;padding:2px 8px;font-size:10px;color:#666;}
 .iframe-viewport{width:100%;height:400px;overflow:hidden;position:relative;}
-.iframe-viewport iframe{position:absolute;top:0;left:0;border:none;pointer-events:auto;}
+.iframe-viewport iframe{position:absolute;top:0;left:0;width:100%;height:812px;border:none;pointer-events:none;}
 .iframe-viewport::after{content:'Deslizá para ver más ↕';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(transparent,rgba(255,255,255,.95));display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;font-size:10px;color:var(--ink-light);pointer-events:none;}
 .ann-list{display:flex;flex-direction:column;gap:8px;}
 .ann{display:flex;gap:9px;align-items:flex-start;background:var(--bg-panel);border-radius:10px;padding:10px 12px;position:relative;}
@@ -74,7 +73,7 @@ body.editing #edit-bar{display:block;}
 body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-radius:4px;cursor:text;}
 </style>
 </head>
-<body>
+<body class="">
 <div id="edit-bar"></div>
 <div id="stage">
 <div id="frame">
@@ -88,126 +87,126 @@ body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-rad
 
     <!-- 1. PORTADA -->
     <div class="scr"><div class="simple">
-      <div class="s-eyebrow">Hola 👋 análisis para</div>
-      <div class="s-head hand" contenteditable>Basil, tengo algo para mostrarte.</div>
-      <div class="s-body" contenteditable>Soy Amaru, diseñador web. Analicé tu negocio en Maldonado y Punta del Este y encontré algo que te va a interesar.</div>
+      <div class="s-eyebrow" contenteditable="false">Hola 👋 análisis para</div>
+      <div class="s-head hand" contenteditable="false" style="">Basil, tengo algo para mostrarte.</div>
+      <div class="s-body" contenteditable="false" style="">Soy Amaru, estudiante de programación y marketing. Analicé tu negocio en Maldonado y Punta del Este y encontré algo que te va a interesar.</div>
     </div></div>
 
     <!-- 2. REPUTACIÓN -->
     <div class="scr"><div class="simple">
-      <div class="s-eyebrow">Primero, lo bueno</div>
-      <div class="stat-num" contenteditable>5.0</div>
-      <div class="stat-stars">★★★★★</div>
-      <div class="stat-sub" contenteditable>119 reseñas en Google — perfecto</div>
-      <div class="s-body" contenteditable>En un rubro donde la gente te deja entrar a su casa, la confianza lo es todo. Esas 119 reseñas son tu mejor carta de presentación. Pero hay un problema.</div>
+      <div class="s-eyebrow" contenteditable="false">Primero, lo bueno</div>
+      <div class="stat-num" contenteditable="false" style="">5.0</div>
+      <div class="stat-stars" contenteditable="false">★★★★★</div>
+      <div class="stat-sub" contenteditable="false" style="">119 reseñas en Google — perfecto</div>
+      <div class="s-body" contenteditable="false" style="">En un rubro donde la gente te deja entrar a su casa, la confianza lo es todo. Esas 119 reseñas son tu mejor carta de presentación. Pero hay un problema.</div>
     </div></div>
 
     <!-- 3. EL PROBLEMA REAL -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">🌙</div>
-      <div class="s-head hand" contenteditable>Te ven en el mapa, pero...</div>
-      <div class="s-body" contenteditable>Cuando alguien busca "electricista maldonado" o "sanitario", aparecés en Maps con tus 5.0★. Excelente. Pero al lado de tu nombre está el botón de "Sitio web". Y ahí es donde se decide la llamada.</div>
+      <div class="s-icon" contenteditable="false">🌙</div>
+      <div class="s-head hand" contenteditable="false" style="">Te ven en el mapa, pero...</div>
+      <div class="s-body" contenteditable="false" style="">Cuando alguien busca "electricista maldonado" o "sanitario", aparecés en Maps con tus 5.0★. Excelente. Pero al lado de tu nombre está el botón de "Sitio web". Y ahí es donde se decide la llamada.</div>
     </div></div>
 
     <!-- 4. COMPETENCIA -->
     <div class="scr"><div class="simple">
-      <div class="s-head hand" contenteditable>La comparación es brutal.</div>
+      <div class="s-head hand" contenteditable="false" style="">La comparación es brutal.</div>
       <div class="scoreboard">
-        <div class="score-box search"><div class="score-num" contenteditable>125</div><div class="score-lbl" contenteditable>reseñas perfectas en tu ficha</div></div>
-        <div class="score-box found"><div class="score-num" contenteditable>0</div><div class="score-lbl" contenteditable>vitrina para mostrarlas</div></div>
+        <div class="score-box search"><div class="score-num" contenteditable="false" style="">119</div><div class="score-lbl" contenteditable="false" style="">reseñas perfectas en tu ficha</div></div>
+        <div class="score-box found"><div class="score-num" contenteditable="false" style="">0</div><div class="score-lbl" contenteditable="false" style="">vitrina para mostrarlas</div></div>
       </div>
-      <div class="s-body" contenteditable>Otros competidores en Maldonado tienen webs donde muestran sus trabajos y equipos de urgencia. Aunque tengan menos reseñas, se llevan la llamada solo por verse más "institucionales".</div>
+      <div class="s-body" contenteditable="false" style="">Otros competidores en Maldonado tienen webs donde muestran sus trabajos y equipos de urgencia. Aunque tengan menos reseñas, se llevan la llamada solo por verse más "institucionales".</div>
     </div></div>
 
     <!-- 5. ÁNGULO 1: LA CONFIANZA -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">🏠</div>
-      <div class="s-eyebrow">El momento de elegir</div>
-      <div class="s-head hand" contenteditable>Necesitan confirmar quién sos.</div>
-      <div class="s-body" contenteditable>En una urgencia a las 2 AM, la gente quiere ver fotos reales de tu camioneta, tu cara, tus herramientas y tu cobertura clara. Quieren confirmar que sos un profesional serio antes de abrirte la puerta.</div>
+      <div class="s-icon" contenteditable="false">🏠</div>
+      <div class="s-eyebrow" contenteditable="false">El momento de elegir</div>
+      <div class="s-head hand" contenteditable="false" style="">Necesitan confirmar quién sos.</div>
+      <div class="s-body" contenteditable="false" style="">En una urgencia a las 2 AM, la gente quiere ver fotos reales de tu camioneta, tu cara, tus herramientas y tu cobertura clara. Quieren confirmar que sos un profesional serio antes de abrirte la puerta.</div>
     </div></div>
 
     <!-- 6. ÁNGULO 2: LO QUE PIERDE -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">📲</div>
-      <div class="s-eyebrow">WhatsApp precalificado</div>
-      <div class="s-head hand" contenteditable>Menos preguntas, más trabajo.</div>
-      <div class="s-body" contenteditable>Sin una web, te entran llamadas de gente preguntando si hacés tal cosa o cuánto cobrás la visita. Una web responde eso de antemano. Cuando tocan el WhatsApp, ya están decididos a contratarte.</div>
+      <div class="s-icon" contenteditable="false">📲</div>
+      <div class="s-eyebrow" contenteditable="false">WhatsApp precalificado</div>
+      <div class="s-head hand" contenteditable="false" style="">Menos preguntas, más trabajo.</div>
+      <div class="s-body" contenteditable="false" style="">Sin una web, te entran llamadas de gente preguntando si hacés tal cosa o cuánto cobrás la visita. Una web responde eso de antemano. Cuando tocan el WhatsApp, ya están decididos a contratarte.</div>
     </div></div>
 
     <!-- 7. punch -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">🤷</div>
-      <div class="s-eyebrow">Lo peor de todo</div>
-      <div class="s-head hand" contenteditable>El botón vacío en Maps.</div>
-      <div class="s-body" contenteditable>Tocar "Sitio web" y encontrar una página rota o vacía ahuyenta al cliente con presupuesto. Simplemente hacen clic en el de al lado.</div>
-      <div class="s-punch hand" contenteditable>No te falta excelente reputación. Te falta la vitrina para <span>convertir esa reputación en llamados directos.</span></div>
+      <div class="s-icon" contenteditable="false">🤷</div>
+      <div class="s-eyebrow" contenteditable="false">Lo peor de todo</div>
+      <div class="s-head hand" contenteditable="false" style="">El botón vacío en Maps.</div>
+      <div class="s-body" contenteditable="false" style="">Tocar "Sitio web" y encontrar solo instagram o vacío ahuyenta al cliente con presupuesto. Simplemente hacen clic en el de al lado.</div>
+      <div class="s-punch hand" contenteditable="false" style="">No te falta excelente reputación. Te falta la vitrina para <span contenteditable="false">convertir esa reputación en llamados directos.</span></div>
     </div></div>
 
     <!-- 8. SOLUCIÓN -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">✨</div>
-      <div class="s-eyebrow">Ahora imaginate esto</div>
-      <div class="s-head hand" contenteditable>Misma búsqueda. El botón ahora funciona.</div>
-      <div class="s-body" contenteditable>Toman tu ficha de Maps, tocan "Sitio web" y se abre una página impecable: 125 reseñas destacadas arriba, fotos de tus trabajos, cobertura en Maldonado y PDE, y botón de WhatsApp de un toque.</div>
+      <div class="s-icon" contenteditable="false">✨</div>
+      <div class="s-eyebrow" contenteditable="false">Ahora&nbsp; esto</div>
+      <div class="s-head hand" contenteditable="false" style="">Misma búsqueda. El botón ahora funciona.</div>
+      <div class="s-body" contenteditable="false" style="">Toman tu ficha de Maps, tocan "Sitio web" y se abre una página impecable: 119 reseñas destacadas arriba, fotos de tus trabajos, cobertura en Maldonado y PDE, y botón de WhatsApp de un toque.</div>
     </div></div>
 
     <!-- 9. RESULTADO -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">📲</div>
-      <div class="s-eyebrow">Resultado</div>
-      <div class="s-head hand" contenteditable>Te escriben directo. Con confianza.</div>
-      <div class="s-body" contenteditable>Vieron tus trabajos, leyeron tus reseñas, saben tus zonas y horarios. No preguntan "¿cuánto sale?". Preguntan "¿podés venir ahora?". Es un cliente decidido.</div>
+      <div class="s-icon" contenteditable="false">📲</div>
+      <div class="s-eyebrow" contenteditable="false">Resultado</div>
+      <div class="s-head hand" contenteditable="false" style="">Te escriben directo. Con confianza.</div>
+      <div class="s-body" contenteditable="false" style="">Vieron tus trabajos, leyeron tus reseñas, saben tus zonas y horarios. No preguntan "¿cuánto sale?". Preguntan "¿podés venir ahora?". Es un cliente decidido.</div>
     </div></div>
 
     <!-- 10. RESULTADO 2 -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">⭐</div>
-      <div class="s-eyebrow">Resultado</div>
-      <div class="s-head hand" contenteditable>Tus 125 reseñas, explotadas al máximo.</div>
-      <div class="s-body" contenteditable>No dejes que tus mejores comentarios queden escondidos al final de una lista. Los ponemos bien al frente, validados, demostrando tu autoridad en Maldonado desde el segundo uno.</div>
+      <div class="s-icon" contenteditable="false">⭐</div>
+      <div class="s-eyebrow" contenteditable="false">Resultado</div>
+      <div class="s-head hand" contenteditable="false" style="">Tus 119 reseñas, explotadas al máximo.</div>
+      <div class="s-body" contenteditable="false" style="">No dejes que tus mejores comentarios queden escondidos al final de una lista. Los ponemos bien al frente, validados, demostrando tu autoridad en Maldonado desde el segundo uno.</div>
     </div></div>
 
     <!-- 11. MANTRA -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">🎉</div>
-      <div class="s-eyebrow">Resultado</div>
-      <div class="s-head hand" contenteditable>Un cliente que nunca hubieras tenido.</div>
-      <div class="s-body" contenteditable>Alguien que no conoce a nadie en la zona. Que no tiene a quién preguntar. Que busca en Google, te encuentra, confía y te llama. Ese cliente, hoy, se iba con otro.</div>
-      <div class="s-punch hand" contenteditable>No es decoración. Es tu herramienta para que <span>te encuentren, confíen y te elijan a vos primero.</span></div>
+      <div class="s-icon" contenteditable="false">🎉</div>
+      <div class="s-eyebrow" contenteditable="false">Resultado</div>
+      <div class="s-head hand" contenteditable="false" style="">Un cliente que nunca hubieras tenido.</div>
+      <div class="s-body" contenteditable="false" style="">Alguien que no conoce a nadie en la zona. Que no tiene a quién preguntar. Que busca en Google, te encuentra, confía y te llama. Ese cliente, hoy, se iba con otro.</div>
+      <div class="s-punch hand" contenteditable="false" style="">No es decoración. Es tu herramienta para que <span contenteditable="false">te encuentren, confíen y te elijan a vos primero.</span></div>
     </div></div>
 
     <!-- 12. EL BOCETO -->
     <div class="scr"><div class="boceto-scr">
       <div class="boceto-head">
-        <div class="s-head hand" contenteditable>Acá está tu web.</div>
-        <div class="boceto-badge" contenteditable>Maldonado · Punta del Este · Urgencias 24/7</div>
+        <div class="s-head hand" contenteditable="false" style="">Acá está tu web.</div>
+        <div class="boceto-badge" contenteditable="false" style="">Maldonado · Punta del Este · Urgencias 24/7</div>
       </div>
       <div class="iframe-wrap">
-        <div class="iframe-bar"><div class="d"></div><div class="d"></div><div class="d"></div><div class="u" contenteditable>basilsanitario.com.uy</div></div>
+        <div class="iframe-bar"><div class="d"></div><div class="d"></div><div class="d"></div><div class="u" contenteditable="false" style="">basilsanitario.com.uy</div></div>
         <div class="iframe-viewport">
-          <iframe src="basil-sanitario/index.html" loading="lazy"></iframe>
+          <iframe src="basil-sanitario/index.html?embed=1"></iframe>
         </div>
       </div>
       <div class="ann-list">
-        <div class="ann green"><div class="ico">⭐</div><div class="txt" contenteditable><b>5.0★ y 119 reseñas arriba de todo</b><span class="result">→ Confianza instantánea para dejar entrar a un desconocido.</span></div></div>
-        <div class="ann blue"><div class="ico">📲</div><div class="txt" contenteditable><b>WhatsApp flotante siempre visible</b><span class="result">→ Un toque y ya te están escribiendo la urgencia.</span></div></div>
-        <div class="ann orange"><div class="ico">📸</div><div class="txt" contenteditable><b>Galería de trabajos reales</b><span class="result">→ Ven la calidad y prolijidad antes de dejarte entrar a su casa.</span></div></div>
-        <div class="ann yellow"><div class="ico">🚨</div><div class="txt" contenteditable><b>Sección "Urgencias 24/7" destacada</b><span class="result">→ Calma la ansiedad de la persona en crisis.</span></div></div>
-        <div class="ann green"><div class="ico">🔍</div><div class="txt" contenteditable><b>Armada para Google</b><span class="result">→ "Sanitario urgencia Punta del Este" = vos.</span></div></div>
+        <div class="ann green"><div class="ico">⭐</div><div class="txt" contenteditable="false" style=""><b contenteditable="false">5.0★ y 119 reseñas arriba de todo</b><span class="result" contenteditable="false">→ Confianza instantánea para dejar entrar a un desconocido.</span></div></div>
+        <div class="ann blue"><div class="ico">📲</div><div class="txt" contenteditable="false" style=""><b contenteditable="false">WhatsApp flotante siempre visible</b><span class="result" contenteditable="false">→ Un toque y ya te están escribiendo la urgencia.</span></div></div>
+        <div class="ann orange"><div class="ico">📸</div><div class="txt" contenteditable="false" style=""><b contenteditable="false">Galería de trabajos reales</b><span class="result" contenteditable="false">→ Ven la calidad y prolijidad antes de dejarte entrar a su casa.</span></div></div>
+        <div class="ann yellow"><div class="ico">🚨</div><div class="txt" contenteditable="false" style=""><b contenteditable="false">Sección "Urgencias 24/7" destacada</b><span class="result" contenteditable="false">→ Calma la ansiedad de la persona en crisis.</span></div></div>
+        <div class="ann green"><div class="ico">🔍</div><div class="txt" contenteditable="false" style=""><b contenteditable="false">Armada para Google</b><span class="result" contenteditable="false">→ "Sanitario urgencia Punta del Este" = vos.</span></div></div>
       </div>
     </div></div>
 
     <!-- 13. CTA -->
     <div class="scr"><div class="cta-scr">
-      <div class="s-head hand" contenteditable>¿Te gustó?<br>Quedátela.</div>
+      <div class="s-head hand" contenteditable="false" style="">¿Queres dar el paso <br>en tu empresa?</div>
       <div class="steps">
-        <div class="step-row"><div class="num hand">1</div><div class="txt" contenteditable>Me respondés por aquí mismo.</div></div>
-        <div class="step-row"><div class="num hand">2</div><div class="txt" contenteditable>Ajustamos los detalles juntos.</div></div>
-        <div class="step-row"><div class="num hand">3</div><div class="txt" contenteditable>En 24-48hs está online.</div></div>
+        <div class="step-row"><div class="num hand" contenteditable="false">1</div><div class="txt" contenteditable="false" style="">Me respondés por aquí mismo y te paso la propuesta.</div></div>
+        <div class="step-row"><div class="num hand" contenteditable="false">2</div><div class="txt" contenteditable="false" style="">Ajustamos los detalles juntos.</div></div>
+        <div class="step-row"><div class="num hand" contenteditable="false">3</div><div class="txt" contenteditable="false" style="">En 24-48hs está online.</div></div>
       </div>
-      <a class="wa-btn" href="https://wa.me/59892850267?text=Hola%20Amaru%2C%20vi%20la%20presentaci%C3%B3n%20de%20Basil%20Sanitario%20y%20quiero%20saber%20m%C3%A1s" target="_blank">Te cuento cómo seguimos</a>
-      <div class="no-pressure" contenteditable>Y si no, te quedás con el análisis igual.</div>
+      <a class="wa-btn" href="https://wa.me/59892850267?text=Hola%20Amaru%2C%20vi%20la%20presentaci%C3%B3n%20de%20Basil%20Sanitario%20y%20quiero%20saber%20m%C3%A1s" target="_blank" contenteditable="false">Te cuento cómo seguimos</a>
+      <div class="no-pressure" contenteditable="false" style="">Y si no, te quedás con el análisis igual.</div>
     </div></div>
 
   </div>
@@ -215,91 +214,10 @@ body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-rad
 </div>
 
 <script>
-const TOTAL=document.querySelectorAll('.scr').length;
-let current=0;
-let editMode=false;
-const prog=document.getElementById('progress');
-for(let i=0;i<TOTAL;i++){
-  const b=document.createElement('div');
-  b.className='bar';
-  b.innerHTML='<i></i>';
-  prog.appendChild(b);
-}
-const bars=document.querySelectorAll('.bar');
-function render(){
-  document.getElementById('track').style.transform=`translateX(-${current*100}%)`;
-  bars.forEach((b,i)=>{
-    b.classList.remove('done','active');
-    if(i<current)b.classList.add('done');
-    if(i===current)b.classList.add('active');
-  });
-  document.getElementById('btn-prev').style.opacity=current===0?'0.25':'1';
-  document.getElementById('btn-next').style.opacity=current===TOTAL-1?'0.25':'1';
-}
-function go(dir){
-  const next=current+dir;
-  if(next<0||next>=TOTAL)return;
-  current=next;
-  render();
-}
-function scaleIframe() {
-  const viewport = document.querySelector('.iframe-viewport');
-  if (!viewport) return;
-  const iframe = viewport.querySelector('iframe');
-  if (!iframe) return;
-  const containerWidth = viewport.clientWidth;
-  const scale = containerWidth / 375;
-  
-  iframe.style.width = '375px';
-  iframe.style.height = (400 / scale) + 'px';
-  iframe.style.transform = 'scale(' + scale + ')';
-  iframe.style.transformOrigin = 'top left';
-  iframe.style.pointerEvents = 'auto';
-}
-window.addEventListener('resize', scaleIframe);
-window.addEventListener('load', scaleIframe);
-setTimeout(scaleIframe, 300);
-setTimeout(scaleIframe, 1000);
-
-let sx=0,sy=0;
-const frame=document.getElementById('frame');
-frame.addEventListener('touchstart',e=>{
-  sx=e.touches[0].clientX;
-  sy=e.touches[0].clientY;
-},{passive:true});
-frame.addEventListener('touchend',e=>{
-  const dx=e.changedTouches[0].clientX-sx;
-  const dy=e.changedTouches[0].clientY-sy;
-  if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>40){
-    go(dx<0?1:-1);
-  }
-},{passive:true});
-document.addEventListener('keydown',e=>{
-  if(editMode&&e.key==='Escape'){
-    exitEdit();
-    return;
-  }
-  if(editMode)return;
-  if(e.key==='e'||e.key==='E')enterEdit();
-  if(e.key==='ArrowRight')go(1);
-  if(e.key==='ArrowLeft')go(-1);
-});
-function enterEdit(){
-  editMode=true;
-  document.body.classList.add('editing');
-  document.querySelectorAll('[contenteditable]').forEach(el=>el.contentEditable='true');
-}
-function exitEdit(){
-  editMode=false;
-  document.body.classList.remove('editing');
-  document.querySelectorAll('[contenteditable]').forEach(el=>{
-    el.blur();
-    el.contentEditable='false';
-  });
-}
-document.querySelectorAll('[contenteditable]').forEach(el=>el.contentEditable='false');
-render();
+const TOTAL=document.querySelectorAll('.scr').length;let current=0;let editMode=false;const prog=document.getElementById('progress');for(let i=0;i<TOTAL;i++){const b=document.createElement('div');b.className='bar';b.innerHTML='<i></i>';prog.appendChild(b);}const bars=document.querySelectorAll('.bar');function render(){document.getElementById('track').style.transform=`translateX(-${current*100}%)`;bars.forEach((b,i)=>{b.classList.remove('done','active');if(i<current)b.classList.add('done');if(i===current)b.classList.add('active');});document.getElementById('btn-prev').style.opacity=current===0?'0.25':'1';document.getElementById('btn-next').style.opacity=current===TOTAL-1?'0.25':'1';}function go(dir){const next=current+dir;if(next<0||next>=TOTAL)return;current=next;render();}let sx=0,sy=0;const frame=document.getElementById('frame');frame.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});frame.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;const dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>40){go(dx<0?1:-1);}},{passive:true});document.addEventListener('keydown',e=>{if(editMode&&e.key==='Escape'){exitEdit();return;}if(editMode)return;if(e.key==='e'||e.key==='E')enterEdit();if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1);});function enterEdit(){editMode=true;document.body.classList.add('editing');document.querySelectorAll('[contenteditable]').forEach(el=>el.contentEditable='true');}function exitEdit(){editMode=false;document.body.classList.remove('editing');document.querySelectorAll('[contenteditable]').forEach(el=>{el.blur();el.contentEditable='false';});}document.querySelectorAll('[contenteditable]').forEach(el=>el.contentEditable='false');render();
 </script>
 <script src="edit-tools.js"></script>
-</body>
-</html>
+
+
+
+</body></html>

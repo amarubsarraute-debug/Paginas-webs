@@ -24,6 +24,7 @@
     '.step-row .num',
     '.step-row .txt',
     '.wa-btn',
+    '.site-link',
     '.no-pressure',
     '.iframe-bar .u'
   ];
@@ -296,10 +297,29 @@
   }
 
   /* ── Guardar ──────────────────────────────────────────── */
+  function getCleanHtml() {
+    const clone = document.documentElement.cloneNode(true);
+    clone.querySelector('#et-panel')?.remove();
+    clone.querySelector('#et-toggle')?.remove();
+    clone.querySelector('#et-toast')?.remove();
+    clone.querySelector('body')?.classList.remove('editing', 'boceto-active');
+    clone.querySelectorAll('[contenteditable]').forEach(el => el.setAttribute('contenteditable', 'false'));
+    const progress = clone.querySelector('#progress');
+    if (progress) progress.innerHTML = '';
+    clone.querySelectorAll('.tap,.navbtn,#track,.iframe-viewport iframe').forEach(el => {
+      el.removeAttribute('style');
+    });
+    clone.querySelectorAll('style').forEach(style => {
+      if (style.textContent.includes('#et-panel')) style.remove();
+      if (style.textContent.includes('--litepicker')) style.remove();
+    });
+    return '<!DOCTYPE html>\n' + clone.outerHTML;
+  }
+
   function saveToServer() {
-    const html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-    const filename = location.pathname.split('/').pop();
-    fetch('/api/save', {
+    const html = getCleanHtml();
+    const filename = decodeURIComponent(location.pathname).replace(/^\/+/, '');
+    fetch('http://127.0.0.1:4174/api/save', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ filename, html })

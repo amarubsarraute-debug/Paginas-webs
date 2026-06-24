@@ -377,6 +377,8 @@ button { border: none; outline: none; background: none; font-family: inherit; cu
 /* ── 20. REVEAL ── */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s var(--ease); }
 .reveal.active { opacity: 1; transform: none; }
+html.is-embedded .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+html.is-embedded #splash { display: none !important; }
 .reveal[data-split] { opacity: 1; transform: none; }
 .reveal-delay-1 { transition-delay: .08s; }
 .reveal-delay-2 { transition-delay: .16s; }

@@ -284,12 +284,26 @@
         content = $("[data-vhero-content]", sec),
         cue = $("[data-vhero-cue]", sec);
     if (!video) return;
-    video.muted = true; video.setAttribute("muted", ""); video.playsInline = true;
+    video.muted = true; video.setAttribute("muted", ""); video.playsInline = true; video.setAttribute("playsinline", "");
 
+    /* Móvil: iOS no repinta seeks de video pausado → autoplay en loop (las luces
+       se prenden solas). Desktop hace el scrub atado al scroll. */
+    var isTouchDevice = (navigator.maxTouchPoints || 0) > 0 && innerWidth < 1000;
+    if (reduced) { if (overlay) overlay.style.opacity = "0.45"; return; }
+    if (isTouchDevice) {
+      video.loop = true; video.setAttribute("loop", ""); video.setAttribute("autoplay", "");
+      var pl = video.play(); if (pl && pl.catch) pl.catch(function () {});
+      ["touchstart", "pointerdown"].forEach(function (ev) {
+        window.addEventListener(ev, function () { var q = video.play(); if (q && q.catch) q.catch(function () {}); }, { passive: true, once: true });
+      });
+      if (overlay) overlay.style.opacity = "0.5";
+      return;
+    }
+
+    /* Scrub real en todos los dispositivos (desktop + móvil) */
     var dur = 0;
-
     function setDur() { dur = video.duration || 0; }
-    function showFirstFrame() { try { video.currentTime = 0.05; } catch (e) {} }
+    function showFirstFrame() { try { video.currentTime = 0.001; } catch (e) {} }
     if (video.readyState >= 1) { setDur(); showFirstFrame(); }
     else video.addEventListener("loadedmetadata", function () { setDur(); showFirstFrame(); });
 
@@ -303,22 +317,12 @@
       if (content) { content.style.opacity = Math.max(0, 1 - p * 1.4).toFixed(3); content.style.transform = "translateY(" + (-30 * p).toFixed(1) + "px)"; }
       if (cue) cue.style.opacity = Math.max(0, 1 - p * 4).toFixed(3);
     }
-    function seekTo(t) {
-      // con el MP4 all-intra los seeks son instantáneos: mapear scroll -> frame directo queda fluido.
-      try { video.currentTime = t; } catch (e) {}
-    }
     function onScroll() {
       if (!dur) setDur();
       var p = progress();
       applyOverlay(p);
-      if (dur > 0) seekTo(p * (dur - 0.04));
-    }
-
-    if (reduced) {
-      if (video.readyState >= 1) { try { video.currentTime = (video.duration || 4) * 0.85; } catch (e) {} }
-      else video.addEventListener("loadedmetadata", function () { try { video.currentTime = (video.duration || 4) * 0.85; } catch (e) {} });
-      if (overlay) overlay.style.opacity = "0.45";
-      return;
+      var d = dur || video.duration || 0;
+      if (d > 0) { try { video.currentTime = p * (d - 0.04); } catch (e) {} }
     }
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });

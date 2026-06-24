@@ -96,9 +96,9 @@ module.exports = [
     exclude: [".git", ".claude", "node_modules", "luana_web_imagenes_v2.zip"],
     ftp: {
       host: "147.93.39.62",
-      user: "u726588504.firebrick-bison-401360.hostingersite.com",
-      password: "PONER_PASSWORD_FTP",
-      remote: "/public_html",
+      user: "u726588504.Amaru",
+      password: "Amarubelline7!",
+      remote: "/",
       port: 21,
       secure: false
     }
