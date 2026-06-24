@@ -22,6 +22,18 @@
   /* Ícono auto (fallback de foto 404) */
   var CAR_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><path d="M3 11h18v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><circle cx="7.5" cy="14" r="1"/><circle cx="16.5" cy="14" r="1"/></svg>';
 
+  /* Convierte links de Google Drive "compartir" en URLs de imagen directa */
+  function driveToImg(url) {
+    if (!url) return url;
+    // Formato: https://drive.google.com/file/d/FILE_ID/view?...
+    var m = url.match(/drive\.google\.com\/file\/d\/([^\/\?]+)/);
+    if (m) return "https://lh3.googleusercontent.com/d/" + m[1];
+    // Formato: https://drive.google.com/open?id=FILE_ID
+    var m2 = url.match(/drive\.google\.com\/open\?id=([^&]+)/);
+    if (m2) return "https://lh3.googleusercontent.com/d/" + m2[1];
+    return url;
+  }
+
   /* Fallback global de imágenes (usado vía onerror inline) */
   window.__imgFallback = function (img) {
     if (img.dataset.failed) return;
@@ -85,7 +97,7 @@
       if (["disponible","reservado","vendido"].indexOf(obj.estado) < 0) obj.estado = "disponible";
       obj.destacado = String(obj.destacado || "").toUpperCase().trim() === "SI";
       obj.financiado = String(obj.financiado || "").toUpperCase().trim() === "SI";
-      obj.fotos = String(obj.fotos || "").split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+      obj.fotos = String(obj.fotos || "").split(",").map(function (s) { return driveToImg(s.trim()); }).filter(Boolean);
       out.push(obj);
     });
     return out;
@@ -118,7 +130,7 @@
   function cardHTML(v) {
     var foto = v.fotos[0] || "";
     var media = foto
-      ? '<img src="' + escHTML(foto) + '" alt="' + escHTML(v.marca + " " + v.modelo) + '" loading="lazy" decoding="async" onerror="__imgFallback(this)">'
+      ? '<img src="' + escHTML(foto) + '" alt="' + escHTML(v.marca + " " + v.modelo) + '" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="__imgFallback(this)">'
       : '<div class="img-fallback">' + CAR_SVG + '</div>';
     var badge = "";
     if (v.estado === "vendido") badge = '<span class="badge-estado vendido">Vendido</span>';
@@ -336,7 +348,7 @@
       return;
     }
     var thumbs = gallery.slides.length > 1 ? gallery.slides.map(function (src, k) {
-      return '<button class="gallery-thumb' + (k === 0 ? " is-active" : "") + '" data-go="' + k + '" aria-label="Foto ' + (k + 1) + '"><img src="' + escHTML(src) + '" alt="" loading="lazy" onerror="__imgFallback(this)"></button>';
+      return '<button class="gallery-thumb' + (k === 0 ? " is-active" : "") + '" data-go="' + k + '" aria-label="Foto ' + (k + 1) + '"><img src="' + escHTML(src) + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="__imgFallback(this)"></button>';
     }).join("") : "";
     var nav = gallery.slides.length > 1
       ? '<button class="gallery-nav prev" data-nav="-1" type="button" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg></button>' +
@@ -345,7 +357,7 @@
     g.innerHTML =
       '<div class="gallery-main">' +
         '<div class="gallery-counter"><span id="g-cur">1</span>/' + gallery.slides.length + '</div>' +
-        '<img id="gallery-img" src="' + escHTML(gallery.slides[0]) + '" alt="' + alt + '" onerror="__imgFallback(this)">' +
+        '<img id="gallery-img" src="' + escHTML(gallery.slides[0]) + '" alt="' + alt + '" referrerpolicy="no-referrer" onerror="__imgFallback(this)">' +
         nav +
       '</div>' +
       (thumbs ? '<div class="gallery-thumbs">' + thumbs + '</div>' : "");

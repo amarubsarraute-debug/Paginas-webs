@@ -12,7 +12,7 @@
 
   window.CONFIG = {
     // 👇 El dueño pega su ID acá (lo saca de la URL de su planilla de Google)
-    SHEET_ID: "TU_SHEET_ID_AQUI",
+    SHEET_ID: "1Q6TqU7fh9S5RaGRhHRn4yK6qNq2j-VVkUsf-nTW5OkA",
 
     // Nombre EXACTO de la pestaña dentro de la planilla
     SHEET_NAME: "Stock",
