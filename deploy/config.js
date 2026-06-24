@@ -89,5 +89,18 @@ module.exports = [
       port: 21,
       secure: false
     }
+  },
+  {
+    name: "Luana Escudero",
+    local: "../luana-escudero-hostinger",
+    exclude: [".git", ".claude", "node_modules", "luana_web_imagenes_v2.zip"],
+    ftp: {
+      host: "PONER_HOST_FTP",
+      user: "PONER_USUARIO_FTP",
+      password: "PONER_PASSWORD_FTP",
+      remote: "/public_html",
+      port: 21,
+      secure: false
+    }
   }
 ];
