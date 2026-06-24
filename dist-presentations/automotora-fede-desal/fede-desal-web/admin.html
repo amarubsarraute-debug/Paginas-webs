@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Panel · Automotora Fede Desal</title>
+  <link rel="icon" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Archivo+Expanded:wght@600;700;800&display=swap">
+  <style>
+    :root{
+      --bg:#0a0a0b; --bg-2:#101012; --surface:#141417; --surface-2:#1c1c20;
+      --line:rgba(255,255,255,.10); --red:#cf2b22; --red-2:#e0473d;
+      --cream:#f4f1ec; --cream-2:#b8b2ab; --mute:#7d7872;
+      --display:"Archivo Expanded","Archivo",system-ui,sans-serif;
+      --sans:"Archivo",system-ui,sans-serif; --radius:14px;
+    }
+    *{box-sizing:border-box} html,body{margin:0}
+    body{background:var(--bg);color:var(--cream);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.01em;margin:0}
+    .muted{color:var(--mute);font-size:.9rem}
+    a{color:var(--red-2)}
+
+    /* LOGIN */
+    #login{min-height:100dvh;display:grid;place-items:center;padding:1.5rem}
+    .login-card{width:100%;max-width:380px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:2rem}
+    .login-card h1{font-size:1.5rem;margin-bottom:.3rem}
+    .login-card .logo{font-family:var(--display);font-weight:800;font-size:1.1rem;letter-spacing:.04em;margin-bottom:1.4rem;display:block}
+    .login-card .logo span{color:var(--red)}
+
+    /* APP */
+    #app{display:none;max-width:880px;margin:0 auto;padding:1.2rem 1.2rem 5rem}
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:.4rem 0 1.4rem;border-bottom:1px solid var(--line);margin-bottom:1.6rem}
+    .topbar .logo{font-family:var(--display);font-weight:800;letter-spacing:.04em}
+    .topbar .logo span{color:var(--red)}
+    .topbar a{font-size:.85rem;color:var(--cream-2);text-decoration:none}
+
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;margin-bottom:1.6rem}
+    .card h2{font-size:1.2rem;margin-bottom:1.1rem}
+
+    label{display:block;font-size:.82rem;color:var(--cream-2);margin-bottom:.35rem;font-weight:500}
+    input[type=text],input[type=number],select,textarea{
+      width:100%;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;
+      color:var(--cream);font-family:inherit;font-size:.95rem;padding:.7rem .8rem;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--red)}
+    textarea{resize:vertical;min-height:80px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+    .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.9rem}
+    .field{margin-bottom:.9rem}
+    .check{display:flex;align-items:center;gap:.5rem;cursor:pointer;font-size:.92rem;color:var(--cream);margin-top:.4rem}
+    .check input{width:18px;height:18px;accent-color:var(--red)}
+    @media (max-width:560px){ .grid,.grid-3{grid-template-columns:1fr} }
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:none;cursor:pointer;
+      font-family:var(--sans);font-weight:600;font-size:.95rem;padding:.8rem 1.3rem;border-radius:10px;transition:filter .15s}
+    .btn-primary{background:var(--red);color:#fff;width:100%}
+    .btn-primary:hover{filter:brightness(1.08)} .btn:disabled{opacity:.6;cursor:default}
+    .btn-ghost{background:transparent;color:var(--cream-2);border:1px solid var(--line)}
+
+    /* FOTOS */
+    .drop{border:1px dashed var(--line);border-radius:12px;padding:1.1rem;text-align:center;color:var(--cream-2);font-size:.9rem;cursor:pointer;display:block}
+    .drop:hover{border-color:var(--red);color:var(--cream)}
+    .drop input{display:none}
+    #fotos-preview{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem}
+    .thumb{position:relative;width:84px;height:84px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+    .thumb img{width:100%;height:100%;object-fit:cover}
+    .thumb.is-new{border-color:var(--red)}
+    .thumb button{position:absolute;top:3px;right:3px;width:22px;height:22px;border:none;border-radius:50%;
+      background:rgba(0,0,0,.7);color:#fff;font-size:1rem;line-height:1;cursor:pointer}
+
+    .form-actions{display:flex;gap:.7rem;align-items:center;margin-top:.4rem}
+
+    /* STOCK */
+    .stock-item{display:flex;gap:.9rem;align-items:center;padding:.8rem 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+    .stock-thumb{width:64px;height:48px;border-radius:8px;overflow:hidden;flex-shrink:0;background:var(--bg-2)}
+    .stock-thumb img{width:100%;height:100%;object-fit:cover}
+    .no-photo{width:100%;height:100%;display:grid;place-items:center;font-size:.65rem;color:var(--mute)}
+    .stock-info{display:flex;flex-direction:column;gap:.15rem;min-width:130px;flex:1}
+    .stock-info strong{font-size:.95rem}
+    .est{font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;width:fit-content;padding:.1rem .5rem;border-radius:20px}
+    .est-disponible{background:rgba(46,160,67,.16);color:#5fd081}
+    .est-reservado{background:rgba(224,160,40,.16);color:#e0a843}
+    .est-vendido{background:rgba(207,43,34,.16);color:var(--red-2)}
+    .stock-actions{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap}
+    .est-sel{width:auto;padding:.4rem .5rem;font-size:.82rem}
+    .mini{background:var(--surface-2);color:var(--cream-2);border:1px solid var(--line);border-radius:8px;padding:.4rem .7rem;font-size:.82rem;cursor:pointer;font-family:inherit}
+    .mini:hover{color:var(--cream)} .mini.danger:hover{color:var(--red-2);border-color:var(--red)}
+
+    /* TOAST */
+    .toast{position:fixed;left:50%;bottom:1.3rem;transform:translateX(-50%) translateY(20px);opacity:0;pointer-events:none;
+      background:#1b3a1f;color:#cdeccf;border:1px solid rgba(95,208,129,.4);padding:.7rem 1.2rem;border-radius:10px;
+      font-size:.9rem;transition:opacity .2s,transform .2s;z-index:50;max-width:90vw}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+    .toast.err{background:#3a1b1b;color:#f0c9c9;border-color:rgba(224,71,61,.4)}
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <section id="login">
+    <form class="login-card" id="login-form">
+      <span class="logo">FEDE <span>DESAL</span></span>
+      <h1>Panel de carga</h1>
+      <p class="muted" style="margin:.2rem 0 1.4rem">Ingresá la contraseña para administrar el stock.</p>
+      <div class="field">
+        <label for="login-pw">Contraseña</label>
+        <input type="password" id="login-pw" autocomplete="current-password" required
+          style="width:100%;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;color:var(--cream);font-family:inherit;font-size:.95rem;padding:.7rem .8rem">
+      </div>
+      <button class="btn btn-primary" id="login-btn" type="submit">Entrar</button>
+    </form>
+  </section>
+
+  <!-- APP -->
+  <main id="app">
+    <div class="topbar">
+      <span class="logo">FEDE <span>DESAL</span> · Panel</span>
+      <a href="vehiculos.html" target="_blank" rel="noopener">Ver la web ↗</a>
+    </div>
+
+    <!-- FORM -->
+    <section class="card">
+      <h2 id="form-title">Agregar vehículo</h2>
+      <form id="vehiculo-form">
+        <div class="grid">
+          <div class="field"><label for="f-marca">Marca *</label><input type="text" id="f-marca" required></div>
+          <div class="field"><label for="f-modelo">Modelo *</label><input type="text" id="f-modelo" required></div>
+        </div>
+        <div class="grid">
+          <div class="field"><label for="f-version">Versión</label><input type="text" id="f-version" placeholder="XEi, Full, etc."></div>
+          <div class="field"><label for="f-color">Color</label><input type="text" id="f-color"></div>
+        </div>
+        <div class="grid-3">
+          <div class="field"><label for="f-anio">Año</label><input type="number" id="f-anio" min="1990" max="2030"></div>
+          <div class="field"><label for="f-km">Kilómetros</label><input type="number" id="f-km" min="0"></div>
+          <div class="field"><label for="f-combustible">Combustible</label>
+            <select id="f-combustible"><option value="">—</option><option>Nafta</option><option>Diésel</option><option>Híbrido</option><option>Eléctrico</option><option>GNC</option></select>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="field"><label for="f-caja">Transmisión</label>
+            <select id="f-caja"><option value="">—</option><option>Manual</option><option>Automática</option></select>
+          </div>
+          <div class="field"><label for="f-precio">Precio</label><input type="number" id="f-precio" min="0"></div>
+          <div class="field"><label for="f-moneda">Moneda</label>
+            <select id="f-moneda"><option value="USD">USD</option><option value="UYU">Pesos</option></select>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="field"><label for="f-estado">Estado</label>
+            <select id="f-estado"><option value="disponible">Disponible</option><option value="reservado">Reservado</option><option value="vendido">Vendido</option></select>
+          </div>
+          <div class="field"><label for="f-cuotas">Cuotas (si financia)</label><input type="number" id="f-cuotas" min="0" placeholder="60"></div>
+        </div>
+        <div class="field">
+          <label for="f-comentario">Descripción / características</label>
+          <textarea id="f-comentario" placeholder="Una línea por característica. Ej:&#10;- Único dueño&#10;- Service al día&#10;- Cubiertas nuevas"></textarea>
+        </div>
+        <div style="display:flex;gap:1.4rem;flex-wrap:wrap;margin-bottom:1.1rem">
+          <label class="check"><input type="checkbox" id="f-financiado"> Acepta financiación</label>
+          <label class="check"><input type="checkbox" id="f-destacado"> Destacado en la web</label>
+        </div>
+
+        <div class="field">
+          <label>Fotos</label>
+          <label class="drop">
+            📷 Tocá para elegir fotos del celular
+            <input type="file" id="f-fotos" accept="image/*" multiple>
+          </label>
+          <p class="muted" id="fotos-note" style="margin:.4rem 0 0"></p>
+          <div id="fotos-preview"></div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" id="submit-btn" type="submit">Publicar vehículo</button>
+          <button class="btn btn-ghost" id="cancel-edit" type="button" style="display:none">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- STOCK -->
+    <section class="card">
+      <h2>Stock actual (<span id="stock-count">0</span>)</h2>
+      <div id="stock-list"><p class="muted">Cargando…</p></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script defer src="js/admin.js?v=20260622"></script>
+</body>
+</html>
