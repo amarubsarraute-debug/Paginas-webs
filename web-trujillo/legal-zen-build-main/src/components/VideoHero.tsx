@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { ArrowRight, MessageCircle, Star } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WA1, waLink } from "@/data/content";
 
@@ -21,6 +21,9 @@ export function VideoHero() {
     const video = videoRef.current;
     if (!section || !video) return;
 
+    // Set poster based on viewport (video element poster can't use media queries)
+    video.poster = window.innerWidth <= 768 ? "/hero-poster-mobile.jpg" : "/hero-poster.jpg";
+
     // Always paint the first frame so the hero is never blank.
     const paint = () => { try { video.currentTime = 0.001; } catch { /* noop */ } };
     if (video.readyState >= 1) paint();
@@ -29,19 +32,19 @@ export function VideoHero() {
     const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return; // static first frame, no scrub
 
-    // iOS/Safari móvil no repinta seeks de un video pausado → autoplay en loop.
-    const isTouch = (navigator.maxTouchPoints || 0) > 0 && window.innerWidth < 1000;
-    if (isTouch) {
-      video.loop = true;
-      video.setAttribute("loop", "");
-      video.setAttribute("autoplay", "");
-      const tryPlay = () => { const p = video.play(); if (p) p.catch(() => {}); };
-      tryPlay();
-      ["touchstart", "pointerdown"].forEach((ev) =>
-        window.addEventListener(ev, tryPlay, { passive: true, once: true })
-      );
-      return;
-    }
+    // Wake the video decoder on iOS/Safari: a silent play→pause primes the decoder
+    // so that subsequent currentTime seeks actually repaint frames.
+    video.muted = true;
+    const wake = () => {
+      const p = video.play();
+      if (p && p.then) p.then(() => { video.pause(); }).catch(() => {});
+    };
+    if (video.readyState >= 2) wake();
+    else video.addEventListener("loadeddata", wake, { once: true });
+    // Reinforce on first gesture (iOS often requires interaction)
+    ["touchstart", "pointerdown", "click"].forEach((ev) =>
+      window.addEventListener(ev, wake, { passive: true, once: true })
+    );
 
     let raf = 0;
     let ticking = false;
@@ -94,17 +97,20 @@ export function VideoHero() {
         <video
           ref={videoRef}
           className="absolute inset-0 h-full w-full object-cover"
-          src="/hero-scrub.mp4"
           poster="/hero-poster.jpg"
           muted
           playsInline
           preload="auto"
           disablePictureInPicture
           aria-hidden="true"
-        />
+        >
+          {/* Vertical crop for mobile, horizontal for desktop */}
+          <source src="/hero-scrub-mobile.mp4" media="(max-width: 768px)" type="video/mp4" />
+          <source src="/hero-scrub.mp4" type="video/mp4" />
+        </video>
 
-        {/* Legibility overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/20 to-black/75" />
+        {/* Stronger gradient on mobile for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/85 sm:from-black/55 sm:via-black/20 sm:to-black/75" />
         <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_-10%,transparent_45%,rgba(0,0,0,0.5))]" />
 
         <div
@@ -112,20 +118,16 @@ export function VideoHero() {
           className="container-page relative flex h-full flex-col justify-end pb-20 md:justify-center md:pb-0"
         >
           <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2.5 text-[11px] uppercase tracking-[0.24em] text-white/70">
-              <span className="h-px w-7 bg-white/40" />
-              Maldonado, Uruguay
-            </span>
-            <h1 className="mt-5 font-display text-[2.6rem] font-medium leading-[1.04] text-white sm:text-6xl lg:text-7xl">
+            <h1 className="font-display text-[2.3rem] font-medium leading-[1.04] text-white sm:text-6xl lg:text-7xl [text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
               Estudio jurídico y notarial, con responsabilidad y{" "}
               <span className="italic font-normal">cercanía</span>.
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">
+            <p className="mt-5 max-w-xl text-[0.95rem] leading-relaxed text-white sm:text-lg sm:mt-6 [text-shadow:0_1px_10px_rgba(0,0,0,0.7)]">
               Abogadas y escribanas en Maldonado que te escuchan, te explican con
               claridad y se ocupan de tu caso de principio a fin.
             </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 sm:mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-12 px-6 text-base">
                 <a href="#contacto">
                   Agendar consulta <ArrowRight />
@@ -141,17 +143,6 @@ export function VideoHero() {
                   <MessageCircle /> Hablar por WhatsApp
                 </a>
               </Button>
-            </div>
-
-            <div className="mt-9 flex items-center gap-3 text-sm text-white/75">
-              <span className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-white text-white" />
-                ))}
-              </span>
-              <span className="font-semibold text-white">5.0</span>
-              <span className="h-4 w-px bg-white/25" />
-              <span>122 reseñas en Google</span>
             </div>
           </div>
         </div>

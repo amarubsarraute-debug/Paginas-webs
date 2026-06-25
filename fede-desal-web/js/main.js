@@ -297,7 +297,10 @@
       for (var i = 0; i < FRAMES; i++) {
         (function(idx) {
           var im = new Image();
-          im.onload = function() { if (!firstPainted) { firstPainted = true; drawCover(im); } };
+          im.onload = function() {
+            if (!firstPainted) { firstPainted = true; drawCover(im); }
+            else if (idx === curIdx) drawCover(im); // redibujar si este es el frame activo
+          };
           im.src = "video/frames/" + String(idx + 1).padStart(3, "0") + ".jpg?v=hd";
           imgs.push(im);
         })(i);

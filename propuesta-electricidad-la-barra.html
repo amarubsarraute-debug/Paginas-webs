@@ -76,12 +76,14 @@ body.boceto-active .tap{pointer-events:none;}
 #edit-bar{position:fixed;top:0;left:0;right:0;height:3px;background:var(--orange);z-index:300;display:none;}
 body.editing #edit-bar{display:block;}
 body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-radius:4px;cursor:text;}
+.slide-img-wrap{position:relative;z-index:70;background:#fff;border:1.5px solid var(--ink-faint);border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08);margin:14px auto 0;width:100%;max-width:320px;}
+.slide-img{display:block;width:100%;height:auto;}
 </style>
 </head>
-<body >
+<body class="">
 <div id="edit-bar"></div>
 <div id="stage">
-<div id="frame">
+<div id="frame" class="interactive-active">
   <div id="progress"></div>
   <div class="tap left" onclick="go(-1)"></div>
   <div class="tap right" onclick="go(1)"></div>
@@ -91,7 +93,7 @@ body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-rad
 
     <!-- 1. PORTADA -->
     <div class="scr"><div class="simple">
-      <div class="s-eyebrow" contenteditable="false">Hola 👋</div>
+      <div class="s-eyebrow" contenteditable="false">Hola PABLO👋</div>
       <div class="s-head hand" contenteditable="false">Tu negocio en La Barra<br>tiene una oportunidad.</div>
       <div class="s-body" contenteditable="false">Soy Amaru, diseñador web. Analicé el posicionamiento de tu servicio eléctrico en Maldonado y La Barra, y detecté un cuello de botella silencioso por donde se te están yendo clientes valiosos sin que te enteres.</div>
     </div></div>
@@ -108,9 +110,9 @@ body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-rad
     <!-- 3. SIN WEB -->
     <div class="scr"><div class="simple">
       <div class="s-icon" contenteditable="false">🔍</div>
-      <div class="s-eyebrow" contenteditable="false">El hallazgo</div>
-      <div class="s-head hand" contenteditable="false">Te ven en el mapa, pero...</div>
-      <div class="s-body" contenteditable="false">Cuando un residente o turista necesita resolver un cortocircuito o una instalación urgente en La Barra, busca en Google para verificar credenciales. Al ver tu botón de "Sitio Web" vacío, prefiere seguir buscando a otro que sí lo tenga.</div>
+      <div class="s-eyebrow" contenteditable="false">el punto de crecimiento&nbsp;</div>
+      <div class="s-head hand" contenteditable="false">Cuando te buscan en Google, ya están listos para contratar.</div>
+      <div class="s-body" contenteditable="false"><p class="isSelectedEnd">Cuando alguien busca “electricista en La Barra” o “electricista urgente”, no está navegando sin intención. Está buscando a quién pagarle para resolver un problema.<br><br>La oportunidad no es solo que te vean es que esa persona entienda rápido qué hacés, confíe y te escriba antes de llamar a otro.</p><p>La web transforma esa atención en una decisión más rápida.</p></div>
     </div></div>
 
     <!-- 4. COMPETENCIA -->
@@ -128,7 +130,10 @@ body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-rad
       <div class="s-icon" contenteditable="false">⚡</div>
       <div class="s-eyebrow" contenteditable="false">Esto pasa así</div>
       <div class="s-head hand" contenteditable="false">El corte de luz ocurre de noche.</div>
-      <div class="s-body" contenteditable="false">Un cortocircuito a las 10 PM en plena temporada en La Barra no puede esperar. El turista busca desesperado, ve tus 5 estrellas, pero al no tener una página donde ver si estás activo, pasa al siguiente profesional en segundos.</div>
+      <div class="s-body" contenteditable="false">Un cortocircuito a las 10 PM en plena temporada en La Barra no puede esperar. El turista busca desesperado, busca <strong data-start="1283" data-end="1311">“electricista Maldonado”</strong>, Google no muestra solo profesionales: también muestra páginas, listados y sitios que agrupan electricistas.<p data-start="1422" data-end="1577">Eso significa que la persona ya tiene intención de contratar, pero antes de llegar a vos puede terminar entrando en otra web que se queda con esa búsqueda.</p></div>
+      <div class="slide-img-wrap">
+        <img class="slide-img" src="images/busqueda-google.png" alt="Búsqueda Google">
+      </div>
     </div></div>
 
     <!-- 6. ÁNGULO 2: LA FRECUENCIA -->
@@ -142,10 +147,10 @@ body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-rad
     <!-- 7. ÁNGULO 3: EL SILENCIO -->
     <div class="scr"><div class="simple">
       <div class="s-icon" contenteditable="false">🤷</div>
-      <div class="s-eyebrow" contenteditable="false">Lo peor de todo</div>
+      <div class="s-eyebrow" contenteditable="false">son servicios que necesitan&nbsp;</div>
       <div class="s-head hand" contenteditable="false">Perdés el contacto en silencio.</div>
       <div class="s-body" contenteditable="false">Google no te avisa cuando alguien hace clic en tu ficha, nota que no tenés sitio web para ver tus trabajos y opta por llamar a tu competidor. Tu teléfono simplemente no suena.</div>
-      <div class="s-punch hand" contenteditable="false">No falta capacidad técnica. Falta que <span contenteditable="false">te encuentren a tiempo.</span></div>
+      <div class="s-punch hand" contenteditable="false">Falta que <span contenteditable="false">te encuentren a tiempo.</span></div>
     </div></div>
 
     <!-- 8. SOLUCIÓN -->
@@ -205,8 +210,8 @@ body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-rad
     <div class="scr"><div class="cta-scr">
       <div class="s-head hand" contenteditable="false">¿Querés dar el paso<br>en tu empresa?</div>
       <div class="steps">
-        <div class="step-row"><div class="num hand" contenteditable="false">1</div><div class="txt" contenteditable="false">Me respondés por aquí mismo, conversamos y si te convence el boceto avanzamos.</div></div>
-        <div class="step-row"><div class="num hand" contenteditable="false">2</div><div class="txt" contenteditable="false">Cargamos tus fotos de trabajos reales y lo adaptamos completamente a tu gusto.</div></div>
+        <div class="step-row"><div class="num hand" contenteditable="false">1</div><div class="txt" contenteditable="false">Me respondés por aquí mismo, te muestro mi propuesta y si te cierra avanzamos.</div></div>
+        <div class="step-row"><div class="num hand" contenteditable="false">2</div><div class="txt" contenteditable="false">Cargamos tus fotos de trabajos reales y lo adaptamos completamente a tu gusto mediante u formulario.</div></div>
         <div class="step-row"><div class="num hand" contenteditable="false">3</div><div class="txt" contenteditable="false">En menos de 48 horas tu web ya está online y lista para recibir llamadas.</div></div>
       </div>
       <a class="wa-btn" href="https://wa.me/59892850267?text=Hola%20Amaru%2C%20vi%20la%20presentaci%C3%B3n%20del%20Electricista%20La%20Barra%20y%20quiero%20saber%20m%C3%A1s" target="_blank" contenteditable="false">Te cuento cómo seguimos</a>
@@ -314,4 +319,12 @@ render();
 <script src="edit-tools.js"></script>
 
 
-<div><div style="display: none; position: fixed; top: 30px; width: auto; max-width: 100%; text-align: center; left: 50%; transform: translateX(-50%); z-index: 99999999;"><div style="display: inline-block; font-size: 14px; font-weight: bold; border: 1px solid rgb(240, 195, 109); background-color: rgb(249, 237, 190); padding: 0px 10px; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;"></div></div></div></body></html>
+<div><div style="display: none; position: fixed; top: 30px; width: auto; max-width: 100%; text-align: center; left: 50%; transform: translateX(-50%); z-index: 99999999;"><div style="display: inline-block; font-size: 14px; font-weight: bold; border: 1px solid rgb(240, 195, 109); background-color: rgb(249, 237, 190); padding: 0px 10px; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;"></div></div></div><div><div style="display: none; position: fixed; top: 30px; width: auto; max-width: 100%; text-align: center; left: 50%; transform: translateX(-50%); z-index: 99999999;"><div style="display: inline-block; font-size: 14px; font-weight: bold; border: 1px solid rgb(240, 195, 109); background-color: rgb(249, 237, 190); padding: 0px 10px; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;"></div></div></div><div id="glasp-extension-toast-container" style="position: fixed; top: 32px; right: 16px; z-index: 2147483647; display: none; flex-direction: column; align-items: flex-end; height: 0px; width: auto; margin: 0px; padding: 0px;"></div><div><div style="display: none; position: fixed; top: 30px; width: auto; max-width: 100%; text-align: center; left: 50%; transform: translateX(-50%); z-index: 99999999;"><div style="display: inline-block; font-size: 14px; font-weight: bold; border: 1px solid rgb(240, 195, 109); background-color: rgb(249, 237, 190); padding: 0px 10px; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;"></div></div></div><div class="glasp-ui-wrapper" id="glasp-ui-wrapper" style="height: 0px; width: 0px; padding: 0px;"><iframe name="glasp-tooltip-iframe" id="glasp-tooltip-iframe" style="display: none;"></iframe><iframe name="glasp-sidebar-iframe" id="glasp-sidebar-iframe" style="display: none !important;width: 0px !important; min-width: 0px !important; max-width: 320px; height: 100%; background: transparent; margin: auto; position: fixed; top: 0px; right: 0px; left: auto; z-index: 9000000000000000000;border: none !important;"></iframe></div><div id="yt_article_summary_widget_wrapper" class="yt_article_summary_widget_wrapper" style="display: none; margin: auto; width: fit-content; padding: 0px; border-radius: 100%;">
+        <div id="yt_article_summary_widget" class="yt_article_summary_widget"><svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.40123 27.3686C-0.44103 25.5284 -0.441033 22.5449 1.4012 20.7047L16.5971 5.52573L24.0098 12.9301L5.47818 31.4409L1.40123 27.3686Z" fill="#FF4E74"></path>
+        <path d="M35.1286 24.0367L16.5972 5.5258L20.6741 1.45341C22.5164 -0.386772 25.5033 -0.386775 27.3455 1.45341L42.5415 16.6323L35.1286 24.0367Z" fill="#FFF85E"></path>
+        <path d="M24.0099 35.143L42.5416 16.6323L46.6183 20.7046C48.4606 22.5448 48.4606 25.5284 46.6183 27.3686L31.4224 42.5476L24.0099 35.143Z" fill="#76FF54"></path>
+        <path d="M27.3454 46.6198C25.5032 48.4601 22.5163 48.4601 20.674 46.6198L5.47815 31.4409L12.8908 24.0366L31.4223 42.5476L27.3454 46.6198Z" fill="#5C94FF"></path>
+    </svg></div>
+        <div id="yt_article_summary_close_button" class="yt_article_summary_close_button">×</div>
+    </div><div id="glasp-extension-toast-container" style="position: fixed; top: 32px; right: 16px; z-index: 2147483647; display: none; flex-direction: column; align-items: flex-end; height: 0px; width: auto; margin: 0px; padding: 0px;"></div></body></html>

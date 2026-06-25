@@ -76,12 +76,14 @@ html,body{height:100%;background:#111;font-family:'Outfit',sans-serif;overflow:h
 #edit-bar{position:fixed;top:0;left:0;right:0;height:3px;background:var(--orange);z-index:300;display:none;}
 body.editing #edit-bar{display:block;}
 body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-radius:4px;cursor:text;}
+.video-wrap{position:relative;z-index:70;background:#111;border:2px solid var(--blue-border);border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.15);margin:14px auto 0;width:100%;max-width:280px;}
+.presentation-video{display:block;width:100%;max-height:360px;background:#111;}
 </style>
 </head>
 <body class="">
 <div id="edit-bar"></div>
 <div id="stage">
-<div id="frame">
+<div id="frame" class="interactive-active">
   <div id="progress"></div>
   <div class="tap left" onclick="go(-1)"></div>
   <div class="tap right" onclick="go(1)"></div>
@@ -90,11 +92,23 @@ body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-rad
 
   <div id="track">
 
+    <!-- 0. INTRO VIDEO -->
+    <div class="scr"><div class="simple">
+      <div class="s-eyebrow" contenteditable="false"><br></div>
+      <div class="s-head hand" contenteditable="false">Mi hermano chocho en tu auto:</div>
+      <div class="video-wrap">
+        <video class="presentation-video" controls="" playsinline="" preload="metadata" tabindex="-1">
+          <source src="videos/automotora-fede-desal-intro.mp4" type="video/mp4">
+          Tu navegador no puede reproducir este video.
+        </video>
+      </div>
+    </div></div>
+
     <!-- 1. PORTADA -->
     <div class="scr"><div class="simple">
       <div class="s-eyebrow" contenteditable="false">Hola Fede 👋</div>
       <div class="s-head hand" contenteditable="false">Tu automotora tiene un problema invisible.</div>
-      <div class="s-body" contenteditable="false">Soy Amaru, diseñador web. Analicé tu negocio en Maldonado y encontré algo que probablemente te esté costando ventas sin que lo sepas.</div>
+      <div class="s-body" contenteditable="false">Soy Amaru, diseñador web. A raíz del video de mi hermano en tu auto, me dio curiosidad y me quedé mirando la presencia digital de tu automotora. Encontré algo importante que te quería compartir:</div>
     </div></div>
 
     <!-- 2. REPUTACIÓN -->
