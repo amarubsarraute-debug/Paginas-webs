@@ -271,8 +271,61 @@
       }
     }
 
-    /* Mismo efecto en móvil y desktop: scrub atado al scroll (salvo reduced-motion) */
-    function decide() { setMode(reduced ? "still" : "scrub"); }
+    /* Móvil: canvas frame-sequence (iOS no repinta video seeks pausados).
+       Desktop: scrub de video atado al scroll. */
+    function initMobileFrameScrub() {
+      var FRAMES = 60;
+      var canvas = document.createElement("canvas");
+      var ctx = canvas.getContext("2d");
+      var imgs = []; var curIdx = -1; var raf2 = 0;
+      var dpr = window.devicePixelRatio || 1;
+      canvas.width = Math.round(window.innerWidth * dpr);
+      canvas.height = Math.round(window.innerHeight * dpr);
+      canvas.style.cssText = "position:absolute;inset:0;width:100%;height:100%;z-index:0;background:#000;";
+      video.parentNode.insertBefore(canvas, video);
+      video.style.display = "none";
+
+      function drawCover(img) {
+        if (!img || !img.complete || !img.naturalWidth) return;
+        var cw = canvas.width, ch = canvas.height;
+        var iw = img.naturalWidth, ih = img.naturalHeight;
+        var scale = Math.max(cw / iw, ch / ih);
+        ctx.drawImage(img, (cw - iw * scale) / 2, (ch - ih * scale) / 2, iw * scale, ih * scale);
+      }
+
+      var firstPainted = false;
+      for (var i = 0; i < FRAMES; i++) {
+        (function(idx) {
+          var im = new Image();
+          im.onload = function() { if (!firstPainted) { firstPainted = true; drawCover(im); } };
+          im.src = "video/frames/" + String(idx + 1).padStart(3, "0") + ".jpg?v=hd";
+          imgs.push(im);
+        })(i);
+      }
+
+      function update() {
+        raf2 = 0;
+        var range = hero.offsetHeight - window.innerHeight;
+        var p = range > 0 ? Math.max(0, Math.min(1, -hero.getBoundingClientRect().top / range)) : 0;
+        var idx = Math.min(Math.floor(p * FRAMES), FRAMES - 1);
+        if (idx !== curIdx) { curIdx = idx; drawCover(imgs[idx]); }
+      }
+      window.addEventListener("scroll", function() { if (!raf2) raf2 = requestAnimationFrame(update); }, { passive: true });
+      window.addEventListener("resize", function() {
+        var d = window.devicePixelRatio || 1;
+        canvas.width = Math.round(window.innerWidth * d);
+        canvas.height = Math.round(window.innerHeight * d);
+        update();
+      }, { passive: true });
+      update();
+    }
+
+    function decide() {
+      if (reduced) { setMode("still"); return; }
+      var isTouch = (navigator.maxTouchPoints || 0) > 0 && window.innerWidth < 1000;
+      if (isTouch) { initMobileFrameScrub(); return; }
+      setMode("scrub");
+    }
     decide();
 
     /* Reintento de autoplay al primer gesto (algunos móviles lo bloquean) */
