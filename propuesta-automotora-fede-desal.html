@@ -286,6 +286,18 @@ window.addEventListener('load', scaleIframe);
 setTimeout(scaleIframe, 300);
 setTimeout(scaleIframe, 1000);
 
+// Sincronizar scroll de la diapositiva con el iframe del mockup
+document.querySelectorAll('.boceto-scr').forEach(container => {
+  container.addEventListener('scroll', function() {
+    const iframe = container.querySelector('iframe');
+    if (!iframe || !iframe.contentWindow) return;
+    const maxScroll = container.scrollHeight - container.clientHeight;
+    if (maxScroll <= 0) return;
+    const progress = container.scrollTop / maxScroll;
+    iframe.contentWindow.postMessage({ type: 'syncScroll', progress: progress }, '*');
+  }, { passive: true });
+});
+
 let sx=0,sy=0;
 const frame=document.getElementById('frame');
 frame.addEventListener('touchstart',e=>{
@@ -328,7 +340,4 @@ function exitEdit(){
 document.querySelectorAll('[contenteditable]').forEach(el=>el.contentEditable='false');
 render();
 </script>
-<script src="edit-tools.js"></script>
-
-
 </body></html>
