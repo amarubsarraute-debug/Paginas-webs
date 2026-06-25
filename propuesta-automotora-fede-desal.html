@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="es"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Automotora Fede Desal — Tu oportunidad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html,body{height:100%;background:#111;font-family:'Outfit',sans-serif;overflow:hidden;-webkit-tap-highlight-color:transparent;}
@@ -52,10 +51,13 @@ html,body{height:100%;background:#111;font-family:'Outfit',sans-serif;overflow:h
 .iframe-bar .d{width:8px;height:8px;border-radius:50%;}
 .iframe-bar .d:nth-child(1){background:#ff5f57}.iframe-bar .d:nth-child(2){background:#ffbd2e}.iframe-bar .d:nth-child(3){background:#28c840}
 .iframe-bar .u{flex:1;margin-left:6px;background:#fff;border:1px solid #ddd;border-radius:5px;padding:2px 8px;font-size:10px;color:#666;}
-.iframe-viewport{width:100%;height:400px;overflow:hidden;position:relative;}
+.iframe-viewport{width:100%;height:330px;overflow:hidden;position:relative;background:#fff;}
 .iframe-viewport iframe{position:absolute;top:0;left:0;border:none;pointer-events:auto;}
 /* escala simplificada */
 .iframe-viewport::after{content:'Deslizá para ver más ↕';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(transparent,rgba(255,255,255,.95));display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;font-size:10px;color:var(--ink-light);pointer-events:none;}
+.maps-link{position:relative;z-index:70;display:flex;align-items:center;justify-content:center;width:100%;max-width:320px;margin:0 auto 12px;background:var(--ink);color:#fff;text-decoration:none;border-radius:12px;padding:11px 14px;font-size:12px;font-weight:700;box-shadow: 0 4px 12px rgba(0,0,0,.15);transition: all .2s;}
+.maps-link:hover{background:var(--orange);transform:translateY(-1px);}
+#frame.interactive-active .navbtn{bottom:auto;top:50%;transform:translateY(-50%)}
 .ann-list{display:flex;flex-direction:column;gap:8px;}
 .ann{display:flex;gap:9px;align-items:flex-start;background:var(--bg-panel);border-radius:10px;padding:10px 12px;position:relative;}
 .ann::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px;}
@@ -76,7 +78,7 @@ body.editing #edit-bar{display:block;}
 body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-radius:4px;cursor:text;}
 </style>
 </head>
-<body>
+<body class="">
 <div id="edit-bar"></div>
 <div id="stage">
 <div id="frame">
@@ -90,126 +92,127 @@ body.editing [contenteditable]{outline:2px dashed rgba(212,97,26,.45);border-rad
 
     <!-- 1. PORTADA -->
     <div class="scr"><div class="simple">
-      <div class="s-eyebrow">Hola Fede 👋</div>
-      <div class="s-head hand" contenteditable>Tu automotora tiene un problema invisible.</div>
-      <div class="s-body" contenteditable>Soy Amaru, diseñador web. Analicé tu negocio en Maldonado y encontré algo que probablemente te esté costando ventas sin que lo sepas.</div>
+      <div class="s-eyebrow" contenteditable="false">Hola Fede 👋</div>
+      <div class="s-head hand" contenteditable="false">Tu automotora tiene un problema invisible.</div>
+      <div class="s-body" contenteditable="false">Soy Amaru, diseñador web. Analicé tu negocio en Maldonado y encontré algo que probablemente te esté costando ventas sin que lo sepas.</div>
     </div></div>
 
     <!-- 2. REPUTACIÓN -->
     <div class="scr"><div class="simple">
-      <div class="s-eyebrow">Primero, lo bueno</div>
-      <div class="stat-num" contenteditable>4.7</div>
-      <div class="stat-stars">★★★★★</div>
-      <div class="stat-sub" contenteditable>Muy buenas reseñas en Google</div>
-      <div class="s-body" contenteditable>Eso habla de confianza — algo crucial cuando alguien va a invertir miles de dólares en un auto. Pero hay un problema: esa confianza hoy solo la ve quien entra a Maps.</div>
+      <div class="s-eyebrow" contenteditable="false">Primero, lo bueno</div>
+      <div class="stat-num" contenteditable="false">4.7</div>
+      <div class="stat-stars" contenteditable="false">★★★★★</div>
+      <div class="stat-sub" contenteditable="false">Muy buenas reseñas en Google</div>
+      <div class="s-body" contenteditable="false">Eso habla de confianza — algo crucial cuando alguien va a invertir miles de dólares en un auto. Pero hay un problema esa confianza hoy solo la ve quien entra a Maps.</div>
     </div></div>
 
     <!-- 3. EL PROBLEMA REAL -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">🛋️</div>
-      <div class="s-head hand" contenteditable>El 90% decide desde el sillón.</div>
-      <div class="s-body" contenteditable>Antes de pisar un salón, la persona ya hizo su lista de automotoras desde el celular. Comparó catálogos, filtró precios, miró fotos. Si no estás ahí, no entrás en la lista.</div>
+      <div class="s-icon" contenteditable="false">🛋️</div>
+      <div class="s-head hand" contenteditable="false">El 90% decide desde el sillón.</div>
+      <div class="s-body" contenteditable="false">Antes de pisar un salón, la persona ya hizo su lista de automotoras desde el celular. Comparó catálogos, filtró precios, miró fotos. Si no estás ahí, no entrás en la lista.</div>
     </div></div>
 
     <!-- 4. COMPETENCIA -->
     <div class="scr"><div class="simple">
-      <div class="s-head hand" contenteditable>Ellos ya están ahí.</div>
+      <div class="s-head hand" contenteditable="false">Ellos ya están ahí.</div>
       <div class="scoreboard">
-        <div class="score-box search"><div class="score-num" contenteditable>250</div><div class="score-lbl" contenteditable>buscan "automotora Maldonado" por mes</div></div>
-        <div class="score-box found"><div class="score-num" contenteditable>0</div><div class="score-lbl" contenteditable>te encontraron a vos</div></div>
+        <div class="score-box search"><div class="score-num" contenteditable="false">250</div><div class="score-lbl" contenteditable="false">buscan "automotora Maldonado" por mes</div></div>
+        <div class="score-box found"><div class="score-num" contenteditable="false">0</div><div class="score-lbl" contenteditable="false">te encontraron a vos</div></div>
       </div>
-      <div class="s-body" contenteditable>oliveraautomotores.com, puntamotors.com, frenecarautomoviles.com. Todos con catálogo, financiación online y WhatsApp directo. Tus autos no aparecen.</div>
+      <div class="s-body" contenteditable="false">oliveraautomotores.com, puntamotors.com, frenecarautomoviles.com. Todos con catálogo, financiación online y WhatsApp directo. Tus autos no aparecen.</div>
     </div></div>
 
     <!-- 5. ÁNGULO 1: EL CATÁLOGO INVISIBLE -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">📱</div>
-      <div class="s-eyebrow">El problema de fondo</div>
-      <div class="s-head hand" contenteditable>Instagram no es un catálogo.</div>
-      <div class="s-body" contenteditable>El comprador quiere filtrar por marca, año, precio. Quiere ver 15 fotos del auto. Quiere comparar. Instagram mezcla todo: autos vendidos, fotos viejas, historias. Es un muro, no una vitrina.</div>
+      <div class="s-icon" contenteditable="false">📱</div>
+      <div class="s-eyebrow" contenteditable="false">El problema de fondo</div>
+      <div class="s-head hand" contenteditable="false">Instagram no es un catálogo.</div>
+      <div class="s-body" contenteditable="false">El comprador quiere filtrar por marca, año, precio. Quiere ver 15 fotos del auto. Quiere comparar. Instagram mezcla todo autos vendidos, fotos viejas, historias. Es un muro, no una vitrina.</div>
     </div></div>
 
     <!-- 6. ÁNGULO 2: LA DESCONFIANZA -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">🔒</div>
-      <div class="s-eyebrow">Y hay algo más</div>
-      <div class="s-head hand" contenteditable>Sin web, hay desconfianza.</div>
-      <div class="s-body" contenteditable>Comprar un auto usado no es como comprar una remera. Son miles de dólares. El comprador necesita sentir que la automotora es seria, formal, establecida. Sin web propia, esa sensación no existe.</div>
+      <div class="s-icon" contenteditable="false">🔒</div>
+      <div class="s-eyebrow" contenteditable="false">Y hay algo más</div>
+      <div class="s-head hand" contenteditable="false">Sin web, hay desconfianza.</div>
+      <div class="s-body" contenteditable="false">Comprar un auto usado no es como comprar una remera. Son miles de dólares. El comprador necesita sentir que la automotora es seria, formal, establecida. Sin web propia, transmitir eso es mas díficil.</div>
     </div></div>
 
     <!-- 7. ÁNGULO 3: DEPENDENCIA + punch -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">⚠️</div>
-      <div class="s-eyebrow">Lo peor de todo</div>
-      <div class="s-head hand" contenteditable>Estás en terreno alquilado.</div>
-      <div class="s-body" contenteditable>Si Instagram cambia el algoritmo, te bloquea o cae — desaparecés del mapa digital. Tu negocio depende de una plataforma que no controlás.</div>
-      <div class="s-punch hand" contenteditable>No faltan autos buenos. Falta la vitrina que <span>los muestre 24/7 sin depender de nadie.</span></div>
+      <div class="s-icon" contenteditable="false">⚠️</div>
+      <div class="s-eyebrow" contenteditable="false">Lo peor de todo</div>
+      <div class="s-head hand" contenteditable="false">Estás en terreno alquilado.</div>
+      <div class="s-body" contenteditable="false">Si Instagram cambia el algoritmo, te bloquea o cae — desaparecés del mapa digital. Tu negocio depende de una plataforma que no controlás.</div>
+      <div class="s-punch hand" contenteditable="false">No faltan autos buenos. Falta la vitrina que <span contenteditable="false">los muestre 24/7 sin depender de nadie.</span></div>
     </div></div>
 
     <!-- 8. SOLUCIÓN 1 -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">✨</div>
-      <div class="s-eyebrow">Ahora imaginate la otra versión</div>
-      <div class="s-head hand" contenteditable>Ahora, dale vuelta.</div>
-      <div class="s-body" contenteditable>Alguien busca "autos usados Maldonado". Tu web aparece con catálogo completo, fichas técnicas, fotos profesionales y un botón de "Consultar Financiación".</div>
+      <div class="s-icon" contenteditable="false">✨</div>
+      <div class="s-eyebrow" contenteditable="false">otra versión</div>
+      <div class="s-head hand" contenteditable="false">La oportunidad que veo:</div>
+      <div class="s-body" contenteditable="false">Alguien busca "autos usados Maldonado". Tu web aparece con catálogo completo, fichas técnicas, fotos profesionales y un botón de "Consultar Financiación".</div>
     </div></div>
 
     <!-- 9. SOLUCIÓN 2 -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">📲</div>
-      <div class="s-eyebrow">Resultado</div>
-      <div class="s-head hand" contenteditable>Te escriben ya sabiendo qué auto quieren.</div>
-      <div class="s-body" contenteditable>Vieron las fotos, leyeron las especificaciones, compararon modelos. Cuando te escriben por WhatsApp, ya tienen el auto elegido. Solo queda coordinar la visita al salón.</div>
+      <div class="s-icon" contenteditable="false">📲</div>
+      <div class="s-eyebrow" contenteditable="false">Resultado</div>
+      <div class="s-head hand" contenteditable="false">Te escriben ya sabiendo qué auto quieren.</div>
+      <div class="s-body" contenteditable="false">Vieron las fotos, leyeron las especificaciones, compararon modelos. Cuando te escriben por WhatsApp, ya tienen el auto elegido. Solo queda coordinar la visita al salón.</div>
     </div></div>
 
     <!-- 10. SOLUCIÓN 3 -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">🏆</div>
-      <div class="s-eyebrow">Resultado</div>
-      <div class="s-head hand" contenteditable>Credibilidad instantánea.</div>
-      <div class="s-body" contenteditable>automotorafededesal.com.uy. Un dominio propio proyecta la seriedad que un comprador necesita para invertir. Tus 4.7 estrellas visibles al entrar. No hay nada más efectivo para eliminar dudas.</div>
+      <div class="s-icon" contenteditable="false">🏆</div>
+      <div class="s-eyebrow" contenteditable="false">Resultado</div>
+      <div class="s-head hand" contenteditable="false">Credibilidad instantánea.</div>
+      <div class="s-body" contenteditable="false">automotorafededesal.com.uy. Un dominio propio proyecta la seriedad que un comprador necesita para invertir. <br><br>Y el cliente ve el catálogo completo y actualizado, sin tener que scrollear en el muro para encontrar el auto que busca.</div>
     </div></div>
 
     <!-- 11. SOLUCIÓN 4 + mantra -->
     <div class="scr"><div class="simple">
-      <div class="s-icon">🎉</div>
-      <div class="s-eyebrow">Resultado</div>
-      <div class="s-head hand" contenteditable>Visitas al salón que antes se iban con otro.</div>
-      <div class="s-body" contenteditable>Ese comprador que desde el sillón elegía solo entre las automotoras con web, ahora te incluye en su recorrida. Llega al salón ya decidido, con el modelo en la cabeza.</div>
-      <div class="s-punch hand" contenteditable>Es el vendedor que <span>nunca duerme y muestra tus autos en la vitrina más grande de Maldonado.</span></div>
+      <div class="s-icon" contenteditable="false">🎉</div>
+      <div class="s-eyebrow" contenteditable="false">Resultado</div>
+      <div class="s-head hand" contenteditable="false">Visitas al salón que antes se iban con otro.</div>
+      <div class="s-body" contenteditable="false">Ese comprador que desde el sillón elegía solo entre las automotoras con web, ahora te incluye en su recorrida. Llega al salón ya decidido, con el modelo en la cabeza.</div>
+      <div class="s-punch hand" contenteditable="false">Es el vendedor que <span contenteditable="false">nunca duerme y muestra tus autos en la vitrina más grande de Maldonado.</span></div>
     </div></div>
 
     <!-- 12. EL BOCETO -->
     <div class="scr"><div class="boceto-scr">
       <div class="boceto-head">
-        <div class="s-head hand" contenteditable>Acá está tu web.</div>
-        <div class="boceto-badge" contenteditable>Maldonado · Automotora · Catálogo online</div>
+        <div class="s-head hand" contenteditable="false">Acá está tu web.</div>
+        <div class="boceto-badge" contenteditable="false">Maldonado · Automotora · Catálogo online</div>
       </div>
       <div class="iframe-wrap">
-        <div class="iframe-bar"><div class="d"></div><div class="d"></div><div class="d"></div><div class="u" contenteditable>automotorafededesal.com.uy</div></div>
+        <div class="iframe-bar"><div class="d"></div><div class="d"></div><div class="d"></div><div class="u" contenteditable="false">automotorafededesal.com.uy</div></div>
         <div class="iframe-viewport">
           <iframe src="fede-desal-web/index.html" loading="lazy"></iframe>
         </div>
       </div>
+      <a class="maps-link" href="fede-desal-web/index.html" target="_blank" rel="noopener" contenteditable="false">Abrir boceto completo</a>
       <div class="ann-list">
-        <div class="ann green"><div class="ico">🚘</div><div class="txt" contenteditable><b>Catálogo con fichas técnicas</b><span class="result">→ El comprador filtra, compara y elige sin pedirte fotos por WhatsApp.</span></div></div>
-        <div class="ann blue"><div class="ico">💰</div><div class="txt" contenteditable><b>"Consultar Financiación" en cada auto</b><span class="result">→ Un toque y ya te están preguntando por cuotas.</span></div></div>
-        <div class="ann orange"><div class="ico">⭐</div><div class="txt" contenteditable><b>4.7★ destacadas al entrar</b><span class="result">→ Derriba la desconfianza de invertir miles de dólares.</span></div></div>
-        <div class="ann yellow"><div class="ico">📱</div><div class="txt" contenteditable><b>Perfecto en celular</b><span class="result">→ El 85% busca desde el teléfono. La experiencia es impecable.</span></div></div>
-        <div class="ann green"><div class="ico">🔍</div><div class="txt" contenteditable><b>Posicionamiento en Google</b><span class="result">→ "Automotora Maldonado" = vos. Clientes gratis todos los meses.</span></div></div>
+        <div class="ann green"><div class="ico">🚘</div><div class="txt" contenteditable="false"><b contenteditable="false">Catálogo con fichas técnicas</b><span class="result" contenteditable="false">→ El comprador filtra, compara y elige sin pedirte fotos por WhatsApp.</span></div></div>
+        <div class="ann blue"><div class="ico">💰</div><div class="txt" contenteditable="false"><b contenteditable="false">"Consultar Financiación" en cada auto</b><span class="result" contenteditable="false">→ Un toque y ya te están preguntando por cuotas.</span></div></div>
+        <div class="ann orange"><div class="ico">⭐</div><div class="txt" contenteditable="false"><b contenteditable="false">4.7★ destacadas al entrar</b><span class="result" contenteditable="false">→ Derriba la desconfianza de invertir miles de dólares.</span></div></div>
+        <div class="ann yellow"><div class="ico">📱</div><div class="txt" contenteditable="false"><b contenteditable="false">Perfecto en celular</b><span class="result" contenteditable="false">→ El 85% busca desde el teléfono. La experiencia es impecable.</span></div></div>
+        <div class="ann green"><div class="ico">🔍</div><div class="txt" contenteditable="false"><b contenteditable="false">Posicionamiento en Google</b><span class="result" contenteditable="false">→ "Automotora Maldonado" = vos. Clientes gratis todos los meses.</span></div></div>
       </div>
     </div></div>
 
     <!-- 13. CTA -->
     <div class="scr"><div class="cta-scr">
-      <div class="s-head hand" contenteditable>¿Te gustó?<br>Quedátela.</div>
+      <div class="s-head hand" contenteditable="false">¿Te gustó?<br>Quedátela.</div>
       <div class="steps">
-        <div class="step-row"><div class="num hand">1</div><div class="txt" contenteditable>Me respondés por aquí mismo.</div></div>
-        <div class="step-row"><div class="num hand">2</div><div class="txt" contenteditable>Cargamos tu stock real de vehículos.</div></div>
-        <div class="step-row"><div class="num hand">3</div><div class="txt" contenteditable>En menos de una semana está online.</div></div>
+        <div class="step-row"><div class="num hand" contenteditable="false">1</div><div class="txt" contenteditable="false">Me respondés por aquí mismo.</div></div>
+        <div class="step-row"><div class="num hand" contenteditable="false">2</div><div class="txt" contenteditable="false">Cargamos tu stock real de vehículos.</div></div>
+        <div class="step-row"><div class="num hand" contenteditable="false">3</div><div class="txt" contenteditable="false">En menos de una semana está online.</div></div>
       </div>
-      <a class="wa-btn" href="https://wa.me/59892850267?text=Hola%20Amaru%2C%20vi%20la%20presentaci%C3%B3n%20de%20Automotora%20Fede%20Desal%20y%20quiero%20saber%20m%C3%A1s" target="_blank">Te cuento cómo seguimos</a>
-      <div class="no-pressure" contenteditable>Y si no, te quedás con el análisis igual.</div>
+      <a class="wa-btn" href="https://wa.me/59892850267?text=Hola%20Amaru%2C%20vi%20la%20presentaci%C3%B3n%20de%20Automotora%20Fede%20Desal%20y%20quiero%20saber%20m%C3%A1s" target="_blank" contenteditable="false">Te cuento cómo seguimos</a>
+      <div class="no-pressure" contenteditable="false">Y si no, te quedás con el análisis igual.</div>
     </div></div>
 
   </div>
@@ -235,6 +238,11 @@ function render(){
     if(i<current)b.classList.add('done');
     if(i===current)b.classList.add('active');
   });
+  const activeSlide=document.querySelectorAll('.scr')[current];
+  const hasInteractiveMedia=!!activeSlide?.querySelector('video,.maps-link,iframe');
+  document.getElementById('frame').classList.toggle('interactive-active',hasInteractiveMedia);
+  document.querySelector('.tap.left').style.pointerEvents=hasInteractiveMedia?'none':'auto';
+  document.querySelector('.tap.right').style.pointerEvents=hasInteractiveMedia?'none':'auto';
   document.getElementById('btn-prev').style.opacity=current===0?'0.25':'1';
   document.getElementById('btn-next').style.opacity=current===TOTAL-1?'0.25':'1';
 }
@@ -243,9 +251,10 @@ function go(dir){
   if(next<0||next>=TOTAL)return;
   current=next;
   render();
+  scaleIframe();
 }
 function scaleIframe() {
-  const viewport = document.querySelector('.iframe-viewport');
+  const viewport = document.querySelector('.scr:nth-child('+(current+1)+') .iframe-viewport');
   if (!viewport) return;
   const iframe = viewport.querySelector('iframe');
   if (!iframe) return;
@@ -253,7 +262,7 @@ function scaleIframe() {
   const scale = containerWidth / 375;
   
   iframe.style.width = '375px';
-  iframe.style.height = (400 / scale) + 'px';
+  iframe.style.height = (viewport.clientHeight / scale) + 'px';
   iframe.style.transform = 'scale(' + scale + ')';
   iframe.style.transformOrigin = 'top left';
   iframe.style.pointerEvents = 'auto';
@@ -270,6 +279,9 @@ frame.addEventListener('touchstart',e=>{
   sy=e.touches[0].clientY;
 },{passive:true});
 frame.addEventListener('touchend',e=>{
+  if(editMode)return;
+  const activeSlide=document.querySelectorAll('.scr')[current];
+  if(activeSlide?.querySelector('video,.maps-link,iframe'))return;
   const dx=e.changedTouches[0].clientX-sx;
   const dy=e.changedTouches[0].clientY-sy;
   if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>40){
@@ -303,5 +315,6 @@ document.querySelectorAll('[contenteditable]').forEach(el=>el.contentEditable='f
 render();
 </script>
 <script src="edit-tools.js"></script>
-</body>
-</html>
+
+
+</body></html>

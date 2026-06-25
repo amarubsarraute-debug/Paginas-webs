@@ -70,17 +70,17 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // Decodificar la URL del request
-  const decodedUrl = decodeURIComponent(req.url);
+  // Decodificar la URL del request y remover query params
+  const urlPath = decodeURIComponent(req.url).split('?')[0];
 
   // Servir el index con la lista de presentaciones
-  if (decodedUrl === '/' || decodedUrl === '') {
+  if (urlPath === '/' || urlPath === '') {
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
     return res.end(generateIndexPage());
   }
 
   // Servir archivos estáticos
-  let filePath = path.join(ROOT, decodedUrl);
+  let filePath = path.join(ROOT, urlPath);
 
   fs.stat(filePath, (err, stats) => {
     if (err) {

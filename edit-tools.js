@@ -25,6 +25,7 @@
     '.step-row .txt',
     '.wa-btn',
     '.site-link',
+    '.maps-link',
     '.no-pressure',
     '.iframe-bar .u'
   ];
@@ -319,14 +320,14 @@
   function saveToServer() {
     const html = getCleanHtml();
     const filename = decodeURIComponent(location.pathname).replace(/^\/+/, '');
-    fetch('http://127.0.0.1:4174/api/save', {
+    fetch('/api/save', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ filename, html })
     })
       .then(r => r.json())
       .then(d => {
-        if (d.ok) showToast('✅ Guardado correctamente');
+        if (d.success || d.ok) showToast('✅ Guardado correctamente');
         else showToast('❌ Error al guardar');
       })
       .catch(() => showToast('❌ Sin conexión al servidor'));
@@ -359,8 +360,15 @@
     if (e.key === 'Escape' && panelOpen) { closePanel(); e.stopPropagation(); return; }
     if ((e.key === 'e' || e.key === 'E') && !panelOpen && document.activeElement.contentEditable !== 'true') {
       e.preventDefault(); openPanel();
+      return;
     }
-    if (e.ctrlKey && e.key === 's') { e.preventDefault(); saveToServer(); }
+    if (e.ctrlKey && e.key === 's') { e.preventDefault(); saveToServer(); return; }
+    
+    // Stop arrow keys from triggering page navigation while editing text
+    if (document.body.classList.contains('editing') && 
+        (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
+      e.stopPropagation();
+    }
   }, true);
 
   /* ── Utilidades ───────────────────────────────────────── */
