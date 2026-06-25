@@ -5,6 +5,10 @@
 (function () {
   'use strict';
 
+  // Solo activar herramientas de edición en entorno local
+  const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  if (!isLocal) return;
+
   const EDITABLE_SELECTORS = [
     '.s-eyebrow',
     '.s-icon',
