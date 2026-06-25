@@ -237,7 +237,7 @@ textarea.input{height:auto;padding:13px 15px;min-height:98px;resize:vertical}
 .urgency-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;padding:clamp(34px,5vw,52px) 0}
 .u-copy{max-width:600px}
 .u-kick{font-family:var(--font-mono);font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:#FFD9A6;display:inline-block;margin-bottom:12px}
-.urgency h2{color:#fff;font-size:clamp(1.55rem,3.2vw,2.3rem);line-height:1.1;letter-spacing:-.02em}
+.urgency h2{color:#fff;font-size:clamp(1.4rem,3.2vw,2.3rem);line-height:1.12;letter-spacing:-.02em}
 .urgency p{color:rgba(255,255,255,.86);margin-top:10px;font-size:1.05rem}
 .u-cta{display:flex;flex-direction:column;gap:11px;flex:none}
 .u-call{display:inline-flex;align-items:center;justify-content:center;gap:11px;font-family:var(--font-sans);font-weight:700;font-size:1.12rem;
@@ -399,8 +399,11 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
   .gal-grid{grid-template-columns:1fr 1fr}
   .foot-grid{grid-template-columns:1fr}
   .foot-bottom{flex-direction:column;text-align:center}
-  .hp-chip.rating{right:0}.hp-chip.live{left:0}
-  .urgency-inner{flex-direction:column;align-items:flex-start}
+  .hp-chip{display:none}
+  .urgency-inner{flex-direction:column;align-items:flex-start;gap:22px;padding:clamp(28px,7vw,40px) 0}
+  .urgency h2{font-size:1.32rem;line-height:1.18}
+  .urgency p{font-size:.96rem}
+  .u-call{font-size:1rem;height:56px;padding:0 18px}
   .u-cta{width:100%}.u-call,.u-wa{width:100%}
 }
 </style>
@@ -449,8 +452,6 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
     </div>
 
     <div class="hero-photo reveal" style="--rd:200ms">
-      <span class="hp-chip rating" aria-hidden="true"><span><span class="n">5.0</span></span><span><span class="st">★★★★★</span><br><span class="lb">119 reseñas</span></span></span>
-      <span class="hp-chip live"><span class="dot"></span>En línea · 24/7</span>
       <div class="photo-frame">
         <!-- 📷 Guardá la foto del técnico (pulgares arriba) como /img/tecnico.png. Sin foto se ve este panel. -->
         <img src="img/tecnico.png" alt="Técnico de Basil Sanitario, listo para atender tu urgencia en Maldonado y Punta del Este" onerror="this.remove()" />
