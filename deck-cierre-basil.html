@@ -1356,6 +1356,7 @@
       let touchBlocked = false;
       let editMode = false;
       let pressTimer = 0;
+      let fileHandle = null;
 
       function readEdits() {
         try {
@@ -1399,7 +1400,7 @@
         }
       }
 
-      function exportHtml() {
+      async function exportHtml() {
         writeEdits();
         const clone = document.documentElement.cloneNode(true);
         clone.querySelector("body")?.classList.remove("is-editing");
@@ -1407,11 +1408,34 @@
           node.removeAttribute("contenteditable");
           node.removeAttribute("spellcheck");
         });
-        const blob = new Blob(["<!doctype html>\n" + clone.outerHTML], { type: "text/html;charset=utf-8" });
+        const html = "<!doctype html>\n" + clone.outerHTML;
+        const suggested = location.pathname.split("/").pop() || "deck-cierre.html";
+
+        // Navegadores modernos (Chrome/Edge): elegis el archivo una vez y despues
+        // se sobrescribe siempre el mismo, sin generar duplicados.
+        if (window.showSaveFilePicker) {
+          try {
+            if (!fileHandle) {
+              fileHandle = await window.showSaveFilePicker({
+                suggestedName: suggested,
+                types: [{ description: "Pagina web", accept: { "text/html": [".html"] } }],
+              });
+            }
+            const writable = await fileHandle.createWritable();
+            await writable.write(html);
+            await writable.close();
+            return;
+          } catch (err) {
+            if (err && err.name === "AbortError") return;
+            // si la API falla por algun motivo, seguimos con la descarga clasica
+          }
+        }
+
+        const blob = new Blob([html], { type: "text/html;charset=utf-8" });
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
         link.href = url;
-        link.download = "deck-cierre-basil-editado.html";
+        link.download = suggested.replace(/\.html?$/i, "") + "-editado.html";
         document.body.appendChild(link);
         link.click();
         link.remove();
