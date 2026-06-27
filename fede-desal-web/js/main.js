@@ -325,11 +325,28 @@
 
     function decide() {
       if (reduced) { setMode("still"); return; }
-      var isTouch = (navigator.maxTouchPoints || 0) > 0 && window.innerWidth < 1000;
+      var testWidth = window.innerWidth;
+      if (window.self !== window.top) {
+        try {
+          testWidth = window.top.innerWidth;
+        } catch (e) {}
+      }
+      var isTouch = (navigator.maxTouchPoints || 0) > 0 && testWidth < 1000;
       if (isTouch) { initMobileFrameScrub(); return; }
       setMode("scrub");
     }
     decide();
+
+    /* Sincronización de scroll desde el padre (Mockup) */
+    window.addEventListener("message", function (e) {
+      if (e.data && e.data.type === "syncScroll") {
+        var progress = e.data.progress;
+        var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        if (maxScroll > 0) {
+          window.scrollTo(0, progress * maxScroll);
+        }
+      }
+    });
 
     /* Reintento de autoplay al primer gesto (algunos móviles lo bloquean) */
     ["touchstart", "pointerdown", "click"].forEach(function (ev) {
