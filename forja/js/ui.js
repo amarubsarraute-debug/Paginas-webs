@@ -353,16 +353,202 @@ const FORJA_UI = (() => {
           <div class="legend__item"><span class="legend__swatch legend__swatch--fire">⚡</span> Fecha límite</div>
         </div>
 
-        <div class="verdict mt-m">
-          <div class="verdict__q">CUANDO ALGO FALLE:</div>
-          <div class="verdict__a">${esc(D().failure[0])}</div>
-          <div class="verdict__a" style="color:var(--accent)">${esc(D().failure[1])}</div>
-        </div>
+        <div id="roadmap-mount" class="mt-m"></div>
+        <div id="cycles-mount" class="mt-m"></div>
       </section>`;
 
     app().querySelectorAll(".cell[data-n]").forEach((cell) => {
       cell.onclick = () => openDayDetail(Number(cell.dataset.n));
     });
+    paintRoadmap();
+    paintCycles();
+  }
+
+  // ----- BITÁCORA POR CICLOS (cada 10 días) -----
+  function paintCycles() {
+    const mount = document.getElementById("cycles-mount");
+    if (!mount) return;
+    const total = S().cycleCount();
+    let rows = "";
+    for (let b = 1; b <= total; b++) {
+      const { start, end } = S().cycleBounds(b);
+      const unlocked = S().cycleUnlocked(b);
+      const cyc = S().getCycle(b);
+      let right;
+      if (cyc) {
+        right = `<span class="cycle__badge cycle__badge--done">✓ Cerrado</span>`;
+      } else if (unlocked) {
+        right = `<span class="cycle__badge cycle__badge--ready">Cerrar ciclo →</span>`;
+      } else {
+        right = `<span class="cycle__badge cycle__badge--lock">🔒 día ${end}</span>`;
+      }
+      rows += `
+        <button class="cycle ${unlocked ? "" : "is-locked"} ${cyc ? "is-done" : ""}" data-cycle="${b}" ${!unlocked && !cyc ? "disabled" : ""}>
+          <span class="cycle__range">Días ${start}–${end}</span>
+          ${right}
+        </button>`;
+    }
+    mount.innerHTML = `
+      <div class="kicker roadmap__kicker">BITÁCORA · CIERRE DE CICLO CADA 10 DÍAS</div>
+      <div class="cycles">${rows}</div>`;
+
+    mount.querySelectorAll("[data-cycle]").forEach((btn) => {
+      if (btn.disabled) return;
+      btn.onclick = () => openCycleDetail(Number(btn.dataset.cycle));
+    });
+  }
+
+  // Arma el texto listo-para-pegar (instrucción + versión ideal + 10 bitácoras)
+  function buildCyclePrompt(b) {
+    const c = S().content();
+    const { start, end } = S().cycleBounds(b);
+    const ideal = (c.ideal || []).map((x) => "- " + x).join("\n");
+    const days = S().cycleDays(b);
+    const dayLines = days.map((d) => {
+      const r = d.rec;
+      const tags = [];
+      if (r.deepWork) tags.push("deep work ✓");
+      if (r.trained) tags.push("entrené ✓");
+      if (r.version === "nueva") tags.push("me jugué como la versión NUEVA");
+      else if (r.version === "vieja") tags.push("caí en la versión VIEJA");
+      const meta = tags.length ? " (" + tags.join(", ") + ")" : "";
+      const note = (r.note && r.note.trim()) ? r.note.trim() : "— (sin registro)";
+      return `Día ${d.n}${meta}:\n${note}`;
+    }).join("\n\n");
+
+    return `Actuá como mi mentor directo y sin filtro. No me halagues de gratis.
+
+MI VERSIÓN IDEAL (en quién me estoy convirtiendo):
+${c.identity}
+
+Lo que haría mi yo ideal:
+${ideal}
+
+Acá están mis bitácoras de los días ${start} al ${end} de mi reinvención de 90 días:
+
+${dayLines}
+
+Tu devolución, en base SOLO a lo que escribí:
+1. ¿Avancé hacia mi versión ideal o seguí actuando como la vieja? Sé honesto.
+2. ¿Qué patrón se repite (bueno y malo) en estos 10 días?
+3. ¿Qué saboteo o excusa apareció más de una vez?
+4. Las 3 correcciones concretas más importantes para los próximos 10 días.
+Hablame fuerte, como alguien que quiere que me convierta en esa versión.`;
+  }
+
+  function openCycleDetail(b) {
+    const { start, end } = S().cycleBounds(b);
+    const cyc = S().getCycle(b);
+    const promptText = buildCyclePrompt(b);
+    const ov = document.getElementById("overlay");
+
+    ov.innerHTML = `
+      <div class="modal modal--day modal--cycle">
+        <div class="kicker kicker--accent">CIERRE DE CICLO · DÍAS ${start}–${end}</div>
+
+        <div class="cycle__step">
+          <div class="kicker cycle__steplbl">PASO 1 · COPIÁ Y PEGALO EN CLAUDE / CHATGPT</div>
+          <textarea class="field cycle__prompt" id="cyclePrompt" rows="8" readonly>${esc(promptText)}</textarea>
+          <button class="btn btn--accent mt-s" id="copyCycle">📋 COPIAR TODO</button>
+        </div>
+
+        <div class="cycle__step mt-m">
+          <div class="kicker cycle__steplbl">PASO 2 · PEGÁ ACÁ LA DEVOLUCIÓN Y GUARDALA</div>
+          <textarea class="field cycle__answer" id="cycleAnswer" rows="8" placeholder="Pegá acá lo que te devolvió la IA...">${esc(cyc ? cyc.devolucion : "")}</textarea>
+          <button class="btn btn--accent btn--lg mt-s" id="saveCycle">GUARDAR DEVOLUCIÓN</button>
+          ${cyc ? `<button class="btn btn--ghost danger mt-s" id="delCycle">Borrar este cierre</button>` : ""}
+        </div>
+
+        <button class="btn btn--ghost mt-s" id="closeCycle">Cerrar</button>
+      </div>`;
+    ov.hidden = false;
+
+    const close = () => { ov.hidden = true; ov.innerHTML = ""; };
+    ov.querySelector("#closeCycle").onclick = close;
+
+    ov.querySelector("#copyCycle").onclick = async () => {
+      const btn = ov.querySelector("#copyCycle");
+      try {
+        await navigator.clipboard.writeText(promptText);
+      } catch (e) {
+        const ta = ov.querySelector("#cyclePrompt");
+        ta.removeAttribute("readonly"); ta.select(); document.execCommand("copy"); ta.setAttribute("readonly", "");
+      }
+      btn.textContent = "✓ COPIADO";
+      setTimeout(() => { btn.textContent = "📋 COPIAR TODO"; }, 1500);
+    };
+
+    ov.querySelector("#saveCycle").onclick = () => {
+      const v = ov.querySelector("#cycleAnswer").value.trim();
+      if (!v) { ov.querySelector("#cycleAnswer").focus(); return; }
+      S().saveCycleDevolucion(b, v);
+      close();
+      renderDias();
+    };
+
+    const del = ov.querySelector("#delCycle");
+    if (del) del.onclick = () => {
+      if (confirm("¿Borrar la devolución de este ciclo?")) {
+        S().removeCycleDevolucion(b);
+        close();
+        renderDias();
+      }
+    };
+  }
+
+  function paintRoadmap() {
+    const mount = document.getElementById("roadmap-mount");
+    if (!mount) return;
+    const rm = S().getRoadmap();
+    const ms = rm.milestones;
+    const cur = rm.current;
+    const victories = ms.filter((m) => m.completedOn);
+    const open = mount.dataset.open === "1";
+
+    if (cur >= ms.length) {
+      mount.innerHTML = `<div class="roadmap"><div class="roadmap__all-done">🏆 Completaste todos los hitos del roadmap.</div></div>`;
+      return;
+    }
+    const current = ms[cur];
+    const next = ms[cur + 1];
+
+    mount.innerHTML = `
+      <div class="roadmap">
+        <div class="kicker roadmap__kicker">TU MAPA DE RUTA · DÓNDE ESTÁ EL FOCO</div>
+        <div class="roadmap__current">
+          <div class="kicker roadmap__idx">HITO ${cur + 1} DE ${ms.length}</div>
+          <div class="roadmap__text">${esc(current.text)}</div>
+          <label class="roadmap__datelbl">
+            <span class="kicker">⚡ FECHA LÍMITE</span>
+            <input class="roadmap__date" id="rmDate" type="date"
+              value="${esc(current.targetDate || "")}" />
+          </label>
+          <button class="btn btn--accent btn--lg" id="rmDone">✓ LOGRADO</button>
+        </div>
+        ${next ? `<div class="roadmap__next"><span class="kicker">QUÉ SIGUE →</span> ${esc(next.text)}</div>` : ""}
+        ${victories.length > 0 ? `
+          <button class="btn btn--ghost roadmap__toggle" id="rmToggle">
+            ${open ? "▲" : "▼"} VICTORIAS (${victories.length})
+          </button>
+          ${open ? `<ul class="roadmap__victories">${victories.map((m) =>
+            `<li class="roadmap__victory"><span class="roadmap__victory__check">✓</span><span>${esc(m.text)}</span><span class="roadmap__victory__date">${esc(m.completedOn || "")}</span></li>`
+          ).join("")}</ul>` : ""}
+        ` : ""}
+      </div>`;
+
+    const di = document.getElementById("rmDate");
+    if (di) di.onblur = () => S().setMilestoneDate(cur, di.value.trim());
+
+    const doneBtn = document.getElementById("rmDone");
+    if (doneBtn) doneBtn.onclick = () => {
+      const d = document.getElementById("rmDate");
+      if (d) S().setMilestoneDate(cur, d.value.trim());
+      S().completeCurrentMilestone();
+      paintRoadmap();
+    };
+
+    const tog = document.getElementById("rmToggle");
+    if (tog) tog.onclick = () => { mount.dataset.open = open ? "0" : "1"; paintRoadmap(); };
   }
 
   // ----- detalle / bitácora de un día -----

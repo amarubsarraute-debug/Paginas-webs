@@ -16,14 +16,14 @@ const config: Config = {
     extend: {
       colors: {
         cream: {
-          DEFAULT: "#FAF5EC",
-          50: "#FDFBF6",
-          100: "#FAF5EC",
-          200: "#F3E9D7",
+          DEFAULT: "#F4ECDC",
+          50: "#FBF6EC",
+          100: "#F4ECDC",
+          200: "#EADFC9",
         },
         beige: {
-          DEFAULT: "#EFE3CE",
-          dark: "#E4D3B6",
+          DEFAULT: "#EADCC4",
+          dark: "#DDCDAE",
         },
         coffee: {
           DEFAULT: "#5A4233",
@@ -31,9 +31,9 @@ const config: Config = {
           dark: "#3C2A20",
         },
         bordo: {
-          DEFAULT: "#8A2E2E",
-          light: "#A23C3C",
-          dark: "#6E2222",
+          DEFAULT: "#CC3A2C",
+          light: "#E0543E",
+          dark: "#A82C20",
         },
         sage: {
           DEFAULT: "#4F7A52",

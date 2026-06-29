@@ -1,0 +1,1379 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: file:///C:/Users/amaru/OneDrive/Escritorio/PAGINAS%20WEB/deck-cierre-fede-desal.html
+Subject: Fede Desal - Propuesta web
+Date: Sat, 27 Jun 2026 03:05:27 -0500
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--T81XGObNZuQHC1thab9kvEE2vHA8bon90wIjYxxZfG----"
+
+
+------MultipartBoundary--T81XGObNZuQHC1thab9kvEE2vHA8bon90wIjYxxZfG----
+Content-Type: text/html
+Content-ID: <frame-8F3D15164740EAA8CEB03A076FFBDCBB@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/Users/amaru/OneDrive/Escritorio/PAGINAS%20WEB/deck-cierre-fede-desal.html
+
+<!DOCTYPE html><html lang=3D"es"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/=
+css" href=3D"cid:css-98793a71-fe29-4aa2-bc62-b2ac6121b906@mhtml.blink" />
+ =20
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1, viewport-fit=3Dcover">
+  <meta name=3D"theme-color" content=3D"#090909">
+  <title>Fede Desal - Propuesta web</title>
+  <link rel=3D"preconnect" href=3D"https://fonts.googleapis.com/">
+  <link rel=3D"preconnect" href=3D"https://fonts.gstatic.com/" crossorigin=
+=3D"">
+  <link href=3D"https://fonts.googleapis.com/css2?family=3DDM+Serif+Display=
+:ital@0;1&amp;family=3DInter:wght@400;500;600;700;800;900&amp;display=3Dswa=
+p" rel=3D"stylesheet">
+ =20
+</head>
+<body class=3D"">
+  <div class=3D"deck" data-deck=3D"">
+    <header class=3D"topbar" aria-label=3D"Progreso">
+      <div class=3D"progress" aria-hidden=3D"true">
+        <div class=3D"segment is-done"><span></span></div>
+        <div class=3D"segment is-done"><span></span></div>
+        <div class=3D"segment is-done"><span></span></div>
+        <div class=3D"segment is-done"><span></span></div>
+        <div class=3D"segment is-done"><span></span></div>
+        <div class=3D"segment is-done"><span></span></div>
+        <div class=3D"segment is-done"><span></span></div>
+        <div class=3D"segment is-done"><span></span></div>
+        <div class=3D"segment is-done"><span></span></div>
+        <div class=3D"segment is-done"><span></span></div>
+        <div class=3D"segment is-active"><span></span></div>
+      </div>
+      <div class=3D"counter" data-counter=3D"">11 / 11</div>
+    </header>
+
+    <main class=3D"viewport">
+      <div class=3D"track" data-track=3D"" style=3D"transform: translate3d(=
+-15360px, 0px, 0px);">
+        <section class=3D"slide slide-portada" aria-label=3D"Portada" aria-=
+hidden=3D"true">
+          <div class=3D"kicker-number-bg">01</div>
+          <div class=3D"wrap" style=3D"position: relative; z-index: 2; disp=
+lay: block; height: auto;">
+            <div class=3D"hero-copy" style=3D"display: flex; flex-direction=
+: column; gap: 20px; max-width: 780px;">
+              <div class=3D"kicker-badge" data-edit=3D"" data-edit-id=3D"te=
+xt-0" contenteditable=3D"false" spellcheck=3D"false">Fede Desal =C2=B7 Auto=
+motora en Maldonado</div>
+              <h1 data-edit=3D"" style=3D"font-size: clamp(38px, 5.5vw, 64p=
+x); line-height: 0.98; margin-top: 10px;" data-edit-id=3D"text-1" contented=
+itable=3D"false" spellcheck=3D"false">Propuesta de desarrollo web.</h1>
+              <p data-edit=3D"" style=3D"font-size: clamp(17px, 2.3vw, 21px=
+); line-height: 1.25; max-width: 660px;" data-edit-id=3D"text-2" contentedi=
+table=3D"false" spellcheck=3D"false">Ya hay una web armada para que la auto=
+motora muestre su stock, reciba consultas por WhatsApp y pueda administrar =
+los veh=C3=ADculos desde un panel propio.</p>
+              <div class=3D"meta-box-container">
+                <div class=3D"meta-box">
+                  <span>Dise=C3=B1o web</span>
+                  <strong data-edit=3D"" data-edit-id=3D"text-3" contentedi=
+table=3D"false" spellcheck=3D"false">Amaru</strong>
+                </div>
+                <div class=3D"meta-box">
+                  <span>Cliente</span>
+                  <strong data-edit=3D"" data-edit-id=3D"text-4" contentedi=
+table=3D"false" spellcheck=3D"false">Fede Desal</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class=3D"slide" aria-label=3D"Indice" aria-hidden=3D"true"=
+>
+          <div class=3D"wrap">
+            <div class=3D"head">
+              <div class=3D"brand" data-edit=3D"" data-edit-id=3D"text-5" c=
+ontenteditable=3D"false" spellcheck=3D"false">Amaru Web Studio</div>
+              <div class=3D"section-name" data-edit=3D"" data-edit-id=3D"te=
+xt-6" contenteditable=3D"false" spellcheck=3D"false">=C3=8Dndice</div>
+              <div class=3D"page-num">02</div>
+            </div>
+            <ol class=3D"index-list">
+              <li><span>01</span><b data-edit=3D"" data-edit-id=3D"text-7" =
+contenteditable=3D"false" spellcheck=3D"false">Oportunidad local</b></li>
+              <li><span>02</span><b data-edit=3D"" data-edit-id=3D"text-8" =
+contenteditable=3D"false" spellcheck=3D"false">Problema comercial</b></li>
+              <li><span>03</span><b data-edit=3D"" data-edit-id=3D"text-9" =
+contenteditable=3D"false" spellcheck=3D"false">Soluci=C3=B3n propuesta</b><=
+/li>
+              <li><span>04</span><b data-edit=3D"" data-edit-id=3D"text-10"=
+ contenteditable=3D"false" spellcheck=3D"false">Impacto y posicionamiento</=
+b></li>
+              <li><span>05</span><b data-edit=3D"" data-edit-id=3D"text-11"=
+ contenteditable=3D"false" spellcheck=3D"false">Qu=C3=A9 incluye</b></li>
+              <li><span>06</span><b data-edit=3D"" data-edit-id=3D"text-12"=
+ contenteditable=3D"false" spellcheck=3D"false">Inversi=C3=B3n</b></li>
+              <li><span>07</span><b data-edit=3D"" data-edit-id=3D"text-13"=
+ contenteditable=3D"false" spellcheck=3D"false">Por qu=C3=A9 este precio</b=
+></li>
+              <li><span>08</span><b data-edit=3D"" data-edit-id=3D"text-14"=
+ contenteditable=3D"false" spellcheck=3D"false">Testimonio</b></li>
+              <li><span>09</span><b data-edit=3D"" data-edit-id=3D"text-15"=
+ contenteditable=3D"false" spellcheck=3D"false">Pr=C3=B3ximo paso</b></li>
+            </ol>
+          </div>
+        </section>
+
+        <section class=3D"slide" aria-label=3D"Oportunidad local" aria-hidd=
+en=3D"true">
+          <div class=3D"wrap">
+            <div class=3D"head">
+              <div class=3D"brand" data-edit=3D"" data-edit-id=3D"text-16" =
+contenteditable=3D"false" spellcheck=3D"false">Amaru Web Studio</div>
+              <div class=3D"section-name" data-edit=3D"" data-edit-id=3D"te=
+xt-17" contenteditable=3D"false" spellcheck=3D"false">01. Oportunidad local=
+</div>
+              <div class=3D"page-num">03</div>
+            </div>
+            <div class=3D"content">
+              <div class=3D"label" data-edit=3D"" data-edit-id=3D"text-18" =
+contenteditable=3D"false" spellcheck=3D"false">Oportunidad</div>
+              <div class=3D"body">
+                <h2 data-edit=3D"" data-edit-id=3D"text-19" contenteditable=
+=3D"false" spellcheck=3D"false">&nbsp;El comprador de autos decide antes de=
+ pisar el sal=C3=B3n.</h2>
+                <p data-edit=3D"" data-edit-id=3D"text-20" contenteditable=
+=3D"false" spellcheck=3D"false">La persona compara desde el celular mira fo=
+tos, filtra precios, revisa financiaci=C3=B3n y reci=C3=A9n despu=C3=A9s es=
+cribe o coordina una visita.</p>
+                <p class=3D"small" data-edit=3D"" data-edit-id=3D"text-21" =
+contenteditable=3D"false" spellcheck=3D"false">Fede Desal ya tiene presenci=
+a e Instagram. La oportunidad est=C3=A1 en convertir eso en una vitrina pro=
+pia, ordenada y 24/7, donde cada auto tenga su ficha y un camino claro haci=
+a WhatsApp.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class=3D"slide" aria-label=3D"Problema comercial" aria-hid=
+den=3D"true">
+          <div class=3D"wrap">
+            <div class=3D"head">
+              <div class=3D"brand" data-edit=3D"" data-edit-id=3D"text-22" =
+contenteditable=3D"false" spellcheck=3D"false">Amaru Web Studio</div>
+              <div class=3D"section-name" data-edit=3D"" data-edit-id=3D"te=
+xt-23" contenteditable=3D"false" spellcheck=3D"false">02. Problema comercia=
+l</div>
+              <div class=3D"page-num">04</div>
+            </div>
+            <div class=3D"content">
+              <div class=3D"label" data-edit=3D"" data-edit-id=3D"text-24" =
+contenteditable=3D"false" spellcheck=3D"false">Problema</div>
+              <div class=3D"body" style=3D"display: flex; flex-direction: c=
+olumn; gap: 14px;">
+                <div style=3D"display: flex; flex-direction: column; gap: 4=
+px;">
+                  <b data-edit=3D"" style=3D"font-size: clamp(17px, 2vw, 19=
+px); font-weight: 850; color: var(--ink); display: block;" data-edit-id=3D"=
+text-25" contenteditable=3D"false" spellcheck=3D"false">Compradores que no =
+llegan</b>
+                  <p data-edit=3D"" style=3D"font-size: clamp(15px, 1.8vw, =
+17px); font-weight: 550; color: #45423d; line-height: 1.35; max-width: 680p=
+x; margin: 0;" data-edit-id=3D"text-26" contenteditable=3D"false" spellchec=
+k=3D"false">Cuando alguien busca =E2=80=9Cautomotora Maldonado=E2=80=9D o =
+=E2=80=9Cautos usados Maldonado=E2=80=9D, ya tiene intenci=C3=B3n de compra=
+. No est=C3=A1 mirando por entretenimiento est=C3=A1 comparando opciones re=
+ales. Si la automotora no tiene una web propia preparada para aparecer y re=
+cibir consultas, parte de esa demanda se va hacia otros negocios.</p>
+                </div>
+                <div style=3D"display: flex; flex-direction: column; gap: 4=
+px;">
+                  <b data-edit=3D"" style=3D"font-size: clamp(17px, 2vw, 19=
+px); font-weight: 850; color: var(--ink); display: block;" data-edit-id=3D"=
+text-27" contenteditable=3D"false" spellcheck=3D"false">Percepci=C3=B3n lim=
+itada</b>
+                  <p data-edit=3D"" style=3D"font-size: clamp(15px, 1.8vw, =
+17px); font-weight: 550; color: #45423d; line-height: 1.35; max-width: 680p=
+x; margin: 0;" data-edit-id=3D"text-28" contenteditable=3D"false" spellchec=
+k=3D"false">Comprar un auto implica miles de d=C3=B3lares. Antes de escribi=
+r, el cliente necesita sentir que la automotora es seria, est=C3=A1 activa =
+y tiene informaci=C3=B3n clara,&nbsp;Si el negocio depende solo de redes, M=
+arketplace o WhatsApp, puede verse m=C3=A1s informal de lo que realmente es=
+. Eso afecta la confianza, especialmente cuando el cliente est=C3=A1 por co=
+mprar un veh=C3=ADculo.</p>
+                </div>
+                <div style=3D"display: flex; flex-direction: column; gap: 4=
+px;">
+                  <b data-edit=3D"" style=3D"font-size: clamp(17px, 2vw, 19=
+px); font-weight: 850; color: var(--ink); display: block;" data-edit-id=3D"=
+text-29" contenteditable=3D"false" spellcheck=3D"false">Falta un punto de v=
+enta propio</b>
+                  <p data-edit=3D"" style=3D"font-size: clamp(15px, 1.8vw, =
+17px); font-weight: 550; color: #45423d; line-height: 1.35; max-width: 680p=
+x; margin: 0;" data-edit-id=3D"text-30" contenteditable=3D"false" spellchec=
+k=3D"false">Sin una web, la automotora no tiene un lugar propio donde orden=
+ar su stock, mostrar financiaci=C3=B3n, ubicaci=C3=B3n, respaldo y llevar a=
+l interesado directo a WhatsApp. Eso hace que muchas consultas dependan de =
+publicaciones sueltas en vez de una estructura pensada para vender.<br><br>=
+Una automotora cambia veh=C3=ADculos, precios y estados todo el tiempo. Si =
+el due=C3=B1o no puede manejarlo r=C3=A1pido, queda todo desorganizado.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class=3D"slide dark" aria-label=3D"Solucion propuesta" ari=
+a-hidden=3D"true">
+          <div class=3D"wrap">
+            <div class=3D"head">
+              <div class=3D"brand" data-edit=3D"" data-edit-id=3D"text-31" =
+contenteditable=3D"false" spellcheck=3D"false">uwAmaru Web Studio</div>
+              <div class=3D"section-name" data-edit=3D"" data-edit-id=3D"te=
+xt-32" contenteditable=3D"false" spellcheck=3D"false">03. Soluci=C3=B3n pro=
+puesta</div>
+              <div class=3D"page-num">05</div>
+            </div>
+            <div class=3D"content">
+              <div class=3D"label" data-edit=3D"" data-edit-id=3D"text-33" =
+contenteditable=3D"false" spellcheck=3D"false">Soluci=C3=B3n</div>
+              <div class=3D"body" style=3D"display: flex; flex-direction: c=
+olumn; gap: 14px;">
+                <h2 data-edit=3D"" style=3D"font-size: clamp(20px, 3vw, 26p=
+x); line-height: 1.15; margin-bottom: 6px; font-weight: 900; color: var(--p=
+aper);" data-edit-id=3D"text-34" contenteditable=3D"false" spellcheck=3D"fa=
+lse">Una web de automotora con cat=C3=A1logo online, financiaci=C3=B3n, Wha=
+tsApp y panel de control.</h2>
+               =20
+                <div style=3D"display: flex; flex-direction: column; gap: 4=
+px;">
+                  <b data-edit=3D"" style=3D"font-size: clamp(17px, 2vw, 19=
+px); font-weight: 850; color: var(--paper); display: block;" data-edit-id=
+=3D"text-35" contenteditable=3D"false" spellcheck=3D"false">Cat=C3=A1logo c=
+laro de veh=C3=ADculos</b>
+                  <p data-edit=3D"" style=3D"font-size: clamp(15px, 1.8vw, =
+17px); font-weight: 550; color: rgba(244, 243, 239, 0.72); line-height: 1.3=
+5; max-width: 680px; margin: 0;" data-edit-id=3D"text-36" contenteditable=
+=3D"false" spellcheck=3D"false">Cada veh=C3=ADculo puede mostrarse con foto=
+s, datos t=C3=A9cnicos, precio, kilometraje, estado y botones de consulta. =
+La persona llega a WhatsApp sabiendo qu=C3=A9 auto le interesa.</p>
+                </div>
+               =20
+                <div style=3D"display: flex; flex-direction: column; gap: 4=
+px;">
+                  <b data-edit=3D"" style=3D"font-size: clamp(17px, 2vw, 19=
+px); font-weight: 850; color: var(--paper); display: block;" data-edit-id=
+=3D"text-37" contenteditable=3D"false" spellcheck=3D"false">Financiaci=C3=
+=B3n y contacto sin vueltas</b>
+                  <p data-edit=3D"" style=3D"font-size: clamp(15px, 1.8vw, =
+17px); font-weight: 550; color: rgba(244, 243, 239, 0.72); line-height: 1.3=
+5; max-width: 680px; margin: 0;" data-edit-id=3D"text-38" contenteditable=
+=3D"false" spellcheck=3D"false">El sitio presenta financiaci=C3=B3n, permut=
+as y contacto directo por WhatsApp, para que el interesado no tenga que per=
+seguir informaci=C3=B3n b=C3=A1sica antes de consultar.</p>
+                </div>
+               =20
+                <div style=3D"display: flex; flex-direction: column; gap: 4=
+px;">
+                  <b data-edit=3D"" style=3D"font-size: clamp(17px, 2vw, 19=
+px); font-weight: 850; color: var(--paper); display: block;" data-edit-id=
+=3D"text-39" contenteditable=3D"false" spellcheck=3D"false">Panel para mane=
+jar el stock</b>
+                  <p data-edit=3D"" style=3D"font-size: clamp(15px, 1.8vw, =
+17px); font-weight: 550; color: rgba(244, 243, 239, 0.72); line-height: 1.3=
+5; max-width: 680px; margin: 0;" data-edit-id=3D"text-40" contenteditable=
+=3D"false" spellcheck=3D"false">Fede puede cargar, editar o borrar veh=C3=
+=ADculos desde un panel de control. La web deja de ser un archivo fijo y pa=
+sa a ser una herramienta de venta.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class=3D"slide" aria-label=3D"Impacto y posicionamiento" a=
+ria-hidden=3D"true">
+          <div class=3D"wrap">
+            <div class=3D"head">
+              <div class=3D"brand" data-edit=3D"" data-edit-id=3D"text-41" =
+contenteditable=3D"false" spellcheck=3D"false">Amaru Web Studio</div>
+              <div class=3D"section-name" data-edit=3D"" data-edit-id=3D"te=
+xt-42" contenteditable=3D"false" spellcheck=3D"false">04. Impacto y posicio=
+namiento</div>
+              <div class=3D"page-num">06</div>
+            </div>
+            <div class=3D"content">
+              <div class=3D"label" data-edit=3D"" data-edit-id=3D"text-43" =
+contenteditable=3D"false" spellcheck=3D"false">Por qu=C3=A9 tiene sentido</=
+div>
+              <div class=3D"body" style=3D"display: flex; flex-direction: c=
+olumn; gap: 14px;">
+                <h2 data-edit=3D"" style=3D"font-size: clamp(20px, 3vw, 26p=
+x); line-height: 1.15; margin-bottom: 6px; font-weight: 900; color: var(--i=
+nk);" data-edit-id=3D"text-44" contenteditable=3D"false" spellcheck=3D"fals=
+e">Una web para Fede Desal no se justifica por verse linda (que se ve). Se =
+justifica si convierte el stock en consultas m=C3=A1s preparadas.</h2>
+               =20
+                <div style=3D"display: flex; flex-direction: column; gap: 4=
+px;">
+                  <b data-edit=3D"" style=3D"font-size: clamp(17px, 2vw, 19=
+px); font-weight: 850; color: var(--ink); display: block;" data-edit-id=3D"=
+text-45" contenteditable=3D"false" spellcheck=3D"false">Consultas mas nutri=
+das</b>
+                  <p data-edit=3D"" style=3D"font-size: clamp(15px, 1.8vw, =
+17px); font-weight: 550; color: #45423d; line-height: 1.35; max-width: 680p=
+x; margin: 0;" data-edit-id=3D"text-46" contenteditable=3D"false" spellchec=
+k=3D"false">Cuando alguien ya vio fotos, precio, financiaci=C3=B3n y datos =
+del veh=C3=ADculo, el mensaje que llega por WhatsApp est=C3=A1 mucho m=C3=
+=A1s cerca de la venta, cada persona viene mas nutrida para la compra.</p>
+                </div>
+               =20
+                <div style=3D"display: flex; flex-direction: column; gap: 4=
+px;">
+                  <b data-edit=3D"" style=3D"font-size: clamp(17px, 2vw, 19=
+px); font-weight: 850; color: var(--ink); display: block;" data-edit-id=3D"=
+text-47" contenteditable=3D"false" spellcheck=3D"false">Un vendedor digital=
+ trabajando todos los d=C3=ADas, incluso cuando el local est=C3=A1 cerrado.=
+</b>
+                  <p data-edit=3D"" style=3D"font-size: clamp(15px, 1.8vw, =
+17px); font-weight: 550; color: #45423d; line-height: 1.35; max-width: 680p=
+x; margin: 0;" data-edit-id=3D"text-48" contenteditable=3D"false" spellchec=
+k=3D"false">Los autos se pueden mirar de noche, desde el celular, sin depen=
+der de que alguien responda en ese momento o mande fotos manualmente,&nbsp;=
+</p>
+                </div>
+               =20
+                <div style=3D"display: flex; flex-direction: column; gap: 4=
+px;">
+                  <b data-edit=3D"" style=3D"font-size: clamp(17px, 2vw, 19=
+px); font-weight: 850; color: var(--ink); display: block;" data-edit-id=3D"=
+text-49" contenteditable=3D"false" spellcheck=3D"false">M=C3=A1s confianza =
+para una compra grande</b>
+                  <p data-edit=3D"" style=3D"font-size: clamp(15px, 1.8vw, =
+17px); font-weight: 550; color: #45423d; line-height: 1.35; max-width: 680p=
+x; margin: 0;" data-edit-id=3D"text-50" contenteditable=3D"false" spellchec=
+k=3D"false">Comprar un auto implica miles de d=C3=B3lares. Una web profesio=
+nal va a hacer que la automotora se perciba m=C3=A1s seria, m=C3=A1s ordena=
+da y m=C3=A1s confiable antes del primer mensaje.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class=3D"slide" aria-label=3D"Que incluye" aria-hidden=3D"=
+true">
+          <div class=3D"wrap" style=3D"grid-template-rows: auto auto 1fr; g=
+ap: 16px;">
+            <div class=3D"head">
+              <div class=3D"brand" data-edit=3D"" data-edit-id=3D"text-51" =
+contenteditable=3D"false" spellcheck=3D"false">Amaru Web Studio</div>
+              <div class=3D"section-name" data-edit=3D"" data-edit-id=3D"te=
+xt-52" contenteditable=3D"false" spellcheck=3D"false">05. Qu=C3=A9 incluye =
+la propuesta</div>
+              <div class=3D"page-num">07</div>
+            </div>
+           =20
+            <div style=3D"display: flex; flex-direction: column; gap: 4px; =
+max-width: 820px; width: 100%; margin: 0 auto;">
+              <h2 data-edit=3D"" style=3D"font-size: clamp(20px, 3vw, 26px)=
+; font-weight: 900; line-height: 1.15; color: var(--ink);" data-edit-id=3D"=
+text-53" contenteditable=3D"false" spellcheck=3D"false">Qu=C3=A9 incluye la=
+ propuesta</h2>
+              <p data-edit=3D"" style=3D"font-size: clamp(14px, 1.8vw, 16px=
+); font-weight: 550; color: #45423d; margin: 0; line-height: 1.3;" data-edi=
+t-id=3D"text-54" contenteditable=3D"false" spellcheck=3D"false">Una web com=
+pleta, publicada y lista para mostrar veh=C3=ADculos con administraci=C3=B3=
+n propia.</p>
+            </div>
+
+            <div class=3D"include-grid" style=3D"align-self: start; margin-=
+top: 10px;">
+              <div class=3D"include-box">
+                <b data-edit=3D"" data-edit-id=3D"text-55" contenteditable=
+=3D"false" spellcheck=3D"false">Web responsive</b>
+                <span data-edit=3D"" data-edit-id=3D"text-56" contenteditab=
+le=3D"false" spellcheck=3D"false">Inicio, veh=C3=ADculos, financiaci=C3=B3n=
+, nosotros, testimonios y contacto funcionando en celular, computadora y ta=
+blet.</span>
+              </div>
+              <div class=3D"include-box">
+                <b data-edit=3D"" data-edit-id=3D"text-57" contenteditable=
+=3D"false" spellcheck=3D"false">Cat=C3=A1logo de veh=C3=ADculos</b>
+                <span data-edit=3D"" data-edit-id=3D"text-58" contenteditab=
+le=3D"false" spellcheck=3D"false">Listado con filtros, fichas, fotos, preci=
+o, estado y consulta directa por cada auto.</span>
+              </div>
+              <div class=3D"include-box">
+                <b data-edit=3D"" data-edit-id=3D"text-59" contenteditable=
+=3D"false" spellcheck=3D"false">Panel de control</b>
+                <span data-edit=3D"" data-edit-id=3D"text-60" contenteditab=
+le=3D"false" spellcheck=3D"false">Acceso para cargar, editar y borrar veh=
+=C3=ADculos sin tocar c=C3=B3digo ni depender de cambios manuales.</span>
+              </div>
+              <div class=3D"include-box">
+                <b data-edit=3D"" data-edit-id=3D"text-61" contenteditable=
+=3D"false" spellcheck=3D"false">Financiaci=C3=B3n + WhatsApp</b>
+                <span data-edit=3D"" data-edit-id=3D"text-62" contenteditab=
+le=3D"false" spellcheck=3D"false">Mensajes directos para consultas, financi=
+aci=C3=B3n y asesoramiento desde el sitio.</span>
+              </div>
+              <div class=3D"include-box">
+                <b data-edit=3D"" data-edit-id=3D"text-63" contenteditable=
+=3D"false" spellcheck=3D"false">Publicaci=C3=B3n y configuraci=C3=B3n</b>
+                <span data-edit=3D"" data-edit-id=3D"text-64" contenteditab=
+le=3D"false" spellcheck=3D"false">La web queda subida, revisada y conectada=
+ para que el stock se vea online.</span>
+              </div>
+              <div class=3D"include-box">
+                <b data-edit=3D"" data-edit-id=3D"text-65" contenteditable=
+=3D"false" spellcheck=3D"false">Mantenimiento mensual</b>
+                <span data-edit=3D"" data-edit-id=3D"text-66" contenteditab=
+le=3D"false" spellcheck=3D"false">Soporte b=C3=A1sico, ajustes y cuidado t=
+=C3=A9cnico para que el sitio este funcionando rapido siempre.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class=3D"slide" aria-label=3D"Inversion" aria-hidden=3D"tr=
+ue">
+          <div class=3D"wrap">
+            <div class=3D"head">
+              <div class=3D"brand" data-edit=3D"" data-edit-id=3D"text-67" =
+contenteditable=3D"false" spellcheck=3D"false">Amaru Web Studio</div>
+              <div class=3D"section-name" data-edit=3D"" data-edit-id=3D"te=
+xt-68" contenteditable=3D"false" spellcheck=3D"false">06. Inversi=C3=B3n</d=
+iv>
+              <div class=3D"page-num">08</div>
+            </div>
+            <div class=3D"content">
+              <div class=3D"label" data-edit=3D"" data-edit-id=3D"text-69" =
+contenteditable=3D"false" spellcheck=3D"false">Inversi=C3=B3n</div>
+              <div class=3D"body">
+                <div class=3D"budget" style=3D"margin-bottom: 16px;">
+                  <div class=3D"budget-row total"><span data-edit=3D"" data=
+-edit-id=3D"text-70" contenteditable=3D"false" spellcheck=3D"false">Web pub=
+licada</span><b data-edit=3D"" data-edit-id=3D"text-71" contenteditable=3D"=
+false" spellcheck=3D"false">&nbsp;295usd</b></div>
+                  <div class=3D"budget-row"><span data-edit=3D"" data-edit-=
+id=3D"text-72" contenteditable=3D"false" spellcheck=3D"false">Mantenimiento=
+ mensual</span><b data-edit=3D"" data-edit-id=3D"text-73" contenteditable=
+=3D"false" spellcheck=3D"false">USD 15/mes (menos que netflix)</b></div>
+                  <div class=3D"budget-row"><span data-edit=3D"" data-edit-=
+id=3D"text-74" contenteditable=3D"false" spellcheck=3D"false">Cat=C3=A1logo=
+ + panel de stock</span><b data-edit=3D"" data-edit-id=3D"text-75" contente=
+ditable=3D"false" spellcheck=3D"false">Incluido</b></div>
+                  <div class=3D"budget-row"><span data-edit=3D"" data-edit-=
+id=3D"text-76" contenteditable=3D"false" spellcheck=3D"false">WhatsApp, fin=
+anciaci=C3=B3n y contacto</span><b data-edit=3D"" data-edit-id=3D"text-77" =
+contenteditable=3D"false" spellcheck=3D"false">Incluido</b></div>
+                  <div class=3D"budget-row"><span data-edit=3D"" data-edit-=
+id=3D"text-78" contenteditable=3D"false" spellcheck=3D"false">Entrega estim=
+ada</span><b data-edit=3D"" data-edit-id=3D"text-79" contenteditable=3D"fal=
+se" spellcheck=3D"false">24-72 hs</b></div>
+                </div>
+                <p class=3D"small" data-edit=3D"" style=3D"color: #45423d; =
+font-weight: 550; font-size: 15px; line-height: 1.4; margin-bottom: 10px;" =
+data-edit-id=3D"text-80" contenteditable=3D"false" spellcheck=3D"false">La =
+web y el panel ya tienen una base armada. Esta inversi=C3=B3n se concentra =
+en terminar, ajustar, publicar y dejar el sistema usable para Fede.</p>
+                <p class=3D"small" data-edit=3D"" style=3D"font-weight: 850=
+; color: var(--ink); font-size: 15px; line-height: 1.4; margin: 0;" data-ed=
+it-id=3D"text-81" contenteditable=3D"false" spellcheck=3D"false">El pago de=
+ la web se realiza al publicarla.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class=3D"slide" aria-label=3D"Por que este precio" aria-hi=
+dden=3D"true">
+          <div class=3D"wrap">
+            <div class=3D"head">
+              <div class=3D"brand" data-edit=3D"" data-edit-id=3D"text-82" =
+contenteditable=3D"false" spellcheck=3D"false">Amaru Web Studio</div>
+              <div class=3D"section-name" data-edit=3D"" data-edit-id=3D"te=
+xt-83" contenteditable=3D"false" spellcheck=3D"false">07. Por qu=C3=A9 este=
+ precio</div>
+              <div class=3D"page-num">09</div>
+            </div>
+            <div class=3D"content">
+              <div class=3D"label" data-edit=3D"" data-edit-id=3D"text-84" =
+contenteditable=3D"false" spellcheck=3D"false">El valor</div>
+              <div class=3D"body" style=3D"display: flex; flex-direction: c=
+olumn; gap: 14px;">
+                <div class=3D"price-block">
+                  <div class=3D"price-was" data-edit=3D"" data-edit-id=3D"t=
+ext-85" contenteditable=3D"false" spellcheck=3D"false">Una web de automotor=
+a con cat=C3=A1logo y panel suele costar <s>USD 500-700</s>. la tuya queda =
+en:</div>
+                  <div class=3D"price-now"><b data-edit=3D"" data-edit-id=
+=3D"text-86" contenteditable=3D"false" spellcheck=3D"false">USD 295&nbsp;</=
+b></div>
+                </div>
+                <p data-edit=3D"" style=3D"font-size: clamp(15px, 1.8vw, 17=
+px); font-weight: 400; color: #45423d; line-height: 1.4; max-width: 720px; =
+margin: 0;" data-edit-id=3D"text-87" contenteditable=3D"false" spellcheck=
+=3D"false">El precio baja porque el boceto, el cat=C3=A1logo y el panel ya =
+est=C3=A1n casi terminados. Ahora falta cerrar detalles y publicarla</p>
+                <div class=3D"value-grid">
+                  <div class=3D"value-item">
+                    <b data-edit=3D"" data-edit-id=3D"text-88" contentedita=
+ble=3D"false" spellcheck=3D"false">Un cliente paga la web</b>
+                    <span data-edit=3D"" data-edit-id=3D"text-89" contented=
+itable=3D"false" spellcheck=3D"false">Una venta generada por la web va a cu=
+brir varias veces la inversi=C3=B3n de un vendedor que trabaja todo el a=C3=
+=B1o sin descanso.</span>
+                  </div>
+                  <div class=3D"value-item">
+                    <b data-edit=3D"" data-edit-id=3D"text-90" contentedita=
+ble=3D"false" spellcheck=3D"false">Incluye m=C3=A1s que una p=C3=A1gina</b>
+                    <span data-edit=3D"" data-edit-id=3D"text-91" contented=
+itable=3D"false" spellcheck=3D"false">Dise=C3=B1o, fichas de autos, WhatsAp=
+p, financiaci=C3=B3n, contacto y panel de administraci=C3=B3n.</span>
+                  </div>
+                  <div class=3D"value-item">
+                    <b data-edit=3D"" data-edit-id=3D"text-92" contentedita=
+ble=3D"false" spellcheck=3D"false">Mantenimiento bajo</b>
+                    <span data-edit=3D"" data-edit-id=3D"text-93" contented=
+itable=3D"false" spellcheck=3D"false">Soporte b=C3=A1sico y ajustes menores=
+ para que el sitio no quede abandonado.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class=3D"slide dark" aria-label=3D"Testimonio" aria-hidden=
+=3D"true">
+          <div class=3D"wrap">
+            <div class=3D"head">
+              <div class=3D"brand" data-edit=3D"" data-edit-id=3D"text-94" =
+contenteditable=3D"false" spellcheck=3D"false">Amaru Web Studio</div>
+              <div class=3D"section-name" data-edit=3D"" data-edit-id=3D"te=
+xt-95" contenteditable=3D"false" spellcheck=3D"false">08. Testimonio</div>
+              <div class=3D"page-num">10</div>
+            </div>
+            <div class=3D"video-grid">
+              <div class=3D"video-frame" style=3D"border-radius: 8px;">
+                <video controls=3D"" playsinline=3D"" preload=3D"metadata">
+                  <source src=3D"file:///C:/Users/amaru/OneDrive/Escritorio=
+/PAGINAS%20WEB/testimonios/bruno-testimonio.mp4" type=3D"video/mp4">
+                  Tu navegador no puede reproducir este video.
+                </video>
+              </div>
+              <div class=3D"next-box" style=3D"display: flex; flex-directio=
+n: column; gap: 14px;">
+                <h2 data-edit=3D"" style=3D"font-size: clamp(24px, 3.5vw, 3=
+4px); font-weight: 900; line-height: 1.1; color: var(--paper); margin: 0;" =
+data-edit-id=3D"text-96" contenteditable=3D"false" spellcheck=3D"false">La =
+idea es que Fede no reciba solo una web: reciba una herramienta de venta.</=
+h2>
+                <p data-edit=3D"" style=3D"font-size: clamp(14px, 1.8vw, 16=
+px); font-weight: 550; color: rgba(244, 243, 239, 0.72); line-height: 1.4; =
+margin: 0; max-width: 420px;" data-edit-id=3D"text-97" contenteditable=3D"f=
+alse" spellcheck=3D"false">El sitio ya muestra veh=C3=ADculos, financiaci=
+=C3=B3n, datos de contacto y una forma pr=C3=A1ctica de administrar el stoc=
+k. Eso lo vuelve =C3=BAtil para vender, no solo para verse mejor.</p>
+               =20
+                <div style=3D"display: flex; align-items: center; gap: 14px=
+; padding: 14px 0; border-top: 1px solid var(--line-dark); border-bottom: 1=
+px solid var(--line-dark); margin-top: 6px;">
+                  <div style=3D"width: 44px; height: 44px; border-radius: 5=
+0%; border: 1.5px solid rgba(244, 243, 239, 0.25); display: flex; align-ite=
+ms: center; justify-content: center; flex-shrink: 0; color: var(--paper);">
+                    <svg width=3D"18" height=3D"18" viewBox=3D"0 0 24 24" f=
+ill=3D"none" stroke=3D"currentColor" stroke-width=3D"2.5" stroke-linecap=3D=
+"round" stroke-linejoin=3D"round">
+                      <path d=3D"M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H5c-1.=
+25 0-2 .75-2 2v3c0 1.25.75 2 2 2h3c0 3-2 4-5 5v3zm11 0c3 0 7-1 7-8V5c0-1.25=
+-.75-2-2-2h-3c-1.25 0-2 .75-2 2v3c0 1.25.75 2 2 2h3c0 3-2 4-5 5v3z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <b data-edit=3D"" style=3D"font-size: 15px; font-weight=
+: 850; color: var(--paper); display: block; margin-bottom: 2px;" data-edit-=
+id=3D"text-98" contenteditable=3D"false" spellcheck=3D"false">Testimonio en=
+ video</b>
+                    <span data-edit=3D"" style=3D"font-size: 13px; font-wei=
+ght: 550; color: rgba(244, 243, 239, 0.55); line-height: 1.3;" data-edit-id=
+=3D"text-99" contenteditable=3D"false" spellcheck=3D"false">Una referencia =
+de como fue trabajar conmigo.</span>
+                  </div>
+                </div>
+
+                <a href=3D"https://darkgreen-echidna-916222.hostingersite.c=
+om/fede-desal-web/vehiculos.html" target=3D"_blank" rel=3D"noopener" style=
+=3D"display: inline-flex; align-items: center; gap: 8px; font-size: 14px; f=
+ont-weight: 850; color: var(--paper); text-decoration: none; margin-top: 4p=
+x; width: fit-content;">
+                  <svg width=3D"16" height=3D"16" viewBox=3D"0 0 24 24" fil=
+l=3D"none" stroke=3D"currentColor" stroke-width=3D"2.5" stroke-linecap=3D"r=
+ound" stroke-linejoin=3D"round">
+                    <circle cx=3D"12" cy=3D"12" r=3D"10"></circle>
+                    <line x1=3D"2" y1=3D"12" x2=3D"22" y2=3D"12"></line>
+                    <path d=3D"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4=
+ 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                  <span data-edit=3D"" data-edit-id=3D"text-100" contentedi=
+table=3D"false" spellcheck=3D"false">Ver cat=C3=A1logo de Fede Desal =E2=86=
+=97</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class=3D"slide" aria-label=3D"Proximo paso" aria-hidden=3D=
+"false">
+          <div class=3D"wrap">
+            <div class=3D"head">
+              <div class=3D"brand" data-edit=3D"" data-edit-id=3D"text-101"=
+ contenteditable=3D"false" spellcheck=3D"false">Amaru Web Studio</div>
+              <div class=3D"section-name" data-edit=3D"" data-edit-id=3D"te=
+xt-102" contenteditable=3D"false" spellcheck=3D"false">09. Pr=C3=B3ximo pas=
+o</div>
+              <div class=3D"page-num">11</div>
+            </div>
+            <div class=3D"content">
+              <div class=3D"label" data-edit=3D"" data-edit-id=3D"text-103"=
+ contenteditable=3D"false" spellcheck=3D"false">Pr=C3=B3ximo paso</div>
+              <div class=3D"body" style=3D"display: flex; flex-direction: c=
+olumn; gap: 14px;">
+                <h2 data-edit=3D"" style=3D"font-size: clamp(30px, 4.5vw, 4=
+8px); font-weight: 950; line-height: 1.05; color: var(--ink); margin: 0;" d=
+ata-edit-id=3D"text-104" contenteditable=3D"false" spellcheck=3D"false">=C2=
+=BFAvanzamos?</h2>
+                <p data-edit=3D"" style=3D"font-size: clamp(15px, 1.8vw, 17=
+px); font-weight: 550; color: #45423d; line-height: 1.35; max-width: 680px;=
+ margin: 0;" data-edit-id=3D"text-105" contenteditable=3D"false" spellcheck=
+=3D"false">Si te cierra la propuesta, el paso siguiente es confirmar domini=
+o, stock inicial, WhatsApp, datos finales y acceso al panel de control.</p>
+               =20
+                <div class=3D"steps-list" style=3D"display: flex; flex-dire=
+ction: column; gap: 12px; margin-top: 10px; margin-bottom: 18px; width: 100=
+%; max-width: 680px;">
+                  <div style=3D"display: flex; align-items: center; gap: 14=
+px; padding-bottom: 10px; border-bottom: 1px solid var(--line);">
+                    <div style=3D"width: 36px; height: 36px; border-radius:=
+ 50%; background: var(--paper-2); display: flex; align-items: center; justi=
+fy-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0;">01<=
+/div>
+                    <span data-edit=3D"" style=3D"font-size: clamp(15px, 1.=
+8vw, 17px); font-weight: 800; color: var(--ink);" data-edit-id=3D"text-106"=
+ contenteditable=3D"false" spellcheck=3D"false">Confirmamos dominio, WhatsA=
+pp y datos finales</span>
+                  </div>
+                  <div style=3D"display: flex; align-items: center; gap: 14=
+px; padding-bottom: 10px; border-bottom: 1px solid var(--line);">
+                    <div style=3D"width: 36px; height: 36px; border-radius:=
+ 50%; background: var(--paper-2); display: flex; align-items: center; justi=
+fy-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0;">02<=
+/div>
+                    <span data-edit=3D"" style=3D"font-size: clamp(15px, 1.=
+8vw, 17px); font-weight: 800; color: var(--ink);" data-edit-id=3D"text-107"=
+ contenteditable=3D"false" spellcheck=3D"false">Ajusto textos, stock inicia=
+l y panel</span>
+                  </div>
+                  <div style=3D"display: flex; align-items: center; gap: 14=
+px; padding-bottom: 10px;">
+                    <div style=3D"width: 36px; height: 36px; border-radius:=
+ 50%; background: var(--paper-2); display: flex; align-items: center; justi=
+fy-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0;">03<=
+/div>
+                    <span data-edit=3D"" style=3D"font-size: clamp(15px, 1.=
+8vw, 17px); font-weight: 800; color: var(--ink);" data-edit-id=3D"text-108"=
+ contenteditable=3D"false" spellcheck=3D"false">Publico la web y queda en m=
+antenimiento</span>
+                  </div>
+                </div>
+
+                <a class=3D"cta" href=3D"https://wa.me/59892850267?text=3DH=
+ola%20Amaru%2C%20vi%20la%20propuesta%20de%20Fede%20Desal%20y%20quiero%20ava=
+nzar" target=3D"_blank" rel=3D"noopener" style=3D"display: inline-flex; jus=
+tify-content: center; align-items: center; gap: 10px; width: min(100%, 380p=
+x); min-height: 58px; background: var(--black); color: var(--paper); font-s=
+ize: clamp(16px, 1.8vw, 18px); font-weight: 900; border-radius: 6px; box-sh=
+adow: var(--shadow); margin-top: 6px; margin-bottom: 10px; text-decoration:=
+ none;">
+                  <span>Avanzar por WhatsApp</span>
+                  <svg width=3D"20" height=3D"20" viewBox=3D"0 0 24 24" fil=
+l=3D"currentColor" style=3D"display: block;">
+                    <path d=3D"M.057 24l1.687-6.163c-1.041-1.804-1.588-3.84=
+9-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.51=
+4 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2=
+.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 =
+1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.019-5.117-2.877-6.979C16.60=
+4 1.9 14.129.879 11.5.877c-5.44 0-9.866 4.418-9.87 9.861-.001 1.77.476 3.49=
+8 1.38 5.04L2.017 21.82l6.185-1.625zM17.43 14.73c-.318-.159-1.884-.93-2.176=
+-1.037-.291-.106-.503-.159-.715.159-.211.318-.82.1037-1.006.1246-.185.211-.=
+37.106-.688-.053-.318-.159-1.341-.493-2.553-1.578-.943-.844-1.58-1.885-1.76=
+5-2.203-.186-.318-.02-.489.14-.648.143-.143.318-.371.477-.556.16-.186.212-.=
+318.318-.53.106-.212.053-.397-.026-.556-.079-.159-.715-1.724-.979-2.361-.25=
+8-.62-.52-.536-.715-.546-.185-.011-.397-.011-.609-.011s-.556.079-.847.397c-=
+.291.318-1.11 1.087-1.11 2.65s1.14 3.073 1.298 3.285c.159.212 2.24 3.42 5.4=
+24 4.795.757.327 1.348.523 1.808.67.76.241 1.451.207 1.996.126.609-.09 1.88=
+4-.768 2.148-1.472.265-.705.265-1.309.185-1.436-.079-.127-.291-.212-.609-.3=
+71z"></path>
+                  </svg>
+                </a>
+               =20
+                <p class=3D"small" data-edit=3D"" style=3D"font-size: 14px;=
+ font-weight: 550; color: #77746d; line-height: 1.35; margin: 0; max-width:=
+ 680px;" data-edit-id=3D"text-109" contenteditable=3D"false" spellcheck=3D"=
+false">Me pod=C3=A9s escribir directo por WhatsApp y lo resolvemos r=C3=A1p=
+ido.<br>Si prefer=C3=ADs, tambi=C3=A9n pod=C3=A9s mandarme audios.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <nav class=3D"nav" aria-label=3D"Navegaci=C3=B3n">
+      <div class=3D"nav-inner">
+        <button class=3D"arrow" type=3D"button" data-prev=3D"" aria-label=
+=3D"Slide anterior">=E2=86=90</button>
+        <button class=3D"arrow" type=3D"button" data-next=3D"" aria-label=
+=3D"Slide siguiente" disabled=3D"">=E2=86=92</button>
+      </div>
+    </nav>
+  </div>
+
+ =20
+
+
+</body></html>
+------MultipartBoundary--T81XGObNZuQHC1thab9kvEE2vHA8bon90wIjYxxZfG----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap
+
+@charset "utf-8";
+
+@font-face { font-family: "DM Serif Display"; font-style: italic; font-weig=
+ht: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/dmserifd=
+isplay/v17/-nFhOHM81r4j6k0gjAW3mujVU2B2G_VB3vD212k.woff2") format("woff2");=
+ unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+30=
+4, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB=
+, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "DM Serif Display"; font-style: italic; font-weig=
+ht: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/dmserifd=
+isplay/v17/-nFhOHM81r4j6k0gjAW3mujVU2B2G_VB0PD2.woff2") format("woff2"); un=
+icode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+30=
+4, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+221=
+5, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "DM Serif Display"; font-style: normal; font-weig=
+ht: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/dmserifd=
+isplay/v17/-nFnOHM81r4j6k0gjAW3mujVU2B2G_5x0ujy.woff2") format("woff2"); un=
+icode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, =
+U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U=
++20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "DM Serif Display"; font-style: normal; font-weig=
+ht: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/dmserifd=
+isplay/v17/-nFnOHM81r4j6k0gjAW3mujVU2B2G_Bx0g.woff2") format("woff2"); unic=
+ode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304,=
+ U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,=
+ U+FEFF, U+FFFD; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 400; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2") format("woff2"); unicode-range: U+460-=
+52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 400; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2") format("woff2"); unicode-range: U+301,=
+ U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 400; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2") format("woff2"); unicode-range: U+1F00=
+-1FFF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 400; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2") format("woff2"); unicode-range: U+370-=
+377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 400; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2") format("woff2"); unicode-range: U+102-=
+103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+30=
+3-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 400; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa25L7SUc.woff2") format("woff2"); unicode-range: U+100-=
+2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D0=
+0-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113,=
+ U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 400; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa1ZL7.woff2") format("woff2"); unicode-range: U+0-FF, U=
++131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+200=
+0-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 500; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2") format("woff2"); unicode-range: U+460-=
+52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 500; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2") format("woff2"); unicode-range: U+301,=
+ U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 500; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2") format("woff2"); unicode-range: U+1F00=
+-1FFF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 500; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2") format("woff2"); unicode-range: U+370-=
+377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 500; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2") format("woff2"); unicode-range: U+102-=
+103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+30=
+3-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 500; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa25L7SUc.woff2") format("woff2"); unicode-range: U+100-=
+2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D0=
+0-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113,=
+ U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 500; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa1ZL7.woff2") format("woff2"); unicode-range: U+0-FF, U=
++131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+200=
+0-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 600; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2") format("woff2"); unicode-range: U+460-=
+52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 600; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2") format("woff2"); unicode-range: U+301,=
+ U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 600; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2") format("woff2"); unicode-range: U+1F00=
+-1FFF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 600; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2") format("woff2"); unicode-range: U+370-=
+377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 600; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2") format("woff2"); unicode-range: U+102-=
+103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+30=
+3-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 600; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa25L7SUc.woff2") format("woff2"); unicode-range: U+100-=
+2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D0=
+0-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113,=
+ U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 600; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa1ZL7.woff2") format("woff2"); unicode-range: U+0-FF, U=
++131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+200=
+0-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 700; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2") format("woff2"); unicode-range: U+460-=
+52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 700; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2") format("woff2"); unicode-range: U+301,=
+ U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 700; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2") format("woff2"); unicode-range: U+1F00=
+-1FFF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 700; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2") format("woff2"); unicode-range: U+370-=
+377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 700; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2") format("woff2"); unicode-range: U+102-=
+103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+30=
+3-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 700; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa25L7SUc.woff2") format("woff2"); unicode-range: U+100-=
+2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D0=
+0-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113,=
+ U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 700; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa1ZL7.woff2") format("woff2"); unicode-range: U+0-FF, U=
++131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+200=
+0-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 800; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2") format("woff2"); unicode-range: U+460-=
+52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 800; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2") format("woff2"); unicode-range: U+301,=
+ U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 800; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2") format("woff2"); unicode-range: U+1F00=
+-1FFF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 800; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2") format("woff2"); unicode-range: U+370-=
+377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 800; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2") format("woff2"); unicode-range: U+102-=
+103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+30=
+3-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 800; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa25L7SUc.woff2") format("woff2"); unicode-range: U+100-=
+2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D0=
+0-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113,=
+ U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 800; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa1ZL7.woff2") format("woff2"); unicode-range: U+0-FF, U=
++131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+200=
+0-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 900; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2") format("woff2"); unicode-range: U+460-=
+52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 900; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2") format("woff2"); unicode-range: U+301,=
+ U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 900; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2") format("woff2"); unicode-range: U+1F00=
+-1FFF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 900; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2") format("woff2"); unicode-range: U+370-=
+377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 900; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2") format("woff2"); unicode-range: U+102-=
+103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+30=
+3-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 900; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa25L7SUc.woff2") format("woff2"); unicode-range: U+100-=
+2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D0=
+0-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113,=
+ U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Inter; font-style: normal; font-weight: 900; font=
+-display: swap; src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3i=
+LTeHuS_nVMrMxCp50SjIa1ZL7.woff2") format("woff2"); unicode-range: U+0-FF, U=
++131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+200=
+0-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+------MultipartBoundary--T81XGObNZuQHC1thab9kvEE2vHA8bon90wIjYxxZfG----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-98793a71-fe29-4aa2-bc62-b2ac6121b906@mhtml.blink
+
+@charset "utf-8";
+
+*, ::before, ::after { box-sizing: border-box; margin: 0px; padding: 0px; }
+
+:root { --black: #090909; --ink: #111111; --paper: #f4f3ef; --paper-2: #e9e=
+8e3; --muted: #77746d; --line: rgba(17, 17, 17, 0.16); --line-dark: rgba(24=
+4, 243, 239, 0.22); --accent: #111111; --accent-line: rgba(0, 0, 0, 0.06); =
+--shadow: 0 24px 56px rgba(0, 0, 0, 0.18); --shadow-soft: 0 6px 20px rgba(0=
+, 0, 0, 0.06); --ease: cubic-bezier(0.16, 1, 0.3, 1); --font: "Inter", "Seg=
+oe UI Variable", "Segoe UI", system-ui, sans-serif; --display: "DM Serif Di=
+splay", "Georgia", serif; --mono: "Cascadia Mono", Consolas, monospace; }
+
+html, body { width: 100%; height: 100%; overflow: hidden; background: var(-=
+-black); color: var(--ink); font-family: var(--font); -webkit-font-smoothin=
+g: antialiased; text-rendering: optimizelegibility; text-size-adjust: 100%;=
+ }
+
+body { touch-action: pan-y; }
+
+button, a { font: inherit; color: inherit; }
+
+button { border: 0px; background: none; cursor: pointer; }
+
+a { text-decoration: none; }
+
+video { display: block; max-width: 100%; }
+
+.deck { position: fixed; inset: 0px; overflow: hidden; background: var(--pa=
+per); }
+
+.topbar { position: fixed; z-index: 20; top: max(14px, env(safe-area-inset-=
+top)); left: 16px; right: 16px; display: grid; grid-template-columns: 1fr a=
+uto; gap: 12px; align-items: center; pointer-events: none; }
+
+.progress { display: grid; grid-template-columns: repeat(11, 1fr); gap: 6px=
+; }
+
+.segment { height: 5px; border: 1px solid rgba(0, 0, 0, 0.28); border-radiu=
+s: 999px; overflow: hidden; background: rgba(255, 255, 255, 0.18); }
+
+.segment span { display: block; width: 0px; height: 100%; background: curre=
+ntcolor; transition: width 220ms var(--ease); }
+
+.segment.is-active span, .segment.is-done span { width: 100%; }
+
+.counter { pointer-events: auto; min-width: 58px; padding: 8px 10px; border=
+: 1px solid rgba(0, 0, 0, 0.16); border-radius: 999px; background: rgba(244=
+, 243, 239, 0.86); color: var(--black); font-family: var(--mono); font-size=
+: 12px; line-height: 1; text-align: center; box-shadow: var(--shadow); back=
+drop-filter: blur(14px); user-select: none; }
+
+.viewport { width: 100%; height: 100%; overflow: hidden; }
+
+.track { display: flex; width: 100%; height: 100%; transition: transform 36=
+0ms var(--ease); will-change: transform; }
+
+.slide { position: relative; flex: 0 0 100%; width: 100%; height: 100svh; m=
+in-height: 100svh; overflow: hidden; display: grid; place-items: center; pa=
+dding: 62px 22px 96px; background: linear-gradient(180deg, rgba(255, 255, 2=
+55, 0.62), transparent 42%),
+        var(--paper); }
+
+.slide.dark { background: var(--black); color: var(--paper); }
+
+.slide.dark .segment { border-color: rgba(244, 243, 239, 0.52); }
+
+.wrap { width: min(100%, 1040px); height: min(100%, 660px); max-height: cal=
+c(-158px + 100svh); display: grid; grid-template-rows: auto 1fr; gap: 26px;=
+ overflow: hidden; }
+
+.head { display: grid; grid-template-columns: minmax(130px, 230px) 1fr auto=
+; gap: 18px; align-items: baseline; min-height: 22px; padding-bottom: 14px;=
+ border-bottom: 1px solid var(--line); font-size: 15px; line-height: 1.1; }
+
+.dark .head { border-color: var(--line-dark); }
+
+.brand { font-weight: 800; letter-spacing: 0.04em; text-transform: uppercas=
+e; font-size: 13px; }
+
+.section-name { color: var(--muted); font-weight: 800; }
+
+.dark .section-name { color: rgba(244, 243, 239, 0.55); }
+
+.page-num { color: var(--muted); font-family: var(--mono); font-size: 12px;=
+ }
+
+.dark .page-num { color: rgba(244, 243, 239, 0.56); }
+
+.content { align-self: center; display: grid; grid-template-columns: 130px =
+minmax(0px, 1fr); gap: 64px; align-items: start; }
+
+.label { font-weight: 700; font-size: 13px; line-height: 1.3; letter-spacin=
+g: 0.04em; text-transform: uppercase; color: var(--muted); padding-top: 6px=
+; border-top: 2px solid var(--ink); }
+
+.dark .label { color: rgba(244, 243, 239, 0.6); border-color: var(--paper);=
+ }
+
+.body { display: grid; gap: 18px; max-width: 690px; }
+
+.kicker-number { font-family: var(--display); font-size: 64px; font-weight:=
+ 400; line-height: 0.92; letter-spacing: 0px; }
+
+h1, h2 { font-family: var(--display); font-weight: 400; letter-spacing: -0.=
+01em; text-wrap: balance; }
+
+h1 { max-width: 800px; font-size: 68px; line-height: 0.98; }
+
+h2 { font-size: 44px; line-height: 1.05; }
+
+p { max-width: 660px; color: rgb(69, 66, 61); font-size: 21px; font-weight:=
+ 400; line-height: 1.5; text-wrap: pretty; }
+
+.dark p { color: rgba(244, 243, 239, 0.72); }
+
+.small { color: var(--muted); font-size: 15px; font-weight: 750; line-heigh=
+t: 1.35; }
+
+.dark .small { color: rgba(244, 243, 239, 0.55); }
+
+.hero-grid { align-self: center; display: grid; grid-template-columns: 120p=
+x minmax(0px, 1fr); gap: 54px; align-items: start; }
+
+.hero-copy { display: grid; gap: 22px; }
+
+.meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+
+.pill { display: inline-flex; align-items: center; min-height: 34px; paddin=
+g: 8px 12px; border: 1px solid; border-radius: 999px; color: rgba(244, 243,=
+ 239, 0.78); font-size: 13px; font-weight: 850; }
+
+.index-list { align-self: center; display: grid; gap: 4px; list-style: none=
+; width: min(100%, 760px); }
+
+.index-list li { display: grid; grid-template-columns: 64px 1fr; gap: 24px;=
+ align-items: baseline; padding: 8px; border-bottom: 1px solid var(--line);=
+ font-family: var(--display); font-size: clamp(26px, 3.4vw, 34px); font-wei=
+ght: 400; line-height: 1.08; letter-spacing: -0.01em; transition: padding-l=
+eft 240ms var(--ease); }
+
+.index-list li:hover { padding-left: 16px; }
+
+.index-list span { color: var(--muted); font-family: var(--mono); font-size=
+: 14px; font-weight: 700; }
+
+.points { display: grid; gap: 10px; list-style: none; }
+
+.points li { display: grid; grid-template-columns: 42px 1fr; gap: 14px; ali=
+gn-items: start; padding-top: 12px; border-top: 1px solid var(--line); font=
+-size: 19px; font-weight: 850; line-height: 1.2; }
+
+.dark .points li { border-color: var(--line-dark); }
+
+.points span { color: var(--muted); font-family: var(--mono); font-size: 12=
+px; line-height: 1.6; }
+
+.dark .points span { color: rgba(244, 243, 239, 0.45); }
+
+.include-grid { align-self: center; display: grid; grid-template-columns: r=
+epeat(2, minmax(0px, 1fr)); gap: 22px; width: min(100%, 820px); }
+
+.include-box { display: grid; gap: 10px; padding-top: 18px; border-top: 2px=
+ solid var(--ink); }
+
+.include-box b { font-size: 18px; font-weight: 700; line-height: 1.15; }
+
+.include-box span { color: rgb(87, 83, 77); font-size: 16px; font-weight: 4=
+00; line-height: 1.4; }
+
+.budget { display: grid; width: min(100%, 680px); border-bottom: 1px solid =
+rgb(134, 130, 123); }
+
+.budget-row { display: grid; grid-template-columns: 1fr auto; gap: 18px; al=
+ign-items: baseline; padding: 14px 0px; border-bottom: 1px solid var(--line=
+); color: rgb(91, 87, 81); font-size: 17px; font-weight: 500; }
+
+.budget-row:last-child { border-bottom: 0px; }
+
+.budget-row.total { order: 99; margin-top: 6px; padding: 20px 0px 0px; bord=
+er-top: 2px solid var(--ink); border-bottom: 0px; color: var(--ink); font-f=
+amily: var(--display); font-size: 30px; font-weight: 400; }
+
+.budget-row.total b { font-family: var(--display); font-weight: 400; }
+
+.budget-row b { color: var(--ink); font-weight: 700; white-space: nowrap; }
+
+.price-block { display: grid; gap: 8px; padding-bottom: 20px; border-bottom=
+: 2px solid var(--ink); }
+
+.price-was { font-size: 16px; font-weight: 500; color: var(--muted); line-h=
+eight: 1.4; }
+
+.price-was s { color: rgb(91, 87, 81); text-decoration-thickness: 1.5px; }
+
+.price-now { font-family: var(--display); font-size: clamp(36px, 5.4vw, 56p=
+x); line-height: 1; }
+
+.price-now b { font-weight: 400; }
+
+.value-grid { display: grid; grid-template-columns: repeat(3, minmax(0px, 1=
+fr)); gap: 22px; }
+
+.value-item { display: grid; gap: 8px; align-content: start; padding-top: 1=
+6px; border-top: 2px solid var(--ink); }
+
+.value-item b { font-size: 17px; font-weight: 700; line-height: 1.18; }
+
+.value-item span { font-size: 15px; font-weight: 400; color: rgb(87, 83, 77=
+); line-height: 1.4; }
+
+@media (max-width: 760px) {
+  .value-grid { grid-template-columns: 1fr; gap: 14px; }
+  .value-item { padding-top: 12px; }
+}
+
+.video-grid { align-self: center; display: grid; grid-template-columns: min=
+max(0px, 520px) minmax(220px, 330px); gap: 34px; align-items: center; }
+
+.video-frame { background: rgb(0, 0, 0); border-radius: 12px; box-shadow: r=
+gba(0, 0, 0, 0.28) 0px 18px 48px; overflow: hidden; }
+
+.video-frame video { width: 100%; height: 360px; object-fit: contain; backg=
+round: rgb(0, 0, 0); }
+
+.next-box { display: grid; gap: 16px; }
+
+.cta { display: inline-flex; justify-content: center; align-items: center; =
+width: min(100%, 330px); min-height: 58px; margin-top: 8px; border: 1px sol=
+id var(--paper); background: var(--paper); color: var(--black); font-size: =
+17px; font-weight: 800; text-align: center; transition: opacity 200ms var(-=
+-ease), transform 200ms var(--ease); }
+
+.cta:hover { opacity: 0.92; transform: translateY(-1px); }
+
+.nav { position: fixed; z-index: 25; left: 0px; right: 0px; bottom: max(18p=
+x, env(safe-area-inset-bottom)); display: flex; justify-content: center; po=
+inter-events: none; }
+
+.nav-inner { display: grid; grid-template-columns: 64px 64px; gap: 6px; pad=
+ding: 7px; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 999px; bac=
+kground: rgba(244, 243, 239, 0.82); box-shadow: var(--shadow); backdrop-fil=
+ter: blur(16px); pointer-events: auto; }
+
+.arrow { display: grid; place-items: center; width: 64px; height: 50px; bor=
+der-radius: 14px; background: rgb(255, 255, 255); color: rgb(17, 17, 17); f=
+ont-size: 24px; line-height: 1; box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px=
+ 1px inset; transition: background-color 200ms var(--ease), color 200ms var=
+(--ease); }
+
+.arrow:not(:disabled):hover { background: var(--ink); color: var(--paper); =
+}
+
+.arrow:disabled { opacity: 0.34; cursor: default; }
+
+body.is-editing { cursor: text; }
+
+body.is-editing [contenteditable=3D"true"] { cursor: text; user-select: tex=
+t; }
+
+body.is-editing [contenteditable=3D"true"]:focus { outline: rgb(77, 139, 25=
+5) solid 2px; outline-offset: 4px; background: rgba(255, 255, 255, 0.22); }
+
+@media (min-width: 980px) {
+  .slide { padding: 78px 46px 104px; }
+  .wrap { max-height: calc(-182px + 100svh); }
+}
+
+@media (max-width: 760px) {
+  .topbar { left: 12px; right: 12px; gap: 8px; }
+  .progress { gap: 4px; }
+  .segment { height: 4px; }
+  .counter { min-width: 54px; padding: 7px 8px; font-size: 11px; }
+  .slide { padding: 58px 20px 92px; }
+  .wrap { width: 100%; height: auto; max-height: calc(-140px + 100svh); gap=
+: 18px; overflow: hidden auto; scrollbar-width: none; }
+  .wrap::-webkit-scrollbar { display: none; }
+  .head { grid-template-columns: 1fr auto; gap: 7px 12px; font-size: 12px; =
+}
+  .section-name { grid-area: 2 / 1 / auto / -1; }
+  .page-num { grid-area: 1 / 2; }
+  .content, .hero-grid { grid-template-columns: 1fr; gap: 16px; }
+  .kicker-number { font-size: 42px; }
+  h1 { font-size: 40px; line-height: 0.98; }
+  h2 { font-size: 30px; }
+  p { font-size: 18px; line-height: 1.22; }
+  .small { font-size: 14px; }
+  .index-list { gap: 5px; }
+  .index-list li { grid-template-columns: 42px 1fr; gap: 14px; padding: 8px=
+ 0px; font-size: 25px; line-height: 1.05; }
+  .index-list span { font-size: 12px; }
+  .points li { grid-template-columns: 32px 1fr; gap: 10px; font-size: 15px;=
+ padding-top: 10px; }
+  .include-grid { grid-template-columns: 1fr; gap: 13px; }
+  .include-box { gap: 6px; padding-top: 10px; }
+  .include-box b { font-size: 16px; }
+  .include-box span { font-size: 14px; }
+  .budget-row { font-size: 14px; padding: 10px 0px; }
+  .budget-row.total { font-size: 18px; }
+  .video-grid { grid-template-columns: 1fr; gap: 14px; }
+  .video-frame video { height: 300px; }
+  .next-box { gap: 10px; }
+  .cta { width: 100%; min-height: 54px; }
+  .nav-inner { grid-template-columns: 58px 58px; }
+  .arrow { width: 58px; height: 50px; }
+}
+
+@media (max-height: 700px) {
+  .slide { padding-top: 52px; padding-bottom: 82px; }
+  .wrap { max-height: calc(-132px + 100svh); gap: 12px; }
+  h1 { font-size: 34px; }
+  h2 { font-size: 26px; }
+  p { font-size: 15px; }
+  .index-list li { font-size: 22px; padding: 5px 0px; }
+  .include-box span, .budget-row, .points li { font-size: 13px; }
+  .video-frame video { height: 240px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track, .segment span { transition-duration: 1ms; }
+}
+
+.slide-portada { position: relative; background: var(--paper) !important; c=
+olor: var(--ink) !important; }
+
+.kicker-number-bg { position: absolute; top: -40px; left: -24px; font-famil=
+y: var(--display); font-size: clamp(150px, 25vw, 300px); font-weight: 400; =
+line-height: 0.8; color: rgba(0, 0, 0, 0.043); z-index: 1; pointer-events: =
+none; user-select: none; }
+
+.kicker-badge { display: inline-flex; align-items: center; gap: 8px; paddin=
+g: 8px 16px; background: rgb(255, 255, 255); border: 1px solid rgba(0, 0, 0=
+, 0.1); border-radius: 999px; font-size: 13px; font-weight: 500; letter-spa=
+cing: 0.01em; color: rgb(51, 51, 51); width: fit-content; box-shadow: var(-=
+-shadow-soft); }
+
+.kicker-badge::before { content: ""; width: 7px; height: 7px; border-radius=
+: 50%; background: rgb(46, 193, 107); box-shadow: rgba(46, 193, 107, 0.18) =
+0px 0px 0px 3px; }
+
+.meta-box-container { display: flex; flex-wrap: wrap; gap: 12px; margin-top=
+: 22px; }
+
+.meta-box { display: flex; align-items: center; justify-content: space-betw=
+een; gap: 30px; background: rgb(255, 255, 255); border-top: 1px solid rgba(=
+0, 0, 0, 0.08); border-right: 1px solid rgba(0, 0, 0, 0.08); border-bottom:=
+ 1px solid rgba(0, 0, 0, 0.08); border-image: initial; border-left: 3px sol=
+id var(--ink); border-radius: 4px; padding: 13px 20px; font-size: 14px; min=
+-width: 230px; box-shadow: var(--shadow-soft); }
+
+.meta-box span { color: rgb(119, 119, 119); font-weight: 400; }
+
+.meta-box strong { color: var(--ink); font-weight: 700; }
+
+@media (max-width: 760px) {
+  .kicker-number-bg { font-size: 160px; top: -10px; left: -10px; }
+  .meta-box-container { flex-direction: column; align-items: stretch; }
+  .meta-box { min-width: 0px; }
+}
+------MultipartBoundary--T81XGObNZuQHC1thab9kvEE2vHA8bon90wIjYxxZfG------

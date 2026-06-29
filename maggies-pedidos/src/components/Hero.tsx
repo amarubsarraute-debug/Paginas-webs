@@ -38,10 +38,6 @@ export default function Hero() {
               <span className="italic text-bordo">WhatsApp</span>
             </h1>
 
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
-              Elegí tus platos, armá tu pedido y envialo listo por WhatsApp. Más
-              rápido, más privado y sin que tu pedido se pierda entre mensajes.
-            </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a
@@ -105,9 +101,9 @@ export default function Hero() {
 
               <div className="mt-6 space-y-3">
                 {[
-                  { emoji: "🥩", n: "Milanesa con puré", p: "$340" },
-                  { emoji: "🍗", n: "Pollo al horno", p: "$330" },
-                  { emoji: "☕", n: "Café con medialunas", p: "$210" },
+                  { emoji: "🥩", n: "Milanesa c/ fritas", p: "$280" },
+                  { emoji: "🍔", n: "Hamburguesa completa", p: "$285" },
+                  { emoji: "☕", n: "Capuchino + ½ sándwich", p: "$250" },
                 ].map((it) => (
                   <div
                     key={it.n}

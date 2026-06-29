@@ -110,6 +110,22 @@ const SEED_DECISION = {
   ]
 };
 
+// ROADMAP — los hitos de Amaru en orden (de las notas)
+const SEED_ROADMAP = [
+  { text: "Hacer +500 USD con páginas web" },
+  { text: "Cerrar a Patricio" },
+  { text: "Hacer 1.000 USD con páginas web" },
+  { text: "Comprarme una moto" },
+  { text: "Empezar a entrenar" },
+  { text: "Facturar 5.000 USD con Patricio" },
+  { text: "Pagar para escalar el negocio" },
+  { text: "Peleas amateur" },
+  { text: "Escalar a 10k todos los meses y 3.000 para mi bolsillo" },
+  { text: "Pasarme a profesional" },
+  { text: "Cerrar otros clientes y consolidar Sexólogos UP" },
+  { text: "Título de SFH" }
+];
+
 // Export global
 window.FORJA_DATA = {
   name: FORJA_NAME,
@@ -123,5 +139,6 @@ window.FORJA_DATA = {
   routine: SEED_ROUTINE,
   emotions: SEED_EMOTIONS,
   failure: SEED_FAILURE,
-  decision: SEED_DECISION
+  decision: SEED_DECISION,
+  roadmap: SEED_ROADMAP
 };

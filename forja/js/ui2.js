@@ -252,8 +252,16 @@
         <div class="kicker" style="margin:26px 0 12px">MI JURAMENTO</div>
         ${manifestoBlock}
 
+        <div class="kicker" style="margin:34px 0 14px">MI VISIÓN · LO QUE CONSTRUYO</div>
+        <div class="vboard" id="vboard">
+          ${[0,1,2,3].map(i => `<div class="vslot" id="vslot-${i}"></div>`).join("")}
+        </div>
+
         <div class="transmap mt-m">${figCols}</div>
       </section>`;
+
+    // ----- vision board -----
+    bindVisionBoard();
 
     // ----- juramento -----
     bindEditPair({
@@ -296,6 +304,53 @@
         renderDecision();
       };
     });
+  }
+
+  // ----- vision board: imágenes bundled (/vision/v0-3.png), reemplazables via IndexedDB -----
+  async function bindVisionBoard() {
+    for (let i = 0; i < 4; i++) {
+      const slot = document.getElementById("vslot-" + i);
+      if (!slot) continue;
+      const key = "vision-" + i;
+      const rec = await FORJA_DB.get(key);
+      if (rec && rec.blob) {
+        paintVSlotCustom(slot, rec.blob, key);
+      } else {
+        paintVSlotBundled(slot, i);
+      }
+    }
+  }
+
+  // Imagen bundled: siempre visible desde /vision/v{i}.png
+  function paintVSlotBundled(slot, i) {
+    slot.innerHTML = `
+      <img class="vslot__img" src="/vision/v${i}.png" alt="visión ${i + 1}" />
+      <input type="file" accept="image/*" class="vslot__file" hidden />`;
+    const fileInp = slot.querySelector(".vslot__file");
+    slot.onclick = () => fileInp.click();
+    fileInp.onchange = async () => {
+      const file = fileInp.files[0];
+      if (!file) return;
+      const key = "vision-" + i;
+      await FORJA_DB.put(key, file, { category: "vision", label: "Visión " + (i + 1) });
+      paintVSlotCustom(slot, file, key);
+    };
+  }
+
+  // Imagen personalizada guardada en IndexedDB; ✕ vuelve a la bundled
+  function paintVSlotCustom(slot, blob, key) {
+    const url = URL.createObjectURL(blob);
+    const i = Number(key.split("-")[1]);
+    slot.onclick = null;
+    slot.innerHTML = `
+      <img class="vslot__img" src="${url}" alt="visión" />
+      <button class="vslot__del" title="Volver a la original">✕</button>`;
+    slot.querySelector(".vslot__del").onclick = async (e) => {
+      e.stopPropagation();
+      await FORJA_DB.remove(key);
+      URL.revokeObjectURL(url);
+      paintVSlotBundled(slot, i);
+    };
   }
 
   // helper: enlaza el patrón ver/editar/guardar/cancelar de un campo de texto

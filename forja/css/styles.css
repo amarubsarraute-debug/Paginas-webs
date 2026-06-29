@@ -603,6 +603,114 @@ body {
 .drop__row.is-released .drop__text { text-decoration: line-through; color: var(--ink-faint); }
 .drop__row.is-released { opacity: .7; }
 
+/* ---------- VISION BOARD ---------- */
+.vboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-radius: var(--r);
+  overflow: hidden;
+}
+.vslot {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--bg-deep);
+  cursor: pointer;
+}
+.vslot__img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center; display: block;
+}
+/* v0 es vertical (tu foto de campeón): anclar arriba para no cortar la cara */
+#vslot-0 .vslot__img { object-position: center top; }
+.vslot__del {
+  position: absolute; top: 10px; right: 10px;
+  background: rgba(0,0,0,.65); backdrop-filter: blur(4px);
+  border: none; border-radius: 50%;
+  width: 30px; height: 30px; cursor: pointer;
+  color: #fff; font-size: 14px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity .2s var(--ease);
+}
+.vslot:hover .vslot__del { opacity: 1; }
+
+/* ---------- ROADMAP ---------- */
+.roadmap { margin-bottom: 28px; }
+.roadmap__kicker { margin-bottom: 14px; }
+.roadmap__current {
+  background: var(--surface);
+  border: 1px solid var(--accent-deep);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r);
+  padding: 22px 22px 18px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.roadmap__idx { color: var(--accent); }
+.roadmap__text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(20px, 5vw, 28px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.roadmap__datelbl { display: flex; flex-direction: column; gap: 6px; }
+.roadmap__datelbl .kicker { color: var(--accent); }
+.roadmap__date {
+  background: var(--surface-2); border: 1px solid var(--line);
+  border-radius: var(--r-sm); color: var(--ink);
+  font-family: var(--font-body); font-size: 14px;
+  padding: 9px 12px; width: 100%;
+  color-scheme: dark;
+}
+.roadmap__date:focus { outline: none; border-color: var(--accent); }
+.roadmap__next {
+  margin-top: 12px;
+  font-size: 14px; color: var(--ink-dim);
+  padding: 10px 14px;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+}
+.roadmap__next .kicker { display: inline; color: var(--accent); margin-right: 6px; }
+.roadmap__toggle {
+  margin-top: 14px; width: auto; padding: 6px 14px;
+  font-size: 12px; letter-spacing: .04em;
+}
+.roadmap__victories { list-style: none; padding: 0; margin-top: 8px; display: flex; flex-direction: column; gap: 6px; }
+.roadmap__victory {
+  display: flex; align-items: flex-start; gap: 10px;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-sm); padding: 10px 14px;
+  font-size: 14px; color: var(--ink-dim);
+}
+.roadmap__victory__check { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+.roadmap__victory__date { margin-left: auto; font-size: 11px; color: var(--ink-faint); white-space: nowrap; padding-left: 10px; }
+.roadmap__all-done { font-size: 16px; color: var(--accent); padding: 16px 0; }
+
+/* ---------- CICLOS / BITÁCORA ---------- */
+.cycles { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.cycle {
+  display: flex; align-items: center; justify-content: space-between;
+  font-family: var(--font-body); text-align: left;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-sm); padding: 14px 16px; cursor: pointer;
+  transition: border-color .15s var(--ease), transform .1s var(--ease);
+}
+.cycle:not(:disabled):hover { border-color: var(--accent); transform: translateX(2px); }
+.cycle.is-locked { opacity: .5; cursor: not-allowed; }
+.cycle.is-done { border-left: 3px solid var(--accent); }
+.cycle__range { font-size: 15px; font-weight: 600; color: var(--ink); }
+.cycle__badge { font-size: 12px; letter-spacing: .03em; }
+.cycle__badge--ready { color: var(--accent); font-weight: 600; }
+.cycle__badge--done { color: var(--ink-dim); }
+.cycle__badge--lock { color: var(--ink-faint); }
+
+.modal--cycle { max-width: 560px; }
+.cycle__steplbl { color: var(--accent); margin-bottom: 8px; }
+.cycle__prompt { font-size: 12.5px; line-height: 1.5; font-family: var(--font-body); color: var(--ink-dim); }
+.cycle__answer { font-size: 14.5px; line-height: 1.55; }
+
 /* ---------- SINCRONICIDADES ---------- */
 .synclist { display: flex; flex-direction: column; gap: 10px; }
 .syncitem {

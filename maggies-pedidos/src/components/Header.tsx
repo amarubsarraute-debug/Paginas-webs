@@ -28,9 +28,14 @@ export default function Header() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <a href="#inicio" className="group flex items-center gap-2.5">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-coffee text-cream-50 font-display text-xl leading-none shadow-soft">
-            M
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/brand/maggies-logo.png"
+            alt="Logo Maggie's"
+            width={40}
+            height={40}
+            className="h-10 w-10 rounded-full object-cover shadow-soft"
+          />
           <span className="flex flex-col leading-tight">
             <span className="font-display text-lg font-semibold text-coffee-dark">
               {businessConfig.name}

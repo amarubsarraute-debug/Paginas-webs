@@ -27,19 +27,32 @@
   function mountServices() {
     const target = $("[data-products]");
     if (!target || target.dataset.mounted === "true" || !data.services) return;
+
+    // Mapping of service indices to their respective background images
+    const serviceImages = [
+      "01-diagnostico-computarizado.png",
+      "02-electricidad-automotriz.png",
+      "03-inyeccion-electronica.png",
+      "04-abs-y-frenos.png",
+      "05-iluminacion-led-y-xenon.png",
+      "06-service-de-motor.png",
+      "07-baterias-y-sistema-de-carga.png"
+    ];
     
     target.innerHTML = data.services.map((s, idx) => {
       let extraClass = "";
-      let bgStyle = "";
       
-      // Highlight two image-backed cards while keeping the rest as a service index.
+      // Highlight two image-backed cards (featured sizing)
       if (idx === 0) {
         extraClass = "service-featured";
-        bgStyle = `<div class="card-bg-image" style="background-image: url('assets/img/diagnostic.png')"></div>`;
       } else if (idx === 6) {
         extraClass = "service-battery";
-        bgStyle = `<div class="card-bg-image" style="background-image: url('assets/img/battery.png')"></div>`;
       }
+      
+      const imgFile = serviceImages[idx];
+      const bgStyle = imgFile 
+        ? `<div class="card-bg-image" style="background-image: url('assets/img/${imgFile}')"></div>`
+        : "";
       
       return `
         <article class="bento-card service-card ${extraClass}">

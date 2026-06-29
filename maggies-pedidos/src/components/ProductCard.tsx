@@ -60,7 +60,7 @@ export default function ProductCard({ item }: { item: MenuItem }) {
         ) : (
           <div
             className={cn(
-              "flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_30%_22%,#F3E9D7,#E4D3B6)]",
+              "flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_30%_22%,#EADFC9,#DDCDAE)]",
               agotado && "grayscale"
             )}
             aria-hidden

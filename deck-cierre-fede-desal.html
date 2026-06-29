@@ -1,0 +1,1535 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090909">
+  <title>Fede Desal - Propuesta web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --black: #090909;
+      --ink: #111111;
+      --paper: #f4f3ef;
+      --paper-2: #e9e8e3;
+      --muted: #77746d;
+      --line: rgba(17, 17, 17, 0.16);
+      --line-dark: rgba(244, 243, 239, 0.22);
+      --accent: #111111;
+      --accent-line: rgba(0, 0, 0, 0.06);
+      --shadow: 0 24px 56px rgba(0, 0, 0, 0.18);
+      --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.06);
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --font: "Inter", "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+      --display: "DM Serif Display", "Georgia", serif;
+      --mono: "Cascadia Mono", Consolas, monospace;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--black);
+      color: var(--ink);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      touch-action: pan-y;
+    }
+
+    button,
+    a {
+      font: inherit;
+      color: inherit;
+    }
+
+    button {
+      border: 0;
+      background: none;
+      cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    video {
+      display: block;
+      max-width: 100%;
+    }
+
+    .deck {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .topbar {
+      position: fixed;
+      z-index: 20;
+      top: max(14px, env(safe-area-inset-top));
+      left: 16px;
+      right: 16px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .progress {
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+      gap: 6px;
+    }
+
+    .segment {
+      height: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.28);
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .segment span {
+      display: block;
+      width: 0;
+      height: 100%;
+      background: currentColor;
+      transition: width 220ms var(--ease);
+    }
+
+    .segment.is-active span,
+    .segment.is-done span {
+      width: 100%;
+    }
+
+    .counter {
+      pointer-events: auto;
+      min-width: 58px;
+      padding: 8px 10px;
+      border: 1px solid rgba(0, 0, 0, 0.16);
+      border-radius: 999px;
+      background: rgba(244, 243, 239, 0.86);
+      color: var(--black);
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1;
+      text-align: center;
+      box-shadow: var(--shadow);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      user-select: none;
+    }
+
+    .viewport {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 360ms var(--ease);
+      will-change: transform;
+    }
+
+    .slide {
+      position: relative;
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100svh;
+      min-height: 100svh;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      padding: 62px 22px 96px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.62), transparent 42%),
+        var(--paper);
+    }
+
+    .slide.dark {
+      background: var(--black);
+      color: var(--paper);
+    }
+
+    .slide.dark .segment {
+      border-color: rgba(244, 243, 239, 0.52);
+    }
+
+    .wrap {
+      width: min(100%, 1040px);
+      height: min(100%, 660px);
+      max-height: calc(100svh - 158px);
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 26px;
+      overflow: hidden;
+    }
+
+    .head {
+      display: grid;
+      grid-template-columns: minmax(130px, 230px) 1fr auto;
+      gap: 18px;
+      align-items: baseline;
+      min-height: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+      line-height: 1.1;
+    }
+
+    .dark .head {
+      border-color: var(--line-dark);
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .section-name {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .dark .section-name {
+      color: rgba(244, 243, 239, 0.55);
+    }
+
+    .page-num {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .dark .page-num {
+      color: rgba(244, 243, 239, 0.56);
+    }
+
+    .content {
+      align-self: center;
+      display: grid;
+      grid-template-columns: 130px minmax(0, 1fr);
+      gap: 64px;
+      align-items: start;
+    }
+
+    .label {
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 1.3;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 6px;
+      border-top: 2px solid var(--ink);
+    }
+
+    .dark .label {
+      color: rgba(244, 243, 239, 0.6);
+      border-color: var(--paper);
+    }
+
+    .body {
+      display: grid;
+      gap: 18px;
+      max-width: 690px;
+    }
+
+    .kicker-number {
+      font-family: var(--display);
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 0.92;
+      letter-spacing: 0;
+    }
+
+    h1,
+    h2 {
+      font-family: var(--display);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 800px;
+      font-size: 68px;
+      line-height: 0.98;
+    }
+
+    h2 {
+      font-size: 44px;
+      line-height: 1.05;
+    }
+
+    p {
+      max-width: 660px;
+      color: #45423d;
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 1.5;
+      text-wrap: pretty;
+    }
+
+    .dark p {
+      color: rgba(244, 243, 239, 0.72);
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 750;
+      line-height: 1.35;
+    }
+
+    .dark .small {
+      color: rgba(244, 243, 239, 0.55);
+    }
+
+    .hero-grid {
+      align-self: center;
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 54px;
+      align-items: start;
+    }
+
+    .hero-copy {
+      display: grid;
+      gap: 22px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 8px 12px;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      color: rgba(244, 243, 239, 0.78);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .index-list {
+      align-self: center;
+      display: grid;
+      gap: 4px;
+      list-style: none;
+      width: min(100%, 760px);
+    }
+
+    .index-list li {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 24px;
+      align-items: baseline;
+      padding: 8px;
+      border-bottom: 1px solid var(--line);
+      font-family: var(--display);
+      font-size: clamp(26px, 3.4vw, 34px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      transition: padding-left 240ms var(--ease);
+    }
+
+    .index-list li:hover {
+      padding-left: 16px;
+    }
+
+    .index-list span {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .points {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .points li {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-size: 19px;
+      font-weight: 850;
+      line-height: 1.2;
+    }
+
+    .dark .points li {
+      border-color: var(--line-dark);
+    }
+
+    .points span {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .dark .points span {
+      color: rgba(244, 243, 239, 0.45);
+    }
+
+    .include-grid {
+      align-self: center;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      width: min(100%, 820px);
+    }
+
+    .include-box {
+      display: grid;
+      gap: 10px;
+      padding-top: 18px;
+      border-top: 2px solid var(--ink);
+    }
+
+    .include-box b {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .include-box span {
+      color: #57534d;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .budget {
+      display: grid;
+      width: min(100%, 680px);
+      border-bottom: 1px solid #86827b;
+    }
+
+    .budget-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      color: #5b5751;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .budget-row:last-child {
+      border-bottom: 0;
+    }
+
+    .budget-row.total {
+      order: 99;
+      margin-top: 6px;
+      padding: 20px 0 0;
+      border-top: 2px solid var(--ink);
+      border-bottom: 0;
+      color: var(--ink);
+      font-family: var(--display);
+      font-size: 30px;
+      font-weight: 400;
+    }
+
+    .budget-row.total b {
+      font-family: var(--display);
+      font-weight: 400;
+    }
+
+    .budget-row b {
+      color: var(--ink);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .price-block {
+      display: grid;
+      gap: 8px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .price-was {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .price-was s {
+      color: #5b5751;
+      text-decoration-thickness: 1.5px;
+    }
+
+    .price-now {
+      font-family: var(--display);
+      font-size: clamp(36px, 5.4vw, 56px);
+      line-height: 1;
+    }
+
+    .price-now b {
+      font-weight: 400;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .value-item {
+      display: grid;
+      gap: 8px;
+      align-content: start;
+      padding-top: 16px;
+      border-top: 2px solid var(--ink);
+    }
+
+    .value-item b {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.18;
+    }
+
+    .value-item span {
+      font-size: 15px;
+      font-weight: 400;
+      color: #57534d;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 760px) {
+      .value-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .value-item {
+        padding-top: 12px;
+      }
+    }
+
+    .video-grid {
+      align-self: center;
+      display: grid;
+      grid-template-columns: minmax(0, 520px) minmax(220px, 330px);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .video-frame {
+      background: #000;
+      border-radius: 12px;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+      overflow: hidden;
+    }
+
+    .video-frame video {
+      width: 100%;
+      height: 360px;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .next-box {
+      display: grid;
+      gap: 16px;
+    }
+
+    .cta {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: min(100%, 330px);
+      min-height: 58px;
+      margin-top: 8px;
+      border: 1px solid var(--paper);
+      background: var(--paper);
+      color: var(--black);
+      font-size: 17px;
+      font-weight: 800;
+      text-align: center;
+      transition: opacity 200ms var(--ease), transform 200ms var(--ease);
+    }
+
+    .cta:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .nav {
+      position: fixed;
+      z-index: 25;
+      left: 0;
+      right: 0;
+      bottom: max(18px, env(safe-area-inset-bottom));
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .nav-inner {
+      display: grid;
+      grid-template-columns: 64px 64px;
+      gap: 6px;
+      padding: 7px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 999px;
+      background: rgba(244, 243, 239, 0.82);
+      box-shadow: var(--shadow);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+      pointer-events: auto;
+    }
+
+    .arrow {
+      display: grid;
+      place-items: center;
+      width: 64px;
+      height: 50px;
+      border-radius: 14px;
+      background: #fff;
+      color: #111;
+      font-size: 24px;
+      line-height: 1;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+      transition: background-color 200ms var(--ease), color 200ms var(--ease);
+    }
+
+    .arrow:not(:disabled):hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .arrow:disabled {
+      opacity: 0.34;
+      cursor: default;
+    }
+
+    body.is-editing {
+      cursor: text;
+    }
+
+    body.is-editing [contenteditable="true"] {
+      cursor: text;
+      user-select: text;
+    }
+
+    body.is-editing [contenteditable="true"]:focus {
+      outline: 2px solid #4d8bff;
+      outline-offset: 4px;
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    @media (min-width: 980px) {
+      .slide {
+        padding: 78px 46px 104px;
+      }
+
+      .wrap {
+        max-height: calc(100svh - 182px);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        left: 12px;
+        right: 12px;
+        gap: 8px;
+      }
+
+      .progress {
+        gap: 4px;
+      }
+
+      .segment {
+        height: 4px;
+      }
+
+      .counter {
+        min-width: 54px;
+        padding: 7px 8px;
+        font-size: 11px;
+      }
+
+      .slide {
+        padding: 58px 20px 92px;
+      }
+
+      .wrap {
+        width: 100%;
+        height: auto;
+        max-height: calc(100svh - 140px);
+        gap: 18px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .wrap::-webkit-scrollbar {
+        display: none;
+      }
+
+      .head {
+        grid-template-columns: 1fr auto;
+        gap: 7px 12px;
+        font-size: 12px;
+      }
+
+      .section-name {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+
+      .page-num {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .content,
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .kicker-number {
+        font-size: 42px;
+      }
+
+      h1 {
+        font-size: 40px;
+        line-height: 0.98;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.22;
+      }
+
+      .small {
+        font-size: 14px;
+      }
+
+      .index-list {
+        gap: 5px;
+      }
+
+      .index-list li {
+        grid-template-columns: 42px 1fr;
+        gap: 14px;
+        padding: 8px 0;
+        font-size: 25px;
+        line-height: 1.05;
+      }
+
+      .index-list span {
+        font-size: 12px;
+      }
+
+      .points li {
+        grid-template-columns: 32px 1fr;
+        gap: 10px;
+        font-size: 15px;
+        padding-top: 10px;
+      }
+
+      .include-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+      }
+
+      .include-box {
+        gap: 6px;
+        padding-top: 10px;
+      }
+
+      .include-box b {
+        font-size: 16px;
+      }
+
+      .include-box span {
+        font-size: 14px;
+      }
+
+      .budget-row {
+        font-size: 14px;
+        padding: 10px 0;
+      }
+
+      .budget-row.total {
+        font-size: 18px;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .video-frame video {
+        height: 300px;
+      }
+
+      .next-box {
+        gap: 10px;
+      }
+
+      .cta {
+        width: 100%;
+        min-height: 54px;
+      }
+
+      .nav-inner {
+        grid-template-columns: 58px 58px;
+      }
+
+      .arrow {
+        width: 58px;
+        height: 50px;
+      }
+    }
+
+    @media (max-height: 700px) {
+      .slide {
+        padding-top: 52px;
+        padding-bottom: 82px;
+      }
+
+      .wrap {
+        max-height: calc(100svh - 132px);
+        gap: 12px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      h2 {
+        font-size: 26px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+
+      .index-list li {
+        font-size: 22px;
+        padding: 5px 0;
+      }
+
+      .include-box span,
+      .budget-row,
+      .points li {
+        font-size: 13px;
+      }
+
+      .video-frame video {
+        height: 240px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .track,
+      .segment span {
+        transition-duration: 1ms;
+      }
+    }
+
+    /* Estilos personalizados para la Slide 1 (Portada) en blanco y negro */
+    .slide-portada {
+      background: var(--paper) !important;
+      color: var(--ink) !important;
+      position: relative;
+    }
+
+    .kicker-number-bg {
+      position: absolute;
+      top: -40px;
+      left: -24px;
+      font-family: var(--display);
+      font-size: clamp(150px, 25vw, 300px);
+      font-weight: 400;
+      line-height: 0.8;
+      color: rgba(0, 0, 0, 0.045);
+      z-index: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .kicker-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: #333;
+      width: fit-content;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .kicker-badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #2ec16b;
+      box-shadow: 0 0 0 3px rgba(46, 193, 107, 0.18);
+    }
+
+    .meta-box-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .meta-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-left: 3px solid var(--ink);
+      border-radius: 4px;
+      padding: 13px 20px;
+      font-size: 14px;
+      min-width: 230px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .meta-box span {
+      color: #777;
+      font-weight: 400;
+    }
+
+    .meta-box strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .kicker-number-bg {
+        font-size: 160px;
+        top: -10px;
+        left: -10px;
+      }
+      .meta-box-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .meta-box {
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck" data-deck>
+    <header class="topbar" aria-label="Progreso">
+      <div class="progress" aria-hidden="true">
+        <div class="segment"><span></span></div>
+        <div class="segment"><span></span></div>
+        <div class="segment"><span></span></div>
+        <div class="segment"><span></span></div>
+        <div class="segment"><span></span></div>
+        <div class="segment"><span></span></div>
+        <div class="segment"><span></span></div>
+        <div class="segment"><span></span></div>
+        <div class="segment"><span></span></div>
+        <div class="segment"><span></span></div>
+        <div class="segment"><span></span></div>
+      </div>
+      <div class="counter" data-counter>1 / 11</div>
+    </header>
+
+    <main class="viewport">
+      <div class="track" data-track>
+        <section class="slide slide-portada" aria-label="Portada">
+          <div class="kicker-number-bg">01</div>
+          <div class="wrap" style="position: relative; z-index: 2; display: block; height: auto;">
+            <div class="hero-copy" style="display: flex; flex-direction: column; gap: 20px; max-width: 780px;">
+              <div class="kicker-badge" data-edit>Fede Desal · Automotora en Maldonado</div>
+              <h1 data-edit style="font-size: clamp(38px, 5.5vw, 64px); line-height: 0.98; margin-top: 10px;">Propuesta de desarrollo web.</h1>
+              <p data-edit style="font-size: clamp(17px, 2.3vw, 21px); line-height: 1.25; max-width: 660px;">Ya hay una web armada para que la automotora muestre su stock, reciba consultas por WhatsApp y pueda administrar los vehículos desde un panel propio.</p>
+              <div class="meta-box-container">
+                <div class="meta-box">
+                  <span>Diseño web</span>
+                  <strong data-edit>Amaru</strong>
+                </div>
+                <div class="meta-box">
+                  <span>Cliente</span>
+                  <strong data-edit>Fede Desal</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" aria-label="Indice">
+          <div class="wrap">
+            <div class="head">
+              <div class="brand" data-edit>Amaru Web Studio</div>
+              <div class="section-name" data-edit>Índice</div>
+              <div class="page-num">02</div>
+            </div>
+            <ol class="index-list">
+              <li><span>01</span><b data-edit>Oportunidad local</b></li>
+              <li><span>02</span><b data-edit>Problema comercial</b></li>
+              <li><span>03</span><b data-edit>Solución propuesta</b></li>
+              <li><span>04</span><b data-edit>Impacto y posicionamiento</b></li>
+              <li><span>05</span><b data-edit>Qué incluye</b></li>
+              <li><span>06</span><b data-edit>Inversión</b></li>
+              <li><span>07</span><b data-edit>Por qué este precio</b></li>
+              <li><span>08</span><b data-edit>Testimonio</b></li>
+              <li><span>09</span><b data-edit>Próximo paso</b></li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="slide" aria-label="Oportunidad local">
+          <div class="wrap">
+            <div class="head">
+              <div class="brand" data-edit>Amaru Web Studio</div>
+              <div class="section-name" data-edit>01. Oportunidad local</div>
+              <div class="page-num">03</div>
+            </div>
+            <div class="content">
+              <div class="label" data-edit>Oportunidad</div>
+              <div class="body">
+                <h2 data-edit>En Maldonado, el comprador de autos decide mucho antes de pisar el salón.</h2>
+                <p data-edit>La persona compara desde el celular: mira fotos, filtra precios, revisa financiación y recién después escribe o coordina una visita.</p>
+                <p class="small" data-edit>Fede Desal ya tiene presencia e Instagram. La oportunidad está en convertir eso en una vitrina propia, ordenada y 24/7, donde cada auto tenga su ficha y un camino claro hacia WhatsApp.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" aria-label="Problema comercial">
+          <div class="wrap">
+            <div class="head">
+              <div class="brand" data-edit>Amaru Web Studio</div>
+              <div class="section-name" data-edit>02. Problema comercial</div>
+              <div class="page-num">04</div>
+            </div>
+            <div class="content">
+              <div class="label" data-edit>Problema</div>
+              <div class="body" style="display: flex; flex-direction: column; gap: 14px;">
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <b data-edit style="font-size: clamp(17px, 2vw, 19px); font-weight: 850; color: var(--ink); display: block;">Instagram no funciona como catálogo</b>
+                  <p data-edit style="font-size: clamp(15px, 1.8vw, 17px); font-weight: 550; color: #45423d; line-height: 1.35; max-width: 680px; margin: 0;">Instagram ayuda a mostrar movimiento, pero no deja comparar bien por marca, año, precio, kilometraje o financiación. Para un comprador que está eligiendo auto, eso genera fricción.</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <b data-edit style="font-size: clamp(17px, 2vw, 19px); font-weight: 850; color: var(--ink); display: block;">La confianza se construye antes del mensaje</b>
+                  <p data-edit style="font-size: clamp(15px, 1.8vw, 17px); font-weight: 550; color: #45423d; line-height: 1.35; max-width: 680px; margin: 0;">Comprar un auto implica miles de dólares. Antes de escribir, el cliente necesita sentir que la automotora es seria, está activa y tiene información clara.</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <b data-edit style="font-size: clamp(17px, 2vw, 19px); font-weight: 850; color: var(--ink); display: block;">Actualizar stock no puede depender de pedir cambios</b>
+                  <p data-edit style="font-size: clamp(15px, 1.8vw, 17px); font-weight: 550; color: #45423d; line-height: 1.35; max-width: 680px; margin: 0;">Una automotora cambia vehículos, precios y estados todo el tiempo. Si el dueño no puede manejarlo rápido, la web queda vieja y pierde valor comercial.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide dark" aria-label="Solucion propuesta">
+          <div class="wrap">
+            <div class="head">
+              <div class="brand" data-edit>Amaru Web Studio</div>
+              <div class="section-name" data-edit>03. Solución propuesta</div>
+              <div class="page-num">05</div>
+            </div>
+            <div class="content">
+              <div class="label" data-edit>Solución</div>
+              <div class="body" style="display: flex; flex-direction: column; gap: 14px;">
+                <h2 data-edit style="font-size: clamp(20px, 3vw, 26px); line-height: 1.15; margin-bottom: 6px; font-weight: 900; color: var(--paper);">Una web de automotora con catálogo online, financiación, WhatsApp y panel de control.</h2>
+                
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <b data-edit style="font-size: clamp(17px, 2vw, 19px); font-weight: 850; color: var(--paper); display: block;">Catálogo claro de vehículos</b>
+                  <p data-edit style="font-size: clamp(15px, 1.8vw, 17px); font-weight: 550; color: rgba(244, 243, 239, 0.72); line-height: 1.35; max-width: 680px; margin: 0;">Cada vehículo puede mostrarse con fotos, datos técnicos, precio, kilometraje, estado y botones de consulta. La persona llega a WhatsApp sabiendo qué auto le interesa.</p>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <b data-edit style="font-size: clamp(17px, 2vw, 19px); font-weight: 850; color: var(--paper); display: block;">Financiación y contacto sin vueltas</b>
+                  <p data-edit style="font-size: clamp(15px, 1.8vw, 17px); font-weight: 550; color: rgba(244, 243, 239, 0.72); line-height: 1.35; max-width: 680px; margin: 0;">El sitio presenta financiación, permutas y contacto directo por WhatsApp, para que el interesado no tenga que perseguir información básica antes de consultar.</p>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <b data-edit style="font-size: clamp(17px, 2vw, 19px); font-weight: 850; color: var(--paper); display: block;">Panel para manejar el stock</b>
+                  <p data-edit style="font-size: clamp(15px, 1.8vw, 17px); font-weight: 550; color: rgba(244, 243, 239, 0.72); line-height: 1.35; max-width: 680px; margin: 0;">Fede puede cargar, editar o borrar vehículos desde un panel de control. La web deja de ser un archivo fijo y pasa a ser una herramienta de venta.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" aria-label="Impacto y posicionamiento">
+          <div class="wrap">
+            <div class="head">
+              <div class="brand" data-edit>Amaru Web Studio</div>
+              <div class="section-name" data-edit>04. Impacto y posicionamiento</div>
+              <div class="page-num">06</div>
+            </div>
+            <div class="content">
+              <div class="label" data-edit>Por qué tiene sentido</div>
+              <div class="body" style="display: flex; flex-direction: column; gap: 14px;">
+                <h2 data-edit style="font-size: clamp(20px, 3vw, 26px); line-height: 1.15; margin-bottom: 6px; font-weight: 900; color: var(--ink);">Una web para Fede Desal no se justifica por verse linda. Se justifica si convierte el stock en consultas más preparadas.</h2>
+                
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <b data-edit style="font-size: clamp(17px, 2vw, 19px); font-weight: 850; color: var(--ink); display: block;">Consultas con intención real</b>
+                  <p data-edit style="font-size: clamp(15px, 1.8vw, 17px); font-weight: 550; color: #45423d; line-height: 1.35; max-width: 680px; margin: 0;">Cuando alguien ya vio fotos, precio, financiación y datos del vehículo, el mensaje que llega por WhatsApp está mucho más cerca de una visita al salón.</p>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <b data-edit style="font-size: clamp(17px, 2vw, 19px); font-weight: 850; color: var(--ink); display: block;">Vitrina disponible todo el día</b>
+                  <p data-edit style="font-size: clamp(15px, 1.8vw, 17px); font-weight: 550; color: #45423d; line-height: 1.35; max-width: 680px; margin: 0;">Los autos se pueden mirar de noche, desde el celular, sin depender de que alguien responda en ese momento o mande fotos manualmente.</p>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <b data-edit style="font-size: clamp(17px, 2vw, 19px); font-weight: 850; color: var(--ink); display: block;">Control sin depender de terceros</b>
+                  <p data-edit style="font-size: clamp(15px, 1.8vw, 17px); font-weight: 550; color: #45423d; line-height: 1.35; max-width: 680px; margin: 0;">El panel permite mantener stock, precios y estados actualizados. Eso es clave para que la web acompañe la velocidad real de una automotora.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" aria-label="Que incluye">
+          <div class="wrap" style="grid-template-rows: auto auto 1fr; gap: 16px;">
+            <div class="head">
+              <div class="brand" data-edit>Amaru Web Studio</div>
+              <div class="section-name" data-edit>05. Qué incluye la propuesta</div>
+              <div class="page-num">07</div>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 4px; max-width: 820px; width: 100%; margin: 0 auto;">
+              <h2 data-edit style="font-size: clamp(20px, 3vw, 26px); font-weight: 900; line-height: 1.15; color: var(--ink);">Qué incluye la propuesta</h2>
+              <p data-edit style="font-size: clamp(14px, 1.8vw, 16px); font-weight: 550; color: #45423d; margin: 0; line-height: 1.3;">Una web completa, publicada y lista para mostrar vehículos con administración propia.</p>
+            </div>
+
+            <div class="include-grid" style="align-self: start; margin-top: 10px;">
+              <div class="include-box">
+                <b data-edit>Web responsive</b>
+                <span data-edit>Inicio, vehículos, financiación, nosotros, testimonios y contacto funcionando en celular, computadora y tablet.</span>
+              </div>
+              <div class="include-box">
+                <b data-edit>Catálogo de vehículos</b>
+                <span data-edit>Listado con filtros, fichas, fotos, precio, estado y consulta directa por cada auto.</span>
+              </div>
+              <div class="include-box">
+                <b data-edit>Panel de control</b>
+                <span data-edit>Acceso para cargar, editar y borrar vehículos sin tocar código ni depender de cambios manuales.</span>
+              </div>
+              <div class="include-box">
+                <b data-edit>Financiación + WhatsApp</b>
+                <span data-edit>Mensajes directos para consultas, financiación y asesoramiento desde el sitio.</span>
+              </div>
+              <div class="include-box">
+                <b data-edit>Publicación y configuración</b>
+                <span data-edit>La web queda subida, revisada y conectada para que el stock se vea online.</span>
+              </div>
+              <div class="include-box">
+                <b data-edit>Mantenimiento mensual</b>
+                <span data-edit>Soporte básico, ajustes menores y cuidado técnico para que el sitio siga funcionando.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" aria-label="Inversion">
+          <div class="wrap">
+            <div class="head">
+              <div class="brand" data-edit>Amaru Web Studio</div>
+              <div class="section-name" data-edit>06. Inversión</div>
+              <div class="page-num">08</div>
+            </div>
+            <div class="content">
+              <div class="label" data-edit>Inversión</div>
+              <div class="body">
+                <div class="budget" style="margin-bottom: 16px;">
+                  <div class="budget-row total"><span data-edit>Web publicada</span><b data-edit>USD 295</b></div>
+                  <div class="budget-row"><span data-edit>Mantenimiento mensual</span><b data-edit>USD 15/mes</b></div>
+                  <div class="budget-row"><span data-edit>Catálogo + panel de stock</span><b data-edit>Incluido</b></div>
+                  <div class="budget-row"><span data-edit>WhatsApp, financiación y contacto</span><b data-edit>Incluido</b></div>
+                  <div class="budget-row"><span data-edit>Entrega estimada</span><b data-edit>24-72 hs</b></div>
+                </div>
+                <p class="small" data-edit style="color: #45423d; font-weight: 550; font-size: 15px; line-height: 1.4; margin-bottom: 10px;">La web y el panel ya tienen una base armada. Esta inversión se concentra en terminar, ajustar, publicar y dejar el sistema usable para Fede.</p>
+                <p class="small" data-edit style="font-weight: 850; color: var(--ink); font-size: 15px; line-height: 1.4; margin: 0;">El pago de la web se realiza al publicar. El mantenimiento queda en USD 15 mensuales.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" aria-label="Por que este precio">
+          <div class="wrap">
+            <div class="head">
+              <div class="brand" data-edit>Amaru Web Studio</div>
+              <div class="section-name" data-edit>07. Por qué este precio</div>
+              <div class="page-num">09</div>
+            </div>
+            <div class="content">
+              <div class="label" data-edit>El valor</div>
+              <div class="body" style="display: flex; flex-direction: column; gap: 14px;">
+                <div class="price-block">
+                  <div class="price-was" data-edit>Una web de automotora con catálogo y panel suele costar <s>USD 600-900</s>. Para Fede Desal queda en:</div>
+                  <div class="price-now"><b data-edit>USD 295 + USD 15/mes</b></div>
+                </div>
+                <p data-edit style="font-size: clamp(15px, 1.8vw, 17px); font-weight: 400; color: #45423d; line-height: 1.4; max-width: 720px; margin: 0;">El precio baja porque el boceto, el catálogo y el panel ya están encaminados. Ahora falta cerrar detalles, publicar y sostenerlo.</p>
+                <div class="value-grid">
+                  <div class="value-item">
+                    <b data-edit>Un interesado serio paga la web</b>
+                    <span data-edit>Una venta o una visita generada por la web puede cubrir varias veces la inversión.</span>
+                  </div>
+                  <div class="value-item">
+                    <b data-edit>Incluye más que una página</b>
+                    <span data-edit>Diseño, fichas de autos, WhatsApp, financiación, contacto y panel de administración.</span>
+                  </div>
+                  <div class="value-item">
+                    <b data-edit>Mantenimiento bajo</b>
+                    <span data-edit>Soporte básico y ajustes menores para que el sitio no quede abandonado.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide dark" aria-label="Testimonio">
+          <div class="wrap">
+            <div class="head">
+              <div class="brand" data-edit>Amaru Web Studio</div>
+              <div class="section-name" data-edit>08. Testimonio</div>
+              <div class="page-num">10</div>
+            </div>
+            <div class="video-grid">
+              <div class="video-frame" style="border-radius: 8px;">
+                <video controls playsinline preload="metadata">
+                  <source src="testimonios/bruno-testimonio.mp4" type="video/mp4">
+                  Tu navegador no puede reproducir este video.
+                </video>
+              </div>
+              <div class="next-box" style="display: flex; flex-direction: column; gap: 14px;">
+                <h2 data-edit style="font-size: clamp(24px, 3.5vw, 34px); font-weight: 900; line-height: 1.1; color: var(--paper); margin: 0;">La idea es que Fede no reciba solo una web: reciba una herramienta de venta.</h2>
+                <p data-edit style="font-size: clamp(14px, 1.8vw, 16px); font-weight: 550; color: rgba(244, 243, 239, 0.72); line-height: 1.4; margin: 0; max-width: 420px;">El sitio ya muestra vehículos, financiación, datos de contacto y una forma práctica de administrar el stock. Eso lo vuelve útil para vender, no solo para verse mejor.</p>
+                
+                <div style="display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); margin-top: 6px;">
+                  <div style="width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(244, 243, 239, 0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--paper);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H5c-1.25 0-2 .75-2 2v3c0 1.25.75 2 2 2h3c0 3-2 4-5 5v3zm11 0c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-3c-1.25 0-2 .75-2 2v3c0 1.25.75 2 2 2h3c0 3-2 4-5 5v3z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <b data-edit style="font-size: 15px; font-weight: 850; color: var(--paper); display: block; margin-bottom: 2px;">Testimonio en video</b>
+                    <span data-edit style="font-size: 13px; font-weight: 550; color: rgba(244, 243, 239, 0.55); line-height: 1.3;">Una referencia corta sobre la claridad del proceso y el resultado final.</span>
+                  </div>
+                </div>
+
+                <a href="https://darkgreen-echidna-916222.hostingersite.com/fede-desal-web/vehiculos.html" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 850; color: var(--paper); text-decoration: none; margin-top: 4px; width: fit-content;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                  <span data-edit>Ver catálogo de Fede Desal ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" aria-label="Proximo paso">
+          <div class="wrap">
+            <div class="head">
+              <div class="brand" data-edit>Amaru Web Studio</div>
+              <div class="section-name" data-edit>09. Próximo paso</div>
+              <div class="page-num">11</div>
+            </div>
+            <div class="content">
+              <div class="label" data-edit>Próximo paso</div>
+              <div class="body" style="display: flex; flex-direction: column; gap: 14px;">
+                <h2 data-edit style="font-size: clamp(30px, 4.5vw, 48px); font-weight: 950; line-height: 1.05; color: var(--ink); margin: 0;">¿Avanzamos con Fede Desal?</h2>
+                <p data-edit style="font-size: clamp(15px, 1.8vw, 17px); font-weight: 550; color: #45423d; line-height: 1.35; max-width: 680px; margin: 0;">Si te cierra la propuesta, el paso siguiente es confirmar dominio, stock inicial, WhatsApp, datos finales y acceso al panel de control.</p>
+                
+                <div class="steps-list" style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px; margin-bottom: 18px; width: 100%; max-width: 680px;">
+                  <div style="display: flex; align-items: center; gap: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--line);">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--paper-2); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0;">01</div>
+                    <span data-edit style="font-size: clamp(15px, 1.8vw, 17px); font-weight: 800; color: var(--ink);">Confirmamos dominio, WhatsApp y datos finales</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--line);">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--paper-2); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0;">02</div>
+                    <span data-edit style="font-size: clamp(15px, 1.8vw, 17px); font-weight: 800; color: var(--ink);">Ajusto textos, stock inicial y panel</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 14px; padding-bottom: 10px;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--paper-2); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0;">03</div>
+                    <span data-edit style="font-size: clamp(15px, 1.8vw, 17px); font-weight: 800; color: var(--ink);">Publico la web y queda en mantenimiento</span>
+                  </div>
+                </div>
+
+                <a class="cta" href="https://wa.me/59892850267?text=Hola%20Amaru%2C%20vi%20la%20propuesta%20de%20Fede%20Desal%20y%20quiero%20avanzar" target="_blank" rel="noopener" style="display: inline-flex; justify-content: center; align-items: center; gap: 10px; width: min(100%, 380px); min-height: 58px; background: var(--black); color: var(--paper); font-size: clamp(16px, 1.8vw, 18px); font-weight: 900; border-radius: 6px; box-shadow: var(--shadow); margin-top: 6px; margin-bottom: 10px; text-decoration: none;">
+                  <span>Avanzar por WhatsApp</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: block;">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.019-5.117-2.877-6.979C16.604 1.9 14.129.879 11.5.877c-5.44 0-9.866 4.418-9.87 9.861-.001 1.77.476 3.498 1.38 5.04L2.017 21.82l6.185-1.625zM17.43 14.73c-.318-.159-1.884-.93-2.176-1.037-.291-.106-.503-.159-.715.159-.211.318-.82.1037-1.006.1246-.185.211-.37.106-.688-.053-.318-.159-1.341-.493-2.553-1.578-.943-.844-1.58-1.885-1.765-2.203-.186-.318-.02-.489.14-.648.143-.143.318-.371.477-.556.16-.186.212-.318.318-.53.106-.212.053-.397-.026-.556-.079-.159-.715-1.724-.979-2.361-.258-.62-.52-.536-.715-.546-.185-.011-.397-.011-.609-.011s-.556.079-.847.397c-.291.318-1.11 1.087-1.11 2.65s1.14 3.073 1.298 3.285c.159.212 2.24 3.42 5.424 4.795.757.327 1.348.523 1.808.67.76.241 1.451.207 1.996.126.609-.09 1.884-.768 2.148-1.472.265-.705.265-1.309.185-1.436-.079-.127-.291-.212-.609-.371z"/>
+                  </svg>
+                </a>
+                
+                <p class="small" data-edit style="font-size: 14px; font-weight: 550; color: #77746d; line-height: 1.35; margin: 0; max-width: 680px;">Me podés escribir directo por WhatsApp y lo resolvemos rápido.<br>Si preferís, también podés mandarme audios.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <nav class="nav" aria-label="Navegación">
+      <div class="nav-inner">
+        <button class="arrow" type="button" data-prev aria-label="Slide anterior">←</button>
+        <button class="arrow" type="button" data-next aria-label="Slide siguiente">→</button>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const deck = document.querySelector("[data-deck]");
+      const track = document.querySelector("[data-track]");
+      const slides = Array.from(document.querySelectorAll(".slide"));
+      const segments = Array.from(document.querySelectorAll(".segment"));
+      const counter = document.querySelector("[data-counter]");
+      const prev = document.querySelector("[data-prev]");
+      const next = document.querySelector("[data-next]");
+      const editableNodes = Array.from(document.querySelectorAll("[data-edit]"));
+      const storageKey = "fede-desal-deck-edits-v1:" + location.pathname;
+
+      if (!deck || !track || !slides.length || !counter || !prev || !next) return;
+
+      let current = 0;
+      let touchX = 0;
+      let touchY = 0;
+      let touchBlocked = false;
+      let editMode = false;
+      let pressTimer = 0;
+      let fileHandle = null;
+
+      function readEdits() {
+        try {
+          return JSON.parse(localStorage.getItem(storageKey) || "{}");
+        } catch (_) {
+          return {};
+        }
+      }
+
+      function writeEdits() {
+        const edits = {};
+        editableNodes.forEach((node) => {
+          if (node.dataset.editId) edits[node.dataset.editId] = node.innerHTML;
+        });
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(edits));
+        } catch (_) {}
+      }
+
+      function initEdits() {
+        const edits = readEdits();
+        editableNodes.forEach((node, index) => {
+          node.dataset.editId = node.dataset.editId || "text-" + index;
+          if (Object.prototype.hasOwnProperty.call(edits, node.dataset.editId)) {
+            node.innerHTML = edits[node.dataset.editId];
+          }
+          node.contentEditable = "false";
+          node.spellcheck = false;
+        });
+      }
+
+      function setEditMode(value) {
+        editMode = Boolean(value);
+        document.body.classList.toggle("is-editing", editMode);
+        editableNodes.forEach((node) => {
+          node.contentEditable = editMode ? "true" : "false";
+        });
+        if (!editMode) {
+          if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+          writeEdits();
+        }
+      }
+
+      async function exportHtml() {
+        writeEdits();
+        const clone = document.documentElement.cloneNode(true);
+        clone.querySelector("body")?.classList.remove("is-editing");
+        clone.querySelectorAll("[contenteditable]").forEach((node) => {
+          node.removeAttribute("contenteditable");
+          node.removeAttribute("spellcheck");
+        });
+        const html = "<!doctype html>\n" + clone.outerHTML;
+        const suggested = location.pathname.split("/").pop() || "deck-cierre.html";
+
+        // Navegadores modernos (Chrome/Edge): elegis el archivo una vez y despues
+        // se sobrescribe siempre el mismo, sin generar duplicados.
+        if (window.showSaveFilePicker) {
+          try {
+            if (!fileHandle) {
+              fileHandle = await window.showSaveFilePicker({
+                suggestedName: suggested,
+                types: [{ description: "Pagina web", accept: { "text/html": [".html"] } }],
+              });
+            }
+            const writable = await fileHandle.createWritable();
+            await writable.write(html);
+            await writable.close();
+            return;
+          } catch (err) {
+            if (err && err.name === "AbortError") return;
+            // si la API falla por algun motivo, seguimos con la descarga clasica
+          }
+        }
+
+        const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = suggested.replace(/\.html?$/i, "") + "-editado.html";
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      }
+
+      function goTo(index) {
+        current = Math.max(0, Math.min(slides.length - 1, index));
+        track.style.transform = "translate3d(" + (-current * window.innerWidth) + "px, 0, 0)";
+        counter.textContent = (current + 1) + " / " + slides.length;
+        segments.forEach((segment, i) => {
+          segment.classList.toggle("is-done", i < current);
+          segment.classList.toggle("is-active", i === current);
+        });
+        slides.forEach((slide, i) => {
+          slide.setAttribute("aria-hidden", i === current ? "false" : "true");
+        });
+        prev.disabled = current === 0;
+        next.disabled = current === slides.length - 1;
+      }
+
+      function move(delta) {
+        goTo(current + delta);
+      }
+
+      prev.addEventListener("click", () => move(-1));
+      next.addEventListener("click", () => move(1));
+
+      deck.addEventListener("input", (event) => {
+        if (editMode && event.target.closest("[contenteditable='true']")) writeEdits();
+      });
+
+      deck.addEventListener("click", (event) => {
+        if (editMode && event.target.closest("a")) event.preventDefault();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        const target = event.target;
+        const isTyping = Boolean(target && target.closest && target.closest("[contenteditable='true'], input, textarea"));
+
+        if ((event.key === "e" || event.key === "E") && !event.ctrlKey && !event.metaKey && !event.altKey && !isTyping) {
+          event.preventDefault();
+          setEditMode(!editMode);
+          return;
+        }
+
+        if (editMode && event.key === "Escape") {
+          event.preventDefault();
+          setEditMode(false);
+          return;
+        }
+
+        if (editMode && (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "s") {
+          event.preventDefault();
+          exportHtml();
+          return;
+        }
+
+        if (editMode || isTyping) return;
+        if (event.key === "ArrowRight") move(1);
+        if (event.key === "ArrowLeft") move(-1);
+      });
+
+      deck.addEventListener("touchstart", (event) => {
+        const t = event.touches[0];
+        if (!t) return;
+        touchBlocked = Boolean(event.target.closest("video, [contenteditable='true']"));
+        touchX = t.clientX;
+        touchY = t.clientY;
+      }, { passive: true });
+
+      deck.addEventListener("touchend", (event) => {
+        if (touchBlocked) return;
+        const t = event.changedTouches[0];
+        if (!t) return;
+        const dx = t.clientX - touchX;
+        const dy = t.clientY - touchY;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 42) {
+          move(dx < 0 ? 1 : -1);
+        }
+      }, { passive: true });
+
+      counter.addEventListener("touchstart", () => {
+        pressTimer = window.setTimeout(() => setEditMode(!editMode), 900);
+      }, { passive: true });
+
+      counter.addEventListener("touchend", () => window.clearTimeout(pressTimer), { passive: true });
+      counter.addEventListener("touchcancel", () => window.clearTimeout(pressTimer), { passive: true });
+
+      window.addEventListener("resize", () => goTo(current));
+
+      initEdits();
+      goTo(0);
+    })();
+  </script>
+</body>
+</html>

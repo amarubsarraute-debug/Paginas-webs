@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Amaru Web Studio">
+  <rect width="64" height="64" rx="32" fill="#15130f"/>
+  <path d="M19 47 31.7 16h4.8L49 47h-7.3l-2.5-6.6H28.6L26.1 47H19Zm12-12.4h5.8l-2.9-8.1-2.9 8.1Z" fill="#fffdf8"/>
+  <circle cx="47" cy="18" r="5" fill="#2f6f62"/>
+</svg>

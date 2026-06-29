@@ -24,7 +24,9 @@ const FORJA_STATE = (() => {
     days: {},                  // "YYYY-MM-DD": { deepWork, trained, selfTalk, task, taskMinutes, doneMinutes, note, version }
     session: null,             // { task, minutes, startedAt }
     lastOpen: null,
-    morningDoneOn: null        // fecha en que ya hizo la activación matutina
+    morningDoneOn: null,       // fecha en que ya hizo la activación matutina
+    roadmap: { current: 0, milestones: null },
+    cycles: {}                 // bitácora por ciclos: { "1": { devolucion, savedOn }, ... }
   };
 
   let _state = load();
@@ -215,6 +217,73 @@ const FORJA_STATE = (() => {
     save();
   }
 
+  // ----- ROADMAP: hoja de ruta secuencial -----
+  function getRoadmap() {
+    if (!_state.roadmap) _state.roadmap = { current: 0, milestones: null };
+    if (!_state.roadmap.milestones) {
+      _state.roadmap.milestones = (FORJA_DATA.roadmap || []).map(function(m) {
+        return { text: m.text, targetDate: null, completedOn: null };
+      });
+      save();
+    }
+    return _state.roadmap;
+  }
+  function setMilestoneDate(i, date) {
+    var rm = getRoadmap();
+    if (rm.milestones[i]) { rm.milestones[i].targetDate = date || null; save(); }
+  }
+  function completeCurrentMilestone() {
+    var rm = getRoadmap();
+    var i = rm.current;
+    if (rm.milestones[i]) {
+      rm.milestones[i].completedOn = todayKey();
+      rm.current = Math.min(i + 1, rm.milestones.length);
+      save();
+    }
+  }
+  function undoLastMilestone() {
+    var rm = getRoadmap();
+    if (rm.current > 0) {
+      rm.current--;
+      rm.milestones[rm.current].completedOn = null;
+      save();
+    }
+  }
+
+  // ----- CICLOS: bitácora cada 10 días -----
+  const CYCLE_LEN = 10;
+  function cycleCount() { return Math.ceil((FORJA_DATA.totalDays || 90) / CYCLE_LEN); }
+  function cycleBounds(b) { // b = 1..cycleCount
+    const start = (b - 1) * CYCLE_LEN + 1;
+    const end = Math.min(b * CYCLE_LEN, FORJA_DATA.totalDays || 90);
+    return { start, end };
+  }
+  function cycleUnlocked(b) { return dayNumber() >= cycleBounds(b).end; }
+  function cycleDays(b) {
+    const { start, end } = cycleBounds(b);
+    const out = [];
+    for (let n = start; n <= end; n++) {
+      const dk = dateForDay(n);
+      out.push({ n, dk, rec: getDay(dk) });
+    }
+    return out;
+  }
+  function getCycles() {
+    if (!_state.cycles) _state.cycles = {};
+    return _state.cycles;
+  }
+  function getCycle(b) { return getCycles()[String(b)] || null; }
+  function saveCycleDevolucion(b, text) {
+    const c = getCycles();
+    c[String(b)] = { devolucion: text, savedOn: (getCycle(b) && getCycle(b).savedOn) || todayKey(), updatedOn: todayKey() };
+    save();
+  }
+  function removeCycleDevolucion(b) {
+    const c = getCycles();
+    delete c[String(b)];
+    save();
+  }
+
   // Pedir almacenamiento durable: evita que el navegador borre los
   // audios/estado bajo presión de espacio. (No-op si no está soportado.)
   async function requestPersistence() {
@@ -244,6 +313,8 @@ const FORJA_STATE = (() => {
     getEvidence, addEvidence, removeEvidence,
     getDecision, setDecision,
     getSynchronicities, addSynchronicity, removeSynchronicity,
+    getRoadmap, setMilestoneDate, completeCurrentMilestone, undoLastMilestone,
+    cycleCount, cycleBounds, cycleUnlocked, cycleDays, getCycles, getCycle, saveCycleDevolucion, removeCycleDevolucion,
     requestPersistence,
     reset, raw, save
   };
