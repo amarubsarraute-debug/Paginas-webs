@@ -55,7 +55,7 @@ export function Team() {
           Profesionalismo y cercanía, con nombre y cara
         </h2>
         <p className="mt-5 text-pretty text-muted-foreground">
-          Un equipo de abogadas y escribanas que trabaja con dedicación y trato humano.
+          Un equipo de abogadas y escribanas con experiencia, compromiso y atención cercana.
         </p>
       </div>
 
@@ -76,6 +76,18 @@ export function Team() {
                 <h3 className="font-display text-lg font-medium">{m.name}</h3>
                 <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-gold">{m.role}</p>
                 <p className="mt-2 text-pretty text-sm text-muted-foreground">{m.line}</p>
+                {m.areas && (
+                  <div className="mt-4 flex flex-wrap gap-1.5 border-t border-border/30 pt-3">
+                    {m.areas.map((area) => (
+                      <span
+                        key={area}
+                        className="inline-flex items-center rounded bg-gold/8 px-1.5 py-0.5 text-[10px] font-medium text-gold border border-gold/15"
+                      >
+                        {area}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </figcaption>
             </figure>
           </Reveal>

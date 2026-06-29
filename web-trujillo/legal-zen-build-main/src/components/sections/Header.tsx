@@ -27,14 +27,11 @@ export function Header() {
     >
       <div className="container-page flex h-16 items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5">
-          <span
-            className={cn(
-              "grid h-9 w-9 place-items-center rounded-md border transition-colors",
-              overHero ? "border-white/30 bg-white/10" : "border-gold/40 bg-gold/10",
-            )}
-          >
-            <Scale className={cn("h-4 w-4 transition-colors", overHero ? "text-white" : "text-gold")} />
-          </span>
+          <img
+            src="/logo-trujillo.png"
+            alt="Logo Trujillo"
+            className="h-9 w-9 rounded-md object-cover border border-white/20"
+          />
           <span className="flex flex-col leading-none">
             <span
               className={cn(

@@ -30,7 +30,7 @@ const projects = [
     runDir: path.join(ROOT, 'web-trujillo', 'legal-zen-build-main'),
     outputDir: path.join(ROOT, 'web-trujillo'),
     defaultPort: 4173,
-    extraFiles: ['hero-poster.jpg', 'hero-scrub.mp4', 'robots.txt']
+    extraFiles: ['hero-poster.jpg', 'hero-scrub.mp4', 'robots.txt', 'logo-trujillo.png']
   },
   {
     name: 'Dra. Luisa Cedeño',
@@ -40,7 +40,7 @@ const projects = [
     runDir: path.join(ROOT, 'web-luisa'),
     outputDir: path.join(ROOT, 'web-luisa'),
     defaultPort: 4174,
-    extraFiles: ['robots.txt']
+    extraFiles: ['robots.txt', 'lifting-8p-antes.png', 'lifting-8p-despues.png']
   }
 ];
 

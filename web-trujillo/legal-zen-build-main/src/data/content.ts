@@ -93,32 +93,36 @@ export const processSteps: { n: string; t: string; d: string }[] = [
 ];
 
 /* ---------------- Team (real portraits) ---------------- */
-export type Member = { name: string; role: string; line: string; photo: string };
+export type Member = { name: string; role: string; line: string; photo: string; areas?: string[] };
 
 export const team: Member[] = [
   {
     name: "Alexandra Trujillo",
-    role: "Abogada · Titular del estudio",
-    line: "Defensa de tus intereses con estrategia y trato cercano.",
+    role: "Abogada | Derecho Laboral, Penal y Administrativo",
+    line: "Egresada de la Universidad de la República en 2006. Brinda asesoramiento en materia laboral, penal y administrativa, con una mirada comprometida y actualizada.",
     photo: alexandra,
+    areas: ["Laboral", "Penal", "Administrativo"],
   },
   {
     name: "Paula Ancheta Bertoche",
-    role: "Abogada",
-    line: "Profesionalismo y calidez humana en cada caso.",
+    role: "Abogada | Derecho Penal y Familia Especializada",
+    line: "Egresada de la Universidad de la República en 2019. Trabaja en Derecho Penal, familia especializada, violencia doméstica y derechos humanos.",
     photo: paula,
+    areas: ["Penal", "Familia Especializada", "Violencia Doméstica", "DD.HH."],
   },
   {
     name: "Gabriela Sanguinet Rodríguez",
-    role: "Escribana",
-    line: "Trámites notariales claros, rápidos y sin vueltas.",
+    role: "Abogada y Escribana",
+    line: "Egresada de la Universidad de la República en 2007. Se especializa en asesoramiento jurídico-notarial, compraventas, sucesiones y certificaciones.",
     photo: gabriela,
+    areas: ["Escribanía", "Compraventas", "Sucesiones", "Certificaciones"],
   },
   {
     name: "Ximena González Sanguinetti",
-    role: "Abogada",
-    line: "Acompañamiento honesto en cada etapa del proceso.",
+    role: "Abogada | Derecho del Trabajo y Seguridad Social",
+    line: "Doctora en Derecho y Ciencias Sociales, egresada de la Universidad de la República en 2003. Su trayectoria se centra en Derecho del Trabajo y Seguridad Social.",
     photo: ximena,
+    areas: ["Laboral", "Seguridad Social", "Relaciones Laborales"],
   },
 ];
 

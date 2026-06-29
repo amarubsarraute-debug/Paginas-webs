@@ -221,9 +221,11 @@ export function Footer() {
       <div className="container-page grid gap-10 py-14 md:grid-cols-4">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 place-items-center rounded-md border border-gold/40 bg-gold/15">
-              <Scale className="h-4 w-4 text-gold" />
-            </span>
+            <img
+              src="/logo-trujillo.png"
+              alt="Logo Trujillo"
+              className="h-9 w-9 rounded-md object-cover border border-white/20"
+            />
             <span className="font-display text-base font-semibold">Trujillo y Asociadas</span>
           </div>
           <p className="mt-4 text-sm text-white/60">
