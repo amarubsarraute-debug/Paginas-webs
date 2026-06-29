@@ -15,7 +15,7 @@ export function SocialProof() {
             ))}
           </span>
           <span>
-            <span className="font-semibold text-foreground">5.0</span> · 122 reseñas en Google
+            <span className="font-semibold text-foreground">5.0</span> · Más de 125 reseñas en Google
           </span>
         </div>
         <span className="hidden h-4 w-px bg-border sm:block" />

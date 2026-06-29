@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Trujillo - Abogadas y Escribanas en Maldonado | Consultas y Escribanía" },
-      { name: "description", content: "Estudio jurídico y notarial en el centro de Maldonado. Atención cercana, transparente y eficiente. 5.0★ con 122 reseñas. Agendá tu consulta." },
+      { name: "description", content: "Estudio jurídico y notarial en el centro de Maldonado. Atención cercana, transparente y eficiente. 5.0★ con más de 125 reseñas. Agendá tu consulta." },
       { property: "og:title", content: "Trujillo - Abogadas y Escribanas en Maldonado" },
       { property: "og:description", content: "Estudio jurídico y notarial. Responsabilidad, transparencia y eficiencia." },
     ],
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
           },
           telephone: ["+59895797084", "+59892446792"],
           openingHours: "Mo-Fr 09:00-19:00",
-          aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "122" },
+          aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "125" },
           sameAs: [
             "https://www.instagram.com/trujilloyasociadas",
             "https://www.facebook.com/Trujilloyasociadas",

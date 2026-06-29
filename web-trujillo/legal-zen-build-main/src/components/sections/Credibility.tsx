@@ -104,7 +104,7 @@ export function Testimonials() {
       <div className="container-page">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <h2 className="max-w-2xl text-balance font-display text-3xl font-medium leading-tight md:text-[2.6rem]">
-            122 reseñas, 5.0 estrellas.
+            Más de 125 reseñas, 5.0 estrellas.
           </h2>
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <span className="flex items-center gap-0.5">
