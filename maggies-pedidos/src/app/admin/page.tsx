@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ClipboardList, UtensilsCrossed, Settings, ArrowRight, AlertTriangle } from "lucide-react";
+import { ClipboardList, UtensilsCrossed, Settings, ArrowRight, AlertTriangle, ScrollText } from "lucide-react";
 import AdminHeader from "@/components/admin/AdminHeader";
 import { isSupabaseConfigured } from "@/lib/supabase/server";
 import { resolveBusiness, defaultSlug } from "@/lib/data/catalog";
@@ -18,18 +18,28 @@ export default async function AdminDashboard() {
 
   const cards = [
     {
+      href: "/admin/today",
+      icon: ScrollText,
+      title: "Pizarra del día",
+      desc: "Marcá en 30 segundos qué hay disponible hoy.",
+      badge: null,
+      highlight: true,
+    },
+    {
       href: "/admin/orders",
       icon: ClipboardList,
       title: "Pedidos",
       desc: "Pedidos entrantes, estados y pagos.",
       badge: nuevos > 0 ? `${nuevos} nuevo${nuevos === 1 ? "" : "s"}` : null,
+      highlight: false,
     },
     {
       href: "/admin/menu",
       icon: UtensilsCrossed,
-      title: "Menú",
+      title: "Menú completo",
       desc: "Productos, precios, disponibilidad y destacados.",
       badge: null,
+      highlight: false,
     },
     {
       href: "/admin/settings",
@@ -37,6 +47,7 @@ export default async function AdminDashboard() {
       title: "Configuración",
       desc: "Datos del negocio, delivery y pagos.",
       badge: null,
+      highlight: false,
     },
   ];
 
@@ -58,21 +69,25 @@ export default async function AdminDashboard() {
           </div>
         )}
 
-        <div className="mt-7 grid gap-4 sm:grid-cols-3">
+        <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c) => {
             const Icon = c.icon;
             return (
               <Link
                 key={c.href}
                 href={c.href}
-                className="group relative rounded-3xl border border-beige-dark/50 bg-cream-50 p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card"
+                className={`group relative rounded-3xl border p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card ${
+                  c.highlight
+                    ? "border-bordo/30 bg-bordo/5 ring-1 ring-bordo/10"
+                    : "border-beige-dark/50 bg-cream-50"
+                }`}
               >
                 {c.badge && (
                   <span className="absolute right-5 top-5 rounded-full bg-bordo px-2.5 py-1 text-xs font-bold text-white">
                     {c.badge}
                   </span>
                 )}
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-coffee text-cream-50">
+                <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${c.highlight ? "bg-bordo text-white" : "bg-coffee text-cream-50"}`}>
                   <Icon className="h-6 w-6" />
                 </span>
                 <h2 className="mt-4 font-display text-xl font-semibold text-coffee-dark">
