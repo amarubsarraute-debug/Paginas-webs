@@ -42,6 +42,7 @@ const PRODUCT_FIELDS = [
   "image_url",
   "available",
   "featured",
+  "is_today",
   "stock",
   "category_id",
   "sort_order",
@@ -124,6 +125,18 @@ export async function listDeliveryZonesAdmin(slug: string): Promise<DeliveryZone
     .eq("business_id", id)
     .order("sort_order", { ascending: true });
   return (data ?? []) as DeliveryZone[];
+}
+
+export async function setTodaySpecial(productId: string, isToday: boolean): Promise<void> {
+  const supa = getServiceClient();
+  await supa.from("products").update({ is_today: isToday }).eq("id", productId);
+}
+
+export async function clearAllTodaySpecials(slug: string): Promise<void> {
+  const supa = getServiceClient();
+  const id = await businessId(slug);
+  if (!id) return;
+  await supa.from("products").update({ is_today: false }).eq("business_id", id);
 }
 
 export async function countNewOrders(slug: string): Promise<number> {

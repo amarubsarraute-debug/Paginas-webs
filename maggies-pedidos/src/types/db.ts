@@ -65,6 +65,7 @@ export interface Product {
   image_url: string | null;
   available: boolean;
   featured: boolean;
+  is_today: boolean;
   stock: number | null;
   sort_order: number;
   created_at: string;

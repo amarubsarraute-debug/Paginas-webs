@@ -655,16 +655,17 @@ body {
   letter-spacing: -0.01em;
   color: var(--ink);
 }
-.roadmap__datelbl { display: flex; flex-direction: column; gap: 6px; }
-.roadmap__datelbl .kicker { color: var(--accent); }
-.roadmap__date {
-  background: var(--surface-2); border: 1px solid var(--line);
-  border-radius: var(--r-sm); color: var(--ink);
-  font-family: var(--font-body); font-size: 14px;
-  padding: 9px 12px; width: 100%;
-  color-scheme: dark;
+.roadmap__mantra {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(20px, 4.5vw, 28px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  border-left: 3px solid var(--accent);
+  padding: 6px 0 6px 18px;
+  margin-bottom: 22px;
 }
-.roadmap__date:focus { outline: none; border-color: var(--accent); }
 .roadmap__next {
   margin-top: 12px;
   font-size: 14px; color: var(--ink-dim);

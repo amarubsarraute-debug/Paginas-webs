@@ -72,6 +72,7 @@ function mapProduct(p: ProductRow): MenuItem {
     imagen: p.image_url ?? "",
     disponible: p.available,
     destacado: p.featured,
+    isToday: p.is_today ?? false,
     orden: p.sort_order,
     stock: p.stock,
   };

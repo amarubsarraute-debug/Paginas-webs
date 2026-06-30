@@ -20,6 +20,8 @@ export interface MenuItem {
   disponible: boolean;
   /** Si aparece en "Recomendados de hoy". */
   destacado: boolean;
+  /** Si está marcado en la pizarra del día (admin lo activa cada mañana). */
+  isToday?: boolean;
   /** Orden de aparición (menor = primero). */
   orden: number;
   /**

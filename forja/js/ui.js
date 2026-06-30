@@ -514,15 +514,11 @@ Hablame fuerte, como alguien que quiere que me convierta en esa versión.`;
 
     mount.innerHTML = `
       <div class="roadmap">
+        <div class="roadmap__mantra">Durante estos 90 días, lo único que tengo que hacer es sentarme en la computadora y ganar dinero.</div>
         <div class="kicker roadmap__kicker">TU MAPA DE RUTA · DÓNDE ESTÁ EL FOCO</div>
         <div class="roadmap__current">
           <div class="kicker roadmap__idx">HITO ${cur + 1} DE ${ms.length}</div>
           <div class="roadmap__text">${esc(current.text)}</div>
-          <label class="roadmap__datelbl">
-            <span class="kicker">⚡ FECHA LÍMITE</span>
-            <input class="roadmap__date" id="rmDate" type="date"
-              value="${esc(current.targetDate || "")}" />
-          </label>
           <button class="btn btn--accent btn--lg" id="rmDone">✓ LOGRADO</button>
         </div>
         ${next ? `<div class="roadmap__next"><span class="kicker">QUÉ SIGUE →</span> ${esc(next.text)}</div>` : ""}
@@ -536,13 +532,8 @@ Hablame fuerte, como alguien que quiere que me convierta en esa versión.`;
         ` : ""}
       </div>`;
 
-    const di = document.getElementById("rmDate");
-    if (di) di.onblur = () => S().setMilestoneDate(cur, di.value.trim());
-
     const doneBtn = document.getElementById("rmDone");
     if (doneBtn) doneBtn.onclick = () => {
-      const d = document.getElementById("rmDate");
-      if (d) S().setMilestoneDate(cur, d.value.trim());
       S().completeCurrentMilestone();
       paintRoadmap();
     };

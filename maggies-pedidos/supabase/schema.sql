@@ -68,6 +68,8 @@ create table if not exists products (
   image_url text,
   available boolean not null default true,
   featured boolean not null default false,
+  -- true = aparece en la pizarra del día (admin lo activa cada mañana)
+  is_today boolean not null default false,
   -- stock null = no se controla; stock <= 0 = no se puede agregar
   stock int,
   sort_order int not null default 0,
