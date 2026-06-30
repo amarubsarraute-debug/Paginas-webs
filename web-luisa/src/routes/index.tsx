@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, CalendarCheck, CheckCircle2, MapPin, Leaf, Activity, Clock, Shield } from "lucide-react";
+import { ArrowRight, CalendarCheck, CheckCircle2, MapPin } from "lucide-react";
 import { useState } from "react";
 import doctorImg from "@/assets/dra-luisa.jpg";
 import { SiteNav } from "@/components/SiteNav";
@@ -97,85 +97,6 @@ function Index() {
       <main>
         {/* ─── Hero — video scrub ──────────────────────────────────── */}
         <VideoScrubHero />
-
-        {/* ─── Tratamiento Destacado ───────────────────────────────── */}
-        <section className="bg-background border-y border-border/80 py-20 md:py-28 lg:py-32">
-          <div className="mx-auto max-w-7xl px-6 md:px-10">
-            <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
-              <Reveal>
-                <span className="font-mono text-[0.6rem] font-medium uppercase tracking-widest text-muted-foreground">
-                  Tratamiento Destacado
-                </span>
-                <h2
-                  className="mt-4 font-serif leading-tight text-foreground"
-                  style={{ fontSize: "clamp(2.25rem, 5vw, 4.25rem)" }}
-                >
-                  Lifting de 8 puntos
-                </h2>
-                <p className="mt-6 text-lg leading-relaxed text-muted-foreground max-w-xl">
-                  Técnica avanzada que rejuvenece, redefine pómulos y línea mandibular, 
-                  y mejora el soporte facial sin alterar tu expresión natural.
-                </p>
-
-                {/* Features Badges */}
-                <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-                  <div className="flex flex-col gap-2 rounded-lg border border-border bg-card/40 p-4 text-left">
-                    <Leaf className="h-5 w-5 text-terra" />
-                    <span className="text-xs font-semibold text-foreground leading-tight">Rejuvenecimiento natural</span>
-                  </div>
-                  <div className="flex flex-col gap-2 rounded-lg border border-border bg-card/40 p-4 text-left">
-                    <Activity className="h-5 w-5 text-terra" />
-                    <span className="text-xs font-semibold text-foreground leading-tight">Mayor definición</span>
-                  </div>
-                  <div className="flex flex-col gap-2 rounded-lg border border-border bg-card/40 p-4 text-left">
-                    <Clock className="h-5 w-5 text-terra" />
-                    <span className="text-xs font-semibold text-foreground leading-tight">Recuperación rápida</span>
-                  </div>
-                  <div className="flex flex-col gap-2 rounded-lg border border-border bg-card/40 p-4 text-left">
-                    <Shield className="h-5 w-5 text-terra" />
-                    <span className="text-xs font-semibold text-foreground leading-tight">Criterio médico</span>
-                  </div>
-                </div>
-
-                {/* Bullet point */}
-                <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="h-1.5 w-1.5 rounded-full bg-terra" />
-                  <span>Ideal para rostro cansado o con pérdida de soporte.</span>
-                </div>
-
-                {/* CTA Buttons */}
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <CtaButton treatment="Lifting de 8 puntos" variant="primary" className="w-full sm:w-auto">
-                    <WhatsAppIcon className="h-4 w-4" />
-                    Consultar por WhatsApp
-                  </CtaButton>
-                  <a
-                    href="#tratamientos"
-                    className="inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-medium transition-all duration-300 border border-border bg-card text-foreground hover:border-primary/40 hover:bg-secondary w-full sm:w-auto"
-                  >
-                    Ver más tratamientos
-                  </a>
-                </div>
-
-                {/* Bottom Trust Banner */}
-                <div className="mt-10 flex items-center gap-2 border-t border-border/60 pt-6 text-xs text-muted-foreground max-w-xl">
-                  <Shield className="h-4 w-4 text-terra/80 shrink-0" />
-                  <span>Valoración médica personalizada • Resultados naturales • Seguridad y armonía</span>
-                </div>
-              </Reveal>
-
-              <Reveal delay={100} className="w-full">
-                <div className="max-w-md mx-auto lg:max-w-none">
-                  <BeforeAfter
-                    beforeSrc="/lifting-8p-antes.png"
-                    afterSrc="/lifting-8p-despues.png"
-                    alt="Lifting de 8 puntos"
-                  />
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </section>
 
         {/* ─── Doctora ─────────────────────────────────────────────── */}
         <section id="dra" className="scroll-mt-24 py-20 md:py-28 lg:py-36">
