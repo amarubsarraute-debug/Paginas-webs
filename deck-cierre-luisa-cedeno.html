@@ -1350,6 +1350,45 @@
       let editMode = false;
       let pressTimer = 0;
       let fileHandle = null;
+      let saveStatusTimer = 0;
+
+      function showSaveStatus(message, isError) {
+        let status = document.querySelector("[data-save-status]");
+        if (!status) {
+          status = document.createElement("div");
+          status.dataset.saveStatus = "true";
+          status.setAttribute("role", "status");
+          status.setAttribute("aria-live", "polite");
+          Object.assign(status.style, {
+            position: "fixed",
+            left: "50%",
+            bottom: "18px",
+            zIndex: "9999",
+            transform: "translateX(-50%)",
+            maxWidth: "calc(100vw - 32px)",
+            padding: "12px 16px",
+            borderRadius: "999px",
+            border: "1px solid rgba(9, 9, 9, 0.14)",
+            background: "rgba(244, 243, 239, 0.96)",
+            boxShadow: "0 18px 46px rgba(0, 0, 0, 0.18)",
+            color: "var(--ink)",
+            fontFamily: "var(--font)",
+            fontSize: "13px",
+            fontWeight: "850",
+            lineHeight: "1.2",
+            textAlign: "center",
+            pointerEvents: "none",
+          });
+          document.body.appendChild(status);
+        }
+        status.textContent = message;
+        status.style.color = isError ? "#9b1c1c" : "var(--ink)";
+        status.style.opacity = "1";
+        window.clearTimeout(saveStatusTimer);
+        saveStatusTimer = window.setTimeout(() => {
+          status.style.opacity = "0";
+        }, 3600);
+      }
 
       function readEdits() {
         try {
@@ -1393,16 +1432,35 @@
         }
       }
 
-      async function exportHtml() {
-        writeEdits();
-        const clone = document.documentElement.cloneNode(true);
+      function cleanCloneForExport(clone) {
         clone.querySelector("body")?.classList.remove("is-editing");
         clone.querySelectorAll("[contenteditable]").forEach((node) => {
           node.removeAttribute("contenteditable");
           node.removeAttribute("spellcheck");
         });
+        clone.querySelectorAll("[data-save-status]").forEach((node) => node.remove());
+        const clonedTrack = clone.querySelector("[data-track]");
+        if (clonedTrack) clonedTrack.style.transform = "translate3d(0px, 0, 0)";
+        clone.querySelectorAll(".segment").forEach((segment, i) => {
+          segment.classList.toggle("is-active", i === 0);
+          segment.classList.remove("is-done");
+        });
+        clone.querySelectorAll(".slide").forEach((slide, i) => {
+          slide.setAttribute("aria-hidden", i === 0 ? "false" : "true");
+        });
+        const clonedCounter = clone.querySelector("[data-counter]");
+        if (clonedCounter) clonedCounter.textContent = "1 / " + slides.length;
+      }
+
+      async function exportHtml() {
+        if (document.activeElement && document.activeElement.closest && document.activeElement.closest("[contenteditable='true']")) {
+          document.activeElement.blur();
+        }
+        writeEdits();
+        const clone = document.documentElement.cloneNode(true);
+        cleanCloneForExport(clone);
         const html = "<!doctype html>\n" + clone.outerHTML;
-        const suggested = location.pathname.split("/").pop() || "deck-cierre.html";
+        const suggested = decodeURIComponent(location.pathname.split("/").pop() || "deck-cierre.html");
 
         // Navegadores modernos (Chrome/Edge): elegis el archivo una vez y despues
         // se sobrescribe siempre el mismo, sin generar duplicados.
@@ -1417,10 +1475,15 @@
             const writable = await fileHandle.createWritable();
             await writable.write(html);
             await writable.close();
+            showSaveStatus("Guardado. El archivo HTML ya tiene tus cambios.");
             return;
           } catch (err) {
-            if (err && err.name === "AbortError") return;
-            // si la API falla por algun motivo, seguimos con la descarga clasica
+            if (err && err.name === "AbortError") {
+              showSaveStatus("Guardado cancelado. Los cambios siguen en el navegador.", true);
+              return;
+            }
+            fileHandle = null;
+            // Si la API falla por algun motivo, seguimos con la descarga clasica.
           }
         }
 
@@ -1433,6 +1496,7 @@
         link.click();
         link.remove();
         setTimeout(() => URL.revokeObjectURL(url), 1000);
+        showSaveStatus("Descargado con cambios. Usa el archivo terminado en -editado.html.");
       }
 
       function goTo(index) {
@@ -1461,6 +1525,10 @@
         if (editMode && event.target.closest("[contenteditable='true']")) writeEdits();
       });
 
+      deck.addEventListener("blur", (event) => {
+        if (event.target.closest && event.target.closest("[contenteditable='true']")) writeEdits();
+      }, true);
+
       deck.addEventListener("click", (event) => {
         if (editMode && event.target.closest("a")) event.preventDefault();
       });
@@ -1481,9 +1549,12 @@
           return;
         }
 
-        if (editMode && (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "s") {
+        if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "s") {
           event.preventDefault();
-          exportHtml();
+          exportHtml().catch(() => {
+            writeEdits();
+            showSaveStatus("No se pudo guardar el archivo. Los cambios quedaron guardados en este navegador.", true);
+          });
           return;
         }
 
@@ -1519,6 +1590,7 @@
       counter.addEventListener("touchcancel", () => window.clearTimeout(pressTimer), { passive: true });
 
       window.addEventListener("resize", () => goTo(current));
+      window.addEventListener("beforeunload", writeEdits);
 
       initEdits();
       goTo(0);
