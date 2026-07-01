@@ -19,6 +19,16 @@ export function BeforeAfter({ beforeSrc, afterSrc, alt }: BeforeAfterProps) {
     setPos(Math.min(100, Math.max(0, pct)));
   }, []);
 
+  const cleanSrc = (src: string) => {
+    if (typeof src === "string" && src.startsWith("/")) {
+      return src.substring(1);
+    }
+    return src;
+  };
+
+  const beforeUrl = cleanSrc(beforeSrc);
+  const afterUrl = cleanSrc(afterSrc);
+
   return (
     <figure className="select-none">
       <div
@@ -36,23 +46,21 @@ export function BeforeAfter({ beforeSrc, afterSrc, alt }: BeforeAfterProps) {
       >
         {/* After (base) */}
         <img
-          src={afterSrc}
+          src={afterUrl}
           alt={`Después - ${alt}`}
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover"
           draggable={false}
         />
         {/* Before (clipped) */}
-        <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
-          <img
-            src={beforeSrc}
-            alt={`Antes - ${alt}`}
-            loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover"
-            style={{ width: containerRef.current?.clientWidth ?? "100%" }}
-            draggable={false}
-          />
-        </div>
+        <img
+          src={beforeUrl}
+          alt={`Antes - ${alt}`}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+          draggable={false}
+        />
 
         {/* Labels */}
         <span className="pointer-events-none absolute left-3 top-3 rounded-md bg-foreground/70 px-3 py-1 text-[0.65rem] font-semibold uppercase text-primary-foreground backdrop-blur-sm">
