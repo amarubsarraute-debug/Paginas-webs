@@ -7,3 +7,8 @@
 *.mp4 binary
 *.webm binary
 *.ico binary
+
+# Tratar archivos de build como binarios (Vite embebe rutas de assets en el JS)
+*.js -text
+*.css -text
+*.html -text
