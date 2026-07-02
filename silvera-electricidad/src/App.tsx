@@ -6,6 +6,7 @@
 import { Hero } from './components/Hero';
 import { Problem } from './components/Problem';
 import { Services } from './components/Services';
+import { ClientTypes } from './components/ClientTypes';
 import { BeforeAfterSection } from './components/BeforeAfterSection';
 import { Differentiator } from './components/Differentiator';
 import { Clients } from './components/Clients';
@@ -24,6 +25,7 @@ export default function App() {
       <Hero />
       <Problem />
       <Services />
+      <ClientTypes />
       <BeforeAfterSection />
       <Differentiator />
       <Clients />

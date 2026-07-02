@@ -41,6 +41,36 @@ const projects = [
     outputDir: path.join(ROOT, 'web-luisa'),
     defaultPort: 4174,
     extraFiles: ['robots.txt', 'lifting-8p-antes.png', 'lifting-8p-despues.png']
+  },
+  {
+    name: 'Odontología Maldonado',
+    dirName: 'odontologia-maldonado',
+    projectPath: path.join(ROOT, 'odontologia-maldonado'),
+    buildDir: path.join(ROOT, 'odontologia-maldonado', 'dist'),
+    runDir: path.join(ROOT, 'odontologia-maldonado'),
+    outputDir: path.join(ROOT, 'odontologia-maldonado'),
+    defaultPort: 4175,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Silvera Electricidad',
+    dirName: 'silvera-electricidad',
+    projectPath: path.join(ROOT, 'silvera-electricidad'),
+    buildDir: path.join(ROOT, 'silvera-electricidad', 'dist'),
+    runDir: path.join(ROOT, 'silvera-electricidad'),
+    outputDir: path.join(ROOT, 'silvera-electricidad'),
+    defaultPort: 4176,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Dra. Adriana Galleno',
+    dirName: 'dra-adriana-galleno',
+    projectPath: path.join(ROOT, 'dra-adriana-galleno'),
+    buildDir: path.join(ROOT, 'dra-adriana-galleno', 'dist'),
+    runDir: path.join(ROOT, 'dra-adriana-galleno'),
+    outputDir: path.join(ROOT, 'dra-adriana-galleno'),
+    defaultPort: 4177,
+    extraFiles: ['robots.txt']
   }
 ];
 

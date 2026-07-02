@@ -21,8 +21,8 @@ export function About() {
           transition={{ duration: 0.6 }}
           className="order-2 md:order-1"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mb-6 tracking-tight">
-            Dra. Silvia Pais — Odontología Maldonado
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-stone-900 mb-6 tracking-tight">
+            Dra. Silvia Pais - Odontología Maldonado
           </h2>
           <p className="text-lg text-stone-600 mb-6 leading-relaxed">
             Un consultorio odontológico en Maldonado enfocado en brindar atención profesional, cercana y clara para pacientes que buscan cuidar, recuperar o mejorar su salud bucal.
