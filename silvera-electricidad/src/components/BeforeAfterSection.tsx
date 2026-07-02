@@ -33,8 +33,8 @@ export function BeforeAfterSection() {
               className="w-full max-w-[500px]"
             >
               <BeforeAfter
-                beforeSrc="/img/01_tablero_antes_limpio.png"
-                afterSrc="/img/02_tablero_despues_limpio.png"
+                beforeSrc="./img/01_tablero_antes_limpio.png"
+                afterSrc="./img/02_tablero_despues_limpio.png"
                 alt="Tablero eléctrico normalizado por Silvera Electricidad"
               />
             </motion.div>

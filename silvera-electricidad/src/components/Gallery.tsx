@@ -3,22 +3,22 @@ import { motion } from "motion/react";
 export function Gallery() {
   const images = [
     {
-      src: "/img/03_electricista_trabajando.png",
+      src: "./img/03_electricista_trabajando.png",
       alt: "Conexiones y cableados técnicos bajo normas UTE",
       tag: "Instalaciones"
     },
     {
-      src: "/img/04_iluminacion_led_mueble.png",
+      src: "./img/04_iluminacion_led_mueble.png",
       alt: "Diseño y colocación de iluminación LED bajo muebles",
       tag: "Iluminación"
     },
     {
-      src: "/img/05_instalacion_exterior_cerca.png",
+      src: "./img/05_instalacion_exterior_cerca.png",
       alt: "Instalaciones eléctricas estancas en exteriores",
       tag: "Exteriores"
     },
     {
-      src: "/img/06_instalacion_exterior_poste.png",
+      src: "./img/06_instalacion_exterior_poste.png",
       alt: "Canalizaciones aéreas de acometida y obra nueva",
       tag: "Obras"
     }
