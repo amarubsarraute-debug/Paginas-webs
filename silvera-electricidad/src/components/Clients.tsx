@@ -55,10 +55,7 @@ export function Clients() {
             <div className="flex text-gold text-xl tracking-widest">
               ★★★★★
             </div>
-            <div className="font-mono text-xs font-bold tracking-wider text-muted uppercase">
-              119 Reseñas Verificadas
-            </div>
-            
+
             {/* Google Logo / Icon */}
             <div className="flex items-center gap-2 font-mono text-xs text-muted pt-4">
               <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
