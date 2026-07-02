@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Plus, Star, Check, X, Loader2, UtensilsCrossed } from "lucide-react";
+import { useState, useMemo, useRef } from "react";
+import { Plus, Star, Check, X, Loader2, UtensilsCrossed, Search, Camera } from "lucide-react";
 import type { Category } from "@/types/db";
 import type { ProductAdmin } from "@/lib/data/admin";
 import { cn } from "@/lib/utils";
@@ -17,9 +17,32 @@ export default function AdminMenuTable({
 }) {
   const [products, setProducts] = useState(initialProducts);
   const [busyId, setBusyId] = useState<string | null>(null);
+  const [uploadingId, setUploadingId] = useState<string | null>(null);
   const [creating, setCreating] = useState(false);
-  const [form, setForm] = useState({ name: "", category_id: "", price: "", description: "" });
+  const [form, setForm] = useState({ name: "", category_id: "", price: "", description: "", image_url: "" });
   const [createBusy, setCreateBusy] = useState(false);
+  const [catFilter, setCatFilter] = useState("Todo");
+  const [busqueda, setBusqueda] = useState("");
+  const fileInputRefs = useRef<Record<string, HTMLInputElement | null>>({});
+
+  const catNames = useMemo(() => {
+    const seen = new Set<string>();
+    const names: string[] = [];
+    for (const p of products) {
+      const n = p.categories?.name ?? "Sin categoría";
+      if (!seen.has(n)) { seen.add(n); names.push(n); }
+    }
+    return names;
+  }, [products]);
+
+  const filtrados = useMemo(() => {
+    const q = busqueda.trim().toLowerCase();
+    return products.filter((p) => {
+      const okCat = catFilter === "Todo" || (p.categories?.name ?? "Sin categoría") === catFilter;
+      const okQ = q === "" || p.name.toLowerCase().includes(q);
+      return okCat && okQ;
+    });
+  }, [products, catFilter, busqueda]);
 
   async function update(id: string, fields: Record<string, unknown>) {
     setBusyId(id);
@@ -40,6 +63,25 @@ export default function AdminMenuTable({
     }
   }
 
+  async function uploadPhoto(productId: string, file: File | undefined) {
+    if (!file) return;
+    setUploadingId(productId);
+    try {
+      const form = new FormData();
+      form.append("file", file);
+      form.append("productId", productId);
+      const res = await fetch("/api/admin/upload", { method: "POST", body: form });
+      const data = await res.json();
+      if (res.ok && data.url) {
+        setProducts((prev) =>
+          prev.map((p) => (p.id === productId ? { ...p, image_url: data.url } : p))
+        );
+      }
+    } finally {
+      setUploadingId(null);
+    }
+  }
+
   async function crear() {
     if (!form.name.trim()) return;
     setCreateBusy(true);
@@ -53,6 +95,7 @@ export default function AdminMenuTable({
             category_id: form.category_id || null,
             price: Number(form.price) || 0,
             description: form.description.trim() || null,
+            image_url: form.image_url.trim() || null,
             available: true,
             sort_order: products.length + 1,
           },
@@ -62,7 +105,7 @@ export default function AdminMenuTable({
       if (res.ok && data.product) {
         const cat = categories.find((c) => c.id === data.product.category_id);
         setProducts((prev) => [...prev, { ...data.product, categories: cat ? { name: cat.name } : null }]);
-        setForm({ name: "", category_id: "", price: "", description: "" });
+        setForm({ name: "", category_id: "", price: "", description: "", image_url: "" });
         setCreating(false);
       }
     } finally {
@@ -88,8 +131,8 @@ export default function AdminMenuTable({
     <div>
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="font-display text-2xl font-semibold text-coffee-dark">Menú</h1>
-          <p className="text-sm text-ink-soft">{products.length} productos</p>
+          <h1 className="font-display text-2xl font-semibold text-coffee-dark">Menú completo</h1>
+          <p className="text-sm text-ink-soft">{filtrados.length} de {products.length} productos</p>
         </div>
         <button
           type="button"
@@ -99,6 +142,37 @@ export default function AdminMenuTable({
           <Plus className="h-4 w-4" />
           Nuevo producto
         </button>
+      </div>
+
+      {/* Filtros */}
+      <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="relative max-w-xs flex-1">
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-faint" />
+          <input
+            type="search"
+            value={busqueda}
+            onChange={(e) => setBusqueda(e.target.value)}
+            placeholder="Buscar producto…"
+            className="w-full rounded-full border border-beige-dark bg-cream-50 py-2 pl-9 pr-4 text-sm text-ink outline-none focus:border-coffee/40 focus:ring-2 focus:ring-coffee/10"
+          />
+        </div>
+        <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {["Todo", ...catNames].map((cat) => (
+            <button
+              key={cat}
+              type="button"
+              onClick={() => setCatFilter(cat)}
+              className={cn(
+                "shrink-0 rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-all",
+                catFilter === cat
+                  ? "border-coffee bg-coffee text-cream-50"
+                  : "border-beige-dark bg-cream-50 text-ink-soft hover:border-coffee/40"
+              )}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
 
       {creating && (
@@ -134,6 +208,12 @@ export default function AdminMenuTable({
             onChange={(e) => setForm({ ...form, description: e.target.value })}
             className={inputCls}
           />
+          <input
+            placeholder="URL de foto (opcional)"
+            value={form.image_url}
+            onChange={(e) => setForm({ ...form, image_url: e.target.value })}
+            className={cn(inputCls, "sm:col-span-2")}
+          />
           <div className="sm:col-span-2">
             <button
               type="button"
@@ -162,15 +242,51 @@ export default function AdminMenuTable({
               </tr>
             </thead>
             <tbody>
-              {products.map((p) => {
+              {filtrados.map((p) => {
                 const busy = busyId === p.id;
                 return (
                   <tr key={p.id} className="border-b border-beige-dark/30 last:border-0 hover:bg-cream">
                     <td className="px-4 py-3">
-                      <p className="font-medium text-coffee-dark">{p.name}</p>
-                      {p.description && (
-                        <p className="text-xs text-ink-faint line-clamp-1">{p.description}</p>
-                      )}
+                      <div className="flex items-start gap-2">
+                        <div className="relative shrink-0">
+                          {p.image_url ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={p.image_url}
+                              alt={p.name}
+                              className="h-10 w-10 rounded-lg object-cover"
+                            />
+                          ) : (
+                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-beige">
+                              <Camera className="h-4 w-4 text-ink-faint" />
+                            </div>
+                          )}
+                          <label className="absolute -bottom-1 -right-1 cursor-pointer">
+                            <input
+                              type="file"
+                              accept="image/*"
+                              className="hidden"
+                              ref={(el) => { fileInputRefs.current[p.id] = el; }}
+                              onChange={(e) => uploadPhoto(p.id, e.target.files?.[0])}
+                            />
+                            <span className={cn(
+                              "flex h-5 w-5 items-center justify-center rounded-full border border-cream-50 shadow",
+                              uploadingId === p.id ? "bg-beige" : "bg-coffee"
+                            )}>
+                              {uploadingId === p.id
+                                ? <Loader2 className="h-3 w-3 animate-spin text-ink-soft" />
+                                : <Camera className="h-3 w-3 text-cream-50" />
+                              }
+                            </span>
+                          </label>
+                        </div>
+                        <div className="min-w-0">
+                          <p className="font-medium text-coffee-dark">{p.name}</p>
+                          {p.description && (
+                            <p className="text-xs text-ink-faint line-clamp-1">{p.description}</p>
+                          )}
+                        </div>
+                      </div>
                     </td>
                     <td className="px-4 py-3">
                       <select

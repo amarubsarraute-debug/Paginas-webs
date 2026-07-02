@@ -37,6 +37,9 @@ Thumbs.db
 .idea/
 dist-presentations/
 
+# Prospectos perdidos / dados de baja (fuera del deploy)
+_archivo/
+
 # Garbage/Temporary files
 (,+
 (null)

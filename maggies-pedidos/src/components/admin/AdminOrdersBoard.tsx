@@ -78,6 +78,7 @@ export default function AdminOrdersBoard({
   const [tab, setTab] = useState<OrderStatus>("new");
   const [busyId, setBusyId] = useState<string | null>(null);
   const [soundOn, setSoundOn] = useState(false);
+  const [soloHoy, setSoloHoy] = useState(true);
   const knownIds = useRef<Set<string>>(new Set(initialOrders.map((o) => o.id)));
   const audioCtxRef = useRef<AudioContext | null>(null);
 
@@ -139,13 +140,19 @@ export default function AdminOrdersBoard({
     return () => clearInterval(id);
   }, [configured, soundOn]);
 
+  const ordersParaMostrar = useMemo(() => {
+    if (!soloHoy) return orders;
+    const hoy = new Date().toLocaleDateString("sv"); // "YYYY-MM-DD"
+    return orders.filter((o) => o.created_at.startsWith(hoy));
+  }, [orders, soloHoy]);
+
   const counts = useMemo(() => {
     const c: Record<string, number> = {};
-    for (const o of orders) c[o.order_status] = (c[o.order_status] ?? 0) + 1;
+    for (const o of ordersParaMostrar) c[o.order_status] = (c[o.order_status] ?? 0) + 1;
     return c;
-  }, [orders]);
+  }, [ordersParaMostrar]);
 
-  const visibles = orders.filter((o) => o.order_status === tab);
+  const visibles = ordersParaMostrar.filter((o) => o.order_status === tab);
 
   async function cambiarEstado(id: string, status: OrderStatus) {
     setBusyId(id);
@@ -181,6 +188,18 @@ export default function AdminOrdersBoard({
         <div className="flex items-center gap-2">
           <button
             type="button"
+            onClick={() => setSoloHoy((v) => !v)}
+            className={cn(
+              "inline-flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-sm font-medium transition-colors",
+              soloHoy
+                ? "border-coffee bg-coffee text-cream-50"
+                : "border-beige-dark bg-cream-50 text-ink-soft hover:bg-beige"
+            )}
+          >
+            {soloHoy ? "Hoy" : "Todos"}
+          </button>
+          <button
+            type="button"
             onClick={toggleSound}
             className={cn(
               "inline-flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-sm font-medium transition-colors",
@@ -211,7 +230,7 @@ export default function AdminOrdersBoard({
         Los pedidos entran solos. Activá el sonido para que avise cuando llega uno nuevo.
       </p>
 
-      <KitchenSummary orders={orders} />
+      <KitchenSummary orders={ordersParaMostrar} />
 
       <div className="mt-4 -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {TABS.map((t) => (

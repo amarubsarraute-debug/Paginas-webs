@@ -161,10 +161,9 @@ const FORJA_UI = (() => {
     document.getElementById("finishSession").onclick = () => {
       const session = S().getSession();
       const c = FORJA_TIMER.compute(session);
-      const mins = Math.max(1, Math.round(c.elapsedMs / 60000));
+      const autoMins = Math.max(1, Math.round(c.elapsedMs / 60000));
       FORJA_TIMER.stop();
-      S().endSession();
-      showSelfTalk(mins, () => renderHoy());
+      showDeepWorkClose(session, autoMins);
     };
 
     document.getElementById("pauseSession").onclick = () => {
@@ -180,6 +179,43 @@ const FORJA_UI = (() => {
       S().cancelSession();
       renderHoy();
     };
+  }
+
+  function showDeepWorkClose(session, autoMins) {
+    const ov = document.getElementById("overlay");
+    ov.innerHTML = `
+      <div class="modal modal--day">
+        <div class="kicker kicker--accent">CIERRE DE SESIÓN</div>
+
+        <div class="kicker" style="margin:18px 0 7px">TAREA QUE TRABAJÉ</div>
+        <textarea class="field" id="dwTask" rows="2">${esc(session.task || "")}</textarea>
+
+        <div class="kicker" style="margin:14px 0 7px">TIEMPO REAL DE DEEP WORK</div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <input class="field" id="dwMins" type="number" min="1" value="${autoMins}" style="width:100px;text-align:center;font-size:22px;font-family:var(--font-display);font-weight:700" />
+          <span style="color:var(--ink-dim);font-size:13px">minutos</span>
+        </div>
+
+        <div class="kicker" style="margin:14px 0 7px">ANOTACIÓN · ¿CÓMO FUE?</div>
+        <textarea class="field" id="dwNote" rows="4" placeholder="¿Qué lograste? ¿Cómo te sentiste? ¿Algo que destacar o que mejorar?"></textarea>
+
+        <button class="btn btn--accent btn--lg mt-m" id="dwSave">GUARDAR Y CONTINUAR →</button>
+        <button class="btn btn--ghost mt-s" id="dwSkip">Guardar sin anotar</button>
+      </div>`;
+    ov.hidden = false;
+
+    const doSave = (withNote) => {
+      const task = ov.querySelector("#dwTask").value.trim();
+      const realMins = Math.max(1, parseInt(ov.querySelector("#dwMins").value) || autoMins);
+      const note = withNote ? ov.querySelector("#dwNote").value.trim() : "";
+      ov.hidden = true; ov.innerHTML = "";
+      S().endSession();
+      S().setDay({ task: task || session.task, doneMinutes: realMins, deepWorkNote: note });
+      showSelfTalk(realMins, () => renderHoy());
+    };
+
+    ov.querySelector("#dwSave").onclick = () => doSave(true);
+    ov.querySelector("#dwSkip").onclick = () => doSave(false);
   }
 
   function todayLabel() {
@@ -412,8 +448,12 @@ const FORJA_UI = (() => {
       if (r.version === "nueva") tags.push("me jugué como la versión NUEVA");
       else if (r.version === "vieja") tags.push("caí en la versión VIEJA");
       const meta = tags.length ? " (" + tags.join(", ") + ")" : "";
-      const note = (r.note && r.note.trim()) ? r.note.trim() : "— (sin registro)";
-      return `Día ${d.n}${meta}:\n${note}`;
+      const parts = [];
+      if (r.task && r.task.trim()) parts.push(`Tarea: ${r.task.trim()}${r.doneMinutes ? " (" + r.doneMinutes + " min reales)" : ""}`);
+      if (r.deepWorkNote && r.deepWorkNote.trim()) parts.push(`Registro deep work: ${r.deepWorkNote.trim()}`);
+      if (r.note && r.note.trim()) parts.push(`Bitácora: ${r.note.trim()}`);
+      const body = parts.length ? parts.join("\n") : "— (sin registro)";
+      return `Día ${d.n}${meta}:\n${body}`;
     }).join("\n\n");
 
     return `Actuá como mi mentor directo y sin filtro. No me halagues de gratis.

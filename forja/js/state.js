@@ -82,7 +82,7 @@ const FORJA_STATE = (() => {
 
   // ----- registro de días -----
   function getDay(dateKey = todayKey()) {
-    return _state.days[dateKey] || { deepWork: false, trained: false, selfTalk: false, task: "", taskMinutes: 0, doneMinutes: 0, note: "", version: null };
+    return _state.days[dateKey] || { deepWork: false, trained: false, selfTalk: false, task: "", taskMinutes: 0, doneMinutes: 0, note: "", deepWorkNote: "", version: null };
   }
 
   function setDay(patch, dateKey = todayKey()) {
