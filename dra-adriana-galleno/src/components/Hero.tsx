@@ -35,6 +35,9 @@ export default function Hero() {
       return;
     }
 
+    video.pause();
+    if (video.currentTime > 0) video.currentTime = 0;
+
     let targetTime = 0;
     let rafId = 0;
     let scheduled = false;
