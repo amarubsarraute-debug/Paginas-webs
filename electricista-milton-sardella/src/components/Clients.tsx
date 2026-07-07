@@ -123,7 +123,7 @@ export function Clients() {
                 <path fill="#5C6675" d="M5.8 14c-.2-.7-.4-1.4-.4-2s.1-1.4.4-2V7.2H2.2a11 11 0 0 0 0 9.6L5.8 14z"/>
                 <path fill="#5C6675" d="M12 5.4c1.6 0 3.1.6 4.2 1.6l3.1-3.1C17.4 2 15 1 12 1 7.7 1 4 3.5 2.2 7.2l3.6 2.8C6.7 7.3 9.1 5.4 12 5.4z"/>
               </svg>
-              <span>9 opiniones en Google</span>
+              <span>70 opiniones en Google</span>
             </div>
 
             {/* Botón Dejar Reseña */}
