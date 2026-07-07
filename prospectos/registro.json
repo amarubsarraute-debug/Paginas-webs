@@ -1,0 +1,270 @@
+{
+  "electricista": [
+    {
+      "negocio": "Electricista Milton Sardella",
+      "carpeta_salida": "electricista-milton-sardella",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "notas": "Primera corrida de la skill generador-webs-prospeccion. Variante A = orden por defecto de Silvera menos BeforeAfterSection (no había 2 fotos separadas de antes/después, solo un collage). Próxima plantilla en la rotación: calorcharrua."
+    },
+    {
+      "negocio": "Electricidad Ocean Park - Electricista Facundo Azcurra",
+      "carpeta_salida": "electricidad-ocean-park-electricista-facundo-azcurra",
+      "plantilla": "silvera-electricidad",
+      "variante": "C",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 2."
+    },
+    {
+      "negocio": "Electropunta",
+      "carpeta_salida": "electropunta",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 0."
+    },
+    {
+      "negocio": "Noguera - Electricista autorizado por UTE",
+      "carpeta_salida": "noguera-electricista-autorizado-por-ute",
+      "plantilla": "silvera-electricidad",
+      "variante": "B",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: true. Antes/después: false. Testimonios: 0."
+    },
+    {
+      "negocio": "Nicolas - Electricista habilitado por UTE",
+      "carpeta_salida": "nicolas-electricista-habilitado-por-ute",
+      "plantilla": "silvera-electricidad",
+      "variante": "C",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: true. Antes/después: false. Testimonios: 0."
+    },
+    {
+      "negocio": "Prolighting",
+      "carpeta_salida": "prolighting",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 0."
+    },
+    {
+      "negocio": "Juan carlos Martínez electricidad",
+      "carpeta_salida": "juan-carlos-martinez-electricidad",
+      "plantilla": "silvera-electricidad",
+      "variante": "B",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 0."
+    },
+    {
+      "negocio": "Barceló instalaciones eléctricas",
+      "carpeta_salida": "barcelo-instalaciones-electricas",
+      "plantilla": "silvera-electricidad",
+      "variante": "C",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 0."
+    },
+    {
+      "negocio": "Alejandro Severo ELECTRICISTA AUTORIZADO X UTE",
+      "carpeta_salida": "alejandro-severo-electricista-autorizado-x-ute",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: true. Antes/después: false. Testimonios: 0. Ticker animado incluido."
+    },
+    {
+      "negocio": "Electricista Palermo",
+      "carpeta_salida": "electricista-palermo",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 0. Ticker animado incluido."
+    },
+    {
+      "negocio": "Electricista Pocitos",
+      "carpeta_salida": "electricista-pocitos",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 0. Ticker animado incluido."
+    },
+    {
+      "negocio": "Electricistas | Electricista Urgencias | Habilitaciones UTE ⚡",
+      "carpeta_salida": "electricistas-electricista-urgencias-habilitaciones-ute",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: true. Antes/después: false. Testimonios: 0. Ticker animado incluido."
+    },
+    {
+      "negocio": "Gonzalo Chacón- Electricista Urgencias 24 horas",
+      "carpeta_salida": "gonzalo-chacon-electricista-urgencias-24-horas",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 0. Ticker animado incluido."
+    },
+    {
+      "negocio": "URGENCIAS ELÉCTRICAS",
+      "carpeta_salida": "urgencias-electricas",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 0. Ticker animado incluido."
+    },
+    {
+      "negocio": "R H ELECTRICISTA autorizado por U.T.E",
+      "carpeta_salida": "rh-electricista-autorizado-por-ute",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: true. Antes/después: false. Testimonios: 3. Ticker animado incluido. Fotos reales inyectadas."
+    },
+    {
+      "negocio": "Nelson Bergero Electricista",
+      "carpeta_salida": "nelson-bergero-electricista",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 3. Ticker animado incluido. Fotos reales inyectadas."
+    },
+    {
+      "negocio": "VOLTIO ELECTROMECANICA",
+      "carpeta_salida": "voltio-electromecanica",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 3. Ticker animado incluido. Fotos reales inyectadas."
+    },
+    {
+      "negocio": "Jhonatan B. Electricista",
+      "carpeta_salida": "jhonatan-b-electricista",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 3. Ticker animado incluido. Fotos reales inyectadas."
+    },
+    {
+      "negocio": "Hernández electricista",
+      "carpeta_salida": "hernandez-electricista",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 3. Ticker animado incluido. Fotos reales inyectadas."
+    },
+    {
+      "negocio": "Romero Servicios",
+      "carpeta_salida": "romero-servicios",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 3. Ticker animado incluido. Fotos reales inyectadas."
+    },
+    {
+      "negocio": "Peter Montes de Oca - Electricista 24 hs. - Aire acondicionado",
+      "carpeta_salida": "peter-montes-de-oca-electricista-24hs-aire-acondicionado",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 3. Ticker animado incluido. Fotos reales inyectadas."
+    },
+    {
+      "negocio": "Electricista Cabrera",
+      "carpeta_salida": "electricista-cabrera",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: true. Antes/después: false. Testimonios: 3. Ticker animado incluido. Fotos reales inyectadas."
+    },
+    {
+      "negocio": "Electricista ANDRES",
+      "carpeta_salida": "electricista-andres",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 3. Ticker animado incluido. Fotos reales inyectadas."
+    },
+    {
+      "negocio": "Técnico electricista - Electricidad Amaral",
+      "carpeta_salida": "tecnico-electricista-electricidad-amaral",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 3. Ticker animado incluido. Fotos reales inyectadas."
+    },
+    {
+      "negocio": "Soluciones electricas EP",
+      "carpeta_salida": "soluciones-electricas-ep",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 0. Ticker animado incluido. Fotos reales inyectadas."
+    },
+    {
+      "negocio": "Marcelo TU ELECTRICISTA UY - Habilitado por UTE - Categoría C",
+      "carpeta_salida": "marcelo-tu-electricista-uy-habilitado-por-ute-categoria-c",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: true. Antes/después: false. Testimonios: 0. Ticker animado incluido. Fotos reales inyectadas."
+    },
+    {
+      "negocio": "Bazzanos Instalaciones Electricas. Firma instaladora autorizada por UTE",
+      "carpeta_salida": "bazzanos-instalaciones-electricas-firma-instaladora-autorizada-por-ute",
+      "plantilla": "silvera-electricidad",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Habilitación UTE: false. Antes/después: false. Testimonios: 0. Ticker animado incluido. Fotos reales inyectadas."
+    }
+  ],
+  "medicina_estetica": [
+    {
+      "negocio": "Aura Clinic - Estética Láser",
+      "carpeta_salida": "aura-clinic-estetica-laser",
+      "plantilla": "dra-adriana-galleno",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Fotos reales inyectadas. Testimonios: 0."
+    },
+    {
+      "negocio": "Clínica Dra. Magali Chaparro",
+      "carpeta_salida": "clinica-dra-magali-chaparro",
+      "plantilla": "dra-adriana-galleno",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Fotos reales inyectadas. Testimonios: 2."
+    },
+    {
+      "negocio": "Dr. Matías Alcaraz - Medicina Estética",
+      "carpeta_salida": "dr-matias-alcaraz",
+      "plantilla": "dra-adriana-galleno",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Fotos reales inyectadas. Testimonios: 0."
+    },
+    {
+      "negocio": "Dra. Fernanda Rolán - Harmonização Facial",
+      "carpeta_salida": "dra-fernanda-rolan",
+      "plantilla": "dra-adriana-galleno",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Fotos reales inyectadas. Testimonios: 0."
+    },
+    {
+      "negocio": "La Clinique - Salud & Bienestar",
+      "carpeta_salida": "la-clinique-uy",
+      "plantilla": "dra-adriana-galleno",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Fotos reales inyectadas. Testimonios: 0."
+    },
+    {
+      "negocio": "Mint Clínica - Odontología y Estética Facial",
+      "carpeta_salida": "mint-clinica-orofacial",
+      "plantilla": "dra-adriana-galleno",
+      "variante": "A",
+      "fecha": "2026-07-05",
+      "notas": "Fotos reales inyectadas. Testimonios: 0."
+    }
+  ],
+  "dentista": []
+}

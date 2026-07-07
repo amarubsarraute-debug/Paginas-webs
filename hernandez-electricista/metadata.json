@@ -1,0 +1,6 @@
+{
+  "name": "Hernández electricista",
+  "description": "Landing page para Hernández electricista en Canelones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

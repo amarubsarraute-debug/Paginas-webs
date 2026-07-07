@@ -1,0 +1,6 @@
+{
+  "name": "Alejandro Severo ELECTRICISTA AUTORIZADO X UTE",
+  "description": "Landing page para Alejandro Severo ELECTRICISTA AUTORIZADO X UTE en Montevideo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Aura Clinic - Estética Láser",
+  "description": "Landing page para Aura Clinic - Estética Láser en Montevideo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

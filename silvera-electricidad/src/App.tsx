@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Problem } from './components/Problem';
 import { Services } from './components/Services';
@@ -22,6 +23,7 @@ import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 export default function App() {
   return (
     <div className="min-h-screen bg-transparent font-sans selection:bg-gold selection:text-navy relative z-10">
+      <Header />
       <Hero />
       <Problem />
       <Services />

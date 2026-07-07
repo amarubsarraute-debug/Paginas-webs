@@ -1,0 +1,6 @@
+{
+  "name": "Juan carlos Martínez electricidad",
+  "description": "Landing page para Juan carlos Martínez electricidad, empresa de servicios eléctricos en Maldonado, Uruguay, firma autorizada por UTE.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

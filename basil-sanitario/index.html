@@ -432,6 +432,16 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
     </div>
   </div>
 </header>
+<style>
+  @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .ticker-container { width: 100%; overflow: hidden; background-color: #0f172a; color: #facc15; padding: 12px 0; display: flex; white-space: nowrap; border-top: 1px solid rgba(250, 204, 21, 0.2); border-bottom: 1px solid rgba(250, 204, 21, 0.2); }
+  .ticker-track { display: inline-flex; animation: ticker-scroll 35s linear infinite; }
+  .ticker-item { font-family: monospace; font-weight: bold; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-right: 2rem; }
+  .ticker-item::after { content: ' • '; color: #64748b; margin-left: 2rem; }
+</style>
+<div class="ticker-container"><div class="ticker-track">
+  <span class="ticker-item">Pérdidas de agua</span><span class="ticker-item">Destapaciones</span><span class="ticker-item">Caños rotos</span><span class="ticker-item">Reparación de calefones</span><span class="ticker-item">Limpieza de graseras</span><span class="ticker-item">Cisternas</span><span class="ticker-item">Cambio de grifería</span><span class="ticker-item">Filtraciones y humedades</span><span class="ticker-item">Termofusión</span><span class="ticker-item">Urgencias 24hs</span><span class="ticker-item">Pérdidas de agua</span><span class="ticker-item">Destapaciones</span><span class="ticker-item">Caños rotos</span><span class="ticker-item">Reparación de calefones</span><span class="ticker-item">Limpieza de graseras</span><span class="ticker-item">Cisternas</span><span class="ticker-item">Cambio de grifería</span><span class="ticker-item">Filtraciones y humedades</span><span class="ticker-item">Termofusión</span><span class="ticker-item">Urgencias 24hs</span><span class="ticker-item">Pérdidas de agua</span><span class="ticker-item">Destapaciones</span><span class="ticker-item">Caños rotos</span><span class="ticker-item">Reparación de calefones</span><span class="ticker-item">Limpieza de graseras</span><span class="ticker-item">Cisternas</span><span class="ticker-item">Cambio de grifería</span><span class="ticker-item">Filtraciones y humedades</span><span class="ticker-item">Termofusión</span><span class="ticker-item">Urgencias 24hs</span><span class="ticker-item">Pérdidas de agua</span><span class="ticker-item">Destapaciones</span><span class="ticker-item">Caños rotos</span><span class="ticker-item">Reparación de calefones</span><span class="ticker-item">Limpieza de graseras</span><span class="ticker-item">Cisternas</span><span class="ticker-item">Cambio de grifería</span><span class="ticker-item">Filtraciones y humedades</span><span class="ticker-item">Termofusión</span><span class="ticker-item">Urgencias 24hs</span>
+</div></div>
 <span id="top"></span>
 
 <main>

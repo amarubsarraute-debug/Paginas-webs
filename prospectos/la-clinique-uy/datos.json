@@ -1,0 +1,28 @@
+{
+  "negocio": "La Clinique - Salud & Bienestar",
+  "slug": "la-clinique-uy",
+  "nicho": "medicina estética",
+  "zona": "Punta del Este",
+  "barrio": "Playa Mansa",
+  "telefono": "092 870 728",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Fisioterapia y Osteopatía",
+    "Tratamientos en Cámara Hiperbárica",
+    "Rehabilitación Física",
+    "Masajes Terapéuticos y Relajantes",
+    "Terapias de Bienestar Integral",
+    "Medicina Preventiva"
+  ],
+  "rating": null,
+  "cantidad_resenas": null,
+  "testimonios": [],
+  "logo": "fotos/logo.png",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg"
+  ],
+  "fuente_fotos": "instagram",
+  "notas": "Dirección: Edificio Vanguardia, Rambla Dr. Claudio Williman Parada 1, Playa Mansa, Punta del Este. Perfil de Instagram: @laclinique.uy"
+}

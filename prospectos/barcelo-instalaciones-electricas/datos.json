@@ -1,0 +1,25 @@
+{
+  "negocio": "Barceló instalaciones eléctricas",
+  "nicho": "instalaciones eléctricas",
+  "zona": "Maldonado",
+  "barrio": "La Barra",
+  "telefono": "098 310 826",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Instalaciones eléctricas en hogares y comercios",
+    "Venta de materiales eléctricos",
+    "Reparaciones y mantenimiento",
+    "Asesoramiento técnico"
+  ],
+  "rating": 4.3,
+  "cantidad_resenas": 6,
+  "testimonios": [],
+  "logo": "",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "Teléfono, ubicación, horario, rating y cantidad de reseñas confirmados en fuente pública. No pude acceder desde acá al texto literal de las reseñas de Google Maps."
+}

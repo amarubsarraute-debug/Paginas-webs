@@ -1,0 +1,6 @@
+{
+  "name": "Clínica Dra. Magali Chaparro",
+  "description": "Landing page para Clínica Dra. Magali Chaparro en Montevideo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

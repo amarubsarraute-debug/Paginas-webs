@@ -1,0 +1,22 @@
+{
+  "negocio": "Prolighting",
+  "nicho": "electricista",
+  "zona": "Punta del Este",
+  "barrio": "",
+  "telefono": "092 429 868",
+  "anios_trayectoria": null,
+  "servicios": [],
+  "rating": null,
+  "cantidad_resenas": null,
+  "testimonios": [],
+  "logo": "fotos/logo.jpg",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg",
+    "fotos/foto4.jpg",
+    "fotos/foto5.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "El link de Google Maps resuelve al negocio Prolighting en Punta del Este. No pude confirmar teléfono, servicios, rating, cantidad de reseñas ni textos literales desde fuentes públicas accesibles."
+}

@@ -1,0 +1,61 @@
+{
+  "hash": "075e80d1",
+  "configHash": "bae63832",
+  "lockfileHash": "3b17f889",
+  "browserHash": "d41511ce",
+  "optimized": {
+    "react": {
+      "src": "../../../dra-adriana-galleno/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "19d0a82b",
+      "needsInterop": true
+    },
+    "react-dom": {
+      "src": "../../../dra-adriana-galleno/node_modules/react-dom/index.js",
+      "file": "react-dom.js",
+      "fileHash": "a70c1035",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../../dra-adriana-galleno/node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "5501c503",
+      "needsInterop": true
+    },
+    "react/jsx-runtime": {
+      "src": "../../../dra-adriana-galleno/node_modules/react/jsx-runtime.js",
+      "file": "react_jsx-runtime.js",
+      "fileHash": "c163ea48",
+      "needsInterop": true
+    },
+    "lucide-react": {
+      "src": "../../../dra-adriana-galleno/node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "484ea2a7",
+      "needsInterop": false
+    },
+    "motion/react": {
+      "src": "../../../dra-adriana-galleno/node_modules/motion/dist/es/react.mjs",
+      "file": "motion_react.js",
+      "fileHash": "f61da2fb",
+      "needsInterop": false
+    },
+    "react-dom/client": {
+      "src": "../../../dra-adriana-galleno/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "7de00a77",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-WPREOAAL": {
+      "file": "chunk-WPREOAAL.js"
+    },
+    "chunk-DQ47TAWG": {
+      "file": "chunk-DQ47TAWG.js"
+    },
+    "chunk-V53GU3CJ": {
+      "file": "chunk-V53GU3CJ.js"
+    }
+  }
+}

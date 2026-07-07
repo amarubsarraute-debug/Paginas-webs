@@ -1,0 +1,6 @@
+{
+  "name": "URGENCIAS ELÉCTRICAS",
+  "description": "Landing page para URGENCIAS ELÉCTRICAS en Montevideo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

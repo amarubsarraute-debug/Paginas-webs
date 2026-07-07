@@ -1,0 +1,28 @@
+{
+  "negocio": "Mint Clínica - Odontología y Estética Facial",
+  "slug": "mint-clinica-orofacial",
+  "nicho": "medicina estética",
+  "zona": "Montevideo",
+  "barrio": "Pocitos",
+  "telefono": "",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Toxina Botulínica (Botox)",
+    "Rellenos con Ácido Hialurónico",
+    "Bioestimulación Cutánea",
+    "Mesoterapia Facial",
+    "Tratamientos con Dermapen",
+    "Odontología y Diseño de Sonrisa"
+  ],
+  "rating": null,
+  "cantidad_resenas": null,
+  "testimonios": [],
+  "logo": "fotos/logo.png",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg"
+  ],
+  "fuente_fotos": "instagram",
+  "notas": "Clínica liderada por la Dra. Natalia Gallo en Pocitos, Montevideo. Cuenta también con consultorio en Pando. Perfil de Instagram: @mintclinica"
+}

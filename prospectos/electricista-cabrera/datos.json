@@ -1,0 +1,38 @@
+{
+  "negocio": "Electricista Cabrera",
+  "nicho": "electricista autorizado por UTE",
+  "zona": "Canelones",
+  "barrio": "Ciudad de la Costa",
+  "telefono": "094 046 480",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Instalaciones electricas",
+    "Reparaciones electricas",
+    "Mantenimiento electrico",
+    "Trabajos garantizados",
+    "Presupuesto sin cargo",
+    "Firma autorizada por UTE"
+  ],
+  "rating": 5.0,
+  "cantidad_resenas": 17,
+  "testimonios": [
+    {
+      "texto": "Exelente servicio. Nos realizó toda la instalación eléctrica de nuestro local, quedó impecable y con precios accesibles. Recomiendo!",
+      "autor": "Sofia Cabrera"
+    },
+    {
+      "texto": "Muy recomendable, nos realizo la instalación completa de casa y trabajo, todo perfecto y muy prolijo",
+      "autor": "Ruben López"
+    },
+    {
+      "texto": "Muy responsable, nos realizó toda la conexión eléctrica a nuevo y quedó impecable.  Muy recomendable.",
+      "autor": "Florencia Saavedra"
+    }
+  ],
+  "logo": "",
+  "fotos": [
+    "fotos/foto1.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "Telefono, rating, cantidad de resenas y ubicacion confirmados en Google Maps. Cataloxy confirma Daniel Cabrera, tecnico autorizado por UTE, presupuesto sin cargo y trabajos garantizados. Maps solo mostro 3 resenas visibles y una foto real aprobada."
+}

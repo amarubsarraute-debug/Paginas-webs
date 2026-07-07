@@ -689,6 +689,34 @@ body {
 .roadmap__victory__date { margin-left: auto; font-size: 11px; color: var(--ink-faint); white-space: nowrap; padding-left: 10px; }
 .roadmap__all-done { font-size: 16px; color: var(--accent); padding: 16px 0; }
 
+/* ---------- COACH ---------- */
+.modal--coach { max-width: 480px; text-align: left; }
+.coach__q { font-size: 17px; line-height: 1.5; color: var(--ink); margin-bottom: 16px; }
+.coach__chips { display: flex; flex-direction: column; gap: 8px; }
+.coach__chip {
+  width: 100%; text-align: left; font-family: var(--font-body); font-size: 14.5px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-sm);
+  color: var(--ink); padding: 12px 16px; cursor: pointer; line-height: 1.45;
+  transition: border-color .15s var(--ease), transform .1s var(--ease);
+}
+.coach__chip:hover { border-color: var(--accent); transform: translateX(3px); }
+.coach__rasgo {
+  font-size: 16px; line-height: 1.5; color: var(--accent);
+  border-left: 3px solid var(--accent); padding: 4px 0 4px 14px;
+}
+.coach__identity {
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  color: var(--ink-dim); margin-bottom: 18px; line-height: 1.4;
+}
+.coach__action-card {
+  background: var(--surface); border: 1px solid var(--accent);
+  border-radius: var(--r); padding: 20px;
+}
+.coach__action-text {
+  font-size: 18px; line-height: 1.55; font-weight: 600; color: var(--ink); margin-bottom: 12px;
+}
+.coach__rasgo-mini { color: var(--ink-faint); font-size: 10px; margin-top: 8px; }
+
 /* ---------- CICLOS / BITÁCORA ---------- */
 .cycles { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
 .cycle {

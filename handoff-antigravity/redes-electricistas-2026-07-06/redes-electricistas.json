@@ -1,0 +1,311 @@
+{
+  "generatedAt": "2026-07-06",
+  "workspace": "PAGINAS WEB",
+  "instructions": "Apply these EMAIL and SOCIAL_LINKS values to each matching website folder by slug. Use only confirmed links. Do not invent Facebook or email for entries marked without confirmed data.",
+  "summary": {
+    "totalSites": 27,
+    "sitesWithAtLeastOneSocial": 19,
+    "sitesWithConfirmedFacebook": 11,
+    "sitesWithConfirmedEmail": 5,
+    "sitesWithoutConfirmedSocial": 8
+  },
+  "sites": [
+    {
+      "slug": "electricista-milton-sardella",
+      "email": null,
+      "socialLinks": [
+        {
+          "label": "LinkedIn",
+          "href": "https://uy.linkedin.com/in/milton-sardella-tommasino-449a6911b"
+        }
+      ],
+      "notes": "Only LinkedIn confirmed. No confirmed Facebook or email found."
+    },
+    {
+      "slug": "electricidad-ocean-park-electricista-facundo-azcurra",
+      "email": null,
+      "socialLinks": [
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/electricosuruguay/"
+        }
+      ],
+      "notes": "Facebook confirmed by business name, Ocean Park, and phone 091 476 681. No confirmed email found."
+    },
+    {
+      "slug": "electropunta",
+      "email": "electropuntaa@gmail.com",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/electropunta/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/ElectricistaMaldonado1/"
+        }
+      ],
+      "notes": "Facebook and email confirmed with phone +598 91 339 311."
+    },
+    {
+      "slug": "noguera-electricista-autorizado-por-ute",
+      "email": null,
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/noguera.elect/"
+        }
+      ],
+      "notes": "Instagram confirmed by phone 098 599 609 and Maldonado. No confirmed Facebook or email found."
+    },
+    {
+      "slug": "nicolas-electricista-habilitado-por-ute",
+      "email": null,
+      "socialLinks": [],
+      "notes": "No confirmed social or email found."
+    },
+    {
+      "slug": "prolighting",
+      "email": null,
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/prolighting_/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/Prolighting.maldonado/"
+        }
+      ],
+      "notes": "Instagram and Facebook confirmed as Prolighting Maldonado. No confirmed email found."
+    },
+    {
+      "slug": "juan-carlos-martinez-electricidad",
+      "email": null,
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/inst.electricas_carlosmartinez/"
+        }
+      ],
+      "notes": "Instagram confirmed by phone 097 465 040. No confirmed Facebook or email found."
+    },
+    {
+      "slug": "barcelo-instalaciones-electricas",
+      "email": null,
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/barcelo.instalaciones/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/p/Barcelo-instalaciones-100075842471362/"
+        }
+      ],
+      "notes": "Facebook confirmed with Maldonado and phone +598 98 310 826. No confirmed email found."
+    },
+    {
+      "slug": "alejandro-severo-electricista-autorizado-x-ute",
+      "email": null,
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/_alectricidad_/"
+        }
+      ],
+      "notes": "Instagram confirmed by phone 098 972 547. No confirmed Facebook or email found."
+    },
+    {
+      "slug": "electricista-palermo",
+      "email": null,
+      "socialLinks": [],
+      "notes": "No confirmed social or email found."
+    },
+    {
+      "slug": "electricista-pocitos",
+      "email": null,
+      "socialLinks": [],
+      "notes": "No confirmed social or email found."
+    },
+    {
+      "slug": "electricistas-electricista-urgencias-habilitaciones-ute",
+      "email": null,
+      "socialLinks": [],
+      "notes": "No confirmed social or email found."
+    },
+    {
+      "slug": "gonzalo-chacon-electricista-urgencias-24-horas",
+      "email": "chacongonzalo2020@gmail.com",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/electricistaaenmontevideo/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/GonzaloChaconn/"
+        }
+      ],
+      "notes": "Facebook confirmed by phone +598 91 908 183. Facebook email differs from official website email; use Facebook email for this handoff."
+    },
+    {
+      "slug": "urgencias-electricas",
+      "email": null,
+      "socialLinks": [],
+      "notes": "No confirmed social or email found."
+    },
+    {
+      "slug": "rh-electricista-autorizado-por-ute",
+      "email": null,
+      "socialLinks": [],
+      "notes": "No confirmed social or email found."
+    },
+    {
+      "slug": "nelson-bergero-electricista",
+      "email": null,
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/bergeronelson/"
+        }
+      ],
+      "notes": "Instagram confirmed by name and service area. No confirmed Facebook or email found."
+    },
+    {
+      "slug": "voltio-electromecanica",
+      "email": "electromecanicavoltio@gmail.com",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/voltio_electromecanica_/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/p/Voltio-electromecanica-100066516202188/"
+        }
+      ],
+      "notes": "Facebook and email confirmed with phone +598 99 463 754."
+    },
+    {
+      "slug": "jhonatan-b-electricista",
+      "email": null,
+      "socialLinks": [],
+      "notes": "No confirmed social or email found."
+    },
+    {
+      "slug": "hernandez-electricista",
+      "email": null,
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/hernandez.electricista/"
+        }
+      ],
+      "notes": "Instagram confirmed by phone 093 783 551. No confirmed Facebook or email found."
+    },
+    {
+      "slug": "romero-servicios",
+      "email": null,
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/romero.servicios/"
+        }
+      ],
+      "notes": "Instagram confirmed by business name and service area. No confirmed Facebook or email found."
+    },
+    {
+      "slug": "peter-montes-de-oca-electricista-24hs-aire-acondicionado",
+      "email": null,
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/petermdeoca.electriscista/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/peter.m.deoca/"
+        }
+      ],
+      "notes": "Facebook confirmed by name and electricista content. No confirmed email found."
+    },
+    {
+      "slug": "electricista-cabrera",
+      "email": null,
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/electricista.cabrera/"
+        }
+      ],
+      "notes": "Instagram confirmed by phone 094 046 480. Facebook group posts exist, but no official Facebook page/profile was confirmed."
+    },
+    {
+      "slug": "electricista-andres",
+      "email": null,
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/servicioselectricos_andres/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/electricidadyservicezonanorte/"
+        }
+      ],
+      "notes": "Facebook appears repeatedly on Instagram posts for SEA Servicios Electricos Andres. No confirmed email found."
+    },
+    {
+      "slug": "tecnico-electricista-electricidad-amaral",
+      "email": null,
+      "socialLinks": [],
+      "notes": "No confirmed social or email found."
+    },
+    {
+      "slug": "soluciones-electricas-ep",
+      "email": null,
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/solucioneselectricasep/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/p/Soluciones-el%C3%A9ctricas-EP-100063985186773/"
+        }
+      ],
+      "notes": "Facebook confirmed by business name, Costa de Oro, and WhatsApp 092 476 479. No confirmed email found."
+    },
+    {
+      "slug": "marcelo-tu-electricista-uy-habilitado-por-ute-categoria-c",
+      "email": "electricistasmdeouy@gmail.com",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/marce_electric/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/Marce40SG/"
+        }
+      ],
+      "notes": "Facebook and email confirmed by phone 097 986 044 and Montevideo UTE profile."
+    },
+    {
+      "slug": "bazzanos-instalaciones-electricas-firma-instaladora-autorizada-por-ute",
+      "email": "bazzanos.hns@gmail.com",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/bazzanos.hns/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/Bazzanoshns/"
+        }
+      ],
+      "notes": "Facebook, Instagram, and email confirmed by 1122 and social profiles."
+    }
+  ]
+}

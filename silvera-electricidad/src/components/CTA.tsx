@@ -28,11 +28,11 @@ export function CTA() {
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 w-full lg:w-auto shrink-0">
             <a
-              href="tel:+59895555161"
+              href="tel:+59891267369"
               className="w-full sm:w-auto px-8 py-4 bg-white text-[#982A21] hover:bg-[#FFF6EC] font-bold rounded-xl shadow-xl hover:-translate-y-0.5 transition-all text-center flex items-center justify-center gap-2"
             >
               <Phone className="w-5 h-5 shrink-0" />
-              Llamar al 095 555 161
+              Llamar al 091 267 369
             </a>
             <a
               href={`${WHATSAPP_LINK}&text=Hola,%20tengo%20una%20urgencia%20eléctrica.%20¿Me%20podrán%20ayudar?`}

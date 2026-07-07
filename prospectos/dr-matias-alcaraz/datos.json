@@ -1,0 +1,29 @@
+{
+  "negocio": "Dr. Matías Alcaraz - Medicina Estética",
+  "slug": "dr-matias-alcaraz",
+  "nicho": "medicina estética",
+  "zona": "Montevideo",
+  "barrio": "Tres Cruces / Parque Batlle",
+  "telefono": "",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Armonización Facial",
+    "Toxina Botulínica (Botox)",
+    "Recuperación Capilar",
+    "Mesoterapia Capilar",
+    "Carboxiterapia Capilar",
+    "Micropigmentación Capilar",
+    "Medicina Estética Integral"
+  ],
+  "rating": null,
+  "cantidad_resenas": null,
+  "testimonios": [],
+  "logo": "fotos/logo.png",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg"
+  ],
+  "fuente_fotos": "stock_fallback",
+  "notas": "El Dr. Matías Alcaraz trabaja actualmente en la clínica Capelli Uruguay (Av. Luis Alberto de Herrera 2062, Montevideo). Es Magíster en Medicina Estética Integral por SAENI."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "La Clinique - Salud & Bienestar",
+  "description": "Landing page para La Clinique - Salud & Bienestar en Punta del Este.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

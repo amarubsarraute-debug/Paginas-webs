@@ -1,0 +1,6 @@
+{
+  "name": "R H ELECTRICISTA autorizado por U.T.E",
+  "description": "Landing page para R H ELECTRICISTA autorizado por U.T.E en Canelones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

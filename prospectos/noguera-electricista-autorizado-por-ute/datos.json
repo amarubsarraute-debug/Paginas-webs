@@ -1,0 +1,21 @@
+{
+  "negocio": "Noguera - Electricista autorizado por UTE",
+  "nicho": "electricista autorizado por UTE",
+  "zona": "Maldonado",
+  "barrio": "",
+  "telefono": "098 599 609",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Instalaciones eléctricas en hogares y comercios",
+    "Venta de materiales eléctricos",
+    "Reparaciones y mantenimiento",
+    "Asesoramiento técnico"
+  ],
+  "rating": 5.0,
+  "cantidad_resenas": 1,
+  "testimonios": [],
+  "logo": "",
+  "fotos": [],
+  "fuente_fotos": "stock_fallback",
+  "notas": "Dirección, teléfono, horario, rating y cantidad de reseñas confirmados en fuente pública. No pude ver el texto completo literal de la única reseña de Google Maps desde acá. No se encontraron fotos aprobadas: Google Maps no mostró galería útil y las imágenes externas revisadas eran capturas/mapas o tenían marca de agua."
+}

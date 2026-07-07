@@ -1,0 +1,6 @@
+{
+  "name": "Bazzanos Instalaciones Electricas. Firma instaladora autorizada por UTE",
+  "description": "Landing page para Bazzanos Instalaciones Electricas. Firma instaladora autorizada por UTE en Canelones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

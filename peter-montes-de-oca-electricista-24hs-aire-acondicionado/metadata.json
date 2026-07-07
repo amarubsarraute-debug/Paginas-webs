@@ -1,0 +1,6 @@
+{
+  "name": "Peter Montes de Oca - Electricista 24 hs. - Aire acondicionado",
+  "description": "Landing page para Peter Montes de Oca - Electricista 24 hs. - Aire acondicionado en Canelones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

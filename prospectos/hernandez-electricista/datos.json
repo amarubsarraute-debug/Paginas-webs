@@ -1,0 +1,44 @@
+{
+  "negocio": "Hernández electricista",
+  "nicho": "electricista",
+  "zona": "Canelones",
+  "barrio": "Ciudad de la Costa",
+  "telefono": "093 783 551",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Nuevas instalaciones electricas",
+    "Reparaciones electricas",
+    "Renovaciones electricas",
+    "Urgencias electricas",
+    "Instalacion de nicho reglamentario UTE",
+    "Canalizacion y cableado",
+    "Instalacion de luminarias",
+    "Presupuesto sin costo"
+  ],
+  "rating": 5.0,
+  "cantidad_resenas": 16,
+  "testimonios": [
+    {
+      "texto": "EXCELETE ATENCIÓN...MUY BUEN TRABAJO..MUCHAS PROLIJIDAD..Y CUADOSO EN LOS DETALLES",
+      "autor": "Laura Chavez"
+    },
+    {
+      "texto": "Excelente trabajo… muy conforme",
+      "autor": "Karol Rodríguez"
+    },
+    {
+      "texto": "Excelente trabajo. Muy comprometido y responsable con su trabajo!",
+      "autor": "Sabrina Aguirre"
+    }
+  ],
+  "logo": "",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg",
+    "fotos/foto4.jpg",
+    "fotos/foto5.jpg"
+  ],
+  "fuente_fotos": "instagram",
+  "notas": "Datos, rating, telefono, direccion, descripcion de propietario y testimonios tomados de Google Maps. Servicios complementados con Instagram oficial @hernandez.electricista. Fotos tomadas de Instagram oficial y revisadas visualmente; algunas son de baja resolucion por limitacion publica de Instagram, pero muestran trabajos reales del negocio."
+}

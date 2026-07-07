@@ -1,0 +1,23 @@
+{
+  "negocio": "Electricista Pocitos",
+  "nicho": "electricista",
+  "zona": "Montevideo",
+  "barrio": "Pocitos",
+  "telefono": "097 154 500",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Electricista 24 horas",
+    "Urgencias electricas",
+    "Cableado",
+    "Llaves termicas",
+    "Llave diferencial",
+    "Instalaciones y reparaciones electricas a domicilio"
+  ],
+  "rating": null,
+  "cantidad_resenas": null,
+  "testimonios": [],
+  "logo": "",
+  "fotos": [],
+  "fuente_fotos": "stock_fallback",
+  "notas": "El nombre y barrio surgen del link de Google Maps. Telefono y servicios confirmados en una pagina publica de Google Sites titulada Electricista Pocitos / Electricista Montevideo a Domicilio 24 horas. No pude confirmar rating, cantidad de resenas ni textos literales de resenas. La imagen de Google Sites quedo bloqueada para descarga directa y no se encontro red oficial clara con fotos en buena resolucion."
+}

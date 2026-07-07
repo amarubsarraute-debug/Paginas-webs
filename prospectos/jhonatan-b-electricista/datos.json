@@ -1,0 +1,35 @@
+{
+  "negocio": "Jhonatan B. Electricista",
+  "nicho": "electricista",
+  "zona": "Canelones",
+  "barrio": "Joaquín Suárez",
+  "telefono": "093 863 380",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Electricista 24 horas",
+    "Reparaciones electricas",
+    "Urgencias electricas",
+    "Instalaciones electricas",
+    "Servicio electrico a domicilio"
+  ],
+  "rating": 5.0,
+  "cantidad_resenas": 7,
+  "testimonios": [
+    {
+      "texto": "Excelente Electricista CON EXPERIENCIA. Resolvió al instante. Muy amable. Recomiendo sin duda.",
+      "autor": "Bernardo Suarez"
+    },
+    {
+      "texto": "Muy prolijo, excelente servicio!",
+      "autor": "Juan Manuel Garcia"
+    },
+    {
+      "texto": "Muy buena atención respuesta inmediata Recomendable",
+      "autor": "Federico Bentancur"
+    }
+  ],
+  "logo": "",
+  "fotos": [],
+  "fuente_fotos": "stock_fallback",
+  "notas": "Datos, rating, telefono, direccion y testimonios tomados de la ficha visible de Google Maps. No se encontro web, Instagram o Facebook oficial claro. La ficha no expuso fotos de trabajos aprobables; solo Street View, por eso no se guardaron fotos."
+}

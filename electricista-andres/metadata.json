@@ -1,0 +1,6 @@
+{
+  "name": "Electricista ANDRES",
+  "description": "Landing page para Electricista ANDRES en Canelones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

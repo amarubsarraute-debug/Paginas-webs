@@ -1,0 +1,6 @@
+{
+  "name": "Jhonatan B. Electricista",
+  "description": "Landing page para Jhonatan B. Electricista en Canelones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

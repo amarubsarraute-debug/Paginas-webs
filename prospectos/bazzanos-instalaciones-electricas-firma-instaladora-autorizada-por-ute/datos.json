@@ -1,0 +1,37 @@
+{
+  "negocio": "Bazzanos Instalaciones Electricas. Firma instaladora autorizada por UTE",
+  "nicho": "instalaciones electricas",
+  "zona": "Canelones",
+  "barrio": "Barros Blancos",
+  "telefono": "096 129 821",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Instalaciones electricas en hogares",
+    "Instalaciones electricas industriales",
+    "Obras electricas",
+    "Mantenimiento electrico",
+    "Servicios urgentes 24 hrs",
+    "Tramites ante UTE",
+    "Habilitacion de suministros",
+    "Reconexiones de servicios",
+    "Modificacion de potencia contratada",
+    "Asesoramiento tecnico"
+  ],
+  "rating": 5.0,
+  "cantidad_resenas": 86,
+  "testimonios": [],
+  "logo": "",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg",
+    "fotos/foto4.jpg",
+    "fotos/foto5.jpg",
+    "fotos/foto6.jpg",
+    "fotos/foto7.jpg",
+    "fotos/foto8.jpg",
+    "fotos/foto9.jpg"
+  ],
+  "fuente_fotos": "facebook",
+  "notas": "Datos confirmados en 1122, ElectricistasUY y SmartServices: Barros Blancos, telefono 096 129 821, servicios para hogares e industria, obras, mantenimiento, urgencias 24 hrs y tramites ante UTE. ElectricistasUY muestra rating 5.0 basado en 86 opiniones, pero no pude ver textos literales de resenas; por eso testimonios queda vacio. Las fotos aprobadas vienen de la galeria publica de 1122 de Instalaciones Electricas Bazzanos; el esquema no tiene opcion 'web/directorio', por eso fuente_fotos queda marcada como facebook y la fuente real se aclara aca."
+}

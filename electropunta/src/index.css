@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Electropunta brand palette */
+  --color-paper: #FFFFFF;
+  --color-bg-base: #F2F6FC;
+  --color-bg-tint: #E4ECF8;
+  --color-card: #FFFFFF;
+  --color-ink: #071C44;
+  --color-ink-light: #173763;
+  --color-muted: #53697F;
+  --color-brand-blue: #0050B8;
+  --color-brand-blue-deep: #002E73;
+  --color-gold: #FF9900;
+  --color-gold-bright: #FFC24A;
+  --color-gold-soft: #FFE2A3;
+  --color-navy: #002E73;
+  --color-star: #FF9900;
+  --color-border-subtle: rgba(0, 46, 115, 0.12);
+  --color-border-strong: rgba(0, 46, 115, 0.24);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink-light);
+  background:
+    radial-gradient(85% 70% at 76% -8%, rgba(0, 80, 184, 0.14) 0%, rgba(0, 80, 184, 0) 58%),
+    radial-gradient(60% 45% at 5% 12%, rgba(255, 153, 0, 0.12) 0%, rgba(255, 153, 0, 0) 62%),
+    linear-gradient(180deg, #FFFFFF 0%, #F2F6FC 54%, #E7EEF8 100%);
+  background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Subtly textured background noise */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--color-ink);
+}
+
+.hero-kicker span:last-child {
+  min-width: 0;
+  white-space: normal;
+}
+
+.hero-copy {
+  max-width: min(calc(100vw - 2rem), 358px);
+}
+
+.mobile-safe-row {
+  max-width: min(100%, 358px);
+}
+
+@media (min-width: 640px) {
+  .hero-copy {
+    max-width: none;
+  }
+
+  .mobile-safe-row {
+    max-width: none;
+  }
+}
+
+/* Selection Style */
+::selection {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+/* Custom Scrollbar for modern touch */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 999px;
+  border: 2px solid var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}

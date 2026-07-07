@@ -1,0 +1,6 @@
+{
+  "name": "Electricista Pocitos",
+  "description": "Landing page para Electricista Pocitos en Montevideo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

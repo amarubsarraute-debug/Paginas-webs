@@ -1,0 +1,6 @@
+{
+  "name": "Mint Clínica - Odontología y Estética Facial",
+  "description": "Landing page para Mint Clínica - Odontología y Estética Facial en Montevideo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

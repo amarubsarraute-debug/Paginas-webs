@@ -3,3 +3,12 @@ export const WHATSAPP_LINK = "https://wa.me/59891267369?text=Hola%20Silvera%20El
 export const EMAIL = "edanisilvera@gmail.com";
 export const LOCATION = "Maldonado, Uruguay";
 export const SCHEDULE = "lunes a sábado de 7:00 a 20:00";
+
+export const GOOGLE_REVIEW_LINK = "https://www.google.com/maps/search/?api=1&query=silvera-electricidad%20Canelones";
+
+export type SocialLink = {
+  label: "Instagram" | "Facebook" | "LinkedIn" | "Web";
+  href: string;
+};
+
+export const SOCIAL_LINKS: SocialLink[] = [];

@@ -1,0 +1,6 @@
+{
+  "name": "Electricista Cabrera",
+  "description": "Landing page para Electricista Cabrera en Canelones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

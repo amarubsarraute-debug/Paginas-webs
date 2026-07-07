@@ -1,0 +1,6 @@
+{
+  "name": "Noguera - Electricista autorizado por UTE",
+  "description": "Landing page para Noguera - Electricista autorizado por UTE, empresa de servicios eléctricos en Maldonado, Uruguay, firma autorizada por UTE.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

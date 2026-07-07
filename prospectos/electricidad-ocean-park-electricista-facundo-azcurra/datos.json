@@ -1,0 +1,35 @@
+{
+  "negocio": "Electricidad Ocean Park - Electricista Facundo Azcurra",
+  "nicho": "electricista",
+  "zona": "Maldonado",
+  "barrio": "Ocean Park",
+  "telefono": "091 476 681",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Instalaciones eléctricas en hogares y comercios",
+    "Venta de materiales eléctricos",
+    "Reparaciones y mantenimiento",
+    "Asesoramiento técnico"
+  ],
+  "rating": 4.9,
+  "cantidad_resenas": 31,
+  "testimonios": [
+    {
+      "texto": "tremendo laburo el de Facundo. profesional, clarito y sin vueltas. cumplió con el trabajo según lo conversado, y fue muy transparente con los tiempos algo que personalmente aprecio mucho. sumo un agradecimiento por el esfuerzo extra de venir a laburar un sabado mientras que yo no estaba en casa. MIL gracias Facu! crack total",
+      "autor": "javier ifran perez"
+    },
+    {
+      "texto": "Muy conforme con el trabajo. Fue muy claro al explicar lo que había que hacer y resolvió todo con prolijidad y buena disposición. Siempre atento y resolutivo. Totalmente recomendable si estás buscando un electricista confiable y profesional.",
+      "autor": "Mathias Peloche"
+    }
+  ],
+  "logo": "fotos/logo.jpg",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg",
+    "fotos/foto4.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "Rating, cantidad de reseñas, teléfono, ubicación y servicios confirmados en fuente pública. Los testimonios fueron copiados de la captura de Google Maps enviada por el usuario."
+}

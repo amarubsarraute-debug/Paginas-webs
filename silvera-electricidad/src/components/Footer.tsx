@@ -28,12 +28,14 @@ export function Footer() {
                   <span>{WHATSAPP_NUMBER}</span>
                 </a>
               </li>
-              <li>
-                <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 text-muted hover:text-gold transition-colors font-semibold">
-                  <Mail className="w-4 h-4 shrink-0 text-gold" />
-                  <span>{EMAIL}</span>
-                </a>
-              </li>
+              {EMAIL && (
+                <li>
+                  <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 text-muted hover:text-gold transition-colors font-semibold">
+                    <Mail className="w-4 h-4 shrink-0 text-gold" />
+                    <span>{EMAIL}</span>
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
 

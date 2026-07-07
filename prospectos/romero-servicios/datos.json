@@ -1,0 +1,38 @@
+{
+  "negocio": "Romero Servicios",
+  "nicho": "electricista",
+  "zona": "Canelones",
+  "barrio": "Ciudad de la Costa",
+  "telefono": "098 752 379",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Electricista 24 horas",
+    "Instalaciones electricas",
+    "Reparaciones electricas",
+    "Instalacion de equipos de wifi",
+    "Asesoramiento electrico general"
+  ],
+  "rating": 5,
+  "cantidad_resenas": 9,
+  "testimonios": [
+    {
+      "texto": "Un servicio exelente, prolijo cuidando cada detalle 100 por ciento recomendable .....",
+      "autor": "pablo bueno lopez"
+    },
+    {
+      "texto": "Excelente trabajo, responsable y profesional.",
+      "autor": "Cecilia Miguel"
+    },
+    {
+      "texto": "Excelente servicio. No solo respecto a la instalación del equipo de wifi sino que brindó sugerencias y consejos sobre electricidad en general.",
+      "autor": "raul isasa"
+    }
+  ],
+  "logo": "",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "Datos, rating, direccion y testimonios tomados de la ficha visible de Google Maps. La ficha no muestra telefono publico. Servicios inferidos de categoria, horario 24 horas, fotos y resenas visibles. No use Instagram encontrado como @romero.servicios porque varias publicaciones indicaban San Luis/Argentina y telefono no uruguayo, por lo que no pude confirmarlo como fuente oficial del negocio de Ciudad de la Costa."
+}

@@ -1,0 +1,20 @@
+{
+  "negocio": "Juan carlos Martínez electricidad",
+  "nicho": "electricidad",
+  "zona": "",
+  "barrio": "",
+  "telefono": "097 465 040",
+  "anios_trayectoria": null,
+  "servicios": [],
+  "rating": null,
+  "cantidad_resenas": null,
+  "testimonios": [],
+  "logo": "",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "El link de Google Maps resuelve al negocio Juan carlos Martínez electricidad. No pude confirmar teléfono, servicios, rating, cantidad de reseñas ni textos literales desde fuentes públicas accesibles."
+}

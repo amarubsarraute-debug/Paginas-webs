@@ -1,0 +1,38 @@
+{
+  "negocio": "Nelson Bergero Electricista",
+  "nicho": "electricista",
+  "zona": "Canelones",
+  "barrio": "Bello Horizonte",
+  "telefono": "099 196 609",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Instalaciones electricas",
+    "Reparaciones electricas",
+    "Reparacion de calefones electricos",
+    "Asesoramiento tecnico",
+    "Trabajos electricos con materiales"
+  ],
+  "rating": 5.0,
+  "cantidad_resenas": 17,
+  "testimonios": [
+    {
+      "texto": "Excelente profesional. Muy rapido y eficiente. Buenos precios y calidad.",
+      "autor": "walter Paulucci"
+    },
+    {
+      "texto": "Lo recomiendo. Excelente trabajo, puntualidad y prolijidad. Nos asesoró y recomendó lo mejor para nosotros.",
+      "autor": "Tania Ceballe"
+    },
+    {
+      "texto": "Exelente atención. Hace años que confiamos en su servicio. Mucha dedicación, educación y compromiso. Muy recomendable",
+      "autor": "Ana Paula Alves"
+    }
+  ],
+  "logo": "",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "Datos, rating, telefono, direccion y testimonios tomados de la ficha visible de Google Maps. La ficha expone pocas imagenes: se guardaron 2 candidatas relacionadas a materiales/insumos electricos, pero no se encontraron 6 fotos claras de trabajos terminados o en curso."
+}

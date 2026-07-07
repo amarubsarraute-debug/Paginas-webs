@@ -1,0 +1,27 @@
+{
+  "negocio": "Aura Clinic - Estética Láser",
+  "slug": "aura-clinic-estetica-laser",
+  "nicho": "medicina estética",
+  "zona": "Montevideo",
+  "barrio": "Punta Carretas",
+  "telefono": "",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Depilación Láser Definitiva",
+    "Rejuvenecimiento Láser",
+    "Tratamientos Faciales y Corporales",
+    "Armonización Facial y Estética",
+    "Peelings y Renovación Celular"
+  ],
+  "rating": null,
+  "cantidad_resenas": null,
+  "testimonios": [],
+  "logo": "fotos/logo.png",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg"
+  ],
+  "fuente_fotos": "instagram",
+  "notas": "Clínica especializada en tratamientos estéticos avanzados con tecnología láser. Ubicada en la zona de Punta Carretas, Montevideo. Perfil de Instagram: @auraclinic.uy"
+}

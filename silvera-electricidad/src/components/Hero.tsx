@@ -46,7 +46,10 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.16 }}
               className="text-lg sm:text-xl text-muted leading-relaxed max-w-xl font-light"
             >
-              Silvera Electricidad realiza trabajos residenciales, comerciales y obras con respaldo técnico hasta 50 kW. <b>Respuestas rápidas, presupuestos claros y carpetas de habilitación de UTE al día.</b>
+              <span className="relative inline-block text-ink z-10 font-extrabold mr-1">
+                <span className="relative z-10">Silvera Electricidad</span>
+                <span className="absolute left-0 right-0 bottom-[2px] h-[0.25em] bg-gold-soft rounded-sm -z-10" />
+              </span> realiza trabajos residenciales, comerciales y obras con respaldo técnico hasta 50 kW. <b>Respuestas rápidas, presupuestos claros y carpetas de habilitación de UTE al día.</b>
             </motion.p>
 
             {/* Buttons */}
@@ -66,11 +69,11 @@ export function Hero() {
                 <svg className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
               <a
-                href="tel:+59895555161" // Usamos el número de teléfono del cliente de la landing
+                href="tel:+59891267369"
                 className="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-gold/5 border border-border-strong text-ink font-bold rounded-xl transition-all duration-200 hover:-translate-y-0.5 text-center flex items-center justify-center gap-2"
               >
                 <Phone className="w-5 h-5 text-gold" />
-                Llamar al 095 555 161
+                Llamar al 091 267 369
               </a>
             </motion.div>
 

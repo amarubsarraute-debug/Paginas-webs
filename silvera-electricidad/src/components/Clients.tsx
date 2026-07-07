@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { motion } from "motion/react";
+import { GOOGLE_REVIEW_LINK } from "../lib/constants";
 
 export function Clients() {
   const mainReviews = [

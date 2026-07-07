@@ -1395,3 +1395,63 @@ h1, h2, h3, h4, h5, h6 {
     transform: none !important;
   }
 }
+
+/* =============================================================
+   Elegirnos (Diferenciales)
+   ============================================================= */
+.elegirnos-section {
+  background: var(--bg-elevated);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.feature-card {
+  position: relative;
+  padding: 2.2rem 1.6rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-panel);
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--line-strong);
+  background: var(--bg-panel-strong);
+}
+
+.feature-card h3 {
+  font-size: 1.35rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.reviews-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2rem, 4.5vw, 3.5rem);
+}
+
+@media (max-width: 980px) {
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

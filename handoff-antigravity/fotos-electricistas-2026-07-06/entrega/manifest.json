@@ -1,0 +1,1534 @@
+{
+  "generatedAt": "2026-07-06",
+  "criteria": "Solo fotos/logo con coincidencia fuerte por fuente previa, Facebook publico confirmado, Google Maps/Fotos ya descargado o assets existentes claramente especificos del negocio. Se descartaron fotos personales, stock/genericas y paginas con telefono/pais no coincidente.",
+  "totalFolders": 23,
+  "items": [
+    {
+      "slug": "alejandro-severo-electricista-autorizado-x-ute",
+      "negocio": "Alejandro Severo ELECTRICISTA AUTORIZADO X UTE",
+      "telefono": "098 972 547",
+      "fuente_fotos_previa": "stock_fallback",
+      "fotos_confirmadas_en_entrega": 0,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/_alectricidad_/"
+        }
+      ],
+      "email": null,
+      "notes": [
+        "Instagram publico requiere login para descargar mas que miniaturas; queda pendiente si se habilita acceso.",
+        "Telefono confirmado en Instagram oficial @_alectricidad_ y en listado publico de UTE para SEVERO BENITEZ ENZO ALEJANDRO. Servicios inferidos de publicaciones publicas de Instagram y condicion de tecnico autorizado por UTE. No pude confirmar rating, cantidad de resenas ni textos literales de resenas. Las imagenes publicas descargables desde Instagram salieron como miniaturas de 192px, por debajo del filtro de calidad, por eso no se aprobaron fotos."
+      ],
+      "files": []
+    },
+    {
+      "slug": "barcelo-instalaciones-electricas",
+      "negocio": "Barceló instalaciones eléctricas",
+      "telefono": "098 310 826",
+      "fuente_fotos_previa": "google_maps",
+      "fotos_confirmadas_en_entrega": 11,
+      "logos_en_entrega": 1,
+      "status": "completo_6_o_mas",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/barcelo.instalaciones/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/p/Barcelo-instalaciones-100075842471362/"
+        }
+      ],
+      "email": null,
+      "notes": [
+        "Facebook con formato /p/... requiere cookies autenticadas para bajar galeria completa; se uso solo material ya disponible si existia.",
+        "Teléfono, ubicación, horario, rating y cantidad de reseñas confirmados en fuente pública. No pude acceder desde acá al texto literal de las reseñas de Google Maps."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "barcelo-instalaciones-electricas/fotos/01_prospectos_foto1.jpg",
+          "source": "google_maps",
+          "original": "prospectos/barcelo-instalaciones-electricas/fotos/foto1.jpg",
+          "width": 3514,
+          "height": 1840,
+          "bytes": 738849
+        },
+        {
+          "kind": "foto",
+          "file": "barcelo-instalaciones-electricas/fotos/02_prospectos_foto2.jpg",
+          "source": "google_maps",
+          "original": "prospectos/barcelo-instalaciones-electricas/fotos/foto2.jpg",
+          "width": 3984,
+          "height": 1840,
+          "bytes": 2845765
+        },
+        {
+          "kind": "foto",
+          "file": "barcelo-instalaciones-electricas/fotos/03_prospectos_foto3.jpg",
+          "source": "google_maps",
+          "original": "prospectos/barcelo-instalaciones-electricas/fotos/foto3.jpg",
+          "width": 1840,
+          "height": 2924,
+          "bytes": 1304232
+        },
+        {
+          "kind": "foto",
+          "file": "barcelo-instalaciones-electricas/fotos/04_web_public_02-camioneta-barcelo.png",
+          "source": "existing_site_business_specific",
+          "original": "barcelo-instalaciones-electricas/public/img/02-camioneta-barcelo.png",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 2689913
+        },
+        {
+          "kind": "foto",
+          "file": "barcelo-instalaciones-electricas/fotos/05_web_public_03-obra-instalacion-subterranea.png",
+          "source": "existing_site_business_specific",
+          "original": "barcelo-instalaciones-electricas/public/img/03-obra-instalacion-subterranea.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 3684324
+        },
+        {
+          "kind": "foto",
+          "file": "barcelo-instalaciones-electricas/fotos/06_web_public_04-control-acceso-intelbras.png",
+          "source": "existing_site_business_specific",
+          "original": "barcelo-instalaciones-electricas/public/img/04-control-acceso-intelbras.png",
+          "width": 941,
+          "height": 1672,
+          "bytes": 1921534
+        },
+        {
+          "kind": "foto",
+          "file": "barcelo-instalaciones-electricas/fotos/07_web_public_05-tablero-electrico-organizado.png",
+          "source": "existing_site_business_specific",
+          "original": "barcelo-instalaciones-electricas/public/img/05-tablero-electrico-organizado.png",
+          "width": 941,
+          "height": 1672,
+          "bytes": 2393627
+        },
+        {
+          "kind": "foto",
+          "file": "barcelo-instalaciones-electricas/fotos/08_web_public_06-medidores-exteriores.png",
+          "source": "existing_site_business_specific",
+          "original": "barcelo-instalaciones-electricas/public/img/06-medidores-exteriores.png",
+          "width": 1122,
+          "height": 1402,
+          "bytes": 2314279
+        },
+        {
+          "kind": "foto",
+          "file": "barcelo-instalaciones-electricas/fotos/09_web_public_07-sala-de-medidores-y-distribucion.png",
+          "source": "existing_site_business_specific",
+          "original": "barcelo-instalaciones-electricas/public/img/07-sala-de-medidores-y-distribucion.png",
+          "width": 1672,
+          "height": 941,
+          "bytes": 2289970
+        },
+        {
+          "kind": "foto",
+          "file": "barcelo-instalaciones-electricas/fotos/10_web_public_08-selfie-profesional-con-tablero.png",
+          "source": "existing_site_business_specific",
+          "original": "barcelo-instalaciones-electricas/public/img/08-selfie-profesional-con-tablero.png",
+          "width": 1122,
+          "height": 1402,
+          "bytes": 2526237
+        },
+        {
+          "kind": "foto",
+          "file": "barcelo-instalaciones-electricas/fotos/11_web_public_09-home-barcelo.jpg",
+          "source": "existing_site_business_specific",
+          "original": "barcelo-instalaciones-electricas/public/img/09-home-barcelo.jpg",
+          "width": 1024,
+          "height": 576,
+          "bytes": 207685
+        },
+        {
+          "kind": "logo",
+          "file": "barcelo-instalaciones-electricas/logos/01_web_public_01-logo-barcelo.png",
+          "source": "existing_site_logo",
+          "original": "barcelo-instalaciones-electricas/public/img/01-logo-barcelo.png",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 2119538
+        }
+      ]
+    },
+    {
+      "slug": "electricidad-ocean-park-electricista-facundo-azcurra",
+      "negocio": "Electricidad Ocean Park - Electricista Facundo Azcurra",
+      "telefono": "091 476 681",
+      "fuente_fotos_previa": "google_maps",
+      "fotos_confirmadas_en_entrega": 15,
+      "logos_en_entrega": 3,
+      "status": "completo_6_o_mas",
+      "socialLinks": [
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/electricosuruguay/"
+        }
+      ],
+      "email": null,
+      "notes": [
+        "Rating, cantidad de reseñas, teléfono, ubicación y servicios confirmados en fuente pública. Los testimonios fueron copiados de la captura de Google Maps enviada por el usuario."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/01_prospectos_foto1.jpg",
+          "source": "google_maps",
+          "original": "prospectos/electricidad-ocean-park-electricista-facundo-azcurra/fotos/foto1.jpg",
+          "width": 3120,
+          "height": 4160,
+          "bytes": 1805985
+        },
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/02_prospectos_foto2.jpg",
+          "source": "google_maps",
+          "original": "prospectos/electricidad-ocean-park-electricista-facundo-azcurra/fotos/foto2.jpg",
+          "width": 3120,
+          "height": 4160,
+          "bytes": 3229993
+        },
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/03_prospectos_foto3.jpg",
+          "source": "google_maps",
+          "original": "prospectos/electricidad-ocean-park-electricista-facundo-azcurra/fotos/foto3.jpg",
+          "width": 3120,
+          "height": 4160,
+          "bytes": 3447981
+        },
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/04_prospectos_foto4.jpg",
+          "source": "google_maps",
+          "original": "prospectos/electricidad-ocean-park-electricista-facundo-azcurra/fotos/foto4.jpg",
+          "width": 4160,
+          "height": 3120,
+          "bytes": 2993653
+        },
+        {
+          "kind": "logo",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/logos/01_prospectos_logo.jpg",
+          "source": "google_maps",
+          "original": "prospectos/electricidad-ocean-park-electricista-facundo-azcurra/fotos/logo.jpg",
+          "width": 1050,
+          "height": 600,
+          "bytes": 52867
+        },
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/05_facebook_2829672690667268.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/electricidad-ocean-park-electricista-facundo-azcurra/2829672690667268.jpg",
+          "width": 1536,
+          "height": 2048,
+          "bytes": 222215
+        },
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/06_facebook_2829672774000593.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/electricidad-ocean-park-electricista-facundo-azcurra/2829672774000593.jpg",
+          "width": 1536,
+          "height": 2048,
+          "bytes": 229607
+        },
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/07_facebook_2829672787333925.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/electricidad-ocean-park-electricista-facundo-azcurra/2829672787333925.jpg",
+          "width": 1536,
+          "height": 2048,
+          "bytes": 249112
+        },
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/08_facebook_2829672834000587.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/electricidad-ocean-park-electricista-facundo-azcurra/2829672834000587.jpg",
+          "width": 1536,
+          "height": 2048,
+          "bytes": 191449
+        },
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/09_facebook_482435787217890.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/electricidad-ocean-park-electricista-facundo-azcurra/482435787217890.jpg",
+          "width": 720,
+          "height": 960,
+          "bytes": 22254
+        },
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/10_facebook_482435843884551.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/electricidad-ocean-park-electricista-facundo-azcurra/482435843884551.jpg",
+          "width": 720,
+          "height": 960,
+          "bytes": 79004
+        },
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/11_facebook_482436670551135.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/electricidad-ocean-park-electricista-facundo-azcurra/482436670551135.jpg",
+          "width": 720,
+          "height": 960,
+          "bytes": 52454
+        },
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/12_facebook_482436730551129.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/electricidad-ocean-park-electricista-facundo-azcurra/482436730551129.jpg",
+          "width": 720,
+          "height": 960,
+          "bytes": 43803
+        },
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/13_facebook_497964415665027.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/electricidad-ocean-park-electricista-facundo-azcurra/497964415665027.jpg",
+          "width": 944,
+          "height": 1400,
+          "bytes": 182746
+        },
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/14_facebook_531871968940938.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/electricidad-ocean-park-electricista-facundo-azcurra/531871968940938.jpg",
+          "width": 1600,
+          "height": 1200,
+          "bytes": 74050
+        },
+        {
+          "kind": "foto",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/fotos/15_facebook_531871995607602.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/electricidad-ocean-park-electricista-facundo-azcurra/531871995607602.jpg",
+          "width": 1200,
+          "height": 1600,
+          "bytes": 78845
+        },
+        {
+          "kind": "logo",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/logos/02_facebook_473655011429301.png",
+          "source": "facebook_public_branding",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/electricidad-ocean-park-electricista-facundo-azcurra/473655011429301.png",
+          "width": 360,
+          "height": 360,
+          "bytes": 205133
+        },
+        {
+          "kind": "logo",
+          "file": "electricidad-ocean-park-electricista-facundo-azcurra/logos/03_facebook_640293698098764.jpg",
+          "source": "facebook_public_branding",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/electricidad-ocean-park-electricista-facundo-azcurra/640293698098764.jpg",
+          "width": 720,
+          "height": 900,
+          "bytes": 20194
+        }
+      ]
+    },
+    {
+      "slug": "electricista-andres",
+      "negocio": "Electricista ANDRES",
+      "telefono": "093 381 464",
+      "fuente_fotos_previa": "google_maps",
+      "fotos_confirmadas_en_entrega": 1,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/servicioselectricos_andres/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/electricidadyservicezonanorte/"
+        }
+      ],
+      "email": null,
+      "notes": [
+        "Facebook descartado: la pagina encontrada usa telefono argentino 11 3185-5266, no coincide con el negocio uruguayo 093 381 464.",
+        "Datos confirmados en Google Maps: Calle 42 y 39, Bello Horizonte, Canelones, telefono 093 381 464, rating 5.0 y 5 resenas. Solo hubo 3 resenas visibles en la ficha accesible y una foto real aprobada."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "electricista-andres/fotos/01_prospectos_foto1.jpg",
+          "source": "google_maps",
+          "original": "prospectos/electricista-andres/fotos/foto1.jpg",
+          "width": 1200,
+          "height": 1600,
+          "bytes": 453177
+        }
+      ]
+    },
+    {
+      "slug": "electricista-cabrera",
+      "negocio": "Electricista Cabrera",
+      "telefono": "094 046 480",
+      "fuente_fotos_previa": "google_maps",
+      "fotos_confirmadas_en_entrega": 1,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/electricista.cabrera/"
+        }
+      ],
+      "email": null,
+      "notes": [
+        "Instagram publico requiere login para descargar mas que miniaturas; queda pendiente si se habilita acceso.",
+        "Telefono, rating, cantidad de resenas y ubicacion confirmados en Google Maps. Cataloxy confirma Daniel Cabrera, tecnico autorizado por UTE, presupuesto sin cargo y trabajos garantizados. Maps solo mostro 3 resenas visibles y una foto real aprobada."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "electricista-cabrera/fotos/01_prospectos_foto1.jpg",
+          "source": "google_maps",
+          "original": "prospectos/electricista-cabrera/fotos/foto1.jpg",
+          "width": 1200,
+          "height": 1600,
+          "bytes": 279470
+        }
+      ]
+    },
+    {
+      "slug": "electricista-palermo",
+      "negocio": "Electricista Palermo",
+      "telefono": "092 925 469",
+      "fuente_fotos_previa": "stock_fallback",
+      "fotos_confirmadas_en_entrega": 0,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [],
+      "email": null,
+      "notes": [
+        "Nombre, telefono, zona, horario 24 horas, rating y cantidad de resenas confirmados en fuentes publicas espejo de Google Maps. No pude confirmar una web o red oficial. Las fotos candidatas encontradas en directorios eran chicas, con marca de agua, borrosas, mapa/captura o duplicadas; por eso no se aprobaron fotos ni logo. No inclui testimonios porque no pude acceder a textos literales reales de resenas."
+      ],
+      "files": []
+    },
+    {
+      "slug": "electricista-pocitos",
+      "negocio": "Electricista Pocitos",
+      "telefono": "097 154 500",
+      "fuente_fotos_previa": "stock_fallback",
+      "fotos_confirmadas_en_entrega": 0,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [],
+      "email": null,
+      "notes": [
+        "El nombre y barrio surgen del link de Google Maps. Telefono y servicios confirmados en una pagina publica de Google Sites titulada Electricista Pocitos / Electricista Montevideo a Domicilio 24 horas. No pude confirmar rating, cantidad de resenas ni textos literales de resenas. La imagen de Google Sites quedo bloqueada para descarga directa y no se encontro red oficial clara con fotos en buena resolucion."
+      ],
+      "files": []
+    },
+    {
+      "slug": "electricistas-electricista-urgencias-habilitaciones-ute",
+      "negocio": "Electricistas | Electricista Urgencias | Habilitaciones UTE ⚡",
+      "telefono": "099 148 089",
+      "fuente_fotos_previa": "stock_fallback",
+      "fotos_confirmadas_en_entrega": 0,
+      "logos_en_entrega": 1,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [],
+      "email": null,
+      "notes": [
+        "Telefono, servicios y mas de 10 anos de experiencia confirmados en Electricistas UNO. Rating y cantidad de resenas tomados de LeadCanvas, que lista este negocio exacto con datos verificados de Google Maps. No pude acceder a textos literales de resenas. Solo se aprobo el logo de Electricistas UNO; las fotos candidatas del sitio eran genericas, de zona o demasiado chicas para usarlas como fotos reales del negocio."
+      ],
+      "files": [
+        {
+          "kind": "logo",
+          "file": "electricistas-electricista-urgencias-habilitaciones-ute/logos/01_prospectos_logo.png",
+          "source": "stock_fallback",
+          "original": "prospectos/electricistas-electricista-urgencias-habilitaciones-ute/fotos/logo.png",
+          "width": 1024,
+          "height": 428,
+          "bytes": 482424
+        }
+      ]
+    },
+    {
+      "slug": "gonzalo-chacon-electricista-urgencias-24-horas",
+      "negocio": "Gonzalo Chacón- Electricista Urgencias 24 horas",
+      "telefono": "091 908 183",
+      "fuente_fotos_previa": "google_maps",
+      "fotos_confirmadas_en_entrega": 23,
+      "logos_en_entrega": 1,
+      "status": "completo_6_o_mas",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/electricistaaenmontevideo/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/GonzaloChaconn/"
+        }
+      ],
+      "email": "chacongonzalo2020@gmail.com",
+      "notes": [
+        "Telefono, direccion, servicios, mas de 10 anos de experiencia y atencion 24 horas confirmados en el sitio oficial y directorios publicos. Rating y cantidad de resenas tomados de Electricistas Uruguay como espejo de Google Maps; otra fuente publica mostro una cantidad mayor de resenas, por lo que puede haber diferencia actual. No inclui testimonios porque no pude acceder a textos literales completos de resenas de Google. Fotos reales bajadas del sitio oficial del negocio; el esquema no incluye valor web_oficial para fuente_fotos."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/01_prospectos_foto1.jpg",
+          "source": "google_maps",
+          "original": "prospectos/gonzalo-chacon-electricista-urgencias-24-horas/fotos/foto1.jpg",
+          "width": 891,
+          "height": 676,
+          "bytes": 119967
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/02_prospectos_foto2.jpg",
+          "source": "google_maps",
+          "original": "prospectos/gonzalo-chacon-electricista-urgencias-24-horas/fotos/foto2.jpg",
+          "width": 1530,
+          "height": 2040,
+          "bytes": 270109
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/03_prospectos_foto3.jpg",
+          "source": "google_maps",
+          "original": "prospectos/gonzalo-chacon-electricista-urgencias-24-horas/fotos/foto3.jpg",
+          "width": 1152,
+          "height": 2048,
+          "bytes": 137702
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/04_prospectos_foto4.jpg",
+          "source": "google_maps",
+          "original": "prospectos/gonzalo-chacon-electricista-urgencias-24-horas/fotos/foto4.jpg",
+          "width": 1536,
+          "height": 2048,
+          "bytes": 331420
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/05_prospectos_foto5.jpg",
+          "source": "google_maps",
+          "original": "prospectos/gonzalo-chacon-electricista-urgencias-24-horas/fotos/foto5.jpg",
+          "width": 1152,
+          "height": 2048,
+          "bytes": 371759
+        },
+        {
+          "kind": "logo",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/logos/01_prospectos_logo.png",
+          "source": "google_maps",
+          "original": "prospectos/gonzalo-chacon-electricista-urgencias-24-horas/fotos/logo.png",
+          "width": 626,
+          "height": 362,
+          "bytes": 14410
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/06_facebook_1014273683535508.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1014273683535508.jpg",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 241908
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/07_facebook_1014273686868841.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1014273686868841.jpg",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 255363
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/08_facebook_1027179935578216.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1027179935578216.jpg",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 187714
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/09_facebook_1044815907147952.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1044815907147952.jpg",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 262150
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/10_facebook_1044816863814523.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1044816863814523.jpg",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 301648
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/11_facebook_1416731063289766.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1416731063289766.jpg",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 201339
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/12_facebook_1492009342428604.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1492009342428604.jpg",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 240981
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/13_facebook_1675785114051025.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1675785114051025.jpg",
+          "width": 3072,
+          "height": 4096,
+          "bytes": 985594
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/14_facebook_1675785117384358.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1675785117384358.jpg",
+          "width": 3072,
+          "height": 4096,
+          "bytes": 682309
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/15_facebook_1675785120717691.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1675785120717691.jpg",
+          "width": 3072,
+          "height": 4096,
+          "bytes": 1058545
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/16_facebook_1675785124051024.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1675785124051024.jpg",
+          "width": 3072,
+          "height": 4096,
+          "bytes": 844934
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/17_facebook_1675785127384357.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1675785127384357.jpg",
+          "width": 3072,
+          "height": 4096,
+          "bytes": 1308226
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/18_facebook_1675785130717690.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1675785130717690.jpg",
+          "width": 2160,
+          "height": 2880,
+          "bytes": 351672
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/19_facebook_1675785134051023.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1675785134051023.jpg",
+          "width": 3072,
+          "height": 4096,
+          "bytes": 769240
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/20_facebook_1675785137384356.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1675785137384356.jpg",
+          "width": 3072,
+          "height": 4096,
+          "bytes": 802702
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/21_facebook_1675785140717689.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1675785140717689.jpg",
+          "width": 3072,
+          "height": 4096,
+          "bytes": 1076308
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/22_facebook_1675788144050722.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1675788144050722.jpg",
+          "width": 3072,
+          "height": 4096,
+          "bytes": 1095293
+        },
+        {
+          "kind": "foto",
+          "file": "gonzalo-chacon-electricista-urgencias-24-horas/fotos/23_facebook_1675788900717313.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/gonzalo-chacon-electricista-urgencias-24-horas/1675788900717313.jpg",
+          "width": 3072,
+          "height": 4096,
+          "bytes": 1170752
+        }
+      ]
+    },
+    {
+      "slug": "hernandez-electricista",
+      "negocio": "Hernández electricista",
+      "telefono": "093 783 551",
+      "fuente_fotos_previa": "instagram",
+      "fotos_confirmadas_en_entrega": 5,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/hernandez.electricista/"
+        }
+      ],
+      "email": null,
+      "notes": [
+        "Instagram publico requiere login para descargar mas que miniaturas; queda pendiente si se habilita acceso.",
+        "Datos, rating, telefono, direccion, descripcion de propietario y testimonios tomados de Google Maps. Servicios complementados con Instagram oficial @hernandez.electricista. Fotos tomadas de Instagram oficial y revisadas visualmente; algunas son de baja resolucion por limitacion publica de Instagram, pero muestran trabajos reales del negocio."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "hernandez-electricista/fotos/01_prospectos_foto1.jpg",
+          "source": "instagram",
+          "original": "prospectos/hernandez-electricista/fotos/foto1.jpg",
+          "width": 640,
+          "height": 640,
+          "bytes": 16758
+        },
+        {
+          "kind": "foto",
+          "file": "hernandez-electricista/fotos/02_prospectos_foto2.jpg",
+          "source": "instagram",
+          "original": "prospectos/hernandez-electricista/fotos/foto2.jpg",
+          "width": 640,
+          "height": 640,
+          "bytes": 75990
+        },
+        {
+          "kind": "foto",
+          "file": "hernandez-electricista/fotos/03_prospectos_foto3.jpg",
+          "source": "instagram",
+          "original": "prospectos/hernandez-electricista/fotos/foto3.jpg",
+          "width": 552,
+          "height": 551,
+          "bytes": 24080
+        },
+        {
+          "kind": "foto",
+          "file": "hernandez-electricista/fotos/04_prospectos_foto4.jpg",
+          "source": "instagram",
+          "original": "prospectos/hernandez-electricista/fotos/foto4.jpg",
+          "width": 640,
+          "height": 640,
+          "bytes": 13835
+        },
+        {
+          "kind": "foto",
+          "file": "hernandez-electricista/fotos/05_prospectos_foto5.jpg",
+          "source": "instagram",
+          "original": "prospectos/hernandez-electricista/fotos/foto5.jpg",
+          "width": 640,
+          "height": 640,
+          "bytes": 77573
+        }
+      ]
+    },
+    {
+      "slug": "jhonatan-b-electricista",
+      "negocio": "Jhonatan B. Electricista",
+      "telefono": "093 863 380",
+      "fuente_fotos_previa": "stock_fallback",
+      "fotos_confirmadas_en_entrega": 0,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [],
+      "email": null,
+      "notes": [
+        "Datos, rating, telefono, direccion y testimonios tomados de la ficha visible de Google Maps. No se encontro web, Instagram o Facebook oficial claro. La ficha no expuso fotos de trabajos aprobables; solo Street View, por eso no se guardaron fotos."
+      ],
+      "files": []
+    },
+    {
+      "slug": "juan-carlos-martinez-electricidad",
+      "negocio": "Juan carlos Martínez electricidad",
+      "telefono": "097 465 040",
+      "fuente_fotos_previa": "google_maps",
+      "fotos_confirmadas_en_entrega": 3,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/inst.electricas_carlosmartinez/"
+        }
+      ],
+      "email": null,
+      "notes": [
+        "Instagram publico requiere login para descargar mas que miniaturas; queda pendiente si se habilita acceso.",
+        "El link de Google Maps resuelve al negocio Juan carlos Martínez electricidad. No pude confirmar teléfono, servicios, rating, cantidad de reseñas ni textos literales desde fuentes públicas accesibles."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "juan-carlos-martinez-electricidad/fotos/01_prospectos_foto1.jpg",
+          "source": "google_maps",
+          "original": "prospectos/juan-carlos-martinez-electricidad/fotos/foto1.jpg",
+          "width": 1126,
+          "height": 2000,
+          "bytes": 195591
+        },
+        {
+          "kind": "foto",
+          "file": "juan-carlos-martinez-electricidad/fotos/02_prospectos_foto2.jpg",
+          "source": "google_maps",
+          "original": "prospectos/juan-carlos-martinez-electricidad/fotos/foto2.jpg",
+          "width": 1536,
+          "height": 2048,
+          "bytes": 670831
+        },
+        {
+          "kind": "foto",
+          "file": "juan-carlos-martinez-electricidad/fotos/03_prospectos_foto3.jpg",
+          "source": "google_maps",
+          "original": "prospectos/juan-carlos-martinez-electricidad/fotos/foto3.jpg",
+          "width": 3000,
+          "height": 4000,
+          "bytes": 2153440
+        }
+      ]
+    },
+    {
+      "slug": "nelson-bergero-electricista",
+      "negocio": "Nelson Bergero Electricista",
+      "telefono": "099 196 609",
+      "fuente_fotos_previa": "google_maps",
+      "fotos_confirmadas_en_entrega": 2,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/bergeronelson/"
+        }
+      ],
+      "email": null,
+      "notes": [
+        "Instagram publico requiere login para descargar mas que miniaturas; queda pendiente si se habilita acceso.",
+        "Datos, rating, telefono, direccion y testimonios tomados de la ficha visible de Google Maps. La ficha expone pocas imagenes: se guardaron 2 candidatas relacionadas a materiales/insumos electricos, pero no se encontraron 6 fotos claras de trabajos terminados o en curso."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "nelson-bergero-electricista/fotos/01_prospectos_foto1.jpg",
+          "source": "google_maps",
+          "original": "prospectos/nelson-bergero-electricista/fotos/foto1.jpg",
+          "width": 900,
+          "height": 1600,
+          "bytes": 190569
+        },
+        {
+          "kind": "foto",
+          "file": "nelson-bergero-electricista/fotos/02_prospectos_foto2.jpg",
+          "source": "google_maps",
+          "original": "prospectos/nelson-bergero-electricista/fotos/foto2.jpg",
+          "width": 900,
+          "height": 1600,
+          "bytes": 154123
+        }
+      ]
+    },
+    {
+      "slug": "nicolas-electricista-habilitado-por-ute",
+      "negocio": "Nicolas - Electricista habilitado por UTE",
+      "telefono": "099 607 900",
+      "fuente_fotos_previa": "google_maps",
+      "fotos_confirmadas_en_entrega": 4,
+      "logos_en_entrega": 1,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [],
+      "email": null,
+      "notes": [
+        "Telefono confirmado en ficha visible de Google Maps: 099 607 900. El link de Google Maps resuelve al negocio Nicolas - Electricista habilitado por UTE, ubicado en Maldonado. No pude confirmar teléfono, servicios, rating, cantidad de reseñas ni textos literales de reseñas desde fuentes públicas accesibles."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "nicolas-electricista-habilitado-por-ute/fotos/01_prospectos_foto1.jpg",
+          "source": "google_maps",
+          "original": "prospectos/nicolas-electricista-habilitado-por-ute/fotos/foto1.jpg",
+          "width": 1600,
+          "height": 1204,
+          "bytes": 128137
+        },
+        {
+          "kind": "foto",
+          "file": "nicolas-electricista-habilitado-por-ute/fotos/02_prospectos_foto2.jpg",
+          "source": "google_maps",
+          "original": "prospectos/nicolas-electricista-habilitado-por-ute/fotos/foto2.jpg",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2029977
+        },
+        {
+          "kind": "foto",
+          "file": "nicolas-electricista-habilitado-por-ute/fotos/03_prospectos_foto3.jpg",
+          "source": "google_maps",
+          "original": "prospectos/nicolas-electricista-habilitado-por-ute/fotos/foto3.jpg",
+          "width": 1600,
+          "height": 1200,
+          "bytes": 242329
+        },
+        {
+          "kind": "foto",
+          "file": "nicolas-electricista-habilitado-por-ute/fotos/04_prospectos_foto4.jpg",
+          "source": "google_maps",
+          "original": "prospectos/nicolas-electricista-habilitado-por-ute/fotos/foto4.jpg",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 2226833
+        },
+        {
+          "kind": "logo",
+          "file": "nicolas-electricista-habilitado-por-ute/logos/01_prospectos_logo.jpg",
+          "source": "google_maps",
+          "original": "prospectos/nicolas-electricista-habilitado-por-ute/fotos/logo.jpg",
+          "width": 1504,
+          "height": 824,
+          "bytes": 676498
+        }
+      ]
+    },
+    {
+      "slug": "noguera-electricista-autorizado-por-ute",
+      "negocio": "Noguera - Electricista autorizado por UTE",
+      "telefono": "098 599 609",
+      "fuente_fotos_previa": "stock_fallback",
+      "fotos_confirmadas_en_entrega": 0,
+      "logos_en_entrega": 2,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/noguera.elect/"
+        }
+      ],
+      "email": null,
+      "notes": [
+        "Instagram publico requiere login para descargar mas que miniaturas; queda pendiente si se habilita acceso.",
+        "Dirección, teléfono, horario, rating y cantidad de reseñas confirmados en fuente pública. No pude ver el texto completo literal de la única reseña de Google Maps desde acá. No se encontraron fotos aprobadas: Google Maps no mostró galería útil y las imágenes externas revisadas eran capturas/mapas o tenían marca de agua."
+      ],
+      "files": [
+        {
+          "kind": "logo",
+          "file": "noguera-electricista-autorizado-por-ute/logos/01_web_public_05_logo_noguera_transparente.png",
+          "source": "existing_site_logo",
+          "original": "noguera-electricista-autorizado-por-ute/public/img/05_logo_noguera_transparente.png",
+          "width": 3240,
+          "height": 1377,
+          "bytes": 1009102
+        },
+        {
+          "kind": "logo",
+          "file": "noguera-electricista-autorizado-por-ute/logos/02_web_public_06_logo_noguera_fondo_blanco.png",
+          "source": "existing_site_logo",
+          "original": "noguera-electricista-autorizado-por-ute/public/img/06_logo_noguera_fondo_blanco.png",
+          "width": 3240,
+          "height": 1377,
+          "bytes": 871873
+        }
+      ]
+    },
+    {
+      "slug": "peter-montes-de-oca-electricista-24hs-aire-acondicionado",
+      "negocio": "Peter Montes de Oca - Electricista 24 hs. - Aire acondicionado",
+      "telefono": "091 076 480",
+      "fuente_fotos_previa": "google_maps",
+      "fotos_confirmadas_en_entrega": 1,
+      "logos_en_entrega": 5,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/petermdeoca.electriscista/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/peter.m.deoca/"
+        }
+      ],
+      "email": null,
+      "notes": [
+        "Datos extraidos de Google Maps. La ficha muestra direccion Uruguayana 26, Ciudad de la Costa, Canelones, telefono 091 076 480, sitio wa.me, abierto 24 horas, rating 5.0 y 12 resenas. Maps en modo accesible solo mostro 3 resenas visibles y una foto real aprobada; no se agregaron fotos de relleno."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "peter-montes-de-oca-electricista-24hs-aire-acondicionado/fotos/01_prospectos_foto1.jpg",
+          "source": "google_maps",
+          "original": "prospectos/peter-montes-de-oca-electricista-24hs-aire-acondicionado/fotos/foto1.jpg",
+          "width": 1200,
+          "height": 1600,
+          "bytes": 381462
+        },
+        {
+          "kind": "logo",
+          "file": "peter-montes-de-oca-electricista-24hs-aire-acondicionado/logos/01_facebook_10225676887251293.jpg",
+          "source": "facebook_public_branding",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/peter-montes-de-oca-electricista-24hs-aire-acondicionado/10225676887251293.jpg",
+          "width": 840,
+          "height": 481,
+          "bytes": 40198
+        },
+        {
+          "kind": "logo",
+          "file": "peter-montes-de-oca-electricista-24hs-aire-acondicionado/logos/02_facebook_10232192307332723.jpg",
+          "source": "facebook_public_branding",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/peter-montes-de-oca-electricista-24hs-aire-acondicionado/10232192307332723.jpg",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 77355
+        },
+        {
+          "kind": "logo",
+          "file": "peter-montes-de-oca-electricista-24hs-aire-acondicionado/logos/03_facebook_10232192316652956.jpg",
+          "source": "facebook_public_branding",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/peter-montes-de-oca-electricista-24hs-aire-acondicionado/10232192316652956.jpg",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 110065
+        },
+        {
+          "kind": "logo",
+          "file": "peter-montes-de-oca-electricista-24hs-aire-acondicionado/logos/04_facebook_10232315674736831.jpg",
+          "source": "facebook_public_branding",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/peter-montes-de-oca-electricista-24hs-aire-acondicionado/10232315674736831.jpg",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 90300
+        },
+        {
+          "kind": "logo",
+          "file": "peter-montes-de-oca-electricista-24hs-aire-acondicionado/logos/05_facebook_10232336063726543.jpg",
+          "source": "facebook_public_branding",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/peter-montes-de-oca-electricista-24hs-aire-acondicionado/10232336063726543.jpg",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 118983
+        }
+      ]
+    },
+    {
+      "slug": "prolighting",
+      "negocio": "Prolighting",
+      "telefono": "092 429 868",
+      "fuente_fotos_previa": "google_maps",
+      "fotos_confirmadas_en_entrega": 22,
+      "logos_en_entrega": 6,
+      "status": "completo_6_o_mas",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/prolighting_/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/Prolighting.maldonado/"
+        }
+      ],
+      "email": null,
+      "notes": [
+        "El link de Google Maps resuelve al negocio Prolighting en Punta del Este. No pude confirmar teléfono, servicios, rating, cantidad de reseñas ni textos literales desde fuentes públicas accesibles."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/01_prospectos_foto1.jpg",
+          "source": "google_maps",
+          "original": "prospectos/prolighting/fotos/foto1.jpg",
+          "width": 3024,
+          "height": 4032,
+          "bytes": 1948491
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/02_prospectos_foto2.jpg",
+          "source": "google_maps",
+          "original": "prospectos/prolighting/fotos/foto2.jpg",
+          "width": 1200,
+          "height": 1600,
+          "bytes": 299208
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/03_prospectos_foto3.jpg",
+          "source": "google_maps",
+          "original": "prospectos/prolighting/fotos/foto3.jpg",
+          "width": 2448,
+          "height": 3264,
+          "bytes": 1389632
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/04_prospectos_foto4.jpg",
+          "source": "google_maps",
+          "original": "prospectos/prolighting/fotos/foto4.jpg",
+          "width": 3024,
+          "height": 4032,
+          "bytes": 2596609
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/05_prospectos_foto5.jpg",
+          "source": "google_maps",
+          "original": "prospectos/prolighting/fotos/foto5.jpg",
+          "width": 6000,
+          "height": 4000,
+          "bytes": 11537377
+        },
+        {
+          "kind": "logo",
+          "file": "prolighting/logos/01_prospectos_logo.jpg",
+          "source": "google_maps",
+          "original": "prospectos/prolighting/fotos/logo.jpg",
+          "width": 1600,
+          "height": 592,
+          "bytes": 55625
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/06_facebook_1546198937115745.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/prolighting/1546198937115745.jpg",
+          "width": 3072,
+          "height": 4096,
+          "bytes": 576083
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/07_facebook_1546604340408538.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/prolighting/1546604340408538.jpg",
+          "width": 3072,
+          "height": 4096,
+          "bytes": 529846
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/08_facebook_659033895832258.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/prolighting/659033895832258.jpg",
+          "width": 1536,
+          "height": 2048,
+          "bytes": 113443
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/09_facebook_659033939165587.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/prolighting/659033939165587.jpg",
+          "width": 1536,
+          "height": 2048,
+          "bytes": 120484
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/10_facebook_659033982498916.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/prolighting/659033982498916.jpg",
+          "width": 1536,
+          "height": 2048,
+          "bytes": 103374
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/11_facebook_659034012498913.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/prolighting/659034012498913.jpg",
+          "width": 1536,
+          "height": 2048,
+          "bytes": 163855
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/12_facebook_659035149165466.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/prolighting/659035149165466.jpg",
+          "width": 2048,
+          "height": 1536,
+          "bytes": 167945
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/13_facebook_659035179165463.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/prolighting/659035179165463.jpg",
+          "width": 2048,
+          "height": 1536,
+          "bytes": 95553
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/14_facebook_659035202498794.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/prolighting/659035202498794.jpg",
+          "width": 2048,
+          "height": 1536,
+          "bytes": 181830
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/15_facebook_728061325596181.jpg",
+          "source": "facebook_public_confirmed",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/prolighting/728061325596181.jpg",
+          "width": 1200,
+          "height": 1500,
+          "bytes": 138893
+        },
+        {
+          "kind": "logo",
+          "file": "prolighting/logos/02_facebook_1221043166297992.jpg",
+          "source": "facebook_public_branding",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/prolighting/1221043166297992.jpg",
+          "width": 1152,
+          "height": 1152,
+          "bytes": 52672
+        },
+        {
+          "kind": "logo",
+          "file": "prolighting/logos/03_facebook_1228320092236966.jpg",
+          "source": "facebook_public_branding",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/prolighting/1228320092236966.jpg",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 126353
+        },
+        {
+          "kind": "logo",
+          "file": "prolighting/logos/04_facebook_947799876955657.jpg",
+          "source": "facebook_public_branding",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/prolighting/947799876955657.jpg",
+          "width": 1133,
+          "height": 1133,
+          "bytes": 57077
+        },
+        {
+          "kind": "logo",
+          "file": "prolighting/logos/05_facebook_947800266955618.jpg",
+          "source": "facebook_public_branding",
+          "original": "handoff-antigravity/fotos-electricistas-2026-07-06/_descargas_facebook/prolighting/947800266955618.jpg",
+          "width": 2550,
+          "height": 945,
+          "bytes": 94269
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/16_web_public_01-casa-moderna-iluminada.png",
+          "source": "existing_site_business_specific",
+          "original": "prolighting/public/img/01-casa-moderna-iluminada.png",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 2270883
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/17_web_public_02-cargador-vehiculo-electrico.png",
+          "source": "existing_site_business_specific",
+          "original": "prolighting/public/img/02-cargador-vehiculo-electrico.png",
+          "width": 971,
+          "height": 1619,
+          "bytes": 1922484
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/18_web_public_03-instalacion-led-exterior.png",
+          "source": "existing_site_business_specific",
+          "original": "prolighting/public/img/03-instalacion-led-exterior.png",
+          "width": 1122,
+          "height": 1402,
+          "bytes": 2888893
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/19_web_public_04-control-de-acceso.png",
+          "source": "existing_site_business_specific",
+          "original": "prolighting/public/img/04-control-de-acceso.png",
+          "width": 941,
+          "height": 1672,
+          "bytes": 2593238
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/20_web_public_05-escalera-y-luminaria.png",
+          "source": "existing_site_business_specific",
+          "original": "prolighting/public/img/05-escalera-y-luminaria.png",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 2361170
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/21_web_public_06-diseno-electrico-en-laptop.png",
+          "source": "existing_site_business_specific",
+          "original": "prolighting/public/img/06-diseno-electrico-en-laptop.png",
+          "width": 1122,
+          "height": 1402,
+          "bytes": 2269969
+        },
+        {
+          "kind": "foto",
+          "file": "prolighting/fotos/22_web_public_07-home-terminado.png",
+          "source": "existing_site_business_specific",
+          "original": "prolighting/public/img/07-home-terminado.png",
+          "width": 1672,
+          "height": 941,
+          "bytes": 2098100
+        },
+        {
+          "kind": "logo",
+          "file": "prolighting/logos/06_web_public_08-logo-prolighting.png",
+          "source": "existing_site_logo",
+          "original": "prolighting/public/img/08-logo-prolighting.png",
+          "width": 912,
+          "height": 757,
+          "bytes": 222157
+        }
+      ]
+    },
+    {
+      "slug": "romero-servicios",
+      "negocio": "Romero Servicios",
+      "telefono": "098 752 379",
+      "fuente_fotos_previa": "google_maps",
+      "fotos_confirmadas_en_entrega": 2,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/romero.servicios/"
+        }
+      ],
+      "email": null,
+      "notes": [
+        "Instagram @romero.servicios no se uso para fotos: habia indicios de San Luis/Argentina y no quedo confirmado contra la ficha de Canelones.",
+        "Datos, rating, direccion y testimonios tomados de la ficha visible de Google Maps. La ficha no muestra telefono publico. Servicios inferidos de categoria, horario 24 horas, fotos y resenas visibles. No use Instagram encontrado como @romero.servicios porque varias publicaciones indicaban San Luis/Argentina y telefono no uruguayo, por lo que no pude confirmarlo como fuente oficial del negocio de Ciudad de la Costa."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "romero-servicios/fotos/01_prospectos_foto1.jpg",
+          "source": "google_maps",
+          "original": "prospectos/romero-servicios/fotos/foto1.jpg",
+          "width": 1600,
+          "height": 898,
+          "bytes": 204869
+        },
+        {
+          "kind": "foto",
+          "file": "romero-servicios/fotos/02_prospectos_foto2.jpg",
+          "source": "google_maps",
+          "original": "prospectos/romero-servicios/fotos/foto2.jpg",
+          "width": 900,
+          "height": 1600,
+          "bytes": 111966
+        }
+      ]
+    },
+    {
+      "slug": "silvera-electricidad",
+      "negocio": "silvera-electricidad",
+      "telefono": "",
+      "fuente_fotos_previa": "",
+      "fotos_confirmadas_en_entrega": 0,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [],
+      "email": null,
+      "notes": [],
+      "files": []
+    },
+    {
+      "slug": "soluciones-electricas-ep",
+      "negocio": "Soluciones electricas EP",
+      "telefono": "092 476 479",
+      "fuente_fotos_previa": "instagram",
+      "fotos_confirmadas_en_entrega": 1,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/solucioneselectricasep/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/p/Soluciones-el%C3%A9ctricas-EP-100063985186773/"
+        }
+      ],
+      "email": null,
+      "notes": [
+        "Facebook con formato /p/... requiere cookies autenticadas para bajar galeria completa; se uso solo material ya disponible si existia.",
+        "Google Maps confirmo el nombre y expuso una foto, pero no dejo ver rating, telefono ni resenas en modo accesible. Facebook/Instagram de Soluciones electricas EP confirma servicios de electricidad, reparaciones y mantenimiento para casas y comercios; la pieza aprobada de Instagram muestra Electricidad y Mantenimiento en Araminda y Costa de Oro e incluye WhatsApp 092 476 479. La mayoria de fotos de Instagram eran paisajes/personales o graficas, por eso solo se guardo 1 foto util."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "soluciones-electricas-ep/fotos/01_prospectos_foto1.jpg",
+          "source": "instagram",
+          "original": "prospectos/soluciones-electricas-ep/fotos/foto1.jpg",
+          "width": 640,
+          "height": 640,
+          "bytes": 72092
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-electricista-electricidad-amaral",
+      "negocio": "Técnico electricista - Electricidad Amaral",
+      "telefono": "091 819 722",
+      "fuente_fotos_previa": "google_maps",
+      "fotos_confirmadas_en_entrega": 1,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [],
+      "email": null,
+      "notes": [
+        "Google Maps confirma telefono, direccion Av Calcagno, Ciudad de la Costa, rating 4.9 y 12 resenas visibles en ficha. ElectricistasUY confirma telefono, direccion, especialidad y servicios. Solo se pudo ver texto parcial de 3 resenas y una foto real aprobada."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "tecnico-electricista-electricidad-amaral/fotos/01_prospectos_foto1.jpg",
+          "source": "google_maps",
+          "original": "prospectos/tecnico-electricista-electricidad-amaral/fotos/foto1.jpg",
+          "width": 1600,
+          "height": 1200,
+          "bytes": 475280
+        }
+      ]
+    },
+    {
+      "slug": "urgencias-electricas",
+      "negocio": "URGENCIAS ELÉCTRICAS",
+      "telefono": "095 936 609",
+      "fuente_fotos_previa": "stock_fallback",
+      "fotos_confirmadas_en_entrega": 0,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [],
+      "email": null,
+      "notes": [
+        "El link de Google Maps resuelve al negocio URGENCIAS ELÉCTRICAS en Montevideo. En busquedas publicas aparecieron negocios con textos similares, pero no pude confirmar con suficiente seguridad telefono, barrio, rating, cantidad de resenas ni red oficial exacta del negocio. Servicios inferidos solo del nombre/categoria. No inclui testimonios ni fotos por falta de fuente oficial clara y descargable."
+      ],
+      "files": []
+    },
+    {
+      "slug": "voltio-electromecanica",
+      "negocio": "VOLTIO ELECTROMECANICA",
+      "telefono": "099 463 754",
+      "fuente_fotos_previa": "google_maps",
+      "fotos_confirmadas_en_entrega": 5,
+      "logos_en_entrega": 0,
+      "status": "parcial_faltan_fotos",
+      "socialLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/voltio_electromecanica_/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/p/Voltio-electromecanica-100066516202188/"
+        }
+      ],
+      "email": "electromecanicavoltio@gmail.com",
+      "notes": [
+        "Facebook con formato /p/... requiere cookies autenticadas para bajar galeria completa; se uso solo material ya disponible si existia.",
+        "Datos, rating, telefono, direccion y testimonios tomados de la ficha visible de Google Maps. Servicios complementados con Facebook publico de Voltio electromecanica, que indica electricidad industrial y comercial montaje. No se encontraron 6 fotos aprobables; se guardaron 5 fotos reales de fachada, tableros y trabajos electricos."
+      ],
+      "files": [
+        {
+          "kind": "foto",
+          "file": "voltio-electromecanica/fotos/01_prospectos_foto1.jpg",
+          "source": "google_maps",
+          "original": "prospectos/voltio-electromecanica/fotos/foto1.jpg",
+          "width": 1280,
+          "height": 1600,
+          "bytes": 354103
+        },
+        {
+          "kind": "foto",
+          "file": "voltio-electromecanica/fotos/02_prospectos_foto2.jpg",
+          "source": "google_maps",
+          "original": "prospectos/voltio-electromecanica/fotos/foto2.jpg",
+          "width": 1600,
+          "height": 1200,
+          "bytes": 390481
+        },
+        {
+          "kind": "foto",
+          "file": "voltio-electromecanica/fotos/03_prospectos_foto3.jpg",
+          "source": "google_maps",
+          "original": "prospectos/voltio-electromecanica/fotos/foto3.jpg",
+          "width": 900,
+          "height": 1600,
+          "bytes": 208856
+        },
+        {
+          "kind": "foto",
+          "file": "voltio-electromecanica/fotos/04_prospectos_foto4.jpg",
+          "source": "google_maps",
+          "original": "prospectos/voltio-electromecanica/fotos/foto4.jpg",
+          "width": 1200,
+          "height": 1600,
+          "bytes": 507132
+        },
+        {
+          "kind": "foto",
+          "file": "voltio-electromecanica/fotos/05_prospectos_foto5.jpg",
+          "source": "google_maps",
+          "original": "prospectos/voltio-electromecanica/fotos/foto5.jpg",
+          "width": 540,
+          "height": 960,
+          "bytes": 485206
+        }
+      ]
+    }
+  ]
+}

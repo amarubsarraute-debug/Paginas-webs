@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lote Solicitado - Amaru Web Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #070913;
+            --card-bg: rgba(22, 30, 49, 0.4);
+            --card-border: rgba(59, 130, 246, 0.15);
+            --text-color: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-color: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.25);
+            --success-color: #10b981;
+            --purple-glow: rgba(147, 51, 234, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(147, 51, 234, 0.05) 0%, transparent 40%);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 700px;
+        }
+
+        .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: #ffffff;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+            opacity: 0.85;
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 250px;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, var(--accent-glow) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 
+                0 20px 40px -15px rgba(0, 0, 0, 0.5),
+                0 0 30px 0 rgba(59, 130, 246, 0.05);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-number {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #a5b4fc;
+            background-color: rgba(165, 180, 252, 0.07);
+            border: 1px solid rgba(165, 180, 252, 0.15);
+            padding: 0.3rem 0.7rem;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.75rem;
+            color: var(--success-color);
+            font-weight: 600;
+            background-color: rgba(16, 185, 129, 0.06);
+            padding: 0.3rem 0.7rem;
+            border-radius: 30px;
+            border: 1px solid rgba(16, 185, 129, 0.15);
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--success-color);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--success-color);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .project-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+            color: #ffffff;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 3.5rem;
+        }
+
+        .project-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .project-port {
+            font-family: monospace;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .project-type {
+            font-size: 0.75rem;
+            color: #a5b4fc;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.9rem;
+            background-color: #ffffff;
+            color: #070913;
+            border: none;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4);
+            transform: scale(1.02);
+        }
+
+        footer {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: auto;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 2.5rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">AMARU WEB STUDIO</div>
+        <h1>Lote Solicitado</h1>
+        <p class="subtitle">Panel de desarrollo local. Accede a cualquiera de las 8 propuestas de páginas web haciendo clic en los botones de abajo.</p>
+    </header>
+
+    <main class="grid">
+        <!-- Web 1 -->
+        <div class="card">
+            <div>
+                <div class="card-header">
+                    <span class="badge-number">WEB 01</span>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div> Activo
+                    </div>
+                </div>
+                <h2 class="project-title" title="Electromecánica del Este">Electromecánica del Este</h2>
+                <div class="project-details">
+                    <p class="project-port">Puerto: 3050</p>
+                    <p class="project-type">Sitio Estático</p>
+                </div>
+            </div>
+            <a href="http://localhost:3050" target="_blank" class="btn">Revisar Web</a>
+        </div>
+
+        <!-- Web 2 -->
+        <div class="card">
+            <div>
+                <div class="card-header">
+                    <span class="badge-number">WEB 02</span>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div> Activo
+                    </div>
+                </div>
+                <h2 class="project-title" title="Electricista Milton Sardella">Electricista Milton Sardella</h2>
+                <div class="project-details">
+                    <p class="project-port">Puerto: 3051</p>
+                    <p class="project-type">Vite Dev Server</p>
+                </div>
+            </div>
+            <a href="http://localhost:3051" target="_blank" class="btn">Revisar Web</a>
+        </div>
+
+        <!-- Web 3 -->
+        <div class="card">
+            <div>
+                <div class="card-header">
+                    <span class="badge-number">WEB 03</span>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div> Activo
+                    </div>
+                </div>
+                <h2 class="project-title" title="Electricidad Ocean Park">Electricidad Ocean Park</h2>
+                <div class="project-details">
+                    <p class="project-port">Puerto: 3052</p>
+                    <p class="project-type">Vite Dev Server</p>
+                </div>
+            </div>
+            <a href="http://localhost:3052" target="_blank" class="btn">Revisar Web</a>
+        </div>
+
+        <!-- Web 4 -->
+        <div class="card">
+            <div>
+                <div class="card-header">
+                    <span class="badge-number">WEB 04</span>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div> Activo
+                    </div>
+                </div>
+                <h2 class="project-title" title="Noguera Electricista">Noguera Electricista</h2>
+                <div class="project-details">
+                    <p class="project-port">Puerto: 3053</p>
+                    <p class="project-type">Vite Dev Server</p>
+                </div>
+            </div>
+            <a href="http://localhost:3053" target="_blank" class="btn">Revisar Web</a>
+        </div>
+
+        <!-- Web 5 -->
+        <div class="card">
+            <div>
+                <div class="card-header">
+                    <span class="badge-number">WEB 05</span>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div> Activo
+                    </div>
+                </div>
+                <h2 class="project-title" title="Barceló Instalaciones Eléctricas">Barceló Instalaciones</h2>
+                <div class="project-details">
+                    <p class="project-port">Puerto: 3054</p>
+                    <p class="project-type">Vite Dev Server</p>
+                </div>
+            </div>
+            <a href="http://localhost:3054" target="_blank" class="btn">Revisar Web</a>
+        </div>
+
+        <!-- Web 6 -->
+        <div class="card">
+            <div>
+                <div class="card-header">
+                    <span class="badge-number">WEB 06</span>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div> Activo
+                    </div>
+                </div>
+                <h2 class="project-title" title="Prolighting">Prolighting</h2>
+                <div class="project-details">
+                    <p class="project-port">Puerto: 3055</p>
+                    <p class="project-type">Vite Dev Server</p>
+                </div>
+            </div>
+            <a href="http://localhost:3055" target="_blank" class="btn">Revisar Web</a>
+        </div>
+
+        <!-- Web 7 -->
+        <div class="card">
+            <div>
+                <div class="card-header">
+                    <span class="badge-number">WEB 07</span>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div> Activo
+                    </div>
+                </div>
+                <h2 class="project-title" title="Juan Carlos Martínez">Juan Carlos Martínez</h2>
+                <div class="project-details">
+                    <p class="project-port">Puerto: 3056</p>
+                    <p class="project-type">Vite Dev Server</p>
+                </div>
+            </div>
+            <a href="http://localhost:3056" target="_blank" class="btn">Revisar Web</a>
+        </div>
+
+        <!-- Web 8 -->
+        <div class="card">
+            <div>
+                <div class="card-header">
+                    <span class="badge-number">WEB 08</span>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div> Activo
+                    </div>
+                </div>
+                <h2 class="project-title" title="Alejandro Severo UTE">Alejandro Severo UTE</h2>
+                <div class="project-details">
+                    <p class="project-port">Puerto: 3057</p>
+                    <p class="project-type">Vite Dev Server</p>
+                </div>
+            </div>
+            <a href="http://localhost:3057" target="_blank" class="btn">Revisar Web</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Amaru Web Studio &copy; 2026. Entorno de desarrollo para Montevideo, Maldonado y Punta del Este.</p>
+    </footer>
+</body>
+</html>

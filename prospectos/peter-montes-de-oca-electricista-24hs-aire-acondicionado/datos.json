@@ -1,0 +1,38 @@
+{
+  "negocio": "Peter Montes de Oca - Electricista 24 hs. - Aire acondicionado",
+  "nicho": "electricista 24 hs",
+  "zona": "Canelones",
+  "barrio": "Ciudad de la Costa",
+  "telefono": "091 076 480",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Urgencias electricas 24 hs",
+    "Instalaciones electricas",
+    "Reparaciones electricas",
+    "Mantenimiento electrico",
+    "Aire acondicionado",
+    "Trabajos garantizados"
+  ],
+  "rating": 5.0,
+  "cantidad_resenas": 12,
+  "testimonios": [
+    {
+      "texto": "Excelente servicio. Muy profesional, puntual y responsable. Realizó el trabajo de forma impecable, explicando todo con claridad y cuidando cada detalle. Además de ser un gran electricista, es una excelente persona, muy amable y respetuosa.… Más",
+      "autor": "SEKOO"
+    },
+    {
+      "texto": "Muy conforme con el trabajo realizado. Instalación eléctrica impecable, rápida atención y excelente trato. Todo quedó prolijo y funcionando perfecto. Súper recomendable.",
+      "autor": "Romina Diaz"
+    },
+    {
+      "texto": "Excelente servicio. Vino el mismo día que lo contacté, fue puntual y muy profesional. Detectó el problema rápidamente y lo solucionó de forma prolija y segura. Explicó todo con claridad y dejó todo en perfecto estado. Muy recomendable, sin dudas volvería a llamarlo.",
+      "autor": "Santiago Piazze Gauthier"
+    }
+  ],
+  "logo": "",
+  "fotos": [
+    "fotos/foto1.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "Datos extraidos de Google Maps. La ficha muestra direccion Uruguayana 26, Ciudad de la Costa, Canelones, telefono 091 076 480, sitio wa.me, abierto 24 horas, rating 5.0 y 12 resenas. Maps en modo accesible solo mostro 3 resenas visibles y una foto real aprobada; no se agregaron fotos de relleno."
+}

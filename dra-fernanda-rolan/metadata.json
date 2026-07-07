@@ -1,0 +1,6 @@
+{
+  "name": "Dra. Fernanda Rolán - Harmonização Facial",
+  "description": "Landing page para Dra. Fernanda Rolán - Harmonização Facial en Chuy / Chuí.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

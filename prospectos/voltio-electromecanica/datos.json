@@ -1,0 +1,42 @@
+{
+  "negocio": "VOLTIO ELECTROMECANICA",
+  "nicho": "electricidad industrial y comercial",
+  "zona": "Canelones",
+  "barrio": "Canelones",
+  "telefono": "099 463 754",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Electricidad industrial",
+    "Electricidad comercial",
+    "Montaje electromecanico",
+    "Armado y mantenimiento de tableros",
+    "Instalaciones electricas",
+    "Reparaciones electricas"
+  ],
+  "rating": 5.0,
+  "cantidad_resenas": 5,
+  "testimonios": [
+    {
+      "texto": "Muy buena atención y muy responsables. Excelente",
+      "autor": "Mariy"
+    },
+    {
+      "texto": "Bien",
+      "autor": "Ramon Caraballo"
+    },
+    {
+      "texto": "Aspectos positivos Capacidad de respuesta, Puntualidad, Calidad, Profes…",
+      "autor": "Facundo Sosa"
+    }
+  ],
+  "logo": "",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg",
+    "fotos/foto4.jpg",
+    "fotos/foto5.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "Datos, rating, telefono, direccion y testimonios tomados de la ficha visible de Google Maps. Servicios complementados con Facebook publico de Voltio electromecanica, que indica electricidad industrial y comercial montaje. No se encontraron 6 fotos aprobables; se guardaron 5 fotos reales de fachada, tableros y trabajos electricos."
+}

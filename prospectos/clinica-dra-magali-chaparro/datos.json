@@ -1,0 +1,36 @@
+{
+  "negocio": "Clínica Dra. Magali Chaparro",
+  "slug": "clinica-dra-magali-chaparro",
+  "nicho": "medicina estética",
+  "zona": "Montevideo",
+  "barrio": "Centro",
+  "telefono": "098 293 590",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Consultas de Medicina Estética",
+    "Procedimientos Corporales y Faciales",
+    "Evaluación de Cirugía Plástica",
+    "Especialidades Médicas Integrales",
+    "Diagnóstico y Chequeos Ambulatorios"
+  ],
+  "rating": 4.8,
+  "cantidad_resenas": 24,
+  "testimonios": [
+    {
+      "texto": "Excelente atención, profesionales muy cálidos y recomendables. Un trato humano que hoy en día se valora muchísimo.",
+      "autor": "Sofía Rodríguez"
+    },
+    {
+      "texto": "Excelente trato y atención de primera. Recomiendo la clínica totalmente por su puntualidad y dedicación.",
+      "autor": "Juan Manuel Pérez"
+    }
+  ],
+  "logo": "fotos/logo.png",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "Dirección registrada: San José 1436 o Manuel Flores Mora 1436, Montevideo. Cuenta con valoraciones muy positivas en directorios de salud."
+}

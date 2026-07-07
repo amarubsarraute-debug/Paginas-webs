@@ -1,0 +1,37 @@
+{
+  "negocio": "Electricista ANDRES",
+  "nicho": "electricista",
+  "zona": "Canelones",
+  "barrio": "Bello Horizonte",
+  "telefono": "093 381 464",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Instalaciones electricas",
+    "Reparaciones electricas",
+    "Mantenimiento electrico",
+    "Calculo de materiales",
+    "Atencion de urgencias"
+  ],
+  "rating": 5.0,
+  "cantidad_resenas": 5,
+  "testimonios": [
+    {
+      "texto": "Excelente profesional. Vino un domingo a la tarde y nos solucionó. Sumamente recomendable.",
+      "autor": "veronica torrado"
+    },
+    {
+      "texto": "Tremendo laburo se mandó en mi casa, un crack, trabaja muy prolijo y calcula los materiales exactos. No duden en contratarlo.",
+      "autor": "alexlimaoficial “Alex Lima”"
+    },
+    {
+      "texto": "Trabajo prolijo, responsable, y lo mas importante de confianza.",
+      "autor": "Daniel Brandi"
+    }
+  ],
+  "logo": "",
+  "fotos": [
+    "fotos/foto1.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "Datos confirmados en Google Maps: Calle 42 y 39, Bello Horizonte, Canelones, telefono 093 381 464, rating 5.0 y 5 resenas. Solo hubo 3 resenas visibles en la ficha accesible y una foto real aprobada."
+}

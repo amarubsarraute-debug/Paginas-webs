@@ -71,6 +71,76 @@ const projects = [
     outputDir: path.join(ROOT, 'dra-adriana-galleno'),
     defaultPort: 4177,
     extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Milton Sardella',
+    dirName: 'electricista-milton-sardella',
+    projectPath: path.join(ROOT, 'electricista-milton-sardella'),
+    buildDir: path.join(ROOT, 'electricista-milton-sardella', 'dist'),
+    runDir: path.join(ROOT, 'electricista-milton-sardella'),
+    outputDir: path.join(ROOT, 'electricista-milton-sardella'),
+    defaultPort: 4178,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Electricidad Ocean Park',
+    dirName: 'electricidad-ocean-park-electricista-facundo-azcurra',
+    projectPath: path.join(ROOT, 'electricidad-ocean-park-electricista-facundo-azcurra'),
+    buildDir: path.join(ROOT, 'electricidad-ocean-park-electricista-facundo-azcurra', 'dist'),
+    runDir: path.join(ROOT, 'electricidad-ocean-park-electricista-facundo-azcurra'),
+    outputDir: path.join(ROOT, 'electricidad-ocean-park-electricista-facundo-azcurra'),
+    defaultPort: 4179,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Noguera Electricista',
+    dirName: 'noguera-electricista-autorizado-por-ute',
+    projectPath: path.join(ROOT, 'noguera-electricista-autorizado-por-ute'),
+    buildDir: path.join(ROOT, 'noguera-electricista-autorizado-por-ute', 'dist'),
+    runDir: path.join(ROOT, 'noguera-electricista-autorizado-por-ute'),
+    outputDir: path.join(ROOT, 'noguera-electricista-autorizado-por-ute'),
+    defaultPort: 4180,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Barcelo Instalaciones',
+    dirName: 'barcelo-instalaciones-electricas',
+    projectPath: path.join(ROOT, 'barcelo-instalaciones-electricas'),
+    buildDir: path.join(ROOT, 'barcelo-instalaciones-electricas', 'dist'),
+    runDir: path.join(ROOT, 'barcelo-instalaciones-electricas'),
+    outputDir: path.join(ROOT, 'barcelo-instalaciones-electricas'),
+    defaultPort: 4181,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Prolighting',
+    dirName: 'prolighting',
+    projectPath: path.join(ROOT, 'prolighting'),
+    buildDir: path.join(ROOT, 'prolighting', 'dist'),
+    runDir: path.join(ROOT, 'prolighting'),
+    outputDir: path.join(ROOT, 'prolighting'),
+    defaultPort: 4182,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Juan Carlos Martinez',
+    dirName: 'juan-carlos-martinez-electricidad',
+    projectPath: path.join(ROOT, 'juan-carlos-martinez-electricidad'),
+    buildDir: path.join(ROOT, 'juan-carlos-martinez-electricidad', 'dist'),
+    runDir: path.join(ROOT, 'juan-carlos-martinez-electricidad'),
+    outputDir: path.join(ROOT, 'juan-carlos-martinez-electricidad'),
+    defaultPort: 4183,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Alejandro Severo UTE',
+    dirName: 'alejandro-severo-electricista-autorizado-x-ute',
+    projectPath: path.join(ROOT, 'alejandro-severo-electricista-autorizado-x-ute'),
+    buildDir: path.join(ROOT, 'alejandro-severo-electricista-autorizado-x-ute', 'dist'),
+    runDir: path.join(ROOT, 'alejandro-severo-electricista-autorizado-x-ute'),
+    outputDir: path.join(ROOT, 'alejandro-severo-electricista-autorizado-x-ute'),
+    defaultPort: 4184,
+    extraFiles: ['robots.txt']
   }
 ];
 

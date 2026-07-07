@@ -1,0 +1,6 @@
+{
+  "name": "Milton Sardella Electricidad",
+  "description": "Landing page de prospección para Milton Sardella, electricista en Maldonado y Punta del Este, Uruguay.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

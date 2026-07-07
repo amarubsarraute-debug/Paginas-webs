@@ -1,0 +1,6 @@
+{
+  "name": "Electropunta",
+  "description": "Landing page para Electropunta, empresa de servicios eléctricos en Maldonado, Uruguay, firma autorizada por UTE.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,38 @@
+{
+  "negocio": "Técnico electricista - Electricidad Amaral",
+  "nicho": "electricista",
+  "zona": "Canelones",
+  "barrio": "Ciudad de la Costa",
+  "telefono": "091 819 722",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Instalaciones electricas en hogares y comercios",
+    "Venta de materiales electricos",
+    "Reparaciones y mantenimiento",
+    "Asesoramiento tecnico",
+    "Urgencias electricas",
+    "Cableado y tableros"
+  ],
+  "rating": 4.9,
+  "cantidad_resenas": 12,
+  "testimonios": [
+    {
+      "texto": "Gente seria y muy responsable. Carlos Amaral resolvió con rapidez un problema de instalación domestica, pero que era necesario resolver lo antes posible. Buen precio, buena atención y responsable. Más",
+      "autor": "Luis PODESTÁ (路易 波德斯塔)"
+    },
+    {
+      "texto": "Excelente servicio. Llamé por una urgencia y llegaron rapidísimo. Repararon fusibles y cableado. Muy recomendable. Más",
+      "autor": "Gimena Graziano"
+    },
+    {
+      "texto": "Buen loco, prolijo, me hizo toda la eléctrica de la casa y fue el mejor precio que conseguí. Servicio… Más",
+      "autor": "Guillermo Ferrando"
+    }
+  ],
+  "logo": "",
+  "fotos": [
+    "fotos/foto1.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "Google Maps confirma telefono, direccion Av Calcagno, Ciudad de la Costa, rating 4.9 y 12 resenas visibles en ficha. ElectricistasUY confirma telefono, direccion, especialidad y servicios. Solo se pudo ver texto parcial de 3 resenas y una foto real aprobada."
+}

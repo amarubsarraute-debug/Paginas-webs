@@ -1,0 +1,43 @@
+{
+  "negocio": "R H ELECTRICISTA autorizado por U.T.E",
+  "nicho": "electricista autorizado por UTE",
+  "zona": "Canelones",
+  "barrio": "Las Piedras",
+  "telefono": "097 512 680",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Instalaciones electricas",
+    "Reparaciones electricas",
+    "Urgencias electricas 24 horas",
+    "Trabajos con firma autorizada por UTE",
+    "Instalacion de cargadores y tableros",
+    "Asesoramiento tecnico"
+  ],
+  "rating": 4.9,
+  "cantidad_resenas": 111,
+  "testimonios": [
+    {
+      "texto": "Excelente atención y servicio. Super rápido. Totalmente recomendable.",
+      "autor": "Marcela Martinez"
+    },
+    {
+      "texto": "Muy Recomendable Y Súper Responsable Con Su Trabajo, Muchas Gracias🫂…",
+      "autor": "Micaela Piriz"
+    },
+    {
+      "texto": "Excelente servicio y atención. Super profesional, rápido y dando todas las explicaciones e indicaciones siempre. Recomiendo!!",
+      "autor": "Gabriel Chapez"
+    }
+  ],
+  "logo": "",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg",
+    "fotos/foto4.jpg",
+    "fotos/foto5.jpg",
+    "fotos/foto6.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "Datos, rating, telefono, direccion y testimonios tomados de la ficha visible de Google Maps. Servicios inferidos del nombre, categoria, fotos y ficha publica; no se encontro web oficial clara. Se descartaron flyers, fotos de materiales y posibles imagenes no atribuibles al negocio."
+}

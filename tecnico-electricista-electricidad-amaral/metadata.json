@@ -1,0 +1,6 @@
+{
+  "name": "Técnico electricista - Electricidad Amaral",
+  "description": "Landing page para Técnico electricista - Electricidad Amaral en Canelones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

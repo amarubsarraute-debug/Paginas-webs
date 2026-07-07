@@ -1,0 +1,6 @@
+{
+  "name": "Dr. Matías Alcaraz - Medicina Estética",
+  "description": "Landing page para Dr. Matías Alcaraz - Medicina Estética en Montevideo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

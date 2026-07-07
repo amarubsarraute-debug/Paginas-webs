@@ -1,0 +1,6 @@
+{
+  "name": "Electricidad Ocean Park - Electricista Facundo Azcurra",
+  "description": "Landing page para Electricidad Ocean Park - Electricista Facundo Azcurra, empresa de servicios eléctricos en Maldonado, Uruguay, firma autorizada por UTE.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Basil-style Color Palette */
+  --color-paper: #FFFFFF;
+  --color-bg-base: #EDEFF2;
+  --color-bg-tint: #E6E9EE;
+  --color-card: #FFFFFF;
+  --color-ink: #0E1626;
+  --color-ink-light: #28313F;
+  --color-muted: #5C6675;
+  --color-gold: #D8A81E;
+  --color-gold-bright: #EFC23F;
+  --color-gold-soft: #F6E8BE;
+  --color-navy: #0E1626;
+  --color-border-subtle: rgba(14, 22, 38, 0.1);
+  --color-border-strong: rgba(14, 22, 38, 0.2);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink-light);
+  background: radial-gradient(118% 80% at 50% -12%, #F9FAFB 0%, #EDEFF2 52%, #E3E6EC 100%);
+  background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtly textured background noise */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--color-ink);
+}
+
+/* Selection Style */
+::selection {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+/* Custom Scrollbar for modern touch */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 999px;
+  border: 2px solid var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}

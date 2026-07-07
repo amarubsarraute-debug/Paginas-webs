@@ -1,0 +1,43 @@
+{
+  "negocio": "Electricista Milton Sardella",
+  "nicho": "electricista",
+  "zona": "Maldonado & Punta del Este",
+  "barrio": "",
+  "telefono": "099 124 304",
+  "anios_trayectoria": null,
+  "servicios": [
+    "Instalaciones electricas",
+    "Reparaciones electricas",
+    "Tableros electricos",
+    "Emergencias por cortes de luz",
+    "Instalacion de cargadores para autos electricos",
+    "Asesoramiento electrico y UTE"
+  ],
+  "rating": 5.0,
+  "cantidad_resenas": 70,
+  "testimonios": [
+    {
+      "texto": "Hace unos días me instaló el cargador para el auto eléctrico. Muy buena disposición",
+      "autor": "lucía fagetti"
+    },
+    {
+      "texto": "Tuvimos una emergencia y nos quedamos sin luz en casa. A los 10 o 15 minutos Milton apareció",
+      "autor": "Haygustos Quemerecen"
+    },
+    {
+      "texto": "Muy recomendable! Me asesoró y resolvió todo impecable. Muy buena onda también, que eso siempre suma!",
+      "autor": "Santiago Firpo"
+    }
+  ],
+  "logo": "",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg",
+    "fotos/foto4.jpg",
+    "fotos/foto5.jpg",
+    "fotos/foto6.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "Datos extraidos de la ficha de Google Maps del negocio y contrastados con resultados publicos. La ficha no muestra sitio web ni redes enlazadas. No se encontro logo real ni fachada/local; las fotos aprobadas son trabajos electricos reales del perfil de Google Maps. Los testimonios son fragmentos textuales breves de resenas reales visibles en Maps, con autor publico. Los servicios estan inferidos de la categoria, fotos y resenas visibles; la ficha no lista servicios detallados. Barrio y anios de trayectoria no figuran."
+}

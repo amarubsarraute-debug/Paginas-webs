@@ -65,3 +65,60 @@ Tu dominio temporal en Hostinger (`https://darkgreen-echidna-916222.hostingersit
   * `/electricidad-la-barra/index.html` (Web de Electricidad La Barra)
   * `/web-trujillo/index.html` (Web de Trujillo Abogadas - *Estática Compilada*)
   * `/web-luisa/index.html` (Web de Dra. Luisa Cedeño - *Estática Compilada*)
+
+---
+
+## 💻 Desarrollo Local y Generación en Lote (Tips de Optimización)
+
+### 1. Optimización de Espacio (`node_modules` Compartido)
+Al generar múltiples bocetos en lote basados en una misma plantilla de Vite/React (ej. `silvera-electricidad`), copiar la carpeta `node_modules` entera consume mucho espacio en disco y ralentiza la sincronización de OneDrive.
+* **Solución**: Crear un enlace de unión (Junction Link) de Windows en lugar de copiar físicamente los archivos.
+* En Node.js, esto se hace de forma instantánea y con costo de disco de 0 bytes con:
+  ```javascript
+  fs.symlinkSync(rutaNodeModulesPlantilla, rutaDestinoNodeModules, 'junction');
+  ```
+
+### 2. Mantener Servidores Concurrentes Corriendo en el Sandbox de IA
+En entornos de sandbox de desarrollo (como el IDE del agente), si ejecutas un script que lanza múltiples servidores Vite (`npx vite`) usando `detached: true` e ignorando `stdio`, la terminal matará de forma automática todos los subprocesos huérfanos tan pronto como el script padre termine su ejecución.
+* **Solución**: Para mantener los servidores levantados en segundo plano:
+  1. Configura el `spawn` para heredar la consola: `stdio: 'inherit'`.
+  2. Evita que el script principal termine usando un intervalo infinito (`setInterval(() => {}, 10000)`).
+  3. De esta forma, el IDE procesará el comando principal como una tarea persistente en segundo plano (background task) manteniendo los subprocesos vivos.
+
+---
+
+## 📈 Estrategia: Kit de Captación de Reseñas Google (SEO Local)
+
+Esta estrategia funciona como un **argumento de venta (wow factor) clave** cuando le ofreces la web a un negocio local. Les vendes un "sistema llave en mano" para captar opiniones que mejorará su posicionamiento en Google Maps (SEO Local).
+
+El kit de reseñas consta de dos partes:
+
+### 1. El Link Directo de Reseñas (Fórmula de Creación)
+Para que el cliente final no se pierda buscando el negocio, generamos un enlace directo al formulario de reseña usando el **Place ID** de Google Maps:
+
+```text
+https://search.google.com/local/writereview?placeid=EL_PLACE_ID_AQUÍ
+```
+
+**Cómo obtener el Place ID rápidamente en cada cliente nuevo:**
+1. Entrá a Google y buscá: **"Google Place ID Finder"** (es la herramienta oficial de Google, usualmente el primer resultado).
+2. En el mapa interactivo de la herramienta, escribí el nombre del negocio local y su zona (ej: *Bazzanos Instalaciones Eléctricas Canelones*).
+3. Seleccioná el negocio en el mapa y la herramienta te mostrará una etiqueta con un código alfanumérico largo llamado **Place ID** (ej: `ChIJxxxxxxxxx`).
+4. Copiá ese código y reemplazalo en la fórmula de arriba. ¡Listo! Ya tenés el enlace directo.
+
+*Nota: Deja esto como un paso fijo en tu flujo de desarrollo al iniciar cada proyecto.*
+
+### 2. El Mensaje de WhatsApp listo para entregar
+Le entregás esta plantilla copiable al dueño del negocio cuando le entregues la web. Su única tarea será enviárselo a sus clientes por WhatsApp después de terminar cada servicio:
+
+```text
+¡Hola [Nombre]! Muchas gracias por confiar en nosotros para el trabajo. 
+
+Si te dejó conforme, nos ayudaría muchísimo que dejes tu opinión acá, te lleva 10 segundos:
+👉 [LINK_DIRECTO]
+
+¡Muchas gracias por tu tiempo y apoyo!
+```
+
+---
+

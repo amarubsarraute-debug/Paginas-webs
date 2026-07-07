@@ -1,0 +1,6 @@
+{
+  "name": "Nelson Bergero Electricista",
+  "description": "Landing page para Nelson Bergero Electricista en Canelones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

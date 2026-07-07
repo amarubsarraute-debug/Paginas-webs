@@ -1,0 +1,21 @@
+{
+  "negocio": "Nicolas - Electricista habilitado por UTE",
+  "nicho": "electricista habilitado por UTE",
+  "zona": "Maldonado",
+  "barrio": "",
+  "telefono": "099 607 900",
+  "anios_trayectoria": null,
+  "servicios": [],
+  "rating": null,
+  "cantidad_resenas": null,
+  "testimonios": [],
+  "logo": "fotos/logo.jpg",
+  "fotos": [
+    "fotos/foto1.jpg",
+    "fotos/foto2.jpg",
+    "fotos/foto3.jpg",
+    "fotos/foto4.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "Telefono confirmado en ficha visible de Google Maps: 099 607 900. El link de Google Maps resuelve al negocio Nicolas - Electricista habilitado por UTE, ubicado en Maldonado. No pude confirmar teléfono, servicios, rating, cantidad de reseñas ni textos literales de reseñas desde fuentes públicas accesibles."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Nicolas - Electricista habilitado por UTE",
+  "description": "Landing page para Nicolas - Electricista habilitado por UTE, empresa de servicios eléctricos en Maldonado, Uruguay, firma autorizada por UTE.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

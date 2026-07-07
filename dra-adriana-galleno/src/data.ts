@@ -1,3 +1,4 @@
+export const GOOGLE_REVIEW_LINK = "https://www.google.com/maps/search/?api=1&query=dra-adriana-galleno%20Canelones";
 export const WHATSAPP_NUMBER_1 = "59892722058";
 export const WHATSAPP_NUMBER_2 = "59899669936";
 export const WHATSAPP_MESSAGE = "Hola Dra. Adriana, quiero agendar una consulta.";

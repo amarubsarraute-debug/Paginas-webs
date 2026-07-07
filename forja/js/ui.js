@@ -99,6 +99,7 @@ const FORJA_UI = (() => {
         </div>
         <button class="btn btn--lg mt-m" id="startSession">EMPEZAR DEEP WORK →</button>
         <button class="btn btn--ghost mt-s" id="trainToggle">${today.trained ? "✓ ENTRENÉ HOY" : "MARCAR ENTRENAMIENTO"}</button>
+        <button class="btn btn--ghost mt-s" id="openCoach">🧭 ENCONTRAR MI ACCIÓN DEL DÍA</button>
       </div>`;
   }
 
@@ -150,6 +151,107 @@ const FORJA_UI = (() => {
       S().setDay({ trained: !t.trained });
       renderHoy();
     };
+
+    document.getElementById("openCoach").onclick = () => openCoach();
+  }
+
+  function openCoach() {
+    const dec = S().getDecision();
+    const futuro = dec.futuro || [];
+    const identity = S().content().identity;
+    const ov = document.getElementById("overlay");
+    let step = 1;
+    let selectedRasgo = "";
+
+    function render() {
+      if (step === 1) {
+        const opts = futuro.length
+          ? futuro.map((t, i) => `<button class="chip coach__chip" data-i="${i}">${esc(t)}</button>`).join("")
+          : `<p style="color:var(--ink-dim);font-size:14px">Todavía no tenés rasgos de tu yo ideal cargados. Andá a DECISIÓN y completá "En quién me convierto".</p>`;
+        ov.innerHTML = `
+          <div class="modal modal--day modal--coach">
+            <div class="kicker kicker--accent">COACH · ENCONTRÁ TU ACCIÓN</div>
+            <p class="coach__q">¿Cuál de estos rasgos de tu yo ideal no estás honrando hoy?</p>
+            <div class="coach__chips">${opts}</div>
+            <button class="btn btn--ghost mt-m" id="coachClose">Cerrar</button>
+          </div>`;
+        ov.hidden = false;
+        ov.querySelector("#coachClose").onclick = () => { ov.hidden = true; ov.innerHTML = ""; };
+        ov.querySelectorAll(".coach__chip").forEach((btn) => {
+          btn.onclick = () => {
+            selectedRasgo = futuro[Number(btn.dataset.i)];
+            step = 2; render();
+          };
+        });
+
+      } else if (step === 2) {
+        ov.innerHTML = `
+          <div class="modal modal--day modal--coach">
+            <div class="kicker kicker--accent">COACH · PASO 2 DE 3</div>
+            <p class="coach__q">Rasgo elegido:</p>
+            <div class="coach__rasgo">${esc(selectedRasgo)}</div>
+            <p class="coach__q" style="margin-top:18px">¿Qué acción haría hoy tu yo ideal para honrar ese rasgo?<br><span style="color:var(--ink-faint);font-size:13px">Pensá en algo que sentís que no sos capaz de hacer.</span></p>
+            <textarea class="field" id="coachAction" rows="4" placeholder="Ej: Mandar el presupuesto a ese cliente que me da miedo que diga no..."></textarea>
+            <button class="btn btn--accent btn--lg mt-m" id="coachNext">CONTINUAR →</button>
+            <button class="btn btn--ghost mt-s" id="coachBack">← Volver</button>
+          </div>`;
+        ov.hidden = false;
+        ov.querySelector("#coachBack").onclick = () => { step = 1; render(); };
+        ov.querySelector("#coachNext").onclick = () => {
+          const val = ov.querySelector("#coachAction").value.trim();
+          if (!val) { ov.querySelector("#coachAction").focus(); return; }
+          step = 3; render(val);
+        };
+
+      } else if (step === 3) {
+        // step === 3 recibe la acción via closure — re-render desde paso 2 la pasa
+        // workaround: leerla del DOM antes de re-render
+        const action = ov.querySelector ? (ov.querySelector("#coachAction") ? ov.querySelector("#coachAction").value.trim() : "") : "";
+        renderStep3(action);
+      }
+    }
+
+    function renderStep3(action) {
+      ov.innerHTML = `
+        <div class="modal modal--day modal--coach">
+          <div class="kicker kicker--accent">TU ACCIÓN DEL DÍA</div>
+          <p class="coach__q" style="margin-bottom:14px">Al hacer esto, confirmás que sos:</p>
+          <div class="coach__identity">${esc(identity)}</div>
+          <div class="coach__action-card">
+            <div class="kicker" style="margin-bottom:8px;color:var(--accent)">LA ACCIÓN</div>
+            <div class="coach__action-text">${esc(action)}</div>
+            <div class="kicker coach__rasgo-mini">Honrando: ${esc(selectedRasgo)}</div>
+          </div>
+          <button class="btn btn--accent btn--lg mt-m" id="coachUse">USAR COMO TAREA DE HOY →</button>
+          <button class="btn btn--ghost mt-s" id="coachDismiss">Guardar en mente y cerrar</button>
+        </div>`;
+      ov.hidden = false;
+
+      ov.querySelector("#coachUse").onclick = () => {
+        ov.hidden = true; ov.innerHTML = "";
+        const ta = document.getElementById("taskInput");
+        if (ta) { ta.value = action; ta.focus(); }
+      };
+      ov.querySelector("#coachDismiss").onclick = () => { ov.hidden = true; ov.innerHTML = ""; };
+    }
+
+    // patch step 2 next to capture action before re-render
+    const origRender = render;
+    render = function() {
+      origRender();
+      if (step === 2) {
+        const nextBtn = ov.querySelector("#coachNext");
+        if (nextBtn) {
+          nextBtn.onclick = () => {
+            const val = ov.querySelector("#coachAction").value.trim();
+            if (!val) { ov.querySelector("#coachAction").focus(); return; }
+            renderStep3(val);
+          };
+        }
+      }
+    };
+
+    render();
   }
 
   function bindSession() {
