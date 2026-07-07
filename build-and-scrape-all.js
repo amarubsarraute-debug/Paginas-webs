@@ -176,6 +176,14 @@ async function processProject(project) {
     execSync('npm.cmd install --silent', { cwd: project.runDir, stdio: 'inherit' });
   }
 
+  // 1.5. Copiar index.src.html si existe
+  const srcHtmlPath = path.join(project.runDir, 'index.src.html');
+  const indexHtmlPath = path.join(project.runDir, 'index.html');
+  if (fs.existsSync(srcHtmlPath)) {
+    console.log(`📄 Copiando index.src.html a index.html para compilar desde fuente...`);
+    fs.copyFileSync(srcHtmlPath, indexHtmlPath);
+  }
+
   // 2. Compilar
   console.log(`🔨 Compilando ${project.name}...`);
   execSync('npm.cmd run build', { cwd: project.runDir, stdio: 'inherit' });
