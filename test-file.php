@@ -1,17 +1,31 @@
 <?php
 header('Content-Type: text/plain');
 
-$paths = [
-    'silvera-electricidad/img/07_retrato_electricista.png',
-    'electricista-milton-sardella/img/tablero_moderno.jpg',
-    'web-trujillo/assets/logo-trujillo.png'
+$projects = [
+    'silvera-electricidad',
+    'electricista-milton-sardella',
+    'electricidad-ocean-park-electricista-facundo-azcurra',
+    'noguera-electricista-autorizado-por-ute',
+    'barcelo-instalaciones-electricas',
+    'prolighting',
+    'juan-carlos-martinez-electricidad',
+    'alejandro-severo-electricista-autorizado-x-ute'
 ];
 
-foreach ($paths as $path) {
-    if (file_exists($path)) {
-        echo "$path -> Size: " . filesize($path) . " bytes\n";
+foreach ($projects as $proj) {
+    echo "=== PROJECT: $proj ===\n";
+    $imgDir = "$proj/img";
+    if (file_exists($imgDir) && is_dir($imgDir)) {
+        $files = scandir($imgDir);
+        foreach ($files as $file) {
+            if ($file !== '.' && $file !== '..') {
+                $filePath = "$imgDir/$file";
+                echo "  - $file (" . filesize($filePath) . " bytes)\n";
+            }
+        }
     } else {
-        echo "$path -> DOES NOT EXIST\n";
+        echo "  [ERROR] img/ directory does not exist or is not a directory.\n";
     }
+    echo "\n";
 }
 ?>
