@@ -21,7 +21,7 @@ export function Hero() {
               className="inline-flex items-center gap-2 font-mono text-xs font-bold tracking-widest text-gold uppercase"
             >
               <span className="w-6 h-[2px] bg-gold" />
-              <span>Canelones • Técnico Electricista</span>
+              <span>Canelones • Servicios Integrales</span>
             </motion.div>
 
             {/* Title */}
@@ -31,12 +31,12 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.08 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ink leading-[1.05] tracking-tighter"
             >
-              Instalaciones y reformas eléctricas{" "}
+              Electricidad, plomería y albañilería{" "}
               <span className="relative inline-block whitespace-nowrap text-ink z-10">
-                <span className="relative z-10">seguras</span>
+                <span className="relative z-10">en un solo lugar</span>
                 <span className="absolute left-0 right-0 bottom-[4px] h-[0.3em] bg-gold-soft rounded-sm -z-10" />
               </span>{" "}
-              y bajo norma
+              para tu hogar u obra
             </motion.h1>
 
             {/* Subtext */}
@@ -47,9 +47,9 @@ export function Hero() {
               className="text-lg sm:text-xl text-muted leading-relaxed max-w-xl font-light"
             >
               <span className="relative inline-block text-ink z-10 font-extrabold mr-1">
-                <span className="relative z-10">Romero Servicios</span>
+                <span className="relative z-10">Romero Servicios Integrales</span>
                 <span className="absolute left-0 right-0 bottom-[2px] h-[0.25em] bg-gold-soft rounded-sm -z-10" />
-              </span> realiza trabajos residenciales, comerciales y obras con total seguridad. <b>Respuestas rápidas, diagnósticos precisos y presupuestos claros sin compromiso.</b>
+              </span> resuelve electricidad, plomería, albañilería, aires acondicionados, cámaras de seguridad y fletes para tu hogar, comercio u obra. <b>Respuestas rápidas, diagnósticos precisos y presupuestos claros sin compromiso.</b>
             </motion.p>
 
             {/* Buttons */}
@@ -84,7 +84,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.32 }}
               className="flex flex-wrap items-center gap-3 font-mono text-xs text-muted pt-4 border-t border-border-subtle max-w-md"
             >
-              <span className="text-star text-sm tracking-widest">★★★★★</span> <span>5.0 / Reseñas en Google (9 opiniones)</span>
+              <span className="text-star text-sm tracking-widest">★★★★★</span> <span>5.0 / Reseñas en Google</span>
               <span className="w-1.5 h-1.5 rounded-full bg-border-strong" />
               <span className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -105,7 +105,7 @@ export function Hero() {
               <div className="relative aspect-[1/1.05] rounded-3xl overflow-hidden bg-bg-tint border border-border-subtle shadow-2xl">
                 <img
                   src="./img/custom_hero.jpg"
-                  alt="Retrato de Romero Servicios en Maldonado"
+                  alt="Retrato de Romero Servicios en Canelones"
                   className="w-full h-full object-cover object-center"
                 />
               </div>

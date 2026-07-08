@@ -12,7 +12,7 @@ export function Hero() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Text & CTAs */}
-          <div className="lg:col-span-7 space-y-6 text-left">
+          <div className="lg:col-span-6 space-y-6 text-left">
             {/* Kicker */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -47,7 +47,7 @@ export function Hero() {
               className="text-lg sm:text-xl text-muted leading-relaxed max-w-xl font-light"
             >
               <span className="relative inline-block text-ink z-10 font-extrabold mr-1">
-                <span className="relative z-10">RH Electricista</span>
+                <span className="relative z-10">Rubén Hundewadt</span>
                 <span className="absolute left-0 right-0 bottom-[2px] h-[0.25em] bg-gold-soft rounded-sm -z-10" />
               </span> realiza trabajos residenciales, comerciales y obras autorizado por UTE. <b>Respuestas rápidas, diagnósticos transparentes y habilitaciones al día.</b>
             </motion.p>
@@ -84,7 +84,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.32 }}
               className="flex flex-wrap items-center gap-3 font-mono text-xs text-muted pt-4 border-t border-border-subtle max-w-md"
             >
-              <span className="text-star text-sm tracking-widest">★★★★★</span> <span>4.9 / Reseñas en Google (111 opiniones)</span>
+              <span className="text-star text-sm tracking-widest">★★★★★</span> <span>4.9 / Reseñas en Google</span>
               <span className="w-1.5 h-1.5 rounded-full bg-border-strong" />
               <span className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -94,18 +94,18 @@ export function Hero() {
           </div>
 
           {/* Right Column: Photo Frame & Floating Chips */}
-          <div className="lg:col-span-5 relative flex justify-center z-10">
+          <div className="lg:col-span-6 relative flex justify-center z-10">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative w-full max-w-[440px]"
+              className="relative w-full max-w-[560px]"
             >
               {/* Photo Frame */}
-              <div className="relative aspect-[1/1.05] rounded-3xl overflow-hidden bg-bg-tint border border-border-subtle shadow-2xl">
+              <div className="relative aspect-[3/2] rounded-3xl overflow-hidden bg-bg-tint border border-border-subtle shadow-2xl">
                 <img
-                  src="./img/custom_hero.jpg"
-                  alt="Retrato de RH Electricista en Maldonado"
+                  src="./img/hero-rh-electricista-banner.png"
+                  alt="Rubén Hundewadt, RH Electricista, trabajando en un tablero eléctrico"
                   className="w-full h-full object-cover object-center"
                 />
               </div>

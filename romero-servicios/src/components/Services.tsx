@@ -6,31 +6,45 @@ export function Services() {
   const services = [
     {
       index: "01",
-      title: "Instalaciones y Obras",
-      description: "Planificación y ejecución de instalaciones eléctricas completas para casas, apartamentos, oficinas y obras comerciales. Cableados seguros y duraderos desde el primer día.",
-      tags: ["Obras nuevas", "Locales comerciales", "Oficinas", "Acometidas"],
-      waMessage: "Hola Silvera Electricidad, me gustaría consultar por *Instalaciones y Obras*."
+      title: "Electricidad",
+      description: "Instalaciones, reformas, tableros y reparaciones eléctricas para casas, comercios y obras. Diagnóstico de fallas, cambio de llaves y cableados seguros.",
+      tags: ["Instalaciones", "Tableros", "Urgencias", "Iluminación"],
+      waMessage: "Hola Romero Servicios, me gustaría consultar por *Electricidad*."
     },
     {
       index: "02",
-      title: "Tableros y Habilitación UTE",
-      description: "Armado, revisión y normalización de tableros eléctricos. Firma técnica autorizada ante UTE hasta 50 kW para habilitaciones comerciales e industriales sin demoras.",
-      tags: ["Firma UTE", "Tableros técnicos", "Trámites", "Habilitaciones"],
-      waMessage: "Hola Silvera Electricidad, necesito información sobre *Tableros y Firma de UTE*."
+      title: "Albañilería",
+      description: "Refacciones, revoques, construcción y reformas generales. Desde un arreglo puntual hasta una obra completa, con prolijidad y materiales de calidad.",
+      tags: ["Refacciones", "Revoques", "Construcción", "Reformas"],
+      waMessage: "Hola Romero Servicios, necesito información sobre *Albañilería*."
     },
     {
       index: "03",
-      title: "Iluminación y Reformas",
-      description: "Actualización de instalaciones antiguas a estándares modernos. Diseño e instalación de sistemas de iluminación LED para interiores, fachadas y exteriores.",
-      tags: ["Iluminación LED", "Reformas eléctricas", "Exteriores", "Puesta a tierra"],
-      waMessage: "Hola Silvera Electricidad, quiero cotizar un trabajo de *Iluminación y Reformas*."
+      title: "Plomería",
+      description: "Instalación y reparación de cañerías, pérdidas de agua, destape de desagües y conexiones sanitarias para hogares y comercios.",
+      tags: ["Cañerías", "Pérdidas de agua", "Destapes", "Sanitaria"],
+      waMessage: "Hola Romero Servicios, quiero cotizar un trabajo de *Plomería*."
     },
     {
       index: "04",
-      title: "Mantenimiento y Reparación",
-      description: "Solución rápida a cortes de luz, sobrecargas, térmicas que saltan y fallas eléctricas generales. Diagnósticos precisos para prevenir problemas futuros.",
-      tags: ["Cortocircuitos", "Térmicas", "Fugas", "Urgencias"],
-      waMessage: "Hola Silvera Electricidad, necesito un servicio de *Mantenimiento y Reparación* por una falla."
+      title: "Aires Acondicionados",
+      description: "Instalación, mantenimiento y carga de gas de equipos split. Asesoramiento sobre el equipo adecuado para cada ambiente.",
+      tags: ["Instalación", "Mantenimiento", "Carga de gas", "Split"],
+      waMessage: "Hola Romero Servicios, necesito un servicio de *Aires Acondicionados*."
+    },
+    {
+      index: "05",
+      title: "Cámaras de Seguridad",
+      description: "Instalación de sistemas de videovigilancia para hogares y comercios, con configuración remota desde el celular.",
+      tags: ["Videovigilancia", "Instalación", "Configuración remota", "Hogar y comercio"],
+      waMessage: "Hola Romero Servicios, quiero cotizar la instalación de *Cámaras de Seguridad*."
+    },
+    {
+      index: "06",
+      title: "Fletes",
+      description: "Traslado de muebles, materiales de obra y cargas dentro de Canelones y alrededores. Coordinamos día y horario según tu necesidad.",
+      tags: ["Mudanzas chicas", "Materiales", "Traslados", "Coordinación flexible"],
+      waMessage: "Hola Romero Servicios, quiero consultar por un *Flete*."
     }
   ];
 
@@ -47,7 +61,7 @@ export function Services() {
             Soluciones serias, trabajos sin sorpresas.
           </h2>
           <p className="text-muted text-base sm:text-lg font-light leading-relaxed max-w-[65ch]">
-            Electricidad residencial, comercial e industrial. Diagnóstico transparente y presupuesto detallado antes de iniciar cualquier labor.
+            Electricidad, albañilería, plomería, aires acondicionados, cámaras de seguridad y fletes. Diagnóstico transparente y presupuesto detallado antes de iniciar cualquier labor.
           </p>
         </div>
 

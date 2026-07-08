@@ -3,24 +3,34 @@ import { motion } from "motion/react";
 export function Gallery() {
   const images = [
     {
-      src: "./img/custom_g1.jpg",
-      alt: "Instalación y conexiones eléctricas de seguridad realizadas por RH Electricista",
-      tag: "Instalaciones"
+      src: "./img/hero-electricista-azotea-arnes-seguridad.png",
+      alt: "Electricista trabajando en altura con arnés de seguridad en Canelones",
+      tag: "Trabajo en Altura"
     },
     {
-      src: "./img/custom_g2.jpg",
-      alt: "Diseño e iluminación LED profesional de alta calidad",
-      tag: "Iluminación"
+      src: "./img/trabajo-iluminacion-comercial-club-solis.png",
+      alt: "Instalación y mantenimiento de iluminación comercial en Club Solis",
+      tag: "Iluminación Comercial"
     },
     {
-      src: "./img/custom_g3.jpg",
-      alt: "Instalaciones eléctricas estancas para exteriores y jardines",
+      src: "./img/trabajo-instalacion-electrica-obra.png",
+      alt: "Instalación eléctrica en obra nueva, canalizado y cableado bajo norma",
+      tag: "Obras"
+    },
+    {
+      src: "./img/trabajo-cargador-vehiculo-electrico.png",
+      alt: "Instalación de punto de carga para vehículo eléctrico",
+      tag: "Cargadores EV"
+    },
+    {
+      src: "./img/trabajo-instalacion-medidor-exterior.png",
+      alt: "Instalación de medidor y conexión exterior habilitada por UTE",
       tag: "Exteriores"
     },
     {
-      src: "./img/custom_g4.jpg",
-      alt: "Normalización de tableros eléctricos y reformas en obra nueva",
-      tag: "Obras"
+      src: "./img/trabajo-iluminacion-espacio-industrial.png",
+      alt: "Iluminación e instalación eléctrica en espacio industrial",
+      tag: "Industrial"
     }
   ];
 

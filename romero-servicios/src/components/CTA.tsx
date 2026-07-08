@@ -18,10 +18,10 @@ export function CTA() {
               Urgencias y Consultas 24/7
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tighter leading-none">
-              ¿Tenés un problema eléctrico de urgencia?
+              ¿Tenés una urgencia en tu hogar o negocio?
             </h2>
             <p className="text-white/80 text-base sm:text-lg font-light leading-relaxed">
-              ¿Salta la térmica, hay olor a quemado o te quedaste sin luz? Respondemos de forma inmediata. Contamos con brigada móvil lista para salir en Canelones.
+              ¿Se te tapó una cañería, tenés una falla eléctrica o se rompió el aire acondicionado? Respondemos de forma inmediata. Contamos con equipo móvil listo para salir en Canelones.
             </p>
           </div>
 
@@ -35,7 +35,7 @@ export function CTA() {
               Llamar al 098 752 379
             </a>
             <a
-              href={`${WHATSAPP_LINK}&text=Hola,%20tengo%20una%20urgencia%20eléctrica.%20¿Me%20podrán%20ayudar?`}
+              href={`${WHATSAPP_LINK}&text=Hola,%20tengo%20una%20urgencia%20en%20casa.%20¿Me%20podrán%20ayudar?`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/40 hover:border-white hover:bg-white/10 text-white font-bold rounded-xl hover:-translate-y-0.5 transition-all text-center flex items-center justify-center gap-2"

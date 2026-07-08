@@ -1,5 +1,5 @@
 import { WHATSAPP_NUMBER, EMAIL, LOCATION, SCHEDULE, WHATSAPP_LINK, SOCIAL_LINKS } from "../lib/constants";
-import { MapPin, Phone, Mail, Clock, Zap, Instagram, Facebook, Linkedin, ExternalLink } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Linkedin, ExternalLink } from "lucide-react";
 
 
 const socialIcons = {
@@ -17,10 +17,12 @@ export function Footer() {
           
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-navy rounded-xl flex items-center justify-center text-gold shadow-md">
-                <Zap className="w-6 h-6" />
-              </div>
-              <span className="text-2xl font-extrabold text-ink tracking-tight font-display">RH Electricista<b>.</b><small className="block text-[10px] font-mono font-bold uppercase tracking-wider text-muted mt-1">Firma Autorizada UTE</small></span>
+              <img
+                src="./img/logo-rh-electricista.png"
+                alt="Logo RH Electricista"
+                className="w-10 h-10 rounded-xl object-cover shadow-md shrink-0"
+              />
+              <span className="text-2xl font-extrabold text-ink tracking-tight font-display">Rubén Hundewadt<b>.</b><small className="block text-[10px] font-mono font-bold uppercase tracking-wider text-muted mt-1">Firma Autorizada UTE</small></span>
             </div>
             <p className="text-muted leading-relaxed font-light max-w-sm text-sm sm:text-base">
               Instalaciones, reformas y habilitaciones ante UTE en Canelones. Respaldamos cada trabajo con firma autorizada, seguridad y prolijidad técnica.

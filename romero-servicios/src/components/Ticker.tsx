@@ -40,13 +40,14 @@ const styles = `
 
 export function Ticker() {
   const services = [
-    "Cortocircuitos",
-    "Tableros eléctricos",
-    "Salta la térmica",
-    "Fugas de corriente",
-    "Recableados",
-    "Cambio de llaves y tomas",
-    "Iluminación LED",
+    "Electricidad",
+    "Albañilería",
+    "Plomería",
+    "Aires Acondicionados",
+    "Cámaras de Seguridad",
+    "Fletes",
+    "Reformas",
+    "Presupuestos sin cargo",
     "Urgencias 24hs",
     "Mantenimiento",
     "Instalaciones"

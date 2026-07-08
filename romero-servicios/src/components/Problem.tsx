@@ -1,43 +1,43 @@
-import { ZapOff, LightbulbOff, Flame, Plug, FileSignature, AlertTriangle, ArrowRight } from "lucide-react";
+import { ZapOff, Droplets, Snowflake, Hammer, Camera, Wrench, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 
 export function Problem() {
   const problems = [
     {
       icon: ZapOff,
-      title: "Salta la térmica o el disyuntor",
-      description: "El interruptor corta la luz de forma imprevista al conectar electrodomésticos o sin motivo aparente.",
+      title: "Salta la térmica o hay una falla eléctrica",
+      description: "El interruptor corta la luz de forma imprevista, hay cables sueltos o necesitás cambiar llaves y tomas.",
       waMessage: "Hola Romero Servicios, me salta la térmica constantemente y necesito que un técnico revise la instalación."
     },
     {
-      icon: LightbulbOff,
-      title: "Parpadeo de luces o baja tensión",
-      description: "Las luces tintinean o pierden intensidad al encender la jarra eléctrica, el aire acondicionado o el termotanque.",
-      waMessage: "Hola Romero Servicios, tengo parpadeo de luces y variaciones de tensión en mi propiedad."
+      icon: Droplets,
+      title: "Pérdidas de agua o cañerías tapadas",
+      description: "Tenés una pérdida, un desagüe tapado o necesitás una instalación sanitaria nueva.",
+      waMessage: "Hola Romero Servicios, tengo una pérdida de agua / cañería tapada y necesito un plomero."
     },
     {
-      icon: Flame,
-      title: "Olor a quemado o ruidos extraños",
-      description: "Sentís olor a plástico caliente cerca de los enchufes, o escuchás zumbidos y chispazos en el tablero eléctrico.",
-      waMessage: "Hola Romero Servicios, siento olor a quemado / escucho chispazos y necesito asistencia urgente."
+      icon: Snowflake,
+      title: "El aire acondicionado no enfría",
+      description: "El equipo perdió gas, hace ruido o necesitás instalar un split nuevo antes del verano.",
+      waMessage: "Hola Romero Servicios, mi aire acondicionado no enfría bien y necesito un service o instalación."
     },
     {
-      icon: Plug,
-      title: "Enchufes y llaves que no funcionan",
-      description: "Tomacorrientes flojos, teclas que no encienden, cables a la vista o cortocircuitos al conectar un artefacto.",
-      waMessage: "Hola Romero Servicios, necesito reparar o cambiar unos enchufes, llaves o teclas defectuosas."
+      icon: Hammer,
+      title: "Necesitás una refacción o reforma",
+      description: "Grietas, humedad, revoques a nuevo o una obra chica que necesita mano de albañil.",
+      waMessage: "Hola Romero Servicios, necesito cotizar un trabajo de albañilería o refacción."
     },
     {
-      icon: FileSignature,
-      title: "Normalización de Tableros",
-      description: "Necesitás una firma técnica autorizada para dar de alta un medidor, habilitar un comercio o subir la potencia contratada.",
-      waMessage: "Hola Romero Servicios, necesito un electricista para cotizar un cambio de llaves térmicas o normalización."
+      icon: Camera,
+      title: "Querés instalar cámaras de seguridad",
+      description: "Necesitás vigilancia para tu hogar o comercio, con acceso remoto desde el celular.",
+      waMessage: "Hola Romero Servicios, quiero cotizar la instalación de cámaras de seguridad."
     },
     {
-      icon: AlertTriangle,
-      title: "Instalación vieja o sin descarga a tierra",
-      description: "La instalación tiene cables de tela antiguos, no cuenta con jabalina de tierra o da descargas al tocar la heladera.",
-      waMessage: "Hola Romero Servicios, quiero cotizar la adecuación y cableado a tierra de una instalación antigua."
+      icon: Wrench,
+      title: "Tenés varios arreglos pendientes",
+      description: "Electricidad, plomería, albañilería o aires acondicionados: coordinamos todo en una sola visita.",
+      waMessage: "Hola Romero Servicios, tengo varios trabajos pendientes en casa y quiero coordinar una visita."
     }
   ];
 
@@ -58,10 +58,10 @@ export function Problem() {
             Diagnóstico y Seguridad
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight tracking-tighter">
-            ¿Tu instalación eléctrica presenta alguno de estos problemas?
+            ¿Tu hogar o negocio tiene alguno de estos problemas?
           </h2>
           <p className="text-muted text-base sm:text-lg font-light leading-relaxed max-w-[70ch]">
-            No ignores las señales de alarma en tu sistema eléctrico. Un fallo a tiempo evitado protege tus electrodomésticos y previene accidentes graves. **Hacé clic en tu problema** para consultarnos directamente por WhatsApp.
+            No ignores las señales de alarma, sean eléctricas, de plomería o de construcción. Un problema resuelto a tiempo evita gastos mayores. **Hacé clic en tu problema** para consultarnos directamente por WhatsApp.
           </p>
         </div>
 
@@ -119,7 +119,7 @@ export function Problem() {
           </div>
           
           <a
-            href="https://wa.me/59898752379?text=Hola%20Silvera%20Electricidad,%20tengo%20una%20consulta%20por%20un%20trabajo%20el%C3%A9ctrico%20que%20no%20figura%20en%20la%20lista."
+            href="https://wa.me/59898752379?text=Hola%20Romero%20Servicios,%20tengo%20una%20consulta%20por%20un%20trabajo%20que%20no%20figura%20en%20la%20lista."
             target="_blank"
             rel="noopener noreferrer"
             className="w-full md:w-auto shrink-0 inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-bright text-navy font-bold px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"

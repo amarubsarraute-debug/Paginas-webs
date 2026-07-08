@@ -6,7 +6,7 @@ export function Process() {
     {
       number: "01",
       title: "Nos escribís o llamás",
-      text: "Contanos qué instalación, reforma o problema eléctrico tenés en tu hogar, comercio u obra. Coordinamos de forma ágil."
+      text: "Contanos qué instalación, reforma o problema tenés en tu hogar, comercio u obra — eléctrico, de plomería, albañilería o climatización. Coordinamos de forma ágil."
     },
     {
       number: "02",
@@ -16,7 +16,7 @@ export function Process() {
     {
       number: "03",
       title: "Seguridad y Garantía",
-      text: "Ejecutamos el proyecto con prolijidad, seguridad y responsabilidad, entregando instalaciones seguras y duraderas bajo normativas vigentes."
+      text: "Ejecutamos el trabajo con prolijidad, seguridad y responsabilidad, entregando resultados duraderos sin importar el oficio."
     }
   ];
 

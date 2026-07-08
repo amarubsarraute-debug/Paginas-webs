@@ -7,43 +7,43 @@
     "react": {
       "src": "../../../silvera-electricidad/node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "74345a33",
+      "fileHash": "e9674af7",
       "needsInterop": true
     },
     "react-dom": {
       "src": "../../../silvera-electricidad/node_modules/react-dom/index.js",
       "file": "react-dom.js",
-      "fileHash": "f43e7dea",
+      "fileHash": "645b44a5",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
       "src": "../../../silvera-electricidad/node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "6fd4934c",
+      "fileHash": "8a717434",
       "needsInterop": true
     },
     "react/jsx-runtime": {
       "src": "../../../silvera-electricidad/node_modules/react/jsx-runtime.js",
       "file": "react_jsx-runtime.js",
-      "fileHash": "1062a4fa",
+      "fileHash": "684c3d15",
       "needsInterop": true
     },
     "lucide-react": {
       "src": "../../../silvera-electricidad/node_modules/lucide-react/dist/esm/lucide-react.js",
       "file": "lucide-react.js",
-      "fileHash": "b854a396",
+      "fileHash": "1f18daae",
       "needsInterop": false
     },
     "motion/react": {
       "src": "../../../silvera-electricidad/node_modules/motion/dist/es/react.mjs",
       "file": "motion_react.js",
-      "fileHash": "dee61a0a",
+      "fileHash": "9ff8d83b",
       "needsInterop": false
     },
     "react-dom/client": {
       "src": "../../../silvera-electricidad/node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "b61483a1",
+      "fileHash": "54fcd7f4",
       "needsInterop": true
     }
   },

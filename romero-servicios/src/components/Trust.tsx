@@ -20,11 +20,11 @@ export function Trust() {
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-gold/5 rounded-full blur-3xl pointer-events-none" />
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-ink leading-tight tracking-tighter max-w-3xl mx-auto mb-6 relative z-10">
-            Electricidad hecha con seguridad, prolijidad y criterio profesional
+            Trabajo hecho con seguridad, prolijidad y criterio profesional
           </h2>
-          
+
           <p className="text-base sm:text-lg text-muted max-w-2xl mx-auto mb-12 font-light leading-relaxed relative z-10">
-            En instalaciones eléctricas, improvisar sale caro y es peligroso. Silvera Electricidad prioriza la prolijidad técnica, el cumplimiento estricto de plazos y el asesoramiento transparente para que disfrutes de una instalación segura y libre de problemas.
+            En electricidad, plomería o albañilería, improvisar sale caro y puede ser peligroso. Romero Servicios prioriza la prolijidad técnica, el cumplimiento estricto de plazos y el asesoramiento transparente para que el trabajo quede resuelto y sin problemas.
           </p>
 
           {/* Badges Container */}

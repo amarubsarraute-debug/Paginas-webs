@@ -3,24 +3,34 @@ import { motion } from "motion/react";
 export function Gallery() {
   const images = [
     {
-      src: "./img/custom_g1.jpg",
-      alt: "Instalación y conexiones eléctricas de seguridad realizadas por Electricista Cabrera",
-      tag: "Instalaciones"
-    },
-    {
-      src: "./img/custom_g2.jpg",
-      alt: "Diseño e iluminación LED profesional de alta calidad",
-      tag: "Iluminación"
-    },
-    {
-      src: "./img/custom_g3.jpg",
-      alt: "Instalaciones eléctricas estancas para exteriores y jardines",
+      src: "./img/trabajo-caja-conexion-en-poste-obra.png",
+      alt: "Instalación de caja de conexión eléctrica en poste, obra en construcción",
       tag: "Exteriores"
     },
     {
-      src: "./img/custom_g4.jpg",
-      alt: "Normalización de tableros eléctricos y reformas en obra nueva",
+      src: "./img/trabajo-sala-tableros-obra-nueva.png",
+      alt: "Armado de sala de tableros eléctricos en obra nueva",
       tag: "Obras"
+    },
+    {
+      src: "./img/trabajo-barras-cobre-tablero.png",
+      alt: "Conexionado de barras de cobre (neutro y fases) en tablero eléctrico",
+      tag: "Tableros"
+    },
+    {
+      src: "./img/trabajo-tomas-cajas-electricas.png",
+      alt: "Instalación de tomas y cajas eléctricas empotradas",
+      tag: "Instalaciones"
+    },
+    {
+      src: "./img/trabajo-caja-distribucion-poste.png",
+      alt: "Caja de distribución eléctrica en poste con térmicas y toma",
+      tag: "Exteriores"
+    },
+    {
+      src: "./img/trabajo-interruptores-steck.png",
+      alt: "Cableado y conexionado de interruptores termomagnéticos",
+      tag: "Tableros"
     }
   ];
 
@@ -52,11 +62,11 @@ export function Gallery() {
               transition={{ duration: 0.5, delay: index * 0.08 }}
               className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-bg-tint border border-border-subtle shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
-              <img 
-                src={img.src} 
+              <img
+                src={img.src}
                 alt={img.alt}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
               />
               
               {/* Overlay on hover */}

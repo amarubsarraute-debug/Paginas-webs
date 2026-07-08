@@ -5,16 +5,16 @@ import { GOOGLE_REVIEW_LINK } from "../lib/constants";
 export function Clients() {
   const commitments = [
     {
-      title: "Instalaciones seguras y prolijas",
-      desc: "Evitamos cableados sueltos y desordenados que generan recalentamientos. Cada llave térmica y disyuntor queda correctamente calibrado y rotulado."
+      title: "Trabajos seguros y prolijos",
+      desc: "Sea electricidad, plomería, albañilería o instalación de equipos, dejamos todo prolijo, calibrado y funcionando como corresponde."
     },
     {
-      title: "Materiales homologados",
-      desc: "Trabajamos únicamente con materiales normalizados y marcas líderes para asegurar que tu instalación cumpla con todas las medidas de seguridad."
+      title: "Materiales de calidad",
+      desc: "Trabajamos únicamente con materiales normalizados y marcas líderes para asegurar que cada trabajo cumpla con todas las medidas de seguridad."
     },
     {
-      title: "Garantía de firma autorizada UTE",
-      desc: "Realizamos certificaciones, firmas de carpetas, aumentos de potencia y trámites ante UTE con el aval de técnico registrado y matriculado."
+      title: "Un equipo, todos los oficios",
+      desc: "Coordinamos electricidad, plomería, albañilería, aires acondicionados y cámaras de seguridad con el mismo equipo, sin que tengas que llamar a varios técnicos distintos."
     }
   ];
 

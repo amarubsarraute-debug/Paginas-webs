@@ -6,22 +6,22 @@ export function ClientTypes() {
     {
       icon: Home,
       title: "Hogares y apartamentos",
-      description: "Soluciones a medida para viviendas particulares. Desde reparaciones rápidas de cortocircuitos o fugas hasta reformas eléctricas completas, iluminación de interiores y puestas a tierra."
+      description: "Soluciones a medida para viviendas particulares. Desde una falla eléctrica o una pérdida de agua hasta una reforma completa con albañilería, aires acondicionados o cámaras."
     },
     {
       icon: Store,
       title: "Comercios y oficinas",
-      description: "Instalaciones proyectadas para evitar interrupciones. Adecuación de locales comerciales, iluminación técnica, cableado estructurado, tableros trifásicos y mantenimiento preventivo."
+      description: "Trabajos proyectados para evitar interrupciones. Adecuación de locales, instalación eléctrica y sanitaria, climatización y videovigilancia con mantenimiento preventivo."
     },
     {
       icon: Building2,
       title: "Edificios y administraciones",
-      description: "Servicio ágil de mantenimiento eléctrico para consorcios y edificios residenciales. Firma y trámites de UTE, revisión de bombas de agua, palieres, iluminación y mantenimiento preventivo."
+      description: "Servicio ágil de mantenimiento para consorcios y edificios residenciales. Revisión de bombas de agua, palieres, instalaciones eléctricas y mantenimiento preventivo general."
     },
     {
       icon: Hammer,
       title: "Obras y reformas",
-      description: "Planificación de instalaciones eléctricas completas para proyectos en construcción o reformas. Tableros de obra provisorios, canalizaciones, cableados e instalación de artefactos."
+      description: "Planificación de proyectos completos en construcción o reformas: albañilería, electricidad, plomería e instalación de artefactos, todo coordinado por el mismo equipo."
     }
   ];
 
@@ -41,7 +41,7 @@ export function ClientTypes() {
             Trabajamos con particulares, empresas, comercios y administraciones
           </h2>
           <p className="text-muted text-base sm:text-lg font-light leading-relaxed max-w-[70ch]">
-            Ya sea una reparación puntual, una instalación nueva o un proyecto completo, el objetivo es el mismo: que el sistema eléctrico funcione de forma segura, prolija y confiable.
+            Ya sea una reparación puntual, una instalación nueva o un proyecto completo, el objetivo es el mismo: que tu hogar o negocio funcione de forma segura, prolija y confiable.
           </p>
         </div>
 

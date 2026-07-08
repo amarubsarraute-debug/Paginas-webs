@@ -141,6 +141,46 @@ const projects = [
     outputDir: path.join(ROOT, 'alejandro-severo-electricista-autorizado-x-ute'),
     defaultPort: 4184,
     extraFiles: ['robots.txt']
+  },
+  {
+    name: 'RH Electricista',
+    dirName: 'rh-electricista-autorizado-por-ute',
+    projectPath: path.join(ROOT, 'rh-electricista-autorizado-por-ute'),
+    buildDir: path.join(ROOT, 'rh-electricista-autorizado-por-ute', 'dist'),
+    runDir: path.join(ROOT, 'rh-electricista-autorizado-por-ute'),
+    outputDir: path.join(ROOT, 'rh-electricista-autorizado-por-ute'),
+    defaultPort: 4185,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Nelson Berger',
+    dirName: 'nelson-bergero-electricista',
+    projectPath: path.join(ROOT, 'nelson-bergero-electricista'),
+    buildDir: path.join(ROOT, 'nelson-bergero-electricista', 'dist'),
+    runDir: path.join(ROOT, 'nelson-bergero-electricista'),
+    outputDir: path.join(ROOT, 'nelson-bergero-electricista'),
+    defaultPort: 4186,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Electricista Cabrera',
+    dirName: 'electricista-cabrera',
+    projectPath: path.join(ROOT, 'electricista-cabrera'),
+    buildDir: path.join(ROOT, 'electricista-cabrera', 'dist'),
+    runDir: path.join(ROOT, 'electricista-cabrera'),
+    outputDir: path.join(ROOT, 'electricista-cabrera'),
+    defaultPort: 4187,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Romero Servicios',
+    dirName: 'romero-servicios',
+    projectPath: path.join(ROOT, 'romero-servicios'),
+    buildDir: path.join(ROOT, 'romero-servicios', 'dist'),
+    runDir: path.join(ROOT, 'romero-servicios'),
+    outputDir: path.join(ROOT, 'romero-servicios'),
+    defaultPort: 4188,
+    extraFiles: ['robots.txt']
   }
 ];
 

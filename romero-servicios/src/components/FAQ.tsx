@@ -5,24 +5,24 @@ import { motion, AnimatePresence } from "motion/react";
 export function FAQ() {
   const faqs = [
     {
-      q: "¿Atienden emergencias eléctricas en Canelones?",
-      a: "Sí, contamos con atención de urgencias y brigada móvil en barrios como Ciudad de la Costa y toda la zona de Canelones y zonas aledañas."
+      q: "¿Atienden urgencias en Canelones?",
+      a: "Sí, contamos con atención de urgencias en electricidad, plomería y aires acondicionados en toda la zona de Canelones y alrededores."
     },
     {
       q: "¿Realizan trabajos con garantía?",
-      a: "Romero Servicios ofrece total garantía en todos sus trabajos. Nos aseguramos de realizar instalaciones prolijas, seguras y duraderas utilizando materiales normalizados."
+      a: "Romero Servicios Integrales ofrece total garantía en todos sus trabajos, sea electricidad, plomería, albañilería, aires o cámaras. Nos aseguramos de trabajar de forma prolija y duradera con materiales de calidad."
     },
     {
       q: "¿Los presupuestos tienen costo?",
       a: "No, las cotizaciones por proyectos, reformas o instalaciones planificadas son sin costo. Evaluamos el trabajo, te detallamos los materiales y mano de obra en un presupuesto cerrado por escrito."
     },
     {
-      q: "¿Qué sucede si salta la llave térmica continuamente?",
-      a: "Eso indica una sobrecarga de consumo o una fuga a tierra (cortocircuito). Es fundamental no forzar la llave y llamar a un técnico habilitado. Contamos con equipos de medición avanzados para diagnosticar y solucionar el problema rápidamente."
+      q: "¿Hacen trabajos de varios rubros en la misma visita?",
+      a: "Sí, es una de nuestras ventajas: si tenés pendientes de electricidad, plomería, albañilería, aire acondicionado o cámaras, coordinamos todo con el mismo equipo para ahorrarte tiempo y llamados."
     },
     {
       q: "¿Qué información debo enviar para solicitar un servicio?",
-      a: "Podés escribirnos por WhatsApp comentando qué necesitás. Si es una reforma o falla, nos ayuda mucho que envíes fotos del tablero eléctrico, del artefacto o del área a trabajar."
+      a: "Podés escribirnos por WhatsApp comentando qué necesitás. Nos ayuda mucho que envíes fotos del área, artefacto o instalación a trabajar."
     }
   ];
 

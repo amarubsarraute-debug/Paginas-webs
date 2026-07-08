@@ -1,5 +1,5 @@
 import { WHATSAPP_LINK } from "../lib/constants";
-import { Zap } from "lucide-react";
+import { Wrench } from "lucide-react";
 import { motion } from "motion/react";
 
 export function FinalCTA() {
@@ -18,29 +18,29 @@ export function FinalCTA() {
           transition={{ duration: 0.4 }}
           className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 text-gold mb-8 shadow-sm"
         >
-          <Zap className="w-8 h-8" />
+          <Wrench className="w-8 h-8" />
         </motion.div>
-        
+
         {/* Title */}
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-4xl sm:text-5xl font-extrabold text-ink tracking-tighter mb-6 leading-none"
         >
-          Instalaciones eléctricas sin sorpresas.
+          Todos los oficios, sin sorpresas.
         </motion.h2>
-        
+
         {/* Subtitle */}
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.08 }}
           className="text-lg sm:text-xl text-muted mb-10 max-w-xl mx-auto font-light leading-relaxed"
         >
-          Escribinos por WhatsApp y coordiná una visita técnica o presupuestá tu instalación con una empresa seria en Maldonado.
+          Escribinos por WhatsApp y coordiná una visita técnica o presupuestá tu trabajo con una empresa seria en Canelones.
         </motion.p>
 
         {/* WhatsApp Button */}

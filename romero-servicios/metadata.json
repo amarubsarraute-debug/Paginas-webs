@@ -1,6 +1,6 @@
 {
-  "name": "Romero Servicios",
-  "description": "Landing page para Romero Servicios en Canelones.",
+  "name": "Romero Servicios Integrales",
+  "description": "Landing page para Romero Servicios Integrales (electricidad, plomería, albañilería, aires y cámaras) en Canelones.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
