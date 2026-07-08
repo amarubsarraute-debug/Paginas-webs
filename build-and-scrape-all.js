@@ -277,6 +277,15 @@ async function processProject(project) {
             console.log(`✓ Assets copiados.`);
           }
 
+          // Copiar carpeta de imágenes (dist/img) si existe
+          const srcImg = path.join(project.buildDir, 'img');
+          const destImg = path.join(project.outputDir, 'img');
+          if (fs.existsSync(srcImg)) {
+            console.log(`⚡ Copiando imágenes a ${path.relative(ROOT, destImg)}...`);
+            copyRecursiveSync(srcImg, destImg);
+            console.log(`✓ Imágenes copiadas.`);
+          }
+
           // Copiar archivos extra
           project.extraFiles.forEach(file => {
             const srcFile = path.join(project.buildDir, file);
