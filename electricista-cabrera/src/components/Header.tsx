@@ -10,12 +10,11 @@ export function Header() {
           
           {/* Logo / Brand */}
           <a href="#" className="flex items-center gap-2 shrink-0">
-            <div className="flex items-center gap-2">
-            <Zap className="w-5 h-5 text-gold fill-gold shrink-0" />
-            <span className="text-lg font-extrabold text-ink tracking-tight font-display font-sans">
-              Electricista<b>.</b>
-            </span>
-          </div>
+            <img 
+              src="./img/logo-electricista-cabrera.jpg" 
+              alt="Electricista Cabrera" 
+              className="h-10 w-auto object-contain rounded-lg" 
+            />
           </a>
 
           {/* Navigation & Action */}

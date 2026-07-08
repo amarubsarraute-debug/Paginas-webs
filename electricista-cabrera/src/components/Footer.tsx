@@ -17,9 +17,11 @@ export function Footer() {
           
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-navy rounded-xl flex items-center justify-center text-gold shadow-md">
-                <Zap className="w-6 h-6" />
-              </div>
+              <img 
+                src="./img/logo-electricista-cabrera.jpg" 
+                alt="Electricista Cabrera" 
+                className="h-12 w-auto object-contain rounded-lg shadow-md" 
+              />
               <span className="text-2xl font-extrabold text-ink tracking-tight font-display">Electricista Cabrera<b>.</b><small className="block text-[10px] font-mono font-bold uppercase tracking-wider text-muted mt-1">Firma Autorizada UTE</small></span>
             </div>
             <p className="text-muted leading-relaxed font-light max-w-sm text-sm sm:text-base">
