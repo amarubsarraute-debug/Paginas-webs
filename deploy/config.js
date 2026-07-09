@@ -28,10 +28,10 @@ module.exports = [
     local: "../basil-sanitario",
     exclude: [".git", ".claude", "node_modules"],
     ftp: {
-      host: "PONER_HOST_FTP",
-      user: "PONER_USUARIO_FTP",
-      password: "PONER_PASSWORD_FTP",
-      remote: "/public_html",
+      host: "147.93.39.62",
+      user: "u726588504.Amarubelline",
+      password: "Amarubelline7!",
+      remote: "/",
       port: 21,
       secure: false
     }

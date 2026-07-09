@@ -52,7 +52,7 @@ if (window.self !== window.top || new URLSearchParams(location.search).get("embe
     "opens": "00:00", "closes": "23:59"
   }],
   "sameAs": ["https://www.instagram.com/basil_sanitario"],
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "119" }
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "120" }
 }
 </script>
 
@@ -260,6 +260,30 @@ textarea.input{height:auto;padding:13px 15px;min-height:98px;resize:vertical}
 .proc-foot{margin-top:24px;display:inline-flex;align-items:center;gap:11px;font-family:var(--font-mono);font-size:.82rem;color:#8a6a10;letter-spacing:.03em}
 .proc-foot svg{width:18px;height:18px;color:var(--gold)}
 
+/* ============ PROYECTOS / OSE ============ */
+.plan-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(34px,5vw,64px);align-items:center}
+.plan-copy .eyebrow{color:#A07B12}
+.plan-copy h2{font-size:clamp(2rem,4.4vw,3.1rem);line-height:1.06;letter-spacing:-.02em;color:var(--ink)}
+.plan-copy .lead{max-width:46ch;font-size:1.06rem;margin:18px 0 34px}
+.plan-steps{display:flex;flex-direction:column;gap:4px;margin-bottom:36px}
+.plan-step{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:18px 0;border-top:1px solid var(--border)}
+.plan-step:last-child{border-bottom:1px solid var(--border)}
+.plan-step .pnum{font-family:var(--font-mono);font-weight:700;font-size:.82rem;color:var(--gold);padding-top:4px;letter-spacing:.06em}
+.plan-step h3{font-size:1.16rem;color:var(--ink);margin-bottom:4px}
+.plan-step p{font-size:.96rem;color:var(--muted);line-height:1.5}
+.plan-note{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:.8rem;color:#8a6a10;letter-spacing:.03em;margin-top:22px}
+.plan-note svg{width:17px;height:17px;color:var(--gold);flex:none}
+
+/* lámina del plano */
+.plan-sheet{position:relative;background:linear-gradient(160deg,#111B30,#0C1424);border:1px solid var(--border-strong);border-radius:var(--radius);box-shadow:var(--shadow-lg);padding:16px;overflow:hidden}
+.plan-sheet::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 15% 0,rgba(216,168,30,.10),transparent 55%);pointer-events:none}
+.plan-sheet svg{display:block;width:100%;height:auto;position:relative;z-index:1}
+.plan-badge{position:absolute;top:20px;right:20px;z-index:2;display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-weight:700;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:#0C1424;background:var(--gold);padding:7px 12px;border-radius:999px;box-shadow:0 8px 20px rgba(216,168,30,.4)}
+.plan-badge .dot{width:7px;height:7px;border-radius:50%;background:#0C1424}
+.pl-draw{stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600)}
+.reveal.in .pl-draw{animation:plDraw 1.5s var(--ease) forwards}
+@keyframes plDraw{to{stroke-dashoffset:0}}
+
 /* ============ PROOF ============ */
 .proof-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
 .proof-score .big{font-family:var(--font-display);font-weight:800;font-size:clamp(5rem,12vw,8rem);line-height:.85;color:var(--ink);letter-spacing:-.04em}
@@ -376,6 +400,7 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
   .reveal{opacity:1;transform:none;transition:none}
   .ticker .track,.dot,.gal img{animation:none!important;transition:none!important}
   .srow .main .tags b{opacity:1!important;animation:none!important}
+  .pl-draw{stroke-dashoffset:0!important;animation:none!important}
   *{scroll-behavior:auto!important}
 }
 
@@ -387,6 +412,7 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
   .stp{border-right:0;border-bottom:1px solid var(--border)}
   .stp:last-child{border-bottom:0}
   .stp .ix{margin-bottom:18px}
+  .plan-grid{grid-template-columns:1fr;gap:40px}
   .gal-grid{grid-template-columns:repeat(3,1fr)}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
@@ -397,6 +423,8 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
   .srow{grid-template-columns:auto 1fr;gap:14px}
   .srow .go{display:none}
   .gal-grid{grid-template-columns:1fr 1fr}
+  .gal .cap{transform:none;opacity:1;padding:24px 12px 12px}
+  .gal .cap b{font-size:.82rem}
   .foot-grid{grid-template-columns:1fr}
   .foot-bottom{flex-direction:column;text-align:center}
   .hp-chip{display:none}
@@ -421,6 +449,7 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
     </a>
     <nav class="nav-links" aria-label="Navegación principal">
       <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
       <a href="#proceso">Proceso</a>
       <a href="#trabajos">Trabajos</a>
       <a href="#cobertura">Cobertura</a>
@@ -457,7 +486,7 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
         <a class="btn btn-secondary btn-lg" href="tel:+59895555161" data-ev="call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>095 555 161</a>
       </div>
       <div class="hero-trust reveal" style="--rd:320ms">
-        <span class="st">★★★★★</span><span>5.0 / 119 reseñas en Google</span><span class="sep"></span><span>Abierto ahora</span>
+        <span class="st">★★★★★</span><span>5.0 / +120 reseñas en Google</span><span class="sep"></span><span>Abierto ahora</span>
       </div>
     </div>
 
@@ -519,6 +548,181 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
   </div>
 </section>
 
+<!-- ============ PROYECTOS / OSE ============ -->
+<section class="section bg-tint" id="proyectos">
+  <div class="container plan-grid">
+    <div class="plan-copy reveal">
+      <span class="eyebrow">Proyectos y construcción</span>
+      <h2>De los planos a la obra, bajo norma OSE.</h2>
+      <p class="lead">¿Estás construyendo o reformando? Nos ocupamos de toda la parte sanitaria del proyecto, desde el plano hasta la ejecución, cumpliendo la reglamentación vigente.</p>
+      <div class="plan-steps">
+        <div class="plan-step">
+          <span class="pnum">01</span>
+          <div>
+            <h3>Elaboración de planos de fontanería</h3>
+            <p>Diseñamos el proyecto sanitario técnico según los requisitos reglamentarios de OSE.</p>
+          </div>
+        </div>
+        <div class="plan-step">
+          <span class="pnum">02</span>
+          <div>
+            <h3>Inscripción en la Intendencia</h3>
+            <p>Gestionamos y presentamos el trámite ante el organismo, para que quede todo en regla.</p>
+          </div>
+        </div>
+        <div class="plan-step">
+          <span class="pnum">03</span>
+          <div>
+            <h3>Ejecución en fase de obra</h3>
+            <p>Realizamos los trabajos sanitarios durante la construcción, prolijos y bajo norma.</p>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-primary btn-lg" href="#" data-wa="Hola Basil, estoy en una obra/reforma y necesito planos de fontanería y los trámites de OSE. ¿Me pasan información?" data-ev="whatsapp">Consultar por mi proyecto<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <span class="plan-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Trabajo habilitado según reglamentación de OSE.</span>
+    </div>
+
+    <div class="plan-sheet reveal" style="--rd:120ms" aria-hidden="true">
+      <span class="plan-badge"><span class="dot"></span>Norma OSE</span>
+      <svg viewBox="0 0 580 640" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'JetBrains Mono',monospace">
+        <defs>
+          <pattern id="planGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M24 0H0V24" fill="none" stroke="rgba(255,255,255,.045)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="580" height="640" fill="url(#planGrid)"/>
+        <!-- marco de lámina -->
+        <rect x="18" y="18" width="544" height="604" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/>
+        <rect x="28" y="28" width="524" height="584" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+
+        <!-- ventilación (C.I.P.P.) arriba -->
+        <g stroke="rgba(255,255,255,.6)" stroke-width="1.6" fill="none">
+          <path d="M132 58 l8 -14 l8 14 Z"/><line x1="140" y1="58" x2="140" y2="120"/>
+          <path d="M250 58 l8 -14 l8 14 Z"/><line x1="258" y1="58" x2="258" y2="120"/>
+        </g>
+        <text x="118" y="40" fill="rgba(255,255,255,.5)" font-size="10">C.I.P.P. Ø 0,019</text>
+        <text x="236" y="40" fill="rgba(255,255,255,.5)" font-size="10">C.I.P.P. Ø 0,019</text>
+
+        <!-- MUROS (planta en L) -->
+        <g stroke="rgba(255,255,255,.55)" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="square">
+          <path class="pl-draw" style="--len:1340" d="M70 120 H400 V300 H235 V455 H70 Z"/>
+        </g>
+        <!-- muros interiores -->
+        <g stroke="rgba(255,255,255,.5)" stroke-width="5" fill="none" stroke-linecap="square">
+          <line x1="235" y1="120" x2="235" y2="300"/>
+          <line x1="70" y1="300" x2="235" y2="300"/>
+        </g>
+        <!-- aberturas (huecos de puerta) -->
+        <g stroke="#0C1424" stroke-width="8">
+          <line x1="235" y1="205" x2="235" y2="245"/>
+          <line x1="150" y1="300" x2="192" y2="300"/>
+        </g>
+        <!-- arcos de puerta -->
+        <g stroke="rgba(255,255,255,.28)" stroke-width="1.4" fill="none">
+          <path d="M235 245 A40 40 0 0 1 195 205"/>
+          <path d="M192 300 A42 42 0 0 0 150 342"/>
+        </g>
+
+        <!-- rótulos de ambientes -->
+        <g fill="rgba(255,255,255,.72)" font-size="13" letter-spacing="1.5">
+          <text x="128" y="215">BAÑO</text>
+          <text x="300" y="235">COCINA</text>
+          <text x="108" y="392">LAVADERO</text>
+        </g>
+
+        <!-- ARTEFACTOS -->
+        <g stroke="rgba(255,255,255,.72)" stroke-width="2" fill="none">
+          <!-- inodoro (baño) -->
+          <rect x="95" y="132" width="34" height="15" rx="2"/>
+          <ellipse cx="112" cy="164" rx="14" ry="18"/>
+          <!-- ducha (baño) -->
+          <rect x="168" y="134" width="46" height="46" rx="3"/>
+          <path d="M170 136 L212 178" stroke-width="1.3"/>
+          <circle cx="191" cy="157" r="3" fill="rgba(255,255,255,.55)" stroke="none"/>
+          <!-- lavatorio (baño) -->
+          <rect x="80" y="235" width="30" height="34" rx="3"/>
+          <ellipse cx="95" cy="252" rx="10" ry="12"/>
+          <!-- pileta doble (cocina) -->
+          <rect x="300" y="132" width="30" height="28" rx="2"/><circle cx="315" cy="146" r="6"/>
+          <rect x="334" y="132" width="30" height="28" rx="2"/><circle cx="349" cy="146" r="6"/>
+          <!-- cocina / hornallas -->
+          <rect x="356" y="180" width="34" height="46" rx="2"/>
+          <circle cx="366" cy="192" r="4.5"/><circle cx="381" cy="192" r="4.5"/>
+          <circle cx="366" cy="212" r="4.5"/><circle cx="381" cy="212" r="4.5"/>
+          <!-- pileta lavadero -->
+          <rect x="90" y="345" width="40" height="30" rx="3"/><circle cx="110" cy="360" r="8"/>
+        </g>
+
+        <!-- AGUA FRÍA (azul punteado) -->
+        <g stroke="#6BA4E0" stroke-width="2" fill="none" stroke-dasharray="5 5" stroke-linecap="round">
+          <path d="M258 120 V285 M258 150 H130 M130 150 V235 M258 175 H356 M150 300 V352"/>
+        </g>
+        <!-- DESAGÜE SANITARIO (verde punteado) -->
+        <g stroke="#74C69D" stroke-width="2" fill="none" stroke-dasharray="9 5" stroke-linecap="round">
+          <path d="M140 120 V300 M112 182 V300 M315 160 V270 H150 M150 300 V440 H92 L60 472"/>
+        </g>
+        <!-- nodos de conexión -->
+        <g fill="#6BA4E0"><circle cx="258" cy="150" r="3.4"/><circle cx="258" cy="175" r="3.4"/><circle cx="130" cy="150" r="3.4"/></g>
+
+        <!-- diámetros -->
+        <g fill="rgba(255,255,255,.5)" font-size="10">
+          <text x="146" y="146">Ø 0,019</text>
+          <text x="330" y="196">Ø 0,013</text>
+          <text x="60" y="330">Ø 0,050</text>
+          <text x="150" y="430">Ø 0,050</text>
+        </g>
+
+        <!-- CL (cámara / conexión) -->
+        <g stroke="rgba(255,255,255,.6)" stroke-width="1.6" fill="none">
+          <circle cx="52" cy="486" r="15"/>
+        </g>
+        <text x="45" y="490" fill="rgba(255,255,255,.6)" font-size="10">CL</text>
+        <text x="72" y="470" fill="rgba(255,255,255,.5)" font-size="10">Ø 0,075</text>
+
+        <!-- LEYENDA / referencias -->
+        <g>
+          <text x="430" y="122" fill="rgba(255,255,255,.75)" font-size="12" letter-spacing="1">REFERENCIAS</text>
+          <line x1="418" y1="150" x2="448" y2="150" stroke="#6BA4E0" stroke-width="2" stroke-dasharray="5 5"/>
+          <text x="456" y="154" fill="rgba(255,255,255,.55)" font-size="10">Agua fría</text>
+          <line x1="418" y1="176" x2="448" y2="176" stroke="#74C69D" stroke-width="2" stroke-dasharray="9 5"/>
+          <text x="456" y="180" fill="rgba(255,255,255,.55)" font-size="10">Desagüe</text>
+          <path d="M429 196 l5 -9 l5 9 Z" stroke="rgba(255,255,255,.6)" stroke-width="1.4" fill="none"/>
+          <text x="456" y="205" fill="rgba(255,255,255,.55)" font-size="10">Ventilación</text>
+        </g>
+
+        <!-- NOTAS -->
+        <g fill="rgba(255,255,255,.42)" font-size="9.5">
+          <text x="418" y="248" fill="rgba(255,255,255,.6)" font-size="11" letter-spacing="1">NOTAS</text>
+          <text x="418" y="270">— Cañerías y accesorios</text>
+          <text x="418" y="284">   según normas OSE.</text>
+          <text x="418" y="304">— Pendiente mínima 2%.</text>
+        </g>
+
+        <!-- sello aprobado -->
+        <g transform="rotate(-10 475 400)">
+          <circle cx="475" cy="400" r="40" fill="none" stroke="var(--gold)" stroke-width="2" opacity=".85"/>
+          <circle cx="475" cy="400" r="32" fill="none" stroke="var(--gold)" stroke-width="1" opacity=".5"/>
+          <text x="475" y="397" text-anchor="middle" fill="var(--gold)" font-size="12" font-weight="700" letter-spacing="1">APTO</text>
+          <text x="475" y="412" text-anchor="middle" fill="var(--gold)" font-size="9" letter-spacing="1.5">OSE</text>
+        </g>
+
+        <!-- cajetín / rótulo -->
+        <g>
+          <rect x="70" y="540" width="440" height="60" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.22)" stroke-width="1"/>
+          <line x1="300" y1="540" x2="300" y2="600" stroke="rgba(255,255,255,.22)" stroke-width="1"/>
+          <line x1="410" y1="540" x2="410" y2="600" stroke="rgba(255,255,255,.22)" stroke-width="1"/>
+          <text x="86" y="566" fill="rgba(255,255,255,.85)" font-size="14" font-weight="700" letter-spacing="1.2">PLANO SANITARIO</text>
+          <text x="86" y="586" fill="rgba(255,255,255,.45)" font-size="10.5" letter-spacing="1">VIVIENDA UNIFAMILIAR</text>
+          <text x="316" y="566" fill="rgba(255,255,255,.45)" font-size="10.5">ESCALA</text>
+          <text x="316" y="586" fill="rgba(255,255,255,.8)" font-size="12" font-weight="700">1:50</text>
+          <text x="426" y="566" fill="var(--gold-bright)" font-size="11" font-weight="700" letter-spacing="1">NORMA</text>
+          <text x="426" y="586" fill="var(--gold-bright)" font-size="12" font-weight="700" letter-spacing="1">OSE</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
 <!-- ============ BANDA URGENCIA (rojo) ============ -->
 <section class="urgency">
   <div class="container urgency-inner">
@@ -558,7 +762,7 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
       <div class="proof-score reveal">
         <div class="big">5.0</div>
         <div class="st">★★★★★</div>
-        <div class="lb">119 reseñas verificadas</div>
+        <div class="lb">+120 reseñas verificadas</div>
         <div class="g"><svg viewBox="0 0 24 24"><path fill="#5C6675" d="M22.5 12.2c0-.8-.07-1.5-.2-2.2H12v4.2h5.9a5 5 0 0 1-2.2 3.3v2.8h3.6c2-1.9 3.2-4.7 3.2-8z"/><path fill="#5C6675" d="M12 23c2.97 0 5.46-.98 7.3-2.7l-3.6-2.8c-1 .7-2.2 1-3.7 1-2.9 0-5.3-1.9-6.2-4.5H2.2v2.8A11 11 0 0 0 12 23z"/><path fill="#5C6675" d="M5.8 14c-.2-.7-.4-1.4-.4-2s.1-1.4.4-2V7.2H2.2a11 11 0 0 0 0 9.6L5.8 14z"/><path fill="#5C6675" d="M12 5.4c1.6 0 3.1.6 4.2 1.6l3.1-3.1C17.4 2 15 1 12 1 7.7 1 4 3.5 2.2 7.2l3.6 2.8C6.7 7.3 9.1 5.4 12 5.4z"/></svg>Reseñas de Google</div>
       </div>
       <div class="quotes">
@@ -647,7 +851,7 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
       <ul class="assure">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Brigada móvil que se mueve a tu zona</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Trabajo prolijo, seguro y responsable</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Presupuesto claro · 5.0 ★ con 119 reseñas</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Presupuesto claro · 5.0 ★ con +120 reseñas</li>
       </ul>
     </div>
 
