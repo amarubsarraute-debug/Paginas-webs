@@ -156,8 +156,9 @@ textarea.input{height:auto;padding:13px 15px;min-height:98px;resize:vertical}
 .header.scrolled{background:rgba(247,248,250,.82);backdrop-filter:saturate(150%) blur(16px);-webkit-backdrop-filter:saturate(150%) blur(16px);border-bottom:1px solid var(--border);box-shadow:0 6px 24px rgba(14,22,38,.06)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
 .brand{display:flex;align-items:center;gap:12px}
-.brand .mk{width:42px;height:42px;flex:none;border-radius:11px;background:var(--navy);display:grid;place-items:center;color:var(--gold);box-shadow:var(--shadow)}
+.brand .mk{width:42px;height:42px;flex:none;border-radius:11px;background:var(--navy);display:grid;place-items:center;color:var(--gold);box-shadow:var(--shadow);overflow:hidden}
 .brand .mk svg{width:23px;height:23px}
+.brand .mk img{width:100%;height:100%;object-fit:cover}
 .brand .wm{font-family:var(--font-display);font-weight:800;font-size:1.2rem;letter-spacing:-.02em;line-height:1;color:var(--ink)}
 .brand .wm b{color:var(--gold)}
 .brand .wm small{display:block;font-family:var(--font-mono);font-weight:600;font-size:.6rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:4px}
@@ -323,14 +324,28 @@ textarea.input{height:auto;padding:13px 15px;min-height:98px;resize:vertical}
 .lightbox img{max-width:min(92vw,560px);max-height:88vh;border-radius:12px;box-shadow:var(--shadow-lg)}
 .lightbox .x{position:absolute;top:20px;right:24px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;font-size:1.4rem}
 .lightbox .x:hover{background:rgba(255,255,255,.22)}
+.lightbox video{max-width:min(92vw,420px);max-height:88vh;border-radius:14px;box-shadow:var(--shadow-lg);background:#000}
+
+/* ============ PROCESOS EN VIDEO ============ */
+.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.vcard{position:relative;border:0;padding:0;cursor:pointer;border-radius:var(--radius);overflow:hidden;background:#0C1424;aspect-ratio:9/16;box-shadow:var(--shadow);transition:transform .25s var(--ease),box-shadow .25s}
+.vcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.vcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;transition:opacity .25s,transform .5s var(--ease)}
+.vcard:hover img{opacity:1;transform:scale(1.045)}
+.vcard .play{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(216,168,30,.96);display:grid;place-items:center;z-index:2;box-shadow:0 8px 22px rgba(0,0,0,.4);transition:transform .25s var(--ease),background .25s}
+.vcard:hover .play{transform:translate(-50%,-50%) scale(1.09);background:var(--gold-bright)}
+.vcard .play svg{width:23px;height:23px;color:#0C1424;margin-left:3px}
+.vcard .vcap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:36px 14px 15px;background:linear-gradient(transparent,rgba(8,12,20,.92));display:flex;flex-direction:column;gap:3px;text-align:left}
+.vcard .vcap b{color:#fff;font-family:var(--font-sans);font-weight:700;font-size:.96rem;line-height:1.2}
+.vcard .vcap i{font-family:var(--font-mono);font-style:normal;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-bright)}
 
 /* ============ COVERAGE ============ */
-.cov-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.cov-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center}
 .zones{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 30px}
 .zones b{font-family:var(--font-mono);font-weight:600;font-size:.78rem;letter-spacing:.03em;color:var(--ink);
   border:1px solid var(--border);padding:9px 14px;border-radius:var(--radius-sm);transition:.25s;background:var(--paper)}
 .zones b:hover{border-color:var(--gold);color:#8a6a10}
-.map{aspect-ratio:4/3.4;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border-strong);box-shadow:var(--shadow)}
+.map{aspect-ratio:16/13;min-height:500px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border-strong);box-shadow:var(--shadow)}
 .map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.25) contrast(1.02)}
 
 /* ============ FAQ ============ */
@@ -414,6 +429,7 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
   .stp .ix{margin-bottom:18px}
   .plan-grid{grid-template-columns:1fr;gap:40px}
   .gal-grid{grid-template-columns:repeat(3,1fr)}
+  .vgrid{grid-template-columns:repeat(2,1fr)}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:720px){
@@ -444,7 +460,7 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
 <header class="header" id="header">
   <div class="container nav">
     <a href="#top" class="brand" aria-label="Basil Sanitario - inicio">
-      <span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-2 8 9-12h-6l2-8z" fill="currentColor"/></svg></span>
+      <span class="mk" aria-hidden="true"><img src="img/logo-icono.png" alt="" /></span>
       <span class="wm">Basil<b>.</b><small>Sanitaria · Electricidad</small></span>
     </a>
     <nav class="nav-links" aria-label="Navegación principal">
@@ -452,6 +468,7 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
       <a href="#proyectos">Proyectos</a>
       <a href="#proceso">Proceso</a>
       <a href="#trabajos">Trabajos</a>
+      <a href="#videos">Videos</a>
       <a href="#cobertura">Cobertura</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -795,8 +812,46 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
       <button class="gal reveal" data-full="img/galeria-4.png" aria-label="Ver instalación de cañerías"><img src="img/galeria-4.png" alt="Instalación de cañerías de agua fría y caliente" loading="lazy"><span class="cap"><b>Cañerías</b><i>Instalación</i></span></button>
       <button class="gal reveal" style="--rd:60ms" data-full="img/galeria-5.png" aria-label="Ver sala técnica"><img src="img/galeria-5.png" alt="Sala técnica sanitaria instalada por Basil Sanitario" loading="lazy"><span class="cap"><b>Sala técnica</b><i>Instalación</i></span></button>
       <button class="gal reveal" style="--rd:120ms" data-full="img/galeria-6.png" aria-label="Ver inodoro suspendido"><img src="img/galeria-6.png" alt="Instalación de inodoro suspendido" loading="lazy"><span class="cap"><b>Inodoro suspendido</b><i>Sanitaria</i></span></button>
+      <button class="gal reveal" data-full="img/galeria-7.jpg" aria-label="Ver cisterna empotrada"><img src="img/galeria-7.jpg" alt="Cisterna empotrada de inodoro suspendido en obra" loading="lazy"><span class="cap"><b>Cisterna empotrada</b><i>Inodoro suspendido</i></span></button>
+      <button class="gal reveal" style="--rd:60ms" data-full="img/galeria-8.jpg" aria-label="Ver colector de llaves de paso"><img src="img/galeria-8.jpg" alt="Colector de llaves de paso para distribución de agua" loading="lazy"><span class="cap"><b>Colector de llaves</b><i>Distribución de agua</i></span></button>
+      <button class="gal reveal" style="--rd:120ms" data-full="img/galeria-9.jpg" aria-label="Ver filtro y regulador de presión"><img src="img/galeria-9.jpg" alt="Filtro de agua y regulador de presión con electroválvula" loading="lazy"><span class="cap"><b>Filtro y presión</b><i>Entrada de agua</i></span></button>
+      <button class="gal reveal" data-full="img/galeria-10.jpg" aria-label="Ver tendido de desagües"><img src="img/galeria-10.jpg" alt="Tendido de desagües sanitarios de PVC en obra" loading="lazy"><span class="cap"><b>Desagües sanitarios</b><i>Tendido en obra</i></span></button>
     </div>
     <span class="gal-note reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Fotos reales de trabajos de Basil Sanitario.</span>
+  </div>
+</section>
+
+<!-- ============ PROCESOS EN VIDEO ============ -->
+<section class="section" id="videos">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">En video</span>
+      <h2>Procesos de trabajo, en acción.</h2>
+      <p>Mirá cómo trabajamos: instalaciones reales de sanitaria, paso a paso. Tocá un video para reproducirlo.</p>
+    </div>
+    <div class="vgrid">
+      <button class="vcard reveal" data-video="img/proceso-1.mp4" data-poster="img/proceso-1.jpg" aria-label="Reproducir video: purificador de agua bajo mesada">
+        <img src="img/proceso-1.jpg" alt="Instalación de purificador de agua bajo mesada" loading="lazy">
+        <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="vcap"><b>Purificador de agua</b><i>Bajo mesada</i></span>
+      </button>
+      <button class="vcard reveal" style="--rd:60ms" data-video="img/proceso-2.mp4" data-poster="img/proceso-2.jpg" aria-label="Reproducir video: bomba presurizadora">
+        <img src="img/proceso-2.jpg" alt="Instalación de bomba presurizadora de agua" loading="lazy">
+        <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="vcap"><b>Bomba presurizadora</b><i>Instalación</i></span>
+      </button>
+      <button class="vcard reveal" style="--rd:120ms" data-video="img/proceso-3.mp4" data-poster="img/proceso-3.jpg" aria-label="Reproducir video: gabinete estanco en exterior">
+        <img src="img/proceso-3.jpg" alt="Montaje de gabinete estanco en exterior" loading="lazy">
+        <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="vcap"><b>Gabinete estanco</b><i>Montaje exterior</i></span>
+      </button>
+      <button class="vcard reveal" style="--rd:180ms" data-video="img/proceso-4.mp4" data-poster="img/proceso-4.jpg" aria-label="Reproducir video: cañería de agua en exterior">
+        <img src="img/proceso-4.jpg" alt="Instalación de cañería de agua en exterior" loading="lazy">
+        <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="vcap"><b>Cañería de agua</b><i>Instalación exterior</i></span>
+      </button>
+    </div>
+    <span class="gal-note reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Videos reales de trabajos de Basil Sanitario.</span>
   </div>
 </section>
 
@@ -808,12 +863,12 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
       <h2 style="font-size:clamp(2.1rem,5vw,3.4rem);margin:0 0 18px">Atendemos Maldonado<br>y Punta del Este.</h2>
       <p style="max-width:460px">Brigada móvil lista para moverse a tu zona. ¿No ves tu barrio? Consultanos, seguramente llegamos.</p>
       <div class="zones">
-        <b>Punta del Este</b><b>Maldonado</b><b>San Rafael</b><b>Aidy Grill</b><b>La Barra</b><b>Pinares</b>
+        <b>Punta del Este</b><b>Maldonado</b><b>San Rafael</b><b>Aidy Grill</b><b>La Barra</b><b>Pinares</b><b>Manantiales</b><b>Punta Ballena</b><b>José Ignacio</b><b>Piriápolis</b><b>Solís</b><b>La Capuera</b><b>Cantegril</b><b>Maldonado Nuevo</b>
       </div>
       <a class="btn btn-primary btn-lg" href="#" data-wa="Hola Basil, ¿cubren mi zona? Te paso la dirección." data-ev="whatsapp">Consultá tu zona<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
     <div class="map reveal" style="--rd:120ms">
-      <iframe title="Cobertura Maldonado y Punta del Este" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Maldonado,Punta%20del%20Este,Uruguay&z=11&output=embed"></iframe>
+      <iframe title="Cobertura Maldonado y Punta del Este" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=-34.9300,-54.9450&z=11&output=embed"></iframe>
     </div>
   </div>
 </section>
@@ -894,7 +949,7 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
       </div>
       <div class="foot-col"><h4>Mapa</h4><a href="#servicios">Servicios</a><a href="#proceso">Proceso</a><a href="#trabajos">Trabajos</a><a href="#cobertura">Cobertura</a><a href="#faq">FAQ</a></div>
       <div class="foot-col"><h4>Contacto</h4><a href="tel:+59895555161" data-ev="call">095 555 161</a><a href="https://wa.me/59895555161" target="_blank" rel="noopener" data-ev="whatsapp">WhatsApp 24/7</a><a href="https://www.instagram.com/basil_sanitario" target="_blank" rel="noopener">@basil_sanitario</a><a>Maldonado · Punta del Este</a></div>
-      <div class="foot-logo"><img src="img/logo.png" alt="Logo de Basil Sanitario - Sanitaria y Electricidad 24/7" loading="lazy" /></div>
+      <div class="foot-logo"><img src="img/logo-limpio.png" alt="Logo de Basil Sanitario - Sanitaria y Electricidad 24/7" loading="lazy" /></div>
     </div>
     <div class="foot-bottom">
       <span>© <span id="year">2026</span> BASIL SANITARIO · SANITARIA + ELECTRICIDAD</span>
@@ -913,6 +968,11 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto de trabajo">
   <button class="x" id="lbClose" aria-label="Cerrar">&times;</button>
   <img id="lbImg" src="" alt="" />
+</div>
+
+<div class="lightbox" id="vlightbox" role="dialog" aria-modal="true" aria-label="Video de trabajo">
+  <button class="x" id="vlbClose" aria-label="Cerrar">&times;</button>
+  <video id="vlbVideo" controls playsinline preload="none"></video>
 </div>
 
 <!-- ============ SCRIPTS ============ -->
@@ -968,7 +1028,18 @@ html.is-embedded .reveal{opacity:1!important;transform:none!important;transition
   });
   document.getElementById("lbClose").addEventListener("click", closeLb);
   lb.addEventListener("click", function(e){ if(e.target===lb) closeLb(); });
-  document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeLb(); });
+
+  /* Procesos: lightbox de video (carga on-demand) */
+  var vlb = document.getElementById("vlightbox"), vlbVideo = document.getElementById("vlbVideo");
+  function openVlb(src, poster){ if(poster) vlbVideo.poster=poster; vlbVideo.src=src; vlb.classList.add("open"); document.body.style.overflow="hidden"; var p=vlbVideo.play(); if(p&&p.catch) p.catch(function(){}); }
+  function closeVlb(){ vlb.classList.remove("open"); vlbVideo.pause(); vlbVideo.removeAttribute("src"); vlbVideo.load(); document.body.style.overflow=""; }
+  document.querySelectorAll(".vcard").forEach(function(v){
+    v.addEventListener("click", function(){ openVlb(v.getAttribute("data-video"), v.getAttribute("data-poster")); });
+  });
+  document.getElementById("vlbClose").addEventListener("click", closeVlb);
+  vlb.addEventListener("click", function(e){ if(e.target===vlb) closeVlb(); });
+
+  document.addEventListener("keydown", function(e){ if(e.key==="Escape"){ closeLb(); closeVlb(); } });
 
   var form = document.getElementById("leadForm");
   if (form){
