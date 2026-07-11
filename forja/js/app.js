@@ -8,7 +8,7 @@ const FORJA_APP = (() => {
     hoy: () => FORJA_UI.renderHoy(),
     creencias: () => FORJA_UI.renderCreencias(),
     dias: () => FORJA_UI.renderDias(),
-    emociones: () => FORJA_UI.renderEmociones(),
+    polaris: () => FORJA_UI.renderPolaris(),
     yaesta: () => FORJA_VOZ.renderYaEsta(),
     decision: () => FORJA_UI.renderDecision(),
     ajustes: () => FORJA_UI.renderAjustes()

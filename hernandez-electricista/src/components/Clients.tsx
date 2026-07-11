@@ -77,7 +77,7 @@ export function Clients() {
                   ★★★★★
                 </div>
                 <div className="font-mono text-[10px] text-muted uppercase font-bold tracking-wider">
-                  11 Opiniones en Google
+                  Opiniones en Google
                 </div>
               </div>
             </div>
@@ -95,21 +95,28 @@ export function Clients() {
         </div>
       </div>
 
+      {/* CSS Stylesheet inline for GPU-accelerated and smooth pause-on-hover marquee */}
+      <style>{`
+        @keyframes marquee-right {
+          0% { transform: translate3d(-50%, 0, 0); }
+          100% { transform: translate3d(0%, 0, 0); }
+        }
+        .animate-marquee-right {
+          animation: marquee-right 45s linear infinite;
+          will-change: transform;
+        }
+        .animate-marquee-right:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       {/* Infinite Horizontal Marquee sliding to the RIGHT */}
       <div className="relative w-full overflow-hidden py-4 flex select-none">
         {/* Left and Right blur overlays to blend marquee edge */}
         <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-bg-base/90 to-transparent z-20 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-bg-base/90 to-transparent z-20 pointer-events-none" />
 
-        <motion.div 
-          className="flex gap-6 w-max"
-          animate={{ x: ["-50%", "0%"] }} // Al ir de negativo a 0, se desplaza a la DERECHA
-          transition={{
-            ease: "linear",
-            duration: 40,
-            repeat: Infinity,
-          }}
-        >
+        <div className="flex gap-6 w-max animate-marquee-right">
           {marqueeReviews.map((rev, idx) => (
             <article 
               key={idx}
@@ -133,7 +140,7 @@ export function Clients() {
               </div>
             </article>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -16,11 +16,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-left">
           
           <div className="lg:col-span-2 space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-navy rounded-xl flex items-center justify-center text-gold shadow-md">
-                <Zap className="w-6 h-6" />
+            <div className="flex flex-col gap-3">
+              <div className="bg-navy px-4 py-2 rounded-xl border border-border-strong/50 shadow-sm flex items-center justify-center w-fit">
+                <img src="./img/logo.jpg" alt="Hernández Instalaciones Eléctricas" className="h-10 w-auto object-contain" />
               </div>
-              <span className="text-2xl font-extrabold text-ink tracking-tight font-display">Hernández Electricista<b>.</b><small className="block text-[10px] font-mono font-bold uppercase tracking-wider text-muted mt-1">Técnico Electricista</small></span>
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-muted">Técnico Electricista</span>
             </div>
             <p className="text-muted leading-relaxed font-light max-w-sm text-sm sm:text-base">
               Instalaciones, reformas y mantenimiento eléctrico residencial y comercial en Canelones. Garantía, prolijidad y seguridad en cada trabajo.

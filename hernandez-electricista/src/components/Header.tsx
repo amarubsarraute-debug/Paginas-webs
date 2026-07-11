@@ -10,8 +10,8 @@ export function Header() {
           
           {/* Logo / Brand */}
           <a href="#" className="flex items-center shrink-0">
-            <div className="bg-navy px-3 py-1.5 rounded-xl border border-border-strong/50 shadow-sm flex items-center justify-center">
-              <img src="./img/logo.jpg" alt="Hernández Instalaciones Eléctricas" className="h-6 sm:h-7 w-auto object-contain" />
+            <div className="bg-navy px-4 py-2 rounded-xl border border-border-strong/50 shadow-sm flex items-center justify-center">
+              <img src="./img/logo.jpg" alt="Hernández Instalaciones Eléctricas" className="h-7.5 sm:h-9 w-auto object-contain" />
             </div>
           </a>
 

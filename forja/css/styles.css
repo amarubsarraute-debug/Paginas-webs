@@ -689,6 +689,63 @@ body {
 .roadmap__victory__date { margin-left: auto; font-size: 11px; color: var(--ink-faint); white-space: nowrap; padding-left: 10px; }
 .roadmap__all-done { font-size: 16px; color: var(--accent); padding: 16px 0; }
 
+/* ---------- POLARIS · mapa de evolución ---------- */
+.screen--polaris { max-width: 760px; }
+.pol-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.pol-block {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r); padding: 20px 18px;
+  display: flex; flex-direction: column;
+}
+.pol-block__head { margin-bottom: 14px; }
+.pol-block__label {
+  font-family: var(--font-display); font-weight: 800; font-size: 17px;
+  letter-spacing: -0.01em; color: var(--ink);
+}
+.pol-block__sub { margin-top: 4px; font-size: 9.5px; }
+.pol--left { border-top: 2px solid var(--ink-faint); }
+.pol--built { border-top: 2px solid var(--accent); }
+.pol--grow { border-top: 2px solid var(--accent-deep); }
+.pol--next { border-top: 2px solid var(--accent-bright); }
+
+.pol__list { list-style: none; padding: 0; margin: 0 0 12px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+.pol__item {
+  display: flex; align-items: flex-start; gap: 9px;
+  font-size: 14px; line-height: 1.45; color: var(--ink);
+  background: var(--surface-2); border: 1px solid var(--line);
+  border-radius: var(--r-sm); padding: 9px 11px;
+}
+.pol__icon { flex: 0 0 auto; font-size: 12px; line-height: 1.5; color: var(--ink-faint); }
+.pol--built .pol__icon, .pol--next .pol__icon { color: var(--accent); }
+.pol__text { flex: 1; min-width: 0; }
+.pol--left .pol__text { color: var(--ink-dim); }
+.pol__del {
+  flex: 0 0 auto; background: none; border: none; cursor: pointer;
+  color: var(--ink-faint); font-size: 12px; line-height: 1.4; padding: 0 2px;
+  opacity: 0; transition: opacity .15s ease;
+}
+.pol__item:hover .pol__del { opacity: 1; }
+.pol__del:hover { color: var(--accent); }
+.pol__empty { font-size: 12px; color: var(--ink-faint); font-style: italic; padding: 4px 0; }
+.pol__add { display: flex; gap: 6px; align-items: stretch; }
+.pol__input {
+  flex: 1; min-width: 0; font-family: inherit; font-size: 13.5px;
+  background: var(--bg-deep); border: 1px solid var(--line);
+  border-radius: var(--r-sm); padding: 8px 10px; color: var(--ink);
+}
+.pol__input:focus { outline: none; border-color: var(--accent); }
+.pol__input::placeholder { color: var(--ink-faint); }
+.pol__addbtn {
+  flex: 0 0 auto; width: 34px; cursor: pointer; font-size: 18px; line-height: 1;
+  background: var(--bg-deep); border: 1px solid var(--line); border-radius: var(--r-sm);
+  color: var(--ink-dim);
+}
+.pol__addbtn:hover { border-color: var(--accent); color: var(--accent); }
+
+@media (max-width: 620px) {
+  .pol-grid { grid-template-columns: 1fr; }
+}
+
 /* ---------- COACH ---------- */
 .modal--coach { max-width: 480px; text-align: left; }
 .coach__q { font-size: 17px; line-height: 1.5; color: var(--ink); margin-bottom: 16px; }

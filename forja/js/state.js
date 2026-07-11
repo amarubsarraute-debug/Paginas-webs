@@ -18,7 +18,8 @@ const FORJA_STATE = (() => {
       selfTalk: FORJA_DATA.selfTalk,
       goal: JSON.parse(JSON.stringify(FORJA_DATA.goal)),
       evidence: {},            // { "<indiceCreencia>": [ {text, date}, ... ] }
-      decision: { manifesto: "" } // juramento + mapa vieja/presente/futuro (getDecision lo siembra)
+      decision: { manifesto: "" }, // juramento + mapa vieja/presente/futuro (getDecision lo siembra)
+      polaris: null                // mapa de evolución (getPolaris lo siembra)
     },
     synchronicities: [],       // señales que resuenan: [{hecho, significado, date}]
     days: {},                  // "YYYY-MM-DD": { deepWork, trained, selfTalk, task, taskMinutes, doneMinutes, note, version }
@@ -203,6 +204,50 @@ const FORJA_STATE = (() => {
     save();
   }
 
+  // ----- POLARIS: mapa de evolución (dejé atrás / construí / mejorar / siguiente) -----
+  // Cada ítem es un objeto con métrica según el bloque:
+  //   dejeAtras: { text, since }   racha en días
+  //   mejorar:   { text, pct }     progreso 0-100
+  //   construi / siguiente: { text }
+  function normPolarisItem(key, it) {
+    const today = todayKey();
+    if (typeof it === "string") {
+      if (key === "dejeAtras") return { text: it, since: _state.startDate || today };
+      if (key === "mejorar") return { text: it, pct: 0 };
+      return { text: it };
+    }
+    if (it && typeof it === "object") {
+      if (typeof it.text !== "string") it.text = "";
+      if (key === "dejeAtras" && !it.since) it.since = _state.startDate || today;
+      if (key === "mejorar" && typeof it.pct !== "number") it.pct = 0;
+      return it;
+    }
+    return { text: String(it) };
+  }
+  function getPolaris() {
+    const seed = FORJA_DATA.polaris;
+    let p = _state.content.polaris;
+    if (!p || typeof p !== "object") {
+      p = _state.content.polaris = { intro: seed.intro, dejeAtras: [], construi: [], mejorar: [], siguiente: [] };
+      ["dejeAtras", "construi", "mejorar", "siguiente"].forEach((k) => {
+        p[k] = seed[k].slice();
+      });
+    }
+    if (typeof p.intro !== "string") p.intro = seed.intro;
+    // normalizar todas las listas a objetos con su métrica
+    ["dejeAtras", "construi", "mejorar", "siguiente"].forEach((k) => {
+      if (!Array.isArray(p[k])) p[k] = (seed[k] || []).slice();
+      p[k] = p[k].map((it) => normPolarisItem(k, it));
+    });
+    save();
+    return p;
+  }
+  function newPolarisItem(key, text) { return normPolarisItem(key, text); }
+  function setPolaris(patch) {
+    _state.content.polaris = Object.assign(getPolaris(), patch);
+    save();
+  }
+
   // ----- SINCRONICIDADES: señales que resuenan -----
   function getSynchronicities() {
     if (!_state.synchronicities) _state.synchronicities = [];
@@ -312,6 +357,7 @@ const FORJA_STATE = (() => {
     stats, content, setContent,
     getEvidence, addEvidence, removeEvidence,
     getDecision, setDecision,
+    getPolaris, setPolaris, newPolarisItem,
     getSynchronicities, addSynchronicity, removeSynchronicity,
     getRoadmap, setMilestoneDate, completeCurrentMilestone, undoLastMilestone,
     cycleCount, cycleBounds, cycleUnlocked, cycleDays, getCycles, getCycle, saveCycleDevolucion, removeCycleDevolucion,

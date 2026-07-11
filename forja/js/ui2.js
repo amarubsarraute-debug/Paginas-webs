@@ -366,8 +366,84 @@
     if (cancel) cancel.onclick = () => { o.setEdit(false); renderDecision(); };
   }
 
+  // ===========================================================
+  //  POLARIS  (mapa de evolución: dejé atrás / construí / mejorar / siguiente)
+  // ===========================================================
+  const POLARIS_BLOCKS = [
+    { key: "dejeAtras", label: "DEJÉ ATRÁS", sub: "MI VIEJA IDENTIDAD, YA SOLTADA", icon: "✕", cls: "pol--left", place: "Algo que solté y me enorgullece…" },
+    { key: "construi", label: "LO QUE CONSTRUÍ", sub: "HÁBITOS Y LOGROS QUE YA SON REALES", icon: "✓", cls: "pol--built", place: "Algo que ya es real en mi vida…" },
+    { key: "mejorar", label: "EN QUÉ MEJORAR", sub: "MIS PUNTOS DÉBILES A EVOLUCIONAR", icon: "▲", cls: "pol--grow", place: "Algo que quiero mejorar…" },
+    { key: "siguiente", label: "LO QUE SIGUE", sub: "MIS PRÓXIMOS OBJETIVOS EN ORDEN", icon: "→", cls: "pol--next", place: "Un próximo objetivo…" }
+  ];
+
+  function renderPolaris() {
+    UI.setActiveNav("polaris");
+    const p = S().getPolaris();
+
+    const blocks = POLARIS_BLOCKS.map((b) => {
+      const items = p[b.key] || [];
+      const rows = items.map((t, i) => `
+        <li class="pol__item">
+          <span class="pol__icon">${b.icon}</span>
+          <span class="pol__text">${esc(t)}</span>
+          <button class="pol__del" data-delpol="${b.key}" data-i="${i}" title="Quitar">✕</button>
+        </li>`).join("");
+      return `
+        <div class="pol-block ${b.cls}">
+          <div class="pol-block__head">
+            <div class="pol-block__label">${b.label}</div>
+            <div class="kicker pol-block__sub">${b.sub}</div>
+          </div>
+          <ul class="pol__list">${rows || `<li class="pol__empty">Todavía vacío.</li>`}</ul>
+          <div class="pol__add">
+            <input class="pol__input" data-addpol="${b.key}" placeholder="${b.place}" />
+            <button class="pol__addbtn" data-addbtn="${b.key}" title="Agregar">+</button>
+          </div>
+        </div>`;
+    }).join("");
+
+    app().innerHTML = `
+      <section class="screen screen--polaris">
+        <div class="screen__head">
+          <div class="kicker kicker--accent">MI ESTRELLA · HACIA DÓNDE VOY</div>
+          <h1 class="screen__title">POLARIS</h1>
+          <p class="screen__sub">${esc(p.intro || "")}</p>
+        </div>
+        <div class="pol-grid">${blocks}</div>
+      </section>`;
+
+    function addTo(key) {
+      const inp = app().querySelector(`[data-addpol="${key}"]`);
+      if (!inp) return;
+      const v = inp.value.trim();
+      if (!v) return;
+      const arr = (S().getPolaris()[key] || []).slice();
+      arr.push(v);
+      S().setPolaris({ [key]: arr });
+      renderPolaris();
+    }
+    app().querySelectorAll("[data-addpol]").forEach((inp) => {
+      inp.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") { e.preventDefault(); addTo(inp.dataset.addpol); }
+      });
+    });
+    app().querySelectorAll("[data-addbtn]").forEach((b) => {
+      b.onclick = () => addTo(b.dataset.addbtn);
+    });
+    app().querySelectorAll("[data-delpol]").forEach((b) => {
+      b.onclick = () => {
+        const key = b.dataset.delpol;
+        const arr = (S().getPolaris()[key] || []).slice();
+        arr.splice(Number(b.dataset.i), 1);
+        S().setPolaris({ [key]: arr });
+        renderPolaris();
+      };
+    });
+  }
+
   // exponer
   UI.renderEmociones = renderEmociones;
   UI.renderAjustes = renderAjustes;
   UI.renderDecision = renderDecision;
+  UI.renderPolaris = renderPolaris;
 })();

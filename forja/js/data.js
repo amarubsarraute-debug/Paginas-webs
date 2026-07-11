@@ -126,6 +126,33 @@ const SEED_ROADMAP = [
   { text: "Título de SFH" }
 ];
 
+// POLARIS — mapa de evolución personal. 4 listas editables.
+// Sembrado con lo que Amaru ya dejó atrás, construyó, quiere mejorar y lo que sigue.
+const SEED_POLARIS = {
+  intro: "Vengo mejor de lo que pienso. Esto es quién estoy siendo y hacia dónde voy.",
+  dejeAtras: [
+    "Dejé atrás la lujuria.",
+    "Dejé atrás la marihuana.",
+    "Dejé atrás el contenido que no me nutre: ahora solo consumo mentalidad y negocios."
+  ],
+  construi: [
+    "Empecé mi negocio de páginas web.",
+    "Estoy arrancando el negocio de infoproductos.",
+    "Estoy mucho más del lado del productor que del consumidor."
+  ],
+  mejorar: [
+    "Comunicación — es mi punto débil y lo necesito para mi marca personal y cerrar ventas.",
+    "Instagram — bajar el tiempo de consumo y producir más.",
+    "Aprender inglés para cerrar clientes en ese mercado."
+  ],
+  siguiente: [
+    "Vender 10 páginas web (con eso puedo hacer casi todo lo demás).",
+    "Comprarme una moto para empezar a ir a entrenar.",
+    "Entrenar y conseguir una pelea.",
+    "Construir mi marca personal."
+  ]
+};
+
 // Export global
 window.FORJA_DATA = {
   name: FORJA_NAME,
@@ -140,5 +167,6 @@ window.FORJA_DATA = {
   emotions: SEED_EMOTIONS,
   failure: SEED_FAILURE,
   decision: SEED_DECISION,
-  roadmap: SEED_ROADMAP
+  roadmap: SEED_ROADMAP,
+  polaris: SEED_POLARIS
 };
