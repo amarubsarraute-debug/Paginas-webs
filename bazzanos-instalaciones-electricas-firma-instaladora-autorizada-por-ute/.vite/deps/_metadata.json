@@ -2,60 +2,36 @@
   "hash": "75a60d9e",
   "configHash": "8fa719a9",
   "lockfileHash": "824f95d5",
-  "browserHash": "6c12bb46",
+  "browserHash": "6d60ea88",
   "optimized": {
     "react": {
       "src": "../../../silvera-electricidad/node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "d63c49e4",
+      "fileHash": "f592bfa8",
       "needsInterop": true
     },
     "react-dom": {
       "src": "../../../silvera-electricidad/node_modules/react-dom/index.js",
       "file": "react-dom.js",
-      "fileHash": "a58cc3fa",
+      "fileHash": "f016308b",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
       "src": "../../../silvera-electricidad/node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "1b327d37",
+      "fileHash": "97c20d8c",
       "needsInterop": true
     },
     "react/jsx-runtime": {
       "src": "../../../silvera-electricidad/node_modules/react/jsx-runtime.js",
       "file": "react_jsx-runtime.js",
-      "fileHash": "5117e837",
-      "needsInterop": true
-    },
-    "lucide-react": {
-      "src": "../../../silvera-electricidad/node_modules/lucide-react/dist/esm/lucide-react.js",
-      "file": "lucide-react.js",
-      "fileHash": "e0c531bb",
-      "needsInterop": false
-    },
-    "motion/react": {
-      "src": "../../../silvera-electricidad/node_modules/motion/dist/es/react.mjs",
-      "file": "motion_react.js",
-      "fileHash": "0e531e61",
-      "needsInterop": false
-    },
-    "react-dom/client": {
-      "src": "../../../silvera-electricidad/node_modules/react-dom/client.js",
-      "file": "react-dom_client.js",
-      "fileHash": "d79cf769",
+      "fileHash": "736540db",
       "needsInterop": true
     }
   },
   "chunks": {
-    "chunk-LQXYRWOI": {
-      "file": "chunk-LQXYRWOI.js"
-    },
-    "chunk-4GGYFGYJ": {
-      "file": "chunk-4GGYFGYJ.js"
-    },
-    "chunk-6Y5AEJJ3": {
-      "file": "chunk-6Y5AEJJ3.js"
+    "chunk-RWNX3QKD": {
+      "file": "chunk-RWNX3QKD.js"
     }
   }
 }
