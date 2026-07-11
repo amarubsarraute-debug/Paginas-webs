@@ -136,20 +136,20 @@ const SEED_POLARIS = {
     "Dejé atrás el contenido que no me nutre: ahora solo consumo mentalidad y negocios."
   ],
   construi: [
-    "Empecé mi negocio de páginas web.",
-    "Estoy arrancando el negocio de infoproductos.",
-    "Estoy mucho más del lado del productor que del consumidor."
+    { text: "Empecé mi negocio de páginas web." },
+    { text: "Estoy arrancando el negocio de infoproductos." },
+    { text: "Estoy mucho más del lado del productor que del consumidor." }
   ],
   mejorar: [
-    "Comunicación — es mi punto débil y lo necesito para mi marca personal y cerrar ventas.",
-    "Instagram — bajar el tiempo de consumo y producir más.",
-    "Aprender inglés para cerrar clientes en ese mercado."
+    { text: "Comunicación — mi punto débil para mi marca personal y cerrar ventas.", pct: 10, accion: "Grabar 1 audio de 2 min explicando una idea, todos los días." },
+    { text: "Instagram — bajar el consumo y producir más.", pct: 15, accion: "Publicar 1 contenido antes de scrollear el feed." },
+    { text: "Inglés para cerrar clientes en ese mercado.", pct: 5, accion: "20 min de práctica por día." }
   ],
   siguiente: [
-    "Vender 10 páginas web (con eso puedo hacer casi todo lo demás).",
-    "Comprarme una moto para empezar a ir a entrenar.",
-    "Entrenar y conseguir una pelea.",
-    "Construir mi marca personal."
+    { text: "Vender 10 páginas web", current: 1, target: 10, unit: "webs" },
+    { text: "Comprarme una moto", current: 0, target: 1500, unit: "USD ahorrados" },
+    { text: "Entrenar y conseguir una pelea", current: 0, target: 1, unit: "pelea conseguida" },
+    { text: "Construir mi marca personal", current: 0, target: 1, unit: "" }
   ]
 };
 

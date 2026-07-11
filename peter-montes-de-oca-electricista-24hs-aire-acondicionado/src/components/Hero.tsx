@@ -105,8 +105,8 @@ export function Hero() {
               <div className="relative aspect-[1/1.05] rounded-3xl overflow-hidden bg-bg-tint border border-border-subtle shadow-2xl">
                 <img
                   src="./img/custom_hero.jpg"
-                  alt="Retrato de Peter Montes de Oca en Maldonado"
-                  className="w-full h-full object-cover object-center"
+                  alt="Peter Montes de Oca"
+                  className="w-full h-full object-contain bg-bg-tint"
                 />
               </div>
             </motion.div>

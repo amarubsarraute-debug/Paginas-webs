@@ -690,60 +690,138 @@ body {
 .roadmap__all-done { font-size: 16px; color: var(--accent); padding: 16px 0; }
 
 /* ---------- POLARIS · mapa de evolución ---------- */
-.screen--polaris { max-width: 760px; }
-.pol-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.pol-block {
-  background: var(--surface); border: 1px solid var(--line);
-  border-radius: var(--r); padding: 20px 18px;
-  display: flex; flex-direction: column;
-}
-.pol-block__head { margin-bottom: 14px; }
+.screen--polaris { max-width: 780px; }
+.pol-section { margin-bottom: 38px; }
 .pol-block__label {
-  font-family: var(--font-display); font-weight: 800; font-size: 17px;
+  font-family: var(--font-display); font-weight: 800; font-size: 19px;
   letter-spacing: -0.01em; color: var(--ink);
 }
-.pol-block__sub { margin-top: 4px; font-size: 9.5px; }
-.pol--left { border-top: 2px solid var(--ink-faint); }
-.pol--built { border-top: 2px solid var(--accent); }
-.pol--grow { border-top: 2px solid var(--accent-deep); }
-.pol--next { border-top: 2px solid var(--accent-bright); }
+.pol-block__sub { margin-top: 4px; margin-bottom: 16px; font-size: 9.5px; }
+.pol__empty { font-size: 13px; color: var(--ink-faint); font-style: italic; padding: 4px 0 12px; }
 
-.pol__list { list-style: none; padding: 0; margin: 0 0 12px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
-.pol__item {
-  display: flex; align-items: flex-start; gap: 9px;
-  font-size: 14px; line-height: 1.45; color: var(--ink);
-  background: var(--surface-2); border: 1px solid var(--line);
-  border-radius: var(--r-sm); padding: 9px 11px;
-}
-.pol__icon { flex: 0 0 auto; font-size: 12px; line-height: 1.5; color: var(--ink-faint); }
-.pol--built .pol__icon, .pol--next .pol__icon { color: var(--accent); }
-.pol__text { flex: 1; min-width: 0; }
-.pol--left .pol__text { color: var(--ink-dim); }
 .pol__del {
-  flex: 0 0 auto; background: none; border: none; cursor: pointer;
-  color: var(--ink-faint); font-size: 12px; line-height: 1.4; padding: 0 2px;
+  position: absolute; top: 10px; right: 10px;
+  background: none; border: none; cursor: pointer;
+  color: var(--ink-faint); font-size: 12px; line-height: 1; padding: 2px;
   opacity: 0; transition: opacity .15s ease;
 }
-.pol__item:hover .pol__del { opacity: 1; }
+.trophy-card:hover .pol__del, .mejora-card:hover .pol__del, .medal-card:hover .pol__del { opacity: 1; }
 .pol__del:hover { color: var(--accent); }
-.pol__empty { font-size: 12px; color: var(--ink-faint); font-style: italic; padding: 4px 0; }
-.pol__add { display: flex; gap: 6px; align-items: stretch; }
+
+.pol__add { display: flex; gap: 6px; align-items: stretch; margin-top: 4px; }
 .pol__input {
   flex: 1; min-width: 0; font-family: inherit; font-size: 13.5px;
-  background: var(--bg-deep); border: 1px solid var(--line);
-  border-radius: var(--r-sm); padding: 8px 10px; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-sm); padding: 9px 11px; color: var(--ink);
 }
 .pol__input:focus { outline: none; border-color: var(--accent); }
 .pol__input::placeholder { color: var(--ink-faint); }
+.pol__input--num { flex: 0 0 70px; text-align: center; }
+.pol__input--unit { flex: 0 0 100px; }
 .pol__addbtn {
   flex: 0 0 auto; width: 34px; cursor: pointer; font-size: 18px; line-height: 1;
-  background: var(--bg-deep); border: 1px solid var(--line); border-radius: var(--r-sm);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-sm);
   color: var(--ink-dim);
 }
 .pol__addbtn:hover { border-color: var(--accent); color: var(--accent); }
 
-@media (max-width: 620px) {
-  .pol-grid { grid-template-columns: 1fr; }
+/* 1. DEJÉ ATRÁS — trofeos con racha */
+.trophy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-bottom: 12px; }
+.trophy-card {
+  position: relative; text-align: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r);
+  padding: 20px 14px 16px;
+}
+.trophy-icon { font-size: 30px; line-height: 1; margin-bottom: 6px; filter: grayscale(0.15); }
+.trophy-days { font-family: var(--font-display); font-weight: 800; font-size: 34px; color: var(--accent); line-height: 1; }
+.trophy-lbl { margin-top: 2px; }
+.trophy-text { font-size: 13px; line-height: 1.4; color: var(--ink-dim); margin: 10px 0 12px; min-height: 34px; }
+.trophy-editdate {
+  display: block; width: 100%; text-align: center; background: none; border: none; cursor: pointer;
+  color: var(--ink-faint); font-size: 11px; padding: 4px 0 8px; transition: color .15s ease;
+}
+.trophy-editdate:hover { color: var(--accent); }
+.trophy-editrow { display: flex; gap: 6px; margin-bottom: 8px; }
+.trophy-dateinput {
+  flex: 1; min-width: 0; font-family: inherit; font-size: 11.5px;
+  background: var(--bg-deep); border: 1px solid var(--line); border-radius: var(--r-sm);
+  padding: 6px 8px; color: var(--ink); color-scheme: dark;
+}
+.trophy-recaer { width: 100%; font-size: 11px; }
+
+/* 2. EN QUÉ MEJORAR — barra de progreso + acción */
+.mejora-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 12px; }
+.mejora-card {
+  position: relative;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r);
+  padding: 16px 18px;
+}
+.mejora-text { font-size: 14.5px; line-height: 1.5; color: var(--ink); margin-bottom: 10px; padding-right: 20px; }
+.mejora-bar-wrap { height: 8px; background: var(--surface-2); border-radius: 100px; overflow: hidden; }
+.mejora-bar { height: 100%; background: linear-gradient(90deg, var(--accent-deep), var(--accent)); border-radius: 100px; transition: width .25s var(--ease); }
+.mejora-pct-row { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+.mejora-slider {
+  flex: 1; min-width: 0; -webkit-appearance: none; appearance: none;
+  height: 6px; border-radius: 100px; background: var(--surface-2); outline: none; cursor: pointer;
+}
+.mejora-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 18px; height: 18px; border-radius: 50%;
+  background: var(--accent); border: 2px solid var(--bg); box-shadow: 0 0 0 1px var(--accent); cursor: pointer;
+}
+.mejora-slider::-moz-range-thumb {
+  width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--bg);
+  background: var(--accent); box-shadow: 0 0 0 1px var(--accent); cursor: pointer;
+}
+.mejora-pct { font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--accent); min-width: 40px; text-align: right; }
+.mejora-accion {
+  width: 100%; margin-top: 10px; font-family: inherit; font-size: 12.5px;
+  background: var(--bg-deep); border: 1px solid var(--line); border-radius: var(--r-sm);
+  padding: 8px 10px; color: var(--ink-dim);
+}
+.mejora-accion:focus { outline: none; border-color: var(--accent); color: var(--ink); }
+
+/* 3. LO QUE SIGUE — secuencial, uno activo por vez */
+.siguiente-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+.siguiente-card {
+  border-radius: var(--r); padding: 18px 20px;
+}
+.siguiente-card.is-active {
+  background: var(--surface); border: 1.5px solid var(--accent);
+}
+.siguiente-card.is-locked {
+  background: var(--surface); border: 1px solid var(--line); opacity: .55;
+  display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+}
+.siguiente-kicker { color: var(--accent); margin-bottom: 8px; }
+.siguiente-text { font-size: 17px; font-weight: 600; color: var(--ink); line-height: 1.4; }
+.siguiente-text-locked { font-size: 14px; color: var(--ink-faint); }
+.siguiente-lock { font-size: 13px; }
+.siguiente-counter { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
+.siguiente-counter .counter__val { font-size: 18px; }
+.siguiente-edittarget {
+  display: block; background: none; border: none; cursor: pointer;
+  color: var(--ink-faint); font-size: 11.5px; margin-top: 8px; padding: 2px 0; transition: color .15s ease;
+}
+.siguiente-edittarget:hover { color: var(--accent); }
+.siguiente-editrow { display: flex; gap: 6px; margin-top: 8px; }
+
+/* 4. LO QUE CONSTRUÍ — medallero */
+.medal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.medal-card {
+  position: relative;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r);
+  padding: 16px 18px; display: flex; align-items: center; gap: 12px;
+}
+.medal-icon { font-size: 26px; flex: 0 0 auto; }
+.medal-text { font-size: 13.5px; line-height: 1.4; color: var(--ink); flex: 1; }
+.medal-date { font-size: 10.5px; color: var(--ink-faint); margin-top: 4px; }
+
+@media (max-width: 560px) {
+  .trophy-grid { grid-template-columns: repeat(2, 1fr); }
+  .medal-grid { grid-template-columns: 1fr; }
+  .pol__add--siguiente { flex-wrap: wrap; }
+  .pol__add--siguiente .pol__input { flex: 1 1 100%; }
+  .pol__add--siguiente .pol__input--num, .pol__add--siguiente .pol__input--unit { flex: 1 1 45%; }
 }
 
 /* ---------- COACH ---------- */

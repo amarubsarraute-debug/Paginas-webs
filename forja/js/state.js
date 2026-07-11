@@ -205,24 +205,32 @@ const FORJA_STATE = (() => {
   }
 
   // ----- POLARIS: mapa de evolución (dejé atrás / construí / mejorar / siguiente) -----
-  // Cada ítem es un objeto con métrica según el bloque:
-  //   dejeAtras: { text, since }   racha en días
-  //   mejorar:   { text, pct }     progreso 0-100
-  //   construi / siguiente: { text }
+  // dejeAtras:  { text, since }              racha en días desde `since`, "Recaí" resetea a hoy
+  // mejorar:    { text, pct, accion }        progreso manual 0-100 + hábito concreto que lo mueve
+  // siguiente:  { text, current, target, unit } secuencial: solo el índice 0 está activo/editable
+  // construi:   { text, achievedOn }         medallero, con fecha de logro
+  function daysSince(dateStr) {
+    if (!dateStr) return 0;
+    const a = new Date(dateStr + "T00:00:00");
+    const b = new Date(todayKey() + "T00:00:00");
+    return Math.max(0, Math.floor((b - a) / 86400000));
+  }
   function normPolarisItem(key, it) {
     const today = todayKey();
-    if (typeof it === "string") {
-      if (key === "dejeAtras") return { text: it, since: _state.startDate || today };
-      if (key === "mejorar") return { text: it, pct: 0 };
-      return { text: it };
+    const base = (typeof it === "string") ? { text: it } : (it && typeof it === "object") ? it : { text: String(it) };
+    if (typeof base.text !== "string") base.text = "";
+    if (key === "dejeAtras" && !base.since) base.since = _state.startDate || today;
+    if (key === "mejorar") {
+      if (typeof base.pct !== "number") base.pct = 0;
+      if (typeof base.accion !== "string") base.accion = "";
     }
-    if (it && typeof it === "object") {
-      if (typeof it.text !== "string") it.text = "";
-      if (key === "dejeAtras" && !it.since) it.since = _state.startDate || today;
-      if (key === "mejorar" && typeof it.pct !== "number") it.pct = 0;
-      return it;
+    if (key === "siguiente") {
+      if (typeof base.current !== "number") base.current = 0;
+      if (typeof base.target !== "number") base.target = 1;
+      if (typeof base.unit !== "string") base.unit = "";
     }
-    return { text: String(it) };
+    if (key === "construi" && !base.achievedOn) base.achievedOn = today;
+    return base;
   }
   function getPolaris() {
     const seed = FORJA_DATA.polaris;
@@ -230,11 +238,10 @@ const FORJA_STATE = (() => {
     if (!p || typeof p !== "object") {
       p = _state.content.polaris = { intro: seed.intro, dejeAtras: [], construi: [], mejorar: [], siguiente: [] };
       ["dejeAtras", "construi", "mejorar", "siguiente"].forEach((k) => {
-        p[k] = seed[k].slice();
+        p[k] = (seed[k] || []).slice();
       });
     }
     if (typeof p.intro !== "string") p.intro = seed.intro;
-    // normalizar todas las listas a objetos con su métrica
     ["dejeAtras", "construi", "mejorar", "siguiente"].forEach((k) => {
       if (!Array.isArray(p[k])) p[k] = (seed[k] || []).slice();
       p[k] = p[k].map((it) => normPolarisItem(k, it));
@@ -242,10 +249,70 @@ const FORJA_STATE = (() => {
     save();
     return p;
   }
-  function newPolarisItem(key, text) { return normPolarisItem(key, text); }
   function setPolaris(patch) {
     _state.content.polaris = Object.assign(getPolaris(), patch);
     save();
+  }
+  function addPolarisItem(key, text) {
+    const p = getPolaris();
+    const arr = p[key].slice();
+    arr.push(normPolarisItem(key, text));
+    setPolaris({ [key]: arr });
+  }
+  function removePolarisItem(key, i) {
+    const p = getPolaris();
+    const arr = p[key].slice();
+    arr.splice(i, 1);
+    setPolaris({ [key]: arr });
+  }
+  // "Recaí": resetea la racha de un ítem de dejeAtras a hoy
+  function recaerPolaris(i) {
+    const p = getPolaris();
+    const arr = p.dejeAtras.slice();
+    if (arr[i]) { arr[i] = Object.assign({}, arr[i], { since: todayKey() }); setPolaris({ dejeAtras: arr }); }
+  }
+  // Editar manualmente desde qué fecha cuenta la racha (por si arrancó antes de usar la app)
+  function setPolarisSince(i, dateStr) {
+    const p = getPolaris();
+    const arr = p.dejeAtras.slice();
+    if (arr[i] && dateStr) { arr[i] = Object.assign({}, arr[i], { since: dateStr }); setPolaris({ dejeAtras: arr }); }
+  }
+  function setPolarisPct(i, pct) {
+    const p = getPolaris();
+    const arr = p.mejorar.slice();
+    if (arr[i]) { arr[i] = Object.assign({}, arr[i], { pct: Math.max(0, Math.min(100, Math.round(pct))) }); setPolaris({ mejorar: arr }); }
+  }
+  function setPolarisAccion(i, text) {
+    const p = getPolaris();
+    const arr = p.mejorar.slice();
+    if (arr[i]) { arr[i] = Object.assign({}, arr[i], { accion: text }); setPolaris({ mejorar: arr }); }
+  }
+  // Solo el objetivo en curso (índice 0) es editable: se avanza de a uno.
+  function setPolarisCounter(current) {
+    const p = getPolaris();
+    const arr = p.siguiente.slice();
+    if (arr[0]) { arr[0] = Object.assign({}, arr[0], { current: Math.max(0, Math.min(arr[0].target, current)) }); setPolaris({ siguiente: arr }); }
+  }
+  // Editar la meta/unidad del objetivo en curso (por si la meta real no coincide con lo cargado)
+  function setPolarisTargetUnit(target, unit) {
+    const p = getPolaris();
+    const arr = p.siguiente.slice();
+    if (arr[0]) {
+      const t = Math.max(1, Number(target) || arr[0].target);
+      arr[0] = Object.assign({}, arr[0], { target: t, unit: unit != null ? unit : arr[0].unit, current: Math.min(arr[0].current, t) });
+      setPolaris({ siguiente: arr });
+    }
+  }
+  // Marca el objetivo en curso como logrado: pasa a construí (medalla) y desbloquea el siguiente.
+  function completeSiguienteActual() {
+    const p = getPolaris();
+    const siguiente = p.siguiente.slice();
+    const item = siguiente.shift();
+    if (!item) return;
+    const construi = p.construi.slice();
+    const proof = item.target > 1 ? ` (${item.current}/${item.target}${item.unit ? " " + item.unit : ""})` : "";
+    construi.push({ text: item.text + proof, achievedOn: todayKey() });
+    setPolaris({ siguiente, construi });
   }
 
   // ----- SINCRONICIDADES: señales que resuenan -----
@@ -357,7 +424,8 @@ const FORJA_STATE = (() => {
     stats, content, setContent,
     getEvidence, addEvidence, removeEvidence,
     getDecision, setDecision,
-    getPolaris, setPolaris, newPolarisItem,
+    getPolaris, setPolaris, addPolarisItem, removePolarisItem,
+    recaerPolaris, setPolarisSince, setPolarisPct, setPolarisAccion, setPolarisCounter, setPolarisTargetUnit, completeSiguienteActual, daysSince,
     getSynchronicities, addSynchronicity, removeSynchronicity,
     getRoadmap, setMilestoneDate, completeCurrentMilestone, undoLastMilestone,
     cycleCount, cycleBounds, cycleUnlocked, cycleDays, getCycles, getCycle, saveCycleDevolucion, removeCycleDevolucion,

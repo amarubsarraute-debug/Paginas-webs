@@ -369,36 +369,89 @@
   // ===========================================================
   //  POLARIS  (mapa de evolución: dejé atrás / construí / mejorar / siguiente)
   // ===========================================================
-  const POLARIS_BLOCKS = [
-    { key: "dejeAtras", label: "DEJÉ ATRÁS", sub: "MI VIEJA IDENTIDAD, YA SOLTADA", icon: "✕", cls: "pol--left", place: "Algo que solté y me enorgullece…" },
-    { key: "construi", label: "LO QUE CONSTRUÍ", sub: "HÁBITOS Y LOGROS QUE YA SON REALES", icon: "✓", cls: "pol--built", place: "Algo que ya es real en mi vida…" },
-    { key: "mejorar", label: "EN QUÉ MEJORAR", sub: "MIS PUNTOS DÉBILES A EVOLUCIONAR", icon: "▲", cls: "pol--grow", place: "Algo que quiero mejorar…" },
-    { key: "siguiente", label: "LO QUE SIGUE", sub: "MIS PRÓXIMOS OBJETIVOS EN ORDEN", icon: "→", cls: "pol--next", place: "Un próximo objetivo…" }
-  ];
+  let _editSinceIdx = null;
+  let _editTargetOpen = false;
 
   function renderPolaris() {
     UI.setActiveNav("polaris");
     const p = S().getPolaris();
 
-    const blocks = POLARIS_BLOCKS.map((b) => {
-      const items = p[b.key] || [];
-      const rows = items.map((t, i) => `
-        <li class="pol__item">
-          <span class="pol__icon">${b.icon}</span>
-          <span class="pol__text">${esc(t)}</span>
-          <button class="pol__del" data-delpol="${b.key}" data-i="${i}" title="Quitar">✕</button>
-        </li>`).join("");
+    // ----- 1. DEJÉ ATRÁS: trofeos con racha en días (fecha de inicio editable) -----
+    const trophyCards = p.dejeAtras.map((it, i) => {
+      const days = S().daysSince(it.since);
+      const editingThis = _editSinceIdx === i;
+      const dateBlock = editingThis
+        ? `<div class="trophy-editrow">
+             <input type="date" class="trophy-dateinput" id="sinceInput-${i}" value="${esc(it.since)}" />
+             <button class="btn btn--ghost btn--mini" data-savesince="${i}">✓</button>
+           </div>`
+        : `<button class="trophy-editdate" data-editsince="${i}" title="Editar desde cuándo cuenta">desde ${esc(it.since)} ✎</button>`;
       return `
-        <div class="pol-block ${b.cls}">
-          <div class="pol-block__head">
-            <div class="pol-block__label">${b.label}</div>
-            <div class="kicker pol-block__sub">${b.sub}</div>
-          </div>
-          <ul class="pol__list">${rows || `<li class="pol__empty">Todavía vacío.</li>`}</ul>
-          <div class="pol__add">
-            <input class="pol__input" data-addpol="${b.key}" placeholder="${b.place}" />
-            <button class="pol__addbtn" data-addbtn="${b.key}" title="Agregar">+</button>
-          </div>
+        <div class="trophy-card">
+          <button class="pol__del" data-delpol="dejeAtras" data-i="${i}" title="Quitar">✕</button>
+          <div class="trophy-icon">🏆</div>
+          <div class="trophy-days">${days}</div>
+          <div class="kicker trophy-lbl">${days === 1 ? "DÍA" : "DÍAS"}</div>
+          <div class="trophy-text">${esc(it.text)}</div>
+          ${dateBlock}
+          <button class="btn btn--ghost btn--mini trophy-recaer" data-recaer="${i}">Recaí — reiniciar</button>
+        </div>`;
+    }).join("");
+
+    // ----- 2. EN QUÉ MEJORAR: progreso libre (slider) + acción práctica -----
+    const mejoraCards = p.mejorar.map((it, i) => `
+      <div class="mejora-card">
+        <button class="pol__del" data-delpol="mejorar" data-i="${i}" title="Quitar">✕</button>
+        <div class="mejora-text">${esc(it.text)}</div>
+        <div class="mejora-bar-wrap"><div class="mejora-bar" style="width:${it.pct}%"></div></div>
+        <div class="mejora-pct-row">
+          <input type="range" class="mejora-slider" min="0" max="100" step="1" value="${it.pct}" data-slider="${i}" />
+          <span class="mejora-pct" id="mejoraPctLabel-${i}">${it.pct}%</span>
+        </div>
+        <input class="mejora-accion" data-accion="${i}" value="${esc(it.accion)}" placeholder="Acción práctica que lo mueve en tu rutina…" />
+      </div>`).join("");
+
+    // ----- 3. LO QUE SIGUE: secuencial, solo el índice 0 activo (meta editable) -----
+    const siguienteCards = p.siguiente.map((it, i) => {
+      if (i === 0) {
+        const ready = it.current >= it.target;
+        const unitTxt = it.unit ? " " + esc(it.unit) : "";
+        const targetBlock = _editTargetOpen
+          ? `<div class="siguiente-editrow">
+               <input type="number" class="pol__input pol__input--num" id="editTargetNum" min="1" value="${it.target}" />
+               <input type="text" class="pol__input pol__input--unit" id="editTargetUnit" value="${esc(it.unit)}" placeholder="unidad" />
+               <button class="btn btn--ghost btn--mini" id="saveTarget">✓</button>
+             </div>`
+          : `<button class="siguiente-edittarget" id="openEditTarget" title="Corregir la meta">✎ editar meta</button>`;
+        return `
+          <div class="siguiente-card is-active">
+            <div class="kicker siguiente-kicker">OBJETIVO ACTUAL</div>
+            <div class="siguiente-text">${esc(it.text)}</div>
+            <div class="siguiente-counter">
+              <button class="counter__btn" id="sigMinus">−</button>
+              <span class="counter__val">${it.current} / ${it.target}${unitTxt}</span>
+              <button class="counter__btn" id="sigPlus">+</button>
+            </div>
+            ${targetBlock}
+            <button class="btn ${ready ? "btn--accent" : "btn--ghost"} mt-s" id="sigComplete">✓ MARCAR LOGRADO</button>
+          </div>`;
+      }
+      return `
+        <div class="siguiente-card is-locked">
+          <span class="siguiente-lock">🔒</span>
+          <span class="siguiente-text-locked">${esc(it.text)}</span>
+        </div>`;
+    }).join("");
+
+    // ----- 4. LO QUE CONSTRUÍ: medallero -----
+    const medalCards = p.construi.slice().reverse().map((it) => {
+      const realIdx = p.construi.indexOf(it);
+      return `
+        <div class="medal-card">
+          <button class="pol__del" data-delpol="construi" data-i="${realIdx}" title="Quitar">✕</button>
+          <div class="medal-icon">🥇</div>
+          <div class="medal-text">${esc(it.text)}</div>
+          <div class="medal-date">${esc(it.achievedOn || "")}</div>
         </div>`;
     }).join("");
 
@@ -409,33 +462,152 @@
           <h1 class="screen__title">POLARIS</h1>
           <p class="screen__sub">${esc(p.intro || "")}</p>
         </div>
-        <div class="pol-grid">${blocks}</div>
+
+        <div class="pol-section">
+          <div class="pol-block__label">🏆 DEJÉ ATRÁS</div>
+          <div class="kicker pol-block__sub">CADA DÍA SIN RECAER SUMA</div>
+          <div class="trophy-grid">${trophyCards || `<p class="pol__empty">Todavía vacío.</p>`}</div>
+          <div class="pol__add">
+            <input class="pol__input" id="addDejeAtras" placeholder="Algo que soltaste…" />
+            <button class="pol__addbtn" id="addDejeAtrasBtn">+</button>
+          </div>
+        </div>
+
+        <div class="pol-section">
+          <div class="pol-block__label">📈 EN QUÉ MEJORAR</div>
+          <div class="kicker pol-block__sub">PROGRESO MANUAL + HÁBITO QUE LO MUEVE</div>
+          <div class="mejora-grid">${mejoraCards || `<p class="pol__empty">Todavía vacío.</p>`}</div>
+          <div class="pol__add">
+            <input class="pol__input" id="addMejorar" placeholder="Algo que querés mejorar…" />
+            <button class="pol__addbtn" id="addMejorarBtn">+</button>
+          </div>
+        </div>
+
+        <div class="pol-section">
+          <div class="pol-block__label">→ LO QUE SIGUE</div>
+          <div class="kicker pol-block__sub">DE A UNO · SE DESBLOQUEA AL LOGRAR EL ANTERIOR</div>
+          <div class="siguiente-list">${siguienteCards || `<p class="pol__empty">Todavía vacío.</p>`}</div>
+          <div class="pol__add pol__add--siguiente">
+            <input class="pol__input" id="addSiguiente" placeholder="Próximo objetivo…" />
+            <input class="pol__input pol__input--num" id="addSiguienteTarget" type="number" min="1" value="1" placeholder="meta" />
+            <input class="pol__input pol__input--unit" id="addSiguienteUnit" placeholder="unidad" />
+            <button class="pol__addbtn" id="addSiguienteBtn">+</button>
+          </div>
+        </div>
+
+        <div class="pol-section">
+          <div class="pol-block__label">🥇 LO QUE CONSTRUÍ</div>
+          <div class="kicker pol-block__sub">TU MEDALLERO</div>
+          <div class="medal-grid">${medalCards || `<p class="pol__empty">Todavía no hay medallas. Se ganan cerrando objetivos de "LO QUE SIGUE".</p>`}</div>
+        </div>
       </section>`;
 
-    function addTo(key) {
-      const inp = app().querySelector(`[data-addpol="${key}"]`);
-      if (!inp) return;
+    // ----- bindings: DEJÉ ATRÁS -----
+    app().querySelectorAll("[data-recaer]").forEach((btn) => {
+      btn.onclick = () => {
+        if (confirm("¿Confirmás que recaíste? Esto reinicia la racha a 0. Sin culpa: es solo un dato honesto.")) {
+          S().recaerPolaris(Number(btn.dataset.recaer));
+          _editSinceIdx = null;
+          renderPolaris();
+        }
+      };
+    });
+    app().querySelectorAll("[data-editsince]").forEach((btn) => {
+      btn.onclick = () => { _editSinceIdx = Number(btn.dataset.editsince); renderPolaris(); };
+    });
+    app().querySelectorAll("[data-savesince]").forEach((btn) => {
+      btn.onclick = () => {
+        const i = Number(btn.dataset.savesince);
+        const val = document.getElementById("sinceInput-" + i).value;
+        if (val) S().setPolarisSince(i, val);
+        _editSinceIdx = null;
+        renderPolaris();
+      };
+    });
+    document.getElementById("addDejeAtrasBtn").onclick = () => {
+      const inp = document.getElementById("addDejeAtras");
       const v = inp.value.trim();
       if (!v) return;
-      const arr = (S().getPolaris()[key] || []).slice();
-      arr.push(v);
-      S().setPolaris({ [key]: arr });
+      S().addPolarisItem("dejeAtras", v);
       renderPolaris();
-    }
-    app().querySelectorAll("[data-addpol]").forEach((inp) => {
-      inp.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") { e.preventDefault(); addTo(inp.dataset.addpol); }
-      });
+    };
+    document.getElementById("addDejeAtras").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") { e.preventDefault(); document.getElementById("addDejeAtrasBtn").click(); }
     });
-    app().querySelectorAll("[data-addbtn]").forEach((b) => {
-      b.onclick = () => addTo(b.dataset.addbtn);
+
+    // ----- bindings: EN QUÉ MEJORAR -----
+    app().querySelectorAll("[data-slider]").forEach((slider) => {
+      const i = Number(slider.dataset.slider);
+      const label = document.getElementById("mejoraPctLabel-" + i);
+      const bar = slider.closest(".mejora-card").querySelector(".mejora-bar");
+      slider.oninput = () => {
+        label.textContent = slider.value + "%";
+        bar.style.width = slider.value + "%";
+      };
+      slider.onchange = () => S().setPolarisPct(i, Number(slider.value));
     });
+    app().querySelectorAll("[data-accion]").forEach((inp) => {
+      inp.onblur = () => S().setPolarisAccion(Number(inp.dataset.accion), inp.value.trim());
+    });
+    document.getElementById("addMejorarBtn").onclick = () => {
+      const inp = document.getElementById("addMejorar");
+      const v = inp.value.trim();
+      if (!v) return;
+      S().addPolarisItem("mejorar", v);
+      renderPolaris();
+    };
+    document.getElementById("addMejorar").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") { e.preventDefault(); document.getElementById("addMejorarBtn").click(); }
+    });
+
+    // ----- bindings: LO QUE SIGUE -----
+    const sigMinus = document.getElementById("sigMinus");
+    const sigPlus = document.getElementById("sigPlus");
+    const sigComplete = document.getElementById("sigComplete");
+    if (sigMinus) sigMinus.onclick = () => {
+      const it = S().getPolaris().siguiente[0];
+      S().setPolarisCounter(it.current - 1);
+      renderPolaris();
+    };
+    if (sigPlus) sigPlus.onclick = () => {
+      const it = S().getPolaris().siguiente[0];
+      S().setPolarisCounter(it.current + 1);
+      renderPolaris();
+    };
+    if (sigComplete) sigComplete.onclick = () => {
+      const it = S().getPolaris().siguiente[0];
+      const msg = it.current >= it.target
+        ? "🥇 ¡Lograste este objetivo! Pasa al medallero."
+        : "Todavía no llegaste a la meta. ¿Marcarlo como logrado igual?";
+      if (confirm(msg)) { _editTargetOpen = false; S().completeSiguienteActual(); renderPolaris(); }
+    };
+    const openEditTarget = document.getElementById("openEditTarget");
+    if (openEditTarget) openEditTarget.onclick = () => { _editTargetOpen = true; renderPolaris(); };
+    const saveTarget = document.getElementById("saveTarget");
+    if (saveTarget) saveTarget.onclick = () => {
+      const target = document.getElementById("editTargetNum").value;
+      const unit = document.getElementById("editTargetUnit").value.trim();
+      S().setPolarisTargetUnit(target, unit);
+      _editTargetOpen = false;
+      renderPolaris();
+    };
+    document.getElementById("addSiguienteBtn").onclick = () => {
+      const inp = document.getElementById("addSiguiente");
+      const v = inp.value.trim();
+      if (!v) return;
+      const target = Math.max(1, Number(document.getElementById("addSiguienteTarget").value) || 1);
+      const unit = document.getElementById("addSiguienteUnit").value.trim();
+      const p2 = S().getPolaris();
+      const arr = p2.siguiente.slice();
+      arr.push({ text: v, current: 0, target, unit });
+      S().setPolaris({ siguiente: arr });
+      renderPolaris();
+    };
+
+    // ----- borrar (dejeAtras / mejorar / construi) -----
     app().querySelectorAll("[data-delpol]").forEach((b) => {
       b.onclick = () => {
-        const key = b.dataset.delpol;
-        const arr = (S().getPolaris()[key] || []).slice();
-        arr.splice(Number(b.dataset.i), 1);
-        S().setPolaris({ [key]: arr });
+        S().removePolarisItem(b.dataset.delpol, Number(b.dataset.i));
         renderPolaris();
       };
     });
