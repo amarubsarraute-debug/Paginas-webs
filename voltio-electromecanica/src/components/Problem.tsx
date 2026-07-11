@@ -1,43 +1,43 @@
-import { ZapOff, LightbulbOff, Flame, Plug, FileSignature, AlertTriangle, ArrowRight } from "lucide-react";
+import { ZapOff, Settings, Flame, Gauge, FileSignature, AlertTriangle, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 
 export function Problem() {
   const problems = [
     {
       icon: ZapOff,
-      title: "Salta la térmica o el disyuntor",
-      description: "El interruptor corta la luz de forma imprevista al conectar electrodomésticos o sin motivo aparente.",
-      waMessage: "Hola Voltio Electromecánica, me salta la térmica constantemente y necesito que un técnico revise la instalación."
+      title: "Tablero de comando fuera de servicio",
+      description: "Contactores quemados, protecciones que saltan o un tablero que dejó de responder y frena la producción.",
+      waMessage: "Hola Voltio Electromecánica, tengo un tablero de comando fuera de servicio y necesito asistencia."
     },
     {
-      icon: LightbulbOff,
-      title: "Parpadeo de luces o baja tensión",
-      description: "Las luces tintinean o pierden intensidad al encender la jarra eléctrica, el aire acondicionado o el termotanque.",
-      waMessage: "Hola Voltio Electromecánica, tengo parpadeo de luces y variaciones de tensión en mi propiedad."
+      icon: Settings,
+      title: "Necesitás automatizar un proceso",
+      description: "Control de bombas, motores o líneas de producción que hoy se manejan a mano y querés automatizar.",
+      waMessage: "Hola Voltio Electromecánica, quiero consultar por la automatización de un proceso."
     },
     {
       icon: Flame,
-      title: "Olor a quemado o ruidos extraños",
-      description: "Sentís olor a plástico caliente cerca de los enchufes, o escuchás zumbidos y chispazos en el tablero eléctrico.",
-      waMessage: "Hola Voltio Electromecánica, siento olor a quemado / escucho chispazos y necesito asistencia urgente."
+      title: "Arrancador o motor con fallas",
+      description: "Motores que no arrancan, se disparan las protecciones o el arrancador da problemas intermitentes.",
+      waMessage: "Hola Voltio Electromecánica, tengo un arrancador o motor con fallas y necesito asistencia urgente."
     },
     {
-      icon: Plug,
-      title: "Enchufes y llaves que no funcionan",
-      description: "Tomacorrientes flojos, teclas que no encienden, cables a la vista o cortocircuitos al conectar un artefacto.",
-      waMessage: "Hola Voltio Electromecánica, necesito reparar o cambiar unos enchufes, llaves o teclas defectuosas."
+      icon: Gauge,
+      title: "Instalación industrial sin normalizar",
+      description: "Cableado de planta desordenado, sin protecciones adecuadas o que no cumple con las normas de seguridad.",
+      waMessage: "Hola Voltio Electromecánica, necesito normalizar la instalación eléctrica de mi planta o comercio."
     },
     {
       icon: FileSignature,
-      title: "Normalización de Tableros",
-      description: "Necesitás una firma técnica autorizada para dar de alta un medidor, habilitar un comercio o subir la potencia contratada.",
-      waMessage: "Hola Voltio Electromecánica, necesito un electricista para cotizar un cambio de llaves térmicas o normalización."
+      title: "Mantenimiento preventivo de tableros",
+      description: "Revisión periódica de tableros y sistemas de comando para evitar una parada de planta imprevista.",
+      waMessage: "Hola Voltio Electromecánica, quiero cotizar un plan de mantenimiento preventivo de tableros."
     },
     {
       icon: AlertTriangle,
-      title: "Instalación vieja o sin descarga a tierra",
-      description: "La instalación tiene cables de tela antiguos, no cuenta con jabalina de tierra o da descargas al tocar la heladera.",
-      waMessage: "Hola Voltio Electromecánica, quiero cotizar la adecuación y cableado a tierra de una instalación antigua."
+      title: "Necesitás un tablero nuevo a medida",
+      description: "Un proyecto nuevo o una ampliación que requiere diseñar y armar un tablero de comando desde cero.",
+      waMessage: "Hola Voltio Electromecánica, quiero cotizar el armado de un tablero de comando nuevo a medida."
     }
   ];
 
@@ -58,10 +58,10 @@ export function Problem() {
             Diagnóstico y Seguridad
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight tracking-tighter">
-            ¿Tu instalación eléctrica presenta alguno de estos problemas?
+            ¿Tu planta o comercio presenta alguno de estos problemas?
           </h2>
           <p className="text-muted text-base sm:text-lg font-light leading-relaxed max-w-[70ch]">
-            No ignores las señales de alarma en tu sistema eléctrico. Un fallo a tiempo evitado protege tus electrodomésticos y previene accidentes graves. **Hacé clic en tu problema** para consultarnos directamente por WhatsApp.
+            No ignores las señales de alarma en tu tablero o sistema de comando. Un fallo a tiempo evitado previene paradas de planta y accidentes graves. **Hacé clic en tu problema** para consultarnos directamente por WhatsApp.
           </p>
         </div>
 
@@ -119,7 +119,7 @@ export function Problem() {
           </div>
           
           <a
-            href="https://wa.me/59899463754?text=Hola%20Silvera%20Electricidad,%20tengo%20una%20consulta%20por%20un%20trabajo%20el%C3%A9ctrico%20que%20no%20figura%20en%20la%20lista."
+            href="https://wa.me/59899463754?text=Hola%20Voltio%20Electromec%C3%A1nica,%20tengo%20una%20consulta%20por%20un%20trabajo%20que%20no%20figura%20en%20la%20lista."
             target="_blank"
             rel="noopener noreferrer"
             className="w-full md:w-auto shrink-0 inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-bright text-navy font-bold px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"

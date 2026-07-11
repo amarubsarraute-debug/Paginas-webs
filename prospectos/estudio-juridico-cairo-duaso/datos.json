@@ -1,0 +1,30 @@
+{
+  "negocio": "Estudio Jurídico Cairo Duaso",
+  "nicho": "estudio jurídico",
+  "zona": "Maldonado",
+  "barrio": "Centro",
+  "telefono": "4224 2433",
+  "anios_trayectoria": 2,
+  "servicios": [
+    "Asesoramiento jurídico",
+    "Representación legal",
+    "Resolución de asuntos legales",
+    "Atención personalizada",
+    "Asistencia legal para particulares",
+    "Asistencia legal para empresas"
+  ],
+  "rating": 5.0,
+  "cantidad_resenas": 9,
+  "testimonios": [
+    {
+      "texto": "Excelente!!! Soy clienta hace años: Seriedad, Profesionalismo, Rapidez, Seguridad y una Amabilidad y Atención digna de destacar. Súper recomendable!",
+      "autor": ""
+    }
+  ],
+  "logo": "",
+  "fotos": [
+    "fotos/foto1.jpg"
+  ],
+  "fuente_fotos": "google_maps",
+  "notas": "Google Maps confirma nombre, categoria bufete, direccion Calle 3 de Febrero esquina, 20000 Maldonado, telefono 4224 2433 y rating 5.0. Maps en modo limitado no mostro cantidad de resenas ni textos. Limburi muestra 9 resenas y contiene el testimonio literal guardado; LeadCanvas lista 12 resenas, por eso la cantidad puede variar. LinkedIn de Sofia Cairo Duaso muestra Estudio Juridico Cairo Duaso desde febrero de 2024, por eso se infieren 2 anos de trayectoria a julio de 2026. Horario visto en Maps: abre 10 a.m.; Limburi lista lun-vie 10 a.m.-6 p.m., sab 11 a.m.-3 p.m., dom cerrado. Foto aprobada: fachada/oficina desde Google Maps."
+}

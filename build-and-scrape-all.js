@@ -181,6 +181,76 @@ const projects = [
     outputDir: path.join(ROOT, 'romero-servicios'),
     defaultPort: 4188,
     extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Jhonatan B. Electricista',
+    dirName: 'jhonatan-b-electricista',
+    projectPath: path.join(ROOT, 'jhonatan-b-electricista'),
+    buildDir: path.join(ROOT, 'jhonatan-b-electricista', 'dist'),
+    runDir: path.join(ROOT, 'jhonatan-b-electricista'),
+    outputDir: path.join(ROOT, 'jhonatan-b-electricista'),
+    defaultPort: 4189,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Hernandez Electricista',
+    dirName: 'hernandez-electricista',
+    projectPath: path.join(ROOT, 'hernandez-electricista'),
+    buildDir: path.join(ROOT, 'hernandez-electricista', 'dist'),
+    runDir: path.join(ROOT, 'hernandez-electricista'),
+    outputDir: path.join(ROOT, 'hernandez-electricista'),
+    defaultPort: 4190,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Peter Montes de Oca',
+    dirName: 'peter-montes-de-oca-electricista-24hs-aire-acondicionado',
+    projectPath: path.join(ROOT, 'peter-montes-de-oca-electricista-24hs-aire-acondicionado'),
+    buildDir: path.join(ROOT, 'peter-montes-de-oca-electricista-24hs-aire-acondicionado', 'dist'),
+    runDir: path.join(ROOT, 'peter-montes-de-oca-electricista-24hs-aire-acondicionado'),
+    outputDir: path.join(ROOT, 'peter-montes-de-oca-electricista-24hs-aire-acondicionado'),
+    defaultPort: 4191,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Bazzanos Instalaciones',
+    dirName: 'bazzanos-instalaciones-electricas-firma-instaladora-autorizada-por-ute',
+    projectPath: path.join(ROOT, 'bazzanos-instalaciones-electricas-firma-instaladora-autorizada-por-ute'),
+    buildDir: path.join(ROOT, 'bazzanos-instalaciones-electricas-firma-instaladora-autorizada-por-ute', 'dist'),
+    runDir: path.join(ROOT, 'bazzanos-instalaciones-electricas-firma-instaladora-autorizada-por-ute'),
+    outputDir: path.join(ROOT, 'bazzanos-instalaciones-electricas-firma-instaladora-autorizada-por-ute'),
+    defaultPort: 4192,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Electricista Andres',
+    dirName: 'electricista-andres',
+    projectPath: path.join(ROOT, 'electricista-andres'),
+    buildDir: path.join(ROOT, 'electricista-andres', 'dist'),
+    runDir: path.join(ROOT, 'electricista-andres'),
+    outputDir: path.join(ROOT, 'electricista-andres'),
+    defaultPort: 4193,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Marcelo UY',
+    dirName: 'marcelo-tu-electricista-uy-habilitado-por-ute-categoria-c',
+    projectPath: path.join(ROOT, 'marcelo-tu-electricista-uy-habilitado-por-ute-categoria-c'),
+    buildDir: path.join(ROOT, 'marcelo-tu-electricista-uy-habilitado-por-ute-categoria-c', 'dist'),
+    runDir: path.join(ROOT, 'marcelo-tu-electricista-uy-habilitado-por-ute-categoria-c'),
+    outputDir: path.join(ROOT, 'marcelo-tu-electricista-uy-habilitado-por-ute-categoria-c'),
+    defaultPort: 4194,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Tecnico Electricista Amaral',
+    dirName: 'tecnico-electricista-electricidad-amaral',
+    projectPath: path.join(ROOT, 'tecnico-electricista-electricidad-amaral'),
+    buildDir: path.join(ROOT, 'tecnico-electricista-electricidad-amaral', 'dist'),
+    runDir: path.join(ROOT, 'tecnico-electricista-electricidad-amaral'),
+    outputDir: path.join(ROOT, 'tecnico-electricista-electricidad-amaral'),
+    defaultPort: 4195,
+    extraFiles: ['robots.txt']
   }
 ];
 

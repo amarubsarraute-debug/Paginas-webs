@@ -1,61 +1,61 @@
 {
-  "hash": "a8372c4a",
-  "configHash": "3b8858b7",
+  "hash": "647cc86c",
+  "configHash": "83f7c951",
   "lockfileHash": "824f95d5",
-  "browserHash": "8285ae87",
+  "browserHash": "7cc622b3",
   "optimized": {
     "react": {
-      "src": "../../../silvera-electricidad/node_modules/react/index.js",
+      "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "3bc6dc95",
+      "fileHash": "f1f15ed2",
       "needsInterop": true
     },
     "react-dom": {
-      "src": "../../../silvera-electricidad/node_modules/react-dom/index.js",
+      "src": "../../node_modules/react-dom/index.js",
       "file": "react-dom.js",
-      "fileHash": "3b28e33c",
+      "fileHash": "852addb0",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
-      "src": "../../../silvera-electricidad/node_modules/react/jsx-dev-runtime.js",
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "da399f60",
+      "fileHash": "e8456278",
       "needsInterop": true
     },
     "react/jsx-runtime": {
-      "src": "../../../silvera-electricidad/node_modules/react/jsx-runtime.js",
+      "src": "../../node_modules/react/jsx-runtime.js",
       "file": "react_jsx-runtime.js",
-      "fileHash": "18b4d4ee",
+      "fileHash": "c6b2da1a",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "50e777a3",
       "needsInterop": true
     },
     "lucide-react": {
-      "src": "../../../silvera-electricidad/node_modules/lucide-react/dist/esm/lucide-react.js",
+      "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
       "file": "lucide-react.js",
-      "fileHash": "34451933",
+      "fileHash": "fb4b160c",
       "needsInterop": false
     },
     "motion/react": {
-      "src": "../../../silvera-electricidad/node_modules/motion/dist/es/react.mjs",
+      "src": "../../node_modules/motion/dist/es/react.mjs",
       "file": "motion_react.js",
-      "fileHash": "2a6d1051",
+      "fileHash": "cb54d485",
       "needsInterop": false
-    },
-    "react-dom/client": {
-      "src": "../../../silvera-electricidad/node_modules/react-dom/client.js",
-      "file": "react-dom_client.js",
-      "fileHash": "e8994f21",
-      "needsInterop": true
     }
   },
   "chunks": {
-    "chunk-4GGYFGYJ": {
-      "file": "chunk-4GGYFGYJ.js"
+    "chunk-Z62PHHFT": {
+      "file": "chunk-Z62PHHFT.js"
     },
-    "chunk-LQXYRWOI": {
-      "file": "chunk-LQXYRWOI.js"
+    "chunk-RJ5LOGGB": {
+      "file": "chunk-RJ5LOGGB.js"
     },
-    "chunk-6Y5AEJJ3": {
-      "file": "chunk-6Y5AEJJ3.js"
+    "chunk-SRRNBJOT": {
+      "file": "chunk-SRRNBJOT.js"
     }
   }
 }

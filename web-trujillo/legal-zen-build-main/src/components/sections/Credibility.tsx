@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Reveal, SectionLabel } from "@/components/Reveal";
+import { cn } from "@/lib/utils";
 import { processSteps, team, testimonials, faqs } from "@/data/content";
 
 /* ---------------- Process ---------------- */
@@ -29,19 +31,91 @@ export function Process() {
           </Button>
         </div>
 
-        <ol className="relative ml-4 border-l border-border pl-10">
+        <ol className="relative">
           {processSteps.map((s, i) => (
-            <li key={s.n} className={i === processSteps.length - 1 ? "relative" : "relative pb-10"}>
-              <span className="absolute -left-10 top-0 grid h-9 w-9 -translate-x-1/2 place-items-center rounded-full border border-border bg-background font-display text-sm text-gold">
-                {s.n}
-              </span>
-              <h3 className="font-display text-xl font-medium leading-snug">{s.t}</h3>
-              <p className="mt-2 text-pretty text-muted-foreground">{s.d}</p>
-            </li>
+            <ProcessStep key={s.n} step={s} isLast={i === processSteps.length - 1} />
           ))}
         </ol>
       </div>
     </section>
+  );
+}
+
+/**
+ * Paso del proceso que se "enciende" en bordó suave al entrar en viewport
+ * (IntersectionObserver vainilla — sin lib de motion). Una vez encendido,
+ * queda encendido: leído en scroll se ve como un progreso que avanza.
+ */
+function ProcessStep({
+  step,
+  isLast,
+}: {
+  step: { n: string; t: string; d: string };
+  isLast: boolean;
+}) {
+  const ref = useRef<HTMLLIElement>(null);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      setActive(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            setActive(true);
+            io.disconnect();
+            break;
+          }
+        }
+      },
+      { rootMargin: "0px 0px -40% 0px", threshold: 0 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <li ref={ref} className={cn("relative flex gap-6 md:gap-8", !isLast && "pb-12")}>
+      <div className="flex flex-col items-center">
+        <span
+          className={cn(
+            "grid h-12 w-12 shrink-0 place-items-center rounded-full border font-display text-base transition-all duration-700",
+            active
+              ? "border-gold bg-gold/10 text-gold shadow-[0_0_26px] shadow-gold/30"
+              : "border-border bg-background text-muted-foreground",
+          )}
+        >
+          {step.n}
+        </span>
+        {!isLast && (
+          <span className="relative mt-2 w-px flex-1 overflow-hidden bg-border">
+            <span
+              className={cn(
+                "absolute inset-x-0 top-0 bg-gradient-to-b from-gold/70 to-gold/10 transition-[height] duration-700 ease-out",
+                active ? "h-full" : "h-0",
+              )}
+            />
+          </span>
+        )}
+      </div>
+      <div className="pt-2.5">
+        <h3
+          className={cn(
+            "font-display text-2xl font-medium leading-snug transition-colors duration-500",
+            active ? "text-foreground" : "text-muted-foreground",
+          )}
+        >
+          {step.t}
+        </h3>
+        <p className="mt-2 max-w-md text-pretty text-muted-foreground">{step.d}</p>
+      </div>
+    </li>
   );
 }
 

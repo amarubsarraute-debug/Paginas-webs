@@ -17,12 +17,12 @@ export function FAQ() {
       a: "No, las cotizaciones por proyectos, reformas o instalaciones planificadas son sin costo. Evaluamos el trabajo, te detallamos los materiales y mano de obra en un presupuesto cerrado por escrito."
     },
     {
-      q: "¿Qué sucede si salta la llave térmica continuamente?",
-      a: "Eso indica una sobrecarga de consumo o una fuga a tierra (cortocircuito). Es fundamental no forzar la llave y llamar a un técnico habilitado. Contamos con equipos de medición avanzados para diagnosticar y solucionar el problema rápidamente."
+      q: "¿Arman tableros de comando a medida?",
+      a: "Sí, diseñamos y armamos tableros de comando y control a medida según las necesidades de tu planta o proceso, con contactores, relés y protecciones correctamente dimensionadas."
     },
     {
       q: "¿Qué información debo enviar para solicitar un servicio?",
-      a: "Podés escribirnos por WhatsApp comentando qué necesitás. Si es una reforma o falla, nos ayuda mucho que envíes fotos del tablero eléctrico, del artefacto o del área a trabajar."
+      a: "Podés escribirnos por WhatsApp comentando qué necesitás. Nos ayuda mucho que envíes fotos del tablero, del motor o del área a trabajar."
     }
   ];
 

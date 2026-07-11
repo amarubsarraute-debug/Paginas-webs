@@ -29,18 +29,18 @@ export function FinalCTA() {
           transition={{ duration: 0.5 }}
           className="text-4xl sm:text-5xl font-extrabold text-ink tracking-tighter mb-6 leading-none"
         >
-          Instalaciones eléctricas sin sorpresas.
+          Tableros y automatización sin sorpresas.
         </motion.h2>
-        
+
         {/* Subtitle */}
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.08 }}
           className="text-lg sm:text-xl text-muted mb-10 max-w-xl mx-auto font-light leading-relaxed"
         >
-          Escribinos por WhatsApp y coordiná una visita técnica o presupuestá tu instalación con una empresa seria en Maldonado.
+          Escribinos por WhatsApp y coordiná una visita técnica o presupuestá tu tablero con una empresa seria en Canelones.
         </motion.p>
 
         {/* WhatsApp Button */}

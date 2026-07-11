@@ -70,17 +70,17 @@ export const services: Service[] = [
   },
 ];
 
-/* ---------------- Notarial services ---------------- */
+/* ---------------- Notarial services (editorial rows) ---------------- */
 export const notaryServices: { t: string; d: string }[] = [
-  { t: "Bienes raíces", d: "Gestiones notariales en operaciones inmobiliarias." },
-  { t: "Escrituraciones", d: "Redacción y otorgamiento de escrituras con seguimiento completo." },
-  { t: "Cartas poder", d: "Otorgamiento y asesoramiento para poderes según tu necesidad." },
-  { t: "Certificaciones notariales", d: "Certificación de firmas, copias y documentación." },
-  { t: "Sucesiones", d: "Acompañamiento notarial en trámites sucesorios." },
-  { t: "Actas y notificaciones", d: "Actas de constatación y notificaciones notariales." },
-  { t: "Personerías jurídicas", d: "Constitución y modificación de entidades." },
-  { t: "Fideicomisos", d: "Asesoramiento y documentación para fideicomisos." },
-  { t: "Inscripción RUPE", d: "Orientación y gestión para la inscripción en RUPE." },
+  { t: "Bienes raíces", d: "compraventas, reservas y estudio de títulos" },
+  { t: "Escrituraciones", d: "redacción y seguimiento hasta la inscripción" },
+  { t: "Sucesiones", d: "herencias acompañadas de principio a fin" },
+  { t: "Cartas poder", d: "generales y especiales, a medida del uso" },
+  { t: "Certificaciones notariales", d: "firmas, copias y documentación" },
+  { t: "Actas y notificaciones", d: "constatación con fe pública" },
+  { t: "Personerías jurídicas", d: "sociedades, asociaciones y fundaciones" },
+  { t: "Fideicomisos", d: "constitución y administración segura" },
+  { t: "Inscripción RUPE", d: "alta como proveedor del Estado" },
 ];
 
 /* ---------------- Process ---------------- */

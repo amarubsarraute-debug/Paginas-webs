@@ -84,7 +84,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.32 }}
               className="flex flex-wrap items-center gap-3 font-mono text-xs text-muted pt-4 border-t border-border-subtle max-w-md"
             >
-              <span className="text-star text-sm tracking-widest">★★★★★</span> <span>5.0 / Reseñas en Google (17 opiniones)</span>
+              <span className="text-star text-sm tracking-widest">★★★★★</span> <span>5.0 / Reseñas en Google</span>
               <span className="w-1.5 h-1.5 rounded-full bg-border-strong" />
               <span className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -104,8 +104,8 @@ export function Hero() {
               {/* Photo Frame */}
               <div className="relative aspect-[1/1.05] rounded-3xl overflow-hidden bg-bg-tint border border-border-subtle shadow-2xl">
                 <img
-                  src="./img/custom_hero.jpg"
-                  alt="Retrato de Nelson Bergero en Maldonado"
+                  src="./img/hero-tablero-electrico-steck.png"
+                  alt="Tablero eléctrico normalizado con interruptores termomagnéticos"
                   className="w-full h-full object-cover object-center"
                 />
               </div>

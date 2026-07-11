@@ -12,7 +12,7 @@ export function Hero() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Text & CTAs */}
-          <div className="lg:col-span-7 space-y-6 text-left">
+          <div className="lg:col-span-6 space-y-6 text-left">
             {/* Kicker */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -94,18 +94,18 @@ export function Hero() {
           </div>
 
           {/* Right Column: Photo Frame & Floating Chips */}
-          <div className="lg:col-span-5 relative flex justify-center z-10">
+          <div className="lg:col-span-6 relative flex justify-center z-10">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative w-full max-w-[440px]"
+              className="relative w-full max-w-[560px]"
             >
               {/* Photo Frame */}
-              <div className="relative aspect-[1/1.05] rounded-3xl overflow-hidden bg-bg-tint border border-border-subtle shadow-2xl">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-bg-tint border border-border-subtle shadow-2xl">
                 <img
-                  src="./img/custom_hero.jpg"
-                  alt="Retrato de Romero Servicios en Canelones"
+                  src="./img/hero-romero-servicios.png"
+                  alt="Romero Servicios Integrales - electricidad, plomería y albañilería"
                   className="w-full h-full object-cover object-center"
                 />
               </div>

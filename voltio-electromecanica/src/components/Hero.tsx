@@ -21,7 +21,7 @@ export function Hero() {
               className="inline-flex items-center gap-2 font-mono text-xs font-bold tracking-widest text-gold uppercase"
             >
               <span className="w-6 h-[2px] bg-gold" />
-              <span>Canelones • Técnico Electricista</span>
+              <span>Canelones • Electricidad Industrial</span>
             </motion.div>
 
             {/* Title */}
@@ -31,12 +31,12 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.08 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ink leading-[1.05] tracking-tighter"
             >
-              Instalaciones y reformas eléctricas{" "}
+              Tableros de comando y{" "}
               <span className="relative inline-block whitespace-nowrap text-ink z-10">
-                <span className="relative z-10">seguras</span>
+                <span className="relative z-10">automatización</span>
                 <span className="absolute left-0 right-0 bottom-[4px] h-[0.3em] bg-gold-soft rounded-sm -z-10" />
               </span>{" "}
-              y bajo norma
+              industrial
             </motion.h1>
 
             {/* Subtext */}
@@ -49,7 +49,7 @@ export function Hero() {
               <span className="relative inline-block text-ink z-10 font-extrabold mr-1">
                 <span className="relative z-10">Voltio Electromecánica</span>
                 <span className="absolute left-0 right-0 bottom-[2px] h-[0.25em] bg-gold-soft rounded-sm -z-10" />
-              </span> realiza trabajos residenciales, comerciales y obras con total seguridad. <b>Respuestas rápidas, diagnósticos precisos y presupuestos claros sin compromiso.</b>
+              </span> arma tableros de comando, automatiza procesos e instala sistemas eléctricos industriales para plantas y comercios. <b>Diagnósticos precisos y presupuestos claros sin compromiso.</b>
             </motion.p>
 
             {/* Buttons */}
@@ -102,10 +102,10 @@ export function Hero() {
               className="relative w-full max-w-[440px]"
             >
               {/* Photo Frame */}
-              <div className="relative aspect-[1/1.05] rounded-3xl overflow-hidden bg-bg-tint border border-border-subtle shadow-2xl">
+              <div className="relative aspect-[3/4] rounded-3xl overflow-hidden bg-bg-tint border border-border-subtle shadow-2xl">
                 <img
-                  src="./img/custom_hero.jpg"
-                  alt="Retrato de Voltio Electromecánica en Maldonado"
+                  src="./img/hero-tablero-planta-agua-voltio.jpg"
+                  alt="Tablero de comando industrial armado por Voltio Electromecánica"
                   className="w-full h-full object-cover object-center"
                 />
               </div>

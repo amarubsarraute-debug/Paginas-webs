@@ -1,5 +1,4 @@
 import { WHATSAPP_LINK, WHATSAPP_NUMBER } from "../lib/constants";
-import { Zap } from "lucide-react";
 import { motion } from "motion/react";
 
 export function Header() {
@@ -10,12 +9,16 @@ export function Header() {
           
           {/* Logo / Brand */}
           <a href="#" className="flex items-center gap-2 shrink-0">
-            <div className="flex items-center gap-2">
-            <Zap className="w-5 h-5 text-gold fill-gold shrink-0" />
-            <span className="text-lg font-extrabold text-ink tracking-tight font-display font-sans">
-              Voltio<b>.</b>
-            </span>
-          </div>
+            <div className="flex items-center gap-2.5">
+              <img
+                src="./img/logo-voltio-electromecanica.png"
+                alt="Logo Voltio Electromecánica"
+                className="w-9 h-9 rounded-lg object-cover shrink-0"
+              />
+              <span className="text-lg font-extrabold text-ink tracking-tight font-display font-sans">
+                Voltio<b>.</b>
+              </span>
+            </div>
           </a>
 
           {/* Navigation & Action */}

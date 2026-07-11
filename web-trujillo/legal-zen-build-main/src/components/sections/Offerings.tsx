@@ -136,7 +136,7 @@ export function Services() {
   );
 }
 
-/* ---------------- Notarial services (ink block) ---------------- */
+/* ---------------- Notarial services (ink block, editorial rows) ---------------- */
 export function Notary() {
   return (
     <section id="escribania" className="bg-ink text-ink-foreground">
@@ -148,19 +148,33 @@ export function Notary() {
           </h2>
           <div className="mx-auto mt-6 h-px w-20 bg-white/25" />
           <p className="mx-auto mt-6 max-w-xl text-pretty text-white/70">
-            Te orientamos con claridad, documentación completa y seguimiento de cada
-            etapa del trámite.
+            Desde la compraventa de una casa hasta la constitución de una sociedad,
+            cada trámite con su etapa documentada y seguimiento completo.
           </p>
         </Reveal>
 
-        <ul className="mx-auto mt-14 grid max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {notaryServices.map((s) => (
-            <li
-              key={s.t}
-              className="rounded-lg border border-white/12 bg-white/[0.03] p-5 transition-colors hover:border-gold/50 hover:bg-white/[0.06]"
-            >
-              <h3 className="font-display text-lg font-medium">{s.t}</h3>
-              <p className="mt-1.5 text-sm text-white/55">{s.d}</p>
+        <ul className="mx-auto mt-14 max-w-3xl border-t border-white/12">
+          {notaryServices.map(({ t, d }, i) => (
+            <li key={t} className="border-b border-white/12">
+              <a
+                href={waLink(WA1, `Hola, quisiera hacer una consulta sobre ${t.toLowerCase()}.`)}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex flex-col gap-1 px-3 py-5 transition-colors duration-300 hover:bg-background sm:flex-row sm:items-baseline sm:gap-5 sm:px-5"
+              >
+                <span className="flex items-baseline gap-4">
+                  <span className="w-6 shrink-0 text-xs tabular-nums text-gold/80">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="font-display text-xl font-medium text-white transition-colors duration-300 group-hover:text-foreground md:text-2xl">
+                    {t}
+                  </span>
+                </span>
+                <span className="pl-10 text-sm text-white/45 transition-colors duration-300 group-hover:text-muted-foreground sm:ml-auto sm:pl-0 sm:text-right">
+                  {d}
+                </span>
+                <ArrowRight className="hidden h-4 w-4 shrink-0 self-center text-gold opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100 sm:block" />
+              </a>
             </li>
           ))}
         </ul>

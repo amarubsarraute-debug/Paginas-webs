@@ -5,14 +5,13 @@ const readline = require('readline');
 const http = require('http');
 
 const projects = [
-    { id: '1', name: "electromecanica-del-este", displayName: "Electromecánica del Este", port: 3050, type: 'static' },
-    { id: '2', name: "electricista-milton-sardella", displayName: "Electricista Milton Sardella", port: 3051, type: 'vite' },
-    { id: '3', name: "electricidad-ocean-park-electricista-facundo-azcurra", displayName: "Electricidad Ocean Park", port: 3052, type: 'vite' },
-    { id: '4', name: "noguera-electricista-autorizado-por-ute", displayName: "Noguera Electricista", port: 3053, type: 'vite' },
-    { id: '5', name: "barcelo-instalaciones-electricas", displayName: "Barceló Instalaciones Eléctricas", port: 3054, type: 'vite' },
-    { id: '6', name: "prolighting", displayName: "Prolighting", port: 3055, type: 'vite' },
-    { id: '7', name: "juan-carlos-martinez-electricidad", displayName: "Juan Carlos Martínez", port: 3056, type: 'vite' },
-    { id: '8', name: "alejandro-severo-electricista-autorizado-x-ute", displayName: "Alejandro Severo UTE", port: 3057, type: 'vite' }
+    { id: '1', name: "jhonatan-b-electricista", displayName: "Jhonatan B. Electricista", port: 3050, type: 'vite' },
+    { id: '2', name: "hernandez-electricista", displayName: "Hernández Electricista", port: 3051, type: 'vite' },
+    { id: '3', name: "peter-montes-de-oca-electricista-24hs-aire-acondicionado", displayName: "Peter Montes de Oca", port: 3052, type: 'vite' },
+    { id: '4', name: "bazzanos-instalaciones-electricas-firma-instaladora-autorizada-por-ute", displayName: "Bazzanos Instalaciones", port: 3053, type: 'vite' },
+    { id: '5', name: "electricista-andres", displayName: "Electricista Andrés", port: 3054, type: 'vite' },
+    { id: '6', name: "marcelo-tu-electricista-uy-habilitado-por-ute-categoria-c", displayName: "Marcelo (Tu Electricista UY)", port: 3055, type: 'vite' },
+    { id: '7', name: "tecnico-electricista-electricidad-amaral", displayName: "Técnico Electricista Amaral", port: 3056, type: 'vite' }
 ];
 
 const processes = [];

@@ -1,27 +1,27 @@
-import { Home, Store, Building2, Hammer } from "lucide-react";
+import { Factory, Store, Building2, Hammer } from "lucide-react";
 import { motion } from "motion/react";
 
 export function ClientTypes() {
   const clients = [
     {
-      icon: Home,
-      title: "Hogares y apartamentos",
-      description: "Soluciones a medida para viviendas particulares. Desde reparaciones rápidas de cortocircuitos o fugas hasta reformas eléctricas completas, iluminación de interiores y puestas a tierra."
+      icon: Factory,
+      title: "Plantas e industrias",
+      description: "Tableros de comando, automatización de procesos y mantenimiento industrial para plantas de producción y galpones."
     },
     {
       icon: Store,
-      title: "Comercios y oficinas",
-      description: "Instalaciones proyectadas para evitar interrupciones. Adecuación de locales comerciales, iluminación técnica, cableado estructurado, tableros trifásicos y mantenimiento preventivo."
+      title: "Comercios y locales",
+      description: "Instalaciones eléctricas de mayor porte, tableros trifásicos y climatización para locales comerciales y grandes superficies."
     },
     {
       icon: Building2,
       title: "Edificios y administraciones",
-      description: "Servicio ágil de mantenimiento eléctrico para consorcios y edificios residenciales. Firma y trámites de UTE, revisión de bombas de agua, palieres, iluminación y mantenimiento preventivo."
+      description: "Servicio ágil de mantenimiento eléctrico para consorcios y edificios. Revisión de bombas de agua, tableros de palieres y mantenimiento preventivo."
     },
     {
       icon: Hammer,
-      title: "Obras y reformas",
-      description: "Planificación de instalaciones eléctricas completas para proyectos en construcción o reformas. Tableros de obra provisorios, canalizaciones, cableados e instalación de artefactos."
+      title: "Obras y constructoras",
+      description: "Tableros de obra, instalación eléctrica industrial e instalación de artefactos para proyectos en construcción."
     }
   ];
 
@@ -38,10 +38,10 @@ export function ClientTypes() {
             A quién nos dirigimos
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight tracking-tighter">
-            Trabajamos con particulares, empresas, comercios y administraciones
+            Trabajamos con industrias, comercios, edificios y constructoras
           </h2>
           <p className="text-muted text-base sm:text-lg font-light leading-relaxed max-w-[70ch]">
-            Ya sea una reparación puntual, una instalación nueva o un proyecto completo, el objetivo es el mismo: que el sistema eléctrico funcione de forma segura, prolija y confiable.
+            Ya sea una reparación puntual, un tablero nuevo o un proyecto de automatización completo, el objetivo es el mismo: que tu planta o comercio funcione de forma segura, prolija y confiable.
           </p>
         </div>
 

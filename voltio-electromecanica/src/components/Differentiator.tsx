@@ -3,11 +3,11 @@ import { motion } from "motion/react";
 
 export function Differentiator() {
   const bullets = [
-    "Instalaciones y reformas bajo normas de seguridad",
-    "Atención residencial, comercial, edificios y obras",
+    "Tableros armados y cableados bajo norma",
+    "Atención a plantas, comercios e industrias",
     "Diagnóstico técnico y presupuesto honesto",
-    "Instalaciones proyectadas para máxima durabilidad",
-    "Cobertura ágil en Maldonado y Punta del Este"
+    "Tableros diseñados para máxima durabilidad",
+    "Cobertura ágil en Canelones"
   ];
 
   return (
@@ -23,13 +23,13 @@ export function Differentiator() {
           {/* Left Text */}
           <div className="lg:w-1/2 space-y-6">
             <div className="inline-flex items-center gap-2 font-mono text-[10px] sm:text-xs font-bold tracking-widest text-gold uppercase px-3.5 py-1.5 bg-gold-soft/30 rounded-full border border-gold/10">
-              Técnico de Confianza
+              Especialistas en Industria
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-ink leading-tight tracking-tighter">
-              Instalaciones eléctricas seguras
+              Tableros y automatización de calidad industrial
             </h2>
             <p className="text-base sm:text-lg text-muted font-light leading-relaxed">
-              Voltio Electromecánica ofrece el respaldo profesional necesario para realizar instalaciones, reformas y mantenimiento con total seguridad. No hacemos arreglos provisorios; trabajamos bajo normativas vigentes para asegurar la durabilidad y seguridad de tu hogar o comercio.
+              Voltio Electromecánica ofrece el respaldo profesional necesario para diseñar, armar y automatizar tableros de comando con total seguridad. No hacemos arreglos provisorios; trabajamos bajo normativas vigentes para asegurar la durabilidad de cada tablero.
             </p>
           </div>
           

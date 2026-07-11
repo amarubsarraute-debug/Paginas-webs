@@ -6,31 +6,31 @@ export function Services() {
   const services = [
     {
       index: "01",
-      title: "Instalaciones y Obras",
-      description: "Planificación y ejecución de instalaciones eléctricas completas para casas, apartamentos, oficinas y obras comerciales. Cableados seguros y duraderos desde el primer día.",
-      tags: ["Obras nuevas", "Locales comerciales", "Oficinas", "Acometidas"],
-      waMessage: "Hola Silvera Electricidad, me gustaría consultar por *Instalaciones y Obras*."
+      title: "Tableros de Comando y Control",
+      description: "Diseño, armado y cableado de tableros de comando a medida: contactores, relés, protecciones y señalización para plantas, comercios e industrias.",
+      tags: ["Tableros a medida", "Contactores", "Relés", "Señalización"],
+      waMessage: "Hola Voltio Electromecánica, me gustaría consultar por *Tableros de Comando y Control*."
     },
     {
       index: "02",
-      title: "Tableros y Habilitación UTE",
-      description: "Armado, revisión y normalización de tableros eléctricos. Firma técnica autorizada ante UTE hasta 50 kW para habilitaciones comerciales e industriales sin demoras.",
-      tags: ["Firma UTE", "Tableros técnicos", "Trámites", "Habilitaciones"],
-      waMessage: "Hola Silvera Electricidad, necesito información sobre *Tableros y Firma de UTE*."
+      title: "Automatización Industrial",
+      description: "Automatización de procesos, control de bombas y motores, y programación de sistemas de arranque para plantas de producción.",
+      tags: ["Automatización", "Control de bombas", "Arranque de motores", "PLC"],
+      waMessage: "Hola Voltio Electromecánica, necesito información sobre *Automatización Industrial*."
     },
     {
       index: "03",
-      title: "Iluminación y Reformas",
-      description: "Actualización de instalaciones antiguas a estándares modernos. Diseño e instalación de sistemas de iluminación LED para interiores, fachadas y exteriores.",
-      tags: ["Iluminación LED", "Reformas eléctricas", "Exteriores", "Puesta a tierra"],
-      waMessage: "Hola Silvera Electricidad, quiero cotizar un trabajo de *Iluminación y Reformas*."
+      title: "Instalaciones Eléctricas Industriales",
+      description: "Instalaciones eléctricas de media y gran potencia para plantas, galpones y comercios, con cableado normalizado y seguro.",
+      tags: ["Plantas industriales", "Galpones", "Trifásico", "Media potencia"],
+      waMessage: "Hola Voltio Electromecánica, quiero cotizar una *Instalación Eléctrica Industrial*."
     },
     {
       index: "04",
-      title: "Mantenimiento y Reparación",
-      description: "Solución rápida a cortes de luz, sobrecargas, térmicas que saltan y fallas eléctricas generales. Diagnósticos precisos para prevenir problemas futuros.",
-      tags: ["Cortocircuitos", "Térmicas", "Fugas", "Urgencias"],
-      waMessage: "Hola Silvera Electricidad, necesito un servicio de *Mantenimiento y Reparación* por una falla."
+      title: "Mantenimiento Industrial",
+      description: "Mantenimiento preventivo y correctivo de tableros y sistemas eléctricos industriales, para evitar paradas de planta imprevistas.",
+      tags: ["Preventivo", "Correctivo", "Urgencias", "Diagnóstico"],
+      waMessage: "Hola Voltio Electromecánica, necesito un servicio de *Mantenimiento Industrial*."
     }
   ];
 
@@ -47,7 +47,7 @@ export function Services() {
             Soluciones serias, trabajos sin sorpresas.
           </h2>
           <p className="text-muted text-base sm:text-lg font-light leading-relaxed max-w-[65ch]">
-            Electricidad residencial, comercial e industrial. Diagnóstico transparente y presupuesto detallado antes de iniciar cualquier labor.
+            Tableros de comando, automatización y electricidad industrial. Diagnóstico transparente y presupuesto detallado antes de iniciar cualquier labor.
           </p>
         </div>
 

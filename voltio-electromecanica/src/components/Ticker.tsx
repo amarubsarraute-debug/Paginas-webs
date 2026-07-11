@@ -40,16 +40,16 @@ const styles = `
 
 export function Ticker() {
   const services = [
-    "Cortocircuitos",
-    "Tableros eléctricos",
-    "Salta la térmica",
-    "Fugas de corriente",
-    "Recableados",
-    "Cambio de llaves y tomas",
-    "Iluminación LED",
-    "Urgencias 24hs",
-    "Mantenimiento",
-    "Instalaciones"
+    "Tableros de Comando",
+    "Automatización Industrial",
+    "Contactores y Relés",
+    "Arrancadores de Motores",
+    "Instalaciones Industriales",
+    "Mantenimiento Industrial",
+    "Cuadros Eléctricos a Medida",
+    "Presupuestos sin cargo",
+    "PLC y Control",
+    "Urgencias 24hs"
 ];
   const duplicated = [...services, ...services, ...services, ...services];
 

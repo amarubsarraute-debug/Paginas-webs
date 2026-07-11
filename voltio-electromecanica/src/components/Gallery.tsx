@@ -3,24 +3,24 @@ import { motion } from "motion/react";
 export function Gallery() {
   const images = [
     {
-      src: "./img/custom_g1.jpg",
-      alt: "Instalación y conexiones eléctricas de seguridad realizadas por Voltio Electromecánica",
-      tag: "Instalaciones"
+      src: "./img/trabajo-tablero-completo-breakers.jpg",
+      alt: "Tablero de comando completo con breakers, disyuntores diferenciales y contactores",
+      tag: "Tableros de Comando"
     },
     {
-      src: "./img/custom_g2.jpg",
-      alt: "Diseño e iluminación LED profesional de alta calidad",
-      tag: "Iluminación"
+      src: "./img/trabajo-tablero-barras-380v.jpg",
+      alt: "Tablero con barras de distribución e interruptor general de 380V",
+      tag: "Instalaciones Industriales"
     },
     {
-      src: "./img/custom_g3.jpg",
-      alt: "Instalaciones eléctricas estancas para exteriores y jardines",
-      tag: "Exteriores"
+      src: "./img/trabajo-banco-contactores.jpg",
+      alt: "Banco de contactores cableado para automatización industrial",
+      tag: "Automatización"
     },
     {
-      src: "./img/custom_g4.jpg",
-      alt: "Normalización de tableros eléctricos y reformas en obra nueva",
-      tag: "Obras"
+      src: "./img/trabajo-cableado-contactores.jpg",
+      alt: "Cableado prolijo de contactores en tablero de arranque",
+      tag: "Arrancadores"
     }
   ];
 
@@ -37,7 +37,7 @@ export function Gallery() {
             Otros trabajos realizados.
           </h2>
           <p className="text-muted text-base sm:text-lg font-light leading-relaxed max-w-[65ch]">
-            Una selección de instalaciones, iluminación y proyectos ejecutados en Canelones. Fotos reales de trabajos reales.
+            Una selección de tableros de comando y automatización industrial ejecutados en Canelones. Fotos reales de trabajos reales.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export function Gallery() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-bg-tint border border-border-subtle shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer"
+              className="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-bg-tint border border-border-subtle shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
               <img 
                 src={img.src} 

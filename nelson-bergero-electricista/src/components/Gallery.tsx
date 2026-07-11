@@ -3,24 +3,24 @@ import { motion } from "motion/react";
 export function Gallery() {
   const images = [
     {
-      src: "./img/custom_g1.jpg",
-      alt: "Instalación y conexiones eléctricas de seguridad realizadas por Nelson Bergero",
-      tag: "Instalaciones"
+      src: "./img/trabajo-instalacion-electrica-obra.png",
+      alt: "Instalación eléctrica en obra nueva, canalizado y cableado bajo norma",
+      tag: "Obras"
     },
     {
-      src: "./img/custom_g2.jpg",
-      alt: "Diseño e iluminación LED profesional de alta calidad",
-      tag: "Iluminación"
+      src: "./img/trabajo-cargador-vehiculo-electrico.png",
+      alt: "Instalación de punto de carga para vehículo eléctrico",
+      tag: "Cargadores EV"
     },
     {
-      src: "./img/custom_g3.jpg",
-      alt: "Instalaciones eléctricas estancas para exteriores y jardines",
+      src: "./img/trabajo-caja-distribucion-poste.png",
+      alt: "Caja de distribución eléctrica en poste con térmicas y toma",
       tag: "Exteriores"
     },
     {
-      src: "./img/custom_g4.jpg",
-      alt: "Normalización de tableros eléctricos y reformas en obra nueva",
-      tag: "Obras"
+      src: "./img/trabajo-tomas-cajas-electricas.png",
+      alt: "Instalación de tomas y cajas eléctricas empotradas",
+      tag: "Instalaciones"
     }
   ];
 

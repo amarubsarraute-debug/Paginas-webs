@@ -266,5 +266,15 @@
       "notas": "Fotos reales inyectadas. Testimonios: 0."
     }
   ],
-  "dentista": []
+  "dentista": [],
+  "estudio_juridico": [
+    {
+      "negocio": "Estudio Jurídico Cairo Duaso",
+      "carpeta_salida": "estudio-juridico-estandar",
+      "plantilla": "estudio-juridico-estandar",
+      "variante": "estándar",
+      "fecha": "2026-07-09",
+      "notas": "Primera corrida del nicho estudio jurídico. Plantilla nueva (no existía antes), portada de la identidad visual de web-trujillo a Vite/React liviano. Home 'estándar' (sin retratos ni video) porque solo había 1 foto de fachada. Sin WhatsApp confirmado (línea fija) — CTA usa llamada. Testimonios: 1. Próximo prospecto en la cola: definir variante de orden alternativa antes de repetir 'estándar' dos veces seguidas."
+    }
+  ]
 }

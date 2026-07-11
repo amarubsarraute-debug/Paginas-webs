@@ -84,7 +84,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.32 }}
               className="flex flex-wrap items-center gap-3 font-mono text-xs text-muted pt-4 border-t border-border-subtle max-w-md"
             >
-              <span className="text-star text-sm tracking-widest">★★★★★</span> <span>4.9 / Reseñas en Google (12 opiniones)</span>
+              <span className="text-star text-sm tracking-widest">★★★★★</span> <span>4.9 / Reseñas en Google</span>
               <span className="w-1.5 h-1.5 rounded-full bg-border-strong" />
               <span className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />

@@ -1,5 +1,5 @@
 import { WHATSAPP_NUMBER, EMAIL, LOCATION, SCHEDULE, WHATSAPP_LINK, SOCIAL_LINKS } from "../lib/constants";
-import { MapPin, Phone, Mail, Clock, Zap, Instagram, Facebook, Linkedin, ExternalLink } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Linkedin, ExternalLink } from "lucide-react";
 
 
 const socialIcons = {
@@ -17,30 +17,32 @@ export function Footer() {
           
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-navy rounded-xl flex items-center justify-center text-gold shadow-md">
-                <Zap className="w-6 h-6" />
-              </div>
-              <span className="text-2xl font-extrabold text-ink tracking-tight font-display">Voltio Electromecánica<b>.</b><small className="block text-[10px] font-mono font-bold uppercase tracking-wider text-muted mt-1">Técnico Electricista</small></span>
+              <img
+                src="./img/logo-voltio-electromecanica.png"
+                alt="Logo Voltio Electromecánica"
+                className="w-10 h-10 rounded-xl object-cover shadow-md shrink-0"
+              />
+              <span className="text-2xl font-extrabold text-ink tracking-tight font-display">Voltio Electromecánica<b>.</b><small className="block text-[10px] font-mono font-bold uppercase tracking-wider text-muted mt-1">Electricidad Industrial</small></span>
             </div>
             <p className="text-muted leading-relaxed font-light max-w-sm text-sm sm:text-base">
-              Instalaciones, reformas y mantenimiento eléctrico residencial y comercial en Canelones. Garantía, prolijidad y seguridad en cada trabajo.
+              Tableros de comando, automatización y mantenimiento eléctrico industrial en Canelones. Garantía, prolijidad y seguridad en cada trabajo.
             </p>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <h3 className="text-ink font-mono text-xs font-bold uppercase tracking-wider mb-6">Contacto</h3>
             <ul className="space-y-4 text-sm sm:text-base">
               <li>
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted hover:text-gold transition-colors font-semibold">
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted hover:text-gold transition-colors font-semibold min-w-0">
                   <Phone className="w-4 h-4 shrink-0 text-gold" />
-                  <span>{WHATSAPP_NUMBER}</span>
+                  <span className="break-words">{WHATSAPP_NUMBER}</span>
                 </a>
               </li>
               {EMAIL && (
                 <li>
-                  <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 text-muted hover:text-gold transition-colors font-semibold">
+                  <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 text-muted hover:text-gold transition-colors font-semibold min-w-0">
                     <Mail className="w-4 h-4 shrink-0 text-gold" />
-                    <span>{EMAIL}</span>
+                    <span className="break-words min-w-0">{EMAIL}</span>
                   </a>
                 </li>
               )}
@@ -91,7 +93,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} VOLTIO ELECTROMECANICA. Todos los derechos reservados.
           </p>
           <div className="font-semibold text-ink uppercase tracking-wider">
-            Instalaciones eléctricas residenciales y comerciales
+            Tableros y automatización industrial
           </div>
         </div>
       </div>

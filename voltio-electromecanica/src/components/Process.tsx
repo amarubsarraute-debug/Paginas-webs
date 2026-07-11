@@ -6,7 +6,7 @@ export function Process() {
     {
       number: "01",
       title: "Nos escribís o llamás",
-      text: "Contanos qué instalación, reforma o problema eléctrico tenés en tu hogar, comercio u obra. Coordinamos de forma ágil."
+      text: "Contanos qué tablero, automatización o problema eléctrico tenés en tu planta, comercio u obra. Coordinamos de forma ágil."
     },
     {
       number: "02",
