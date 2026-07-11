@@ -8,6 +8,7 @@ import { Hero } from './components/Hero';
 import { Ticker } from './components/Ticker';
 import { Problem } from './components/Problem';
 import { Services } from './components/Services';
+import { Proyectos } from './components/Proyectos';
 import { ClientTypes } from './components/ClientTypes';
 
 import { Differentiator } from './components/Differentiator';
@@ -30,6 +31,7 @@ export default function App() {
       <Ticker />
       <Problem />
       <Services />
+      <Proyectos />
       <ClientTypes />
       
       <Differentiator />

@@ -9,13 +9,8 @@ export function Header() {
         <div className="h-16 flex items-center justify-between">
           
           {/* Logo / Brand */}
-          <a href="#" className="flex items-center gap-2 shrink-0">
-            <div className="flex items-center gap-2">
-            <Zap className="w-5 h-5 text-gold fill-gold shrink-0" />
-            <span className="text-lg font-extrabold text-ink tracking-tight font-display font-sans">
-              Bazzanos<b>.</b>
-            </span>
-          </div>
+          <a href="#" className="flex items-center shrink-0">
+            <img src="./img/logo.png" alt="B's Bazzanos Instalaciones Eléctricas" className="h-10 sm:h-12 w-auto object-contain rounded-full shadow-sm" />
           </a>
 
           {/* Navigation & Action */}
@@ -24,6 +19,7 @@ export function Header() {
             <nav className="hidden md:flex items-center gap-6 font-mono text-xs font-semibold text-muted">
               <a href="#" className="hover:text-gold transition-colors">Inicio</a>
               <a href="#servicios" className="hover:text-gold transition-colors">Servicios</a>
+              <a href="#proyectos" className="hover:text-gold transition-colors">Proyectos</a>
               <a href="#trabajos" className="hover:text-gold transition-colors">Trabajos</a>
               <a href="#resenas" className="hover:text-gold transition-colors">Garantía</a>
               <a href="#faq" className="hover:text-gold transition-colors">Preguntas</a>

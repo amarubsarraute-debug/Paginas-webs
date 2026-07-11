@@ -7,25 +7,25 @@
     "react": {
       "src": "../../../silvera-electricidad/node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "58df29cf",
+      "fileHash": "afea5fa1",
       "needsInterop": true
     },
     "react-dom": {
       "src": "../../../silvera-electricidad/node_modules/react-dom/index.js",
       "file": "react-dom.js",
-      "fileHash": "a1907a55",
+      "fileHash": "ac27b432",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
       "src": "../../../silvera-electricidad/node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "30547133",
+      "fileHash": "972fdda2",
       "needsInterop": true
     },
     "react/jsx-runtime": {
       "src": "../../../silvera-electricidad/node_modules/react/jsx-runtime.js",
       "file": "react_jsx-runtime.js",
-      "fileHash": "f27e58d2",
+      "fileHash": "49acbc41",
       "needsInterop": true
     }
   },

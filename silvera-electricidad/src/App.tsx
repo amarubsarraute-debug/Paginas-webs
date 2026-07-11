@@ -7,6 +7,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Problem } from './components/Problem';
 import { Services } from './components/Services';
+import { Proyectos } from './components/Proyectos';
 import { ClientTypes } from './components/ClientTypes';
 import { BeforeAfterSection } from './components/BeforeAfterSection';
 import { Differentiator } from './components/Differentiator';
@@ -27,6 +28,7 @@ export default function App() {
       <Hero />
       <Problem />
       <Services />
+      <Proyectos />
       <ClientTypes />
       <BeforeAfterSection />
       <Differentiator />

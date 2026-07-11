@@ -16,11 +16,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-left">
           
           <div className="lg:col-span-2 space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-navy rounded-xl flex items-center justify-center text-gold shadow-md">
-                <Zap className="w-6 h-6" />
-              </div>
-              <span className="text-2xl font-extrabold text-ink tracking-tight font-display">Bazzanos<b>.</b><small className="block text-[10px] font-mono font-bold uppercase tracking-wider text-muted mt-1">Técnico Electricista</small></span>
+            <div className="flex flex-col gap-3">
+              <img src="./img/logo.png" alt="B's Bazzanos Instalaciones Eléctricas" className="h-12 w-auto object-contain rounded-full shadow-sm w-fit" />
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-muted">Firma Instaladora Autorizada por UTE</span>
             </div>
             <p className="text-muted leading-relaxed font-light max-w-sm text-sm sm:text-base">
               Instalaciones, reformas y gestiones ante UTE en Maldonado y Punta del Este. Respaldamos cada trabajo con seguridad y prolijidad técnica.

@@ -6,7 +6,7 @@
   --font-display: "Bricolage Grotesque", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  /* Basil-style Color Palette */
+  /* Bazzanos Brand Orange Color Palette */
   --color-paper: #FFFFFF;
   --color-bg-base: #EDEFF2;
   --color-bg-tint: #E6E9EE;
@@ -14,9 +14,9 @@
   --color-ink: #0E1626;
   --color-ink-light: #28313F;
   --color-muted: #5C6675;
-  --color-gold: #D8A81E;
-  --color-gold-bright: #EFC23F;
-  --color-gold-soft: #F6E8BE;
+  --color-gold: #FF5500;
+  --color-gold-bright: #FF661A;
+  --color-gold-soft: #FFEBE0;
   --color-navy: #0E1626;
   --color-border-subtle: rgba(14, 22, 38, 0.1);
   --color-border-strong: rgba(14, 22, 38, 0.2);

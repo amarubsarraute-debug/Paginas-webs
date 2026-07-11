@@ -3,6 +3,7 @@ import { Hero } from './components/Hero';
 import { Ticker } from './components/Ticker';
 import { Problem } from './components/Problem';
 import { Services } from './components/Services';
+import { Proyectos } from './components/Proyectos';
 import { ClientTypes } from './components/ClientTypes';
 import { BeforeAfterSection } from './components/BeforeAfterSection';
 import { Differentiator } from './components/Differentiator';
@@ -23,6 +24,7 @@ export default function App() {
       <Hero />
       <Ticker />
       <Services />
+      <Proyectos />
       <Problem />
       <Clients />
       <BeforeAfterSection />

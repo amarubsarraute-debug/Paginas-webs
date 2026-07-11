@@ -23,6 +23,7 @@ export function Header() {
             <nav className="hidden md:flex items-center gap-6 font-mono text-xs font-semibold text-muted">
               <a href="#" className="hover:text-gold transition-colors">Inicio</a>
               <a href="#servicios" className="hover:text-gold transition-colors">Servicios</a>
+              <a href="#proyectos" className="hover:text-gold transition-colors">Proyectos</a>
               <a href="#trabajos" className="hover:text-gold transition-colors">Trabajos</a>
               <a href="#resenas" className="hover:text-gold transition-colors">Garantía</a>
               <a href="#faq" className="hover:text-gold transition-colors">Preguntas</a>
