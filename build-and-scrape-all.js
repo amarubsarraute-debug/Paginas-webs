@@ -183,16 +183,6 @@ const projects = [
     extraFiles: ['robots.txt']
   },
   {
-    name: 'Jhonatan B. Electricista',
-    dirName: 'jhonatan-b-electricista',
-    projectPath: path.join(ROOT, 'jhonatan-b-electricista'),
-    buildDir: path.join(ROOT, 'jhonatan-b-electricista', 'dist'),
-    runDir: path.join(ROOT, 'jhonatan-b-electricista'),
-    outputDir: path.join(ROOT, 'jhonatan-b-electricista'),
-    defaultPort: 4189,
-    extraFiles: ['robots.txt']
-  },
-  {
     name: 'Hernandez Electricista',
     dirName: 'hernandez-electricista',
     projectPath: path.join(ROOT, 'hernandez-electricista'),
