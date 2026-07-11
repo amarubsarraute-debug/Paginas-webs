@@ -33,9 +33,9 @@ export function BeforeAfterSection() {
               className="w-full max-w-[500px]"
             >
               <BeforeAfter
-                beforeSrc="./img/01_tablero_antes_limpio.png"
-                afterSrc="./img/02_tablero_despues_limpio.png"
-                alt="Tablero eléctrico normalizado por Silvera Electricidad"
+                beforeSrc="./img/custom_before.png"
+                afterSrc="./img/custom_after.png"
+                alt="Tablero eléctrico normalizado por Electricista Andrés"
               />
             </motion.div>
           </div>
@@ -52,7 +52,7 @@ export function BeforeAfterSection() {
             </h2>
             
             <p className="text-muted text-base sm:text-lg font-light leading-relaxed">
-              Mirá el cambio real de un trabajo de normalización de Silvera Electricidad. De un cableado caótico y propenso a recalentamientos, a un tablero ordenado, seguro y certificado bajo normas UTE.
+              Mirá el cambio real de un trabajo de normalización de Electricista Andrés. De un cableado caótico y propenso a recalentamientos, a un tablero ordenado, seguro y certificado bajo normas vigentes.
             </p>
 
             <div className="space-y-4 pt-2">

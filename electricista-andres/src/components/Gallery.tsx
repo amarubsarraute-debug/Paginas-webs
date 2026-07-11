@@ -4,23 +4,33 @@ export function Gallery() {
   const images = [
     {
       src: "./img/custom_g1.jpg",
-      alt: "Instalación y conexiones eléctricas de seguridad realizadas por Electricista Andrés",
+      alt: "Tablero eléctrico moderno y normalizado bajo normas vigentes",
       tag: "Instalaciones"
     },
     {
       src: "./img/custom_g2.jpg",
-      alt: "Diseño e iluminación LED profesional de alta calidad",
+      alt: "Diseño e iluminación LED profesional de alta gama en locales comerciales",
       tag: "Iluminación"
     },
     {
       src: "./img/custom_g3.jpg",
-      alt: "Instalaciones eléctricas estancas para exteriores y jardines",
+      alt: "Instalaciones eléctricas y luminarias estancas para fachadas y exteriores",
       tag: "Exteriores"
     },
     {
       src: "./img/custom_g4.jpg",
-      alt: "Normalización de tableros eléctricos y reformas en obra nueva",
+      alt: "Cableados, canalizaciones y reformas eléctricas en obras nuevas",
       tag: "Obras"
+    },
+    {
+      src: "./img/custom_g5.jpg",
+      alt: "Instalación de luminarias de alta eficiencia en locales y oficinas",
+      tag: "Iluminación"
+    },
+    {
+      src: "./img/custom_g6.jpg",
+      alt: "Montaje y conexiones de pilares eléctricos exteriores certificados por UTE",
+      tag: "Exteriores"
     }
   ];
 
@@ -41,8 +51,8 @@ export function Gallery() {
           </p>
         </div>
 
-        {/* Gallery Grid (2 Columns for 4 items) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Gallery Grid (3 Columns for 6 items) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {images.map((img, index) => (
             <motion.div 
               key={index} 
