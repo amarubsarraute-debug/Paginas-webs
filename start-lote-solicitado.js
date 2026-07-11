@@ -5,12 +5,12 @@ const readline = require('readline');
 const http = require('http');
 
 const projects = [
-    { id: '1', name: "hernandez-electricista", displayName: "Hernández Electricista", port: 3050, type: 'vite' },
-    { id: '2', name: "peter-montes-de-oca-electricista-24hs-aire-acondicionado", displayName: "Peter Montes de Oca", port: 3051, type: 'vite' },
-    { id: '3', name: "bazzanos-instalaciones-electricas-firma-instaladora-autorizada-por-ute", displayName: "Bazzanos Instalaciones", port: 3052, type: 'vite' },
-    { id: '4', name: "electricista-andres", displayName: "Electricista Andrés", port: 3053, type: 'vite' },
-    { id: '5', name: "marcelo-tu-electricista-uy-habilitado-por-ute-categoria-c", displayName: "Marcelo (Tu Electricista UY)", port: 3054, type: 'vite' },
-    { id: '6', name: "tecnico-electricista-electricidad-amaral", displayName: "Técnico Electricista Amaral", port: 3055, type: 'vite' }
+    { id: '1', name: "hernandez-electricista", displayName: "Hernández Electricista", port: 3060, type: 'vite' },
+    { id: '2', name: "peter-montes-de-oca-electricista-24hs-aire-acondicionado", displayName: "Peter Montes de Oca", port: 3061, type: 'vite' },
+    { id: '3', name: "bazzanos-instalaciones-electricas-firma-instaladora-autorizada-por-ute", displayName: "Bazzanos Instalaciones", port: 3062, type: 'vite' },
+    { id: '4', name: "electricista-andres", displayName: "Electricista Andrés", port: 3063, type: 'vite' },
+    { id: '5', name: "marcelo-tu-electricista-uy-habilitado-por-ute-categoria-c", displayName: "Marcelo (Tu Electricista UY)", port: 3064, type: 'vite' },
+    { id: '6', name: "tecnico-electricista-electricidad-amaral", displayName: "Técnico Electricista Amaral", port: 3065, type: 'vite' }
 ];
 
 const processes = [];

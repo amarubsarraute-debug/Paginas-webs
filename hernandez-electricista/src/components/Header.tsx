@@ -9,13 +9,10 @@ export function Header() {
         <div className="h-16 flex items-center justify-between">
           
           {/* Logo / Brand */}
-          <a href="#" className="flex items-center gap-2 shrink-0">
-            <div className="flex items-center gap-2">
-            <Zap className="w-5 h-5 text-gold fill-gold shrink-0" />
-            <span className="text-lg font-extrabold text-ink tracking-tight font-display font-sans">
-              Hernandez<b>.</b>
-            </span>
-          </div>
+          <a href="#" className="flex items-center shrink-0">
+            <div className="bg-navy px-3 py-1.5 rounded-xl border border-border-strong/50 shadow-sm flex items-center justify-center">
+              <img src="./img/logo.jpg" alt="Hernández Instalaciones Eléctricas" className="h-6 sm:h-7 w-auto object-contain" />
+            </div>
           </a>
 
           {/* Navigation & Action */}
