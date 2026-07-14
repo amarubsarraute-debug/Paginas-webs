@@ -8,19 +8,29 @@ export function Gallery() {
       tag: "Tableros de Comando"
     },
     {
-      src: "./img/trabajo-tablero-barras-380v.jpg",
-      alt: "Tablero con barras de distribución e interruptor general de 380V",
-      tag: "Instalaciones Industriales"
+      src: "./img/hero-tablero-planta-agua-voltio.jpg",
+      alt: "Instalación y conexionado de tablero en planta de tratamiento de agua",
+      tag: "Plantas de Agua"
     },
     {
-      src: "./img/trabajo-banco-contactores.jpg",
-      alt: "Banco de contactores cableado para automatización industrial",
+      src: "./img/trabajo-panel-detallado.png",
+      alt: "Detalle de conexionado y ruteo de cables en panel de automatización",
+      tag: "Comandos"
+    },
+    {
+      src: "./img/trabajo-panel-schneider.png",
+      alt: "Montaje e instalación de contactores y protecciones Schneider Electric",
       tag: "Automatización"
     },
     {
-      src: "./img/trabajo-cableado-contactores.jpg",
-      alt: "Cableado prolijo de contactores en tablero de arranque",
-      tag: "Arrancadores"
+      src: "./img/trabajo-taller-soldadura.png",
+      alt: "Servicios integrales de electromecánica y soldadura industrial en taller",
+      tag: "Talleres"
+    },
+    {
+      src: "./img/trabajo-tablero-barras-380v.jpg",
+      alt: "Tablero de distribución general de 380V en planta industrial",
+      tag: "Distribución"
     }
   ];
 
@@ -41,8 +51,8 @@ export function Gallery() {
           </p>
         </div>
 
-        {/* Gallery Grid (2 Columns for 4 items) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Gallery Grid (3 Columns for 6 items in desktop) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {images.map((img, index) => (
             <motion.div 
               key={index} 
@@ -50,13 +60,13 @@ export function Gallery() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-bg-tint border border-border-subtle shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer"
+              className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-bg-tint border border-border-subtle shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
               <img 
                 src={img.src} 
                 alt={img.alt}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-contain bg-paper/30 p-2 transition-transform duration-700 group-hover:scale-102"
               />
               
               {/* Overlay on hover */}

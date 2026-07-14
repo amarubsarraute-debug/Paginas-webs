@@ -1,6 +1,7 @@
-import { WHATSAPP_LINK, WHATSAPP_NUMBER } from "../lib/constants";
 import { Zap } from "lucide-react";
-import { motion } from "motion/react";
+
+const WHATSAPP_NUMBER = "098 812 929";
+const WHATSAPP_LINK = "https://wa.me/59898812929?text=Hola%20Dr.%20Matias%20Alcaraz%2C%20quiero%20agendar%20una%20consulta.";
 
 export function Header() {
   return (

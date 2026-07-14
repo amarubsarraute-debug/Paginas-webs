@@ -241,6 +241,36 @@ const projects = [
     outputDir: path.join(ROOT, 'tecnico-electricista-electricidad-amaral'),
     defaultPort: 4195,
     extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Soluciones Electricas EP',
+    dirName: 'soluciones-electricas-ep',
+    projectPath: path.join(ROOT, 'soluciones-electricas-ep'),
+    buildDir: path.join(ROOT, 'soluciones-electricas-ep', 'dist'),
+    runDir: path.join(ROOT, 'soluciones-electricas-ep'),
+    outputDir: path.join(ROOT, 'soluciones-electricas-ep'),
+    defaultPort: 4196,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Electropunta',
+    dirName: 'electropunta',
+    projectPath: path.join(ROOT, 'electropunta'),
+    buildDir: path.join(ROOT, 'electropunta', 'dist'),
+    runDir: path.join(ROOT, 'electropunta'),
+    outputDir: path.join(ROOT, 'electropunta'),
+    defaultPort: 4197,
+    extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Voltio Electromecanica',
+    dirName: 'voltio-electromecanica',
+    projectPath: path.join(ROOT, 'voltio-electromecanica'),
+    buildDir: path.join(ROOT, 'voltio-electromecanica', 'dist'),
+    runDir: path.join(ROOT, 'voltio-electromecanica'),
+    outputDir: path.join(ROOT, 'voltio-electromecanica'),
+    defaultPort: 4198,
+    extraFiles: ['robots.txt']
   }
 ];
 

@@ -3,24 +3,24 @@ import { motion } from "motion/react";
 export function Gallery() {
   const images = [
     {
-      src: "./img/custom_g1.jpg",
-      alt: "Instalación y conexiones eléctricas de seguridad realizadas por Soluciones Eléctricas EP",
-      tag: "Instalaciones"
+      src: "./img/custom_g1.png",
+      alt: "Diagnóstico eléctrico y detección de fallas en vehículos",
+      tag: "Automotriz"
     },
     {
-      src: "./img/custom_g2.jpg",
-      alt: "Diseño e iluminación LED profesional de alta calidad",
-      tag: "Iluminación"
+      src: "./img/custom_g2.png",
+      alt: "Medición y chequeo de parámetros electrónicos con escáner",
+      tag: "Diagnóstico"
     },
     {
-      src: "./img/custom_g3.jpg",
-      alt: "Instalaciones eléctricas estancas para exteriores y jardines",
-      tag: "Exteriores"
+      src: "./img/custom_g3.png",
+      alt: "Medición de voltaje y verificación de parámetros de seguridad",
+      tag: "Mantenimiento"
     },
     {
-      src: "./img/custom_g4.jpg",
-      alt: "Normalización de tableros eléctricos y reformas en obra nueva",
-      tag: "Obras"
+      src: "./img/custom_g4.png",
+      alt: "Armado e instalación de tablero eléctrico exterior con protección estanca",
+      tag: "Tableros"
     }
   ];
 
@@ -56,7 +56,7 @@ export function Gallery() {
                 src={img.src} 
                 alt={img.alt}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-contain bg-paper/30 p-2 transition-transform duration-700 group-hover:scale-102"
               />
               
               {/* Overlay on hover */}

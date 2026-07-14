@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Check, ChevronRight, MessageCircle, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal, SectionLabel } from "@/components/Reveal";
@@ -179,6 +180,8 @@ export function Notary() {
           ))}
         </ul>
 
+        <NotarySeal />
+
         <div className="mt-12 flex flex-col justify-center gap-3 sm:flex-row">
           <Button asChild size="lg" className="h-12 px-6">
             <a href="#contacto">
@@ -202,5 +205,128 @@ export function Notary() {
         </p>
       </div>
     </section>
+  );
+}
+
+/**
+ * Sello institucional que se "estampa" al terminar de recorrer los servicios.
+ * Reveal vainilla (IntersectionObserver, sin lib de motion): opacity 0→1,
+ * scale 0.9→1, rotación 4°→0 con un leve overshoot para que se sienta firme.
+ * Decorativo (aria-hidden) — no interfiere con la lectura ni la navegación.
+ */
+function NotarySeal() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [stamped, setStamped] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+      setStamped(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            setStamped(true);
+            io.disconnect();
+            break;
+          }
+        }
+      },
+      { threshold: 0.55 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div className="mt-14 flex justify-center" aria-hidden="true">
+      <div
+        ref={ref}
+        className={
+          stamped
+            ? "opacity-100 [transform:scale(1)_rotate(0deg)]"
+            : "opacity-0 [transform:scale(0.9)_rotate(4deg)]"
+        }
+        style={{
+          color: "color-mix(in oklab, var(--gold) 68%, var(--ink-foreground))",
+          transition:
+            "opacity 0.45s ease-out, transform 0.5s cubic-bezier(0.2, 1.35, 0.4, 1)",
+          willChange: "opacity, transform",
+        }}
+      >
+        <svg width="170" height="170" viewBox="0 0 200 200" role="presentation">
+          <defs>
+            <filter id="seal-ink" x="-5%" y="-5%" width="110%" height="110%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="n" seed="7" />
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" />
+            </filter>
+            <filter id="seal-speckle">
+              <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="2" seed="3" stitchTiles="stitch" />
+              <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.8 0 0 0 0" />
+            </filter>
+            <mask id="seal-mask">
+              <rect width="200" height="200" fill="white" />
+              <rect width="200" height="200" filter="url(#seal-speckle)" opacity="0.5" />
+            </mask>
+            <path id="seal-arc-top" d="M 24 100 A 76 76 0 0 1 176 100" fill="none" />
+            <path id="seal-arc-bottom" d="M 37 100 A 63 63 0 0 0 163 100" fill="none" />
+          </defs>
+          <g filter="url(#seal-ink)" mask="url(#seal-mask)" fill="currentColor" stroke="currentColor">
+            <circle cx="100" cy="100" r="96" fill="none" strokeWidth="2.5" />
+            <circle cx="100" cy="100" r="89" fill="none" strokeWidth="1" />
+            <circle cx="100" cy="100" r="57" fill="none" strokeWidth="1" />
+            <text
+              fontSize="11.5"
+              letterSpacing="2.5"
+              fontWeight="500"
+              stroke="none"
+              style={{ fontFamily: "var(--font-sans, Inter, sans-serif)" }}
+            >
+              <textPath href="#seal-arc-top" startOffset="50%" textAnchor="middle">
+                ESTUDIO JURÍDICO NOTARIAL
+              </textPath>
+            </text>
+            <text
+              fontSize="10"
+              letterSpacing="3"
+              stroke="none"
+              style={{ fontFamily: "var(--font-sans, Inter, sans-serif)" }}
+            >
+              <textPath href="#seal-arc-bottom" startOffset="50%" textAnchor="middle">
+                MALDONADO · URUGUAY
+              </textPath>
+            </text>
+            <circle cx="23" cy="100" r="2" stroke="none" />
+            <circle cx="177" cy="100" r="2" stroke="none" />
+            <text
+              x="100"
+              y="98"
+              textAnchor="middle"
+              fontSize="30"
+              fontStyle="italic"
+              stroke="none"
+              style={{ fontFamily: "var(--font-display, Georgia, serif)" }}
+            >
+              Trujillo
+            </text>
+            <line x1="76" y1="110" x2="124" y2="110" strokeWidth="0.75" />
+            <text
+              x="100"
+              y="126"
+              textAnchor="middle"
+              fontSize="9"
+              letterSpacing="2.5"
+              stroke="none"
+              style={{ fontFamily: "var(--font-sans, Inter, sans-serif)" }}
+            >
+              Y ASOCIADAS
+            </text>
+          </g>
+        </svg>
+      </div>
+    </div>
   );
 }

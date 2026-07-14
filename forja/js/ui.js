@@ -100,6 +100,7 @@ const FORJA_UI = (() => {
         <button class="btn btn--lg mt-m" id="startSession">EMPEZAR DEEP WORK →</button>
         <button class="btn btn--ghost mt-s" id="trainToggle">${today.trained ? "✓ ENTRENÉ HOY" : "MARCAR ENTRENAMIENTO"}</button>
         <button class="btn btn--ghost mt-s" id="openCoach">🧭 ENCONTRAR MI ACCIÓN DEL DÍA</button>
+        <button class="btn btn--ghost mt-s" id="openHacks">💎 HACKS</button>
       </div>`;
   }
 
@@ -153,6 +154,7 @@ const FORJA_UI = (() => {
     };
 
     document.getElementById("openCoach").onclick = () => openCoach();
+    document.getElementById("openHacks").onclick = () => openHacks();
   }
 
   function openCoach() {
@@ -250,6 +252,121 @@ const FORJA_UI = (() => {
         }
       }
     };
+
+    render();
+  }
+
+  // ===========================================================
+  //  HACKS: el contrato · reencuadre · racha de fe
+  // ===========================================================
+  const EL_CONTRATO = "Mi parte: encarnar hoy, todos los días, la versión de mí que vive en la realidad que elijo — sin fallarle. La parte de Dios: el cómo y el cuándo. La recompensa no está en el resultado: está en disfrutar el presente actuando de acuerdo a quien elegí ser.";
+
+  let _reencuadreTipo = "problema";
+
+  function openHacks() {
+    const ov = document.getElementById("overlay");
+
+    function render() {
+      const h = S().getHacks();
+
+      const reencuadreList = h.reencuadres.map((r, i) => `
+        <div class="hack-item">
+          <button class="pol__del" data-delreenc="${i}" title="Quitar">✕</button>
+          <div class="kicker hack-item__tag">${r.tipo === "problema" ? "PROBLEMA → BENDICIÓN" : "FALLO → APRENDIZAJE"} · ${esc(r.date)}</div>
+          <div class="hack-item__texto">${esc(r.texto)}</div>
+          <div class="hack-item__resp">${esc(r.respuesta)}</div>
+        </div>`).join("");
+
+      const siembraCards = h.siembras.map((s, i) => {
+        const dias = S().daysSince(s.since);
+        return `
+          <div class="trophy-card">
+            <button class="pol__del" data-delsiembra="${i}" title="Quitar">✕</button>
+            <div class="trophy-icon">🌱</div>
+            <div class="trophy-days">${dias}</div>
+            <div class="kicker trophy-lbl">${dias === 1 ? "DÍA SEMBRANDO" : "DÍAS SEMBRANDO"}</div>
+            <div class="trophy-text">${esc(s.texto)}</div>
+            <button class="btn btn--accent btn--mini" data-cosechar="${i}">🎉 Llegó el resultado</button>
+          </div>`;
+      }).join("");
+
+      const cosechaList = h.cosechas.slice(0, 5).map((c) => `
+        <div class="medal-card">
+          <div class="medal-icon">🌾</div>
+          <div class="medal-text">${esc(c.texto)} <span style="color:var(--ink-faint)">(${c.dias} días)</span>${c.resultado ? `<br><span style="color:var(--ink-dim)">${esc(c.resultado)}</span>` : ""}</div>
+          <div class="medal-date">${esc(c.date)}</div>
+        </div>`).join("");
+
+      ov.innerHTML = `
+        <div class="modal modal--day modal--hacks">
+          <div class="kicker kicker--accent">HACKS</div>
+
+          <div class="hack-contrato">${esc(EL_CONTRATO)}</div>
+
+          <div class="hack-section">
+            <div class="pol-block__label">REENCUADRE</div>
+            <div class="kicker pol-block__sub">TODO PROBLEMA ESCONDE UNA BENDICIÓN · TODO FALLO ES DATA</div>
+            <div class="hack-tipo-toggle">
+              <button class="chip ${_reencuadreTipo === "problema" ? "is-on" : ""}" id="tipoProblema">Problema</button>
+              <button class="chip ${_reencuadreTipo === "fallo" ? "is-on" : ""}" id="tipoFallo">Fallo</button>
+            </div>
+            <textarea class="field mt-s" id="reencTexto" rows="2" placeholder="${_reencuadreTipo === "problema" ? "¿Qué problema tenés hoy?" : "¿En qué fallaste?"}"></textarea>
+            <div class="kicker mt-s" style="color:var(--accent)">${_reencuadreTipo === "problema" ? "¿Qué oportunidad o bendición esconde esto?" : "¿Qué tenés que absorber de esto para no repetirlo?"}</div>
+            <textarea class="field mt-s" id="reencRespuesta" rows="3" placeholder="Escribí tu reencuadre..."></textarea>
+            <button class="btn btn--accent mt-s" id="saveReencuadre">GUARDAR REENCUADRE</button>
+            <div class="hack-list mt-m">${reencuadreList || `<p class="pol__empty">Todavía no guardaste ninguno.</p>`}</div>
+          </div>
+
+          <div class="hack-section">
+            <div class="pol-block__label">RACHA DE FE</div>
+            <div class="kicker pol-block__sub">DÍAS SOSTENIENDO LA ACCIÓN, AUNQUE TODAVÍA NO HAYA RESULTADO</div>
+            <div class="trophy-grid">${siembraCards || `<p class="pol__empty">Todavía no sembraste nada.</p>`}</div>
+            <div class="pol__add">
+              <input class="pol__input" id="addSiembra" placeholder="¿En qué estás sembrando sin ver resultado aún?" />
+              <button class="pol__addbtn" id="addSiembraBtn">+</button>
+            </div>
+            ${cosechaList ? `<div class="kicker mt-m" style="margin-bottom:10px">COSECHAS</div><div class="medal-grid">${cosechaList}</div>` : ""}
+          </div>
+
+          <button class="btn btn--ghost mt-m" id="hacksClose">Cerrar</button>
+        </div>`;
+      ov.hidden = false;
+
+      ov.querySelector("#hacksClose").onclick = () => { ov.hidden = true; ov.innerHTML = ""; };
+      ov.querySelector("#tipoProblema").onclick = () => { _reencuadreTipo = "problema"; render(); };
+      ov.querySelector("#tipoFallo").onclick = () => { _reencuadreTipo = "fallo"; render(); };
+
+      ov.querySelector("#saveReencuadre").onclick = () => {
+        const texto = ov.querySelector("#reencTexto").value.trim();
+        const respuesta = ov.querySelector("#reencRespuesta").value.trim();
+        if (!texto || !respuesta) return;
+        S().addReencuadre(_reencuadreTipo, texto, respuesta);
+        render();
+      };
+      ov.querySelectorAll("[data-delreenc]").forEach((b) => {
+        b.onclick = () => { S().removeReencuadre(Number(b.dataset.delreenc)); render(); };
+      });
+
+      const addSiembraBtn = ov.querySelector("#addSiembraBtn");
+      if (addSiembraBtn) addSiembraBtn.onclick = () => {
+        const inp = ov.querySelector("#addSiembra");
+        const v = inp.value.trim();
+        if (!v) return;
+        S().addSiembra(v);
+        render();
+      };
+      ov.querySelectorAll("[data-delsiembra]").forEach((b) => {
+        b.onclick = () => { S().removeSiembra(Number(b.dataset.delsiembra)); render(); };
+      });
+      ov.querySelectorAll("[data-cosechar]").forEach((b) => {
+        b.onclick = () => {
+          const i = Number(b.dataset.cosechar);
+          const resultado = prompt("¿Qué resultado llegó?") || "";
+          S().cosecharSiembra(i, resultado);
+          render();
+        };
+      });
+    }
 
     render();
   }
@@ -463,6 +580,7 @@ const FORJA_UI = (() => {
       if (isFuture) cls += " is-future";
       if (rec.note && rec.note.trim()) cls += " has-note";
       if (rec.deadline && rec.deadline.trim()) cls += " has-deadline";
+      if (n === D().midpointDay) cls += " is-midpoint";
       const inner = (rec.deadline && rec.deadline.trim()) ? `<span class="cell__fire">⚡</span>${n}` : String(n);
       cells += `<button class="${cls}" data-n="${n}">${inner}</button>`;
     }
@@ -471,7 +589,7 @@ const FORJA_UI = (() => {
       <section class="screen">
         <div class="screen__head">
           <div class="kicker kicker--accent">XP FARMING · 5 AÑOS EN 3 MESES</div>
-          <h1 class="screen__title">90 DÍAS</h1>
+          <h1 class="screen__title">${D().totalDays} DÍAS</h1>
           <p class="screen__sub">Cada cuadro lleno es un día que te forjaste. Rojo pleno = deep work + entrenamiento. El éxito es acumular experiencias y fracasos en el menor tiempo posible.</p>
         </div>
 
@@ -489,6 +607,7 @@ const FORJA_UI = (() => {
           <div class="legend__item"><span class="legend__swatch" style="background:var(--accent-deep);border-color:var(--accent-deep)"></span> Parcial</div>
           <div class="legend__item"><span class="legend__swatch"></span> Pendiente</div>
           <div class="legend__item"><span class="legend__swatch legend__swatch--fire">⚡</span> Fecha límite</div>
+          <div class="legend__item"><span class="legend__swatch legend__swatch--fire">🎯</span> Mitad de camino</div>
         </div>
 
         <div id="roadmap-mount" class="mt-m"></div>
@@ -566,7 +685,7 @@ ${c.identity}
 Lo que haría mi yo ideal:
 ${ideal}
 
-Acá están mis bitácoras de los días ${start} al ${end} de mi reinvención de 90 días:
+Acá están mis bitácoras de los días ${start} al ${end} de mi reinvención de ${D().totalDays} días:
 
 ${dayLines}
 
@@ -656,7 +775,7 @@ Hablame fuerte, como alguien que quiere que me convierta en esa versión.`;
 
     mount.innerHTML = `
       <div class="roadmap">
-        <div class="roadmap__mantra">Durante estos 90 días, lo único que tengo que hacer es sentarme en la computadora y ganar dinero.</div>
+        <div class="roadmap__mantra">Durante estos ${D().totalDays} días, lo único que tengo que hacer es sentarme en la computadora y ganar dinero.</div>
         <div class="kicker roadmap__kicker">TU MAPA DE RUTA · DÓNDE ESTÁ EL FOCO</div>
         <div class="roadmap__current">
           <div class="kicker roadmap__idx">HITO ${cur + 1} DE ${ms.length}</div>
@@ -698,9 +817,18 @@ Hablame fuerte, como alguien que quiere que me convierta en esa versión.`;
       return `${dias[d.getDay()]} ${d.getDate()} ${meses[d.getMonth()]} ${d.getFullYear()}`;
     })();
 
+    const isMidpoint = n === D().midpointDay;
+    const midpointBlock = isMidpoint ? `
+        <div class="midpoint-wrap">
+          <div class="kicker midpoint-wrap__label">🎯 MITAD DE CAMINO · DÍA ${n} DE ${D().totalDays}</div>
+          <p class="midpoint-wrap__q">¿Voy bien hacia mi visión, o tengo que ajustar el rumbo?</p>
+          <textarea class="field" id="dayMidpoint" rows="4" placeholder="Sé honesto: ¿qué viene funcionando y qué tengo que cambiar para la segunda mitad?">${esc(rec.midpoint || "")}</textarea>
+        </div>` : "";
+
     ov.innerHTML = `
       <div class="modal modal--day">
         <div class="kicker kicker--accent">DÍA ${n} DE ${D().totalDays} · ${dateLabel}</div>
+        ${midpointBlock}
         <div class="deadline-wrap">
           <label class="kicker deadline-wrap__label" for="dayDeadline">⚡ FECHA LÍMITE · COMBUSTIBLE INTERNO</label>
           <input class="field deadline-wrap__input" id="dayDeadline" type="text"
@@ -747,10 +875,12 @@ Hablame fuerte, como alguien que quiere que me convierta en esa versión.`;
     const close = () => { ov.hidden = true; ov.innerHTML = ""; };
     ov.querySelector("#closeDay").onclick = close;
     ov.querySelector("#saveDay").onclick = () => {
+      const midpointInput = ov.querySelector("#dayMidpoint");
       S().setDay({
         note: ov.querySelector("#dayNote").value.trim(),
         deadline: ov.querySelector("#dayDeadline").value.trim(),
-        deepWork: deep, trained: train, version: version
+        deepWork: deep, trained: train, version: version,
+        midpoint: midpointInput ? midpointInput.value.trim() : (rec.midpoint || "")
       }, dk);
       close();
       renderDias();

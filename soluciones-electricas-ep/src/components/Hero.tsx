@@ -47,9 +47,9 @@ export function Hero() {
               className="text-lg sm:text-xl text-muted leading-relaxed max-w-xl font-light"
             >
               <span className="relative inline-block text-ink z-10 font-extrabold mr-1">
-                <span className="relative z-10">Soluciones Eléctricas EP</span>
+                <span className="relative z-10">Emiliano Puglisi</span>
                 <span className="absolute left-0 right-0 bottom-[2px] h-[0.25em] bg-gold-soft rounded-sm -z-10" />
-              </span> realiza trabajos residenciales, comerciales y obras con total seguridad. <b>Respuestas rápidas, diagnósticos precisos y presupuestos claros sin compromiso.</b>
+              </span> realiza trabajos residenciales, comerciales, obras y <b>electricidad automotriz (diagnóstico de cortocircuitos y fallas en vehículos)</b> con total seguridad. <b>Respuestas rápidas y presupuestos claros sin compromiso.</b>
             </motion.p>
 
             {/* Buttons */}
@@ -105,8 +105,8 @@ export function Hero() {
               {/* Photo Frame */}
               <div className="relative aspect-[1/1.05] rounded-3xl overflow-hidden bg-bg-tint border border-border-subtle shadow-2xl">
                 <img
-                  src="./img/custom_hero.jpg"
-                  alt="Retrato de Soluciones Eléctricas EP en Maldonado"
+                  src="./img/custom_hero.png"
+                  alt="Retrato de Soluciones Eléctricas EP en Canelones"
                   className="w-full h-full object-cover object-center"
                 />
               </div>

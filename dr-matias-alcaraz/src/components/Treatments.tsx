@@ -5,7 +5,7 @@ import { TREATMENT_CATEGORIES, WHATSAPP_NUMBER_1 } from '../data';
 export default function Treatments() {
   const createTreatmentUrl = (treatmentName: string) =>
     `https://wa.me/${WHATSAPP_NUMBER_1}?text=${encodeURIComponent(
-      `Hola Dra. Adriana, mi nombre es ... Me gustaría consultar por ${treatmentName}. Vi la información en la web y quisiera saber si este tratamiento es adecuado para mi caso. ¿Podemos coordinar una evaluación?`
+      `Hola Dr. Matias Alcaraz, mi nombre es ... Me gustaria consultar por ${treatmentName}. Vi la informacion en la web y quisiera saber si este tratamiento es adecuado para mi caso. Podemos coordinar una evaluacion?`
     )}`;
 
   return (

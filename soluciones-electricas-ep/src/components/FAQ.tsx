@@ -23,6 +23,10 @@ export function FAQ() {
     {
       q: "¿Qué información debo enviar para solicitar un servicio?",
       a: "Podés escribirnos por WhatsApp comentando qué necesitás. Si es una reforma o falla, nos ayuda mucho que envíes fotos del tablero eléctrico, del artefacto o del área a trabajar."
+    },
+    {
+      q: "¿Realizan diagnósticos y trabajos de electricidad en vehículos?",
+      a: "Sí, realizamos trabajos de electricidad automotriz y electromecánica. Detectamos fugas de corriente en la batería, diagnosticamos cortocircuitos, reparamos fusileras, y hacemos instalaciones de luces LED y accesorios en automóviles y camionetas."
     }
   ];
 

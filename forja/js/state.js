@@ -27,7 +27,8 @@ const FORJA_STATE = (() => {
     lastOpen: null,
     morningDoneOn: null,       // fecha en que ya hizo la activación matutina
     roadmap: { current: 0, milestones: null },
-    cycles: {}                 // bitácora por ciclos: { "1": { devolucion, savedOn }, ... }
+    cycles: {},                // bitácora por ciclos: { "1": { devolucion, savedOn }, ... }
+    hacks: null                 // reencuadres + rachas de fe (getHacks lo siembra)
   };
 
   let _state = load();
@@ -83,7 +84,7 @@ const FORJA_STATE = (() => {
 
   // ----- registro de días -----
   function getDay(dateKey = todayKey()) {
-    return _state.days[dateKey] || { deepWork: false, trained: false, selfTalk: false, task: "", taskMinutes: 0, doneMinutes: 0, note: "", deepWorkNote: "", version: null };
+    return _state.days[dateKey] || { deepWork: false, trained: false, selfTalk: false, task: "", taskMinutes: 0, doneMinutes: 0, note: "", deepWorkNote: "", version: null, midpoint: "" };
   }
 
   function setDay(patch, dateKey = todayKey()) {
@@ -315,6 +316,49 @@ const FORJA_STATE = (() => {
     setPolaris({ siguiente, construi });
   }
 
+  // ----- HACKS: reencuadre de problemas/fallos + racha de fe -----
+  // reencuadres: [{ tipo: 'problema'|'fallo', texto, respuesta, date }]
+  // siembras:    [{ texto, since }]           racha de fe en días, activa
+  // cosechas:    [{ texto, dias, date }]      historial cuando llega el resultado
+  function getHacks() {
+    if (!_state.hacks || typeof _state.hacks !== "object") {
+      _state.hacks = { reencuadres: [], siembras: [], cosechas: [] };
+      save();
+    }
+    if (!Array.isArray(_state.hacks.reencuadres)) _state.hacks.reencuadres = [];
+    if (!Array.isArray(_state.hacks.siembras)) _state.hacks.siembras = [];
+    if (!Array.isArray(_state.hacks.cosechas)) _state.hacks.cosechas = [];
+    return _state.hacks;
+  }
+  function addReencuadre(tipo, texto, respuesta) {
+    const h = getHacks();
+    h.reencuadres.unshift({ tipo, texto, respuesta, date: todayKey() });
+    save();
+  }
+  function removeReencuadre(i) {
+    getHacks().reencuadres.splice(i, 1);
+    save();
+  }
+  function addSiembra(texto) {
+    const h = getHacks();
+    h.siembras.push({ texto, since: todayKey() });
+    save();
+  }
+  function removeSiembra(i) {
+    getHacks().siembras.splice(i, 1);
+    save();
+  }
+  // El resultado llegó: archiva la espera en cosechas y saca la siembra de la lista activa.
+  function cosecharSiembra(i, resultadoTexto) {
+    const h = getHacks();
+    const item = h.siembras[i];
+    if (!item) return;
+    const dias = daysSince(item.since);
+    h.cosechas.unshift({ texto: item.texto, resultado: resultadoTexto || "", dias, date: todayKey() });
+    h.siembras.splice(i, 1);
+    save();
+  }
+
   // ----- SINCRONICIDADES: señales que resuenan -----
   function getSynchronicities() {
     if (!_state.synchronicities) _state.synchronicities = [];
@@ -426,6 +470,7 @@ const FORJA_STATE = (() => {
     getDecision, setDecision,
     getPolaris, setPolaris, addPolarisItem, removePolarisItem,
     recaerPolaris, setPolarisSince, setPolarisPct, setPolarisAccion, setPolarisCounter, setPolarisTargetUnit, completeSiguienteActual, daysSince,
+    getHacks, addReencuadre, removeReencuadre, addSiembra, removeSiembra, cosecharSiembra,
     getSynchronicities, addSynchronicity, removeSynchronicity,
     getRoadmap, setMilestoneDate, completeCurrentMilestone, undoLastMilestone,
     cycleCount, cycleBounds, cycleUnlocked, cycleDays, getCycles, getCycle, saveCycleDevolucion, removeCycleDevolucion,

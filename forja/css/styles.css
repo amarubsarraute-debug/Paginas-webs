@@ -319,6 +319,19 @@ body {
 .deadline-wrap__label { display: block; margin-bottom: 7px; color: var(--accent); }
 .deadline-wrap__input { width: 100%; }
 
+/* 🎯 mitad de camino: día de chequeo de rumbo */
+.cell.is-midpoint { outline: 2px dashed var(--accent-bright); outline-offset: 1px; }
+.cell.is-midpoint::before {
+  content: "🎯"; position: absolute; bottom: 1px; right: 2px;
+  font-size: 7px; line-height: 1; pointer-events: none;
+}
+.midpoint-wrap {
+  margin: 4px 0 20px; padding: 14px 16px;
+  background: var(--surface); border: 1.5px dashed var(--accent-bright); border-radius: var(--r);
+}
+.midpoint-wrap__label { color: var(--accent-bright); margin-bottom: 8px; }
+.midpoint-wrap__q { font-size: 14.5px; line-height: 1.5; color: var(--ink); margin-bottom: 10px; }
+
 /* leyenda: swatch para ⚡ */
 .legend__swatch--fire {
   background: transparent; border-color: transparent;
@@ -624,6 +637,8 @@ body {
 }
 /* v0 es vertical (tu foto de campeón): anclar arriba para no cortar la cara */
 #vslot-0 .vslot__img { object-position: center top; }
+/* v1: mostrar completa (logo arriba + precio abajo), sin recortar nada */
+#vslot-1 .vslot__img { object-fit: contain; object-position: center; }
 .vslot__del {
   position: absolute; top: 10px; right: 10px;
   background: rgba(0,0,0,.65); backdrop-filter: blur(4px);
@@ -823,6 +838,23 @@ body {
   .pol__add--siguiente .pol__input { flex: 1 1 100%; }
   .pol__add--siguiente .pol__input--num, .pol__add--siguiente .pol__input--unit { flex: 1 1 45%; }
 }
+
+/* ---------- HACKS ---------- */
+.modal--hacks { max-width: 560px; text-align: left; max-height: 84vh; overflow-y: auto; }
+.hack-contrato {
+  font-family: var(--font-display); font-size: 16px; font-weight: 600; line-height: 1.55;
+  color: var(--ink); border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; margin: 16px 0 30px;
+}
+.hack-section { margin-bottom: 30px; }
+.hack-tipo-toggle { display: flex; gap: 8px; margin-top: 10px; }
+.hack-list { display: flex; flex-direction: column; gap: 10px; }
+.hack-item {
+  position: relative; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-sm); padding: 12px 30px 12px 14px;
+}
+.hack-item__tag { color: var(--accent); margin-bottom: 6px; }
+.hack-item__texto { font-size: 13.5px; color: var(--ink-dim); margin-bottom: 6px; }
+.hack-item__resp { font-size: 14px; color: var(--ink); line-height: 1.5; }
 
 /* ---------- COACH ---------- */
 .modal--coach { max-width: 480px; text-align: left; }

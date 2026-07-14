@@ -45,7 +45,7 @@ export default function Positioning() {
             transition={{ delay: 0.1 }}
             className="text-lg text-brand-text/80 leading-relaxed"
           >
-            Cada rostro, cada piel y cada etapa de la vida necesita una mirada distinta. Por eso, el enfoque de la Dra. Adriana Galleno se basa en evaluar, personalizar y acompañar cada tratamiento con criterio médico, buscando resultados sutiles, armónicos y naturales.
+            Cada rostro, cada piel y cada etapa necesita una mirada distinta. Por eso, el enfoque del Dr. Matias Alcaraz se basa en evaluar, personalizar y acompañar cada tratamiento con criterio medico, buscando resultados sutiles, armonicos y naturales.
           </motion.p>
           <div className="mt-8 border-l-2 border-brand-gold pl-5 text-brand-muted">
             No se trata de cambiar tu rostro. Se trata de verte más descansada, luminosa y armónica.

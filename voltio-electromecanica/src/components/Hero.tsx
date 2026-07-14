@@ -104,8 +104,8 @@ export function Hero() {
               {/* Photo Frame */}
               <div className="relative aspect-[3/4] rounded-3xl overflow-hidden bg-bg-tint border border-border-subtle shadow-2xl">
                 <img
-                  src="./img/hero-tablero-planta-agua-voltio.jpg"
-                  alt="Tablero de comando industrial armado por Voltio Electromecánica"
+                  src="./img/hero-electricista-panel.png"
+                  alt="Técnico electricista trabajando en panel eléctrico industrial - Voltio"
                   className="w-full h-full object-cover object-center"
                 />
               </div>

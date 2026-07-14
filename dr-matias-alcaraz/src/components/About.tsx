@@ -33,7 +33,7 @@ export default function About() {
             className="order-1 lg:order-2"
           >
             <h2 className="mb-6 font-serif text-4xl font-semibold text-brand-sand-light md:text-6xl">
-              Dra. Adriana Galleno
+              Dr. Matias Alcaraz
             </h2>
 
             <div className="space-y-5 text-base leading-relaxed text-brand-sand-light/76 md:text-lg">

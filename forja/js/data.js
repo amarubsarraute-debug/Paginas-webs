@@ -5,7 +5,8 @@
    ============================================================ */
 
 const FORJA_NAME = "FORJA"; // cambiá esto si querés otro nombre
-const FORJA_TOTAL_DAYS = 90;
+const FORJA_TOTAL_DAYS = 180;
+const FORJA_MIDPOINT_DAY = 90; // día de chequeo de mitad de camino
 
 // Identidad: la frase ancla que se ve al abrir
 const SEED_IDENTITY =
@@ -157,6 +158,7 @@ const SEED_POLARIS = {
 window.FORJA_DATA = {
   name: FORJA_NAME,
   totalDays: FORJA_TOTAL_DAYS,
+  midpointDay: FORJA_MIDPOINT_DAY,
   identity: SEED_IDENTITY,
   identityLong: SEED_IDENTITY_LONG,
   ideal: SEED_IDEAL,

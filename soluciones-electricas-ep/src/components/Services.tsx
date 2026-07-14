@@ -9,28 +9,35 @@ export function Services() {
       title: "Instalaciones y Obras",
       description: "Planificación y ejecución de instalaciones eléctricas completas para casas, apartamentos, oficinas y obras comerciales. Cableados seguros y duraderos desde el primer día.",
       tags: ["Obras nuevas", "Locales comerciales", "Oficinas", "Acometidas"],
-      waMessage: "Hola Silvera Electricidad, me gustaría consultar por *Instalaciones y Obras*."
+      waMessage: "Hola Soluciones Eléctricas EP, me gustaría consultar por *Instalaciones y Obras*."
     },
     {
       index: "02",
       title: "Tableros y Habilitación UTE",
       description: "Armado, revisión y normalización de tableros eléctricos. Firma técnica autorizada ante UTE hasta 50 kW para habilitaciones comerciales e industriales sin demoras.",
       tags: ["Firma UTE", "Tableros técnicos", "Trámites", "Habilitaciones"],
-      waMessage: "Hola Silvera Electricidad, necesito información sobre *Tableros y Firma de UTE*."
+      waMessage: "Hola Soluciones Eléctricas EP, necesito información sobre *Tableros y Firma de UTE*."
     },
     {
       index: "03",
       title: "Iluminación y Reformas",
       description: "Actualización de instalaciones antiguas a estándares modernos. Diseño e instalación de sistemas de iluminación LED para interiores, fachadas y exteriores.",
       tags: ["Iluminación LED", "Reformas eléctricas", "Exteriores", "Puesta a tierra"],
-      waMessage: "Hola Silvera Electricidad, quiero cotizar un trabajo de *Iluminación y Reformas*."
+      waMessage: "Hola Soluciones Eléctricas EP, quiero cotizar un trabajo de *Iluminación y Reformas*."
     },
     {
       index: "04",
       title: "Mantenimiento y Reparación",
       description: "Solución rápida a cortes de luz, sobrecargas, térmicas que saltan y fallas eléctricas generales. Diagnósticos precisos para prevenir problemas futuros.",
       tags: ["Cortocircuitos", "Térmicas", "Fugas", "Urgencias"],
-      waMessage: "Hola Silvera Electricidad, necesito un servicio de *Mantenimiento y Reparación* por una falla."
+      waMessage: "Hola Soluciones Eléctricas EP, necesito un servicio de *Mantenimiento y Reparación* por una falla."
+    },
+    {
+      index: "05",
+      title: "Electricidad Automotriz",
+      description: "Detección de fugas de corriente, reparación de cortocircuitos, cableados, fusileras, iluminación LED auxiliar e instalación de accesorios para automóviles y camionetas.",
+      tags: ["Diagnóstico vehicular", "Cortocircuitos en autos", "Fusileras", "Luces LED auto"],
+      waMessage: "Hola Soluciones Eléctricas EP, me gustaría consultar por *Electricidad Automotriz*."
     }
   ];
 

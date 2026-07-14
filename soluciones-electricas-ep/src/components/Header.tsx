@@ -9,13 +9,15 @@ export function Header() {
         <div className="h-16 flex items-center justify-between">
           
           {/* Logo / Brand */}
-          <a href="#" className="flex items-center gap-2 shrink-0">
-            <div className="flex items-center gap-2">
-            <Zap className="w-5 h-5 text-gold fill-gold shrink-0" />
-            <span className="text-lg font-extrabold text-ink tracking-tight font-display font-sans">
-              Soluciones<b>.</b>
+          <a href="#" className="flex items-center gap-3 shrink-0">
+            <img 
+              src="./img/logo_emiliano_puglisi.png" 
+              alt="Emiliano Puglisi - Servicio de Electricidad" 
+              className="h-10 w-auto rounded-lg object-contain"
+            />
+            <span className="text-sm font-extrabold text-ink tracking-tight font-sans hidden sm:inline-block">
+              Emiliano Puglisi
             </span>
-          </div>
           </a>
 
           {/* Navigation & Action */}

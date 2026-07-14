@@ -9,7 +9,7 @@ import { Ticker } from './components/Ticker';
 import { Problem } from './components/Problem';
 import { Services } from './components/Services';
 import { ClientTypes } from './components/ClientTypes';
-
+import { Clients } from './components/Clients';
 import { Differentiator } from './components/Differentiator';
 
 import { Process } from './components/Process';
@@ -32,6 +32,7 @@ export default function App() {
       <ClientTypes />
       
       <Differentiator />
+      <Clients />
       
       <Process />
       <Trust />

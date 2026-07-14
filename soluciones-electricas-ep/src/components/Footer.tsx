@@ -17,13 +17,18 @@ export function Footer() {
           
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-navy rounded-xl flex items-center justify-center text-gold shadow-md">
-                <Zap className="w-6 h-6" />
-              </div>
-              <span className="text-2xl font-extrabold text-ink tracking-tight font-display">Soluciones Eléctricas EP<b>.</b><small className="block text-[10px] font-mono font-bold uppercase tracking-wider text-muted mt-1">Técnico Electricista</small></span>
+              <img 
+                src="./img/logo_emiliano_puglisi.png" 
+                alt="Emiliano Puglisi - Servicio de Electricidad" 
+                className="h-12 w-auto rounded-xl object-contain shadow-md"
+              />
+              <span className="text-xl font-extrabold text-ink tracking-tight font-sans">
+                Emiliano Puglisi
+                <small className="block text-[10px] font-mono font-bold uppercase tracking-wider text-muted mt-1">Servicio de Electricidad</small>
+              </span>
             </div>
             <p className="text-muted leading-relaxed font-light max-w-sm text-sm sm:text-base">
-              Instalaciones, reformas y gestiones ante UTE en Maldonado y Punta del Este. Respaldamos cada trabajo con seguridad y prolijidad técnica.
+              Instalaciones, reformas y gestiones ante UTE en Canelones y Costa de Oro. Respaldamos cada trabajo con seguridad y prolijidad técnica.
             </p>
           </div>
 
@@ -88,7 +93,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-muted">
           <p className="">
-            &copy; {new Date().getFullYear()} Soluciones electricas EP. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Emiliano Puglisi. Todos los derechos reservados.
           </p>
           <div className="font-semibold text-ink uppercase tracking-wider">
             Instalaciones eléctricas residenciales y comerciales

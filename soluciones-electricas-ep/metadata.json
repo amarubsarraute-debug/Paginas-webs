@@ -1,6 +1,6 @@
 {
-  "name": "Soluciones electricas EP",
-  "description": "Landing page para Soluciones electricas EP en Canelones.",
+  "name": "Emiliano Puglisi - Servicio de Electricidad",
+  "description": "Landing page para Emiliano Puglisi en Canelones.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
