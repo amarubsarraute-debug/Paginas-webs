@@ -455,7 +455,20 @@ async function processProject(project) {
 }
 
 async function main() {
-  for (const project of projects) {
+  const filterArg = process.argv[2] ? process.argv[2].toLowerCase() : null;
+  const projectsToProcess = filterArg 
+    ? projects.filter(p => p.dirName.toLowerCase().includes(filterArg) || p.name.toLowerCase().includes(filterArg))
+    : projects;
+
+  if (filterArg) {
+    if (projectsToProcess.length === 0) {
+      console.warn(`⚠ No se encontró ningún proyecto que coincida con "${filterArg}". Se procesarán todos.`);
+    } else {
+      console.log(`🎯 Filtrando para procesar únicamente: ${projectsToProcess.map(p => p.name).join(', ')}`);
+    }
+  }
+
+  for (const project of (projectsToProcess.length ? projectsToProcess : projects)) {
     try {
       await processProject(project);
     } catch (e) {
