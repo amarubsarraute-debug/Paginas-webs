@@ -13,6 +13,42 @@ import { processSteps, team, testimonials, faqs } from "@/data/content";
 
 /* ---------------- Process ---------------- */
 export function Process() {
+  const containerRef = useRef<HTMLOListElement>(null);
+  const [scrollPercent, setScrollPercent] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const el = containerRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Inicia el rellenado cuando el tope de los pasos entra al 70% de la pantalla
+      // Termina cuando la base de los pasos llega al 30% de la pantalla
+      const startOffset = windowHeight * 0.7;
+      const endOffset = windowHeight * 0.3;
+      
+      const elementTop = rect.top;
+      const elementHeight = rect.height;
+      
+      const scrolled = startOffset - elementTop;
+      const range = elementHeight - (startOffset - endOffset);
+      
+      let percent = (scrolled / range) * 100;
+      percent = Math.max(0, Math.min(100, percent));
+      setScrollPercent(percent);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
   return (
     <section id="proceso" className="container-page py-20 md:py-28">
       <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
@@ -31,20 +67,33 @@ export function Process() {
           </Button>
         </div>
 
-        <ol className="relative">
-          {processSteps.map((s, i) => (
-            <ProcessStep key={s.n} step={s} isLast={i === processSteps.length - 1} />
-          ))}
-        </ol>
+        <div className="relative">
+          {/* Línea de fondo inactiva continua */}
+          <div className="absolute left-6 md:left-8 top-6 bottom-6 w-px bg-border -translate-x-1/2" />
+          
+          {/* Línea de progreso que se rellena con el scroll */}
+          <div 
+            className="absolute left-6 md:left-8 top-6 w-px bg-gold -translate-x-1/2 transition-all duration-150 ease-out origin-top"
+            style={{ 
+              height: `calc(${scrollPercent}% - 12px)`,
+              maxHeight: 'calc(100% - 24px)'
+            }}
+          />
+
+          <ol ref={containerRef} className="relative z-10">
+            {processSteps.map((s, i) => (
+              <ProcessStep key={s.n} step={s} isLast={i === processSteps.length - 1} />
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );
 }
 
 /**
- * Paso del proceso que se "enciende" en bordó suave al entrar en viewport
- * (IntersectionObserver vainilla — sin lib de motion). Una vez encendido,
- * queda encendido: leído en scroll se ve como un progreso que avanza.
+ * Paso del proceso que se activa sutilmente al entrar en viewport.
+ * Ya no contiene líneas individuales, sino que se enlaza a la línea de fondo continua.
  */
 function ProcessStep({
   step,
@@ -74,7 +123,7 @@ function ProcessStep({
           }
         }
       },
-      { rootMargin: "0px 0px -40% 0px", threshold: 0 },
+      { rootMargin: "0px 0px -35% 0px", threshold: 0 },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -85,24 +134,14 @@ function ProcessStep({
       <div className="flex flex-col items-center">
         <span
           className={cn(
-            "grid h-12 w-12 shrink-0 place-items-center rounded-full border font-display text-base transition-all duration-700",
+            "grid h-12 w-12 shrink-0 place-items-center rounded-full border font-display text-base transition-all duration-500 z-10",
             active
-              ? "border-gold bg-gold/10 text-gold shadow-[0_0_26px] shadow-gold/30"
+              ? "border-gold bg-gold text-zinc-950 font-bold"
               : "border-border bg-background text-muted-foreground",
           )}
         >
           {step.n}
         </span>
-        {!isLast && (
-          <span className="relative mt-2 w-px flex-1 overflow-hidden bg-border">
-            <span
-              className={cn(
-                "absolute inset-x-0 top-0 bg-gradient-to-b from-gold/70 to-gold/10 transition-[height] duration-700 ease-out",
-                active ? "h-full" : "h-0",
-              )}
-            />
-          </span>
-        )}
       </div>
       <div className="pt-2.5">
         <h3
