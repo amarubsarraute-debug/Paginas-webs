@@ -5,16 +5,17 @@
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", Georgia, ui-serif, serif;
 
-  --color-canvas: #f4e9df;
-  --color-paper: #fffdf9;
-  --color-warm: #f7eee7;
-  --color-blush: #f0d8cc;
-  --color-sand: #e4c5b7;
-  --color-sage: #d6dfd1;
-  --color-clinic-line: #eadbd1;
-  --color-espresso: #422416;
-  --color-clay: #945235;
-  --color-cocoa: #765746;
+  --color-canvas: #edf3f3;
+  --color-paper: #fcfefe;
+  --color-warm: #e6efef;
+  --color-blush: #d4e6e8;
+  --color-sand: #bdd8db;
+  --color-sage: #d8e6e2;
+  --color-clinic-line: #d7e3e4;
+  --color-espresso: #0f2a2e;
+  --color-clay: #3e8c96;
+  --color-cocoa: #46666c;
+  --color-gold: #c9a45c;
 }
 
 * {
@@ -29,11 +30,11 @@ body {
   margin: 0;
   min-width: 320px;
   font-family: var(--font-sans);
-  color: #422416;
+  color: #0f2a2e;
   background:
-    radial-gradient(circle at 12% 4%, rgba(255, 253, 249, 0.88), transparent 34rem),
-    radial-gradient(circle at 88% 10%, rgba(214, 223, 209, 0.48), transparent 30rem),
-    #f4e9df;
+    radial-gradient(circle at 12% 4%, rgba(252, 254, 254, 0.88), transparent 34rem),
+    radial-gradient(circle at 88% 10%, rgba(189, 216, 219, 0.42), transparent 30rem),
+    #edf3f3;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
   letter-spacing: 0;
@@ -71,20 +72,37 @@ iframe {
 }
 
 ::selection {
-  color: #fffdf9;
-  background: #945235;
+  color: #fcfefe;
+  background: #3e8c96;
 }
 
 :focus-visible {
-  outline: 2px solid #945235;
+  outline: 2px solid #3e8c96;
   outline-offset: 4px;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll 32s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
 }
 
 .subtle-noise {
   background-image:
-    linear-gradient(rgba(66, 36, 22, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(66, 36, 22, 0.035) 1px, transparent 1px),
-    radial-gradient(circle at 50% 0%, rgba(148, 82, 53, 0.08), transparent 32rem);
+    linear-gradient(rgba(15, 42, 46, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 42, 46, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, rgba(62, 140, 150, 0.08), transparent 32rem);
   background-size: 46px 46px, 46px 46px, auto;
 }
 
@@ -102,7 +120,7 @@ iframe {
 @media (max-width: 767px) {
   body {
     background:
-      radial-gradient(circle at 50% 0%, rgba(255, 253, 249, 0.86), transparent 24rem),
-      #f4e9df;
+      radial-gradient(circle at 50% 0%, rgba(252, 254, 254, 0.86), transparent 24rem),
+      #edf3f3;
   }
 }

@@ -271,6 +271,16 @@ const projects = [
     outputDir: path.join(ROOT, 'voltio-electromecanica'),
     defaultPort: 4198,
     extraFiles: ['robots.txt']
+  },
+  {
+    name: 'Dr. Matías Alcaraz',
+    dirName: 'dr-matias-alcaraz',
+    projectPath: path.join(ROOT, 'dr-matias-alcaraz'),
+    buildDir: path.join(ROOT, 'dr-matias-alcaraz', 'dist'),
+    runDir: path.join(ROOT, 'dr-matias-alcaraz'),
+    outputDir: path.join(ROOT, 'dr-matias-alcaraz'),
+    defaultPort: 4199,
+    extraFiles: []
   }
 ];
 

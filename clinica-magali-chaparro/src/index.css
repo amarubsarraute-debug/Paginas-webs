@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, ui-serif, serif;
+
+  --color-canvas: #eef2ef;
+  --color-paper: #fcfdfb;
+  --color-warm: #e7eee9;
+  --color-blush: #dde8e0;
+  --color-sand: #c3d6c8;
+  --color-sage: #d5e3d8;
+  --color-clinic-line: #d6e0d8;
+  --color-espresso: #1c342b;
+  --color-clay: #4c7d63;
+  --color-cocoa: #4f6559;
+  --color-gold: #c3a15a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-sans);
+  color: #1c342b;
+  background:
+    radial-gradient(circle at 12% 4%, rgba(252, 253, 251, 0.88), transparent 34rem),
+    radial-gradient(circle at 88% 10%, rgba(195, 214, 200, 0.42), transparent 30rem),
+    #eef2ef;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  letter-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button,
+summary,
+span {
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+summary,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+video,
+iframe {
+  display: block;
+}
+
+::selection {
+  color: #fcfdfb;
+  background: #4c7d63;
+}
+
+:focus-visible {
+  outline: 2px solid #4c7d63;
+  outline-offset: 4px;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll 32s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.subtle-noise {
+  background-image:
+    linear-gradient(rgba(28, 52, 43, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 52, 43, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, rgba(76, 125, 99, 0.08), transparent 32rem);
+  background-size: 46px 46px, 46px 46px, auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(252, 253, 251, 0.86), transparent 24rem),
+      #eef2ef;
+  }
+}

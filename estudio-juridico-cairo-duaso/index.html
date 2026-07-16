@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
-  <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="styles.css?v=20260713a" />
+  <script>document.documentElement.classList.add('js', 'motion-armed');</script>
+  <link rel="stylesheet" href="styles.css?v=20260712i" />
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -66,17 +66,30 @@
   </header>
 
   <main id="contenido">
-    <section class="hero" id="inicio">
-      <img class="hero-image" src="assets/img/hero-justice.webp" alt="Estatua de la Justicia en una biblioteca jurídica" width="1700" height="945" />
+    <section class="hero hero-cinematic hero-has-video" id="inicio" data-hero>
+      <div class="hero-bg" data-hero-bg aria-hidden="true">
+        <video class="hero-video" data-hero-video autoplay muted loop playsinline preload="auto" poster="assets/img/hero-justice.webp">
+          <source src="assets/video/cairo-duaso-hero-cinematic.mp4" type="video/mp4" />
+        </video>
+        <img class="hero-image" src="assets/img/hero-justice.webp" alt="" width="1700" height="945" />
+      </div>
+      <div class="hero-statue" data-hero-statue aria-hidden="true">
+        <img class="hero-statue-image" src="assets/img/hero-justice.webp" alt="" width="1700" height="945" />
+        <span class="hero-statue-shine" data-hero-shine></span>
+      </div>
       <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-scroll-veil" data-hero-scroll-veil aria-hidden="true"></div>
       <div class="shell hero-content">
-        <p class="hero-welcome reveal">Bienvenido a Cairo Duaso</p>
-        <span class="gold-line reveal" aria-hidden="true"></span>
-        <h1 class="reveal">Asesoramiento legal claro, sin complicaciones</h1>
-        <p class="hero-lead reveal">Asistencia jurídica para particulares y empresas, con atención personalizada y comunicación responsable.</p>
-        <div class="hero-actions reveal">
-          <a class="outline-cta" href="tel:+59842242433">Agendar consulta</a>
-          <a class="round-cta" href="tel:+59842242433" aria-label="Llamar al estudio"><i data-lucide="arrow-up-right"></i></a>
+        <p class="hero-welcome" data-hero-kicker>Más de 20 años de trayectoria</p>
+        <span class="gold-line" data-hero-line aria-hidden="true"></span>
+        <h1 class="hero-title" data-hero-title>
+          <span>Asesoramiento legal claro,</span>
+          <span>sin complicaciones</span>
+        </h1>
+        <p class="hero-lead" data-hero-lead>Asistencia jurídica para particulares y empresas, con atención personalizada y comunicación responsable.</p>
+        <div class="hero-actions" data-hero-actions>
+          <a class="outline-cta" href="tel:+59842242433">Consultar ahora</a>
+          <a class="round-cta" href="tel:+59842242433" aria-label="Llamar al estudio"><i data-lucide="phone-call"></i></a>
         </div>
       </div>
     </section>
@@ -145,6 +158,43 @@
           <article class="situation-item reveal"><span>06</span><h3>No sabés cuál es el próximo paso para avanzar con una gestión.</h3></article>
         </div>
         <div class="situations-action reveal"><p>¿Tu situación no aparece en esta lista?</p><a class="gold-cta" href="#contacto">Contar mi situación <i data-lucide="arrow-right"></i></a></div>
+        <div class="legal-seal-wrap reveal" aria-hidden="true">
+          <svg class="legal-seal" width="178" height="178" viewBox="0 0 200 200" role="presentation">
+            <defs>
+              <filter id="cairo-seal-ink" x="-5%" y="-5%" width="110%" height="110%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="noise" seed="11" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.35" />
+              </filter>
+              <filter id="cairo-seal-speckle">
+                <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="2" seed="5" stitchTiles="stitch" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.8 0 0 0 0" />
+              </filter>
+              <mask id="cairo-seal-mask">
+                <rect width="200" height="200" fill="white" />
+                <rect width="200" height="200" filter="url(#cairo-seal-speckle)" opacity="0.46" />
+              </mask>
+              <path id="cairo-seal-arc-top" d="M 24 100 A 76 76 0 0 1 176 100" fill="none" />
+              <path id="cairo-seal-arc-bottom" d="M 37 100 A 63 63 0 0 0 163 100" fill="none" />
+            </defs>
+            <g filter="url(#cairo-seal-ink)" mask="url(#cairo-seal-mask)" fill="currentColor" stroke="currentColor">
+              <circle cx="100" cy="100" r="96" fill="none" stroke-width="2.5" />
+              <circle cx="100" cy="100" r="89" fill="none" stroke-width="1" />
+              <circle cx="100" cy="100" r="57" fill="none" stroke-width="1" />
+              <text class="legal-seal-arc" font-size="11.5" letter-spacing="2.5" font-weight="600" stroke="none">
+                <textPath href="#cairo-seal-arc-top" startOffset="50%" text-anchor="middle">ESTUDIO JURIDICO</textPath>
+              </text>
+              <text class="legal-seal-arc" font-size="10" letter-spacing="3" font-weight="600" stroke="none">
+                <textPath href="#cairo-seal-arc-bottom" startOffset="50%" text-anchor="middle">MALDONADO · URUGUAY</textPath>
+              </text>
+              <circle cx="23" cy="100" r="2" stroke="none" />
+              <circle cx="177" cy="100" r="2" stroke="none" />
+              <text class="legal-seal-name" x="100" y="94" text-anchor="middle" font-size="29" font-style="italic" stroke="none">Cairo</text>
+              <text class="legal-seal-name" x="100" y="118" text-anchor="middle" font-size="24" font-style="italic" stroke="none">Duaso</text>
+              <line x1="75" y1="128" x2="125" y2="128" stroke-width="0.75" />
+              <text class="legal-seal-meta" x="100" y="144" text-anchor="middle" font-size="8.5" letter-spacing="2.4" font-weight="600" stroke="none">ORIENTACION LEGAL</text>
+            </g>
+          </svg>
+        </div>
       </div>
     </section>
 
@@ -445,6 +495,8 @@
   </a>
 
   <script defer src="assets/js/lucide.min.js?v=20260712d"></script>
-  <script defer src="main.js?v=20260712d"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="main.js?v=20260712h"></script>
 </body>
 </html>
