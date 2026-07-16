@@ -588,13 +588,19 @@ body.site-abogado-bermar-calcerrada .review-slides {
 }
 
 body.site-estudio-dr-claudio-rodriguez-la-cruz .reviews-grid {
-  min-height: 610px;
-  grid-template-columns: minmax(260px, 0.48fr) minmax(0, 1.52fr);
+  min-height: 660px;
+  align-items: start;
+  grid-template-columns: minmax(420px, 0.74fr) minmax(0, 1.26fr);
+}
+
+body.site-estudio-dr-claudio-rodriguez-la-cruz .rating-panel {
+  min-height: 660px;
+  height: 660px;
 }
 
 body.site-estudio-dr-claudio-rodriguez-la-cruz .rating-panel > img {
-  object-position: 50% 20%;
-  filter: saturate(0.82) brightness(0.7);
+  object-position: 52% 30%;
+  filter: saturate(0.82) brightness(0.72);
 }
 
 body.site-estudio-dr-claudio-rodriguez-la-cruz .rating-copy {
