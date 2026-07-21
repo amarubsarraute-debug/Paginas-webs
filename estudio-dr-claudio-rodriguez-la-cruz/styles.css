@@ -590,7 +590,7 @@ body.site-abogado-bermar-calcerrada .review-slides {
 body.site-estudio-dr-claudio-rodriguez-la-cruz .reviews-grid {
   min-height: 660px;
   align-items: start;
-  grid-template-columns: minmax(420px, 0.74fr) minmax(0, 1.26fr);
+  grid-template-columns: minmax(480px, 0.82fr) minmax(0, 1.18fr);
 }
 
 body.site-estudio-dr-claudio-rodriguez-la-cruz .rating-panel {
@@ -1636,6 +1636,233 @@ body.site-abogada-biaturi-estudio-juridico .contact-form {
   line-height: 1.4;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+}
+
+.professional-focus {
+  position: relative;
+  padding: 78px 0;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.024) 1px, transparent 1px) 0 0 / 76px 100%,
+    linear-gradient(180deg, #111315, #0b0d0f);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.professional-focus::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, rgba(201, 156, 82, 0.09), transparent 38%),
+    linear-gradient(290deg, rgba(255, 255, 255, 0.045), transparent 46%);
+}
+
+.professional-focus > .shell {
+  position: relative;
+  z-index: 1;
+}
+
+.professional-heading {
+  max-width: 810px;
+}
+
+.professional-heading h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 46px;
+  font-weight: 500;
+  line-height: 1.03;
+}
+
+.professional-heading > p:not(.section-kicker) {
+  max-width: 690px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.professional-grid {
+  margin-top: 38px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.58fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.professional-copy-panel,
+.professional-card {
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.014)),
+    rgba(8, 9, 10, 0.56);
+}
+
+.professional-copy-panel {
+  padding: 34px;
+}
+
+.profile-kicker {
+  display: inline-flex;
+  margin-bottom: 14px;
+  color: var(--gold-light);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.professional-copy-panel h3 {
+  max-width: 720px;
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 33px;
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.professional-copy-panel > p {
+  max-width: 760px;
+  margin: 15px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.78;
+}
+
+.focus-points {
+  list-style: none;
+  margin: 30px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.focus-points li {
+  min-width: 0;
+  padding-top: 18px;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 14px;
+  border-top: 1px solid rgba(201, 156, 82, 0.28);
+}
+
+.focus-points .lucide {
+  width: 22px;
+  height: 22px;
+  color: var(--gold-light);
+}
+
+.focus-points strong {
+  display: block;
+  color: #fff;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.focus-points small {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.62;
+}
+
+.professional-card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.professional-card-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-mark {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(201, 156, 82, 0.45);
+  border-radius: 50%;
+  color: var(--gold-light);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.professional-card strong {
+  display: block;
+  color: #fff;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.02;
+}
+
+.professional-card small {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.45;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.profile-facts {
+  display: grid;
+  gap: 12px;
+}
+
+.profile-facts span {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+  align-items: start;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.profile-facts .lucide {
+  width: 17px;
+  height: 17px;
+  color: var(--gold-light);
+}
+
+.profile-action {
+  min-height: 42px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--gold);
+  color: #101214;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.profile-action:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.profile-action .lucide {
+  width: 16px;
+  height: 16px;
 }
 
 .process {
@@ -2982,6 +3209,45 @@ body.site-abogada-biaturi-estudio-juridico .contact-form {
 
   .team-member {
     min-height: 118px;
+  }
+
+  .professional-focus {
+    padding: 58px 0;
+  }
+
+  .professional-heading h2 {
+    font-size: 38px;
+  }
+
+  .professional-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .professional-copy-panel,
+  .professional-card {
+    padding: 24px;
+  }
+
+  .professional-copy-panel h3 {
+    font-size: 29px;
+  }
+
+  .focus-points {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .focus-points li {
+    grid-template-columns: 30px 1fr;
+  }
+
+  .professional-card-top {
+    align-items: flex-start;
+  }
+
+  .professional-card strong {
+    font-size: 23px;
   }
 
   .process {
