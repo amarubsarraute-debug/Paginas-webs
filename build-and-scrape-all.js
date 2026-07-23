@@ -415,6 +415,19 @@ async function processProject(project) {
             console.log(`⚡ Copiando assets a ${path.relative(ROOT, destAssets)}...`);
             copyRecursiveSync(srcAssets, destAssets);
             console.log(`✓ Assets copiados.`);
+
+            // Post-procesar archivos JS para convertir "/assets/" absoluto a "assets/" relativo
+            fs.readdirSync(destAssets).forEach(file => {
+              if (file.endsWith('.js')) {
+                const jsPath = path.join(destAssets, file);
+                let content = fs.readFileSync(jsPath, 'utf8');
+                if (content.includes('"/assets/')) {
+                  content = content.replace(/"\/assets\//g, '"assets/');
+                  fs.writeFileSync(jsPath, content, 'utf8');
+                  console.log(`  └─ Rutas relativas aplicadas a JS: ${file}`);
+                }
+              }
+            });
           }
 
           // Copiar carpeta de imágenes (dist/img) si existe

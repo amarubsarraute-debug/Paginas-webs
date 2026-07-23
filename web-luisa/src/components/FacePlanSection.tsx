@@ -134,15 +134,14 @@ export function FacePlanSection() {
         cameraRef.current.style.transform = `scale(${scale}) translateY(${y}%)`;
       }
 
-      // Zones: each fades in during the first ~55% of its stage, then holds
-      // (cumulative — once transformed, a zone stays transformed).
-      const zoneOpacity = (a: number, b: number) => clamp01(smooth((p - a) / ((b - a) * 0.55)));
+      // Zones: each fades in progressively over its stage
+      const zoneOpacity = (a: number, b: number) => clamp01(smooth((p - a) / (b - a)));
       if (zoneTopRef.current) zoneTopRef.current.style.opacity = String(zoneOpacity(BOUNDS[1], BOUNDS[2]));
       if (zoneMidRef.current) zoneMidRef.current.style.opacity = String(zoneOpacity(BOUNDS[2], BOUNDS[3]));
       if (zoneLowRef.current) zoneLowRef.current.style.opacity = String(zoneOpacity(BOUNDS[3], BOUNDS[4]));
 
       // Warm veil: enters with the first treatment, releases during "Calidad de piel".
-      const dimIn = clamp01(smooth((p - BOUNDS[1]) / ((BOUNDS[2] - BOUNDS[1]) * 0.6)));
+      const dimIn = clamp01(smooth((p - BOUNDS[1]) / (BOUNDS[2] - BOUNDS[1])));
       const dimOut = clamp01(smooth((p - BOUNDS[4]) / (BOUNDS[5] - BOUNDS[4])));
       if (dimRef.current) dimRef.current.style.opacity = String(dimIn * veil * (1 - dimOut));
 
@@ -154,18 +153,51 @@ export function FacePlanSection() {
       const glowT = clamp01(smooth((p - BOUNDS[5]) / (BOUNDS[6] - BOUNDS[5])));
       if (glowRef.current) glowRef.current.style.opacity = String(glowT * 0.4);
 
-      // Text: each stage fades in, then out before the next enters.
+      // Text: seamless crossfade between stages with zero dead zones
+      const FADE_HALF = 0.05;
       stageRefs.current.forEach((el, i) => {
         if (!el) return;
-        const a = BOUNDS[i];
-        const b = BOUNDS[i + 1];
-        const s = b - a;
-        const inT = clamp01(smooth((p - a) / (s * 0.2)));
-        const outT = i < STAGES.length - 1 ? clamp01(smooth((p - (b - s * 0.2)) / (s * 0.2))) : 0;
-        const opacity = inT * (1 - outT);
-        const ty = lerp(24, 0, inT) - outT * 24;
+        let opacity = 0;
+
+        if (i === 0) {
+          if (p <= BOUNDS[1] - FADE_HALF) {
+            opacity = 1;
+          } else if (p < BOUNDS[1] + FADE_HALF) {
+            const t = (p - (BOUNDS[1] - FADE_HALF)) / (2 * FADE_HALF);
+            opacity = 1 - smooth(t);
+          } else {
+            opacity = 0;
+          }
+        } else if (i === STAGES.length - 1) {
+          const prevB = BOUNDS[i];
+          if (p <= prevB - FADE_HALF) {
+            opacity = 0;
+          } else if (p < prevB + FADE_HALF) {
+            const t = (p - (prevB - FADE_HALF)) / (2 * FADE_HALF);
+            opacity = smooth(t);
+          } else {
+            opacity = 1;
+          }
+        } else {
+          const prevB = BOUNDS[i];
+          const nextB = BOUNDS[i + 1];
+          if (p <= prevB - FADE_HALF || p >= nextB + FADE_HALF) {
+            opacity = 0;
+          } else if (p < prevB + FADE_HALF) {
+            const t = (p - (prevB - FADE_HALF)) / (2 * FADE_HALF);
+            opacity = smooth(t);
+          } else if (p <= nextB - FADE_HALF) {
+            opacity = 1;
+          } else {
+            const t = (p - (nextB - FADE_HALF)) / (2 * FADE_HALF);
+            opacity = 1 - smooth(t);
+          }
+        }
+
+        const ty = (1 - opacity) * 16;
         el.style.opacity = String(opacity);
         el.style.transform = `translateY(${ty}px)`;
+        el.style.pointerEvents = opacity > 0.5 ? "auto" : "none";
       });
     };
 

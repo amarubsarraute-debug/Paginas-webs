@@ -433,6 +433,13 @@ function Index() {
             </div>
 
             <Reveal className="mt-12 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start lg:gap-12">
+              {/* Preload container for all objective images so hover/selection is instantaneous */}
+              <div aria-hidden="true" className="hidden">
+                {objectives.map((obj) => (
+                  <img key={obj} src={objectivePreviews[obj].image} alt="" loading="eager" />
+                ))}
+              </div>
+
               <div
                 onMouseMove={handleObjectiveMouseMove}
                 onMouseLeave={() => setHoveredObjective(null)}
@@ -451,7 +458,7 @@ function Index() {
                     <img
                       src={hoverObjectivePreview.image}
                       alt=""
-                      loading="lazy"
+                      loading="eager"
                       className={`h-full w-full ${
                         hoverObjectivePreview.objectFit === "contain" ? "object-contain" : "object-cover"
                       }`}
@@ -497,7 +504,7 @@ function Index() {
                   <img
                     src={selectedObjectivePreview.image}
                     alt={selectedObjectivePreview.alt}
-                    loading="lazy"
+                    loading="eager"
                     className={`h-full w-full ${
                       selectedObjectivePreview.objectFit === "contain" ? "object-contain" : "object-cover"
                     }`}
