@@ -81,29 +81,20 @@ iframe {
   outline-offset: 4px;
 }
 
-@keyframes marquee-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.marquee-track {
-  animation: marquee-scroll 32s linear infinite;
-}
-
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-
 .subtle-noise {
   background-image:
     linear-gradient(rgba(28, 52, 43, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(28, 52, 43, 0.035) 1px, transparent 1px),
     radial-gradient(circle at 50% 0%, rgba(76, 125, 99, 0.08), transparent 32rem);
   background-size: 46px 46px, 46px 46px, auto;
+}
+
+.clinic-line-grid {
+  background-image:
+    linear-gradient(rgba(252, 253, 251, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(252, 253, 251, 0.055) 1px, transparent 1px),
+    radial-gradient(circle at 86% 10%, rgba(195, 161, 90, 0.16), transparent 30rem);
+  background-size: 72px 72px, 72px 72px, auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -102,5 +102,19 @@ module.exports = [
       port: 21,
       secure: false
     }
+  },
+  {
+    name: "Negocio Patricio",
+    local: "../negocio-patricio/dist",
+    exclude: [],
+    ftp: {
+      host: "147.93.39.62",
+      user: "u726588504.Amarubellinee",
+      password: "Amarubelline7!",
+      remote: "/",
+      port: 21,
+      secure: false
+    }
   }
 ];
+

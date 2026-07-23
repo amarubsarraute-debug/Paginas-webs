@@ -62,14 +62,6 @@ const sites = [
       ['Respuesta inmediata', 'Disponibilidad para urgencias legales y consultas prioritarias.', 'phone-call'],
       ['Criterio profesional', 'Analisis responsable para avanzar con mayor seguridad.', 'badge-check'],
     ],
-    team: {
-      kicker: 'Profesional a cargo',
-      title: 'Atencion directa con el Dr. Claudio Rodriguez La Cruz',
-      intro: 'La consulta se coordina con atencion directa del profesional responsable, para ordenar el caso desde el primer contacto.',
-      groups: [
-        { label: 'Direccion juridica', icon: 'scale', members: [['Dr. Claudio Rodriguez La Cruz', 'Abogado']] },
-      ],
-    },
     ratingNumber: '20+',
     ratingLabel: 'anos de<br />trayectoria',
     ratingTitle: 'Experiencia dedicada al derecho penal',
@@ -970,6 +962,8 @@ function html(site) {
   const practiceImage = imageSrc(site, 'practice', 'assets/img/legal-office-neutral.png');
   const reviewImage = imageSrc(site, 'review', 'assets/img/legal-symbol-neutral.png');
   const contactImage = imageSrc(site, 'contact', 'assets/img/legal-desk-neutral.png');
+  const hasTeam = Boolean(site.team?.groups?.length);
+  const teamNavLink = hasTeam ? '<a href="#equipo">Equipo</a>' : '';
   return `<!doctype html>
 <html lang="es">
 <head>
@@ -1012,7 +1006,7 @@ function html(site) {
         <nav class="desktop-nav" aria-label="Navegacion principal">
           <a class="active" href="#inicio">Inicio</a>
           <a href="#estudio">Nosotros</a>
-          <a href="#equipo">Equipo</a>
+          ${teamNavLink}
           <a href="#servicios">Servicios</a>
           <a href="#proceso">Proceso</a>
           <a href="#resenas">Resenas</a>
@@ -1029,7 +1023,7 @@ function html(site) {
     <nav class="mobile-nav" aria-label="Navegacion movil" data-mobile-nav>
       <a href="#inicio">Inicio</a>
       <a href="#estudio">Nosotros</a>
-      <a href="#equipo">Equipo</a>
+      ${teamNavLink}
       <a href="#servicios">Servicios</a>
       <a href="#proceso">Proceso</a>
       <a href="#resenas">Resenas</a>
@@ -1245,7 +1239,7 @@ ${site.faqs.map(faq).join('')}
         <h2>Enlaces rapidos</h2>
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
-        <a href="#equipo">Equipo</a>
+        ${teamNavLink}
         <a href="#proceso">Proceso</a>
         <a href="#resenas">Resenas</a>
         <a href="#preguntas">Preguntas frecuentes</a>

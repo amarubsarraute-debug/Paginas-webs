@@ -4,6 +4,7 @@ import transformVideo from "@/assets/transform.mp4";
 import transformPoster from "@/assets/transform_poster.jpg";
 import { CtaButton } from "./CtaButton";
 import { WhatsAppIcon } from "./WhatsAppIcon";
+import { scrollToSection } from "@/lib/scroll";
 
 export function VideoScrubHero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -17,21 +18,30 @@ export function VideoScrubHero() {
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || reducedMotion) return;
+    if (!video) return;
 
-    // iOS/Safari móvil no repinta seeks de un video pausado → autoplay en loop.
-    const isTouch = (navigator.maxTouchPoints || 0) > 0 && window.innerWidth < 1000;
-    if (isTouch) {
-      video.loop = true;
-      video.setAttribute("loop", "");
-      video.setAttribute("autoplay", "");
-      const tryPlay = () => { const p = video.play(); if (p) p.catch(() => {}); };
-      tryPlay();
-      ["touchstart", "pointerdown"].forEach((ev) =>
-        window.addEventListener(ev, tryPlay, { passive: true, once: true })
-      );
-      return;
-    }
+    if (reducedMotion) return;
+
+    video.loop = false;
+    video.autoplay = false;
+    video.removeAttribute("loop");
+    video.removeAttribute("autoplay");
+    video.pause();
+    if (video.currentTime > 0) video.currentTime = 0;
+
+    // iOS no decodifica/repinta frames al setear currentTime si el video nunca
+    // se "despertó": un play() mudo seguido de pause() habilita los seeks.
+    video.muted = true;
+    video.playsInline = true;
+    video.setAttribute("playsinline", "");
+    const wake = () => {
+      const p = video.play();
+      if (p) p.then(() => video.pause()).catch(() => {});
+    };
+    if (video.readyState >= 2) wake();
+    else video.addEventListener("loadeddata", wake, { once: true });
+    const wakeEvents = ["touchstart", "pointerdown", "click"] as const;
+    wakeEvents.forEach((ev) => window.addEventListener(ev, wake, { passive: true, once: true }));
 
     let targetTime = 0;
     let rafId = 0;
@@ -65,11 +75,13 @@ export function VideoScrubHero() {
       unsubscribe();
       cancelAnimationFrame(rafId);
       video.removeEventListener("loadeddata", nudgeFirstFrame);
+      video.removeEventListener("loadeddata", wake);
+      wakeEvents.forEach((ev) => window.removeEventListener(ev, wake));
     };
   }, [scrollYProgress, reducedMotion]);
 
   return (
-    <div id="inicio" ref={containerRef} className="relative" style={{ height: "300vh" }}>
+    <div id="inicio" ref={containerRef} className="relative h-[250vh] md:h-[300vh]">
       <div className="sticky top-0 h-dvh overflow-hidden">
         <video
           ref={videoRef}
@@ -83,7 +95,7 @@ export function VideoScrubHero() {
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
 
-        <div className="absolute inset-x-0 bottom-0 z-10 px-6 pb-14 md:px-14 lg:px-20">
+        <div className="absolute inset-x-0 bottom-0 z-10 px-6 pb-10 md:px-14 md:pb-14 lg:px-20">
           <p className="eyebrow text-white/55">Medicina estética regenerativa</p>
 
           <h1 className="mt-3 font-serif text-white" style={{ fontSize: "clamp(3rem,8vw,7rem)", lineHeight: 1 }}>
@@ -102,12 +114,13 @@ export function VideoScrubHero() {
               <WhatsAppIcon className="h-4 w-4" />
               Agendar valoración
             </CtaButton>
-            <a
-              href="#tratamientos"
+            <button
+              type="button"
+              onClick={() => scrollToSection("tratamientos")}
               className="inline-flex items-center gap-2 rounded-lg border border-white/25 px-6 py-3 text-sm font-medium text-white/90 backdrop-blur-sm transition-colors hover:border-white/50 hover:bg-white/10"
             >
               Ver tratamientos
-            </a>
+            </button>
           </div>
         </div>
       </div>

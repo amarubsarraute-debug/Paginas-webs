@@ -1,5 +1,6 @@
 export const WHATSAPP_NUMBER = "59897507241";
 export const WHATSAPP_DISPLAY = "+598 97 507 241";
+export const WHATSAPP_CATALOG_URL = "https://wa.me/c/24751963660315";
 
 /**
  * Builds a wa.me link with a pre-filled, URL-encoded message.

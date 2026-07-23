@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preview — Cada rostro necesita un plan</title>
+</head>
+<body style="margin:0;">
+
+<!-- Espaciador solo para el preview (NO copiar a Elementor) -->
+<div style="height:70vh;display:flex;align-items:center;justify-content:center;background:#EFE7DA;color:#8a7a68;font-family:Georgia,serif;font-style:italic;">
+  (contenido anterior de la página — scrolleá hacia abajo)
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════
+     ▼▼▼  COPIAR DESDE AQUÍ hasta la marca "COPIAR HASTA AQUÍ"  ▼▼▼
+     y pegar entero dentro de un widget HTML de Elementor.
+
+     SECCIÓN: "Cada rostro necesita un plan" · v2
+     Transformación progresiva del rostro (inicial → final) controlada
+     por scroll, zona por zona, con velo de luz. Sin marcadores.
+
+     ── CÓMO EDITAR ──────────────────────────────────────────────
+     1. FOTOS ....... buscá  CAMBIAR-FOTO-ANTES  y  CAMBIAR-FOTO-DESPUES
+                      (un solo lugar cada una; deben tener el MISMO
+                      encuadre y tamaño para que el fundido quede alineado)
+     2. COLORES ..... variables CSS al principio del <style> (--crnp-*)
+     3. TEXTOS ...... directamente en el HTML de cada .crnp-stage
+     4. TIEMPOS ..... objeto CRNP_CONFIG al principio del <script>
+     5. ZONAS ....... máscaras radiales en .crnp-zone-top / -mid / -low
+     ════════════════════════════════════════════════════════════════════ -->
+
+<div class="crnp-wrap" id="crnp-seccion">
+<style>
+  /* ── Tipografías (opcional: borrá el @import si el theme ya carga fuentes) ── */
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+
+  #crnp-seccion {
+    /* ══ COLORES EDITABLES ══ */
+    --crnp-bg:        #F3EDE3;   /* fondo marfil cálido            */
+    --crnp-ink:       #43362B;   /* tinta principal (marrón cálido)*/
+    --crnp-ink-soft:  #7C6B5A;   /* texto secundario               */
+    --crnp-accent:    #9C7E63;   /* tratamiento / acentos          */
+    --crnp-veil:      #2E2118;   /* velo que atenúa el resto       */
+    /* ══ TIPOGRAFÍAS ══ */
+    --crnp-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --crnp-sans:  'Inter', -apple-system, 'Segoe UI', sans-serif;
+
+    font-family: var(--crnp-sans);
+    color: var(--crnp-ink);
+  }
+  #crnp-seccion *, #crnp-seccion *::before, #crnp-seccion *::after { box-sizing: border-box; margin: 0; }
+
+  /* ─────────────────────────────────────────────────────────────
+     LAYOUT BASE (versión estática: sin JS o con reduced-motion,
+     todas las etapas visibles apiladas, sin pin prolongado)
+     ───────────────────────────────────────────────────────────── */
+  .crnp-outer { position: relative; background: var(--crnp-bg); }
+  .crnp-pin   { width: 100%; }
+
+  .crnp-media {
+    position: relative;
+    overflow: hidden;
+    height: 62vh;
+    max-height: 560px;
+  }
+  .crnp-camera { position: absolute; inset: 0; will-change: transform; transform-origin: 50% 44%; }
+
+  .crnp-img-antes, .crnp-img-despues {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: 50% 50%;
+    display: block;
+  }
+
+  /* Velo cálido: atenúa lo que está fuera de la zona en tratamiento */
+  .crnp-dim { position: absolute; inset: 0; background: var(--crnp-veil); opacity: 0; }
+
+  /* Capas duplicadas de la foto FINAL con máscara degradada:
+     cada zona se funde al "después" en su etapa y queda transformada,
+     iluminada por encima del velo. (el background lo asigna el JS
+     leyendo el src del <img> "después" — una sola descarga) */
+  .crnp-zone {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: 50% 50%;
+    opacity: 0;
+  }
+  .crnp-zone-top {   /* frente, entrecejo y contorno de ojos */
+    -webkit-mask-image: radial-gradient(ellipse 46% 22% at 50% 35%, #000 45%, transparent 78%);
+            mask-image: radial-gradient(ellipse 46% 22% at 50% 35%, #000 45%, transparent 78%);
+  }
+  .crnp-zone-mid {   /* pómulos, soporte medio y surcos */
+    -webkit-mask-image: radial-gradient(ellipse 42% 19% at 50% 51%, #000 42%, transparent 78%);
+            mask-image: radial-gradient(ellipse 42% 19% at 50% 51%, #000 42%, transparent 78%);
+  }
+  .crnp-zone-low {   /* labios, mentón y mandíbula */
+    -webkit-mask-image: radial-gradient(ellipse 44% 21% at 50% 64%, #000 45%, transparent 78%);
+            mask-image: radial-gradient(ellipse 44% 21% at 50% 64%, #000 45%, transparent 78%);
+  }
+
+  /* La foto final completa: crossfade total en "Calidad de piel" */
+  .crnp-anim .crnp-img-despues { opacity: 0; }
+
+  /* Luz final apenas más luminosa, sin tocar facciones */
+  .crnp-glow {
+    position: absolute; inset: 0; opacity: 0;
+    background: radial-gradient(ellipse 55% 45% at 50% 44%, rgba(255,248,238,.9), transparent 72%);
+    mix-blend-mode: soft-light;
+  }
+
+  /* Sombra/viñeta muy suave, estática */
+  .crnp-shadow {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(120% 120% at 46% 42%, transparent 58%, rgba(62,47,35,.16) 100%);
+  }
+  /* Fundido del borde derecho de la foto hacia el marfil (solo escritorio) */
+  .crnp-media::after {
+    content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 24%;
+    background: linear-gradient(to right, transparent, var(--crnp-bg));
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  /* ── Columna de contenido ── */
+  .crnp-content { position: relative; padding: clamp(2.5rem, 5vw, 4rem) clamp(1.4rem, 6vw, 5.5rem); }
+  .crnp-stages  { position: relative; }
+  .crnp-stage   { max-width: 46ch; }
+  .crnp-stage + .crnp-stage { margin-top: 2.6rem; }   /* solo en versión estática */
+
+  .crnp-title {
+    font-family: var(--crnp-serif);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: .01em;
+    font-size: clamp(2.3rem, 4vw, 3.7rem);
+    color: var(--crnp-ink);
+  }
+  .crnp-treat {
+    margin-top: 1rem;
+    font-size: .78rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--crnp-accent);
+  }
+  .crnp-sub {
+    margin-top: .9rem;
+    font-weight: 300;
+    font-size: clamp(1rem, 1.2vw, 1.12rem);
+    line-height: 1.65;
+    color: var(--crnp-ink-soft);
+    max-width: 40ch;
+  }
+  .crnp-btn {
+    display: inline-block;
+    margin-top: 1.8rem;
+    padding: .95rem 2.3rem;
+    background: var(--crnp-ink);
+    color: #F7F1E6;
+    text-decoration: none;
+    border-radius: 999px;
+    font-size: .8rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    transition: background .3s ease;
+  }
+  .crnp-btn:hover  { background: #5A493A; }
+  .crnp-btn:focus-visible { outline: 2px solid var(--crnp-accent); outline-offset: 3px; }
+
+  /* En versión estática no hay transformación: solo la foto inicial y los textos */
+  .crnp-wrap:not(.crnp-anim) .crnp-img-despues,
+  .crnp-wrap:not(.crnp-anim) .crnp-dim,
+  .crnp-wrap:not(.crnp-anim) .crnp-zone,
+  .crnp-wrap:not(.crnp-anim) .crnp-glow { display: none; }
+
+  /* ─────────────────────────────────────────────────────────────
+     LAYOUT ANIMADO (clase .crnp-anim la agrega el JS
+     cuando GSAP carga y el usuario NO pide reduced-motion)
+     ───────────────────────────────────────────────────────────── */
+  .crnp-anim .crnp-outer { height: 450vh; }          /* la ajusta también el JS (CRNP_CONFIG) */
+  .crnp-anim .crnp-pin {
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 58% 42%;                  /* foto izquierda / texto derecha */
+  }
+  .crnp-anim .crnp-media   { height: 100vh; max-height: none; }
+  .crnp-anim .crnp-media::after { opacity: 1; }
+  .crnp-anim .crnp-content { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+  .crnp-anim .crnp-stages  { width: 100%; min-height: 420px; }
+  .crnp-anim .crnp-stage   { position: absolute; top: 0; left: 0; right: 0; opacity: 0; margin: 0; }
+  .crnp-anim .crnp-stage[data-stage="1"] { opacity: 1; }
+
+  /* ── Móvil ── */
+  @media (max-width: 767px) {
+    .crnp-anim .crnp-outer { height: 350vh; }
+    .crnp-anim .crnp-pin {
+      grid-template-columns: 1fr;
+      grid-template-rows: 54vh 1fr;
+    }
+    .crnp-anim .crnp-media   { height: 54vh; }
+    .crnp-anim .crnp-media::after { opacity: 0; }
+    .crnp-anim .crnp-content {
+      align-items: flex-start;
+      padding: 1.6rem 1.5rem calc(1.5rem + env(safe-area-inset-bottom));
+    }
+    .crnp-anim .crnp-stages { min-height: 34vh; }
+    .crnp-title { font-size: clamp(1.9rem, 8vw, 2.4rem); }
+    .crnp-treat { margin-top: .7rem; }
+    .crnp-sub   { font-size: .95rem; margin-top: .6rem; }
+    .crnp-btn   { margin-top: 1.2rem; padding: .85rem 1.9rem; }
+  }
+</style>
+
+<section class="crnp-outer">
+  <div class="crnp-pin">
+
+    <!-- ══ COLUMNA IMAGEN ══ -->
+    <div class="crnp-media">
+      <div class="crnp-camera">
+
+        <!-- ════════ CAMBIAR-FOTO-ANTES ════════
+             La foto INICIAL (punto de partida de la valoración). -->
+        <img class="crnp-img-antes"
+             src="rostro-antes.webp"
+             alt="Rostro de mujer al inicio de la valoración estética, piel natural sobre fondo beige cálido"
+             fetchpriority="high">
+
+        <div class="crnp-dim"></div>
+        <div class="crnp-zone crnp-zone-top"></div>
+        <div class="crnp-zone crnp-zone-mid"></div>
+        <div class="crnp-zone crnp-zone-low"></div>
+
+        <!-- ════════ CAMBIAR-FOTO-DESPUES ════════
+             La foto FINAL (mismo encuadre y tamaño que la inicial).
+             Las zonas de transformación toman esta URL automáticamente. -->
+        <img class="crnp-img-despues"
+             src="rostro-despues.webp"
+             alt="" aria-hidden="true">
+
+        <div class="crnp-glow"></div>
+        <div class="crnp-shadow"></div>
+      </div>
+    </div>
+
+    <!-- ══ COLUMNA TEXTOS (editá los textos directamente acá) ══ -->
+    <div class="crnp-content">
+      <div class="crnp-stages">
+
+        <div class="crnp-stage" data-stage="1">
+          <h2 class="crnp-title">Cada rostro necesita un plan</h2>
+          <p class="crnp-sub">La naturalidad comienza con una valoración integral.</p>
+        </div>
+
+        <div class="crnp-stage" data-stage="2">
+          <h3 class="crnp-title">Expresión</h3>
+          <p class="crnp-treat">Toxina botulínica</p>
+          <p class="crnp-sub">Frente, entrecejo y contorno de ojos.</p>
+        </div>
+
+        <div class="crnp-stage" data-stage="3">
+          <h3 class="crnp-title">Estructura</h3>
+          <p class="crnp-treat">Ácido hialurónico · Bioestimulación</p>
+          <p class="crnp-sub">Pómulos, soporte medio y surcos.</p>
+        </div>
+
+        <div class="crnp-stage" data-stage="4">
+          <h3 class="crnp-title">Armonía</h3>
+          <p class="crnp-treat">Perfilado labial · Mentón · Mandíbula</p>
+          <p class="crnp-sub">Equilibrio facial natural.</p>
+        </div>
+
+        <div class="crnp-stage" data-stage="5">
+          <h3 class="crnp-title">Calidad de piel</h3>
+          <p class="crnp-treat">Hidratación profunda · Bioestimulación</p>
+          <p class="crnp-sub">Luminosidad, frescura y textura.</p>
+        </div>
+
+        <div class="crnp-stage" data-stage="6">
+          <h3 class="crnp-title">Armonización facial</h3>
+          <p class="crnp-treat">Un plan integral</p>
+          <p class="crnp-sub">No se trata de tratar zonas aisladas, sino de comprender el rostro como un conjunto.</p>
+          <!-- Cambiá el href por el link real de agenda / WhatsApp -->
+          <a class="crnp-btn" href="#contacto">Agendar una valoración</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ════════════════ TIEMPOS Y MOVIMIENTO EDITABLES ════════════════
+     - etapas: límites de cada etapa en % del scroll (0 a 100)
+       intro · expresión · estructura · armonía · piel · armonización
+     - camara: [escala, yPercent] por etapa (zoom siempre leve)
+     - velo: cuánto se atenúa lo no tratado (0 a 1)                   */
+  var CRNP_CONFIG = {
+    etapas: [0, 12, 30, 48, 66, 82, 100],
+    scrub: 1,                            /* 1 = suavizado elegante · true = pegado al scroll */
+    desktop: {
+      altura: '450vh',
+      camara: [
+        [1.04,  0],                      /* intro: rostro inicial completo        */
+        [1.15,  6],                      /* expresión: tercio superior            */
+        [1.13, -1],                      /* estructura: zona media                */
+        [1.15, -9],                      /* armonía: tercio inferior              */
+        [1.07, -2],                      /* calidad de piel: plano medio          */
+        [1.00,  0]                       /* armonización: plano general           */
+      ],
+      velo: 0.28
+    },
+    mobile: {
+      altura: '350vh',
+      camara: [ [1.02,0], [1.08,4], [1.07,0], [1.08,-5], [1.04,-1], [1.00,0] ],
+      velo: 0.24
+    }
+  };
+  /* ════════════════════════════════════════════════════════════════ */
+
+  var GSAP_URL = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js';
+  var ST_URL   = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js';
+
+  var wrap = document.getElementById('crnp-seccion');
+  if (!wrap || wrap.dataset.crnpInit) return;
+  wrap.dataset.crnpInit = '1';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Sin reduced-motion: activamos el layout animado ya (evita flash).
+     Si GSAP no llega a cargar, se vuelve a la versión estática. */
+  if (!reduceMotion) wrap.classList.add('crnp-anim');
+
+  /* Las zonas de transformación toman la URL de la foto DESPUÉS */
+  var imgAntes   = wrap.querySelector('.crnp-img-antes');
+  var imgDespues = wrap.querySelector('.crnp-img-despues');
+  var zones = wrap.querySelectorAll('.crnp-zone');
+  function applyBg() {
+    for (var i = 0; i < zones.length; i++) zones[i].style.backgroundImage = 'url("' + (imgDespues.currentSrc || imgDespues.src) + '")';
+  }
+  if (imgDespues.complete) applyBg(); else imgDespues.addEventListener('load', applyBg);
+
+  /* ── Carga de GSAP con guard (no duplica si otro widget ya lo cargó) ── */
+  function loadScript(src, ok) {
+    var s = document.createElement('script');
+    s.src = src;
+    s.onload = ok;
+    s.onerror = function () { wrap.classList.remove('crnp-anim'); };
+    document.head.appendChild(s);
+  }
+  function withGsap(ready) {
+    if (window.gsap && window.ScrollTrigger) return ready();
+    if (window.gsap) return loadScript(ST_URL, ready);
+    loadScript(GSAP_URL, function () {
+      if (window.ScrollTrigger) return ready();
+      loadScript(ST_URL, ready);
+    });
+  }
+
+  if (reduceMotion) return;   /* versión estática: etapas resumidas, sin pin */
+
+  withGsap(function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    var outer  = wrap.querySelector('.crnp-outer');
+    var pinEl  = wrap.querySelector('.crnp-pin');
+    var camera = wrap.querySelector('.crnp-camera');
+    var dim    = wrap.querySelector('.crnp-dim');
+    var glow   = wrap.querySelector('.crnp-glow');
+    var stages = wrap.querySelectorAll('.crnp-stage');
+    var zoneEls = [
+      wrap.querySelector('.crnp-zone-top'),
+      wrap.querySelector('.crnp-zone-mid'),
+      wrap.querySelector('.crnp-zone-low')
+    ];
+
+    function build(cfg) {
+      outer.style.height = cfg.altura;
+
+      var B = CRNP_CONFIG.etapas;   /* límites de etapa */
+      var tl = gsap.timeline({
+        defaults: { ease: 'power1.inOut' },
+        scrollTrigger: {
+          trigger: outer,
+          pin: pinEl,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: CRNP_CONFIG.scrub,
+          anticipatePin: 1
+        }
+      });
+
+      /* Estados iniciales */
+      gsap.set(stages, { opacity: 0, y: 34 });
+      gsap.set(stages[0], { opacity: 1, y: 0 });
+
+      /* ── Cámara: un movimiento lento por etapa ── */
+      tl.to(camera, { scale: cfg.camara[0][0], yPercent: cfg.camara[0][1], duration: B[1], ease: 'none' }, 0);
+      for (var s = 1; s < 6; s++) {
+        tl.to(camera, { scale: cfg.camara[s][0], yPercent: cfg.camara[s][1], duration: s === 5 ? 12 : 8 }, B[s]);
+      }
+
+      /* ── Velo de sombra: entra con el primer tratamiento y se libera
+            durante "Calidad de piel" para igualar la iluminación ── */
+      tl.to(dim, { opacity: cfg.velo, duration: 6 }, B[1]);
+      tl.to(dim, { opacity: 0, duration: 10 }, B[4] + 2);
+
+      /* ── Transformación por zonas: cada zona se funde al "después"
+            en su etapa, queda iluminada sobre el velo y se acumula ── */
+      for (var z = 0; z < 3; z++) {
+        tl.to(zoneEls[z], { opacity: 1, duration: 8 }, B[z + 1] + 1);
+      }
+
+      /* ── "Calidad de piel": crossfade completo a la foto final ── */
+      tl.to(wrap.querySelector('.crnp-img-despues'), { opacity: 1, duration: 10 }, B[4] + 1);
+
+      /* ── Textos: el anterior sale antes de que entre el siguiente ── */
+      for (var t = 0; t < 6; t++) {
+        if (t > 0) tl.to(stages[t], { opacity: 1, y: 0, duration: 3.5 }, B[t] + 0.5);
+        if (t < 5) tl.to(stages[t], { opacity: 0, y: -30, duration: 3.5 }, B[t + 1] - 4);
+      }
+
+      /* ── Luz final apenas más luminosa (sin tocar facciones) ── */
+      tl.to(glow, { opacity: 0.4, duration: 8 }, B[5] + 2);
+
+      return tl;
+    }
+
+    var mm = gsap.matchMedia();
+    mm.add({
+      isDesktop: '(min-width: 768px)',
+      isMobile:  '(max-width: 767px)'
+    }, function (ctx) {
+      build(ctx.conditions.isDesktop ? CRNP_CONFIG.desktop : CRNP_CONFIG.mobile);
+      /* al cambiar de contexto (rotar / redimensionar), GSAP revierte sus
+         tweens; acá limpiamos la altura inline para que no quede la vieja */
+      return function () { outer.style.height = ''; };
+    });
+
+    /* Recalcular el pin cuando las fotos terminan de cargar */
+    function refresh() { ScrollTrigger.refresh(); }
+    if (imgAntes.complete) refresh(); else imgAntes.addEventListener('load', refresh);
+    if (!imgDespues.complete) imgDespues.addEventListener('load', refresh);
+  });
+})();
+</script>
+</div>
+
+<!-- ▲▲▲  COPIAR HASTA AQUÍ  ▲▲▲
+     ════════════════════════════════════════════════════════════════════ -->
+
+<!-- Espaciador solo para el preview (NO copiar a Elementor) -->
+<div style="height:80vh;display:flex;align-items:center;justify-content:center;background:#EFE7DA;color:#8a7a68;font-family:Georgia,serif;font-style:italic;">
+  (contenido posterior de la página)
+</div>
+
+</body>
+</html>
