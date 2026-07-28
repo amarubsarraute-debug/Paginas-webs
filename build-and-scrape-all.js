@@ -394,6 +394,12 @@ async function processProject(project) {
           let processedHtml = body
             .replace(/href="\/assets\//g, 'href="assets/')
             .replace(/src="\/assets\//g, 'src="assets/')
+            // background-image: url(/assets/...) en estilos inline (zonas del "después", etc.)
+            // — necesario para que carguen cuando el sitio se sirve en una subcarpeta.
+            .replace(/url\(\/assets\//g, 'url(assets/')
+            .replace(/url\('\/assets\//g, "url('assets/")
+            .replace(/url\("\/assets\//g, 'url("assets/')
+            .replace(/url\(&quot;\/assets\//g, 'url(&quot;assets/')
             .replace(/href="\/robots.txt"/g, 'href="robots.txt"');
 
           // Reemplazar archivos extra específicos si es necesario
