@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useScroll, useReducedMotion } from "motion/react";
+import { useReducedMotion } from "motion/react";
 import transformVideo from "@/assets/transform.mp4";
 import transformPoster from "@/assets/transform_poster.jpg";
 import { CtaButton } from "./CtaButton";
@@ -10,11 +10,6 @@ export function VideoScrubHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const reducedMotion = useReducedMotion();
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
 
   useEffect(() => {
     const video = videoRef.current;
@@ -56,14 +51,27 @@ export function VideoScrubHero() {
       }
     };
 
-    const unsubscribe = scrollYProgress.on("change", (v) => {
+    const container = containerRef.current;
+    const clamp01 = (n: number) => Math.min(1, Math.max(0, n));
+    const computeProgress = () => {
+      if (!container) return 0;
+      const rect = container.getBoundingClientRect();
+      const denom = rect.height - window.innerHeight;
+      return denom > 0 ? clamp01(-rect.top / denom) : 0;
+    };
+
+    const onScroll = () => {
       if (!isFinite(video.duration)) return;
-      targetTime = Math.min(v, 0.999) * video.duration;
+      targetTime = Math.min(computeProgress(), 0.999) * video.duration;
       if (!scheduled) {
         scheduled = true;
         rafId = requestAnimationFrame(applySeek);
       }
-    });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    onScroll();
 
     // Force the first frame to paint so the hero isn't blank before any scroll.
     const nudgeFirstFrame = () => {
@@ -72,13 +80,14 @@ export function VideoScrubHero() {
     video.addEventListener("loadeddata", nudgeFirstFrame, { once: true });
 
     return () => {
-      unsubscribe();
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
       cancelAnimationFrame(rafId);
       video.removeEventListener("loadeddata", nudgeFirstFrame);
       video.removeEventListener("loadeddata", wake);
       wakeEvents.forEach((ev) => window.removeEventListener(ev, wake));
     };
-  }, [scrollYProgress, reducedMotion]);
+  }, [reducedMotion]);
 
   return (
     <div id="inicio" ref={containerRef} className="relative h-[250vh] md:h-[300vh]">

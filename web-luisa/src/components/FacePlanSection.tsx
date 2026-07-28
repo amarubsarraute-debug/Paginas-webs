@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useScroll, useReducedMotion } from "motion/react";
+import { useReducedMotion } from "motion/react";
 import rostroAntes from "@/assets/plan-antes.webp";
 import rostroDespues from "@/assets/plan-despues.webp";
 import { CtaButton } from "./CtaButton";
@@ -104,11 +104,6 @@ export function FacePlanSection() {
     return () => mq.removeEventListener("change", update);
   }, []);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
   useEffect(() => {
     if (reducedMotion) return;
 
@@ -201,21 +196,32 @@ export function FacePlanSection() {
       });
     };
 
-    const unsubscribe = scrollYProgress.on("change", (v) => {
-      latest = v;
+    const container = containerRef.current;
+    const computeProgress = () => {
+      if (!container) return 0;
+      const rect = container.getBoundingClientRect();
+      const denom = rect.height - window.innerHeight;
+      return denom > 0 ? clamp01(-rect.top / denom) : 0;
+    };
+
+    const onScroll = () => {
+      latest = computeProgress();
       if (!scheduled) {
         scheduled = true;
         rafId = requestAnimationFrame(apply);
       }
-    });
+    };
 
-    apply();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    onScroll();
 
     return () => {
-      unsubscribe();
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
       cancelAnimationFrame(rafId);
     };
-  }, [scrollYProgress, reducedMotion, isMobile]);
+  }, [reducedMotion, isMobile]);
 
   if (reducedMotion) {
     return <FacePlanStatic />;
