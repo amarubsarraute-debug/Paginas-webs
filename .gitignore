@@ -18,6 +18,10 @@ build/
 Thumbs.db
 *.log
 *.zip
+
+# Credenciales FTP reales — nunca a git
+deploy/credentials.local.js
+deploy/.stage/
 *.rar
 *.tar.gz
 

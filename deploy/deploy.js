@@ -37,6 +37,35 @@ function validate() {
   return ok;
 }
 
+function copyRecursiveSync(src, dest) {
+  if (fs.statSync(src).isDirectory()) {
+    fs.mkdirSync(dest, { recursive: true });
+    for (const entry of fs.readdirSync(src)) {
+      copyRecursiveSync(path.join(src, entry), path.join(dest, entry));
+    }
+  } else {
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    fs.copyFileSync(src, dest);
+  }
+}
+
+// Para sitios con "stageFiles": arma una carpeta temporal (deploy/.stage/<name>)
+// con SOLO los archivos listados (el sitio de origen tiene src/, node_modules,
+// etc. al lado de lo que hay que subir). Se regenera entera en cada deploy.
+function stageSite(site) {
+  const localPath = path.resolve(__dirname, site.local);
+  const stageDir = path.join(__dirname, ".stage", site.name.replace(/[^a-z0-9]+/gi, "-"));
+  fs.rmSync(stageDir, { recursive: true, force: true });
+  fs.mkdirSync(stageDir, { recursive: true });
+  for (const entry of site.stageFiles) {
+    const srcEntry = path.join(localPath, entry);
+    if (fs.existsSync(srcEntry)) {
+      copyRecursiveSync(srcEntry, path.join(stageDir, entry));
+    }
+  }
+  return stageDir;
+}
+
 async function uploadDir(client, localDir, remoteDir, exclude = []) {
   await client.ensureDir(remoteDir);
   const entries = fs.readdirSync(localDir);
@@ -77,7 +106,9 @@ async function deploySite(site) {
       secure: site.ftp.secure || false,
     });
 
-    const localPath = path.resolve(__dirname, site.local);
+    const localPath = site.stageFiles
+      ? stageSite(site)
+      : path.resolve(__dirname, site.local);
     const count = await uploadDir(client, localPath, site.ftp.remote, site.exclude || []);
     console.log(c.green(`  OK — ${count} archivos subidos`));
     return { name: site.name, ok: true, count };
