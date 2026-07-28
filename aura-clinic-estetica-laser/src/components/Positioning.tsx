@@ -1,78 +1,86 @@
 import { motion } from 'motion/react';
-import { Droplets, User, Stethoscope, Heart } from 'lucide-react';
+import { Activity, ScanLine, ShieldCheck, Sparkles } from 'lucide-react';
 
 export default function Positioning() {
   const blocks = [
     {
-      icon: Droplets,
-      title: "Naturalidad",
-      text: "Tratamientos pensados para verte mejor sin perder tu expresión."
+      icon: ScanLine,
+      title: 'Evaluación',
+      text: 'Cada indicación empieza por entender zona, objetivo y expectativas.'
     },
     {
-      icon: User,
-      title: "Personalización",
-      text: "Cada plan se adapta a tu rostro, tu piel, tu etapa y tus objetivos."
+      icon: Sparkles,
+      title: 'MELA Láser',
+      text: 'Tecnología enfocada en contorno, grasa localizada, firmeza y calidad de piel.'
     },
     {
-      icon: Stethoscope,
-      title: "Criterio médico",
-      text: "La indicación del tratamiento parte de una evaluación profesional."
+      icon: ShieldCheck,
+      title: 'Criterio profesional',
+      text: 'Dirección técnica médica y protocolos claros antes de tratar.'
     },
     {
-      icon: Heart,
-      title: "Bienestar integral",
-      text: "Estética facial, corporal y bienestar femenino desde un enfoque regenerativo."
+      icon: Activity,
+      title: 'Seguimiento',
+      text: 'El plan se acompaña para observar evolución y ajustar lo necesario.'
     }
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-brand-sand-light">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid lg:grid-cols-[0.82fr_1.18fr] gap-10 lg:gap-16 items-start">
-        <div className="max-w-xl">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-3xl md:text-5xl font-serif font-semibold text-brand-dark mb-6 leading-tight"
-          >
-            Mejorar no significa cambiar quién sos
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-brand-text/80 leading-relaxed"
-          >
-            Cada rostro, cada piel y cada etapa de la vida necesita una mirada distinta. Por eso, el enfoque de la Dra. Adriana Galleno se basa en evaluar, personalizar y acompañar cada tratamiento con criterio médico, buscando resultados sutiles, armónicos y naturales.
-          </motion.p>
-          <div className="mt-8 border-l-2 border-brand-gold pl-5 text-brand-muted">
-            No se trata de cambiar tu rostro. Se trata de verte más descansada, luminosa y armónica.
-          </div>
-        </div>
-
-        <div className="grid sm:grid-cols-2 gap-4">
-          {blocks.map((block, idx) => (
-            <motion.div 
-              key={idx}
+    <section className="bg-brand-ivory py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-5 md:px-10">
+        <div className="grid items-start gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
+          <div className="max-w-xl">
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: idx * 0.1 }}
-              className={`p-6 rounded-lg border border-brand-sand transition-colors ${
-                idx === 0 ? 'sm:col-span-2 bg-brand-dark text-brand-sand-light' : 'bg-brand-sand-light/80 hover:bg-brand-champagne-light'
-              }`}
+              viewport={{ once: true, margin: '-100px' }}
+              className="mb-6 font-serif text-4xl font-semibold leading-[1.02] text-brand-dark md:text-6xl"
             >
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-5 ${
-                idx === 0 ? 'bg-brand-sand-light/10 text-brand-champagne' : 'bg-brand-champagne-light text-brand-gold'
-              }`}>
-                <block.icon size={24} strokeWidth={1.5} />
-              </div>
-              <h3 className={`text-xl font-serif font-semibold mb-2 ${idx === 0 ? 'text-brand-sand-light' : 'text-brand-dark'}`}>{block.title}</h3>
-              <p className={`text-sm leading-relaxed ${idx === 0 ? 'text-brand-sand-light/75' : 'text-brand-muted'}`}>{block.text}</p>
-            </motion.div>
-          ))}
+              Mejorar sin perder una mirada realista del cuerpo.
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ delay: 0.1 }}
+              className="text-lg leading-relaxed text-brand-text/80"
+            >
+              Aura se posiciona desde una estética láser seria: evaluar, indicar, tratar y acompañar sin prometer resultados iguales para todos.
+            </motion.p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {blocks.map((block, idx) => {
+              const Icon = block.icon;
+              return (
+                <motion.div
+                  key={block.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ delay: idx * 0.08 }}
+                  className={`rounded-2xl border p-6 ${
+                    idx === 0
+                      ? 'border-brand-dark bg-brand-dark text-brand-ivory sm:col-span-2'
+                      : 'border-brand-sand/55 bg-white/56'
+                  }`}
+                >
+                  <div
+                    className={`mb-5 flex h-12 w-12 items-center justify-center rounded-full ${
+                      idx === 0 ? 'bg-brand-ivory/10 text-brand-mist' : 'bg-brand-mist text-brand-accent'
+                    }`}
+                  >
+                    <Icon size={24} strokeWidth={1.7} />
+                  </div>
+                  <h3 className={`mb-2 font-serif text-2xl ${idx === 0 ? 'text-brand-ivory' : 'text-brand-dark'}`}>
+                    {block.title}
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${idx === 0 ? 'text-brand-ivory/75' : 'text-brand-muted'}`}>
+                    {block.text}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

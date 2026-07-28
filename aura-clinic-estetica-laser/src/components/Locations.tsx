@@ -1,124 +1,93 @@
-import { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Calendar, Clock, MapPin } from 'lucide-react';
-import { LOCATIONS, WHATSAPP_MESSAGE, WHATSAPP_NUMBER_1 } from '../data';
+import { Calendar, ExternalLink, MapPin, MessageCircle } from 'lucide-react';
+import { LOCATIONS, WHATSAPP_NUMBER } from '../data';
+import montevideoImage from '../assets/aura-clinic/sede-montevideo-rambla.jpg';
+import puntaDelEsteImage from '../assets/aura-clinic/sede-punta-del-este.jpg';
+
+const locationImages = [
+  { src: montevideoImage, alt: 'Vista de Montevideo sobre la Rambla', position: '50% 58%' },
+  { src: puntaDelEsteImage, alt: 'Vista aérea de Punta del Este', position: '50% 52%' }
+];
 
 export default function Locations() {
-  const [activeTab, setActiveTab] = useState(LOCATIONS[0].id);
-
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER_1}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-  const getMapQuery = (loc: (typeof LOCATIONS)[number]) => `${loc.address}, ${loc.name}, Uruguay`;
-  const getMapUrl = (loc: (typeof LOCATIONS)[number]) =>
-    'mapUrl' in loc && loc.mapUrl
-      ? loc.mapUrl
-      : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(getMapQuery(loc))}`;
-  const getMapEmbedUrl = (loc: (typeof LOCATIONS)[number]) =>
-    'mapEmbedUrl' in loc && loc.mapEmbedUrl
-      ? loc.mapEmbedUrl
-      : `https://www.google.com/maps?q=${encodeURIComponent(getMapQuery(loc))}&output=embed`;
-
   return (
-    <section id="ubicaciones" className="bg-brand-sand-light py-20 md:py-28">
-      <div className="mx-auto max-w-5xl px-6 md:px-12">
-        <div className="mb-12 max-w-3xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-4 font-serif text-3xl font-semibold text-brand-dark md:text-5xl"
-          >
-            Consultorio en Montevideo (Punta Carretas)
-          </motion.h2>
-          <p className="text-lg leading-relaxed text-brand-muted">
-            Nuestro punto de atención para coordinar tu evaluación estética y tratamiento personalizado.
+    <section id="ubicaciones" className="bg-brand-ivory py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-5 md:px-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12 max-w-3xl"
+        >
+          <p className="eyebrow text-brand-muted">Sedes</p>
+          <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.02] text-brand-dark md:text-6xl">
+            Montevideo y Punta del Este.
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-brand-muted">
+            La agenda se coordina por WhatsApp al {WHATSAPP_NUMBER}.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mb-10 flex flex-wrap gap-2">
-          {LOCATIONS.map((loc) => (
-            <button
-              key={loc.id}
-              onClick={() => setActiveTab(loc.id)}
-              className={`rounded-full px-6 py-3 font-medium transition-all duration-300 ${
-                activeTab === loc.id
-                  ? 'bg-brand-gold text-brand-sand-light shadow-md'
-                  : 'bg-brand-sand-light text-brand-text hover:bg-brand-champagne-light'
-              }`}
-            >
-              {loc.name.split(' / ')[0]}
-            </button>
-          ))}
-        </div>
-
-        <div className="rounded-lg border border-brand-sand bg-brand-sand-light p-7 shadow-sm md:p-10">
-          {LOCATIONS.map((loc) => {
-            if (loc.id !== activeTab) return null;
+        <div className="grid gap-5 md:grid-cols-2">
+          {LOCATIONS.map((loc, idx) => {
+            const image = locationImages[idx];
 
             return (
-              <motion.div
+              <motion.article
                 key={loc.id}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className="grid items-center gap-12 md:grid-cols-2"
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.08 }}
+                className="overflow-hidden rounded-[1.35rem] border border-brand-dark/10 bg-brand-paper shadow-[0_18px_55px_rgba(13,14,11,0.07)]"
               >
-                <div className="space-y-6">
-                  <h3 className="font-serif text-2xl text-brand-dark">{loc.name}</h3>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="aspect-[16/10] w-full object-cover"
+                  style={{ objectPosition: image.position }}
+                  loading="lazy"
+                />
+                <div className="p-7">
+                  <div className="flex items-start justify-between gap-5">
+                    <div>
+                      <p className="text-sm font-semibold text-brand-gold">Sede</p>
+                      <h3 className="mt-2 font-serif text-4xl text-brand-dark">{loc.name}</h3>
+                    </div>
+                    <div className="grid h-12 w-12 place-items-center rounded-full bg-brand-sand-light text-brand-gold">
+                      <MapPin size={22} />
+                    </div>
+                  </div>
 
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3 text-brand-text">
-                      <Calendar className="mt-1 shrink-0 text-brand-gold" size={20} />
+                  <div className="mt-7 space-y-4 text-brand-text">
+                    <div className="flex items-start gap-3">
+                      <Calendar className="mt-1 shrink-0 text-brand-gold" size={19} />
                       <div>
-                        <span className="block font-medium text-brand-dark">Días de atención</span>
-                        {loc.day}
+                        <span className="block font-medium text-brand-dark">{loc.day}</span>
+                        <span className="text-sm text-brand-muted">{loc.time}</span>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 text-brand-text">
-                      <Clock className="mt-1 shrink-0 text-brand-gold" size={20} />
+                    <div className="flex items-start gap-3">
+                      <MapPin className="mt-1 shrink-0 text-brand-gold" size={19} />
                       <div>
-                        <span className="block font-medium text-brand-dark">Horario</span>
-                        {loc.time}
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3 text-brand-text">
-                      <MapPin className="mt-1 shrink-0 text-brand-gold" size={20} />
-                      <div>
-                        <span className="block font-medium text-brand-dark">Dirección</span>
-                        {loc.address}
+                        <span className="block font-medium text-brand-dark">{loc.address}</span>
+                        <span className="text-sm text-brand-muted">{loc.note}</span>
                       </div>
                     </div>
                   </div>
 
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 rounded-full bg-brand-gold px-8 py-3.5 font-semibold text-brand-sand-light transition-colors hover:bg-brand-dark"
-                  >
-                    {loc.button}
-                    <ArrowRight size={18} />
-                  </a>
+                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <a href={loc.whatsappUrl} target="_blank" rel="noopener noreferrer" className="primary-button">
+                      <MessageCircle size={17} />
+                      Consultar sede
+                    </a>
+                    <a href={loc.mapUrl} target="_blank" rel="noopener noreferrer" className="secondary-button-light">
+                      <ExternalLink size={17} />
+                      Ver mapa
+                    </a>
+                  </div>
                 </div>
-
-                <div className="overflow-hidden rounded-lg border border-brand-sand bg-brand-champagne-light shadow-sm">
-                  <iframe
-                    title={`Mapa de ${loc.name}`}
-                    src={getMapEmbedUrl(loc)}
-                    className="h-[320px] w-full md:h-[360px]"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                  <a
-                    href={getMapUrl(loc)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between gap-4 border-t border-brand-sand bg-brand-sand-light px-5 py-4 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-champagne-light"
-                  >
-                    Abrir ubicación en Google Maps
-                    <ArrowRight size={16} className="shrink-0" />
-                  </a>
-                </div>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>

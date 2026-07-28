@@ -1,20 +1,23 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Aura Clinic - Estética Láser
 
-# Run and deploy your AI Studio app
+Landing premium para Aura Clinic, basada en MELA Láser TriActiva, evaluación profesional y coordinación por Instagram.
 
-This contains everything you need to run your app locally.
+## Uso local
 
-View your app in AI Studio: https://ai.studio/apps/12a0ac2c-7bf4-4301-b92c-88813d31b1e2
+```bash
+npm install
+npm run dev
+```
 
-## Run Locally
+## Build
 
-**Prerequisites:**  Node.js
+```bash
+npm run build
+```
 
+El sitio listo para hosting queda en `dist/`.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Pendientes antes de publicar
+
+- Reemplazar la imagen generada por fotos reales del perfil y casos autorizados.
+- Confirmar si Aura quiere usar Instagram como canal principal o sumar otro canal directo.

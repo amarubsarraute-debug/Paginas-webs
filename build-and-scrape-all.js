@@ -281,6 +281,46 @@ const projects = [
     outputDir: path.join(ROOT, 'dr-matias-alcaraz'),
     defaultPort: 4199,
     extraFiles: []
+  },
+  {
+    name: 'Clínica Magali Chaparro',
+    dirName: 'clinica-magali-chaparro',
+    projectPath: path.join(ROOT, 'clinica-magali-chaparro'),
+    buildDir: path.join(ROOT, 'clinica-magali-chaparro', 'dist'),
+    runDir: path.join(ROOT, 'clinica-magali-chaparro'),
+    outputDir: path.join(ROOT, 'clinica-magali-chaparro'),
+    defaultPort: 4200,
+    extraFiles: []
+  },
+  {
+    name: 'La Clinique Punta del Este',
+    dirName: 'la-clinique-puntadeleste',
+    projectPath: path.join(ROOT, 'la-clinique-puntadeleste'),
+    buildDir: path.join(ROOT, 'la-clinique-puntadeleste', 'dist'),
+    runDir: path.join(ROOT, 'la-clinique-puntadeleste'),
+    outputDir: path.join(ROOT, 'la-clinique-puntadeleste'),
+    defaultPort: 4201,
+    extraFiles: []
+  },
+  {
+    name: 'Mint Clínica Orofacial',
+    dirName: 'mint-clinica-orofacial',
+    projectPath: path.join(ROOT, 'mint-clinica-orofacial'),
+    buildDir: path.join(ROOT, 'mint-clinica-orofacial', 'dist'),
+    runDir: path.join(ROOT, 'mint-clinica-orofacial'),
+    outputDir: path.join(ROOT, 'mint-clinica-orofacial'),
+    defaultPort: 4202,
+    extraFiles: []
+  },
+  {
+    name: 'Aura Clinic Estética Láser',
+    dirName: 'aura-clinic-estetica-laser',
+    projectPath: path.join(ROOT, 'aura-clinic-estetica-laser'),
+    buildDir: path.join(ROOT, 'aura-clinic-estetica-laser', 'dist'),
+    runDir: path.join(ROOT, 'aura-clinic-estetica-laser'),
+    outputDir: path.join(ROOT, 'aura-clinic-estetica-laser'),
+    defaultPort: 4203,
+    extraFiles: ['favicon.svg']
   }
 ];
 
@@ -402,11 +442,13 @@ async function processProject(project) {
             .replace(/url\(&quot;\/assets\//g, 'url(&quot;assets/')
             .replace(/href="\/robots.txt"/g, 'href="robots.txt"');
 
-          // Reemplazar archivos extra específicos si es necesario
+          // Reemplazar archivos extra específicos si es necesario (src= o href=,
+          // p.ej. favicon.svg queda como href="/favicon.svg" en el build de Vite)
           project.extraFiles.forEach(file => {
-            const regexStr = `src="\\/${file.replace('.', '\\.')}"`;
-            const regex = new RegExp(regexStr, 'g');
-            processedHtml = processedHtml.replace(regex, `src="${file}"`);
+            const escaped = file.replace('.', '\\.');
+            processedHtml = processedHtml
+              .replace(new RegExp(`src="\\/${escaped}"`, 'g'), `src="${file}"`)
+              .replace(new RegExp(`href="\\/${escaped}"`, 'g'), `href="${file}"`);
           });
 
           // Guardar index.html en el outputDir

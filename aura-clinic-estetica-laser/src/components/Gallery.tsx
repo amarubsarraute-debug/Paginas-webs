@@ -1,39 +1,23 @@
 import { useState } from 'react';
-import customG1 from '../assets/custom_g1.jpg';
-import customG2 from '../assets/custom_g2.jpg';
 import { AnimatePresence, motion } from 'motion/react';
 import { X } from 'lucide-react';
+import heroImage from '../assets/aura-hero-laser.webp';
 
 const galleryItems = [
   {
-    title: 'Consulta médica estética',
-    alt: 'Consultorio médico preparado para evaluación estética',
-    image: customG1
+    title: 'Tratamiento láser',
+    alt: 'Aplicador de estética láser en sala clínica',
+    image: heroImage
   },
   {
-    title: 'Detalle de piel',
-    alt: 'Detalle editorial de piel cuidada',
-    image: customG2
+    title: 'Evaluación corporal',
+    alt: 'Sala premium para evaluación estética corporal',
+    image: heroImage
   },
   {
-    title: 'Tratamientos personalizados',
-    alt: 'Material médico estético en consultorio',
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1200&auto=format&fit=crop'
-  },
-  {
-    title: 'Bienestar femenino',
-    alt: 'Espacio de consulta para bienestar femenino',
-    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1200&auto=format&fit=crop'
-  },
-  {
-    title: 'Productos y protocolos',
-    alt: 'Productos profesionales de cuidado de piel',
-    image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1200&auto=format&fit=crop'
-  },
-  {
-    title: 'Resultados autorizados',
-    alt: 'Espacio reservado para resultados autorizados',
-    image: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200&auto=format&fit=crop'
+    title: 'Plan por zona',
+    alt: 'Detalle de equipo láser no quirúrgico',
+    image: heroImage
   }
 ];
 
@@ -41,33 +25,31 @@ export default function Gallery() {
   const [activeImage, setActiveImage] = useState<(typeof galleryItems)[number] | null>(null);
 
   return (
-    <section className="py-20 md:py-28 bg-brand-sand-light">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="bg-brand-ivory py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-5 md:px-10">
         <div className="mb-12 max-w-3xl">
-          <h2 className="text-3xl md:text-5xl font-serif font-semibold text-brand-dark mb-4">
-            Galería editorial
+          <h2 className="mb-4 font-serif text-4xl font-semibold text-brand-dark md:text-6xl">
+            Galería Aura
           </h2>
-          <p className="text-brand-muted text-lg leading-relaxed">
-            Un espacio visual para mostrar consultorio, detalles de tratamientos y resultados autorizados cuando estén disponibles.
+          <p className="text-lg leading-relaxed text-brand-muted">
+            Sala, tecnología y resultados autorizados para entender la experiencia antes de coordinar.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-          {galleryItems.map((item, idx) => (
+        <div className="grid gap-3 md:grid-cols-3">
+          {galleryItems.map((item) => (
             <button
               key={item.title}
               onClick={() => setActiveImage(item)}
-              className={`group relative overflow-hidden rounded-lg border border-brand-sand text-left ${
-                idx === 0 || idx === 5 ? 'col-span-2 row-span-2' : ''
-              }`}
+              className="group relative overflow-hidden rounded-2xl border border-brand-sand/55 text-left"
             >
               <img
                 src={item.image}
                 alt={item.alt}
-                className="h-full min-h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark/78 to-transparent p-4">
-                <p className="text-sm font-semibold text-brand-sand-light">{item.title}</p>
+                <p className="text-sm font-semibold text-brand-ivory">{item.title}</p>
               </div>
             </button>
           ))}
@@ -85,7 +67,7 @@ export default function Gallery() {
           >
             <button
               onClick={() => setActiveImage(null)}
-              className="absolute right-5 top-5 rounded-full bg-brand-sand-light/10 p-3 text-brand-sand-light backdrop-blur"
+              className="absolute right-5 top-5 rounded-full bg-brand-ivory/10 p-3 text-brand-ivory backdrop-blur"
               aria-label="Cerrar imagen"
             >
               <X size={22} />
@@ -96,7 +78,7 @@ export default function Gallery() {
               exit={{ opacity: 0, y: 20 }}
               src={activeImage.image}
               alt={activeImage.alt}
-              className="max-h-[84dvh] max-w-5xl rounded-lg object-contain"
+              className="max-h-[84dvh] max-w-5xl rounded-2xl object-contain"
             />
           </motion.div>
         )}

@@ -8,20 +8,20 @@ export default function Selector() {
   const selectedGoal = GOALS.find((goal) => goal.id === activeGoal) ?? GOALS[0];
 
   return (
-    <section className="py-20 md:py-28 bg-brand-dark text-brand-sand-light">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section id="objetivos" className="bg-brand-dark py-20 text-brand-ivory md:py-28">
+      <div className="mx-auto max-w-7xl px-5 md:px-10">
         <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16 items-start">
         <div className="lg:sticky lg:top-28">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-serif font-semibold text-brand-sand-light mb-5 leading-tight"
+            className="mb-5 font-serif text-4xl font-semibold leading-[1.02] text-brand-ivory md:text-6xl"
           >
-            Elegí qué querés mejorar y encontrá el tratamiento adecuado
+            Elegí qué querés mejorar.
           </motion.h2>
-          <p className="text-brand-sand-light/70 leading-relaxed max-w-md">
-            La recomendación no parte del tratamiento de moda. Parte de tu rostro, tu piel, tu etapa y lo que querés cuidar.
+          <p className="max-w-md text-lg leading-relaxed text-brand-ivory/70">
+            La recomendación no parte de una promoción. Parte de la zona, la piel, la etapa y el objetivo real.
           </p>
 
           <motion.div
@@ -29,11 +29,11 @@ export default function Selector() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35 }}
-            className="mt-8 rounded-lg border border-brand-sand-light/15 bg-brand-sand-light/10 p-6"
+            className="mt-8 rounded-2xl border border-brand-ivory/14 bg-brand-ivory/9 p-6"
           >
-            <p className="text-xs font-semibold uppercase text-brand-champagne">Tratamientos relacionados</p>
-            <h3 className="mt-2 text-2xl font-serif font-semibold text-brand-sand-light">{selectedGoal.title}</h3>
-            <p className="mt-4 text-brand-sand-light/75 leading-relaxed">{selectedGoal.treatments}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-mist">Lectura sugerida</p>
+            <h3 className="mt-3 font-serif text-3xl font-semibold text-brand-ivory">{selectedGoal.title}</h3>
+            <p className="mt-4 leading-relaxed text-brand-ivory/75">{selectedGoal.treatments}</p>
           </motion.div>
         </div>
 
@@ -50,10 +50,10 @@ export default function Selector() {
               >
                 <button
                   onClick={() => setActiveGoal(goal.id)}
-                  className={`w-full min-h-24 text-left p-5 rounded-lg transition-all duration-300 border flex justify-between items-center ${
+                  className={`flex min-h-24 w-full items-center justify-between rounded-2xl border p-5 text-left transition-all duration-300 ${
                     isActive 
-                      ? 'bg-brand-sand-light text-brand-dark border-brand-sand-light shadow-lg shadow-black/10' 
-                      : 'bg-brand-sand-light/10 border-brand-sand-light/15 text-brand-sand-light hover:bg-brand-sand-light/15'
+                      ? 'border-brand-ivory bg-brand-ivory text-brand-dark shadow-lg shadow-black/12' 
+                      : 'border-brand-ivory/14 bg-brand-ivory/9 text-brand-ivory hover:bg-brand-ivory/14'
                   }`}
                 >
                   <span className="font-medium">{goal.title}</span>

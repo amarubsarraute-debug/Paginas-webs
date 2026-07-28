@@ -1,57 +1,68 @@
-import { WHATSAPP_NUMBER_1, WHATSAPP_NUMBER_2, WHATSAPP_MESSAGE } from '../data';
-import { Instagram, MessageCircle, Mail } from 'lucide-react';
-import logo from '../assets/adriana-galleno-logo.png';
+import { BRAND_DESCRIPTOR, BRAND_NAME, CONTACT_LABEL, CONTACT_URL, INSTAGRAM_URL, MONTEVIDEO_ADDRESS, PUNTA_DEL_ESTE_ADDRESS, WHATSAPP_NUMBER } from '../data';
+import { Instagram, MapPin, MessageCircle } from 'lucide-react';
+import logoImage from '../assets/aura-clinic/aura-clinic-logo.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const whatsappUrl1 = `https://wa.me/${WHATSAPP_NUMBER_1}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-  const whatsappUrl2 = `https://wa.me/${WHATSAPP_NUMBER_2}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
   return (
-    <footer className="bg-brand-dark text-brand-sand-light pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          
-          <div className="lg:col-span-2">
-            <img
-              src={logo}
-              alt="Logo Aura Clinic Medicina Estética"
-              className="mb-6 w-44 rounded-sm border border-brand-sand-light/15 shadow-lg shadow-black/10"
-            />
-            <p className="text-brand-sand-light/70 max-w-sm leading-relaxed mb-6">
-              Medicina Estética | Tratamientos Faciales y Corporales
-            </p>
-            <div className="flex gap-4">
-              <a href="https://instagram.com/dra.adrianagalleno" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-sand-light/10 flex items-center justify-center hover:bg-brand-gold transition-colors">
-                <Instagram size={18} />
-              </a>
-              <a href={whatsappUrl1} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-sand-light/10 flex items-center justify-center hover:bg-brand-gold transition-colors">
-                <MessageCircle size={18} />
-              </a>
-              <a href="mailto:" className="w-10 h-10 rounded-full bg-brand-sand-light/10 flex items-center justify-center hover:bg-brand-gold transition-colors">
-                <Mail size={18} />
-              </a>
+    <footer className="bg-brand-dark pb-24 pt-16 text-brand-ivory md:pb-10">
+      <div className="mx-auto max-w-7xl px-5 md:px-10">
+        <div className="mb-12 grid gap-10 md:grid-cols-[1.2fr_0.9fr_0.75fr]">
+          <div>
+            <div className="flex items-center gap-3">
+              <span className="grid h-14 w-14 place-items-center overflow-hidden rounded-full border border-brand-gold/40 bg-brand-ivory p-1">
+                <img src={logoImage} alt="Aura Clinic" className="h-full w-full rounded-full object-cover" />
+              </span>
+              <div>
+                <p className="font-serif text-3xl leading-none">{BRAND_NAME}</p>
+                <p className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-brand-gold">
+                  {BRAND_DESCRIPTOR}
+                </p>
+              </div>
             </div>
+            <p className="mt-6 max-w-sm leading-relaxed text-brand-ivory/70">
+              Clínica estética láser y facial con evaluación profesional, casos reales y agenda previa.
+            </p>
+            <a href={CONTACT_URL} target="_blank" rel="noopener noreferrer" className="primary-button mt-7">
+              <MessageCircle size={17} />
+              {CONTACT_LABEL}
+            </a>
           </div>
 
           <div>
-            <h4 className="font-medium text-lg mb-6">Ubicación</h4><ul className="space-y-3 text-brand-sand-light/70 text-sm"><li>Punta Carretas, Montevideo</li></ul>
-          </div>
-
-          <div>
-            <h4 className="font-medium text-lg mb-6">Contacto</h4>
-            <ul className="space-y-3 text-brand-sand-light/70 text-sm">
-              <li><a href={whatsappUrl1} className="hover:text-brand-gold transition-colors">WhatsApp: 099 000 000</a></li>
-              <li><a href="mailto:essenceag.uy@gmail.com" className="hover:text-brand-gold transition-colors">essenceag.uy@gmail.com</a></li>
+            <h4 className="mb-5 text-lg font-semibold">Sedes</h4>
+            <ul className="space-y-3 text-sm text-brand-ivory/70">
+              <li className="flex items-start gap-2">
+                <MapPin className="mt-0.5 shrink-0 text-brand-gold" size={16} />
+                Montevideo: {MONTEVIDEO_ADDRESS}
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="mt-0.5 shrink-0 text-brand-gold" size={16} />
+                Punta del Este: {PUNTA_DEL_ESTE_ADDRESS}
+              </li>
             </ul>
           </div>
 
+          <div>
+            <h4 className="mb-5 text-lg font-semibold">Contacto</h4>
+            <ul className="space-y-3 text-sm text-brand-ivory/70">
+              <li>
+                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-brand-gold">
+                  <Instagram size={16} />
+                  @auraclinic.uy
+                </a>
+              </li>
+              <li>WhatsApp: {WHATSAPP_NUMBER}</li>
+              <li>Agenda previa por canal oficial</li>
+            </ul>
+          </div>
         </div>
 
-        <div className="pt-8 border-t border-brand-sand-light/10 text-center md:text-left text-xs text-brand-sand-light/55 flex flex-col md:flex-row justify-between gap-4">
-          <p>© {currentYear} Aura Clinic - Estética Láser. Todos los derechos reservados.</p>
+        <div className="flex flex-col gap-4 border-t border-brand-ivory/10 pt-8 text-xs text-brand-ivory/55 md:flex-row md:items-start md:justify-between">
+          <p>© {currentYear} Aura Clinic. Todos los derechos reservados.</p>
           <p className="max-w-xl">
-            La información publicada en esta web es orientativa y no reemplaza una consulta médica. Todo tratamiento requiere evaluación profesional previa.
+            Información orientativa. Todo tratamiento requiere evaluación profesional previa.
           </p>
         </div>
       </div>

@@ -1,51 +1,91 @@
-import { WHATSAPP_LINK, WHATSAPP_NUMBER } from "../lib/constants";
-import { Zap } from "lucide-react";
-import { motion } from "motion/react";
+import { useState } from 'react';
+import { MessageCircle, Menu, X } from 'lucide-react';
+import { BRAND_DESCRIPTOR, BRAND_NAME, CONTACT_LABEL, CONTACT_URL } from '../data';
+import logoImage from '../assets/aura-clinic/aura-clinic-logo.png';
 
-export function Header() {
+const navItems = [
+  { href: '/#tratamientos', label: 'Tratamientos' },
+  { href: '/#profesionales', label: 'Equipo' },
+  { href: '/#casos', label: 'Resultados' },
+  { href: '/#testimonios', label: 'Testimonios' },
+  { href: '/#tecnologia', label: 'Tecnología' },
+  { href: '/#ubicaciones', label: 'Sedes' }
+];
+
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-paper/85 backdrop-blur-md border-b border-border-subtle">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="h-16 flex items-center justify-between">
-          
-          {/* Logo / Brand */}
-          <a href="#" className="flex items-center gap-2 shrink-0">
-            <div className="flex items-center gap-2">
-            <Zap className="w-5 h-5 text-gold fill-gold shrink-0" />
-            <span className="text-lg font-extrabold text-ink tracking-tight font-display font-sans">
-              Aura<b>.</b>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-brand-accent/18 bg-brand-dark/90 backdrop-blur-xl">
+      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 md:px-10">
+        <a href="/" className="group flex items-center gap-3" aria-label="Ir al inicio">
+          <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-full border border-brand-gold/40 bg-brand-ivory p-1">
+            <img src={logoImage} alt="" className="h-full w-full rounded-full object-cover" />
+          </span>
+          <span className="leading-none">
+            <span className="block whitespace-nowrap font-serif text-xl text-brand-ivory md:text-2xl">{BRAND_NAME}</span>
+            <span className="mt-1 block text-[0.62rem] font-semibold uppercase tracking-[0.20em] text-brand-accent">
+              {BRAND_DESCRIPTOR}
             </span>
-          </div>
+          </span>
+        </a>
+
+        <nav className="hidden items-center gap-4 text-sm font-semibold text-brand-ivory/68 xl:gap-6 lg:flex" aria-label="Navegación principal">
+          {navItems.map((item) => (
+            <a key={item.href} href={item.href} className="transition-colors hover:text-brand-accent">
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <a
+            href={CONTACT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden min-h-12 items-center justify-center gap-2 rounded-full bg-brand-gold px-6 py-3 text-sm font-semibold text-brand-dark shadow-[0_18px_42px_rgba(200,169,79,0.22)] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-gold active:translate-y-0 md:inline-flex"
+          >
+            <MessageCircle size={17} />
+            {CONTACT_LABEL}
           </a>
 
-          {/* Navigation & Action */}
-          <div className="flex items-center gap-6">
-            {/* Desktop Navigation Links - 5 sections */}
-            <nav className="hidden md:flex items-center gap-6 font-mono text-xs font-semibold text-muted">
-              <a href="#" className="hover:text-gold transition-colors">Inicio</a>
-              <a href="#servicios" className="hover:text-gold transition-colors">Servicios</a>
-              <a href="#trabajos" className="hover:text-gold transition-colors">Trabajos</a>
-              <a href="#resenas" className="hover:text-gold transition-colors">Garantía</a>
-              <a href="#faq" className="hover:text-gold transition-colors">Preguntas</a>
-            </nav>
-
-            {/* Contact Button */}
-            <a 
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 px-4 py-2 border border-gold/30 hover:border-gold rounded-xl text-xs font-bold text-ink bg-gold/10 hover:bg-gold/20 transition-all duration-200"
-            >
-              <svg className="w-4 h-4 text-gold fill-gold" viewBox="0 0 24 24">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.324 5.328.001 11.859.001c3.168.001 6.145 1.236 8.382 3.477 2.237 2.24 3.466 5.22 3.461 8.387-.005 6.533-5.33 11.857-11.86 11.857-2.007-.001-3.98-.51-5.753-1.479L0 24zm6.59-4.846c1.662.988 3.317 1.588 5.253 1.589 5.437-.002 9.873-4.434 9.877-9.872.003-2.636-1.018-5.114-2.88-6.978C16.98 2.03 14.512.998 11.862.998 6.425.998 1.99 5.43 1.986 10.87c0 2.012.544 3.738 1.6 5.36L2.57 20.25l4.077-1.096z"/>
-              </svg>
-              <span className="hidden sm:inline">WhatsApp: {WHATSAPP_NUMBER}</span>
-              <span className="sm:hidden">Consultar</span>
-            </a>
-          </div>
-
+          <button
+            type="button"
+            onClick={() => setIsOpen((value) => !value)}
+            className="grid h-11 w-11 place-items-center rounded-full border border-brand-accent/26 bg-brand-ivory/8 text-brand-ivory lg:hidden"
+            aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
       </div>
+
+      {isOpen && (
+        <div className="border-t border-brand-accent/18 bg-brand-dark px-5 pb-5 pt-2 lg:hidden">
+          <nav className="grid gap-1" aria-label="Navegación móvil">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className="rounded-lg px-3 py-3 text-sm font-semibold text-brand-ivory hover:bg-brand-ivory/8"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          <a
+            href={CONTACT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="primary-button mt-3 flex w-full"
+          >
+            <MessageCircle size={17} />
+            {CONTACT_LABEL}
+          </a>
+        </div>
+      )}
     </header>
   );
 }

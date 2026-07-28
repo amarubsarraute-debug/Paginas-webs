@@ -1,137 +1,209 @@
-export const GOOGLE_REVIEW_LINK = "https://www.google.com/maps/search/?api=1&query=Aura%20Clinic%20-%20Est%C3%A9tica%20L%C3%A1ser%20Montevideo";
-export const WHATSAPP_NUMBER_1 = "59899000000";
-export const WHATSAPP_NUMBER_2 = "59899000000";
-export const WHATSAPP_MESSAGE = "Hola Aura Clinic, quiero agendar una consulta.";
+export const BRAND_NAME = "Aura Clinic";
+export const BRAND_DESCRIPTOR = "Estética Láser";
+export const INSTAGRAM_URL = "https://www.instagram.com/auraclinic.uy/";
+export const WHATSAPP_NUMBER = "094 741 902";
+export const WHATSAPP_PHONE = "59894741902";
+export const DEFAULT_WHATSAPP_MESSAGE =
+  "Hola, vi la web de Aura Clinic y quiero consultar por una evaluación.";
+export const CONTACT_LABEL = "Agendar evaluación";
 
-export const FAQS = [
-  {
-    question: "¿Los resultados se ven naturales?",
-    answer: "El enfoque de Aura Clinic prioriza la naturalidad, la armonía y la conservación de la expresión. Cada tratamiento se indica según evaluación personalizada."
-  },
-  {
-    question: "¿Voy a perder la expresión con Botox?",
-    answer: "El objetivo del Botox bien indicado no es congelar el rostro, sino suavizar líneas y lograr una apariencia más descansada conservando gestos naturales."
-  },
-  {
-    question: "¿Necesito consulta previa?",
-    answer: "Sí. La evaluación permite entender tu caso, tus expectativas y qué tratamiento es realmente adecuado."
-  },
-  {
-    question: "¿Realizan tratamientos para labios?",
-    answer: "Se realizan tratamientos con ácido hialurónico orientados a hidratación profunda, volumen sutil y corrección de asimetrías, según evaluación."
-  },
-  {
-    question: "¿Tratan manchas y melasma?",
-    answer: "Sí, se pueden evaluar protocolos para manchas y melasma, adaptados al tipo de piel y al caso de cada paciente."
-  },
-  {
-    question: "¿Todos los pacientes obtienen el mismo resultado?",
-    answer: "No. Los resultados varían según cada paciente. Todo tratamiento requiere evaluación profesional y expectativas realistas."
-  }
+export function buildWhatsAppUrl(message = DEFAULT_WHATSAPP_MESSAGE) {
+  return `https://api.whatsapp.com/send/?phone=${WHATSAPP_PHONE}&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0&utm_source=web`;
+}
+
+export const CONTACT_URL = buildWhatsAppUrl();
+export const GOOGLE_REVIEW_LINK =
+  "https://www.google.com/maps/search/?api=1&query=Aura%20Clinic%20Est%C3%A9tica%20L%C3%A1ser%20Montevideo";
+export const MONTEVIDEO_ADDRESS = "Avenida Libertador 743, Local 13, 1er piso, Galería Punto.";
+export const PUNTA_DEL_ESTE_ADDRESS = "Edificio Place Lafayette, Torre II.";
+
+export const TRUST_ITEMS = [
+  "Evaluación profesional",
+  "Plan por zona",
+  "Casos reales",
+  "Seguimiento"
 ];
 
-export const REVIEW_SLOTS = [
+export const CONCERNS = [
   {
-    "title": "Testimonio",
-    "text": ""
-  }
-];
-
-export const GOALS = [
-  {
-    id: "arrugas",
-    title: "Arrugas y líneas de expresión",
-    treatments: "Botox / toxina botulínica, bioestimulación de colágeno, calidad de piel."
+    title: "Grasa localizada",
+    text: "Abdomen, cintura y zonas donde cuesta definir."
   },
   {
-    id: "labios",
+    title: "Flacidez corporal",
+    text: "Firmeza, textura y calidad de piel según evaluación."
+  },
+  {
+    title: "Contorno",
+    text: "Plan para mejorar proporción y silueta sin cirugía."
+  },
+  {
+    title: "Papada",
+    text: "Perfil facial y zona submentoniana cuando el caso lo permite."
+  },
+  {
+    title: "Botox",
+    text: "Tratamiento para líneas de expresión con criterio médico."
+  },
+  {
     title: "Labios",
-    treatments: "Ácido hialurónico, hidratación profunda, volumen sutil, corrección de asimetrías."
-  },
-  {
-    id: "manchas",
-    title: "Manchas y melasma",
-    treatments: "Tratamiento de manchas, melasma, peelings, protocolos personalizados."
-  },
-  {
-    id: "parpados",
-    title: "Párpados y mirada",
-    treatments: "Blefaroplastia no quirúrgica, xantelasma, tratamiento periocular, flacidez de párpados, calidad de piel periocular."
-  },
-  {
-    id: "flacidez",
-    title: "Flacidez facial",
-    treatments: "Hilos tensores, bioestimulación de colágeno, Ultracol."
-  },
-  {
-    id: "caida",
-    title: "Caída capilar",
-    treatments: "Alopecia androgenética y medicina regenerativa capilar."
-  },
-  {
-    id: "piel",
-    title: "Calidad de piel",
-    treatments: "Peelings, bioestimulación, hidratación profunda y protocolos regenerativos."
-  },
-  {
-    id: "armonizacion",
-    title: "Armonización facial",
-    treatments: "Evaluación profesional, ácido hialurónico, bioestimulación, hilos tensores y plan facial personalizado."
+    text: "Ácido hialurónico para definición y armonía labial."
   }
 ];
 
-export const TREATMENT_CATEGORIES = [
+export const METHOD_STEPS = [
   {
-    title: "Medicina estética facial",
-    items: [
-      { name: "Botox / toxina botulínica", desc: "Ideal para suavizar líneas de expresión y lograr un aspecto descansado, luminoso y natural, sin perder expresividad." },
-      { name: "Ácido hialurónico", desc: "Tratamiento para armonizar, hidratar o recuperar volumen de forma sutil, según la necesidad de cada rostro." },
-      { name: "Labios con ácido hialurónico", desc: "Hidratación profunda, volumen inmediato y sutil, y corrección de asimetrías respetando la naturalidad." },
-      { name: "Hilos tensores", desc: "Tratamiento orientado a mejorar la flacidez y aportar efecto tensor sin cirugía." },
-      { name: "Bioestimulación de colágeno", desc: "Estimulación progresiva para mejorar firmeza, textura y calidad de piel." },
-      { name: "Ultracol / Ultracol 200", desc: "Tratamiento regenerativo orientado a mejorar calidad de piel, firmeza y estimulación de colágeno." }
-    ]
+    title: "Consulta inicial",
+    text: "Contás qué zona querés mejorar y elegís la sede."
   },
   {
-    title: "Mirada y región periocular",
-    items: [
-      { name: "Párpados caídos", desc: "Evaluación y tratamiento de la flacidez de párpados para mejorar la apariencia de la mirada." },
-      { name: "Blefaroplastia no quirúrgica", desc: "Alternativa no quirúrgica para trabajar el aspecto de párpados caídos y mejorar la región periocular." },
-      { name: "Tratamiento periocular", desc: "Protocolos combinados para mejorar calidad de piel, flacidez y aspecto cansado de la mirada." },
-      { name: "Xantelasma", desc: "Tratamiento de pequeñas acumulaciones de grasa en párpados, buscando que la lesión se vuelva imperceptible o más fácil de cubrir." }
-    ]
+    title: "Evaluación",
+    text: "Se observa el punto de partida real del cuerpo o rostro."
   },
   {
-    title: "Piel, manchas y melasma",
-    items: [
-      { name: "Tratamiento de manchas", desc: "Protocolos personalizados para mejorar la apariencia de manchas y unificar el tono de la piel." },
-      { name: "Tratamiento de melasma", desc: "Abordaje médico-estético para pieles con melasma, adaptado a cada caso." },
-      { name: "Peelings", desc: "Tratamientos para renovar la piel, mejorar textura, luminosidad y aspecto general." }
-    ]
+    title: "Plan",
+    text: "Se define tratamiento, zona y seguimiento."
   },
   {
-    title: "Medicina estética corporal",
-    items: [
-      { name: "Tratamientos corporales personalizados", desc: "Protocolos orientados a mejorar contorno, firmeza, textura de piel y bienestar corporal según evaluación." }
-    ]
-  },
-  {
-    title: "Medicina regenerativa capilar",
-    items: [
-      { name: "Alopecia androgenética", desc: "Evaluación y tratamientos regenerativos orientados a mejorar la salud capilar según cada caso." },
-      { name: "Medicina regenerativa capilar", desc: "Protocolos personalizados para estimular y acompañar la recuperación capilar." }
-    ]
+    title: "Evolución",
+    text: "Se acompaña el proceso con criterio profesional."
   }
 ];
+
+export const TECHNOLOGY_POINTS = [
+  {
+    title: "MELA Láser TriActiva",
+    text: "Tecnología orientada a grasa localizada, firmeza, contorno y calidad de piel según evaluación previa."
+  },
+  {
+    title: "Endoláser",
+    text: "Tecnología con indicación médica para zonas puntuales donde se busca definición y retracción."
+  },
+  {
+    title: "Botox",
+    text: "Aplicación médica para líneas de expresión y armonización del rostro."
+  },
+  {
+    title: "Labios con ácido hialurónico",
+    text: "Tratamiento orientado a definición, hidratación visual y armonía labial."
+  }
+];
+
+export const PROFESSIONALS = [
+  {
+    name: "Dr. Arlet Pereira Santos",
+    role: "Cirujano plástico",
+    initials: "AP",
+    text: "Más de 26 años de experiencia realizando cirugías plásticas. En Aura, su criterio ordena evaluación, indicación y expectativas.",
+    proof: ["26+ años de experiencia", "Cirugía plástica", "Evaluación médica"]
+  }
+];
+
+export const FEATURED_CASE = {
+  eyebrow: "Caso destacado",
+  title: "Laura llegó con un objetivo claro: volver a sentirse cómoda con su cuerpo.",
+  patient: "Caso Laura",
+  protocol: "MELA Láser TriActiva",
+  quote: "Estoy súper bien, contenta con el resultado. Ahora ya se nota el cambio.",
+  disclaimer:
+    "Fotos y testimonio publicados únicamente con autorización expresa de la paciente.",
+  summary:
+    "Primero se marcaron áreas clave, luego se trabajó con un plan y seguimiento."
+};
 
 export const LOCATIONS = [
   {
-    id: "consultorio",
-    name: "Aura Clinic - Punta Carretas",
-    day: "Lunes a Viernes",
-    time: "9:00 a 18:00 hs",
-    address: "Punta Carretas, Montevideo, Uruguay",
-    button: "Agendar Consulta",
-    mapEmbedUrl: "https://www.google.com/maps?q=Punta%20Carretas%2C%20Montevideo%2C%20Uruguay&output=embed"
+    id: "montevideo",
+    name: "Montevideo",
+    day: "Atención con agenda previa",
+    time: "Coordinación por WhatsApp",
+    address: MONTEVIDEO_ADDRESS,
+    note: "Avenida Libertador, Galería Punto.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Avenida%20Libertador%20743%20Local%2013%20Galer%C3%ADa%20Punto%20Montevideo",
+    whatsappUrl: buildWhatsAppUrl(
+      "Hola, quiero consultar por una evaluación en la sede de Montevideo."
+    )
+  },
+  {
+    id: "pde",
+    name: "Punta del Este",
+    day: "Atención con agenda previa",
+    time: "Coordinación por WhatsApp",
+    address: PUNTA_DEL_ESTE_ADDRESS,
+    note: "Edificio Place Lafayette.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Edificio%20Place%20Lafayette%20Torre%20II%20Punta%20del%20Este",
+    whatsappUrl: buildWhatsAppUrl(
+      "Hola, quiero consultar por una evaluación en la sede de Punta del Este."
+    )
+  }
+];
+
+export const FAQS = [
+  {
+    question: "¿Necesito evaluación antes de comenzar?",
+    answer:
+      "Sí. La evaluación define zona, objetivo y expectativas antes de indicar cualquier tratamiento."
+  },
+  {
+    question: "¿Tengo que saber qué tratamiento pedir?",
+    answer:
+      "No. Podés consultar por lo que querés mejorar y el equipo te orienta."
+  },
+  {
+    question: "¿Qué zonas corporales se pueden tratar?",
+    answer:
+      "Aura trabaja abdomen, cintura, brazos, espalda, piernas, papada y otras zonas según evaluación."
+  },
+  {
+    question: "¿También realizan tratamientos faciales?",
+    answer:
+      "Sí. Aura también trabaja Botox y labios con ácido hialurónico, siempre con evaluación previa."
+  },
+  {
+    question: "¿Qué trabaja MELA Láser TriActiva?",
+    answer:
+      "Contorno corporal, grasa localizada, firmeza y calidad de piel. La indicación depende de cada caso."
+  },
+  {
+    question: "¿Hay seguimiento?",
+    answer:
+      "Sí. El proceso se acompaña con registro, expectativas claras y orientación."
+  },
+  {
+    question: "¿Dónde atienden?",
+    answer:
+      "Montevideo: Avenida Libertador 743, Local 13, 1er piso, Galería Punto. Punta del Este: Edificio Place Lafayette, Torre II."
+  },
+  {
+    question: "¿Cómo agendo?",
+    answer:
+      "Por WhatsApp al 094 741 902."
+  }
+];
+
+export const REVIEW_SLOTS: Array<{ title?: string; text: string }> = [];
+
+export const GOALS = CONCERNS.map((concern, index) => ({
+  id: `goal-${index + 1}`,
+  title: concern.title,
+  treatments: concern.text
+}));
+
+export const TREATMENT_CATEGORIES = [
+  {
+    title: "Corporales",
+    items: CONCERNS.slice(0, 4).map((concern) => ({
+      name: concern.title,
+      desc: concern.text
+    }))
+  },
+  {
+    title: "Faciales",
+    items: CONCERNS.slice(4).map((concern) => ({
+      name: concern.title,
+      desc: concern.text
+    }))
   }
 ];

@@ -1,10 +1,10 @@
 import { motion } from 'motion/react';
-import { Star } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import { REVIEW_SLOTS, GOOGLE_REVIEW_LINK } from '../data';
 
 function StarRating() {
   return (
-    <div className="flex gap-1 text-[#A43A34]" aria-label="5 estrellas">
+    <div className="flex gap-1 text-brand-accent" aria-label="5 estrellas">
       {Array.from({ length: 5 }).map((_, index) => (
         <Star key={index} size={19} className="fill-current" strokeWidth={2.4} />
       ))}
@@ -54,7 +54,8 @@ export default function Reviews() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-gold hover:text-brand-dark transition-colors border border-brand-sand/50 rounded-full px-4 py-2 bg-brand-sand-light/50"
               >
-                Dejar opinión en Google →
+                Dejar opinión en Google
+                <ArrowRight size={15} />
               </a>
             )}
           </motion.div>

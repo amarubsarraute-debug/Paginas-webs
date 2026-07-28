@@ -1,6 +1,6 @@
 {
   "name": "Aura Clinic - Estética Láser",
-  "description": "Landing page para Aura Clinic - Estética Láser en Montevideo.",
+  "description": "Landing page premium para Aura Clinic - Estética Láser, MELA Láser TriActiva, Montevideo y Punta del Este.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }

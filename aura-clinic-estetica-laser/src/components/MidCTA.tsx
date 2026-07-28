@@ -1,27 +1,26 @@
-import { ArrowRight } from 'lucide-react';
-import { WHATSAPP_MESSAGE, WHATSAPP_NUMBER_1 } from '../data';
+import { ArrowRight, Instagram } from 'lucide-react';
+import { CONTACT_LABEL, CONTACT_URL } from '../data';
 
 export default function MidCTA() {
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER_1}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-
   return (
-    <section className="bg-brand-dark px-6 py-16 md:px-12">
+    <section className="bg-brand-mist px-5 py-16 md:px-10">
       <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1fr_auto] md:items-center">
         <div>
-          <h2 className="text-3xl md:text-5xl font-serif font-semibold text-brand-sand-light leading-tight">
-            ¿Querés saber qué tratamiento es adecuado para vos?
+          <h2 className="font-serif text-4xl font-semibold leading-[1.02] text-brand-dark md:text-6xl">
+            ¿Querés saber si MELA es para vos?
           </h2>
-          <p className="mt-5 max-w-3xl text-brand-sand-light/70 text-lg leading-relaxed">
-            Agendá una consulta para recibir una evaluación médica personalizada y definir el mejor camino según tu rostro, tu piel, tu cuerpo o tu etapa de vida.
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-brand-muted">
+            Mandá un mensaje con la zona que querés trabajar y coordiná una evaluación con Aura Clinic.
           </p>
         </div>
         <a
-          href={whatsappUrl}
+          href={CONTACT_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex w-fit items-center gap-2 rounded-full bg-brand-gold px-8 py-3.5 font-semibold text-brand-sand-light transition-colors hover:bg-brand-sand-light hover:text-brand-dark"
+          className="inline-flex w-fit items-center gap-2 rounded-full bg-brand-dark px-7 py-3.5 font-semibold text-brand-ivory transition-transform hover:-translate-y-0.5"
         >
-          Agendar por WhatsApp
+          <Instagram size={18} />
+          {CONTACT_LABEL}
           <ArrowRight size={18} />
         </a>
       </div>
