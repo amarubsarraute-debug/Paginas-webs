@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter+Tight:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   SISTEMA DE DISEÑO — "Ficha de piel"
+   Base porcelana cálida · tinta café · salvia profunda · luz durazno
+------------------------------------------------------------------- */
+@theme {
+  --font-display: 'Fraunces', Georgia, ui-serif, serif;
+  --font-sans: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --color-porcelain: #f2eee7;
+  --color-paper: #fdfbf7;
+  --color-ink: #14120e;
+  --color-graphite: #5b544a;
+  /* --color-mute y --color-sage-soft están calibrados para superar 4.5:1 y
+     3:1 respectivamente sobre el fondo porcelana. No aclararlos. */
+  --color-mute: #6e675c;
+  --color-line: #ded6c9;
+  --color-sage: #173f2a;
+  --color-sage-soft: #5e765b;
+  --color-glow: #d8b66f;
+  --color-glow-soft: #efe0bd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-porcelain);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--color-glow);
+  color: var(--color-ink);
+}
+
+/* Foco accesible y visible sobre cualquier fondo */
+:focus-visible {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* En las secciones oscuras la salvia no contrasta: se usa el durazno */
+.bg-ink :focus-visible {
+  outline-color: var(--color-glow);
+}
+
+/* ------------------------------------------------------------------
+   ESCALA TIPOGRÁFICA EDITORIAL
+------------------------------------------------------------------- */
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.9rem, 8.4vw, 7.4rem);
+  line-height: 0.94;
+  letter-spacing: 0;
+}
+
+.t-h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.1rem, 5vw, 4.1rem);
+  line-height: 1.04;
+  letter-spacing: 0;
+}
+
+.t-h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.45rem, 2.6vw, 2.05rem);
+  line-height: 1.14;
+  letter-spacing: 0;
+}
+
+.t-lead {
+  font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+  line-height: 1.55;
+  color: var(--color-graphite);
+  font-weight: 300;
+}
+
+.t-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-mute);
+}
+
+.t-num {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* ------------------------------------------------------------------
+   MOTION — revelados por IntersectionObserver.
+   Sin librería: el JS solo alterna data-inview; el CSS hace el resto.
+------------------------------------------------------------------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    clip-path 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-reveal='mask'] {
+  transform: none;
+  opacity: 1;
+  clip-path: inset(0 0 100% 0);
+}
+
+[data-reveal='line'] {
+  transform: none;
+  opacity: 1;
+  clip-path: inset(0 100% 0 0);
+}
+
+[data-reveal][data-inview='true'] {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 0 0 0);
+}
+
+/* Palabras del titular: suben desde una máscara */
+.word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.06em;
+}
+
+.word-mask > span {
+  display: inline-block;
+  transform: translate3d(0, 108%, 0);
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--word-delay, 0ms);
+}
+
+[data-inview='true'] .word-mask > span {
+  transform: none;
+}
+
+/* ------------------------------------------------------------------
+   PIEZAS REUTILIZABLES
+------------------------------------------------------------------- */
+.rule {
+  height: 1px;
+  background: var(--color-line);
+  border: 0;
+  margin: 0;
+}
+
+/* En @layer components para que `hidden`/`sm:inline-flex` le ganen al display
+   de acá: sin la capa, el botón del nav aparecía en móvil. */
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 1.05rem 1.9rem;
+    border-radius: 999px;
+    font-size: 0.94rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    border: 1px solid transparent;
+    transition:
+      background-color 0.35s ease,
+      color 0.35s ease,
+      border-color 0.35s ease,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: var(--color-sage);
+  color: var(--color-paper);
+}
+
+.btn-primary:hover {
+  background: var(--color-ink);
+}
+
+.btn-ghost {
+  border-color: var(--color-line);
+  color: var(--color-ink);
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-ink);
+  background: var(--color-paper);
+}
+
+/* Subrayado que crece de izquierda a derecha */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-underline:hover::after,
+.link-underline:focus-visible::after,
+.link-underline[data-active='true']::after {
+  transform: scaleX(1);
+}
+
+/* Tarjetas: la imagen respira al hover, el borde se oscurece */
+.card-media img {
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .card-media img {
+  transform: scale(1.045);
+}
+
+.card {
+  transition:
+    border-color 0.4s ease,
+    background-color 0.4s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover {
+  border-color: var(--color-ink);
+  transform: translateY(-4px);
+}
+
+/* Grano sutil: da profundidad sin sombras ni glassmorphism */
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+/* Panel del selector de objetivos: entra cada vez que cambia la selección */
+.goal-panel {
+  animation: goal-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes goal-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Tipografía cinética: la lista se duplica, así el loop es continuo */
+.marquee-anim {
+  animation: marquee 46s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* ------------------------------------------------------------------
+   ACCESIBILIDAD — sin movimiento si el sistema lo pide
+------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-reveal],
+  [data-reveal='mask'],
+  [data-reveal='line'] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+
+  .word-mask > span {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .card:hover,
+  .btn:hover {
+    transform: none;
+  }
+
+  .card:hover .card-media img {
+    transform: none;
+  }
+
+  .marquee-anim,
+  .goal-panel {
+    animation: none;
+  }
+}

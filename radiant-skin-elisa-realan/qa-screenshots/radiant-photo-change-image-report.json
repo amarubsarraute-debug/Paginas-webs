@@ -1,0 +1,182 @@
+[
+  {
+    "src": "http://127.0.0.1:8125/src/assets/home/radiantskin-hifu-facial-home.jpg",
+    "alt": "Elisa Realan realizando un tratamiento HIFU facial en Radiant Skin",
+    "natural": [
+      1672,
+      941
+    ],
+    "loaded": true,
+    "box": [
+      0,
+      -2401,
+      1440,
+      920
+    ]
+  },
+  {
+    "src": "http://127.0.0.1:8125/src/assets/home/elisa-realan-profesional.jpg",
+    "alt": "Retrato de Elisa Realan, cosmiatra",
+    "natural": [
+      1000,
+      1250
+    ],
+    "loaded": true,
+    "box": [
+      857,
+      74,
+      543,
+      761
+    ]
+  },
+  {
+    "src": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=80",
+    "alt": "",
+    "natural": [
+      800,
+      533
+    ],
+    "loaded": true,
+    "box": [
+      86,
+      1609,
+      193,
+      135
+    ]
+  },
+  {
+    "src": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=80",
+    "alt": "Se me cayó el óvalo facial",
+    "natural": [
+      800,
+      533
+    ],
+    "loaded": true,
+    "box": [
+      766,
+      1670,
+      633,
+      475
+    ]
+  },
+  {
+    "src": "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=1100&q=80",
+    "alt": "Consultorio de estética facial, luz natural y camilla preparada",
+    "natural": [
+      1100,
+      733
+    ],
+    "loaded": true,
+    "box": [
+      40,
+      2693,
+      543,
+      811
+    ]
+  },
+  {
+    "src": "http://127.0.0.1:8125/src/assets/before-after-ultra-v2-web/05_calidad_piel_facial_despues.jpg",
+    "alt": "Calidad de piel facial: despues del tratamiento",
+    "natural": [
+      3600,
+      3600
+    ],
+    "loaded": true,
+    "box": [
+      107,
+      6806,
+      640,
+      640
+    ]
+  },
+  {
+    "src": "http://127.0.0.1:8125/src/assets/before-after-ultra-v2-web/05_calidad_piel_facial_antes.jpg",
+    "alt": "Calidad de piel facial: antes del tratamiento",
+    "natural": [
+      3600,
+      3600
+    ],
+    "loaded": true,
+    "box": [
+      107,
+      6806,
+      640,
+      640
+    ]
+  },
+  {
+    "src": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80",
+    "alt": "",
+    "natural": [
+      1000,
+      667
+    ],
+    "loaded": true,
+    "box": [
+      857,
+      8166,
+      543,
+      679
+    ]
+  },
+  {
+    "src": "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1000&q=80",
+    "alt": "",
+    "natural": [
+      0,
+      0
+    ],
+    "loaded": false,
+    "box": [
+      840,
+      8146,
+      576,
+      720
+    ]
+  },
+  {
+    "src": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1000&q=80",
+    "alt": "",
+    "natural": [
+      0,
+      0
+    ],
+    "loaded": false,
+    "box": [
+      840,
+      8146,
+      576,
+      720
+    ]
+  },
+  {
+    "src": "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=1000&q=80",
+    "alt": "",
+    "natural": [
+      0,
+      0
+    ],
+    "loaded": false,
+    "box": [
+      840,
+      8146,
+      576,
+      720
+    ]
+  },
+  {
+    "src": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1400&q=80",
+    "alt": "",
+    "natural": [
+      0,
+      0
+    ],
+    "loaded": false,
+    "box": [
+      0,
+      13881,
+      1440,
+      1427
+    ]
+  }
+]

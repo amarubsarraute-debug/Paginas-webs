@@ -382,6 +382,20 @@ function Hero() {
     video.pause();
     if (video.currentTime > 0) video.currentTime = 0;
 
+    // iOS no decodifica/repinta frames al setear currentTime si el video nunca
+    // se "despertó": un play() mudo seguido de pause() habilita los seeks.
+    video.muted = true;
+    video.playsInline = true;
+    video.setAttribute('playsinline', '');
+    const wake = () => {
+      const p = video.play();
+      if (p) p.then(() => video.pause()).catch(() => {});
+    };
+    if (video.readyState >= 2) wake();
+    else video.addEventListener('loadeddata', wake, { once: true });
+    const wakeEvents = ['touchstart', 'pointerdown', 'click'] as const;
+    wakeEvents.forEach((ev) => window.addEventListener(ev, wake, { passive: true, once: true }));
+
     let targetTime = 0;
     let rafId = 0;
     let scheduled = false;
@@ -424,6 +438,8 @@ function Hero() {
       window.removeEventListener('orientationchange', onScroll);
       cancelAnimationFrame(rafId);
       video.removeEventListener('loadedmetadata', nudgeFirstFrame);
+      video.removeEventListener('loadeddata', wake);
+      wakeEvents.forEach((ev) => window.removeEventListener(ev, wake));
     };
   }, [reduceMotion]);
 
@@ -445,8 +461,8 @@ function Hero() {
 
           <div className="absolute inset-x-0 bottom-0 z-10 px-6 pb-10 md:px-12 md:pb-14 lg:px-16">
             <motion.p
-              initial={reduceMotion ? false : { opacity: 0, y: 14 }}
-              animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+              initial={false}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
               className="text-sm font-semibold uppercase tracking-[0.14em] text-gold"
             >
@@ -454,8 +470,8 @@ function Hero() {
             </motion.p>
 
             <motion.h1
-              initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-              animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+              initial={false}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.82, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="mt-4 max-w-5xl font-serif text-[clamp(3.2rem,7.6vw,7.8rem)] font-semibold leading-[0.9] text-paper"
             >
@@ -465,8 +481,8 @@ function Hero() {
             </motion.h1>
 
             <motion.p
-              initial={reduceMotion ? false : { opacity: 0, y: 18 }}
-              animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+              initial={false}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.72, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="mt-5 max-w-md text-base leading-relaxed text-paper/80 md:max-w-xl md:text-lg"
             >
@@ -474,8 +490,8 @@ function Hero() {
             </motion.p>
 
             <motion.div
-              initial={reduceMotion ? false : { opacity: 0, y: 18 }}
-              animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+              initial={false}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.72, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center"
             >

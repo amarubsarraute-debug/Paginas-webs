@@ -321,6 +321,16 @@ const projects = [
     outputDir: path.join(ROOT, 'aura-clinic-estetica-laser'),
     defaultPort: 4203,
     extraFiles: ['favicon.svg']
+  },
+  {
+    name: 'Radiant Skin',
+    dirName: 'radiant-skin-elisa-realan',
+    projectPath: path.join(ROOT, 'radiant-skin-elisa-realan'),
+    buildDir: path.join(ROOT, 'radiant-skin-elisa-realan', 'dist'),
+    runDir: path.join(ROOT, 'radiant-skin-elisa-realan'),
+    outputDir: path.join(ROOT, 'radiant-skin-elisa-realan'),
+    defaultPort: 4204,
+    extraFiles: []
   }
 ];
 

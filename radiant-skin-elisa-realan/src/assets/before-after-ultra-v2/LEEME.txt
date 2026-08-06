@@ -1,0 +1,14 @@
+IMÁGENES ANTES/DESPUÉS PARA WEB
+
+- 5 comparaciones, 10 imágenes individuales.
+- Cada pareja comparte exactamente las mismas dimensiones.
+- Formato PNG en alta resolución.
+- Sin flechas, botones, rótulos ni bordes de capturas.
+- Se conservaron las facciones y la textura real de la piel.
+
+Parejas:
+01_rejuvenecimiento_frontal
+02_calidad_piel_perfil
+03_tratamiento_acne_perioral
+04_rejuvenecimiento_perfil
+05_calidad_piel_facial
